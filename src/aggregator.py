@@ -7,6 +7,11 @@ from pathlib import Path
 
 def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
     path = Path(config_path)
+    if not path.is_absolute() and not path.exists():
+        # Fallback auf Projekt-Root basierend auf Dateipfad
+        root_path = Path(__file__).resolve().parent.parent / config_path
+        if root_path.exists():
+            path = root_path
     if not path.exists():
         raise FileNotFoundError(f"Konfigurationsdatei {config_path} nicht gefunden.")
     with open(path, "r", encoding="utf-8") as f:

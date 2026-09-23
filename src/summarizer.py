@@ -8,19 +8,37 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 
 load_dotenv()
 
-def summarize_news_with_gemini(categorized_news: Dict[str, List[Dict[str, str]]]) -> str:
+def get_configured_api_key() -> str:
+    """Ermittelt den Gemini API-Key aus Umgebungsvariablen oder Streamlit Secrets."""
+    api_key = os.getenv("GEMINI_API_KEY")
+    if not api_key:
+        try:
+            import streamlit as st
+            if hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+                api_key = str(st.secrets["GEMINI_API_KEY"])
+        except Exception:
+            pass
+    return api_key or ""
+
+
+def summarize_news_with_gemini(
+    categorized_news: Dict[str, List[Dict[str, str]]],
+    api_key: str = None,
+    model: str = None
+) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
+    Unterstützt API-Key Übergabe, Umgebungsvariablen sowie Streamlit Secrets.
     Falls kein API-Key hinterlegt ist, wird eine strukturierte Fallback-Übersicht erzeugt.
     """
-    api_key = os.getenv("GEMINI_API_KEY")
-    if not api_key or api_key.startswith("your_"):
+    active_key = api_key or get_configured_api_key()
+    if not active_key or active_key.startswith("your_"):
         print("[Hinweis] Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung...")
         return _generate_fallback_summary(categorized_news)
 
     try:
         from google import genai
-        client = genai.Client(api_key=api_key)
+        client = genai.Client(api_key=active_key)
         
         # Erstelle Kontext aus den News
         context_lines = []
@@ -46,9 +64,13 @@ Formatierungsrichtlinien:
 Hier sind die aktuellen Roh-Nachrichten:
 {"".join(context_lines)}
 """
-        preferred_model = os.getenv("GEMINI_MODEL")
-        candidate_models = [preferred_model] if preferred_model else ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"]
-        # Keine leeren oder None Einträge
+        preferred_model = model or os.getenv("GEMINI_MODEL")
+        default_candidates = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"]
+        candidate_models = [preferred_model] if preferred_model else default_candidates
+        # Stelle sicher, dass die Fallback-Kandidaten angehängt werden, falls preferred_model fehlschlägt
+        for dm in default_candidates:
+            if dm not in candidate_models:
+                candidate_models.append(dm)
         candidate_models = [m for m in candidate_models if m]
 
         last_error = None
