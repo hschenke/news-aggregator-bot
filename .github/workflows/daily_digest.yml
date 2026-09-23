@@ -1,0 +1,48 @@
+name: Daily News Digest
+
+on:
+  schedule:
+    # Täglich um 05:30 UTC (ca. 07:30 MESZ / Sommerzeit bzw. 06:30 MEZ)
+    - cron: '30 5 * * *'
+  workflow_dispatch: # Ermöglicht manuelles Auslösen mit einem Klick auf GitHub!
+
+jobs:
+  run-news-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Quellcode auschecken
+        uses: actions/checkout@v4
+
+      - name: 🐍 Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: 📦 Abhängigkeiten installieren
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: 🚀 News Aggregator ausführen
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EMAIL_PROVIDER: ${{ secrets.EMAIL_PROVIDER || 'resend' }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM || 'News Bot <onboarding@resend.dev>' }}
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+        run: |
+          python src/main.py
+
+      - name: 🌐 (Optional) Deploy HTML Report to GitHub Pages
+        # Kann genutzt werden, um das tägliche Briefing zusätzlich als Web-App / Website zu hosten
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-digest-preview
+          path: output/
