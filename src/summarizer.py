@@ -1,6 +1,10 @@
 import os
+import sys
 from typing import Dict, List, Any
 from dotenv import load_dotenv
+
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 load_dotenv()
 
@@ -42,13 +46,29 @@ Formatierungsrichtlinien:
 Hier sind die aktuellen Roh-Nachrichten:
 {"".join(context_lines)}
 """
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt,
-        )
-        return response.text
+        preferred_model = os.getenv("GEMINI_MODEL")
+        candidate_models = [preferred_model] if preferred_model else ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"]
+        # Keine leeren oder None Einträge
+        candidate_models = [m for m in candidate_models if m]
+
+        last_error = None
+        for model_name in candidate_models:
+            try:
+                print(f"      -> Generiere mit Modell: {model_name}...")
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt,
+                )
+                if response and response.text:
+                    return response.text
+            except Exception as model_err:
+                print(f"      [Warnung] Modell {model_name} temporär nicht erreichbar ({model_err}). Versuche Alternative...")
+                last_error = model_err
+
+        print(f"[Fehler] Alle KI-Modelle schlugen fehl: {last_error}")
+        return _generate_fallback_summary(categorized_news)
     except Exception as e:
-        print(f"[Fehler] Fehler beim Gemini API Aufruf: {e}")
+        print(f"[Fehler] Initialisierungsfehler Gemini API: {e}")
         return _generate_fallback_summary(categorized_news)
 
 
