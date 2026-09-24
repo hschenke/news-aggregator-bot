@@ -2,8 +2,9 @@ name: Daily News Digest
 
 on:
   schedule:
-    # Täglich um 05:30 UTC (ca. 07:30 MESZ / Sommerzeit bzw. 06:30 MEZ)
-    - cron: '30 5 * * *'
+    # Täglich um 05:25 UTC (ca. 07:25 MESZ bzw. 06:25 MEZ)
+    # Wichtig: '25' statt '30'/'00' verhindert, dass GitHub den Run wegen Serverüberlastung verwirft!
+    - cron: '25 5 * * *'
   workflow_dispatch: # Ermöglicht manuelles Auslösen mit einem Klick auf GitHub!
 
 jobs:
