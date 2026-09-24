@@ -20,6 +20,7 @@ from src.aggregator import (
     delete_feed,
     update_feed,
     add_category,
+    rename_category,
     delete_category,
     update_settings,
     test_feed_connection,
@@ -391,104 +392,235 @@ with tab3:
             3. **Fertig!** Danach spiegelt das Web-Dashboard jede Änderung sofort per Git-Commit in dein GitHub-Repository zurück – und GitHub Actions greift morgens automatisch auf die neuesten Feeds zu!
             """)
 
-    # --- Sektion 1: Neue Kategorie anlegen ---
-    with st.expander("📁 Neue Kategorie anlegen", expanded=False):
-        st.write("Erstelle eine neue Themen-Kategorie für deine Feeds (z. B. *Wissenschaft*, *Gaming*, *Finanzen*):")
-        col_cat_in, col_cat_btn = st.columns([3, 1], vertical_alignment="bottom")
-        with col_cat_in:
-            new_category_input = st.text_input(
-                "Name der neuen Kategorie:",
-                placeholder="z. B. Wissenschaft & Raumfahrt",
-                key="input_direct_new_category"
-            )
-        with col_cat_btn:
-            if st.button("➕ Kategorie anlegen", type="primary", use_container_width=True, key="btn_direct_create_cat"):
-                cat_clean = new_category_input.strip()
-                if not cat_clean:
-                    st.error("Bitte gib einen Namen für die Kategorie ein.")
+    # --- Sektion 1: Kategorien verwalten (Neu anlegen & Umbenennen) ---
+    with st.expander("📁 Kategorien verwalten (Neu anlegen & Umbenennen)", expanded=False):
+        subtab_cat1, subtab_cat2 = st.tabs(["➕ Neue Kategorie anlegen", "✏️ Kategorie umbenennen"])
+
+        with subtab_cat1:
+            st.write("Erstelle eine neue Themen-Kategorie für deine Feeds (z. B. *Wissenschaft*, *Gaming*, *Finanzen*):")
+            col_cat_in, col_cat_btn = st.columns([3, 1], vertical_alignment="bottom")
+            with col_cat_in:
+                new_category_input = st.text_input(
+                    "Name der neuen Kategorie:",
+                    placeholder="z. B. Wissenschaft & Raumfahrt",
+                    key="input_direct_new_category"
+                )
+            with col_cat_btn:
+                if st.button("➕ Kategorie anlegen", type="primary", use_container_width=True, key="btn_direct_create_cat"):
+                    cat_clean = new_category_input.strip()
+                    if not cat_clean:
+                        st.error("Bitte gib einen Namen für die Kategorie ein.")
+                    else:
+                        success = add_category(cat_clean)
+                        if success:
+                            st.cache_data.clear()
+                            st.toast(f"✅ Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
+                            st.rerun()
+                        else:
+                            st.warning(f"Kategorie '{cat_clean}' existiert bereits.")
+
+        with subtab_cat2:
+            existing_cat_names = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+            if not existing_cat_names:
+                st.info("Noch keine Kategorien vorhanden.")
+            else:
+                st.write("Wähle eine Kategorie aus, um ihren Namen in `sources.yaml` zu ändern:")
+                col_ren_select, col_ren_new, col_ren_btn = st.columns([2, 2, 1], vertical_alignment="bottom")
+                with col_ren_select:
+                    cat_to_rename = st.selectbox("Kategorie auswählen:", options=existing_cat_names, key="select_cat_to_rename")
+                with col_ren_new:
+                    new_cat_name_input = st.text_input("Neuer Name:", value=cat_to_rename, key=f"input_ren_cat_{cat_to_rename}")
+                with col_ren_btn:
+                    if st.button("💾 Umbenennen", type="primary", use_container_width=True, key="btn_rename_cat"):
+                        if not new_cat_name_input.strip():
+                            st.error("Der neue Name darf nicht leer sein.")
+                        elif new_cat_name_input.strip() == cat_to_rename:
+                            st.info("Der Name wurde nicht verändert.")
+                        else:
+                            try:
+                                rename_category(cat_to_rename, new_cat_name_input.strip())
+                                st.cache_data.clear()
+                                st.toast(f"✅ Kategorie in '{new_cat_name_input.strip()}' umbenannt!", icon="✏️")
+                                st.rerun()
+                            except Exception as e:
+                                st.error(f"Fehler beim Umbenennen: {e}")
+
+    # --- Sektion 2: RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten) ---
+    with st.expander("📡 RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten)", expanded=True):
+        subtab_feed1, subtab_feed2 = st.tabs(["➕ Neuen Feed hinzufügen", "✏️ Bestehenden Feed bearbeiten"])
+
+        # Tab 1: Neuer Feed
+        with subtab_feed1:
+            existing_categories = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+            cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
+
+            col_new1, col_new2 = st.columns(2)
+            with col_new1:
+                selected_cat_choice = st.selectbox(
+                    "Kategorie zuordnen:",
+                    options=cat_select_options,
+                    help="Wähle eine bestehende Kategorie oder erstelle eine neue.",
+                    key="select_cat_add_feed"
+                )
+                if selected_cat_choice == "➕ [Neue Kategorie erstellen...]":
+                    custom_cat_name = st.text_input("Name der neuen Kategorie:", placeholder="z. B. Wissenschaft & Raumfahrt", key="input_custom_cat_add")
+                    target_cat_name = custom_cat_name.strip()
                 else:
-                    success = add_category(cat_clean)
-                    if success:
-                        st.cache_data.clear()
-                        st.toast(f"✅ Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
-                        st.rerun()
-                    else:
-                        st.warning(f"Kategorie '{cat_clean}' existiert bereits.")
+                    target_cat_name = selected_cat_choice.strip()
 
-    # --- Sektion 2: Neuen RSS-Feed hinzufügen ---
-    with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=True):
-        existing_categories = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
-        cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
+            with col_new2:
+                new_feed_name = st.text_input("Name des Feeds:", placeholder="z. B. The Verge Tech", key="input_new_feed_name")
 
-        col_new1, col_new2 = st.columns(2)
-        with col_new1:
-            selected_cat_choice = st.selectbox(
-                "Kategorie zuordnen:",
-                options=cat_select_options,
-                help="Wähle eine bestehende Kategorie oder erstelle eine neue."
-            )
-            if selected_cat_choice == "➕ [Neue Kategorie erstellen...]":
-                custom_cat_name = st.text_input("Name der neuen Kategorie:", placeholder="z. B. Wissenschaft & Raumfahrt")
-                target_cat_name = custom_cat_name.strip()
-            else:
-                target_cat_name = selected_cat_choice.strip()
+            col_new3, col_new4 = st.columns([3, 1])
+            with col_new3:
+                new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml", key="input_new_feed_url")
+            with col_new4:
+                new_feed_max = st.number_input(
+                    "Max. Artikel:",
+                    min_value=1,
+                    max_value=50,
+                    value=5,
+                    step=1,
+                    help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden.",
+                    key="input_new_feed_max"
+                )
 
-        with col_new2:
-            new_feed_name = st.text_input("Name des Feeds:", placeholder="z. B. The Verge Tech")
+            col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
+            with col_act1:
+                test_clicked = st.button("🔍 Feed-URL testen", use_container_width=True, key="btn_test_new_feed")
+            with col_act2:
+                add_clicked = st.button("💾 Feed aufnehmen & in sources.yaml speichern", type="primary", use_container_width=True, key="btn_add_new_feed")
 
-        col_new3, col_new4 = st.columns([3, 1])
-        with col_new3:
-            new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml")
-        with col_new4:
-            new_feed_max = st.number_input(
-                "Max. Artikel:",
-                min_value=1,
-                max_value=50,
-                value=5,
-                step=1,
-                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden."
-            )
+            if test_clicked:
+                if not new_feed_url.strip():
+                    st.warning("Bitte gib zuerst eine Feed-URL ein.")
+                else:
+                    with st.spinner("Prüfe Feed-URL..."):
+                        test_res = test_feed_connection(new_feed_url)
+                        if test_res["success"]:
+                            st.success(
+                                f"✅ Feed erreichbar: **{test_res['title']}** "
+                                f"({test_res['item_count']} Einträge gefunden. Neuester: *'{test_res['latest_title']}'*)"
+                            )
+                        else:
+                            st.error(f"❌ Feed nicht erreichbar oder ungültig: {test_res['error']}")
 
-        col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
-        with col_act1:
-            test_clicked = st.button("🔍 Feed-URL testen", use_container_width=True)
-        with col_act2:
-            add_clicked = st.button("💾 Feed aufnehmen & in sources.yaml speichern", type="primary", use_container_width=True)
-
-        if test_clicked:
-            if not new_feed_url.strip():
-                st.warning("Bitte gib zuerst eine Feed-URL ein.")
-            else:
-                with st.spinner("Prüfe Feed-URL..."):
-                    test_res = test_feed_connection(new_feed_url)
-                    if test_res["success"]:
-                        st.success(
-                            f"✅ Feed erreichbar: **{test_res['title']}** "
-                            f"({test_res['item_count']} Einträge gefunden. Neuester: *'{test_res['latest_title']}'*)"
+            if add_clicked:
+                if not target_cat_name:
+                    st.error("Bitte gib einen Kategorienamen an.")
+                elif not new_feed_name.strip():
+                    st.error("Bitte gib einen Namen für den Feed an.")
+                elif not new_feed_url.strip() or not (new_feed_url.strip().startswith("http://") or new_feed_url.strip().startswith("https://")):
+                    st.error("Bitte gib eine gültige URL an (beginnend mit http:// oder https://).")
+                else:
+                    try:
+                        add_feed(
+                            category_name=target_cat_name,
+                            feed_name=new_feed_name,
+                            feed_url=new_feed_url,
+                            max_items=new_feed_max,
                         )
-                    else:
-                        st.error(f"❌ Feed nicht erreichbar oder ungültig: {test_res['error']}")
+                        st.cache_data.clear()
+                        st.toast(f"✅ Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
+                        st.rerun()
+                    except Exception as e:
+                        st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
 
-        if add_clicked:
-            if not target_cat_name:
-                st.error("Bitte gib einen Kategorienamen an.")
-            elif not new_feed_name.strip():
-                st.error("Bitte gib einen Namen für den Feed an.")
-            elif not new_feed_url.strip() or not (new_feed_url.strip().startswith("http://") or new_feed_url.strip().startswith("https://")):
-                st.error("Bitte gib eine gültige URL an (beginnend mit http:// oder https://).")
+        # Tab 2: Bestehenden Feed bearbeiten (Name, URL, Kategorie, Max. Artikel)
+        with subtab_feed2:
+            all_feed_options = []
+            feed_dict = {}
+            for cat in sources_config.get("categories", []):
+                cname = cat.get("name", "Allgemein")
+                for feed in cat.get("feeds", []):
+                    fname = feed.get("name", "Unbenannt")
+                    furl = feed.get("url", "")
+                    label = f"[{cname}] {fname} ({furl})"
+                    all_feed_options.append(label)
+                    feed_dict[label] = (cname, feed)
+
+            if not all_feed_options:
+                st.info("Noch keine Feeds zum Bearbeiten vorhanden.")
             else:
-                try:
-                    add_feed(
-                        category_name=target_cat_name,
-                        feed_name=new_feed_name,
-                        feed_url=new_feed_url,
-                        max_items=new_feed_max,
+                selected_edit_label = st.selectbox(
+                    "Feed zum Bearbeiten auswählen:",
+                    options=all_feed_options,
+                    key="top_select_edit_feed"
+                )
+                curr_cname, curr_f = feed_dict[selected_edit_label]
+                all_cats = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+
+                col_e1, col_e2 = st.columns(2)
+                with col_e1:
+                    edit_fname = st.text_input(
+                        "Feed-Name ändern:",
+                        value=curr_f.get("name", ""),
+                        key=f"top_edit_name_{curr_f.get('url')}"
                     )
-                    st.cache_data.clear()
-                    st.toast(f"✅ Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
-                    st.rerun()
-                except Exception as e:
-                    st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
+                with col_e2:
+                    cat_index = all_cats.index(curr_cname) if curr_cname in all_cats else 0
+                    edit_fcat = st.selectbox(
+                        "Kategorie ändern / verschieben:",
+                        options=all_cats,
+                        index=cat_index,
+                        key=f"top_edit_cat_{curr_f.get('url')}"
+                    )
+
+                col_e3, col_e4 = st.columns([3, 1])
+                with col_e3:
+                    edit_furl = st.text_input(
+                        "Feed-URL ändern:",
+                        value=curr_f.get("url", ""),
+                        key=f"top_edit_url_{curr_f.get('url')}"
+                    )
+                with col_e4:
+                    edit_fmax = st.number_input(
+                        "Max. Artikel:",
+                        min_value=1,
+                        max_value=50,
+                        value=int(curr_f.get("max_items", 5)),
+                        step=1,
+                        key=f"top_edit_max_{curr_f.get('url')}"
+                    )
+
+                col_ebtn1, col_ebtn2, col_ebtn3 = st.columns([1, 2, 1], vertical_alignment="center")
+                with col_ebtn1:
+                    if st.button("🔍 Feed testen", use_container_width=True, key=f"top_test_{curr_f.get('url')}"):
+                        with st.spinner("Prüfe Feed-URL..."):
+                            t_res = test_feed_connection(edit_furl.strip())
+                            if t_res["success"]:
+                                st.success(f"✅ Erreichbar: **{t_res['title']}** ({t_res['item_count']} Einträge gefunden)")
+                            else:
+                                st.error(f"❌ Nicht erreichbar: {t_res['error']}")
+                with col_ebtn2:
+                    if st.button("💾 Änderungen in sources.yaml speichern", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
+                        if not edit_fname.strip():
+                            st.error("Der Feed-Name darf nicht leer sein.")
+                        elif not edit_furl.strip() or not (edit_furl.strip().startswith("http://") or edit_furl.strip().startswith("https://")):
+                            st.error("Bitte gib eine gültige URL an.")
+                        else:
+                            try:
+                                update_feed(
+                                    category_name=curr_cname,
+                                    old_url=curr_f.get("url"),
+                                    new_name=edit_fname.strip(),
+                                    new_url=edit_furl.strip(),
+                                    new_max_items=edit_fmax,
+                                    new_category=edit_fcat.strip()
+                                )
+                                st.cache_data.clear()
+                                st.toast(f"✅ Feed '{edit_fname}' erfolgreich aktualisiert!", icon="💾")
+                                st.rerun()
+                            except Exception as e:
+                                st.error(f"Fehler beim Speichern: {e}")
+                with col_ebtn3:
+                    with st.popover("🗑️ Löschen", use_container_width=True):
+                        st.markdown(f"Feed **'{curr_f.get('name')}'** wirklich entfernen?")
+                        if st.button("Bestätigen", key=f"top_del_{curr_f.get('url')}", type="primary", use_container_width=True):
+                            delete_feed(curr_cname, curr_f.get("url"))
+                            st.cache_data.clear()
+                            st.toast(f"🗑️ Feed '{curr_f.get('name')}' entfernt.", icon="🗑️")
+                            st.rerun()
 
     st.markdown("---")
 

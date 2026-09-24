@@ -233,18 +233,21 @@ def update_feed(
     new_name: str = None,
     new_url: str = None,
     new_max_items: int = None,
+    new_category: str = None,
     config_path: str = "config/sources.yaml",
 ) -> bool:
     """
-    Aktualisiert Name, URL und/oder max_items eines bestehenden Feeds und spiegelt dies in sources.yaml zurück.
+    Aktualisiert Name, URL, max_items und/oder Kategorie eines bestehenden Feeds und spiegelt dies in sources.yaml zurück.
     """
     config = load_sources(config_path)
     categories = config.get("categories", [])
     updated = False
+    feed_to_move = None
 
     for cat in categories:
         if cat.get("name", "").strip().lower() == category_name.strip().lower():
-            for f in cat.get("feeds", []):
+            feeds = cat.get("feeds", [])
+            for f in feeds:
                 if f.get("url", "").strip() == old_url.strip():
                     if new_name is not None and new_name.strip():
                         f["name"] = new_name.strip()
@@ -253,14 +256,62 @@ def update_feed(
                     if new_max_items is not None:
                         f["max_items"] = max(1, int(new_max_items))
                     updated = True
+
+                    if new_category and new_category.strip().lower() != category_name.strip().lower():
+                        feed_to_move = dict(f)
+                        cat["feeds"] = [x for x in feeds if x.get("url", "").strip() != old_url.strip()]
                     break
             if updated:
                 break
 
     if updated:
+        if feed_to_move and new_category:
+            target_cat = None
+            for c in categories:
+                if c.get("name", "").strip().lower() == new_category.strip().lower():
+                    target_cat = c
+                    break
+            if not target_cat:
+                target_cat = {"name": new_category.strip(), "feeds": []}
+                categories.append(target_cat)
+            target_cat.setdefault("feeds", []).append(feed_to_move)
+
         save_sources(config, config_path)
 
     return updated
+
+
+def rename_category(
+    old_name: str,
+    new_name: str,
+    config_path: str = "config/sources.yaml",
+) -> bool:
+    """Benennt eine bestehende Kategorie um."""
+    old_name = old_name.strip()
+    new_name = new_name.strip()
+    if not old_name or not new_name:
+        raise ValueError("Alter und neuer Kategoriename dürfen nicht leer sein.")
+    if old_name.lower() == new_name.lower():
+        return True
+
+    config = load_sources(config_path)
+    categories = config.get("categories", [])
+
+    for cat in categories:
+        if cat.get("name", "").strip().lower() == new_name.lower():
+            raise ValueError(f"Eine Kategorie namens '{new_name}' existiert bereits.")
+
+    found = False
+    for cat in categories:
+        if cat.get("name", "").strip().lower() == old_name.lower():
+            cat["name"] = new_name
+            found = True
+            break
+
+    if found:
+        save_sources(config, config_path)
+
+    return found
 
 
 def add_category(
