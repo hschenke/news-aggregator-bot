@@ -10,7 +10,7 @@ categories:
   - name: Heise Online News
     url: https://www.heise.de/rss/heise-atom.xml
     max_items: 5
-- name: Wirtschaft & Finanzen
+- name: Finanzen
   feeds:
   - name: Handelsblatt Schlagzeilen
     url: https://www.handelsblatt.com/contentexport/feed/top-themen
