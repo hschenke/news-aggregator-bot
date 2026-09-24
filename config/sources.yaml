@@ -21,7 +21,10 @@ categories:
     url: https://rpgwatch.com/files/rss1.xml
     max_items: 15
 - name: Policia
-  feeds: []
+  feeds:
+  - name: RPG-Watch
+    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+    max_items: 15
 settings:
   max_articles_per_category: 10
   language: de
