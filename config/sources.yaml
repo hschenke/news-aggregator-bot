@@ -15,6 +15,8 @@ categories:
   - name: Handelsblatt Schlagzeilen
     url: https://www.handelsblatt.com/contentexport/feed/top-themen
     max_items: 4
+- name: Games
+  feeds: []
 settings:
   max_articles_per_category: 10
   language: de
