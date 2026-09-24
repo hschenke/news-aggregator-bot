@@ -16,7 +16,10 @@ categories:
     url: https://www.handelsblatt.com/contentexport/feed/top-themen
     max_items: 4
 - name: Games
-  feeds: []
+  feeds:
+  - name: RPG-Watch
+    url: https://rpgwatch.com/files/rss1.xml
+    max_items: 10
 settings:
   max_articles_per_category: 10
   language: de
