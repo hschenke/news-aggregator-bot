@@ -9,7 +9,18 @@ project_root = Path(__file__).resolve().parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from src.aggregator import collect_all_news, load_sources
+from src.aggregator import (
+    collect_all_news,
+    load_sources,
+    save_sources,
+    add_feed,
+    delete_feed,
+    update_feed,
+    delete_category,
+    update_settings,
+    test_feed_connection,
+    get_sources_path,
+)
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key
 
 # Page Configuration
@@ -197,7 +208,7 @@ st.markdown("---")
 tab1, tab2, tab3 = st.tabs([
     "✨ KI-Tages-Briefing",
     "📋 Alle Artikel durchsuchen",
-    "⚙️ Quellen & Feeds"
+    "⚙️ Quellen & Feeds verwalten"
 ])
 
 # ----------------- TAB 1: KI-Briefing -----------------
@@ -279,15 +290,226 @@ with tab2:
     if displayed_count == 0:
         st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
-# ----------------- TAB 3: Quellen -----------------
+# ----------------- TAB 3: Quellen & Feeds verwalten -----------------
 with tab3:
-    st.subheader("Konfigurierte RSS-Feeds")
-    st.write("Diese Quellen werden aktuell in `config/sources.yaml` verwaltet:")
+    st.subheader("⚙️ Quellen & Feeds verwalten")
+    st.caption("Verwalte deine RSS-Feeds und Einstellungen direkt im Web-Dashboard. Alle Änderungen werden automatisch in `config/sources.yaml` gespeichert.")
 
-    for cat in sources_config.get("categories", []):
-        with st.expander(f"📁 {cat.get('name', 'Unbenannt')} ({len(cat.get('feeds', []))} Feeds)", expanded=True):
-            for feed in cat.get("feeds", []):
-                st.markdown(f"- **{feed.get('name')}**: [{feed.get('url')}]({feed.get('url')}) *(Max. {feed.get('max_items', 5)} Artikel)*")
+    sources_path = get_sources_path()
+
+    # --- Sektion 1: Neuen RSS-Feed hinzufügen ---
+    with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=True):
+        existing_categories = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+        cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
+
+        col_new1, col_new2 = st.columns(2)
+        with col_new1:
+            selected_cat_choice = st.selectbox(
+                "Kategorie zuordnen:",
+                options=cat_select_options,
+                help="Wähle eine bestehende Kategorie oder erstelle eine neue."
+            )
+            if selected_cat_choice == "➕ [Neue Kategorie erstellen...]":
+                custom_cat_name = st.text_input("Name der neuen Kategorie:", placeholder="z. B. Wissenschaft & Raumfahrt")
+                target_cat_name = custom_cat_name.strip()
+            else:
+                target_cat_name = selected_cat_choice.strip()
+
+        with col_new2:
+            new_feed_name = st.text_input("Name des Feeds:", placeholder="z. B. The Verge Tech")
+
+        col_new3, col_new4 = st.columns([3, 1])
+        with col_new3:
+            new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml")
+        with col_new4:
+            new_feed_max = st.number_input(
+                "Max. Artikel:",
+                min_value=1,
+                max_value=50,
+                value=5,
+                step=1,
+                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden."
+            )
+
+        col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
+        with col_act1:
+            test_clicked = st.button("🔍 Feed-URL testen", use_container_width=True)
+        with col_act2:
+            add_clicked = st.button("💾 Feed aufnehmen & in sources.yaml speichern", type="primary", use_container_width=True)
+
+        if test_clicked:
+            if not new_feed_url.strip():
+                st.warning("Bitte gib zuerst eine Feed-URL ein.")
+            else:
+                with st.spinner("Prüfe Feed-URL..."):
+                    test_res = test_feed_connection(new_feed_url)
+                    if test_res["success"]:
+                        st.success(
+                            f"✅ Feed erreichbar: **{test_res['title']}** "
+                            f"({test_res['item_count']} Einträge gefunden. Neuester: *'{test_res['latest_title']}'*)"
+                        )
+                    else:
+                        st.error(f"❌ Feed nicht erreichbar oder ungültig: {test_res['error']}")
+
+        if add_clicked:
+            if not target_cat_name:
+                st.error("Bitte gib einen Kategorienamen an.")
+            elif not new_feed_name.strip():
+                st.error("Bitte gib einen Namen für den Feed an.")
+            elif not new_feed_url.strip() or not (new_feed_url.strip().startswith("http://") or new_feed_url.strip().startswith("https://")):
+                st.error("Bitte gib eine gültige URL an (beginnend mit http:// oder https://).")
+            else:
+                try:
+                    add_feed(
+                        category_name=target_cat_name,
+                        feed_name=new_feed_name,
+                        feed_url=new_feed_url,
+                        max_items=new_feed_max,
+                    )
+                    st.cache_data.clear()
+                    st.toast(f"✅ Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
+                    st.rerun()
+                except Exception as e:
+                    st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
 
     st.markdown("---")
-    st.info("💡 **Tipp:** Du kannst neue Feeds oder Kategorien jederzeit einfach in der Datei `config/sources.yaml` ergänzen und auf GitHub committen.")
+
+    # --- Sektion 2: Aktive Feeds & Quellen bearbeiten / löschen ---
+    st.markdown("### 📋 Aktive Feeds nach Kategorien")
+    st.caption("Hier kannst du für jeden Feed die maximale Anzahl der Artikel festlegen, Feeds löschen oder deren Details bearbeiten.")
+
+    categories = sources_config.get("categories", [])
+    if not categories:
+        st.info("Es sind aktuell keine Kategorien in sources.yaml hinterlegt.")
+
+    for cat_idx, cat in enumerate(categories):
+        cat_name = cat.get("name", "Allgemein")
+        feeds = cat.get("feeds", [])
+
+        with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=True):
+            # Kategorie Header Actions
+            col_cat_info, col_cat_del = st.columns([5, 1], vertical_alignment="center")
+            with col_cat_info:
+                st.caption(f"Kategorie: **{cat_name}** • {len(feeds)} konfigurierte Feeds")
+            with col_cat_del:
+                with st.popover("🗑️ Kategorie löschen", use_container_width=True):
+                    st.markdown(f"Kategorie **'{cat_name}'** samt aller Feeds wirklich löschen?")
+                    if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
+                        delete_category(cat_name)
+                        st.cache_data.clear()
+                        st.toast(f"🗑️ Kategorie '{cat_name}' gelöscht.", icon="🗑️")
+                        st.rerun()
+
+            if not feeds:
+                st.info("Keine Feeds in dieser Kategorie vorhanden.")
+            else:
+                for feed_idx, feed in enumerate(feeds):
+                    f_name = feed.get("name", "Unbenannt")
+                    f_url = feed.get("url", "")
+                    f_max = int(feed.get("max_items", 5))
+
+                    with st.container(border=True):
+                        col_top1, col_top2 = st.columns([4, 2], vertical_alignment="center")
+                        with col_top1:
+                            st.markdown(f"**{f_name}**")
+                            st.caption(f"🔗 [{f_url}]({f_url})")
+
+                        col_f_max, col_f_save, col_f_del = st.columns([2, 1, 1], vertical_alignment="bottom")
+                        with col_f_max:
+                            current_max_input = st.number_input(
+                                "Max. Artikel:",
+                                min_value=1,
+                                max_value=50,
+                                value=f_max,
+                                step=1,
+                                key=f"feed_max_{cat_idx}_{feed_idx}",
+                                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden."
+                            )
+                        with col_f_save:
+                            if st.button("💾 Speichern", key=f"feed_save_{cat_idx}_{feed_idx}", use_container_width=True):
+                                update_feed(cat_name, f_url, new_max_items=current_max_input)
+                                st.cache_data.clear()
+                                st.toast(f"✅ Max. Artikel für '{f_name}' auf {current_max_input} aktualisiert!", icon="💾")
+                                st.rerun()
+                        with col_f_del:
+                            with st.popover("🗑️ Löschen", use_container_width=True):
+                                st.markdown(f"Feed **'{f_name}'** wirklich entfernen?")
+                                if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
+                                    delete_feed(cat_name, f_url)
+                                    st.cache_data.clear()
+                                    st.toast(f"🗑️ Feed '{f_name}' entfernt.", icon="🗑️")
+                                    st.rerun()
+
+                        with st.expander("🛠️ Details & URL bearbeiten / Feed testen", expanded=False):
+                            col_ed1, col_ed2 = st.columns(2)
+                            with col_ed1:
+                                edit_name_val = st.text_input("Name ändern:", value=f_name, key=f"edit_name_{cat_idx}_{feed_idx}")
+                            with col_ed2:
+                                edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{cat_idx}_{feed_idx}")
+
+                            col_t_btn, col_s_btn = st.columns(2)
+                            with col_t_btn:
+                                if st.button("🔍 Feed testen", key=f"btn_test_{cat_idx}_{feed_idx}", use_container_width=True):
+                                    t_res = test_feed_connection(edit_url_val.strip())
+                                    if t_res["success"]:
+                                        st.success(f"✅ Erreichbar: '{t_res['title']}' ({t_res['item_count']} Einträge gefunden)")
+                                    else:
+                                        st.error(f"❌ Fehler: {t_res['error']}")
+                            with col_s_btn:
+                                if st.button("💾 Alle Details speichern", key=f"btn_save_all_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
+                                    update_feed(cat_name, f_url, new_name=edit_name_val, new_url=edit_url_val, new_max_items=current_max_input)
+                                    st.cache_data.clear()
+                                    st.toast("✅ Feed-Details aktualisiert!", icon="💾")
+                                    st.rerun()
+
+    st.markdown("---")
+
+    # --- Sektion 3: Globale Einstellungen ---
+    with st.expander("⚙️ Globale Einstellungen (sources.yaml)", expanded=False):
+        current_settings = sources_config.get("settings", {})
+        col_s1, col_s2, col_s3 = st.columns(3)
+        with col_s1:
+            setting_max_cat = st.number_input(
+                "Max. Artikel pro Kategorie (Briefing):",
+                min_value=1,
+                max_value=20,
+                value=int(current_settings.get("max_articles_per_category", 4)),
+                step=1,
+                help="Steuert, wie viele Top-Themen pro Kategorie im KI-Briefing erscheinen."
+            )
+        with col_s2:
+            current_lang = current_settings.get("language", "de")
+            lang_options = ["de", "en", "fr", "es"]
+            lang_idx = lang_options.index(current_lang) if current_lang in lang_options else 0
+            setting_lang = st.selectbox("Sprache für Zusammenfassung:", options=lang_options, index=lang_idx)
+        with col_s3:
+            current_style = current_settings.get("summary_style", "executive_bullet_points")
+            style_options = ["executive_bullet_points", "bullet_points", "narrative"]
+            style_idx = style_options.index(current_style) if current_style in style_options else 0
+            setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
+
+        if st.button("💾 Globale Einstellungen in sources.yaml speichern", type="primary"):
+            update_settings({
+                "max_articles_per_category": setting_max_cat,
+                "language": setting_lang,
+                "summary_style": setting_style,
+            })
+            st.cache_data.clear()
+            st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
+            st.rerun()
+
+    # --- Sektion 4: Live-Vorschau der sources.yaml Datei ---
+    with st.expander("📄 Live-Vorschau: config/sources.yaml", expanded=False):
+        try:
+            with open(sources_path, "r", encoding="utf-8") as f:
+                yaml_raw = f.read()
+            st.code(yaml_raw, language="yaml")
+            st.download_button(
+                "📥 sources.yaml herunterladen",
+                data=yaml_raw,
+                file_name="sources.yaml",
+                mime="text/yaml"
+            )
+        except Exception as e:
+            st.error(f"Konnte Datei nicht lesen: {e}")
+

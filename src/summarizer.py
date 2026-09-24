@@ -24,17 +24,30 @@ def get_configured_api_key() -> str:
 def summarize_news_with_gemini(
     categorized_news: Dict[str, List[Dict[str, str]]],
     api_key: str = None,
-    model: str = None
+    model: str = None,
+    config_path: str = "config/sources.yaml",
 ) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
     Unterstützt API-Key Übergabe, Umgebungsvariablen sowie Streamlit Secrets.
     Falls kein API-Key hinterlegt ist, wird eine strukturierte Fallback-Übersicht erzeugt.
     """
+    # Lese Konfigurations-Einstellungen (z.B. max_articles_per_category)
+    try:
+        from src.aggregator import load_sources
+        config = load_sources(config_path)
+        settings = config.get("settings", {})
+    except Exception:
+        settings = {}
+
+    max_articles = settings.get("max_articles_per_category", 4)
+    language = settings.get("language", "de")
+    lang_name = "Deutsch" if language == "de" else language
+
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
         print("[Hinweis] Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung...")
-        return _generate_fallback_summary(categorized_news)
+        return _generate_fallback_summary(categorized_news, max_articles=max_articles)
 
     try:
         from google import genai
@@ -52,12 +65,12 @@ def summarize_news_with_gemini(
 
         prompt = f"""
 Du bist ein professioneller News-Kurator und Redakteur für ein Daily Executive Briefing.
-Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, prägnantes und leicht lesbares Tages-Briefing auf Deutsch zu erstellen.
+Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, prägnantes und leicht lesbares Tages-Briefing auf {lang_name} zu erstellen.
 
 Formatierungsrichtlinien:
 1. Beginne mit einem kurzen 2-3 Sätze langen "Executive Summary" der wichtigsten Trends des Tages.
 2. Gruppiere die Themen nach ihren Kategorien.
-3. Wähle pro Kategorie die 2-4 relevantesten Themen aus und fasse sie in je 2-3 Bullet-Points zusammen (inklusive Kernaussage und Bedeutung).
+3. Wähle pro Kategorie bis zu {max_articles} der relevantesten Themen aus und fasse sie in je 2-3 Bullet-Points zusammen (inklusive Kernaussage und Bedeutung).
 4. Verlinke jeweils die Originalquelle mit einem sprechenden Link Markdown, z.B. [Mehr lesen](URL).
 5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften und Emojis.
 
@@ -88,13 +101,13 @@ Hier sind die aktuellen Roh-Nachrichten:
                 last_error = model_err
 
         print(f"[Fehler] Alle KI-Modelle schlugen fehl: {last_error}")
-        return _generate_fallback_summary(categorized_news)
+        return _generate_fallback_summary(categorized_news, max_articles=max_articles)
     except Exception as e:
         print(f"[Fehler] Initialisierungsfehler Gemini API: {e}")
-        return _generate_fallback_summary(categorized_news)
+        return _generate_fallback_summary(categorized_news, max_articles=max_articles)
 
 
-def _generate_fallback_summary(categorized_news: Dict[str, List[Dict[str, str]]]) -> str:
+def _generate_fallback_summary(categorized_news: Dict[str, List[Dict[str, str]]], max_articles: int = 4) -> str:
     """Einfacher Markdown-Report ohne LLM (Fallback)."""
     lines = [
         "# 📰 Dein Daily News Briefing",
@@ -102,7 +115,7 @@ def _generate_fallback_summary(categorized_news: Dict[str, List[Dict[str, str]]]
     ]
     for cat, items in categorized_news.items():
         lines.append(f"\n## {cat}")
-        for item in items[:4]:
+        for item in items[:max_articles]:
             lines.append(f"- **[{item['title']}]({item['link']})** ({item.get('source')})")
             if item.get("summary"):
                 lines.append(f"  > {item['summary']}")

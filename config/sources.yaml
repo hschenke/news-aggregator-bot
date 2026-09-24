@@ -1,26 +1,21 @@
-# Konfiguration der News-Quellen (RSS Feeds)
-# Du kannst beliebige RSS-Feeds hinzufügen oder entfernen.
-
 categories:
-  - name: "Künstliche Intelligenz & Tech"
-    feeds:
-      - name: "Hacker News (Top)"
-        url: "https://news.ycombinator.com/rss"
-        max_items: 5
-      - name: "TechCrunch AI"
-        url: "https://techcrunch.com/category/artificial-intelligence/feed/"
-        max_items: 5
-      - name: "Heise Online News"
-        url: "https://www.heise.de/rss/heise-atom.xml"
-        max_items: 5
-
-  - name: "Wirtschaft & Finanzen"
-    feeds:
-      - name: "Handelsblatt Schlagzeilen"
-        url: "https://www.handelsblatt.com/contentexport/feed/top-themen"
-        max_items: 4
-
+- name: Künstliche Intelligenz & Tech
+  feeds:
+  - name: Hacker News (Top)
+    url: https://news.ycombinator.com/rss
+    max_items: 5
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+    max_items: 5
+  - name: Heise Online News
+    url: https://www.heise.de/rss/heise-atom.xml
+    max_items: 5
+- name: Wirtschaft & Finanzen
+  feeds:
+  - name: Handelsblatt Schlagzeilen
+    url: https://www.handelsblatt.com/contentexport/feed/top-themen
+    max_items: 4
 settings:
   max_articles_per_category: 4
-  language: "de" # Sprache für die KI-Zusammenfassung
-  summary_style: "executive_bullet_points" # bullet_points, narrative, executive
+  language: de
+  summary_style: executive_bullet_points
