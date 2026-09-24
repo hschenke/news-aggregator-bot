@@ -1,8 +1,11 @@
 import streamlit as st
 import sys
 import os
+import hmac
+import hashlib
+import time
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Projekt-Root zum Python-Pfad hinzufügen
 project_root = Path(__file__).resolve().parent.parent
@@ -16,12 +19,22 @@ from src.aggregator import (
     add_feed,
     delete_feed,
     update_feed,
+    add_category,
     delete_category,
     update_settings,
     test_feed_connection,
     get_sources_path,
 )
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key
+
+try:
+    from streamlit_cookies_controller import CookieController
+    cookie_controller = CookieController(key="news_bot_auth_cookie_ctrl")
+except Exception:
+    cookie_controller = None
+
+COOKIE_AUTH_NAME = "news_bot_session"
+COOKIE_EXPIRY_DAYS = 7
 
 # Page Configuration
 st.set_page_config(
@@ -72,7 +85,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# --- Passwort-Schutz / Authentifizierung ---
+# --- Passwort-Schutz & Login-Cookie ---
 def get_configured_app_password() -> str:
     """Liest das App-Passwort aus Umgebungsvariablen oder Streamlit Secrets."""
     pw = os.getenv("APP_PASSWORD")
@@ -85,19 +98,60 @@ def get_configured_app_password() -> str:
     return (pw or "").strip()
 
 
+def generate_auth_token(password: str) -> str:
+    """Erstellt ein kryptografisch signiertes Authentifizierungs-Token mit Zeitstempel."""
+    timestamp = str(int(time.time()))
+    sig = hmac.new(password.encode("utf-8"), timestamp.encode("utf-8"), hashlib.sha256).hexdigest()
+    return f"{timestamp}:{sig}"
+
+
+def verify_auth_token(token: str, password: str, max_age_days: int = COOKIE_EXPIRY_DAYS) -> bool:
+    """Verifiziert das Authentifizierungs-Token und prüft die Gültigkeitsdauer."""
+    if not token or ":" not in token:
+        return False
+    try:
+        timestamp_str, sig = token.split(":", 1)
+        expected_sig = hmac.new(password.encode("utf-8"), timestamp_str.encode("utf-8"), hashlib.sha256).hexdigest()
+        if not hmac.compare_digest(expected_sig, sig):
+            return False
+        timestamp = int(timestamp_str)
+        if time.time() - timestamp > (86400 * max_age_days):
+            return False
+        return True
+    except Exception:
+        return False
+
+
 def check_password() -> bool:
     """
-    Überprüft das App-Passwort.
-    Gibt True zurück, wenn kein Passwort definiert ist oder der Nutzer eingeloggt ist.
+    Überprüft das App-Passwort:
+    1. Bereits in session_state authentifiziert
+    2. Gespeicherter Login-Cookie im Browser
+    3. Passwort-Eingabe über Formular
     """
     expected_password = get_configured_app_password()
     if not expected_password:
         return True  # Kein Passwort konfiguriert -> freier Zugang
 
+    # 1. Bereits in session_state authentifiziert?
     if st.session_state.get("authenticated", False):
         return True
 
-    # Login-Formular anzeigen
+    # 2. Login-Cookie prüfen (zuerst st.context.cookies aus HTTP Header, dann CookieController)
+    token_from_cookie = None
+    if hasattr(st, "context") and hasattr(st.context, "cookies"):
+        token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
+    if not token_from_cookie and cookie_controller:
+        try:
+            token_from_cookie = cookie_controller.get(COOKIE_AUTH_NAME)
+        except Exception:
+            pass
+
+    if token_from_cookie and verify_auth_token(token_from_cookie, expected_password):
+        st.session_state["authenticated"] = True
+        return True
+
+    # 3. Nicht angemeldet: Login-Formular anzeigen
     st.markdown("""
         <div style='text-align: center; margin-top: 2rem;'>
             <h2>🔒 Zugriff geschützt</h2>
@@ -109,11 +163,24 @@ def check_password() -> bool:
     with col2:
         with st.form("login_form"):
             password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
+            remember_me = st.checkbox("Angemeldet bleiben (Login-Cookie für 7 Tage)", value=True)
             submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
 
             if submit:
                 if password_input == expected_password:
                     st.session_state["authenticated"] = True
+                    if remember_me and cookie_controller:
+                        try:
+                            token = generate_auth_token(expected_password)
+                            cookie_controller.set(
+                                COOKIE_AUTH_NAME,
+                                token,
+                                max_age=float(86400 * COOKIE_EXPIRY_DAYS),
+                                expires=datetime.now() + timedelta(days=COOKIE_EXPIRY_DAYS),
+                                same_site="lax"
+                            )
+                        except Exception as e:
+                            print(f"[Warnung] Cookie konnte nicht gesetzt werden: {e}")
                     st.toast("Erfolgreich angemeldet!", icon="🔓")
                     st.rerun()
                 else:
@@ -180,6 +247,12 @@ if get_configured_app_password():
     st.sidebar.caption("🔒 Status: Angemeldet")
     if st.sidebar.button("🚪 Abmelden", use_container_width=True):
         st.session_state["authenticated"] = False
+        if cookie_controller:
+            try:
+                cookie_controller.remove(COOKIE_AUTH_NAME)
+            except Exception:
+                pass
+        st.toast("Erfolgreich abgemeldet.", icon="🔒")
         st.rerun()
 
 # --- Main Layout & Data Loading ---
@@ -297,7 +370,31 @@ with tab3:
 
     sources_path = get_sources_path()
 
-    # --- Sektion 1: Neuen RSS-Feed hinzufügen ---
+    # --- Sektion 1: Neue Kategorie anlegen ---
+    with st.expander("📁 Neue Kategorie anlegen", expanded=False):
+        st.write("Erstelle eine neue Themen-Kategorie für deine Feeds (z. B. *Wissenschaft*, *Gaming*, *Finanzen*):")
+        col_cat_in, col_cat_btn = st.columns([3, 1], vertical_alignment="bottom")
+        with col_cat_in:
+            new_category_input = st.text_input(
+                "Name der neuen Kategorie:",
+                placeholder="z. B. Wissenschaft & Raumfahrt",
+                key="input_direct_new_category"
+            )
+        with col_cat_btn:
+            if st.button("➕ Kategorie anlegen", type="primary", use_container_width=True, key="btn_direct_create_cat"):
+                cat_clean = new_category_input.strip()
+                if not cat_clean:
+                    st.error("Bitte gib einen Namen für die Kategorie ein.")
+                else:
+                    success = add_category(cat_clean)
+                    if success:
+                        st.cache_data.clear()
+                        st.toast(f"✅ Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
+                        st.rerun()
+                    else:
+                        st.warning(f"Kategorie '{cat_clean}' existiert bereits.")
+
+    # --- Sektion 2: Neuen RSS-Feed hinzufügen ---
     with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=True):
         existing_categories = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
         cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
@@ -374,7 +471,7 @@ with tab3:
 
     st.markdown("---")
 
-    # --- Sektion 2: Aktive Feeds & Quellen bearbeiten / löschen ---
+    # --- Sektion 3: Aktive Feeds & Quellen bearbeiten / löschen ---
     st.markdown("### 📋 Aktive Feeds nach Kategorien")
     st.caption("Hier kannst du für jeden Feed die maximale Anzahl der Artikel festlegen, Feeds löschen oder deren Details bearbeiten.")
 
@@ -401,7 +498,7 @@ with tab3:
                         st.rerun()
 
             if not feeds:
-                st.info("Keine Feeds in dieser Kategorie vorhanden.")
+                st.info(f"💡 In der Kategorie '{cat_name}' sind noch keine Feeds hinterlegt. Du kannst oben einen neuen Feed hinzufügen oder diese Kategorie rechts oben löschen.")
             else:
                 for feed_idx, feed in enumerate(feeds):
                     f_name = feed.get("name", "Unbenannt")
@@ -464,7 +561,7 @@ with tab3:
 
     st.markdown("---")
 
-    # --- Sektion 3: Globale Einstellungen ---
+    # --- Sektion 4: Globale Einstellungen ---
     with st.expander("⚙️ Globale Einstellungen (sources.yaml)", expanded=False):
         current_settings = sources_config.get("settings", {})
         col_s1, col_s2, col_s3 = st.columns(3)
@@ -498,7 +595,7 @@ with tab3:
             st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
             st.rerun()
 
-    # --- Sektion 4: Live-Vorschau der sources.yaml Datei ---
+    # --- Sektion 5: Live-Vorschau der sources.yaml Datei ---
     with st.expander("📄 Live-Vorschau: config/sources.yaml", expanded=False):
         try:
             with open(sources_path, "r", encoding="utf-8") as f:

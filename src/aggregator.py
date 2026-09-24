@@ -164,6 +164,27 @@ def update_feed(
     return updated
 
 
+def add_category(
+    category_name: str,
+    config_path: str = "config/sources.yaml",
+) -> bool:
+    """Fügt eine neue Kategorie ohne Feeds hinzu, falls sie noch nicht existiert."""
+    category_name = category_name.strip()
+    if not category_name:
+        raise ValueError("Kategoriename darf nicht leer sein.")
+
+    config = load_sources(config_path)
+    categories = config.setdefault("categories", [])
+
+    for cat in categories:
+        if cat.get("name", "").strip().lower() == category_name.lower():
+            return False  # existiert bereits
+
+    categories.append({"name": category_name, "feeds": []})
+    save_sources(config, config_path)
+    return True
+
+
 def delete_category(
     category_name: str,
     config_path: str = "config/sources.yaml",
