@@ -84,6 +84,9 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
    ```toml
    GEMINI_API_KEY = "AIzaSy..."
    GEMINI_MODEL = "gemini-3.5-flash-lite"
+
+   # Optional: Passwortschutz gegen unbefugte Fremdnutzung
+   APP_PASSWORD = "mein_geheimes_passwort"
    ```
 5. Klicke auf **Deploy!**
 6. Nach ca. 1-2 Minuten ist deine Web-App live unter einer URL wie `https://dein-news-bot.streamlit.app` erreichbar.

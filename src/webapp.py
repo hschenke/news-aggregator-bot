@@ -48,8 +48,71 @@ st.markdown("""
         background-color: rgba(37, 99, 235, 0.15);
         color: #2563eb;
     }
+    .login-container {
+        max-width: 420px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background-color: var(--secondary-background-color);
+        border-radius: 1rem;
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
 </style>
 """, unsafe_allow_html=True)
+
+
+# --- Passwort-Schutz / Authentifizierung ---
+def get_configured_app_password() -> str:
+    """Liest das App-Passwort aus Umgebungsvariablen oder Streamlit Secrets."""
+    pw = os.getenv("APP_PASSWORD")
+    if not pw:
+        try:
+            if hasattr(st, "secrets") and "APP_PASSWORD" in st.secrets:
+                pw = str(st.secrets["APP_PASSWORD"])
+        except Exception:
+            pass
+    return (pw or "").strip()
+
+
+def check_password() -> bool:
+    """
+    Überprüft das App-Passwort.
+    Gibt True zurück, wenn kein Passwort definiert ist oder der Nutzer eingeloggt ist.
+    """
+    expected_password = get_configured_app_password()
+    if not expected_password:
+        return True  # Kein Passwort konfiguriert -> freier Zugang
+
+    if st.session_state.get("authenticated", False):
+        return True
+
+    # Login-Formular anzeigen
+    st.markdown("""
+        <div style='text-align: center; margin-top: 2rem;'>
+            <h2>🔒 Zugriff geschützt</h2>
+            <p style='color: gray;'>Diese App ist privat. Bitte gib das Passwort ein, um fortzufahren.</p>
+        </div>
+    """, unsafe_allow_html=True)
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        with st.form("login_form"):
+            password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
+            submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
+
+            if submit:
+                if password_input == expected_password:
+                    st.session_state["authenticated"] = True
+                    st.toast("Erfolgreich angemeldet!", icon="🔓")
+                    st.rerun()
+                else:
+                    st.error("❌ Falsches Passwort. Bitte erneut versuchen.")
+
+    return False
+
+
+if not check_password():
+    st.stop()
 
 
 # --- Caching Data Loading ---
@@ -99,6 +162,14 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.cache_data.clear()
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
+
+# Optional: Logout-Button bei aktivem Passwortschutz
+if get_configured_app_password():
+    st.sidebar.markdown("---")
+    st.sidebar.caption("🔒 Status: Angemeldet")
+    if st.sidebar.button("🚪 Abmelden", use_container_width=True):
+        st.session_state["authenticated"] = False
+        st.rerun()
 
 # --- Main Layout & Data Loading ---
 with st.spinner("Lade aktuelle Nachrichten aus den RSS-Feeds..."):
