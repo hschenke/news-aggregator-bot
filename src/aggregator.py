@@ -1,3 +1,6 @@
+import os
+import base64
+import requests
 import feedparser
 import yaml
 from datetime import datetime, timezone
@@ -15,6 +18,93 @@ def get_sources_path(config_path: str = "config/sources.yaml") -> Path:
     return path
 
 
+def get_github_sync_config() -> Dict[str, str]:
+    """Liest GitHub Sync Konfiguration aus Umgebungsvariablen oder Streamlit Secrets."""
+    token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    repo = os.getenv("GITHUB_REPO", "hschenke/news-aggregator-bot")
+    branch = os.getenv("GITHUB_BRANCH", "main")
+
+    if not token:
+        try:
+            import streamlit as st
+            if hasattr(st, "secrets"):
+                if "GITHUB_TOKEN" in st.secrets:
+                    token = str(st.secrets["GITHUB_TOKEN"])
+                elif "GH_TOKEN" in st.secrets:
+                    token = str(st.secrets["GH_TOKEN"])
+                if "GITHUB_REPO" in st.secrets:
+                    repo = str(st.secrets["GITHUB_REPO"])
+                if "GITHUB_BRANCH" in st.secrets:
+                    branch = str(st.secrets["GITHUB_BRANCH"])
+        except Exception:
+            pass
+
+    return {
+        "token": (token or "").strip(),
+        "repo": (repo or "hschenke/news-aggregator-bot").strip(),
+        "branch": (branch or "main").strip(),
+    }
+
+
+def sync_sources_to_github(
+    config_dict: Dict[str, Any] = None,
+    config_path: str = "config/sources.yaml",
+    commit_message: str = "chore(config): update sources.yaml via web dashboard"
+) -> Dict[str, Any]:
+    """
+    Pusht die aktuelle sources.yaml direkt per GitHub Contents API in das Repository.
+    Gibt {'success': True, 'commit_url': ...} oder {'success': False, 'error': ...} zurück.
+    """
+    gh_cfg = get_github_sync_config()
+    token = gh_cfg["token"]
+    if not token or token.startswith("your_"):
+        return {"success": False, "error": "Kein GITHUB_TOKEN hinterlegt."}
+
+    repo = gh_cfg["repo"]
+    branch = gh_cfg["branch"]
+    rel_path = "config/sources.yaml"
+
+    try:
+        if config_dict is not None:
+            yaml_content = yaml.dump(config_dict, allow_unicode=True, sort_keys=False, default_flow_style=False)
+        else:
+            file_path = get_sources_path(config_path)
+            with open(file_path, "r", encoding="utf-8") as f:
+                yaml_content = f.read()
+
+        url = f"https://api.github.com/repos/{repo}/contents/{rel_path}"
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github.v3+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+
+        # Aktuellen SHA der Datei auf GitHub ermitteln
+        sha = None
+        get_res = requests.get(url, headers=headers, params={"ref": branch}, timeout=8)
+        if get_res.status_code == 200:
+            sha = get_res.json().get("sha")
+
+        encoded_bytes = base64.b64encode(yaml_content.encode("utf-8")).decode("utf-8")
+        payload = {
+            "message": commit_message,
+            "content": encoded_bytes,
+            "branch": branch,
+        }
+        if sha:
+            payload["sha"] = sha
+
+        put_res = requests.put(url, headers=headers, json=payload, timeout=10)
+        if put_res.status_code in [200, 201]:
+            commit_data = put_res.json().get("commit", {})
+            html_url = commit_data.get("html_url", "")
+            return {"success": True, "commit_url": html_url, "error": None}
+        else:
+            return {"success": False, "commit_url": None, "error": f"Status {put_res.status_code}: {put_res.text}"}
+    except Exception as e:
+        return {"success": False, "commit_url": None, "error": str(e)}
+
+
 def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
     """Lädt die Konfiguration aus sources.yaml."""
     path = get_sources_path(config_path)
@@ -29,12 +119,21 @@ def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
     return data
 
 
-def save_sources(config: Dict[str, Any], config_path: str = "config/sources.yaml") -> None:
-    """Speichert die Quellenkonfiguration persistent in sources.yaml."""
+def save_sources(
+    config: Dict[str, Any],
+    config_path: str = "config/sources.yaml",
+    sync_github: bool = True
+) -> Dict[str, Any]:
+    """Speichert die Quellenkonfiguration persistent in sources.yaml und synchronisiert mit GitHub (falls konfiguriert)."""
     path = get_sources_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+
+    gh_res = {"success": False, "error": "Kein Token"}
+    if sync_github:
+        gh_res = sync_sources_to_github(config_dict=config, config_path=config_path)
+    return gh_res
 
 
 def add_feed(

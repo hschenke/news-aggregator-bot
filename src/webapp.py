@@ -24,6 +24,8 @@ from src.aggregator import (
     update_settings,
     test_feed_connection,
     get_sources_path,
+    get_github_sync_config,
+    sync_sources_to_github,
 )
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key
 
@@ -370,6 +372,25 @@ with tab3:
 
     sources_path = get_sources_path()
 
+    # --- GitHub-Sync Statusanzeige ---
+    gh_cfg = get_github_sync_config()
+    if gh_cfg["token"]:
+        st.success(f"🟢 **GitHub-Synchronisation aktiv:** Änderungen werden automatisch als Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) gespeichert.", icon="🐙")
+    else:
+        with st.expander("ℹ️ **Automatischer GitHub-Sync (Empfohlen für Streamlit Cloud)**", expanded=False):
+            st.markdown(f"""
+            Streamlit Community Cloud Container sind flüchtig (*ephemeral*). Bei einem Neustart der Cloud-App werden lokal gespeicherte Dateien auf den Stand des Git-Repositories zurückgesetzt.
+            
+            **So aktivierst du den automatischen Git-Push für das Dashboard:**
+            1. Erstelle ein GitHub-Token (Personal Access Token) unter [github.com/settings/tokens](https://github.com/settings/tokens) mit Schreibrechten (`repo` bzw. `contents:write`).
+            2. Trage in deinen **Streamlit Cloud App-Settings > Secrets** (oder lokal in `.env`) folgendes ein:
+            ```toml
+            GITHUB_TOKEN = "ghp_deinTokenHier"
+            GITHUB_REPO = "{gh_cfg['repo']}"
+            ```
+            3. **Fertig!** Danach spiegelt das Web-Dashboard jede Änderung sofort per Git-Commit in dein GitHub-Repository zurück – und GitHub Actions greift morgens automatisch auf die neuesten Feeds zu!
+            """)
+
     # --- Sektion 1: Neue Kategorie anlegen ---
     with st.expander("📁 Neue Kategorie anlegen", expanded=False):
         st.write("Erstelle eine neue Themen-Kategorie für deine Feeds (z. B. *Wissenschaft*, *Gaming*, *Finanzen*):")
@@ -601,12 +622,25 @@ with tab3:
             with open(sources_path, "r", encoding="utf-8") as f:
                 yaml_raw = f.read()
             st.code(yaml_raw, language="yaml")
-            st.download_button(
-                "📥 sources.yaml herunterladen",
-                data=yaml_raw,
-                file_name="sources.yaml",
-                mime="text/yaml"
-            )
+            col_v1, col_v2 = st.columns([1, 1])
+            with col_v1:
+                st.download_button(
+                    "📥 sources.yaml herunterladen",
+                    data=yaml_raw,
+                    file_name="sources.yaml",
+                    mime="text/yaml",
+                    use_container_width=True
+                )
+            with col_v2:
+                if gh_cfg["token"]:
+                    if st.button("🐙 Jetzt manuell zu GitHub committen", use_container_width=True):
+                        with st.spinner("Pushe zu GitHub..."):
+                            sync_res = sync_sources_to_github()
+                            if sync_res["success"]:
+                                st.success("✅ Erfolgreich zu GitHub synchronisiert!")
+                                st.toast("✅ Zu GitHub gepusht!", icon="🐙")
+                            else:
+                                st.error(f"❌ Fehler: {sync_res['error']}")
         except Exception as e:
             st.error(f"Konnte Datei nicht lesen: {e}")
 
