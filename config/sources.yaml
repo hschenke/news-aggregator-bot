@@ -20,6 +20,8 @@ categories:
   - name: RPG-Watch
     url: https://rpgwatch.com/files/rss1.xml
     max_items: 15
+- name: Policia
+  feeds: []
 settings:
   max_articles_per_category: 10
   language: de
