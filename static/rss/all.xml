@@ -5,41 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 16:22:57 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 16:25:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Meta is putting its muscle behind Muse as the AI app takes off</title>
-      <link>https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169621</guid>
-      <pubDate>Fri, 25 Sep 2026 15:16:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agents's promotion across its own apps and beyond.]]></description>
-    </item>
-    <item>
-      <title>Jevmem – automatic project memory for Claude Code, built on Jev</title>
-      <link>https://github.com/Avinash-jetwani/jevmem</link>
-      <guid isPermaLink="false">https://github.com/Avinash-jetwani/jevmem</guid>
-      <pubDate>Fri, 25 Sep 2026 15:04:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
     <item>
       <title>KI-Rechenzentren: Abwärme heizt angrenzende Wohngebiete auf</title>
       <link>https://www.heise.de/news/KI-Rechenzentren-Abwaerme-heizt-angrenzende-Wohngebiete-auf-11466676.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11466676</guid>
-      <pubDate>Fri, 25 Sep 2026 15:01:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 16:01:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[KI-Rechenzentren geben enorme Mengen Abwärme ab. Erste Studien belegen, dass dies die Temperaturen in angrenzenden Wohngebieten messbar ansteigen lässt.]]></description>
     </item>
     <item>
-      <title>Big Brother Awards: Negativpreise für Digital-Omnibus, Steuer-ID &amp; Smart Glasses</title>
+      <title>Big Brother Awards 2026: Negativpreis für Dobrindt, EU-Kommission, Telekom &amp; Co.</title>
       <link>https://www.heise.de/news/Big-Brother-Awards-2026-Negativpreis-fuer-Dobrindt-EU-Kommission-Telekom-Co-11463202.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463202</guid>
-      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 16:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Big Brother Award geht in diesem Jahr an die EU-Kommission, Innenminister Dobrindt, Telekom, Fielmann, Apollo-Optik und die Evangelische Nordkirche.]]></description>
@@ -48,7 +30,7 @@
       <title>For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts</title>
       <link>https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169293</guid>
-      <pubDate>Fri, 25 Sep 2026 14:48:14 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:48:14 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The latest unauthorized agent swarms were discovered by researchers.]]></description>
@@ -57,7 +39,7 @@
       <title>Chemie: BASF arbeitet an Übernahme von Evonik – Aktien reagieren kräftig</title>
       <link>https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</guid>
-      <pubDate>Fri, 25 Sep 2026 14:42:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:42:00 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[In Deutschlands Chemieindustrie bahnt sich ein Milliarden-Zusammenschluss an: BASF prüft den Kauf von Evonik. Beide bestätigen eine Kontaktaufnahme. Nun gibt es erste Details zum möglichen Deal.]]></description>
@@ -66,16 +48,25 @@
       <title>Anthropic’s founders seek voting control ahead of IPO</title>
       <link>https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169652</guid>
-      <pubDate>Fri, 25 Sep 2026 14:40:03 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:40:03 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Anthropic is asking its shareholders to approve a  structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters.]]></description>
     </item>
     <item>
+      <title>heise+ | Optische Speicher mit Terabyte-Kapazität: Folio Photonics im Check</title>
+      <link>https://www.heise.de/hintergrund/Optische-Speicher-mit-Terabyte-Kapazitaet-Folio-Photonics-im-Check-11359706.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11359706</guid>
+      <pubDate>Fri, 25 Sep 2026 15:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Folio Photonics will mit mehrschichtigen optischen Disks den Markt für Archivspeicher aufmischen. Die Daten sollen mindestens 50 Jahre halten.]]></description>
+    </item>
+    <item>
       <title>Classified Estimates Show the NSA Is Paying Billions to Test AI Models</title>
       <link>https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</link>
       <guid isPermaLink="false">https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</guid>
-      <pubDate>Fri, 25 Sep 2026 14:27:35 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:27:35 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -84,7 +75,7 @@
       <title>Warum diese Chipfirma niemand nachbauen kann</title>
       <link>https://www.heise.de/news/Warum-diese-Chipfirma-niemand-nachbauen-kann-11466614.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11466614</guid>
-      <pubDate>Fri, 25 Sep 2026 14:07:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:07:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Bei TSMC in Taiwan wird nahezu jeder High-End-Chip gefertigt: c't 3003 erklärt, warum die Firma zurzeit konkurrenzlos ist.]]></description>
@@ -93,7 +84,7 @@
       <title>TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware</title>
       <link>https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169500</guid>
-      <pubDate>Fri, 25 Sep 2026 14:00:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.]]></description>
@@ -102,25 +93,16 @@
       <title>Beats-360-Zubehör: Warten auf Apples Discount</title>
       <link>https://www.heise.de/news/Beats-360-Zubehoer-Warten-auf-Apples-Discount-11466672.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11466672</guid>
-      <pubDate>Fri, 25 Sep 2026 13:56:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 14:56:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Zum Verkaufsstart der neuen Beats-Kopfhörer-Topmodelle räumt Apple auf Zubehör einen deutlichen Rabatt ein. In Deutschland ist er aber noch nicht eingetroffen.]]></description>
     </item>
     <item>
-      <title>Wasserzeichen für KI-Texte: Anthropic weitet Anwendung aus</title>
-      <link>https://www.heise.de/news/Wasserzeichen-fuer-KI-Texte-Anthropic-weitet-Anwendung-aus-11466692.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11466692</guid>
-      <pubDate>Fri, 25 Sep 2026 13:40:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anthropic versieht weitere Claude-Modelle mit unsichtbaren Text-Wasserzeichen. Das Verfahren soll mit Claude erzeugte Texte erkennbar machen, hat aber Grenzen.]]></description>
-    </item>
-    <item>
       <title>RUSS BALLARD kommt auf „He Can Do &lt;b&gt;Magic&lt;/b&gt;“ Tour 2027 - lifePR</title>
       <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.lifepr.de/inaktiv/ass-concerts-promotion-gmbh/russ-ballard-kommt-auf-he-can-do-magic-tour-2027/boxid/1074144&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw1mZStQEXZvpcu9DvwD2pu9</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:52529751855888668</guid>
-      <pubDate>Fri, 25 Sep 2026 13:21:15 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 14:21:15 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[... Can Do Magic“-Tour auf die deutschen Bühnen zurück. Als Sänger und Leadgitarrist von Argent feierte BALLARD internationale Erfolge. Darüber hinaus&nbsp;...]]></description>
@@ -129,16 +111,25 @@
       <title>Affected by layoffs? Don’t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass</title>
       <link>https://techcrunch.com/2026/09/25/disrupt-2026-layoff-expo-plus-passes-available-for-75-dollars/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169207</guid>
-      <pubDate>Fri, 25 Sep 2026 13:15:00 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 14:15:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Your next opportunity could be one conversation away. Get your Expo+ Pass for just $75. Limited to the first 100 qualifying people.]]></description>
     </item>
     <item>
+      <title>Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5 of 5 to attend: Momentum</title>
+      <link>https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-of-5-to-attend-momentum/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3169398</guid>
+      <pubDate>Fri, 25 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Last 24 hours to save up to $200 on your TechCrunch Disrupt 2026 pass. Leave the event further in your startup's trajectory than where you started. Don't miss your chance to save and to push the needle.]]></description>
+    </item>
+    <item>
       <title>First Principles Thinking</title>
       <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
       <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
-      <pubDate>Fri, 25 Sep 2026 12:55:37 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 13:55:37 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -147,7 +138,7 @@
       <title>Friedensgespräche: USA schlagen Dreiertreffen mit Ukraine und Russland vor</title>
       <link>https://www.handelsblatt.com/politik/international/friedensgespraeche-usa-schlagen-dreiertreffen-mit-ukraine-und-russland-vor/100257481.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/friedensgespraeche-usa-schlagen-dreiertreffen-mit-ukraine-und-russland-vor/100257481.html</guid>
-      <pubDate>Fri, 25 Sep 2026 12:07:11 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 13:07:11 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Die USA haben ein trilaterales direktes Treffen mit der Ukraine und Russland in den Emiraten vorgeschlagen. Kiew wartet auf einen Termin, Moskau signalisiert Gesprächsbereitschaft.]]></description>
@@ -156,7 +147,7 @@
       <title>Risiko Lenkungsausfall: Volkswagen-Konzern ruft Millionen Autos zurück – Weitere Konzernmarken neben VW und Audi betroffen</title>
       <link>https://www.handelsblatt.com/unternehmen/industrie/volkswagen-vw-ruft-millionen-autos-zurueck-weitere-konzernmarken-betroffen/100257392.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/industrie/volkswagen-vw-ruft-millionen-autos-zurueck-weitere-konzernmarken-betroffen/100257392.html</guid>
-      <pubDate>Fri, 25 Sep 2026 11:52:23 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 12:52:23 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Ein Schraubenabriss kann bei mehreren Modellen aus dem VW-Konzern zum Ausfall der Lenkung führen. Der Rückruf könnte nach Handelsblatt-Informationen noch größer ausfallen als bislang bekannt.]]></description>
@@ -165,7 +156,7 @@
       <title>Platform-Independent SIMD in Go</title>
       <link>https://go.dev/blog/simd-experiment</link>
       <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
-      <pubDate>Fri, 25 Sep 2026 10:47:06 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 11:47:06 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -174,7 +165,7 @@
       <title>Git-bug: Distributed, offline-first bug tracker embedded in Git</title>
       <link>https://github.com/git-bug/git-bug</link>
       <guid isPermaLink="false">https://github.com/git-bug/git-bug</guid>
-      <pubDate>Fri, 25 Sep 2026 10:38:31 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 11:38:31 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -183,7 +174,7 @@
       <title>Späti ausgeraubt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</guid>
-      <pubDate>Fri, 25 Sep 2026 10:12:15 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 11:12:15 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -192,7 +183,7 @@
       <title>13-Jährige bei Unfall erheblich verletzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</guid>
-      <pubDate>Fri, 25 Sep 2026 08:11:47 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 09:11:47 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -201,7 +192,7 @@
       <title>Kinder auf Tretrollern angefahren</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</guid>
-      <pubDate>Fri, 25 Sep 2026 08:03:14 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 09:03:14 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -210,7 +201,7 @@
       <title>Jugendlicher mit Schussverletzungen im Krankenhaus</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</guid>
-      <pubDate>Fri, 25 Sep 2026 06:59:41 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 07:59:41 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -219,16 +210,25 @@
       <title>Regenbogenbank im Großen Tiergarten erneut beschädigt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</guid>
-      <pubDate>Fri, 25 Sep 2026 06:35:53 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 07:35:53 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
     </item>
     <item>
+      <title>Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini</title>
+      <link>https://nyaa.sh/reviews/mac-mini-m6-emulation</link>
+      <guid isPermaLink="false">https://nyaa.sh/reviews/mac-mini-m6-emulation</guid>
+      <pubDate>Fri, 25 Sep 2026 07:27:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Zenless Zone Zero - Roxy Character Demo</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60233</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60233</guid>
-      <pubDate>Fri, 25 Sep 2026 06:11:11 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 07:11:11 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Roxy is an upcoming playable character in Zenless Zone Zero:
@@ -241,7 +241,7 @@ Strictly speaking... This isn't part of my responsibilities... I just... Wanna g
       <title>CONTROL Resonant - Review @ Gameinformer</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60232</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60232</guid>
-      <pubDate>Fri, 25 Sep 2026 05:53:53 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:53:53 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Gameinformer reviewed CONTROL Resonant:
@@ -254,7 +254,7 @@ The more things change in Control Resonant, the more of it retains the best trai
       <title>The Blood of Dawnwalker - Review @ Cosmic Circus</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60231</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60231</guid>
-      <pubDate>Fri, 25 Sep 2026 05:49:03 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:49:03 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Cosmic Circus reviewed The Blood of Dawnwalker:
@@ -266,7 +266,7 @@ From the first announcements, The Blood of Dawnwalker was revealed to be a dark 
       <title>Blades of Mirage - Preview @ RPGFan</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60230</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60230</guid>
-      <pubDate>Fri, 25 Sep 2026 05:43:39 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:43:39 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[RPGFan checked out Blades of Mirage:
@@ -279,7 +279,7 @@ With 2026 being my second year covering Tokyo Game Show for RPGFan, it was nice 
       <title>Rogue Trader - The Processional of the Damned DLC</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60229</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60229</guid>
-      <pubDate>Fri, 25 Sep 2026 05:40:14 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:40:14 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The final DLC Processional of the Damned for Rogue Trader will be released in December:
@@ -292,7 +292,7 @@ We know you have been eagerly awaiting insights into the upcoming Warhammer 40,0
       <title>Brigandine Abyss - Preview @ RPGamer</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60228</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60228</guid>
-      <pubDate>Fri, 25 Sep 2026 05:34:11 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:34:11 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[RPGamer checked out Brigandine Abyss:
@@ -305,7 +305,7 @@ Brigandine: Abyss is a strategy RPG from Happinet and NIS America taking place a
       <title>Qliphah in Providence's Shadow - Review</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60227</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60227</guid>
-      <pubDate>Fri, 25 Sep 2026 05:30:28 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 06:30:28 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Noisy Pixel reviewed Qliphah in Providence's Shadow:
@@ -318,7 +318,7 @@ Score: 7/10]]></description>
       <title>USA und China: Xi lobt „richtige Haltung“ zu Taiwan und lacht über Trumps Lieblingswitz</title>
       <link>https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</guid>
-      <pubDate>Fri, 25 Sep 2026 04:08:13 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 05:08:13 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Von Rivalität keine Spur: Der US-Präsident empfängt Chinas Staats- und Parteichef in Washington mit großen Gesten. Eine Äußerung Xis zum Konfliktthema Taiwan sorgt für Rätselraten.]]></description>
@@ -327,7 +327,7 @@ Score: 7/10]]></description>
       <title>Heroes of &lt;b&gt;Might&lt;/b&gt; and &lt;b&gt;Magic&lt;/b&gt; III: The Board Game - Endless Possibilities - Gamefound</title>
       <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://gamefound.com/de/projects/archon-studio/heroes-of-might-and-magic-iii-the-board-game-factory-bulwark-forge-expansions/updates/8&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw0Xo196XUaWdNBAhGZRXW4a</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:9735821355602886294</guid>
-      <pubDate>Thu, 24 Sep 2026 16:38:52 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 17:38:52 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Heroes of Might and Magic III: The Board Game - Factory, Bulwark &amp; Forge Expansions. von Archon Studio. Lead mighty heroes and command iconic&nbsp;...]]></description>
@@ -336,7 +336,7 @@ Score: 7/10]]></description>
       <title>Allgemeinverfügung zur Kampfmittelbeseitigung am 30. September 2026</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</guid>
-      <pubDate>Thu, 24 Sep 2026 13:24:40 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 14:24:40 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -345,7 +345,7 @@ Score: 7/10]]></description>
       <title>Bauarbeiter bei Auseinandersetzungen verletzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</guid>
-      <pubDate>Thu, 24 Sep 2026 11:49:28 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 12:49:28 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -354,7 +354,7 @@ Score: 7/10]]></description>
       <title>Berlin startet mit KI-gestütztem Videoschutz</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</guid>
-      <pubDate>Thu, 24 Sep 2026 11:30:00 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 12:30:00 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -363,7 +363,7 @@ Score: 7/10]]></description>
       <title>Sachbeschädigung durch Feuer und Farbschmiererei</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</guid>
-      <pubDate>Thu, 24 Sep 2026 10:29:41 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 11:29:41 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -372,7 +372,7 @@ Score: 7/10]]></description>
       <title>Heroes of &lt;b&gt;Might&lt;/b&gt; and &lt;b&gt;Magic&lt;/b&gt; III Remake STEAM digital für Windows - Playasia</title>
       <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.play-asia.com/de/heroes-of-might-and-magic-iii-remake/13/70kdsf&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw3IZsdZloprE5-mifJK31zE</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1370275617867508560</guid>
-      <pubDate>Thu, 24 Sep 2026 10:14:47 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 11:14:47 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Return to the legendary world of Erathia in Heroes of Might &amp; Magic III Remake, a faithful reimagining of one of the most celebrated turn-based&nbsp;...]]></description>
@@ -381,7 +381,7 @@ Score: 7/10]]></description>
       <title>Versuchter Raub auf Motorrollerfahrerin – Tatverdächtige festgenommen</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</guid>
-      <pubDate>Thu, 24 Sep 2026 10:14:01 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 11:14:01 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -390,7 +390,7 @@ Score: 7/10]]></description>
       <title>Mann kündigte Amoktat an – mehrere Waffen beschlagnahmt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</guid>
-      <pubDate>Thu, 24 Sep 2026 09:34:20 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 10:34:20 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -399,7 +399,7 @@ Score: 7/10]]></description>
       <title>Microsoft Games - "Ad-Credit" System</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60226</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60226</guid>
-      <pubDate>Thu, 24 Sep 2026 08:49:07 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 09:49:07 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Microsoft has filed a patent for a system that provides promoted content (ads) in games earlier this month. It's been filed in the US only, and it's still early in the process; it hasn't received any search or patentability report yet - Gamesindustry:
@@ -410,7 +410,7 @@ Microsoft files patent for "ad-credit" syste...]]></description>
       <title>Überfall auf Hotel</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</guid>
-      <pubDate>Thu, 24 Sep 2026 08:17:32 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 09:17:32 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -419,7 +419,7 @@ Microsoft files patent for "ad-credit" syste...]]></description>
       <title>Seniorin fährt Kind an</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</guid>
-      <pubDate>Thu, 24 Sep 2026 08:07:00 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 09:07:00 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -428,7 +428,7 @@ Microsoft files patent for "ad-credit" syste...]]></description>
       <title>Qliphah in Providence's Shadow - Released</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60225</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60225</guid>
-      <pubDate>Thu, 24 Sep 2026 06:50:47 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 07:50:47 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Qliphah in Providence's Shadow has been released today:
@@ -439,7 +439,7 @@ Qliphah in Providence's Shadow - Gameplay Trailer]]></description>
       <title>Critical Shift - Open Playtest is live</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60224</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60224</guid>
-      <pubDate>Thu, 24 Sep 2026 06:36:01 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 07:36:01 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[You can checked out the tactical RPG Critical Shift now:
@@ -453,7 +453,7 @@ More importantly, you can download the playtest build and start playing...]]></d
       <title>Titan Quest II - Release Date: January 19, 2027</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60223</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60223</guid>
-      <pubDate>Thu, 24 Sep 2026 06:30:05 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 07:30:05 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Titan Quest II will be released on January 19, 2027:
@@ -467,7 +467,7 @@ Wield legendary weapons, defy destiny, and challenge Nemesis, the Goddess of Ret
       <title>Beaten Path - Announced for 2027</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60222</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60222</guid>
-      <pubDate>Thu, 24 Sep 2026 04:18:58 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 05:18:58 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The tactical RPG Beaten Path will be released in 2027:
@@ -480,7 +480,7 @@ Beaten Path is a turn-based tactical RPG set in a world ruled by fallen gods and
       <title>General News - Nightbound Demo available</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60221</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60221</guid>
-      <pubDate>Thu, 24 Sep 2026 04:13:52 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 05:13:52 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Daveyd spotted a demo for the Turn-Based-Tactics game Nightbound:
@@ -493,7 +493,7 @@ Two strangers share one house at the end of the world. Their only hope: trust ea
       <title>Vortex Force - Announced for 2028</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60220</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60220</guid>
-      <pubDate>Thu, 24 Sep 2026 04:09:22 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 05:09:22 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The tactical RPG Vortex Force has been announced for 2028:
@@ -505,7 +505,7 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <title>CONTROL Resonant - Release Day</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</guid>
-      <pubDate>Thu, 24 Sep 2026 03:54:44 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 04:54:44 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The action RPG CONTROL Resonant will be released today:
@@ -518,7 +518,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>Preisvergleich für &lt;b&gt;Might&lt;/b&gt; &amp;amp; &lt;b&gt;Magic&lt;/b&gt; Heroes Online - 7500 Hero Seals Beste Preise - G2A</title>
       <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.g2a.com/de/might-magic-heroes-online-7500-hero-seals-p10000048499&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw0GkpaYxaua8OV5xfmVSRCL</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6176494231920796184</guid>
-      <pubDate>Thu, 24 Sep 2026 03:41:11 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 04:41:11 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Might &amp; Magic Heroes Online - 7500 Hero Seals. zum besten Preis kaufen ⭐ Entdecke unschlagbare Preise, erstaunliche Verkäufe und exklusive&nbsp;...]]></description>
@@ -527,7 +527,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>Heroes of &lt;b&gt;Might&lt;/b&gt; &amp;amp; &lt;b&gt;Magic&lt;/b&gt; 4 (Taktik &amp;amp; Strategie) - 4P.de</title>
       <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.4p.de/page/1983%3Fw%3D%25E5%25B9%25BF%25E4%25B8%259C%25E6%259C%2588%25E9%25A5%25BC%25E5%258E%2582%25E5%25AE%25B6%25E6%2589%25B9%25E5%258F%2591%25E5%259C%25B0%25E5%259D%2580%25E5%258D%258F%25E5%258A%25A9%25E2%2598%25AA%25EF%25B8%258F%25E7%2594%25B5%25E8%25AF%259D%253A%252086.19927487682%25F0%259F%25A5%259D%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7%25E4%25B8%25AD%25E5%259B%25BD%25E5%258D%2581%25E5%25A4%25A7%25E6%259C%2588%25E9%25A5%25BC%25E5%258E%2582%25E5%25AE%25B6%25F0%259F%2590%258B%25E5%258C%2597%25E4%25BA%25AC%25E7%259A%2584%25E6%259C%2588%25E9%25A5%25BC%25E6%2598%25AF%25E4%25BB%2580%25E4%25B9%2588%25E9%25A6%2585%25E7%259A%2584%25F0%259F%2592%2584%25E5%259C%25A8%25E8%25BF%2599%25E6%259C%2588%25E5%259C%2586%25E4%25BA%25BA%25E5%259B%25A2%25E5%259C%2586%25E7%259A%2584%25E6%2597%25B6%25E5%2588%25BB%25EF%25BC%258C%25E6%2588%2591%25E4%25BB%25AC%25E7%259A%2584%25E6%259C%2588%25E9%25A5%25BC%25E4%25B8%258D%25E4%25BB%2585%25E6%2598%25AF%25E8%258A%2582%25E6%2597%25A5%25E7%259A%2584%25E8%25B1%25A1%25E5%25BE%2581%25EF%25BC%258C%25E6%259B%25B4%25E6%2598%25AF%25E6%2583%2585%25E6%2584%259F%25E7%259A%2584%25E4%25BC%25A0%25E9%2580%2592%25E8%2580%2585%25E3%2580%2582%25E6%25AF%258F%25E4%25B8%2580%25E5%258F%25A3%25E9%2583%25BD%25E8%2595%25B4%25E5%2590%25AB%25E7%259D%2580%25E6%25B7%25B1%25E6%25B7%25B1%25E7%259A%2584%25E6%2580%259D%25E5%25BF%25B5%25E5%2592%258C%25E7%25BE%258E%25E5%25A5%25BD%25E7%259A%2584%25E7%25A5%259D%25E7%25A6%258F%25E3%2580%2582%25F0%259F%2593%258C%25E5%259C%2586%25E5%25BD%25A2%25E6%259C%2588%25E9%25A5%25BC%25E7%259B%2592%25F0%259F%258F%25B0%25E4%25B8%25AD%25E7%25A7%258B%25E5%25B0%258F%25E6%259C%2588%25E9%25A5%25BC%253Ftext%253DYBZQ&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw35ZHOL2f2nd2Z5EzAsybuR</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7734350937307295690</guid>
-      <pubDate>Thu, 24 Sep 2026 01:17:30 GMT</pubDate>
+      <pubDate>Thu, 24 Sep 2026 02:17:30 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Heroes of Might &amp; Magic 4 (Taktik &amp; Strategie) – Heroes of Might &amp; Magic 4. Veröffentlicht inTests &middot; Heroes of Might &amp; Magic 4 (Taktik&nbsp;...]]></description>
@@ -536,7 +536,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</guid>
-      <pubDate>Wed, 23 Sep 2026 13:02:35 GMT</pubDate>
+      <pubDate>Wed, 23 Sep 2026 14:02:35 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -545,7 +545,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>Distanzelektroimpulsgerät eingesetzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</link>
       <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</guid>
-      <pubDate>Wed, 23 Sep 2026 11:19:53 GMT</pubDate>
+      <pubDate>Wed, 23 Sep 2026 12:19:53 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
@@ -554,7 +554,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>NICHTLUSTIG-Cartoon: EINSCHLAFEN</title>
       <link>https://joscha.com/nichtlustig/260921/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/36ac8e558ac7690b6f44e2cb5ef93322</guid>
-      <pubDate>Sun, 20 Sep 2026 23:00:00 GMT</pubDate>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 GMT</pubDate>
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'EINSCHLAFEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
@@ -563,7 +563,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>NICHTLUSTIG-Cartoon: HÖHLENMALEREIEN</title>
       <link>https://joscha.com/nichtlustig/260914/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/6f2688a5fce7d48c8d19762b88c32c3b</guid>
-      <pubDate>Sun, 13 Sep 2026 23:00:00 GMT</pubDate>
+      <pubDate>Mon, 14 Sep 2026 00:00:00 GMT</pubDate>
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'HÖHLENMALEREIEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
@@ -572,7 +572,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>NICHTLUSTIG-Cartoon: BABY</title>
       <link>https://joscha.com/nichtlustig/260908/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/7af6266cc52234b5aa339b16695f7fc4</guid>
-      <pubDate>Mon, 07 Sep 2026 23:00:00 GMT</pubDate>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'BABY' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
@@ -581,7 +581,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>NICHTLUSTIG-Cartoon: Auf dem Rücken</title>
       <link>https://joscha.com/nichtlustig/251227/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/15d185eaa7c954e77f5343d941e25fbd</guid>
-      <pubDate>Fri, 26 Dec 2025 23:00:00 GMT</pubDate>
+      <pubDate>Sat, 27 Dec 2025 00:00:00 GMT</pubDate>
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'Auf dem Rücken' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
@@ -590,7 +590,7 @@ Explore a warped Manhattan on the brink of paranatural annihilation in this thri
       <title>⭐ Ein Weihnachtswunsch</title>
       <link>https://joscha.com/blog/ein-weihnachtswunsch/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/70efdf2ec9b086079795c442636b55fb</guid>
-      <pubDate>Mon, 22 Dec 2025 10:13:00 GMT</pubDate>
+      <pubDate>Mon, 22 Dec 2025 11:13:00 GMT</pubDate>
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Ich habe eine sehr weit gefasste Definition von Kunst. Alles was mit einer persönlichen Vision erschaffen wurde, fällt für mich darunter. Das kann ein Gemälde sein, aber auch ein Podcast oder ein Kuchen. 

@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 16:22:57 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 16:25:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Platform-Independent SIMD in Go</title>
       <link>https://go.dev/blog/simd-experiment</link>
       <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
-      <pubDate>Fri, 25 Sep 2026 10:47:06 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 11:47:06 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -21,7 +21,7 @@
       <title>Git-bug: Distributed, offline-first bug tracker embedded in Git</title>
       <link>https://github.com/git-bug/git-bug</link>
       <guid isPermaLink="false">https://github.com/git-bug/git-bug</guid>
-      <pubDate>Fri, 25 Sep 2026 10:38:31 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 11:38:31 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -30,16 +30,7 @@
       <title>First Principles Thinking</title>
       <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
       <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
-      <pubDate>Fri, 25 Sep 2026 12:55:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Jevmem – automatic project memory for Claude Code, built on Jev</title>
-      <link>https://github.com/Avinash-jetwani/jevmem</link>
-      <guid isPermaLink="false">https://github.com/Avinash-jetwani/jevmem</guid>
-      <pubDate>Fri, 25 Sep 2026 15:04:04 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 13:55:37 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -48,7 +39,16 @@
       <title>Classified Estimates Show the NSA Is Paying Billions to Test AI Models</title>
       <link>https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</link>
       <guid isPermaLink="false">https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</guid>
-      <pubDate>Fri, 25 Sep 2026 14:27:35 GMT</pubDate>
+      <pubDate>Fri, 25 Sep 2026 15:27:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini</title>
+      <link>https://nyaa.sh/reviews/mac-mini-m6-emulation</link>
+      <guid isPermaLink="false">https://nyaa.sh/reviews/mac-mini-m6-emulation</guid>
+      <pubDate>Fri, 25 Sep 2026 07:27:45 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
