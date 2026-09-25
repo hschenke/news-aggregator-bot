@@ -22,10 +22,12 @@ categories:
     max_items: 15
 - name: Policia
   feeds:
-  - name: RPG-Watch
+  - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
     max_items: 15
 settings:
   max_articles_per_category: 10
   language: de
-  summary_style: executive_bullet_points
+  summary_style: tldr
+  streamlit_app_url: https://news-aggregator-bot.streamlit.app
+

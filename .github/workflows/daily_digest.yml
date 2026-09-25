@@ -37,6 +37,7 @@ jobs:
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-aggregator-bot.streamlit.app' }}
         run: |
           python src/main.py
 

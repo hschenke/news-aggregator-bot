@@ -268,7 +268,7 @@ total_categories = len(news_data)
 total_articles = sum(len(items) for items in news_data.values())
 total_feeds = sum(len(c.get("feeds", [])) for c in sources_config.get("categories", []))
 
-st.title("📰 Daily Executive Briefing")
+st.title("📰 Daily News Briefing")
 st.caption(f"Intelligente Nachrichten-Kuratierung • Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
 # KPI Row
@@ -295,7 +295,7 @@ with tab1:
     with col_btn:
         generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
     with col_info:
-        st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Executive Briefing.")
+        st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes TL;DR-Briefing.")
 
     if generate_clicked:
         with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
@@ -328,7 +328,14 @@ with tab2:
     
     with filter_col1:
         category_options = ["Alle Kategorien"] + list(news_data.keys())
-        selected_cat = st.selectbox("Nach Kategorie filtern:", category_options)
+        default_cat_idx = 0
+        qp_cat = st.query_params.get("category", "")
+        if qp_cat:
+            for idx, c in enumerate(category_options):
+                if c.strip().lower() == qp_cat.strip().lower():
+                    default_cat_idx = idx
+                    break
+        selected_cat = st.selectbox("Nach Kategorie filtern:", category_options, index=default_cat_idx)
         
     with filter_col2:
         search_query = st.text_input("🔍 Artikel durchsuchen (Stichwort):", placeholder="z. B. AI, Apple, Wirtschaft...")
@@ -733,16 +740,24 @@ with tab3:
             lang_idx = lang_options.index(current_lang) if current_lang in lang_options else 0
             setting_lang = st.selectbox("Sprache für Zusammenfassung:", options=lang_options, index=lang_idx)
         with col_s3:
-            current_style = current_settings.get("summary_style", "executive_bullet_points")
-            style_options = ["executive_bullet_points", "bullet_points", "narrative"]
+            current_style = current_settings.get("summary_style", "tldr")
+            style_options = ["tldr", "executive_bullet_points", "bullet_points", "narrative"]
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
+
+        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot.streamlit.app"))
+        setting_app_url = st.text_input(
+            "Streamlit App URL:",
+            value=default_app_url,
+            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+        )
 
         if st.button("💾 Globale Einstellungen in sources.yaml speichern", type="primary"):
             update_settings({
                 "max_articles_per_category": setting_max_cat,
                 "language": setting_lang,
                 "summary_style": setting_style,
+                "streamlit_app_url": setting_app_url.strip(),
             })
             st.cache_data.clear()
             st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")

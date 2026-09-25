@@ -58,7 +58,8 @@ def markdown_to_html_email(markdown_content: str) -> str:
     }}
     .header {{
       background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      color: #ffffff;
+      background-color: #1e293b;
+      color: #ffffff !important;
       padding: 28px 32px;
       text-align: left;
     }}
@@ -67,16 +68,17 @@ def markdown_to_html_email(markdown_content: str) -> str:
       font-size: 24px;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: #ffffff !important;
     }}
     .header p {{
       margin: 0;
-      color: #94a3b8;
+      color: #94a3b8 !important;
       font-size: 14px;
     }}
     .content {{
       padding: 32px;
     }}
-    h1, h2, h3 {{
+    .content h1, .content h2, .content h3 {{
       color: #0f172a;
       letter-spacing: -0.01em;
     }}
@@ -89,6 +91,14 @@ def markdown_to_html_email(markdown_content: str) -> str:
     h3 {{
       font-size: 16px;
       margin-top: 20px;
+    }}
+    blockquote {{
+      margin: 8px 0 16px 0;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-left: 3px solid #2563eb;
+      color: #475569;
+      font-size: 13px;
     }}
     ul {{
       padding-left: 20px;
@@ -103,27 +113,16 @@ def markdown_to_html_email(markdown_content: str) -> str:
     a:hover {{
       text-decoration: underline;
     }}
-    .footer {{
-      border-top: 1px solid #e5e7eb;
-      padding: 20px 32px;
-      background: #f8fafc;
-      font-size: 13px;
-      color: #64748b;
-      text-align: center;
-    }}
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
-      <h1>⚡ News Aggregator Bot</h1>
-      <p>Tages-Briefing für den {current_date}</p>
+    <div class="header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); background-color: #1e293b; color: #ffffff !important; padding: 28px 32px; text-align: left;">
+      <h1 style="color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.02em;">⚡ News Aggregator Bot</h1>
+      <p style="color: #94a3b8 !important; margin: 0; font-size: 14px;">Tages-Briefing für den {current_date}</p>
     </div>
     <div class="content">
       {body_html}
-    </div>
-    <div class="footer">
-      Automatisch generiert &amp; kuratiert durch deinen News Aggregator Bot.
     </div>
   </div>
 </body>
