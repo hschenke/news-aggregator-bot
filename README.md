@@ -95,7 +95,23 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 
 ---
 
+### 📡 Weg C: Eigene RSS-Feeds abonnieren (RSS-Feed-Server)
+
+Die Web-App dient gleichzeitig als dein eigener, unabhängiger **RSS-Feed-Server**! Alle aggregierten Nachrichten stehen als standardkonforme RSS 2.0 Feeds zur Verfügung:
+
+- **🌟 Gesamt-Feed**: Alle aggregierten Artikel aus allen Kategorien chronologisch (`/app/static/rss/all.xml`).
+- **📁 Kategorie-Feeds**: Für jedes Thema ein eigener Feed (z. B. `Tech & AI`, `Finanzen`, `Games` unter `/app/static/rss/kategorien/<slug>.xml`).
+- **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`/app/static/rss/feeds/<slug>.xml`).
+
+#### Aufruf & Nutzung:
+1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://dein-news-bot.streamlit.app/?page=rss` auf.
+2. Kopiere die gewünschte Feed-URL oder klicke auf **"➕ 1-Click Abo"**, um den Feed direkt in deinem RSS-Reader (z. B. **NetNewsWire**, **Feedly**, **Apple News**, **Inoreader**, **Thunderbird**, **Outlook**) einzubinden.
+3. Jeder Feed kann zusätzlich als `.xml`-Datei heruntergeladen oder per Live-Code-Vorschau inspiziert werden.
+
+---
+
 ## 📁 Projektstruktur
+
 
 ```text
 news-aggregator-bot/
@@ -111,8 +127,11 @@ news-aggregator-bot/
 │   ├── aggregator.py              # Sammelt & filtert RSS-News
 │   ├── summarizer.py              # LLM-Zusammenfassung via Gemini API
 │   ├── notifier.py                # HTML-Mail Generator & Versand
+│   ├── rss_generator.py           # RSS 2.0 Generator & Static Feed Exporter
 │   ├── main.py                    # Pipeline-Skript für Weg A (E-Mail)
-│   └── webapp.py                  # Streamlit Dashboard für Weg B
+│   └── webapp.py                  # Streamlit Dashboard für Weg B & C
+├── static/
+│   └── rss/                       # Bereitgestellte RSS 2.0 Feeds (Gesamt, Kategorien, Quellen)
 ├── streamlit_app.py               # Root Entrypoint für Streamlit Cloud
 ├── requirements.txt               # Python-Abhängigkeiten
 ├── .env.example                   # Vorlage für lokale Umgebungsvariablen

@@ -429,7 +429,7 @@ def test_feed_connection(feed_url: str, timeout: int = 8) -> Dict[str, Any]:
 
 
 
-def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, str]]:
+def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, Any]]:
     """Liest einen RSS- oder Atom-Feed ein und gibt relevante Artikel zurück."""
     try:
         parsed = feedparser.parse(feed_url)
@@ -446,10 +446,17 @@ def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, str]]:
                 if len(summary) > 300:
                     summary = summary[:297] + "..."
 
+            published = getattr(entry, "published", "") or getattr(entry, "updated", "")
+            published_parsed = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)
+            guid = getattr(entry, "id", "") or link
+
             items.append({
                 "title": title,
                 "link": link,
-                "summary": summary
+                "summary": summary,
+                "published": published,
+                "published_parsed": published_parsed,
+                "guid": guid,
             })
         return items
     except Exception as e:
@@ -457,10 +464,10 @@ def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, str]]:
         return []
 
 
-def collect_all_news(config_path: str = "config/sources.yaml") -> Dict[str, List[Dict[str, str]]]:
-    """Sammelt alle News aus allen konfigurierten Kategorien."""
+def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> Dict[str, List[Dict[str, Any]]]:
+    """Sammelt alle News aus allen konfigurierten Kategorien und aktualisiert optional die RSS-Feeds."""
     config = load_sources(config_path)
-    collected: Dict[str, List[Dict[str, str]]] = {}
+    collected: Dict[str, List[Dict[str, Any]]] = {}
 
     for cat in config.get("categories", []):
         cat_name = cat.get("name", "Allgemein")
@@ -473,9 +480,19 @@ def collect_all_news(config_path: str = "config/sources.yaml") -> Dict[str, List
             items = fetch_feed_items(url, max_items)
             for it in items:
                 it["source"] = feed_name
+                it["source_url"] = url
+                it["category"] = cat_name
                 collected[cat_name].append(it)
+
+    if export_rss:
+        try:
+            from src.rss_generator import export_all_rss_feeds
+            export_all_rss_feeds(collected, config=config)
+        except Exception as e:
+            print(f"[Hinweis] RSS-Feed-Export konnte nicht ausgeführt werden: {e}")
                 
     return collected
+
 
 
 if __name__ == "__main__":

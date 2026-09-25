@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News Bot — Hacker News (Top) (Tech &amp; AI)</title>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
+    <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
+    <language>de</language>
+    <lastBuildDate>Fri, 25 Sep 2026 15:35:45 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/app/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Allow Carriers on Planes</title>
+      <link>https://www.jefftk.com/p/allow-carriers-on-planes</link>
+      <guid isPermaLink="false">https://www.jefftk.com/p/allow-carriers-on-planes</guid>
+      <pubDate>Fri, 25 Sep 2026 13:00:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Platform-Independent SIMD in Go</title>
+      <link>https://go.dev/blog/simd-experiment</link>
+      <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
+      <pubDate>Fri, 25 Sep 2026 10:47:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Git-bug: Distributed, offline-first bug tracker embedded in Git</title>
+      <link>https://github.com/git-bug/git-bug</link>
+      <guid isPermaLink="false">https://github.com/git-bug/git-bug</guid>
+      <pubDate>Fri, 25 Sep 2026 10:38:31 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini</title>
+      <link>https://nyaa.sh/reviews/mac-mini-m6-emulation</link>
+      <guid isPermaLink="false">https://nyaa.sh/reviews/mac-mini-m6-emulation</guid>
+      <pubDate>Fri, 25 Sep 2026 06:27:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Ink and Switch Interactive Homepage</title>
+      <link>https://www.inkandswitch.com/</link>
+      <guid isPermaLink="false">https://www.inkandswitch.com/</guid>
+      <pubDate>Fri, 25 Sep 2026 08:50:25 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+  </channel>
+</rss>

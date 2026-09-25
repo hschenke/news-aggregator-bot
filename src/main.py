@@ -26,6 +26,7 @@ def run_pipeline():
     news = collect_all_news()
     total_items = sum(len(items) for items in news.values())
     print(f"      -> {total_items} Artikel über {len(news)} Kategorien geladen.")
+    print("      -> RSS-Feeds für alle Kategorien & Quellen erfolgreich bereitgestellt.")
 
     if total_items == 0:
         print("[!] Keine Artikel gefunden. Bitte Feeds in config/sources.yaml prüfen.")

@@ -29,7 +29,8 @@ from src.aggregator import (
     get_github_sync_config,
     sync_sources_to_github,
 )
-from src.summarizer import summarize_news_with_gemini, get_configured_api_key
+from src.summarizer import summarize_news_with_gemini, get_configured_api_key, get_streamlit_app_url
+from src.rss_generator import export_all_rss_feeds
 
 try:
     from streamlit_cookies_controller import CookieController
@@ -420,6 +421,19 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
+is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
+
+if is_viewing_rss:
+    if st.sidebar.button("🏠 Zum Briefing / Dashboard", use_container_width=True, key="sb_btn_to_briefing"):
+        for k in ["page", "tab", "view"]:
+            if k in st.query_params:
+                del st.query_params[k]
+        st.rerun()
+else:
+    if st.sidebar.button("📡 RSS-Feeds abonnieren", use_container_width=True, key="sb_btn_to_rss"):
+        st.query_params["page"] = "rss"
+        st.rerun()
+
 # Unsaved changes status & buttons in sidebar
 if has_unsaved_changes and (st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()):
     st.sidebar.markdown("---")
@@ -502,21 +516,30 @@ col4.metric("🤖 LLM Engine", selected_model.replace("gemini-", "Gemini "))
 
 st.markdown("---")
 
-# Navigation Tabs: Wenn der Nutzer über einen Kategorien-/Feed-Link aus der E-Mail kommt,
-# wird der Tab 'Alle Artikel durchsuchen' direkt als aktiver Tab geöffnet!
+# Navigation Tabs: Je nach URL-Parametern wird der passende Tab direkt als aktiver Tab geöffnet!
 is_viewing_feed = bool(st.query_params.get("category") or st.query_params.get("feed"))
+is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
 manage_tab_title = "⚙️ Quellen & Feeds verwalten 🔴" if has_unsaved_changes else "⚙️ Quellen & Feeds verwalten"
 
-if is_viewing_feed:
-    tab_articles, tab_briefing, tab_manage = st.tabs([
+if is_viewing_rss:
+    tab_rss, tab_briefing, tab_articles, tab_manage = st.tabs([
+        "📡 Eigene RSS-Feeds",
+        "✨ KI-Tages-Briefing",
+        "📋 Alle Artikel durchsuchen",
+        manage_tab_title
+    ])
+elif is_viewing_feed:
+    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
         "📋 Alle Artikel durchsuchen",
         "✨ KI-Tages-Briefing",
+        "📡 Eigene RSS-Feeds",
         manage_tab_title
     ])
 else:
-    tab_briefing, tab_articles, tab_manage = st.tabs([
+    tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
         "✨ KI-Tages-Briefing",
         "📋 Alle Artikel durchsuchen",
+        "📡 Eigene RSS-Feeds",
         manage_tab_title
     ])
 
@@ -654,8 +677,178 @@ with tab_articles:
     if displayed_count == 0:
         st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
+# ----------------- TAB: Eigene RSS-Feeds -----------------
+with tab_rss:
+    st.subheader("📡 Eigene RSS-Feeds abonnieren")
+    st.caption("Verwandle deinen News Aggregator Bot in deinen persönlichen RSS-Server! Alle gesammelten Artikel stehen als standardkonforme RSS 2.0 Feeds zur Verfügung.")
+
+    app_base_url = working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
+    app_base_url = (app_base_url or "").rstrip("/")
+
+    # Oberer Info- und Aktionsbalken
+    col_rss_top1, col_rss_top2, col_rss_top3 = st.columns([2, 1, 1], vertical_alignment="center")
+    with col_rss_top1:
+        st.caption(f"🌐 **Server-Basis-URL:** `{app_base_url}`")
+    with col_rss_top2:
+        if st.button("🔄 Feeds neu generieren", key="btn_refresh_rss", use_container_width=True):
+            st.cache_data.clear()
+            st.toast("RSS-Feeds wurden frisch generiert!", icon="📡")
+            st.rerun()
+    with col_rss_top3:
+        rss_feed_view_mode = st.selectbox(
+            "Ansicht:",
+            options=["Alle Feeds", "Nur Kategorien", "Nur Einzel-Feeds"],
+            key="sel_rss_view_mode",
+            label_visibility="collapsed"
+        )
+
+    # Feeds exportieren und Registry laden
+    rss_registry = export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
+
+    # 1. Gesamt-Feed (Alle Nachrichten)
+    if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:
+        all_info = rss_registry.get("all", {})
+        with st.container(border=True):
+            col_all_h1, col_all_h2 = st.columns([3, 1], vertical_alignment="center")
+            with col_all_h1:
+                st.markdown("### 🌟 Alle Nachrichten (Gesamt-Feed)")
+                st.write("Enthält alle aggregierten Artikel aus sämtlichen Kategorien und Quellen chronologisch geordnet.")
+            with col_all_h2:
+                st.metric("Gesamtartikel", all_info.get("item_count", 0))
+
+            all_url = all_info.get("http_url", "")
+            feed_proto_url = all_url.replace("https://", "feed://").replace("http://", "feed://")
+
+            st.code(all_url, language="text")
+
+            col_u1, col_u2, col_u3 = st.columns(3)
+            with col_u1:
+                st.link_button("↗️ Im Browser öffnen", all_url, use_container_width=True)
+            with col_u2:
+                st.download_button(
+                    "📥 XML herunterladen",
+                    data=all_info.get("xml_preview", ""),
+                    file_name="news_bot_all.xml",
+                    mime="application/rss+xml",
+                    use_container_width=True,
+                    key="dl_btn_all_rss"
+                )
+            with col_u3:
+                st.link_button("➕ 1-Click Abo (feed://)", feed_proto_url, use_container_width=True, help="Öffnet den Feed direkt im Standard-RSS-Reader deines Betriebssystems (z. B. Apple News, NetNewsWire)")
+
+            with st.expander("👁️ RSS-XML-Vorschau anzeigen", expanded=False):
+                st.code(all_info.get("xml_preview", ""), language="xml")
+
+        st.markdown("---")
+
+    # 2. Kategorie-Feeds
+    if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:
+        categories_rss = rss_registry.get("categories", [])
+        st.markdown(f"### 📁 Feeds nach Themen-Kategorien ({len(categories_rss)})")
+        st.write("Abonniere gezielt nur die Themen, die dich interessieren:")
+
+        cat_cols = st.columns(2)
+        for idx, cat_item in enumerate(categories_rss):
+            with cat_cols[idx % 2]:
+                with st.container(border=True):
+                    col_ch1, col_ch2 = st.columns([3, 1], vertical_alignment="center")
+                    with col_ch1:
+                        st.markdown(f"#### 📁 {cat_item['name']}")
+                    with col_ch2:
+                        st.caption(f"**{cat_item['item_count']}** Artikel")
+
+                    st.caption(f"Enthält Beiträge aus {cat_item['feed_count']} konfigurierten Feeds.")
+                    cat_url = cat_item['http_url']
+                    cat_feed_proto = cat_url.replace("https://", "feed://").replace("http://", "feed://")
+
+                    st.code(cat_url, language="text")
+
+                    col_cbtn1, col_cbtn2, col_cbtn3 = st.columns(3)
+                    with col_cbtn1:
+                        st.link_button("↗️ Öffnen", cat_url, use_container_width=True)
+                    with col_cbtn2:
+                        st.download_button(
+                            "📥 XML",
+                            data=cat_item['xml_preview'],
+                            file_name=f"{cat_item['slug']}.xml",
+                            mime="application/rss+xml",
+                            use_container_width=True,
+                            key=f"dl_cat_{cat_item['slug']}"
+                        )
+                    with col_cbtn3:
+                        st.link_button("➕ 1-Click", cat_feed_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
+
+                    with st.expander(f"👁️ XML ({cat_item['name']}) ansehen", expanded=False):
+                        st.code(cat_item['xml_preview'], language="xml")
+
+        st.markdown("---")
+
+    # 3. Einzel-Feeds nach Quellen
+    if rss_feed_view_mode in ["Alle Feeds", "Nur Einzel-Feeds"]:
+        feeds_rss = rss_registry.get("feeds", [])
+        st.markdown(f"### 📡 Feeds einzelner Quellen ({len(feeds_rss)})")
+        st.write("Aufbereitete Feeds für jede spezifische Nachrichtenquelle:")
+
+        all_cat_options = ["Alle Kategorien"] + sorted(list({f['category'] for f in feeds_rss}))
+        selected_feed_cat = st.selectbox("Quellen filtern nach Kategorie:", all_cat_options, key="sel_filter_source_cat")
+
+        filtered_feeds = [f for f in feeds_rss if selected_feed_cat == "Alle Kategorien" or f['category'] == selected_feed_cat]
+
+        feed_grid = st.columns(2)
+        for idx, f_item in enumerate(filtered_feeds):
+            with feed_grid[idx % 2]:
+                with st.container(border=True):
+                    col_fh1, col_fh2 = st.columns([3, 1], vertical_alignment="center")
+                    with col_fh1:
+                        st.markdown(f"**📡 {f_item['name']}**")
+                    with col_fh2:
+                        st.caption(f"📁 {f_item['category']}")
+
+                    st.caption(f"Artikel im Pool: **{f_item['item_count']}** • [Original-Feed ansehen]({f_item['original_url']})")
+                    f_url = f_item['http_url']
+                    f_proto = f_url.replace("https://", "feed://").replace("http://", "feed://")
+
+                    st.code(f_url, language="text")
+
+                    col_fbtn1, col_fbtn2, col_fbtn3 = st.columns(3)
+                    with col_fbtn1:
+                        st.link_button("↗️ Öffnen", f_url, use_container_width=True)
+                    with col_fbtn2:
+                        st.download_button(
+                            "📥 XML",
+                            data=f_item['xml_preview'],
+                            file_name=f"{f_item['slug']}.xml",
+                            mime="application/rss+xml",
+                            use_container_width=True,
+                            key=f"dl_single_feed_{f_item['slug']}"
+                        )
+                    with col_fbtn3:
+                        st.link_button("➕ 1-Click", f_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
+
+                    with st.expander(f"👁️ XML ({f_item['name']}) ansehen", expanded=False):
+                        st.code(f_item['xml_preview'], language="xml")
+
+        st.markdown("---")
+
+    # 4. Anleitung für RSS-Reader
+    with st.expander("ℹ️ **Anleitung: Wie binde ich diese Feeds in meinen RSS-Reader ein?**", expanded=False):
+        st.markdown(f"""
+        ### So abonnierst du deine persönlichen Feeds:
+        1. **URL kopieren**: Klicke oben im Kasten des gewünschten Feeds auf das Kopier-Icon des Code-Blocks (z. B. `{app_base_url}/app/static/rss/all.xml`).
+        2. **RSS-Reader öffnen**: Starte deinen bevorzugten News-Reader (z. B. *NetNewsWire*, *Feedly*, *Apple News*, *Inoreader*, *Thunderbird*, *Outlook* etc.).
+        3. **Feed hinzufügen**:
+           - **NetNewsWire / Reeder**: Menü `Feed` > `Add Web Feed...` > URL einfügen > `Add`.
+           - **Feedly**: In der linken Seitenleiste auf `+` (Follow Sources) klicken > URL einfügen > `Follow`.
+           - **Inoreader**: Suchfeld oben > URL einfügen > `Abonnieren`.
+           - **Thunderbird**: Ordner "Blogs & News-Feeds" auswählen > `Feed-Abonnements verwalten` > `Hinzufügen` > URL einfügen.
+        4. **Tipp für macOS & iOS**: Wenn dein Reader das URL-Schema `feed://` unterstützt, kannst du einfach auf **'➕ 1-Click'** klicken, um den Feed direkt mit einem Klick zu öffnen und zu abonnieren!
+
+        > **Hinweis zur Bereitstellung:** Die Feeds werden als statische, standardkonforme RSS 2.0 XML-Dateien bereitgestellt. Sie sind öffentlich von RSS-Clients über Standard-HTTP abrufbar, ohne dass eine interaktive Passworteingabe oder JavaScript erforderlich ist.
+        """)
+
 # ----------------- TAB: Quellen & Feeds verwalten -----------------
 with tab_manage:
+
     is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
     if not is_admin:
         st.subheader("⚙️ Quellen & Feeds verwalten")

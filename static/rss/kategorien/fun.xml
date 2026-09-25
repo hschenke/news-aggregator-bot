@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News Bot — Fun</title>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun</link>
+    <description>Aggregierte Nachrichten für die Kategorie 'Fun' aus dem News Aggregator Bot.</description>
+    <language>de</language>
+    <lastBuildDate>Fri, 25 Sep 2026 15:35:45 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/app/static/rss/kategorien/fun.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NICHTLUSTIG-Cartoon: EINSCHLAFEN</title>
+      <link>https://joscha.com/nichtlustig/260921/</link>
+      <guid isPermaLink="false">https://joscha.com/rss/all/36ac8e558ac7690b6f44e2cb5ef93322</guid>
+      <pubDate>Sun, 20 Sep 2026 23:00:00 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://joscha.com/rss/all/">Joscha</source>
+      <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'EINSCHLAFEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
+    </item>
+    <item>
+      <title>NICHTLUSTIG-Cartoon: HÖHLENMALEREIEN</title>
+      <link>https://joscha.com/nichtlustig/260914/</link>
+      <guid isPermaLink="false">https://joscha.com/rss/all/6f2688a5fce7d48c8d19762b88c32c3b</guid>
+      <pubDate>Sun, 13 Sep 2026 23:00:00 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://joscha.com/rss/all/">Joscha</source>
+      <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'HÖHLENMALEREIEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
+    </item>
+    <item>
+      <title>NICHTLUSTIG-Cartoon: BABY</title>
+      <link>https://joscha.com/nichtlustig/260908/</link>
+      <guid isPermaLink="false">https://joscha.com/rss/all/7af6266cc52234b5aa339b16695f7fc4</guid>
+      <pubDate>Mon, 07 Sep 2026 23:00:00 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://joscha.com/rss/all/">Joscha</source>
+      <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'BABY' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
+    </item>
+    <item>
+      <title>NICHTLUSTIG-Cartoon: Auf dem Rücken</title>
+      <link>https://joscha.com/nichtlustig/251227/</link>
+      <guid isPermaLink="false">https://joscha.com/rss/all/15d185eaa7c954e77f5343d941e25fbd</guid>
+      <pubDate>Fri, 26 Dec 2025 23:00:00 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://joscha.com/rss/all/">Joscha</source>
+      <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'Auf dem Rücken' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
+    </item>
+    <item>
+      <title>⭐ Ein Weihnachtswunsch</title>
+      <link>https://joscha.com/blog/ein-weihnachtswunsch/</link>
+      <guid isPermaLink="false">https://joscha.com/rss/all/70efdf2ec9b086079795c442636b55fb</guid>
+      <pubDate>Mon, 22 Dec 2025 10:13:00 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://joscha.com/rss/all/">Joscha</source>
+      <description><![CDATA[Ich habe eine sehr weit gefasste Definition von Kunst. Alles was mit einer persönlichen Vision erschaffen wurde, fällt für mich darunter. Das kann ein Gemälde sein, aber auch ein Podcast oder ein Kuchen. 
+
+Für Künstler und Künstlerinnen ist es momentan... Weiterlesen...]]></description>
+    </item>
+  </channel>
+</rss>
