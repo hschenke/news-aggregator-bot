@@ -49,11 +49,13 @@ def get_github_sync_config() -> Dict[str, str]:
 def sync_sources_to_github(
     config_dict: Dict[str, Any] = None,
     config_path: str = "config/sources.yaml",
-    commit_message: str = "chore(config): update sources.yaml via web dashboard"
+    commit_message: str = "chore(config): update sources.yaml and RSS feeds via web dashboard",
+    include_rss_feeds: bool = True
 ) -> Dict[str, Any]:
     """
-    Pusht die aktuelle sources.yaml direkt per GitHub Contents API in das Repository.
-    Gibt {'success': True, 'commit_url': ...} oder {'success': False, 'error': ...} zurück.
+    Pusht die aktuelle sources.yaml und alle generierten static/rss/*.xml Feeds
+    direkt per GitHub Git Data API (Trees & Commits) in einem einzigen atomaren Commit.
+    Falls die Git Data API fehlschlägt, erfolgt ein Fallback über die Contents API.
     """
     gh_cfg = get_github_sync_config()
     token = gh_cfg["token"]
@@ -62,7 +64,11 @@ def sync_sources_to_github(
 
     repo = gh_cfg["repo"]
     branch = gh_cfg["branch"]
-    rel_path = "config/sources.yaml"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.v3+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
 
     try:
         if config_dict is not None:
@@ -72,14 +78,73 @@ def sync_sources_to_github(
             with open(file_path, "r", encoding="utf-8") as f:
                 yaml_content = f.read()
 
-        url = f"https://api.github.com/repos/{repo}/contents/{rel_path}"
-        headers = {
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github.v3+json",
-            "X-GitHub-Api-Version": "2022-11-28",
-        }
+        # 1. Versuch: Atomarer Multi-File-Push via Git Data API (Trees & Commits)
+        if include_rss_feeds:
+            try:
+                ref_res = requests.get(f"https://api.github.com/repos/{repo}/git/ref/heads/{branch}", headers=headers, timeout=8)
+                if ref_res.status_code == 200:
+                    latest_commit_sha = ref_res.json().get("object", {}).get("sha")
+                    commit_info_res = requests.get(f"https://api.github.com/repos/{repo}/git/commits/{latest_commit_sha}", headers=headers, timeout=8)
+                    base_tree_sha = commit_info_res.json().get("tree", {}).get("sha")
 
-        # Aktuellen SHA der Datei auf GitHub ermitteln
+                    tree_elements = [{
+                        "path": "config/sources.yaml",
+                        "mode": "100644",
+                        "type": "blob",
+                        "content": yaml_content
+                    }]
+
+                    from src.rss_generator import get_static_rss_dir
+                    rss_dir = get_static_rss_dir()
+                    for xml_file in rss_dir.rglob("*.xml"):
+                        rel_path = xml_file.relative_to(rss_dir.parent.parent).as_posix()
+                        try:
+                            tree_elements.append({
+                                "path": rel_path,
+                                "mode": "100644",
+                                "type": "blob",
+                                "content": xml_file.read_text(encoding="utf-8")
+                            })
+                        except Exception:
+                            pass
+
+                    tree_res = requests.post(
+                        f"https://api.github.com/repos/{repo}/git/trees",
+                        headers=headers,
+                        json={"base_tree": base_tree_sha, "tree": tree_elements},
+                        timeout=12
+                    )
+                    if tree_res.status_code in [200, 201]:
+                        new_tree_sha = tree_res.json().get("sha")
+
+                        new_commit_res = requests.post(
+                            f"https://api.github.com/repos/{repo}/git/commits",
+                            headers=headers,
+                            json={
+                                "message": commit_message,
+                                "tree": new_tree_sha,
+                                "parents": [latest_commit_sha]
+                            },
+                            timeout=10
+                        )
+                        if new_commit_res.status_code in [200, 201]:
+                            new_commit_sha = new_commit_res.json().get("sha")
+                            html_url = f"https://github.com/{repo}/commit/{new_commit_sha}"
+
+                            update_ref_res = requests.patch(
+                                f"https://api.github.com/repos/{repo}/git/refs/heads/{branch}",
+                                headers=headers,
+                                json={"sha": new_commit_sha, "force": False},
+                                timeout=10
+                            )
+                            if update_ref_res.status_code == 200:
+                                return {"success": True, "commit_url": html_url, "error": None}
+            except Exception as e_tree:
+                print(f"[Hinweis] Git Trees API fehlgeschlagen, weiche auf Contents API aus: {e_tree}")
+
+        # 2. Fallback: sources.yaml per Contents API pushen & Action triggern
+        rel_path = "config/sources.yaml"
+        url = f"https://api.github.com/repos/{repo}/contents/{rel_path}"
         sha = None
         get_res = requests.get(url, headers=headers, params={"ref": branch}, timeout=8)
         if get_res.status_code == 200:
@@ -98,11 +163,37 @@ def sync_sources_to_github(
         if put_res.status_code in [200, 201]:
             commit_data = put_res.json().get("commit", {})
             html_url = commit_data.get("html_url", "")
+            trigger_rss_update_workflow()
             return {"success": True, "commit_url": html_url, "error": None}
         else:
             return {"success": False, "commit_url": None, "error": f"Status {put_res.status_code}: {put_res.text}"}
     except Exception as e:
         return {"success": False, "commit_url": None, "error": str(e)}
+
+
+def trigger_rss_update_workflow() -> Dict[str, Any]:
+    """Löst den GitHub Actions Workflow 'update_rss.yml' per workflow_dispatch aus."""
+    gh_cfg = get_github_sync_config()
+    token = gh_cfg["token"]
+    if not token or token.startswith("your_"):
+        return {"success": False, "error": "Kein GITHUB_TOKEN hinterlegt."}
+
+    repo = gh_cfg["repo"]
+    branch = gh_cfg["branch"]
+    url = f"https://api.github.com/repos/{repo}/actions/workflows/update_rss.yml/dispatches"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github.v3+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+    }
+    try:
+        res = requests.post(url, headers=headers, json={"ref": branch}, timeout=8)
+        if res.status_code in [204, 200, 201]:
+            return {"success": True, "error": None}
+        return {"success": False, "error": f"Status {res.status_code}: {res.text}"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
 
 
 def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:

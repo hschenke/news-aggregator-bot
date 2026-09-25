@@ -28,6 +28,7 @@ from src.aggregator import (
     get_sources_path,
     get_github_sync_config,
     sync_sources_to_github,
+    trigger_rss_update_workflow,
 )
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key, get_streamlit_app_url
 from src.rss_generator import export_all_rss_feeds
@@ -356,12 +357,20 @@ def perform_save_all():
     harvest_global_settings()
     cfg_to_save = st.session_state.get("working_sources_config", {})
     try:
+        # RSS-Feeds vor dem Push frisch aufbereiten, damit sie sofort aktuell auf GitHub/CDN landen
+        try:
+            cached_news = get_news_data()
+            app_base = cfg_to_save.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
+            export_all_rss_feeds(cached_news, config=cfg_to_save, base_url=app_base)
+        except Exception as e_rss:
+            print(f"[Hinweis] Lokaler RSS-Feed Export vor Save übersprungen: {e_rss}")
+
         gh_res = save_sources(cfg_to_save, sync_github=True)
         st.cache_data.clear()
         st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
         if gh_res.get("success"):
-            st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert und mit GitHub synchronisiert!")
-            st.toast("Gespeichert & mit GitHub synchronisiert!", icon="🚀")
+            st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
+            st.toast("Gespeichert & mit GitHub / CDN synchronisiert!", icon="🚀")
         else:
             err = gh_res.get("error")
             if err and "Kein GITHUB_TOKEN" not in err:
@@ -686,15 +695,35 @@ with tab_rss:
     app_base_url = (app_base_url or "").rstrip("/")
 
     # Oberer Info- und Aktionsbalken
-    col_rss_top1, col_rss_top2, col_rss_top3 = st.columns([2, 1, 1], vertical_alignment="center")
+    col_rss_top1, col_rss_top2, col_rss_top3, col_rss_top4 = st.columns([1.8, 1.1, 1.2, 0.9], vertical_alignment="center")
     with col_rss_top1:
         st.caption("🚀 **Bereitstellung:** 24/7 High-Speed GitHub CDN • 0s Ladezeit • Standard RSS 2.0 XML")
     with col_rss_top2:
-        if st.button("🔄 Feeds neu generieren", key="btn_refresh_rss", use_container_width=True):
+        if st.button("🔄 Feeds neu laden", key="btn_refresh_rss", use_container_width=True, help="Liest die Artikel neu ein und generiert die lokalen XML-Dateien frisch"):
             st.cache_data.clear()
             st.toast("RSS-Feeds wurden frisch generiert!", icon="📡")
             st.rerun()
     with col_rss_top3:
+        if is_admin:
+            if st.button("🚀 Jetzt zu CDN pushen", key="btn_push_rss_cdn", use_container_width=True, help="Pusht die aktuellen XML-Feeds sofort als Commit zu GitHub & CDN"):
+                with st.spinner("Pushe RSS-Feeds zu GitHub & CDN..."):
+                    export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
+                    push_res = sync_sources_to_github(
+                        config_dict=working_config,
+                        commit_message="chore(rss): update RSS feeds via web dashboard",
+                        include_rss_feeds=True
+                    )
+                    if push_res.get("success"):
+                        st.success("✅ RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
+                        st.toast("Feeds zu CDN gepusht!", icon="🚀")
+                    else:
+                        trig_res = trigger_rss_update_workflow()
+                        if trig_res.get("success"):
+                            st.info("⚡ GitHub Action 'Update RSS Feeds' wurde angestoßen!")
+                            st.toast("GitHub Action gestartet!", icon="⚡")
+                        else:
+                            st.error(f"❌ Fehler: {push_res.get('error')}")
+    with col_rss_top4:
         rss_feed_view_mode = st.selectbox(
             "Ansicht:",
             options=["Alle Feeds", "Nur Kategorien", "Nur Einzel-Feeds"],
