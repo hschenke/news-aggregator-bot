@@ -57,7 +57,13 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path
     Falls ein APP_PASSWORD hinterlegt ist, wird das sichere Auth-Token an die URLs angehängt,
     sodass der Nutzer bei Klicks aus dem Briefing nie wieder ein Passwort eingeben muss!
     """
-    from src.auth import get_configured_app_password, generate_readonly_auth_token
+    try:
+        from src.auth import get_configured_app_password, generate_readonly_auth_token
+    except ImportError:
+        import importlib
+        import src.auth
+        importlib.reload(src.auth)
+        from src.auth import get_configured_app_password, generate_readonly_auth_token
     app_pw = get_configured_app_password(config_path)
     auth_param = f"&auth={generate_readonly_auth_token(app_pw)}" if app_pw else ""
 

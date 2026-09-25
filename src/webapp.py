@@ -89,15 +89,29 @@ st.markdown("""
 
 
 # --- Passwort-Schutz & Login-Persistenz ---
-from src.auth import (
-    get_configured_app_password,
-    generate_readonly_auth_token,
-    get_auth_role,
-    ROLE_ADMIN,
-    ROLE_READONLY,
-    COOKIE_AUTH_NAME,
-    COOKIE_EXPIRY_DAYS,
-)
+try:
+    from src.auth import (
+        get_configured_app_password,
+        generate_readonly_auth_token,
+        get_auth_role,
+        ROLE_ADMIN,
+        ROLE_READONLY,
+        COOKIE_AUTH_NAME,
+        COOKIE_EXPIRY_DAYS,
+    )
+except ImportError:
+    import importlib
+    import src.auth
+    importlib.reload(src.auth)
+    from src.auth import (
+        get_configured_app_password,
+        generate_readonly_auth_token,
+        get_auth_role,
+        ROLE_ADMIN,
+        ROLE_READONLY,
+        COOKIE_AUTH_NAME,
+        COOKIE_EXPIRY_DAYS,
+    )
 
 
 def check_password() -> bool:
