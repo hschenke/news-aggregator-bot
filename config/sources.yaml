@@ -26,7 +26,10 @@ categories:
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
     max_items: 15
 - name: Fun
-  feeds: []
+  feeds:
+  - name: Joscha
+    url: https://joscha.com/rss/all/
+    max_items: 5
 settings:
   max_articles_per_category: 20
   language: de
