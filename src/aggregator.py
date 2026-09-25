@@ -142,10 +142,12 @@ def add_feed(
     feed_url: str,
     max_items: int = 5,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> Dict[str, Any]:
     """
     Fügt einen neuen Feed zu einer Kategorie hinzu oder aktualisiert ihn, falls die URL bereits existiert.
-    Speichert die Änderungen direkt in sources.yaml zurück.
+    Speichert die Änderungen in sources.yaml zurück, falls save_to_disk=True.
     """
     category_name = category_name.strip()
     feed_name = feed_name.strip()
@@ -155,7 +157,8 @@ def add_feed(
     if not category_name or not feed_name or not feed_url:
         raise ValueError("Kategorie, Feed-Name und Feed-URL dürfen nicht leer sein.")
 
-    config = load_sources(config_path)
+    if config is None:
+        config = load_sources(config_path)
     categories = config.setdefault("categories", [])
 
     # Suche nach bestehender Kategorie
@@ -189,7 +192,8 @@ def add_feed(
     else:
         feeds.append(new_feed_obj)
 
-    save_sources(config, config_path)
+    if save_to_disk:
+        save_sources(config, config_path)
     return config
 
 
@@ -198,12 +202,15 @@ def delete_feed(
     feed_url: str,
     delete_empty_category: bool = False,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> bool:
     """
-    Löscht einen Feed anhand seiner Kategorie und URL aus sources.yaml.
+    Löscht einen Feed anhand seiner Kategorie und URL aus sources.yaml oder dem config-Objekt.
     Gibt True zurück, wenn der Feed gefunden und gelöscht wurde.
     """
-    config = load_sources(config_path)
+    if config is None:
+        config = load_sources(config_path)
     categories = config.get("categories", [])
     found = False
 
@@ -222,7 +229,8 @@ def delete_feed(
                 c for c in config["categories"]
                 if len(c.get("feeds", [])) > 0 or c.get("name", "").strip().lower() != category_name.strip().lower()
             ]
-        save_sources(config, config_path)
+        if save_to_disk:
+            save_sources(config, config_path)
 
     return found
 
@@ -235,11 +243,14 @@ def update_feed(
     new_max_items: int = None,
     new_category: str = None,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> bool:
     """
-    Aktualisiert Name, URL, max_items und/oder Kategorie eines bestehenden Feeds und spiegelt dies in sources.yaml zurück.
+    Aktualisiert Name, URL, max_items und/oder Kategorie eines bestehenden Feeds.
     """
-    config = load_sources(config_path)
+    if config is None:
+        config = load_sources(config_path)
     categories = config.get("categories", [])
     updated = False
     feed_to_move = None
@@ -276,7 +287,8 @@ def update_feed(
                 categories.append(target_cat)
             target_cat.setdefault("feeds", []).append(feed_to_move)
 
-        save_sources(config, config_path)
+        if save_to_disk:
+            save_sources(config, config_path)
 
     return updated
 
@@ -285,6 +297,8 @@ def rename_category(
     old_name: str,
     new_name: str,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> bool:
     """Benennt eine bestehende Kategorie um."""
     old_name = old_name.strip()
@@ -294,7 +308,8 @@ def rename_category(
     if old_name.lower() == new_name.lower():
         return True
 
-    config = load_sources(config_path)
+    if config is None:
+        config = load_sources(config_path)
     categories = config.get("categories", [])
 
     for cat in categories:
@@ -308,7 +323,7 @@ def rename_category(
             found = True
             break
 
-    if found:
+    if found and save_to_disk:
         save_sources(config, config_path)
 
     return found
@@ -317,13 +332,16 @@ def rename_category(
 def add_category(
     category_name: str,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> bool:
     """Fügt eine neue Kategorie ohne Feeds hinzu, falls sie noch nicht existiert."""
     category_name = category_name.strip()
     if not category_name:
         raise ValueError("Kategoriename darf nicht leer sein.")
 
-    config = load_sources(config_path)
+    if config is None:
+        config = load_sources(config_path)
     categories = config.setdefault("categories", [])
 
     for cat in categories:
@@ -331,23 +349,28 @@ def add_category(
             return False  # existiert bereits
 
     categories.append({"name": category_name, "feeds": []})
-    save_sources(config, config_path)
+    if save_to_disk:
+        save_sources(config, config_path)
     return True
 
 
 def delete_category(
     category_name: str,
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> bool:
-    """Löscht eine komplette Kategorie inklusive aller Feeds aus sources.yaml."""
-    config = load_sources(config_path)
+    """Löscht eine komplette Kategorie inklusive aller Feeds aus sources.yaml oder dem config-Objekt."""
+    if config is None:
+        config = load_sources(config_path)
     categories = config.get("categories", [])
     initial_len = len(categories)
     config["categories"] = [
         c for c in categories if c.get("name", "").strip().lower() != category_name.strip().lower()
     ]
     if len(config["categories"]) < initial_len:
-        save_sources(config, config_path)
+        if save_to_disk:
+            save_sources(config, config_path)
         return True
     return False
 
@@ -355,12 +378,16 @@ def delete_category(
 def update_settings(
     new_settings: Dict[str, Any],
     config_path: str = "config/sources.yaml",
+    config: Dict[str, Any] = None,
+    save_to_disk: bool = True,
 ) -> None:
-    """Aktualisiert den settings-Abschnitt in sources.yaml (z.B. max_articles_per_category)."""
-    config = load_sources(config_path)
+    """Aktualisiert den settings-Abschnitt in sources.yaml oder im config-Objekt."""
+    if config is None:
+        config = load_sources(config_path)
     settings = config.setdefault("settings", {})
     settings.update(new_settings)
-    save_sources(config, config_path)
+    if save_to_disk:
+        save_sources(config, config_path)
 
 
 def test_feed_connection(feed_url: str, timeout: int = 8) -> Dict[str, Any]:

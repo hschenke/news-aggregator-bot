@@ -4,6 +4,7 @@ import os
 import hmac
 import hashlib
 import time
+import copy
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -318,6 +319,72 @@ def get_sources_config():
         return {}
 
 
+# Gespeicherten Stand laden und Arbeitsentwurf im session_state verwalten
+saved_sources_config = get_sources_config()
+if "working_sources_config" not in st.session_state:
+    st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
+
+working_config = st.session_state["working_sources_config"]
+
+def on_feed_max_change(cat_name, feed_url, widget_key):
+    """Callback für st.number_input: Aktualisiert max_items sofort im Arbeitsentwurf."""
+    new_val = st.session_state.get(widget_key)
+    if new_val is not None:
+        update_feed(
+            category_name=cat_name,
+            old_url=feed_url,
+            new_max_items=int(new_val),
+            config=st.session_state["working_sources_config"],
+            save_to_disk=False,
+        )
+
+def harvest_global_settings():
+    """Übernimmt ggf. im Formular eingetragene globale Einstellungen in den Arbeitsentwurf."""
+    settings = st.session_state["working_sources_config"].setdefault("settings", {})
+    if "input_setting_max_cat" in st.session_state:
+        settings["max_articles_per_category"] = int(st.session_state["input_setting_max_cat"])
+    if "input_setting_lang" in st.session_state:
+        settings["language"] = str(st.session_state["input_setting_lang"])
+    if "input_setting_style" in st.session_state:
+        settings["summary_style"] = str(st.session_state["input_setting_style"])
+    if "input_setting_app_url" in st.session_state:
+        settings["streamlit_app_url"] = str(st.session_state["input_setting_app_url"]).strip()
+
+def perform_save_all():
+    """Speichert den gesamten Arbeitsentwurf persistent in sources.yaml und synchronisiert mit GitHub."""
+    harvest_global_settings()
+    cfg_to_save = st.session_state.get("working_sources_config", {})
+    try:
+        gh_res = save_sources(cfg_to_save, sync_github=True)
+        st.cache_data.clear()
+        st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
+        if gh_res.get("success"):
+            st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert und mit GitHub synchronisiert!")
+            st.toast("Gespeichert & mit GitHub synchronisiert!", icon="🚀")
+        else:
+            err = gh_res.get("error")
+            if err and "Kein GITHUB_TOKEN" not in err:
+                st.session_state["save_feedback"] = ("warning", f"In `sources.yaml` gespeichert, aber GitHub-Sync fehlgeschlagen: {err}")
+            else:
+                st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert!")
+                st.toast("In sources.yaml gespeichert!", icon="💾")
+        st.rerun()
+    except Exception as e:
+        st.error(f"❌ Fehler beim Speichern: {e}")
+
+def perform_discard_all():
+    """Verwirft alle ungespeicherten Änderungen und setzt auf den Stand der sources.yaml zurück."""
+    st.cache_data.clear()
+    st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
+    for k in list(st.session_state.keys()):
+        if k.startswith("feed_max_") or k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("input_setting_"):
+            del st.session_state[k]
+    st.toast("↩️ Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
+    st.rerun()
+
+has_unsaved_changes = (working_config != saved_sources_config)
+
+
 # --- Sidebar ---
 st.sidebar.title("📰 News Bot")
 st.sidebar.caption("Autonomer KI-Nachrichten-Kurator")
@@ -352,6 +419,15 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.cache_data.clear()
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
+
+# Unsaved changes status & buttons in sidebar
+if has_unsaved_changes and (st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()):
+    st.sidebar.markdown("---")
+    st.sidebar.warning("⚠️ **Ungespeicherte Änderungen!**")
+    if st.sidebar.button("💾 Alle Änderungen speichern", type="primary", use_container_width=True, key="sb_save_all_btn"):
+        perform_save_all()
+    if st.sidebar.button("↩️ Änderungen verwerfen", use_container_width=True, key="sb_discard_all_btn"):
+        perform_discard_all()
 
 # Optional: Status & Logout-Button bei aktivem Passwortschutz
 if get_configured_app_password():
@@ -408,12 +484,11 @@ if get_configured_app_password():
 # --- Main Layout & Data Loading ---
 with st.spinner("Lade aktuelle Nachrichten aus den RSS-Feeds..."):
     news_data = get_news_data()
-    sources_config = get_sources_config()
 
 # Kennzahlen berechnen
 total_categories = len(news_data)
 total_articles = sum(len(items) for items in news_data.values())
-total_feeds = sum(len(c.get("feeds", [])) for c in sources_config.get("categories", []))
+total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categories", []))
 
 st.title("📰 Daily News Briefing")
 st.caption(f"Intelligente Nachrichten-Kuratierung • Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
@@ -430,18 +505,19 @@ st.markdown("---")
 # Navigation Tabs: Wenn der Nutzer über einen Kategorien-/Feed-Link aus der E-Mail kommt,
 # wird der Tab 'Alle Artikel durchsuchen' direkt als aktiver Tab geöffnet!
 is_viewing_feed = bool(st.query_params.get("category") or st.query_params.get("feed"))
+manage_tab_title = "⚙️ Quellen & Feeds verwalten 🔴" if has_unsaved_changes else "⚙️ Quellen & Feeds verwalten"
 
 if is_viewing_feed:
     tab_articles, tab_briefing, tab_manage = st.tabs([
         "📋 Alle Artikel durchsuchen",
         "✨ KI-Tages-Briefing",
-        "⚙️ Quellen & Feeds verwalten"
+        manage_tab_title
     ])
 else:
     tab_briefing, tab_articles, tab_manage = st.tabs([
         "✨ KI-Tages-Briefing",
         "📋 Alle Artikel durchsuchen",
-        "⚙️ Quellen & Feeds verwalten"
+        manage_tab_title
     ])
 
 # ----------------- TAB: KI-Briefing -----------------
@@ -608,7 +684,7 @@ with tab_manage:
 
         st.markdown("---")
         with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=True):
-            categories_list = sources_config.get("categories", [])
+            categories_list = saved_sources_config.get("categories", [])
             if not categories_list:
                 st.info("Keine Kategorien konfiguriert.")
             for cat in categories_list:
@@ -619,14 +695,45 @@ with tab_manage:
         st.stop()
 
     st.subheader("⚙️ Quellen & Feeds verwalten")
-    st.caption("Verwalte deine RSS-Feeds und Einstellungen direkt im Web-Dashboard. Alle Änderungen werden automatisch in `config/sources.yaml` gespeichert.")
+    st.caption("Verwalte deine RSS-Feeds und Einstellungen. Änderungen werden gesammelt und erst durch Klick auf **'💾 Alle Änderungen speichern'** dauerhaft gesichert.")
+
+    # Feedback nach Speichern anzeigen falls vorhanden
+    feedback = st.session_state.pop("save_feedback", None)
+    if feedback:
+        level, msg = feedback
+        if level == "success":
+            st.success(msg, icon="✅")
+        elif level == "warning":
+            st.warning(msg, icon="⚠️")
+
+    # Oberer Status- und Speicher-Bereich
+    if has_unsaved_changes:
+        with st.container(border=True):
+            col_stat_txt, col_stat_save, col_stat_disc = st.columns([3, 1, 1], vertical_alignment="center")
+            with col_stat_txt:
+                st.markdown("⚠️ **Ungespeicherte Änderungen vorhanden!**")
+                st.caption("Du hast Anpassungen vorgenommen, die noch nicht in `sources.yaml` geschrieben wurden.")
+            with col_stat_save:
+                if st.button("💾 Alle Änderungen speichern", type="primary", use_container_width=True, key="top_save_all_btn"):
+                    perform_save_all()
+            with col_stat_disc:
+                if st.button("↩️ Verwerfen", use_container_width=True, key="top_discard_all_btn"):
+                    perform_discard_all()
+    else:
+        with st.container(border=True):
+            col_stat_txt, col_stat_save = st.columns([4, 1], vertical_alignment="center")
+            with col_stat_txt:
+                st.markdown("✅ **Alle Feeds & Einstellungen sind auf dem aktuellen Stand (gespeichert).**")
+            with col_stat_save:
+                if st.button("💾 Jetzt sichern", use_container_width=True, key="top_save_sync_btn", help="Aktuellen Stand erneut schreiben & zu GitHub pushen"):
+                    perform_save_all()
 
     sources_path = get_sources_path()
 
     # --- GitHub-Sync Statusanzeige ---
     gh_cfg = get_github_sync_config()
     if gh_cfg["token"]:
-        st.success(f"**GitHub-Synchronisation aktiv:** Änderungen werden automatisch als Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) gespeichert.", icon="🐙")
+        st.success(f"**GitHub-Synchronisation aktiv:** Beim Klick auf 'Alle Änderungen speichern' wird automatisch ein Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) erstellt.", icon="🐙")
     else:
         with st.expander("ℹ️ **Automatischer GitHub-Sync (Empfohlen für Streamlit Cloud)**", expanded=False):
             st.markdown(f"""
@@ -639,7 +746,7 @@ with tab_manage:
             GITHUB_TOKEN = "ghp_deinTokenHier"
             GITHUB_REPO = "{gh_cfg['repo']}"
             ```
-            3. **Fertig!** Danach spiegelt das Web-Dashboard jede Änderung sofort per Git-Commit in dein GitHub-Repository zurück – und GitHub Actions greift morgens automatisch auf die neuesten Feeds zu!
+            3. **Fertig!** Danach spiegelt das Web-Dashboard jede Änderung beim Speichern per Git-Commit in dein GitHub-Repository zurück – und GitHub Actions greift morgens automatisch auf die neuesten Feeds zu!
             """)
 
     # --- Sektion 1: Kategorien verwalten (Neu anlegen & Umbenennen) ---
@@ -661,36 +768,34 @@ with tab_manage:
                     if not cat_clean:
                         st.error("Bitte gib einen Namen für die Kategorie ein.")
                     else:
-                        success = add_category(cat_clean)
+                        success = add_category(cat_clean, config=working_config, save_to_disk=False)
                         if success:
-                            st.cache_data.clear()
-                            st.toast(f"Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
+                            st.toast(f"Kategorie '{cat_clean}' angelegt (noch nicht gespeichert).", icon="📁")
                             st.rerun()
                         else:
                             st.warning(f"Kategorie '{cat_clean}' existiert bereits.")
 
         with subtab_cat2:
-            existing_cat_names = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+            existing_cat_names = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
             if not existing_cat_names:
                 st.info("Noch keine Kategorien vorhanden.")
             else:
-                st.write("Wähle eine Kategorie aus, um ihren Namen in `sources.yaml` zu ändern:")
+                st.write("Wähle eine Kategorie aus, um ihren Namen zu ändern:")
                 col_ren_select, col_ren_new, col_ren_btn = st.columns([2, 2, 1], vertical_alignment="bottom")
                 with col_ren_select:
                     cat_to_rename = st.selectbox("Kategorie auswählen:", options=existing_cat_names, key="select_cat_to_rename")
                 with col_ren_new:
                     new_cat_name_input = st.text_input("Neuer Name:", value=cat_to_rename, key=f"input_ren_cat_{cat_to_rename}")
                 with col_ren_btn:
-                    if st.button("💾 Umbenennen", type="primary", use_container_width=True, key="btn_rename_cat"):
+                    if st.button("✏️ Umbenennen", type="primary", use_container_width=True, key="btn_rename_cat"):
                         if not new_cat_name_input.strip():
                             st.error("Der neue Name darf nicht leer sein.")
                         elif new_cat_name_input.strip() == cat_to_rename:
                             st.info("Der Name wurde nicht verändert.")
                         else:
                             try:
-                                rename_category(cat_to_rename, new_cat_name_input.strip())
-                                st.cache_data.clear()
-                                st.toast(f"Kategorie in '{new_cat_name_input.strip()}' umbenannt!", icon="✏️")
+                                rename_category(cat_to_rename, new_cat_name_input.strip(), config=working_config, save_to_disk=False)
+                                st.toast(f"Kategorie in '{new_cat_name_input.strip()}' umbenannt (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"Fehler beim Umbenennen: {e}")
@@ -701,7 +806,7 @@ with tab_manage:
 
         # Tab 1: Neuer Feed
         with subtab_feed1:
-            existing_categories = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+            existing_categories = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
             cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
 
             col_new1, col_new2 = st.columns(2)
@@ -739,7 +844,7 @@ with tab_manage:
             with col_act1:
                 test_clicked = st.button("🔍 Feed-URL testen", use_container_width=True, key="btn_test_new_feed")
             with col_act2:
-                add_clicked = st.button("💾 Feed aufnehmen & in sources.yaml speichern", type="primary", use_container_width=True, key="btn_add_new_feed")
+                add_clicked = st.button("➕ Feed zur Liste hinzufügen", type="primary", use_container_width=True, key="btn_add_new_feed")
 
             if test_clicked:
                 if not new_feed_url.strip():
@@ -769,9 +874,10 @@ with tab_manage:
                             feed_name=new_feed_name,
                             feed_url=new_feed_url,
                             max_items=new_feed_max,
+                            config=working_config,
+                            save_to_disk=False,
                         )
-                        st.cache_data.clear()
-                        st.toast(f"Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
+                        st.toast(f"Feed '{new_feed_name}' zu '{target_cat_name}' hinzugefügt (noch nicht gespeichert).", icon="📡")
                         st.rerun()
                     except Exception as e:
                         st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
@@ -780,7 +886,7 @@ with tab_manage:
         with subtab_feed2:
             all_feed_options = []
             feed_dict = {}
-            for cat in sources_config.get("categories", []):
+            for cat in working_config.get("categories", []):
                 cname = cat.get("name", "Allgemein")
                 for feed in cat.get("feeds", []):
                     fname = feed.get("name", "Unbenannt")
@@ -798,7 +904,7 @@ with tab_manage:
                     key="top_select_edit_feed"
                 )
                 curr_cname, curr_f = feed_dict[selected_edit_label]
-                all_cats = [c.get("name", "").strip() for c in sources_config.get("categories", []) if c.get("name")]
+                all_cats = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
 
                 col_e1, col_e2 = st.columns(2)
                 with col_e1:
@@ -843,7 +949,7 @@ with tab_manage:
                             else:
                                 st.error(f"❌ Nicht erreichbar: {t_res['error']}")
                 with col_ebtn2:
-                    if st.button("💾 Änderungen in sources.yaml speichern", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
+                    if st.button("✔️ Änderungen übernehmen", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
                         if not edit_fname.strip():
                             st.error("Der Feed-Name darf nicht leer sein.")
                         elif not edit_furl.strip() or not (edit_furl.strip().startswith("http://") or edit_furl.strip().startswith("https://")):
@@ -856,31 +962,31 @@ with tab_manage:
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
                                     new_max_items=edit_fmax,
-                                    new_category=edit_fcat.strip()
+                                    new_category=edit_fcat.strip(),
+                                    config=working_config,
+                                    save_to_disk=False,
                                 )
-                                st.cache_data.clear()
-                                st.toast(f"Feed '{edit_fname}' erfolgreich aktualisiert!", icon="💾")
+                                st.toast(f"Feed '{edit_fname}' aktualisiert (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
-                                st.error(f"Fehler beim Speichern: {e}")
+                                st.error(f"Fehler beim Übernehmen: {e}")
                 with col_ebtn3:
                     with st.popover("🗑️ Löschen", use_container_width=True):
                         st.markdown(f"Feed **'{curr_f.get('name')}'** wirklich entfernen?")
                         if st.button("Bestätigen", key=f"top_del_{curr_f.get('url')}", type="primary", use_container_width=True):
-                            delete_feed(curr_cname, curr_f.get("url"))
-                            st.cache_data.clear()
-                            st.toast(f"Feed '{curr_f.get('name')}' entfernt.", icon="🗑️")
+                            delete_feed(curr_cname, curr_f.get("url"), config=working_config, save_to_disk=False)
+                            st.toast(f"Feed '{curr_f.get('name')}' entfernt (noch nicht gespeichert).", icon="🗑️")
                             st.rerun()
 
     st.markdown("---")
 
     # --- Sektion 3: Aktive Feeds & Quellen bearbeiten / löschen ---
     st.markdown("### 📋 Aktive Feeds nach Kategorien")
-    st.caption("Hier kannst du für jeden Feed die maximale Anzahl der Artikel festlegen, Feeds löschen oder deren Details bearbeiten.")
+    st.caption("Hier kannst du für jeden Feed die maximale Anzahl der Artikel festlegen, Feeds löschen oder deren Details bearbeiten. Änderungen werden gesammelt.")
 
-    categories = sources_config.get("categories", [])
+    categories = working_config.get("categories", [])
     if not categories:
-        st.info("Es sind aktuell keine Kategorien in sources.yaml hinterlegt.")
+        st.info("Es sind aktuell keine Kategorien hinterlegt.")
 
     for cat_idx, cat in enumerate(categories):
         cat_name = cat.get("name", "Allgemein")
@@ -895,18 +1001,18 @@ with tab_manage:
                 with st.popover("🗑️ Kategorie löschen", use_container_width=True):
                     st.markdown(f"Kategorie **'{cat_name}'** samt aller Feeds wirklich löschen?")
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
-                        delete_category(cat_name)
-                        st.cache_data.clear()
-                        st.toast(f"Kategorie '{cat_name}' gelöscht.", icon="🗑️")
+                        delete_category(cat_name, config=working_config, save_to_disk=False)
+                        st.toast(f"Kategorie '{cat_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                         st.rerun()
 
             if not feeds:
-                st.info(f"💡 In der Kategorie '{cat_name}' sind noch keine Feeds hinterlegt. Du kannst oben einen neuen Feed hinzufügen oder diese Kategorie rechts oben löschen.")
+                st.info(f"💡 In der Kategorie '{cat_name}' sind noch keine Feeds hinterlegt. Du kannst oben einen neuen Feed hinzufügen oder diese Kategorie löschen.")
             else:
                 for feed_idx, feed in enumerate(feeds):
                     f_name = feed.get("name", "Unbenannt")
                     f_url = feed.get("url", "")
                     f_max = int(feed.get("max_items", 5))
+                    key_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
 
                     with st.container(border=True):
                         col_top1, col_top2 = st.columns([4, 2], vertical_alignment="center")
@@ -914,7 +1020,7 @@ with tab_manage:
                             st.markdown(f"**{f_name}**")
                             st.caption(f"🔗 [{f_url}]({f_url})")
 
-                        col_f_max, col_f_save, col_f_del = st.columns([2, 1, 1], vertical_alignment="bottom")
+                        col_f_max, col_f_del = st.columns([3, 1], vertical_alignment="bottom")
                         with col_f_max:
                             current_max_input = st.number_input(
                                 "Max. Artikel:",
@@ -922,51 +1028,53 @@ with tab_manage:
                                 max_value=50,
                                 value=f_max,
                                 step=1,
-                                key=f"feed_max_{cat_idx}_{feed_idx}",
-                                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden."
+                                key=f"feed_max_{key_hash}",
+                                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden.",
+                                on_change=on_feed_max_change,
+                                args=(cat_name, f_url, f"feed_max_{key_hash}")
                             )
-                        with col_f_save:
-                            if st.button("💾 Speichern", key=f"feed_save_{cat_idx}_{feed_idx}", use_container_width=True):
-                                update_feed(cat_name, f_url, new_max_items=current_max_input)
-                                st.cache_data.clear()
-                                st.toast(f"Max. Artikel für '{f_name}' auf {current_max_input} aktualisiert!", icon="💾")
-                                st.rerun()
                         with col_f_del:
                             with st.popover("🗑️ Löschen", use_container_width=True):
                                 st.markdown(f"Feed **'{f_name}'** wirklich entfernen?")
                                 if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
-                                    delete_feed(cat_name, f_url)
-                                    st.cache_data.clear()
-                                    st.toast(f"Feed '{f_name}' entfernt.", icon="🗑️")
+                                    delete_feed(cat_name, f_url, config=working_config, save_to_disk=False)
+                                    st.toast(f"Feed '{f_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                                     st.rerun()
 
                         with st.expander("🛠️ Details & URL bearbeiten / Feed testen", expanded=False):
                             col_ed1, col_ed2 = st.columns(2)
                             with col_ed1:
-                                edit_name_val = st.text_input("Name ändern:", value=f_name, key=f"edit_name_{cat_idx}_{feed_idx}")
+                                edit_name_val = st.text_input("Name ändern:", value=f_name, key=f"edit_name_{key_hash}")
                             with col_ed2:
-                                edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{cat_idx}_{feed_idx}")
+                                edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{key_hash}")
 
                             col_t_btn, col_s_btn = st.columns(2)
                             with col_t_btn:
-                                if st.button("🔍 Feed testen", key=f"btn_test_{cat_idx}_{feed_idx}", use_container_width=True):
+                                if st.button("🔍 Feed testen", key=f"btn_test_{key_hash}", use_container_width=True):
                                     t_res = test_feed_connection(edit_url_val.strip())
                                     if t_res["success"]:
                                         st.success(f"✅ Erreichbar: '{t_res['title']}' ({t_res['item_count']} Einträge gefunden)")
                                     else:
                                         st.error(f"❌ Fehler: {t_res['error']}")
                             with col_s_btn:
-                                if st.button("💾 Alle Details speichern", key=f"btn_save_all_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
-                                    update_feed(cat_name, f_url, new_name=edit_name_val, new_url=edit_url_val, new_max_items=current_max_input)
-                                    st.cache_data.clear()
-                                    st.toast("Feed-Details aktualisiert!", icon="💾")
+                                if st.button("✔️ Details übernehmen", key=f"btn_save_all_{key_hash}", type="primary", use_container_width=True):
+                                    update_feed(
+                                        cat_name,
+                                        f_url,
+                                        new_name=edit_name_val.strip(),
+                                        new_url=edit_url_val.strip(),
+                                        new_max_items=current_max_input,
+                                        config=working_config,
+                                        save_to_disk=False
+                                    )
+                                    st.toast("Feed-Details übernommen (noch nicht gespeichert).", icon="✏️")
                                     st.rerun()
 
     st.markdown("---")
 
     # --- Sektion 4: Globale Einstellungen ---
-    with st.expander("⚙️ Globale Einstellungen (sources.yaml)", expanded=False):
-        current_settings = sources_config.get("settings", {})
+    with st.expander("⚙️ Globale Einstellungen", expanded=False):
+        current_settings = working_config.get("settings", {})
         col_s1, col_s2, col_s3 = st.columns(3)
         with col_s1:
             setting_max_cat = st.number_input(
@@ -975,65 +1083,90 @@ with tab_manage:
                 max_value=20,
                 value=int(current_settings.get("max_articles_per_category", 4)),
                 step=1,
+                key="input_setting_max_cat",
                 help="Steuert, wie viele Top-Themen pro Kategorie im KI-Briefing erscheinen."
             )
         with col_s2:
             current_lang = current_settings.get("language", "de")
             lang_options = ["de", "en", "fr", "es"]
             lang_idx = lang_options.index(current_lang) if current_lang in lang_options else 0
-            setting_lang = st.selectbox("Sprache für Zusammenfassung:", options=lang_options, index=lang_idx)
+            setting_lang = st.selectbox("Sprache für Zusammenfassung:", options=lang_options, index=lang_idx, key="input_setting_lang")
         with col_s3:
             current_style = current_settings.get("summary_style", "tldr")
             style_options = ["tldr", "executive_bullet_points", "bullet_points", "narrative"]
             style_idx = style_options.index(current_style) if current_style in style_options else 0
-            setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
+            setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx, key="input_setting_style")
 
         default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
         setting_app_url = st.text_input(
             "Streamlit App URL:",
             value=default_app_url,
+            key="input_setting_app_url",
             help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
         )
 
-        if st.button("💾 Globale Einstellungen in sources.yaml speichern", type="primary"):
+        if st.button("✔️ Globale Einstellungen übernehmen", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
             new_settings_dict = {
                 "max_articles_per_category": setting_max_cat,
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),
             }
-            update_settings(new_settings_dict)
-            st.cache_data.clear()
-            st.toast("Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
+            update_settings(new_settings_dict, config=working_config, save_to_disk=False)
+            st.toast("Globale Einstellungen übernommen (noch nicht gespeichert).", icon="⚙️")
             st.rerun()
 
         st.caption("🔒 **Sicherheitshinweis:** Sensible Zugangsdaten wie `APP_PASSWORD` oder API-Keys werden niemals in `sources.yaml` gespeichert, sondern sicher als Secrets in **GitHub Actions** und **Streamlit Cloud** verwaltet.")
 
     # --- Sektion 5: Live-Vorschau der sources.yaml Datei ---
-    with st.expander("📄 Live-Vorschau: config/sources.yaml", expanded=False):
+    with st.expander("📄 Live-Vorschau der Konfiguration (Entwurf)", expanded=False):
         try:
-            with open(sources_path, "r", encoding="utf-8") as f:
-                yaml_raw = f.read()
+            import yaml
+            yaml_raw = yaml.dump(working_config, allow_unicode=True, sort_keys=False, default_flow_style=False)
             st.code(yaml_raw, language="yaml")
+            if has_unsaved_changes:
+                st.caption("⚠️ Diese Vorschau enthält noch ungespeicherte Änderungen.")
+            else:
+                st.caption("✅ Entspricht dem aktuellen Stand auf der Festplatte.")
+
             col_v1, col_v2 = st.columns([1, 1])
             with col_v1:
                 st.download_button(
-                    "📥 sources.yaml herunterladen",
+                    "📥 sources.yaml Entwurf herunterladen",
                     data=yaml_raw,
                     file_name="sources.yaml",
                     mime="text/yaml",
                     use_container_width=True
                 )
             with col_v2:
-                if gh_cfg["token"]:
-                    if st.button("🐙 Jetzt manuell zu GitHub committen", use_container_width=True):
+                if has_unsaved_changes:
+                    if st.button("💾 Alle Änderungen jetzt speichern", type="primary", use_container_width=True, key="btn_preview_save"):
+                        perform_save_all()
+                elif gh_cfg["token"]:
+                    if st.button("🐙 Manuell zu GitHub synchronisieren", use_container_width=True, key="btn_preview_gh_sync"):
                         with st.spinner("Pushe zu GitHub..."):
-                            sync_res = sync_sources_to_github()
+                            sync_res = sync_sources_to_github(config_dict=working_config)
                             if sync_res["success"]:
                                 st.success("✅ Erfolgreich zu GitHub synchronisiert!")
                                 st.toast("Zu GitHub gepusht!", icon="🐙")
                             else:
                                 st.error(f"❌ Fehler: {sync_res['error']}")
         except Exception as e:
-            st.error(f"Konnte Datei nicht lesen: {e}")
+            st.error(f"Fehler bei der Vorschau: {e}")
+
+    # --- Unterer Abschluss- und Speicher-Bereich ---
+    if has_unsaved_changes:
+        st.markdown("---")
+        with st.container(border=True):
+            st.markdown("### 💾 Änderungen abschließen")
+            st.write("Du hast alle Aktionen durchgeführt? Klicke auf **'💾 Alle Änderungen jetzt speichern'**, um die Konfiguration dauerhaft in `sources.yaml` zu sichern und mit GitHub zu synchronisieren.")
+            col_end_s, col_end_d, col_end_space = st.columns([2, 1, 3], vertical_alignment="center")
+            with col_end_s:
+                if st.button("💾 Alle Änderungen jetzt speichern", type="primary", use_container_width=True, key="btn_save_all_bottom"):
+                    perform_save_all()
+            with col_end_d:
+                if st.button("↩️ Änderungen verwerfen", use_container_width=True, key="btn_discard_all_bottom"):
+                    perform_discard_all()
+            with col_end_space:
+                st.caption("Alle Änderungen werden in einem einzigen Schritt gebündelt gespeichert.")
 
