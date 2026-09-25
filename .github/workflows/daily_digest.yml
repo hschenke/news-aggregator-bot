@@ -17,7 +17,7 @@ jobs:
       - name: 📥 Quellcode auschecken
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.head_ref || github.ref_name }}
+          ref: main
 
       - name: 🐍 Python einrichten
         uses: actions/setup-python@v7
@@ -55,9 +55,8 @@ jobs:
             echo "Keine Änderungen in den RSS-Feeds vorhanden."
           else
             git commit -m "chore(rss): update static RSS feeds [skip ci]"
-            target_branch="${{ github.head_ref || github.ref_name }}"
-            git pull --rebase origin "$target_branch"
-            git push origin "HEAD:$target_branch"
+            git pull --rebase origin main
+            git push origin main
           fi
 
       - name: 📦 HTML-Vorschau als Artefakt archivieren
