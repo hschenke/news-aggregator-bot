@@ -91,8 +91,10 @@ st.markdown("""
 # --- Passwort-Schutz & Login-Persistenz ---
 from src.auth import (
     get_configured_app_password,
-    generate_persistent_auth_token,
-    verify_auth_token,
+    generate_readonly_auth_token,
+    get_auth_role,
+    ROLE_ADMIN,
+    ROLE_READONLY,
     COOKIE_AUTH_NAME,
     COOKIE_EXPIRY_DAYS,
 )
@@ -100,17 +102,19 @@ from src.auth import (
 
 def check_password() -> bool:
     """
-    Überprüft das App-Passwort mit mehrstufiger Persistenz:
+    Überprüft das App-Passwort mit rollenbasierter Persistenz:
     1. Bereits in session_state authentifiziert
-    2. URL Query Parameter ?auth=... oder ?token=... (z. B. aus Links im E-Mail-Briefing)
+    2. URL Query Parameter ?auth=... oder ?token=... (E-Mail-Briefing -> ROLE_READONLY)
     3. HTTP-Cookie im Request-Header (st.context.cookies)
     4. Lokaler Speicher / Cookie-Controller Fallback
     5. Client-seitiges Auto-Login via localStorage
-    6. Passwort-Eingabe über Login-Formular
+    6. Passwort-Eingabe über Login-Formular (Klartext-Passwort -> ROLE_ADMIN)
     """
     expected_password = get_configured_app_password()
     if not expected_password:
-        return True  # Kein Passwort konfiguriert -> freier Zugang
+        st.session_state["authenticated"] = True
+        st.session_state["auth_role"] = ROLE_ADMIN
+        return True  # Kein Passwort konfiguriert -> freier Admin-Zugang
 
     # 1. Bereits in dieser Sitzung authentifiziert?
     if st.session_state.get("authenticated", False):
@@ -118,24 +122,33 @@ def check_password() -> bool:
 
     # 2. URL Query Parameter prüfen (?auth=... oder ?token=...)
     url_auth = st.query_params.get("auth") or st.query_params.get("token")
-    if url_auth and verify_auth_token(url_auth, expected_password):
-        st.session_state["authenticated"] = True
-        return True
+    if url_auth:
+        role = get_auth_role(url_auth, expected_password)
+        if role:
+            st.session_state["authenticated"] = True
+            st.session_state["auth_role"] = role
+            return True
 
     # 3. HTTP Cookie im Request Header prüfen (st.context.cookies)
     if hasattr(st, "context") and hasattr(st.context, "cookies"):
         token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
-        if token_from_cookie and verify_auth_token(token_from_cookie, expected_password):
-            st.session_state["authenticated"] = True
-            return True
+        if token_from_cookie:
+            role = get_auth_role(token_from_cookie, expected_password)
+            if role:
+                st.session_state["authenticated"] = True
+                st.session_state["auth_role"] = role
+                return True
 
     # 4. Fallback über cookie_controller prüfen
     if cookie_controller:
         try:
             token_from_ctrl = cookie_controller.get(COOKIE_AUTH_NAME)
-            if token_from_ctrl and verify_auth_token(token_from_ctrl, expected_password):
-                st.session_state["authenticated"] = True
-                return True
+            if token_from_ctrl:
+                role = get_auth_role(token_from_ctrl, expected_password)
+                if role:
+                    st.session_state["authenticated"] = True
+                    st.session_state["auth_role"] = role
+                    return True
         except Exception:
             pass
 
@@ -176,12 +189,14 @@ def check_password() -> bool:
             submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
 
             if submit:
-                if password_input == expected_password:
+                role = get_auth_role(password_input, expected_password)
+                if role:
                     st.session_state["authenticated"] = True
-                    token = generate_persistent_auth_token(expected_password)
+                    st.session_state["auth_role"] = role
+                    readonly_token = generate_readonly_auth_token(expected_password)
                     if remember_me:
-                        # URL Parameter setzen -> bleibt im Browser über Tabs & Reloads erhalten!
-                        st.query_params["auth"] = token
+                        # In die URL und localStorage kommt das sichere Readonly-Token
+                        st.query_params["auth"] = readonly_token
 
                         # Token auch in localStorage & document.cookie schreiben
                         st.components.v1.html(f"""
@@ -191,12 +206,12 @@ def check_password() -> bool:
                             var d = new Date();
                             d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
                             var expires = "expires=" + d.toUTCString();
-                            var cookieStr = "{COOKIE_AUTH_NAME}=" + encodeURIComponent("{token}") + "; " + expires + "; path=/; SameSite=Lax; Secure";
+                            var cookieStr = "{COOKIE_AUTH_NAME}=" + encodeURIComponent("{readonly_token}") + "; " + expires + "; path=/; SameSite=Lax; Secure";
                             try {{
-                                localStorage.setItem("{COOKIE_AUTH_NAME}", "{token}");
+                                localStorage.setItem("{COOKIE_AUTH_NAME}", "{readonly_token}");
                                 document.cookie = cookieStr;
                                 if (window.parent && window.parent !== window) {{
-                                    window.parent.localStorage.setItem("{COOKIE_AUTH_NAME}", "{token}");
+                                    window.parent.localStorage.setItem("{COOKIE_AUTH_NAME}", "{readonly_token}");
                                     window.parent.document.cookie = cookieStr;
                                 }}
                             }} catch(e) {{}}
@@ -208,7 +223,7 @@ def check_password() -> bool:
                             try:
                                 cookie_controller.set(
                                     COOKIE_AUTH_NAME,
-                                    token,
+                                    readonly_token,
                                     max_age=float(86400 * 365),
                                     expires=datetime.now() + timedelta(days=365),
                                     same_site="lax"
@@ -276,12 +291,28 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
-# Optional: Logout-Button bei aktivem Passwortschutz
+# Optional: Status & Logout-Button bei aktivem Passwortschutz
 if get_configured_app_password():
     st.sidebar.markdown("---")
-    st.sidebar.caption("🔒 Status: Angemeldet")
+    current_role = st.session_state.get("auth_role", ROLE_READONLY)
+    if current_role == ROLE_ADMIN:
+        st.sidebar.success("🛡️ **Admin (Vollzugriff)**", icon="🛡️")
+    else:
+        st.sidebar.info("👁️ **Lese-Modus (E-Mail)**", icon="👁️")
+        with st.sidebar.popover("🔑 Admin-Freischaltung", use_container_width=True):
+            st.caption("Passwort eingeben, um Feeds & Einstellungen bearbeiten zu können:")
+            side_admin_pw = st.text_input("App-Passwort:", type="password", key="sidebar_admin_pw_input")
+            if st.button("Als Admin aktivieren", type="primary", key="sidebar_admin_unlock_btn", use_container_width=True):
+                if side_admin_pw == get_configured_app_password():
+                    st.session_state["auth_role"] = ROLE_ADMIN
+                    st.toast("Admin-Modus aktiviert!", icon="🛡️")
+                    st.rerun()
+                else:
+                    st.error("Falsches Passwort.")
+
     if st.sidebar.button("🚪 Abmelden", use_container_width=True):
         st.session_state["authenticated"] = False
+        st.session_state["auth_role"] = None
         if "auth" in st.query_params:
             del st.query_params["auth"]
         if "token" in st.query_params:
@@ -455,6 +486,44 @@ with tab_articles:
 
 # ----------------- TAB: Quellen & Feeds verwalten -----------------
 with tab_manage:
+    is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
+    if not is_admin:
+        st.subheader("⚙️ Quellen & Feeds verwalten")
+        st.warning(
+            "🔒 **Schreibschutz aktiv: Du bist im Lese-Modus angemeldet.**\n\n"
+            "Über deinen E-Mail-Link hast du uneingeschränkten Lesezugriff auf das Briefing und alle Artikel. "
+            "Um RSS-Feeds hinzuzufügen, zu bearbeiten, zu löschen oder Einstellungen zu ändern, "
+            "schalte bitte den **Admin-Modus** mit deinem App-Passwort frei."
+        )
+
+        with st.container(border=True):
+            st.markdown("#### 🔑 Admin-Modus freischalten")
+            st.caption("Gib dein `APP_PASSWORD` ein, um Feeds & Einstellungen zu bearbeiten:")
+            col_unl1, col_unl2 = st.columns([3, 1], vertical_alignment="bottom")
+            with col_unl1:
+                admin_pw_input = st.text_input("App-Passwort:", type="password", key="tab3_admin_pw_input", placeholder="••••••••")
+            with col_unl2:
+                if st.button("🔓 Admin-Modus aktivieren", type="primary", key="tab3_btn_unlock", use_container_width=True):
+                    expected_password = get_configured_app_password()
+                    if admin_pw_input == expected_password:
+                        st.session_state["auth_role"] = ROLE_ADMIN
+                        st.toast("✅ Admin-Berechtigung erteilt!", icon="🛡️")
+                        st.rerun()
+                    else:
+                        st.error("❌ Falsches Passwort.")
+
+        st.markdown("---")
+        with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=True):
+            categories_list = sources_config.get("categories", [])
+            if not categories_list:
+                st.info("Keine Kategorien konfiguriert.")
+            for cat in categories_list:
+                st.markdown(f"**📁 {cat.get('name')}** ({len(cat.get('feeds', []))} Feeds)")
+                for f in cat.get("feeds", []):
+                    st.caption(f"• **{f.get('name')}** (`{f.get('url')}`) — Max. {f.get('max_items', 5)} Artikel")
+
+        st.stop()
+
     st.subheader("⚙️ Quellen & Feeds verwalten")
     st.caption("Verwalte deine RSS-Feeds und Einstellungen direkt im Web-Dashboard. Alle Änderungen werden automatisch in `config/sources.yaml` gespeichert.")
 
