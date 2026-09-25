@@ -114,6 +114,15 @@ except ImportError:
     )
 
 
+def embed_client_script(js_code: str) -> None:
+    """Führt Hilfsskripte (z. B. Cookie/Storage-Sync) modern über st.iframe oder Fallback aus."""
+    html_wrapper = f"<script>{js_code}</script>"
+    if hasattr(st, "iframe"):
+        st.iframe(html_wrapper, height=1, width=1)
+    elif hasattr(st, "components") and hasattr(st.components, "v1"):
+        st.components.v1.html(html_wrapper, height=0, width=0)
+
+
 def check_password() -> bool:
     """
     Überprüft das App-Passwort mit rollenbasierter Persistenz:
@@ -168,8 +177,7 @@ def check_password() -> bool:
 
     # 5. Client-seitiges Auto-Login: Falls im localStorage des Browsers ein Token liegt,
     # wird die Seite sofort automatisch mit ?auth=TOKEN neu geladen!
-    st.components.v1.html(f"""
-    <script>
+    embed_client_script(f"""
     (function() {{
         try {{
             var stored = localStorage.getItem("{COOKIE_AUTH_NAME}");
@@ -184,8 +192,7 @@ def check_password() -> bool:
             }}
         }} catch(e) {{}}
     }})();
-    </script>
-    """, height=0, width=0)
+    """)
 
     # 6. Nicht angemeldet: Login-Formular anzeigen
     st.markdown("""
@@ -213,8 +220,7 @@ def check_password() -> bool:
                         st.query_params["auth"] = readonly_token
 
                         # Token auch in localStorage & document.cookie schreiben
-                        st.components.v1.html(f"""
-                        <script>
+                        embed_client_script(f"""
                         (function() {{
                             var days = 365;
                             var d = new Date();
@@ -230,8 +236,7 @@ def check_password() -> bool:
                                 }}
                             }} catch(e) {{}}
                         }})();
-                        </script>
-                        """, height=0, width=0)
+                        """)
 
                         if cookie_controller:
                             try:
@@ -331,8 +336,7 @@ if get_configured_app_password():
             del st.query_params["auth"]
         if "token" in st.query_params:
             del st.query_params["token"]
-        st.components.v1.html(f"""
-        <script>
+        embed_client_script(f"""
         (function() {{
             try {{
                 localStorage.removeItem("{COOKIE_AUTH_NAME}");
@@ -343,8 +347,7 @@ if get_configured_app_password():
                 }}
             }} catch(e) {{}}
         }})();
-        </script>
-        """, height=0, width=0)
+        """)
         if cookie_controller:
             try:
                 cookie_controller.remove(COOKIE_AUTH_NAME)
@@ -396,21 +399,45 @@ else:
 with tab_briefing:
     st.subheader("Synthetisiertes KI-Briefing")
     
-    col_btn, col_info = st.columns([1, 2])
+    is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
+    
+    col_btn, col_info = st.columns([1, 2], vertical_alignment="center")
     with col_btn:
-        generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
+        if is_admin:
+            generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
+        else:
+            with st.popover("🔒 Neues Briefing (Admin)", use_container_width=True):
+                st.markdown("#### 🔑 Admin-Freischaltung")
+                st.caption("Das Generieren neuer KI-Briefings verbraucht Gemini API-Kontingente und ist Administratoren vorbehalten:")
+                admin_gen_pw = st.text_input("App-Passwort:", type="password", key="gen_unlock_pw", placeholder="••••••••")
+                if st.button("🔓 Freischalten & Generieren", type="primary", key="gen_unlock_btn", use_container_width=True):
+                    if admin_gen_pw == get_configured_app_password():
+                        st.session_state["auth_role"] = ROLE_ADMIN
+                        st.session_state["trigger_generate"] = True
+                        st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
+                        st.rerun()
+                    else:
+                        st.error("❌ Falsches Passwort.")
+            generate_clicked = st.session_state.pop("trigger_generate", False)
+
     with col_info:
-        st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
+        if is_admin:
+            st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
+        else:
+            st.caption("👁️ **Lese-Modus:** Du kannst das bestehende Briefing lesen. Das Anstoßen einer neuen KI-Generierung erfordert Admin-Rechte.")
 
     if generate_clicked:
-        with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
-            ai_summary = summarize_news_with_gemini(
-                news_data,
-                api_key=user_api_key,
-                model=selected_model
-            )
-            st.session_state["cached_summary"] = ai_summary
-            st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
+        if not is_admin:
+            st.warning("⚠️ Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
+        else:
+            with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
+                ai_summary = summarize_news_with_gemini(
+                    news_data,
+                    api_key=user_api_key,
+                    model=selected_model
+                )
+                st.session_state["cached_summary"] = ai_summary
+                st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
 
     if "cached_summary" in st.session_state:
         st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")
@@ -425,7 +452,10 @@ with tab_briefing:
             mime="text/markdown",
         )
     else:
-        st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
+        if is_admin:
+            st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
+        else:
+            st.info("💡 Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
 
 # ----------------- TAB: Artikel durchsuchen -----------------
 with tab_articles:

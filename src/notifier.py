@@ -39,87 +39,122 @@ def markdown_to_html_email(markdown_content: str) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dein Daily News Digest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
     body {{
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #1f2937;
-      background-color: #f3f4f6;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: #1e293b;
+      background-color: #f1f5f9;
       margin: 0;
-      padding: 20px 0;
+      padding: 28px 12px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }}
     .container {{
       max-width: 680px;
       margin: 0 auto;
       background: #ffffff;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e2e8f0;
     }}
     .header {{
-      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-      background-color: #1e293b;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      background-color: #0f172a;
       color: #ffffff !important;
-      padding: 28px 32px;
+      padding: 32px 36px;
       text-align: left;
     }}
     .header h1 {{
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0 0 6px 0;
       font-size: 24px;
       font-weight: 700;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.025em;
       color: #ffffff !important;
     }}
     .header p {{
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0;
       color: #94a3b8 !important;
       font-size: 14px;
+      font-weight: 500;
     }}
     .content {{
-      padding: 32px;
+      padding: 36px;
     }}
     .content h1, .content h2, .content h3 {{
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       color: #0f172a;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.02em;
     }}
     h2 {{
-      border-bottom: 2px solid #e2e8f0;
-      padding-bottom: 6px;
-      margin-top: 28px;
-      font-size: 18px;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 8px;
+      margin-top: 32px;
+      font-size: 20px;
+      font-weight: 700;
     }}
     h3 {{
       font-size: 16px;
+      font-weight: 600;
       margin-top: 20px;
     }}
     blockquote {{
-      margin: 8px 0 16px 0;
-      padding: 8px 12px;
+      margin: 12px 0 18px 0;
+      padding: 10px 16px;
       background: #f8fafc;
-      border-left: 3px solid #2563eb;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #3b82f6;
+      border-radius: 8px;
       color: #475569;
-      font-size: 13px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }}
+    blockquote a {{
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+    }}
+    blockquote a:hover {{
+      text-decoration: underline;
     }}
     ul {{
       padding-left: 20px;
+      margin: 14px 0;
     }}
     li {{
-      margin-bottom: 10px;
+      margin-bottom: 12px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: #334155;
+    }}
+    li strong {{
+      color: #0f172a;
+      font-weight: 600;
     }}
     a {{
       color: #2563eb;
       text-decoration: none;
+      font-weight: 500;
     }}
     a:hover {{
+      color: #1d4ed8;
       text-decoration: underline;
     }}
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); background-color: #1e293b; color: #ffffff !important; padding: 28px 32px; text-align: left;">
-      <h1 style="color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.02em;">⚡ News Aggregator Bot</h1>
-      <p style="color: #94a3b8 !important; margin: 0; font-size: 14px;">Tages-Briefing für den {current_date}</p>
+    <div class="header" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); background-color: #0f172a; color: #ffffff !important; padding: 32px 36px; text-align: left;">
+      <h1 style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em;">⚡ News Aggregator Bot</h1>
+      <p style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #94a3b8 !important; margin: 0; font-size: 14px; font-weight: 500;">Tages-Briefing für den {current_date}</p>
     </div>
     <div class="content">
       {body_html}
