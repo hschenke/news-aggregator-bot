@@ -10,6 +10,8 @@ on:
 jobs:
   run-news-bot:
     runs-on: ubuntu-24.04
+    permissions:
+      contents: write
 
     steps:
       - name: 📥 Quellcode auschecken
@@ -41,6 +43,13 @@ jobs:
           STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app' }}
         run: |
           python src/main.py
+
+      - name: 🚀 Aktualisierte RSS-Feeds zu GitHub pushen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add static/rss/
+          git diff --staged --quiet || (git commit -m "chore(rss): update static RSS feeds [skip ci]" && git push)
 
       - name: 📦 HTML-Vorschau als Artefakt archivieren
         # Archiviert das generierte HTML-Briefing als herunterladbares Workflow-Artefakt

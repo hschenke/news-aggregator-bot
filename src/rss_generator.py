@@ -185,6 +185,22 @@ def export_all_rss_feeds(
     # Streamlit serviert Dateien unter /app/static/...
     static_http_prefix = f"{base_url}/app/static/rss"
 
+    # GitHub / CDN URLs für 100%ige Verfügbarkeit (ohne Streamlit Cloud Standby)
+    repo = "hschenke/news-aggregator-bot"
+    branch = "main"
+    try:
+        from src.aggregator import get_github_sync_config
+        gh_cfg = get_github_sync_config()
+        if gh_cfg.get("repo"):
+            repo = gh_cfg["repo"]
+        if gh_cfg.get("branch"):
+            branch = gh_cfg["branch"]
+    except Exception:
+        pass
+
+    cdn_prefix = f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/static/rss"
+    raw_prefix = f"https://raw.githubusercontent.com/{repo}/{branch}/static/rss"
+
     all_articles: List[Dict[str, Any]] = []
     category_registry = []
     feed_registry = []
@@ -233,11 +249,14 @@ def export_all_rss_feeds(
             "filename": f"kategorien/{cat_filename}",
             "file_path": str(cat_file_path),
             "http_url": cat_http_url,
+            "cdn_url": f"{cdn_prefix}/kategorien/{cat_filename}",
+            "raw_url": f"{raw_prefix}/kategorien/{cat_filename}",
             "app_url": cat_app_view_url,
             "item_count": len(cat_items),
             "feed_count": cfg_feed_count or len(set(i.get("source", "") for i in cat_items if i.get("source"))),
             "xml_preview": cat_xml,
         })
+
 
     # 2. Einzelne Feeds erstellen (nach Quell-Feed gegliedert)
     # Gruppierung aller geladenen Artikel nach Source
@@ -285,6 +304,8 @@ def export_all_rss_feeds(
                 "filename": f"feeds/{f_filename}",
                 "file_path": str(f_file_path),
                 "http_url": f_http_url,
+                "cdn_url": f"{cdn_prefix}/feeds/{f_filename}",
+                "raw_url": f"{raw_prefix}/feeds/{f_filename}",
                 "app_url": f_app_view_url,
                 "item_count": len(f_items),
                 "xml_preview": f_xml,
@@ -321,10 +342,13 @@ def export_all_rss_feeds(
         "filename": all_filename,
         "file_path": str(all_file_path),
         "http_url": all_http_url,
+        "cdn_url": f"{cdn_prefix}/{all_filename}",
+        "raw_url": f"{raw_prefix}/{all_filename}",
         "app_url": base_url,
         "item_count": len(sorted_all_articles),
         "xml_preview": all_xml,
     }
+
 
     return {
         "all": all_registry,
