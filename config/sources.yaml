@@ -20,6 +20,9 @@ categories:
   - name: RPG-Watch
     url: https://rpgwatch.com/files/rss1.xml
     max_items: 15
+  - name: Might & Magic Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
+    max_items: 5
 - name: Policia
   feeds:
   - name: Polizeimeldungen Berlin
