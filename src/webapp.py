@@ -50,20 +50,96 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# Custom Styling
+# Custom Styling (Kompakt & Mobile-optimiert)
 st.markdown("""
 <style>
+    /* Haupt-Container kompakter auf Desktop & Mobile */
+    .block-container {
+        padding-top: 1.4rem !important;
+        padding-bottom: 2rem !important;
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        max-width: 1250px;
+    }
+    @media (max-width: 768px) {
+        .block-container {
+            padding-top: 0.75rem !important;
+            padding-bottom: 1.5rem !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+        h1 {
+            font-size: 1.4rem !important;
+            margin-bottom: 0.1rem !important;
+            line-height: 1.2 !important;
+        }
+        h2 {
+            font-size: 1.2rem !important;
+            margin-top: 0.35rem !important;
+            margin-bottom: 0.2rem !important;
+        }
+        h3 {
+            font-size: 1.05rem !important;
+            margin-top: 0.3rem !important;
+            margin-bottom: 0.15rem !important;
+        }
+        .stTabs [data-baseweb="tab-list"] {
+            gap: 2px !important;
+        }
+        .stTabs [data-baseweb="tab"] {
+            padding: 0.3rem 0.5rem !important;
+            font-size: 0.82rem !important;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] > div {
+            padding: 0.6rem !important;
+        }
+        [data-testid="stVerticalBlock"] {
+            gap: 0.4rem !important;
+        }
+        hr {
+            margin: 0.5rem 0 !important;
+        }
+    }
+    /* Kompakte KPI Chips-Leiste */
+    .kpi-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        align-items: center;
+        margin-top: 0.2rem;
+        margin-bottom: 0.65rem;
+    }
+    .kpi-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        padding: 0.22rem 0.6rem;
+        background-color: var(--secondary-background-color);
+        border: 1px solid rgba(128, 128, 128, 0.2);
+        border-radius: 9999px;
+        font-size: 0.8rem;
+        color: var(--text-color);
+        white-space: nowrap;
+    }
+    .kpi-chip strong {
+        font-weight: 600;
+    }
+    .kpi-chip.kpi-pool {
+        background-color: rgba(37, 99, 235, 0.12);
+        border-color: rgba(37, 99, 235, 0.35);
+        color: #2563eb;
+    }
     .metric-card {
         background-color: var(--secondary-background-color);
-        padding: 1rem 1.25rem;
+        padding: 0.75rem 1rem;
         border-radius: 0.75rem;
         border: 1px solid rgba(128, 128, 128, 0.2);
     }
     .article-card {
-        padding: 1rem;
+        padding: 0.85rem;
         border-radius: 0.6rem;
         border: 1px solid rgba(128, 128, 128, 0.2);
-        margin-bottom: 0.85rem;
+        margin-bottom: 0.65rem;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -80,8 +156,8 @@ st.markdown("""
     }
     .login-container {
         max-width: 420px;
-        margin: 3rem auto;
-        padding: 2rem;
+        margin: 2rem auto;
+        padding: 1.5rem;
         background-color: var(--secondary-background-color);
         border-radius: 1rem;
         border: 1px solid rgba(128, 128, 128, 0.2);
@@ -396,18 +472,28 @@ has_unsaved_changes = (working_config != saved_sources_config)
 
 
 # --- Sidebar ---
-st.sidebar.title("📰 News Bot")
-st.sidebar.caption("Autonomer KI-Nachrichten-Kurator")
+st.sidebar.markdown("<h2 style='margin-top:0.2rem; margin-bottom:0.25rem; font-size:1.35rem;'>📰 News Bot</h2>", unsafe_allow_html=True)
+
+# GitHub-Synchronisation Statusanzeige in der Navigationsleiste
+gh_cfg = get_github_sync_config()
+if gh_cfg.get("token"):
+    st.sidebar.markdown(
+        f"<div style='display:flex; align-items:center; gap:5px; font-size:0.8rem; color:#10b981; margin-bottom:0.5rem;'>"
+        f"<span>🐙</span><span><b>GitHub-Sync aktiv</b> ({gh_cfg['branch']})</span>"
+        f"</div>",
+        unsafe_allow_html=True
+    )
 
 # API-Key Management
 configured_key = get_configured_api_key()
 user_api_key = None
 
 if configured_key:
-    st.sidebar.success("Gemini API verbunden", icon="🟢")
+    # Verbunden: Kein Text für maximale Kompaktheit
     user_api_key = configured_key
 else:
-    st.sidebar.warning("Kein API-Key hinterlegt", icon="⚠️")
+    # Nur anzeigen, wenn keine Verbindung möglich ist (in Rot)
+    st.sidebar.error("❌ Keine Gemini API-Verbindung", icon="🔴")
     user_api_key = st.sidebar.text_input(
         "Gemini API-Key eingeben:",
         type="password",
@@ -514,47 +600,49 @@ total_articles = sum(len(items) for items in news_data.values())
 total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categories", []))
 
 st.title("📰 Daily News Briefing")
-st.caption(f"Intelligente Nachrichten-Kuratierung • Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
+st.caption(f"Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
-# KPI Row
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("📌 Kategorien", total_categories)
-col2.metric("📡 Aktive Feeds", total_feeds)
-col3.metric("📄 Artikel im Pool", total_articles)
-col4.metric("🤖 LLM Engine", selected_model.replace("gemini-", "Gemini "))
-
-st.markdown("---")
+# KPI Row (Kompakt & Mobile-optimiert)
+engine_short = selected_model.replace("gemini-", "").replace("-flash-lite", " Flash-Lite").replace("-flash", " Flash")
+st.markdown(f"""
+<div class="kpi-container">
+    <span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>
+    <span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>
+    <span class="kpi-chip kpi-pool">📄 <strong>{total_articles}</strong> Artikel im Pool</span>
+    <span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>
+</div>
+""", unsafe_allow_html=True)
 
 # Navigation Tabs: Je nach URL-Parametern wird der passende Tab direkt als aktiver Tab geöffnet!
 is_viewing_feed = bool(st.query_params.get("category") or st.query_params.get("feed"))
 is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
-manage_tab_title = "⚙️ Quellen & Feeds verwalten 🔴" if has_unsaved_changes else "⚙️ Quellen & Feeds verwalten"
+manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
 if is_viewing_rss:
     tab_rss, tab_briefing, tab_articles, tab_manage = st.tabs([
-        "📡 Eigene RSS-Feeds",
-        "✨ KI-Tages-Briefing",
-        "📋 Alle Artikel durchsuchen",
+        "📡 RSS-Feeds",
+        "✨ KI-Briefing",
+        "📋 Alle Artikel",
         manage_tab_title
     ])
 elif is_viewing_feed:
     tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
-        "📋 Alle Artikel durchsuchen",
-        "✨ KI-Tages-Briefing",
-        "📡 Eigene RSS-Feeds",
+        "📋 Alle Artikel",
+        "✨ KI-Briefing",
+        "📡 RSS-Feeds",
         manage_tab_title
     ])
 else:
     tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
-        "✨ KI-Tages-Briefing",
-        "📋 Alle Artikel durchsuchen",
-        "📡 Eigene RSS-Feeds",
+        "✨ KI-Briefing",
+        "📋 Alle Artikel",
+        "📡 RSS-Feeds",
         manage_tab_title
     ])
 
 # ----------------- TAB: KI-Briefing -----------------
 with tab_briefing:
-    st.subheader("Synthetisiertes KI-Briefing")
+    st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ Synthetisiertes KI-Briefing</h3>", unsafe_allow_html=True)
     
     is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
     
@@ -628,7 +716,7 @@ with tab_articles:
                 if c.strip().lower() == qp_cat.strip().lower():
                     default_cat_idx = idx
                     break
-        selected_cat = st.selectbox("Nach Kategorie filtern:", category_options, index=default_cat_idx)
+        selected_cat = st.selectbox("Kategorie:", category_options, index=default_cat_idx)
         
     with filter_col2:
         if selected_cat != "Alle Kategorien":
@@ -646,10 +734,10 @@ with tab_articles:
                 if f.strip().lower() == qp_feed.strip().lower() or qp_feed.strip().lower() in f.strip().lower():
                     default_feed_idx = idx
                     break
-        selected_feed = st.selectbox("Nach Feed filtern:", feed_options, index=default_feed_idx)
+        selected_feed = st.selectbox("Feed / Quelle:", feed_options, index=default_feed_idx)
 
     with filter_col3:
-        search_query = st.text_input("🔍 Artikel durchsuchen (Stichwort):", placeholder="z. B. AI, Apple, Wirtschaft...")
+        search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...")
 
     # Artikel filtern
     displayed_count = 0
@@ -695,17 +783,24 @@ with tab_rss:
     app_base_url = (app_base_url or "").rstrip("/")
 
     # Oberer Info- und Aktionsbalken
-    col_rss_top1, col_rss_top2, col_rss_top3, col_rss_top4 = st.columns([1.8, 1.1, 1.2, 0.9], vertical_alignment="center")
-    with col_rss_top1:
-        st.caption("🚀 **Bereitstellung:** 24/7 High-Speed GitHub CDN • 0s Ladezeit • Standard RSS 2.0 XML")
-    with col_rss_top2:
-        if st.button("🔄 Feeds neu laden", key="btn_refresh_rss", use_container_width=True, help="Liest die Artikel neu ein und generiert die lokalen XML-Dateien frisch"):
-            st.cache_data.clear()
-            st.toast("RSS-Feeds wurden frisch generiert!", icon="📡")
-            st.rerun()
-    with col_rss_top3:
-        if is_admin:
-            if st.button("🚀 Jetzt zu CDN pushen", key="btn_push_rss_cdn", use_container_width=True, help="Pusht die aktuellen XML-Feeds sofort als Commit zu GitHub & CDN"):
+    st.caption("🚀 **24/7 High-Speed GitHub CDN** • 0s Ladezeit • Standard RSS 2.0 XML")
+
+    if is_admin:
+        col_rss_act1, col_rss_act2, col_rss_act3 = st.columns([1, 1, 1])
+        with col_rss_act1:
+            rss_feed_view_mode = st.selectbox(
+                "Ansicht:",
+                options=["Alle Feeds", "Nur Kategorien", "Nur Einzel-Feeds"],
+                key="sel_rss_view_mode",
+                label_visibility="collapsed"
+            )
+        with col_rss_act2:
+            if st.button("🔄 Neu laden", key="btn_refresh_rss", use_container_width=True, help="Liest die Artikel neu ein und generiert die lokalen XML-Dateien frisch"):
+                st.cache_data.clear()
+                st.toast("RSS-Feeds wurden frisch generiert!", icon="📡")
+                st.rerun()
+        with col_rss_act3:
+            if st.button("🚀 Zu CDN pushen", key="btn_push_rss_cdn", use_container_width=True, help="Pusht die aktuellen XML-Feeds sofort als Commit zu GitHub & CDN"):
                 with st.spinner("Pushe RSS-Feeds zu GitHub & CDN..."):
                     export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
                     push_res = sync_sources_to_github(
@@ -723,13 +818,20 @@ with tab_rss:
                             st.toast("GitHub Action gestartet!", icon="⚡")
                         else:
                             st.error(f"❌ Fehler: {push_res.get('error')}")
-    with col_rss_top4:
-        rss_feed_view_mode = st.selectbox(
-            "Ansicht:",
-            options=["Alle Feeds", "Nur Kategorien", "Nur Einzel-Feeds"],
-            key="sel_rss_view_mode",
-            label_visibility="collapsed"
-        )
+    else:
+        col_rss_act1, col_rss_act2 = st.columns([1, 1])
+        with col_rss_act1:
+            rss_feed_view_mode = st.selectbox(
+                "Ansicht:",
+                options=["Alle Feeds", "Nur Kategorien", "Nur Einzel-Feeds"],
+                key="sel_rss_view_mode",
+                label_visibility="collapsed"
+            )
+        with col_rss_act2:
+            if st.button("🔄 Neu laden", key="btn_refresh_rss", use_container_width=True, help="Liest die Artikel neu ein und generiert die lokalen XML-Dateien frisch"):
+                st.cache_data.clear()
+                st.toast("RSS-Feeds wurden frisch generiert!", icon="📡")
+                st.rerun()
 
     # Feeds exportieren und Registry laden
     rss_registry = export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
@@ -954,11 +1056,8 @@ with tab_manage:
 
     sources_path = get_sources_path()
 
-    # --- GitHub-Sync Statusanzeige ---
-    gh_cfg = get_github_sync_config()
-    if gh_cfg["token"]:
-        st.success(f"**GitHub-Synchronisation aktiv:** Beim Klick auf 'Alle Änderungen speichern' wird automatisch ein Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) erstellt.", icon="🐙")
-    else:
+    # --- GitHub-Sync (Anleitung nur anzeigen, wenn noch nicht konfiguriert) ---
+    if not gh_cfg.get("token"):
         with st.expander("ℹ️ **Automatischer GitHub-Sync (Empfohlen für Streamlit Cloud)**", expanded=False):
             st.markdown(f"""
             Streamlit Community Cloud Container sind flüchtig (*ephemeral*). Bei einem Neustart der Cloud-App werden lokal gespeicherte Dateien auf den Stand des Git-Repositories zurückgesetzt.
