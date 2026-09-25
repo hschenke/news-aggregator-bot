@@ -6,9 +6,12 @@ from pathlib import Path
 from typing import Optional
 
 AUTH_SALT_READONLY = b"news_bot_readonly_salt_v1"
+AUTH_SALT_ADMIN = b"news_bot_admin_salt_v1"
 AUTH_SALT_LEGACY = b"news_aggregator_bot_secure_salt_v1"
 COOKIE_AUTH_NAME = "news_bot_session"
+COOKIE_ADMIN_NAME = "news_bot_admin_session"
 COOKIE_EXPIRY_DAYS = 365
+ADMIN_EXPIRY_SECONDS = 86400  # 1 Tag (24 Stunden)
 
 ROLE_ADMIN = "admin"
 ROLE_READONLY = "readonly"
@@ -54,10 +57,53 @@ def generate_persistent_auth_token(password: str) -> str:
     return generate_readonly_auth_token(password)
 
 
+def generate_admin_auth_token(password: str) -> str:
+    """
+    Erstellt ein signiertes, zeitgestempeltes HMAC-Token für Admin-Rechte (gültig für 24 Stunden).
+    Wird nach erfolgreicher Passworteingabe als Cookie & LocalStorage hinterlegt,
+    sodass man sich nur 1x pro Tag als Admin anmelden muss!
+    """
+    if not password:
+        return ""
+    ts = str(int(time.time()))
+    sig = hmac.new(
+        password.encode("utf-8"),
+        f"admin:{ts}:{AUTH_SALT_ADMIN.decode()}".encode("utf-8"),
+        hashlib.sha256
+    ).hexdigest()
+    return f"adm:{ts}:{sig}"
+
+
+def verify_admin_token(token: str, password: str, max_age_seconds: int = ADMIN_EXPIRY_SECONDS) -> bool:
+    """
+    Prüft, ob ein Admin-Token gültig und noch nicht älter als 24 Stunden ist.
+    """
+    if not token or not password or not str(token).startswith("adm:"):
+        return False
+    try:
+        parts = str(token).split(":", 2)
+        if len(parts) != 3:
+            return False
+        _, ts_str, sig = parts
+        ts = int(ts_str)
+        current_time = time.time()
+        # Prüfen ob abgelaufen oder unzulässig in der Zukunft
+        if (current_time - ts) > max_age_seconds or ts > (current_time + 60):
+            return False
+        expected_sig = hmac.new(
+            password.encode("utf-8"),
+            f"admin:{ts_str}:{AUTH_SALT_ADMIN.decode()}".encode("utf-8"),
+            hashlib.sha256
+        ).hexdigest()
+        return hmac.compare_digest(sig, expected_sig)
+    except Exception:
+        return False
+
+
 def get_auth_role(credential: str, password: str) -> Optional[str]:
     """
     Prüft die übergebene Eingabe (Passwort oder Token) und ermittelt die Berechtigung:
-    - ROLE_ADMIN ("admin"): Wenn das echte APP_PASSWORD im Klartext eingegeben wurde.
+    - ROLE_ADMIN ("admin"): Wenn das echte APP_PASSWORD im Klartext oder ein gültiges 24h-Admin-Token vorliegt.
     - ROLE_READONLY ("readonly"): Wenn das signierte HMAC-Token aus der E-Mail übergeben wurde.
     - None: Ungültige Zugangsdaten.
     """
@@ -67,22 +113,26 @@ def get_auth_role(credential: str, password: str) -> Optional[str]:
     credential = str(credential).strip()
     password = str(password).strip()
 
-    # 1. Echtes Passwort eingegeben -> Volle Administrationsrechte
+    # 1. Echtes Passwort im Klartext eingegeben -> Volle Administrationsrechte
     if hmac.compare_digest(credential, password):
         return ROLE_ADMIN
 
-    # 2. Signiertes Readonly-Token aus dem E-Mail-Briefing
+    # 2. Zeitgestempeltes 24h-Admin-Cookie/Token prüfen
+    if verify_admin_token(credential, password):
+        return ROLE_ADMIN
+
+    # 3. Signiertes Readonly-Token aus dem E-Mail-Briefing
     expected_readonly = generate_readonly_auth_token(password)
     if hmac.compare_digest(credential, expected_readonly):
         return ROLE_READONLY
 
-    # 3. Vorheriges Salt (Abwärtskompatibilität für bereits versendete E-Mails)
+    # 4. Vorheriges Salt (Abwärtskompatibilität für bereits versendete E-Mails)
     legacy_token = hmac.new(password.encode("utf-8"), AUTH_SALT_LEGACY, hashlib.sha256).hexdigest()
     if hmac.compare_digest(credential, legacy_token):
         return ROLE_READONLY
 
-    # 4. Zeitgestempeltes Token (falls vorhanden) -> Readonly
-    if ":" in credential:
+    # 5. Zeitgestempeltes Legacy-Token (falls vorhanden) -> Readonly
+    if ":" in credential and not credential.startswith("adm:"):
         try:
             timestamp_str, sig = credential.split(":", 1)
             for salt in [AUTH_SALT_READONLY, AUTH_SALT_LEGACY]:
@@ -102,4 +152,5 @@ def get_auth_role(credential: str, password: str) -> Optional[str]:
 def verify_auth_token(token: str, password: str, max_age_days: int = COOKIE_EXPIRY_DAYS) -> bool:
     """Verifiziert, ob ein Token gültig ist (entweder Admin oder Readonly)."""
     return get_auth_role(token, password) is not None
+
 

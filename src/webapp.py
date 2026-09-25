@@ -93,10 +93,13 @@ try:
     from src.auth import (
         get_configured_app_password,
         generate_readonly_auth_token,
+        generate_admin_auth_token,
+        verify_admin_token,
         get_auth_role,
         ROLE_ADMIN,
         ROLE_READONLY,
         COOKIE_AUTH_NAME,
+        COOKIE_ADMIN_NAME,
         COOKIE_EXPIRY_DAYS,
     )
 except ImportError:
@@ -106,10 +109,13 @@ except ImportError:
     from src.auth import (
         get_configured_app_password,
         generate_readonly_auth_token,
+        generate_admin_auth_token,
+        verify_admin_token,
         get_auth_role,
         ROLE_ADMIN,
         ROLE_READONLY,
         COOKIE_AUTH_NAME,
+        COOKIE_ADMIN_NAME,
         COOKIE_EXPIRY_DAYS,
     )
 
@@ -123,15 +129,52 @@ def embed_client_script(js_code: str) -> None:
         st.components.v1.html(html_wrapper, height=0, width=0)
 
 
+def set_admin_session_cookie(expected_password: str) -> str:
+    """Erstellt ein 24h-Admin-Token und speichert es in Cookie, LocalStorage und Session."""
+    admin_token = generate_admin_auth_token(expected_password)
+    st.session_state["authenticated"] = True
+    st.session_state["auth_role"] = ROLE_ADMIN
+    st.query_params["auth"] = admin_token
+    embed_client_script(f"""
+    (function() {{
+        var seconds = 86400; // 24 Stunden
+        var d = new Date();
+        d.setTime(d.getTime() + (seconds * 1000));
+        var expires = "expires=" + d.toUTCString();
+        var cookieStr = "{COOKIE_ADMIN_NAME}=" + encodeURIComponent("{admin_token}") + "; " + expires + "; path=/; SameSite=Lax; Secure";
+        try {{
+            localStorage.setItem("{COOKIE_ADMIN_NAME}", "{admin_token}");
+            document.cookie = cookieStr;
+            if (window.parent && window.parent !== window) {{
+                window.parent.localStorage.setItem("{COOKIE_ADMIN_NAME}", "{admin_token}");
+                window.parent.document.cookie = cookieStr;
+            }}
+        }} catch(e) {{}}
+    }})();
+    """)
+    if cookie_controller:
+        try:
+            cookie_controller.set(
+                COOKIE_ADMIN_NAME,
+                admin_token,
+                max_age=86400.0,
+                expires=datetime.now() + timedelta(days=1),
+                same_site="lax"
+            )
+        except Exception:
+            pass
+    return admin_token
+
+
 def check_password() -> bool:
     """
     Überprüft das App-Passwort mit rollenbasierter Persistenz:
     1. Bereits in session_state authentifiziert
-    2. URL Query Parameter ?auth=... oder ?token=... (E-Mail-Briefing -> ROLE_READONLY)
-    3. HTTP-Cookie im Request-Header (st.context.cookies)
-    4. Lokaler Speicher / Cookie-Controller Fallback
-    5. Client-seitiges Auto-Login via localStorage
-    6. Passwort-Eingabe über Login-Formular (Klartext-Passwort -> ROLE_ADMIN)
+    2. 24h-Admin-Cookie im Request-Header oder Cookie-Controller
+    3. URL Query Parameter ?auth=... oder ?token=... (Admin- oder Readonly-Token)
+    4. HTTP-Cookie im Request-Header für Read-Only
+    5. Client-seitiges Auto-Login via localStorage (Admin zuerst, dann Read-Only)
+    6. Passwort-Eingabe über Login-Formular
     """
     expected_password = get_configured_app_password()
     if not expected_password:
@@ -143,7 +186,26 @@ def check_password() -> bool:
     if st.session_state.get("authenticated", False):
         return True
 
-    # 2. URL Query Parameter prüfen (?auth=... oder ?token=...)
+    # 2. Prüfen auf 24h-Admin-Cookie im Request Header (st.context.cookies)
+    if hasattr(st, "context") and hasattr(st.context, "cookies"):
+        admin_cookie = st.context.cookies.get(COOKIE_ADMIN_NAME)
+        if admin_cookie and verify_admin_token(admin_cookie, expected_password):
+            st.session_state["authenticated"] = True
+            st.session_state["auth_role"] = ROLE_ADMIN
+            return True
+
+    # 3. Fallback über cookie_controller für Admin-Cookie
+    if cookie_controller:
+        try:
+            admin_ctrl = cookie_controller.get(COOKIE_ADMIN_NAME)
+            if admin_ctrl and verify_admin_token(admin_ctrl, expected_password):
+                st.session_state["authenticated"] = True
+                st.session_state["auth_role"] = ROLE_ADMIN
+                return True
+        except Exception:
+            pass
+
+    # 4. URL Query Parameter prüfen (?auth=... oder ?token=...)
     url_auth = st.query_params.get("auth") or st.query_params.get("token")
     if url_auth:
         role = get_auth_role(url_auth, expected_password)
@@ -152,7 +214,7 @@ def check_password() -> bool:
             st.session_state["auth_role"] = role
             return True
 
-    # 3. HTTP Cookie im Request Header prüfen (st.context.cookies)
+    # 5. Read-Only HTTP Cookie im Request Header prüfen (st.context.cookies)
     if hasattr(st, "context") and hasattr(st.context, "cookies"):
         token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
         if token_from_cookie:
@@ -162,7 +224,7 @@ def check_password() -> bool:
                 st.session_state["auth_role"] = role
                 return True
 
-    # 4. Fallback über cookie_controller prüfen
+    # 6. Fallback über cookie_controller für Read-Only Cookie
     if cookie_controller:
         try:
             token_from_ctrl = cookie_controller.get(COOKIE_AUTH_NAME)
@@ -175,11 +237,23 @@ def check_password() -> bool:
         except Exception:
             pass
 
-    # 5. Client-seitiges Auto-Login: Falls im localStorage des Browsers ein Token liegt,
+    # 7. Client-seitiges Auto-Login: Falls im localStorage ein Admin- oder Read-Token liegt,
     # wird die Seite sofort automatisch mit ?auth=TOKEN neu geladen!
     embed_client_script(f"""
     (function() {{
         try {{
+            var adminStored = localStorage.getItem("{COOKIE_ADMIN_NAME}");
+            if (!adminStored) {{
+                var matchAdmin = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_ADMIN_NAME}' + '=([^;]*)'));
+                if (matchAdmin) adminStored = decodeURIComponent(matchAdmin[2]);
+            }}
+            if (adminStored && !window.location.search.includes("auth=")) {{
+                var url = new URL(window.location.href);
+                url.searchParams.set("auth", adminStored);
+                window.location.replace(url.href);
+                return;
+            }}
+
             var stored = localStorage.getItem("{COOKIE_AUTH_NAME}");
             if (!stored) {{
                 var match = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_AUTH_NAME}' + '=([^;]*)'));
@@ -194,7 +268,7 @@ def check_password() -> bool:
     }})();
     """)
 
-    # 6. Nicht angemeldet: Login-Formular anzeigen
+    # 8. Nicht angemeldet: Login-Formular anzeigen
     st.markdown("""
         <div style='text-align: center; margin-top: 2rem;'>
             <h2>🔒 Zugriff geschützt</h2>
@@ -206,54 +280,23 @@ def check_password() -> bool:
     with col2:
         with st.form("login_form"):
             password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
-            remember_me = st.checkbox("Angemeldet bleiben (Automatisch einloggen)", value=True)
             submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
 
             if submit:
-                role = get_auth_role(password_input, expected_password)
-                if role:
-                    st.session_state["authenticated"] = True
-                    st.session_state["auth_role"] = role
-                    readonly_token = generate_readonly_auth_token(expected_password)
-                    if remember_me:
-                        # In die URL und localStorage kommt das sichere Readonly-Token
-                        st.query_params["auth"] = readonly_token
-
-                        # Token auch in localStorage & document.cookie schreiben
-                        embed_client_script(f"""
-                        (function() {{
-                            var days = 365;
-                            var d = new Date();
-                            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-                            var expires = "expires=" + d.toUTCString();
-                            var cookieStr = "{COOKIE_AUTH_NAME}=" + encodeURIComponent("{readonly_token}") + "; " + expires + "; path=/; SameSite=Lax; Secure";
-                            try {{
-                                localStorage.setItem("{COOKIE_AUTH_NAME}", "{readonly_token}");
-                                document.cookie = cookieStr;
-                                if (window.parent && window.parent !== window) {{
-                                    window.parent.localStorage.setItem("{COOKIE_AUTH_NAME}", "{readonly_token}");
-                                    window.parent.document.cookie = cookieStr;
-                                }}
-                            }} catch(e) {{}}
-                        }})();
-                        """)
-
-                        if cookie_controller:
-                            try:
-                                cookie_controller.set(
-                                    COOKIE_AUTH_NAME,
-                                    readonly_token,
-                                    max_age=float(86400 * 365),
-                                    expires=datetime.now() + timedelta(days=365),
-                                    same_site="lax"
-                                )
-                            except Exception:
-                                pass
-
-                    st.toast("Erfolgreich angemeldet!", icon="🔓")
+                if password_input == expected_password:
+                    # Erfolgreiche Admin-Anmeldung -> 24h Admin-Cookie & Token hinterlegen!
+                    set_admin_session_cookie(expected_password)
+                    st.toast("Erfolgreich als Admin angemeldet!", icon="🔓")
                     st.rerun()
                 else:
-                    st.error("❌ Falsches Passwort. Bitte erneut versuchen.")
+                    role = get_auth_role(password_input, expected_password)
+                    if role == ROLE_READONLY:
+                        st.session_state["authenticated"] = True
+                        st.session_state["auth_role"] = ROLE_READONLY
+                        st.toast("Erfolgreich im Lese-Modus angemeldet!", icon="👁️")
+                        st.rerun()
+                    else:
+                        st.error("❌ Falsches Passwort. Bitte erneut versuchen.")
 
     return False
 
@@ -284,10 +327,10 @@ configured_key = get_configured_api_key()
 user_api_key = None
 
 if configured_key:
-    st.sidebar.success("🟢 Gemini API verbunden", icon="✅")
+    st.sidebar.success("Gemini API verbunden", icon="🟢")
     user_api_key = configured_key
 else:
-    st.sidebar.warning("🟡 Kein API-Key hinterlegt", icon="⚠️")
+    st.sidebar.warning("Kein API-Key hinterlegt", icon="⚠️")
     user_api_key = st.sidebar.text_input(
         "Gemini API-Key eingeben:",
         type="password",
@@ -315,15 +358,16 @@ if get_configured_app_password():
     st.sidebar.markdown("---")
     current_role = st.session_state.get("auth_role", ROLE_READONLY)
     if current_role == ROLE_ADMIN:
-        st.sidebar.success("🛡️ **Admin (Vollzugriff)**", icon="🛡️")
+        st.sidebar.success("**Admin (Vollzugriff)**", icon="🛡️")
     else:
-        st.sidebar.info("👁️ **Lese-Modus (E-Mail)**", icon="👁️")
+        st.sidebar.info("**Lese-Modus (E-Mail)**", icon="👁️")
         with st.sidebar.popover("🔑 Admin-Freischaltung", use_container_width=True):
             st.caption("Passwort eingeben, um Feeds & Einstellungen bearbeiten zu können:")
             side_admin_pw = st.text_input("App-Passwort:", type="password", key="sidebar_admin_pw_input")
             if st.button("Als Admin aktivieren", type="primary", key="sidebar_admin_unlock_btn", use_container_width=True):
-                if side_admin_pw == get_configured_app_password():
-                    st.session_state["auth_role"] = ROLE_ADMIN
+                expected_pw = get_configured_app_password()
+                if side_admin_pw == expected_pw:
+                    set_admin_session_cookie(expected_pw)
                     st.toast("Admin-Modus aktiviert!", icon="🛡️")
                     st.rerun()
                 else:
@@ -340,10 +384,14 @@ if get_configured_app_password():
         (function() {{
             try {{
                 localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                localStorage.removeItem("{COOKIE_ADMIN_NAME}");
                 document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
+                document.cookie = "{COOKIE_ADMIN_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
                 if (window.parent && window.parent !== window) {{
                     window.parent.localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                    window.parent.localStorage.removeItem("{COOKIE_ADMIN_NAME}");
                     window.parent.document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
+                    window.parent.document.cookie = "{COOKIE_ADMIN_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
                 }}
             }} catch(e) {{}}
         }})();
@@ -351,6 +399,7 @@ if get_configured_app_password():
         if cookie_controller:
             try:
                 cookie_controller.remove(COOKIE_AUTH_NAME)
+                cookie_controller.remove(COOKIE_ADMIN_NAME)
             except Exception:
                 pass
         st.toast("Erfolgreich abgemeldet.", icon="🔒")
@@ -411,8 +460,9 @@ with tab_briefing:
                 st.caption("Das Generieren neuer KI-Briefings verbraucht Gemini API-Kontingente und ist Administratoren vorbehalten:")
                 admin_gen_pw = st.text_input("App-Passwort:", type="password", key="gen_unlock_pw", placeholder="••••••••")
                 if st.button("🔓 Freischalten & Generieren", type="primary", key="gen_unlock_btn", use_container_width=True):
-                    if admin_gen_pw == get_configured_app_password():
-                        st.session_state["auth_role"] = ROLE_ADMIN
+                    expected_password = get_configured_app_password()
+                    if admin_gen_pw == expected_password:
+                        set_admin_session_cookie(expected_password)
                         st.session_state["trigger_generate"] = True
                         st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
                         st.rerun()
@@ -550,8 +600,8 @@ with tab_manage:
                 if st.button("🔓 Admin-Modus aktivieren", type="primary", key="tab3_btn_unlock", use_container_width=True):
                     expected_password = get_configured_app_password()
                     if admin_pw_input == expected_password:
-                        st.session_state["auth_role"] = ROLE_ADMIN
-                        st.toast("✅ Admin-Berechtigung erteilt!", icon="🛡️")
+                        set_admin_session_cookie(expected_password)
+                        st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
                         st.rerun()
                     else:
                         st.error("❌ Falsches Passwort.")
@@ -576,7 +626,7 @@ with tab_manage:
     # --- GitHub-Sync Statusanzeige ---
     gh_cfg = get_github_sync_config()
     if gh_cfg["token"]:
-        st.success(f"🟢 **GitHub-Synchronisation aktiv:** Änderungen werden automatisch als Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) gespeichert.", icon="🐙")
+        st.success(f"**GitHub-Synchronisation aktiv:** Änderungen werden automatisch als Commit in `{gh_cfg['repo']}` (`{gh_cfg['branch']}`) gespeichert.", icon="🐙")
     else:
         with st.expander("ℹ️ **Automatischer GitHub-Sync (Empfohlen für Streamlit Cloud)**", expanded=False):
             st.markdown(f"""
@@ -614,7 +664,7 @@ with tab_manage:
                         success = add_category(cat_clean)
                         if success:
                             st.cache_data.clear()
-                            st.toast(f"✅ Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
+                            st.toast(f"Kategorie '{cat_clean}' erfolgreich in sources.yaml angelegt!", icon="📁")
                             st.rerun()
                         else:
                             st.warning(f"Kategorie '{cat_clean}' existiert bereits.")
@@ -640,7 +690,7 @@ with tab_manage:
                             try:
                                 rename_category(cat_to_rename, new_cat_name_input.strip())
                                 st.cache_data.clear()
-                                st.toast(f"✅ Kategorie in '{new_cat_name_input.strip()}' umbenannt!", icon="✏️")
+                                st.toast(f"Kategorie in '{new_cat_name_input.strip()}' umbenannt!", icon="✏️")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"Fehler beim Umbenennen: {e}")
@@ -721,7 +771,7 @@ with tab_manage:
                             max_items=new_feed_max,
                         )
                         st.cache_data.clear()
-                        st.toast(f"✅ Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
+                        st.toast(f"Feed '{new_feed_name}' erfolgreich zu '{target_cat_name}' hinzugefügt!", icon="📡")
                         st.rerun()
                     except Exception as e:
                         st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
@@ -809,7 +859,7 @@ with tab_manage:
                                     new_category=edit_fcat.strip()
                                 )
                                 st.cache_data.clear()
-                                st.toast(f"✅ Feed '{edit_fname}' erfolgreich aktualisiert!", icon="💾")
+                                st.toast(f"Feed '{edit_fname}' erfolgreich aktualisiert!", icon="💾")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"Fehler beim Speichern: {e}")
@@ -819,7 +869,7 @@ with tab_manage:
                         if st.button("Bestätigen", key=f"top_del_{curr_f.get('url')}", type="primary", use_container_width=True):
                             delete_feed(curr_cname, curr_f.get("url"))
                             st.cache_data.clear()
-                            st.toast(f"🗑️ Feed '{curr_f.get('name')}' entfernt.", icon="🗑️")
+                            st.toast(f"Feed '{curr_f.get('name')}' entfernt.", icon="🗑️")
                             st.rerun()
 
     st.markdown("---")
@@ -847,7 +897,7 @@ with tab_manage:
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
                         delete_category(cat_name)
                         st.cache_data.clear()
-                        st.toast(f"🗑️ Kategorie '{cat_name}' gelöscht.", icon="🗑️")
+                        st.toast(f"Kategorie '{cat_name}' gelöscht.", icon="🗑️")
                         st.rerun()
 
             if not feeds:
@@ -879,7 +929,7 @@ with tab_manage:
                             if st.button("💾 Speichern", key=f"feed_save_{cat_idx}_{feed_idx}", use_container_width=True):
                                 update_feed(cat_name, f_url, new_max_items=current_max_input)
                                 st.cache_data.clear()
-                                st.toast(f"✅ Max. Artikel für '{f_name}' auf {current_max_input} aktualisiert!", icon="💾")
+                                st.toast(f"Max. Artikel für '{f_name}' auf {current_max_input} aktualisiert!", icon="💾")
                                 st.rerun()
                         with col_f_del:
                             with st.popover("🗑️ Löschen", use_container_width=True):
@@ -887,7 +937,7 @@ with tab_manage:
                                 if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                     delete_feed(cat_name, f_url)
                                     st.cache_data.clear()
-                                    st.toast(f"🗑️ Feed '{f_name}' entfernt.", icon="🗑️")
+                                    st.toast(f"Feed '{f_name}' entfernt.", icon="🗑️")
                                     st.rerun()
 
                         with st.expander("🛠️ Details & URL bearbeiten / Feed testen", expanded=False):
@@ -909,7 +959,7 @@ with tab_manage:
                                 if st.button("💾 Alle Details speichern", key=f"btn_save_all_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                     update_feed(cat_name, f_url, new_name=edit_name_val, new_url=edit_url_val, new_max_items=current_max_input)
                                     st.cache_data.clear()
-                                    st.toast("✅ Feed-Details aktualisiert!", icon="💾")
+                                    st.toast("Feed-Details aktualisiert!", icon="💾")
                                     st.rerun()
 
     st.markdown("---")
@@ -954,7 +1004,7 @@ with tab_manage:
             }
             update_settings(new_settings_dict)
             st.cache_data.clear()
-            st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
+            st.toast("Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
             st.rerun()
 
         st.caption("🔒 **Sicherheitshinweis:** Sensible Zugangsdaten wie `APP_PASSWORD` oder API-Keys werden niemals in `sources.yaml` gespeichert, sondern sicher als Secrets in **GitHub Actions** und **Streamlit Cloud** verwaltet.")
@@ -981,7 +1031,7 @@ with tab_manage:
                             sync_res = sync_sources_to_github()
                             if sync_res["success"]:
                                 st.success("✅ Erfolgreich zu GitHub synchronisiert!")
-                                st.toast("✅ Zu GitHub gepusht!", icon="🐙")
+                                st.toast("Zu GitHub gepusht!", icon="🐙")
                             else:
                                 st.error(f"❌ Fehler: {sync_res['error']}")
         except Exception as e:
