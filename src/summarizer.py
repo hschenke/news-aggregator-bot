@@ -49,12 +49,18 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
 
 
-def build_category_quicklinks(config: dict, streamlit_base_url: str) -> Dict[str, str]:
+def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path: str = "config/sources.yaml") -> Dict[str, str]:
     """
     Erstellt für jede Kategorie den Link-Block.
     WICHTIG: Die Feed-Links verweisen direkt auf die Streamlit-App (mit Kategorie- & Feed-Filter),
     damit der Nutzer die formatierten Artikel sieht und nicht die unlesbare Roh-RSS-XML.
+    Falls ein APP_PASSWORD hinterlegt ist, wird das sichere Auth-Token an die URLs angehängt,
+    sodass der Nutzer bei Klicks aus dem Briefing nie wieder ein Passwort eingeben muss!
     """
+    from src.auth import get_configured_app_password, generate_persistent_auth_token
+    app_pw = get_configured_app_password(config_path)
+    auth_param = f"&auth={generate_persistent_auth_token(app_pw)}" if app_pw else ""
+
     category_links = {}
     for cat_item in config.get("categories", []):
         cat_name = cat_item.get("name", "").strip()
@@ -62,14 +68,14 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str) -> Dict[str
             continue
         feeds = cat_item.get("feeds", [])
         encoded_cat = urllib.parse.quote(cat_name)
-        cat_app_url = f"{streamlit_base_url}/?category={encoded_cat}"
+        cat_app_url = f"{streamlit_base_url}/?category={encoded_cat}{auth_param}"
 
         feed_parts = []
         for f in feeds:
             fname = f.get("name", "Feed").strip()
             encoded_feed = urllib.parse.quote(fname)
             # Feed-Link öffnet direkt die Web-App mit Kategorie- und Feed-Filter
-            feed_app_url = f"{streamlit_base_url}/?category={encoded_cat}&feed={encoded_feed}"
+            feed_app_url = f"{streamlit_base_url}/?category={encoded_cat}&feed={encoded_feed}{auth_param}"
             feed_parts.append(f"[{fname}]({feed_app_url})")
 
         if len(feed_parts) == 1:
@@ -188,7 +194,7 @@ def summarize_news_with_gemini(
     lang_name = "Deutsch" if language == "de" else language
 
     streamlit_app_url = get_streamlit_app_url(config_path)
-    category_links = build_category_quicklinks(config, streamlit_app_url)
+    category_links = build_category_quicklinks(config, streamlit_app_url, config_path)
 
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):

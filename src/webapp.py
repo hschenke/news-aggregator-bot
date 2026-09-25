@@ -88,73 +88,79 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# --- Passwort-Schutz & Login-Cookie ---
-def get_configured_app_password() -> str:
-    """Liest das App-Passwort aus Umgebungsvariablen oder Streamlit Secrets."""
-    pw = os.getenv("APP_PASSWORD")
-    if not pw:
-        try:
-            if hasattr(st, "secrets") and "APP_PASSWORD" in st.secrets:
-                pw = str(st.secrets["APP_PASSWORD"])
-        except Exception:
-            pass
-    return (pw or "").strip()
-
-
-def generate_auth_token(password: str) -> str:
-    """Erstellt ein kryptografisch signiertes Authentifizierungs-Token mit Zeitstempel."""
-    timestamp = str(int(time.time()))
-    sig = hmac.new(password.encode("utf-8"), timestamp.encode("utf-8"), hashlib.sha256).hexdigest()
-    return f"{timestamp}:{sig}"
-
-
-def verify_auth_token(token: str, password: str, max_age_days: int = COOKIE_EXPIRY_DAYS) -> bool:
-    """Verifiziert das Authentifizierungs-Token und prüft die Gültigkeitsdauer."""
-    if not token or ":" not in token:
-        return False
-    try:
-        timestamp_str, sig = token.split(":", 1)
-        expected_sig = hmac.new(password.encode("utf-8"), timestamp_str.encode("utf-8"), hashlib.sha256).hexdigest()
-        if not hmac.compare_digest(expected_sig, sig):
-            return False
-        timestamp = int(timestamp_str)
-        if time.time() - timestamp > (86400 * max_age_days):
-            return False
-        return True
-    except Exception:
-        return False
+# --- Passwort-Schutz & Login-Persistenz ---
+from src.auth import (
+    get_configured_app_password,
+    generate_persistent_auth_token,
+    verify_auth_token,
+    COOKIE_AUTH_NAME,
+    COOKIE_EXPIRY_DAYS,
+)
 
 
 def check_password() -> bool:
     """
-    Überprüft das App-Passwort:
+    Überprüft das App-Passwort mit mehrstufiger Persistenz:
     1. Bereits in session_state authentifiziert
-    2. Gespeicherter Login-Cookie im Browser
-    3. Passwort-Eingabe über Formular
+    2. URL Query Parameter ?auth=... oder ?token=... (z. B. aus Links im E-Mail-Briefing)
+    3. HTTP-Cookie im Request-Header (st.context.cookies)
+    4. Lokaler Speicher / Cookie-Controller Fallback
+    5. Client-seitiges Auto-Login via localStorage
+    6. Passwort-Eingabe über Login-Formular
     """
     expected_password = get_configured_app_password()
     if not expected_password:
         return True  # Kein Passwort konfiguriert -> freier Zugang
 
-    # 1. Bereits in session_state authentifiziert?
+    # 1. Bereits in dieser Sitzung authentifiziert?
     if st.session_state.get("authenticated", False):
         return True
 
-    # 2. Login-Cookie prüfen (zuerst st.context.cookies aus HTTP Header, dann CookieController)
-    token_from_cookie = None
-    if hasattr(st, "context") and hasattr(st.context, "cookies"):
-        token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
-    if not token_from_cookie and cookie_controller:
-        try:
-            token_from_cookie = cookie_controller.get(COOKIE_AUTH_NAME)
-        except Exception:
-            pass
-
-    if token_from_cookie and verify_auth_token(token_from_cookie, expected_password):
+    # 2. URL Query Parameter prüfen (?auth=... oder ?token=...)
+    url_auth = st.query_params.get("auth") or st.query_params.get("token")
+    if url_auth and verify_auth_token(url_auth, expected_password):
         st.session_state["authenticated"] = True
         return True
 
-    # 3. Nicht angemeldet: Login-Formular anzeigen
+    # 3. HTTP Cookie im Request Header prüfen (st.context.cookies)
+    if hasattr(st, "context") and hasattr(st.context, "cookies"):
+        token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
+        if token_from_cookie and verify_auth_token(token_from_cookie, expected_password):
+            st.session_state["authenticated"] = True
+            return True
+
+    # 4. Fallback über cookie_controller prüfen
+    if cookie_controller:
+        try:
+            token_from_ctrl = cookie_controller.get(COOKIE_AUTH_NAME)
+            if token_from_ctrl and verify_auth_token(token_from_ctrl, expected_password):
+                st.session_state["authenticated"] = True
+                return True
+        except Exception:
+            pass
+
+    # 5. Client-seitiges Auto-Login: Falls im localStorage des Browsers ein Token liegt,
+    # wird die Seite sofort automatisch mit ?auth=TOKEN neu geladen!
+    st.components.v1.html(f"""
+    <script>
+    (function() {{
+        try {{
+            var stored = localStorage.getItem("{COOKIE_AUTH_NAME}");
+            if (!stored) {{
+                var match = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_AUTH_NAME}' + '=([^;]*)'));
+                if (match) stored = decodeURIComponent(match[2]);
+            }}
+            if (stored && !window.location.search.includes("auth=")) {{
+                var url = new URL(window.location.href);
+                url.searchParams.set("auth", stored);
+                window.location.replace(url.href);
+            }}
+        }} catch(e) {{}}
+    }})();
+    </script>
+    """, height=0, width=0)
+
+    # 6. Nicht angemeldet: Login-Formular anzeigen
     st.markdown("""
         <div style='text-align: center; margin-top: 2rem;'>
             <h2>🔒 Zugriff geschützt</h2>
@@ -166,24 +172,50 @@ def check_password() -> bool:
     with col2:
         with st.form("login_form"):
             password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
-            remember_me = st.checkbox("Angemeldet bleiben (Login-Cookie für 7 Tage)", value=True)
+            remember_me = st.checkbox("Angemeldet bleiben (Automatisch einloggen)", value=True)
             submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
 
             if submit:
                 if password_input == expected_password:
                     st.session_state["authenticated"] = True
-                    if remember_me and cookie_controller:
-                        try:
-                            token = generate_auth_token(expected_password)
-                            cookie_controller.set(
-                                COOKIE_AUTH_NAME,
-                                token,
-                                max_age=float(86400 * COOKIE_EXPIRY_DAYS),
-                                expires=datetime.now() + timedelta(days=COOKIE_EXPIRY_DAYS),
-                                same_site="lax"
-                            )
-                        except Exception as e:
-                            print(f"[Warnung] Cookie konnte nicht gesetzt werden: {e}")
+                    token = generate_persistent_auth_token(expected_password)
+                    if remember_me:
+                        # URL Parameter setzen -> bleibt im Browser über Tabs & Reloads erhalten!
+                        st.query_params["auth"] = token
+
+                        # Token auch in localStorage & document.cookie schreiben
+                        st.components.v1.html(f"""
+                        <script>
+                        (function() {{
+                            var days = 365;
+                            var d = new Date();
+                            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+                            var expires = "expires=" + d.toUTCString();
+                            var cookieStr = "{COOKIE_AUTH_NAME}=" + encodeURIComponent("{token}") + "; " + expires + "; path=/; SameSite=Lax; Secure";
+                            try {{
+                                localStorage.setItem("{COOKIE_AUTH_NAME}", "{token}");
+                                document.cookie = cookieStr;
+                                if (window.parent && window.parent !== window) {{
+                                    window.parent.localStorage.setItem("{COOKIE_AUTH_NAME}", "{token}");
+                                    window.parent.document.cookie = cookieStr;
+                                }}
+                            }} catch(e) {{}}
+                        }})();
+                        </script>
+                        """, height=0, width=0)
+
+                        if cookie_controller:
+                            try:
+                                cookie_controller.set(
+                                    COOKIE_AUTH_NAME,
+                                    token,
+                                    max_age=float(86400 * 365),
+                                    expires=datetime.now() + timedelta(days=365),
+                                    same_site="lax"
+                                )
+                            except Exception:
+                                pass
+
                     st.toast("Erfolgreich angemeldet!", icon="🔓")
                     st.rerun()
                 else:
@@ -250,6 +282,24 @@ if get_configured_app_password():
     st.sidebar.caption("🔒 Status: Angemeldet")
     if st.sidebar.button("🚪 Abmelden", use_container_width=True):
         st.session_state["authenticated"] = False
+        if "auth" in st.query_params:
+            del st.query_params["auth"]
+        if "token" in st.query_params:
+            del st.query_params["token"]
+        st.components.v1.html(f"""
+        <script>
+        (function() {{
+            try {{
+                localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
+                if (window.parent && window.parent !== window) {{
+                    window.parent.localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                    window.parent.document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
+                }}
+            }} catch(e) {{}}
+        }})();
+        </script>
+        """, height=0, width=0)
         if cookie_controller:
             try:
                 cookie_controller.remove(COOKIE_AUTH_NAME)
@@ -775,20 +825,32 @@ with tab_manage:
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
 
-        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
-        setting_app_url = st.text_input(
-            "Streamlit App URL:",
-            value=default_app_url,
-            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
-        )
+        col_u1, col_u2 = st.columns([1, 1])
+        with col_u1:
+            default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
+            setting_app_url = st.text_input(
+                "Streamlit App URL:",
+                value=default_app_url,
+                help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+            )
+        with col_u2:
+            current_pw = current_settings.get("app_password", "")
+            setting_app_pw = st.text_input(
+                "App-Passwort / PIN (optional):",
+                value=current_pw,
+                type="password",
+                help="Schützt dieses Web-Dashboard mit einem Passwort. Links im E-Mail-Briefing enthalten automatisch ein sicheres Auth-Token für sofortigen Direktzugriff ohne erneute Passwortabfrage."
+            )
 
         if st.button("💾 Globale Einstellungen in sources.yaml speichern", type="primary"):
-            update_settings({
+            new_settings_dict = {
                 "max_articles_per_category": setting_max_cat,
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),
-            })
+                "app_password": setting_app_pw.strip(),
+            }
+            update_settings(new_settings_dict)
             st.cache_data.clear()
             st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
             st.rerun()
