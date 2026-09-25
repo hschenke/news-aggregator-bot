@@ -12,10 +12,10 @@ COOKIE_EXPIRY_DAYS = 365
 
 def get_configured_app_password(config_path: str = "config/sources.yaml") -> str:
     """
-    Ermittelt das App-Passwort in folgender Prioritätsreihenfolge:
-    1. Umgebungsvariable APP_PASSWORD (.env oder GitHub Actions Secrets)
+    Ermittelt das App-Passwort ausschließlich aus sicheren Secrets:
+    1. Umgebungsvariable APP_PASSWORD (.env lokal oder GitHub Actions Secrets)
     2. Streamlit Secrets (st.secrets["APP_PASSWORD"])
-    3. sources.yaml (settings.app_password)
+    (Wird niemals im Quelltext oder in sources.yaml gespeichert!)
     """
     env_pw = os.getenv("APP_PASSWORD")
     if env_pw and env_pw.strip():
@@ -27,15 +27,6 @@ def get_configured_app_password(config_path: str = "config/sources.yaml") -> str
             pw = str(st.secrets["APP_PASSWORD"]).strip()
             if pw:
                 return pw
-    except Exception:
-        pass
-
-    try:
-        from src.aggregator import load_sources
-        config = load_sources(config_path)
-        pw = config.get("settings", {}).get("app_password")
-        if pw and str(pw).strip():
-            return str(pw).strip()
     except Exception:
         pass
 

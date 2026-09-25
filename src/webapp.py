@@ -825,22 +825,12 @@ with tab_manage:
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
 
-        col_u1, col_u2 = st.columns([1, 1])
-        with col_u1:
-            default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
-            setting_app_url = st.text_input(
-                "Streamlit App URL:",
-                value=default_app_url,
-                help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
-            )
-        with col_u2:
-            current_pw = current_settings.get("app_password", "")
-            setting_app_pw = st.text_input(
-                "App-Passwort / PIN (optional):",
-                value=current_pw,
-                type="password",
-                help="Schützt dieses Web-Dashboard mit einem Passwort. Links im E-Mail-Briefing enthalten automatisch ein sicheres Auth-Token für sofortigen Direktzugriff ohne erneute Passwortabfrage."
-            )
+        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
+        setting_app_url = st.text_input(
+            "Streamlit App URL:",
+            value=default_app_url,
+            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+        )
 
         if st.button("💾 Globale Einstellungen in sources.yaml speichern", type="primary"):
             new_settings_dict = {
@@ -848,12 +838,13 @@ with tab_manage:
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),
-                "app_password": setting_app_pw.strip(),
             }
             update_settings(new_settings_dict)
             st.cache_data.clear()
             st.toast("✅ Globale Einstellungen in sources.yaml gespeichert!", icon="💾")
             st.rerun()
+
+        st.caption("🔒 **Sicherheitshinweis:** Sensible Zugangsdaten wie `APP_PASSWORD` oder API-Keys werden niemals in `sources.yaml` gespeichert, sondern sicher als Secrets in **GitHub Actions** und **Streamlit Cloud** verwaltet.")
 
     # --- Sektion 5: Live-Vorschau der sources.yaml Datei ---
     with st.expander("📄 Live-Vorschau: config/sources.yaml", expanded=False):
