@@ -688,7 +688,7 @@ with tab_rss:
     # Oberer Info- und Aktionsbalken
     col_rss_top1, col_rss_top2, col_rss_top3 = st.columns([2, 1, 1], vertical_alignment="center")
     with col_rss_top1:
-        st.caption(f"🌐 **Server-Basis-URL:** `{app_base_url}`")
+        st.caption("🚀 **Bereitstellung:** 24/7 High-Speed GitHub CDN • 0s Ladezeit • Standard RSS 2.0 XML")
     with col_rss_top2:
         if st.button("🔄 Feeds neu generieren", key="btn_refresh_rss", use_container_width=True):
             st.cache_data.clear()
@@ -705,30 +705,6 @@ with tab_rss:
     # Feeds exportieren und Registry laden
     rss_registry = export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
 
-    # Auswahl des Bereitstellungs-Typs (CDN vs. Streamlit Server)
-    col_prov1, col_prov2 = st.columns([3, 1], vertical_alignment="center")
-    with col_prov1:
-        rss_provider = st.radio(
-            "Feed-Bereitstellung:",
-            options=[
-                "🚀 GitHub CDN (Empfohlen: 24/7 online, 0s Ladezeit, kein Standby)",
-                "🌐 Streamlit Cloud Server (/app/static/...)"
-            ],
-            index=0,
-            horizontal=True,
-            key="radio_rss_provider"
-        )
-    with col_prov2:
-        use_cdn = "GitHub CDN" in rss_provider
-
-    if not use_cdn:
-        st.info(
-            "💡 **Hinweis zum Streamlit Cloud Server:** Falls beim Öffnen der `/app/static/...` URL nur ein Lade-Kreisel erscheint, "
-            "starte bitte einmalig die App in Streamlit Cloud neu (**Rechts unten auf die 3 Punkte `⋮` > 'Reboot app'**), damit Streamlit die Server-Einstellung für statische Dateien aktiviert. "
-            "Mit **'🚀 GitHub CDN'** sind alle Feeds dagegen sofort und dauerhaft 24/7 erreichbar!",
-            icon="ℹ️"
-        )
-
     # 1. Gesamt-Feed (Alle Nachrichten)
     if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:
         all_info = rss_registry.get("all", {})
@@ -740,11 +716,10 @@ with tab_rss:
             with col_all_h2:
                 st.metric("Gesamtartikel", all_info.get("item_count", 0))
 
-            all_url = all_info.get("cdn_url") if use_cdn else all_info.get("http_url", "")
+            all_url = all_info.get("url") or all_info.get("cdn_url", "")
             feed_proto_url = all_url.replace("https://", "feed://").replace("http://", "feed://")
 
             st.code(all_url, language="text")
-
 
             col_u1, col_u2, col_u3 = st.columns(3)
             with col_u1:
@@ -783,7 +758,7 @@ with tab_rss:
                         st.caption(f"**{cat_item['item_count']}** Artikel")
 
                     st.caption(f"Enthält Beiträge aus {cat_item['feed_count']} konfigurierten Feeds.")
-                    cat_url = cat_item.get("cdn_url") if use_cdn else cat_item.get("http_url", "")
+                    cat_url = cat_item.get("url") or cat_item.get("cdn_url", "")
                     cat_feed_proto = cat_url.replace("https://", "feed://").replace("http://", "feed://")
 
                     st.code(cat_url, language="text")
@@ -830,7 +805,7 @@ with tab_rss:
                         st.caption(f"📁 {f_item['category']}")
 
                     st.caption(f"Artikel im Pool: **{f_item['item_count']}** • [Original-Feed ansehen]({f_item['original_url']})")
-                    f_url = f_item.get("cdn_url") if use_cdn else f_item.get("http_url", "")
+                    f_url = f_item.get("url") or f_item.get("cdn_url", "")
                     f_proto = f_url.replace("https://", "feed://").replace("http://", "feed://")
 
                     st.code(f_url, language="text")
@@ -857,9 +832,10 @@ with tab_rss:
 
     # 4. Anleitung für RSS-Reader
     with st.expander("ℹ️ **Anleitung: Wie binde ich diese Feeds in meinen RSS-Reader ein?**", expanded=False):
+        all_example_url = rss_registry.get("all", {}).get("url") or "https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml"
         st.markdown(f"""
         ### So abonnierst du deine persönlichen Feeds:
-        1. **URL kopieren**: Klicke oben im Kasten des gewünschten Feeds auf das Kopier-Icon des Code-Blocks (z. B. `{app_base_url}/app/static/rss/all.xml`).
+        1. **URL kopieren**: Klicke oben im Kasten des gewünschten Feeds auf das Kopier-Icon des Code-Blocks (z. B. `{all_example_url}`).
         2. **RSS-Reader öffnen**: Starte deinen bevorzugten News-Reader (z. B. *NetNewsWire*, *Feedly*, *Apple News*, *Inoreader*, *Thunderbird*, *Outlook* etc.).
         3. **Feed hinzufügen**:
            - **NetNewsWire / Reeder**: Menü `Feed` > `Add Web Feed...` > URL einfügen > `Add`.
@@ -868,8 +844,9 @@ with tab_rss:
            - **Thunderbird**: Ordner "Blogs & News-Feeds" auswählen > `Feed-Abonnements verwalten` > `Hinzufügen` > URL einfügen.
         4. **Tipp für macOS & iOS**: Wenn dein Reader das URL-Schema `feed://` unterstützt, kannst du einfach auf **'➕ 1-Click'** klicken, um den Feed direkt mit einem Klick zu öffnen und zu abonnieren!
 
-        > **Hinweis zur Bereitstellung:** Die Feeds werden als statische, standardkonforme RSS 2.0 XML-Dateien bereitgestellt. Sie sind öffentlich von RSS-Clients über Standard-HTTP abrufbar, ohne dass eine interaktive Passworteingabe oder JavaScript erforderlich ist.
+        > **Hinweis:** Alle Feeds werden über ein globales High-Speed CDN (jsDelivr / GitHub) direkt als standardkonformes RSS 2.0 XML (`application/xml`) ausgeliefert. Sie sind 24/7 ohne Wartezeit oder App-Standby erreichbar.
         """)
+
 
 # ----------------- TAB: Quellen & Feeds verwalten -----------------
 with tab_manage:

@@ -222,7 +222,8 @@ def export_all_rss_feeds(
         cat_slug = slugify(cat_name)
         cat_filename = f"{cat_slug}.xml"
         cat_file_path = cat_dir / cat_filename
-        cat_http_url = f"{static_http_prefix}/kategorien/{cat_filename}"
+        cat_cdn_url = f"{cdn_prefix}/kategorien/{cat_filename}"
+        cat_raw_url = f"{raw_prefix}/kategorien/{cat_filename}"
         cat_param = urllib.parse.quote_plus(cat_name)
         cat_app_view_url = f"{base_url}/?category={cat_param}"
 
@@ -231,7 +232,7 @@ def export_all_rss_feeds(
             link=cat_app_view_url,
             description=f"Aggregierte Nachrichten für die Kategorie '{cat_name}' aus dem News Aggregator Bot.",
             items=cat_items,
-            self_url=cat_http_url,
+            self_url=cat_cdn_url,
             category_name=cat_name,
         )
         cat_file_path.write_text(cat_xml, encoding="utf-8")
@@ -248,14 +249,15 @@ def export_all_rss_feeds(
             "slug": cat_slug,
             "filename": f"kategorien/{cat_filename}",
             "file_path": str(cat_file_path),
-            "http_url": cat_http_url,
-            "cdn_url": f"{cdn_prefix}/kategorien/{cat_filename}",
-            "raw_url": f"{raw_prefix}/kategorien/{cat_filename}",
+            "url": cat_cdn_url,
+            "cdn_url": cat_cdn_url,
+            "raw_url": cat_raw_url,
             "app_url": cat_app_view_url,
             "item_count": len(cat_items),
             "feed_count": cfg_feed_count or len(set(i.get("source", "") for i in cat_items if i.get("source"))),
             "xml_preview": cat_xml,
         })
+
 
 
     # 2. Einzelne Feeds erstellen (nach Quell-Feed gegliedert)
@@ -281,7 +283,8 @@ def export_all_rss_feeds(
             f_items = items_by_source.get(f_name, [])
             f_filename = f"{f_slug}.xml"
             f_file_path = feed_dir / f_filename
-            f_http_url = f"{static_http_prefix}/feeds/{f_filename}"
+            f_cdn_url = f"{cdn_prefix}/feeds/{f_filename}"
+            f_raw_url = f"{raw_prefix}/feeds/{f_filename}"
             c_param = urllib.parse.quote_plus(cat_name)
             f_param = urllib.parse.quote_plus(f_name)
             f_app_view_url = f"{base_url}/?category={c_param}&feed={f_param}"
@@ -291,7 +294,7 @@ def export_all_rss_feeds(
                 link=f_app_view_url,
                 description=f"RSS-Feed für die Quelle '{f_name}' (Kategorie: {cat_name}).",
                 items=f_items,
-                self_url=f_http_url,
+                self_url=f_cdn_url,
                 category_name=cat_name,
             )
             f_file_path.write_text(f_xml, encoding="utf-8")
@@ -303,9 +306,9 @@ def export_all_rss_feeds(
                 "original_url": f_url,
                 "filename": f"feeds/{f_filename}",
                 "file_path": str(f_file_path),
-                "http_url": f_http_url,
-                "cdn_url": f"{cdn_prefix}/feeds/{f_filename}",
-                "raw_url": f"{raw_prefix}/feeds/{f_filename}",
+                "url": f_cdn_url,
+                "cdn_url": f_cdn_url,
+                "raw_url": f_raw_url,
                 "app_url": f_app_view_url,
                 "item_count": len(f_items),
                 "xml_preview": f_xml,
@@ -325,14 +328,15 @@ def export_all_rss_feeds(
     sorted_all_articles = sorted(all_articles, key=sort_key, reverse=True)
     all_filename = "all.xml"
     all_file_path = rss_root / all_filename
-    all_http_url = f"{static_http_prefix}/{all_filename}"
+    all_cdn_url = f"{cdn_prefix}/{all_filename}"
+    all_raw_url = f"{raw_prefix}/{all_filename}"
 
     all_xml = generate_rss_xml(
         title="News Bot — Alle Nachrichten (Gesamt-Feed)",
         link=base_url,
         description="Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.",
         items=sorted_all_articles,
-        self_url=all_http_url,
+        self_url=all_cdn_url,
     )
     all_file_path.write_text(all_xml, encoding="utf-8")
 
@@ -341,13 +345,14 @@ def export_all_rss_feeds(
         "slug": "all",
         "filename": all_filename,
         "file_path": str(all_file_path),
-        "http_url": all_http_url,
-        "cdn_url": f"{cdn_prefix}/{all_filename}",
-        "raw_url": f"{raw_prefix}/{all_filename}",
+        "url": all_cdn_url,
+        "cdn_url": all_cdn_url,
+        "raw_url": all_raw_url,
         "app_url": base_url,
         "item_count": len(sorted_all_articles),
         "xml_preview": all_xml,
     }
+
 
 
     return {

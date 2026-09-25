@@ -95,18 +95,19 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 
 ---
 
-### 📡 Weg C: Eigene RSS-Feeds abonnieren (RSS-Feed-Server)
+### 📡 Weg C: Eigene RSS-Feeds abonnieren (24/7 High-Speed CDN)
 
-Die Web-App dient gleichzeitig als dein eigener, unabhängiger **RSS-Feed-Server**! Alle aggregierten Nachrichten stehen als standardkonforme RSS 2.0 Feeds zur Verfügung:
+Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS 2.0 Feeds** über ein weltweites CDN (jsDelivr / GitHub) bereit – 24/7 online, ohne Standby oder Ladezeiten:
 
-- **🌟 Gesamt-Feed**: Alle aggregierten Artikel aus allen Kategorien chronologisch (`/app/static/rss/all.xml`).
-- **📁 Kategorie-Feeds**: Für jedes Thema ein eigener Feed (z. B. `Tech & AI`, `Finanzen`, `Games` unter `/app/static/rss/kategorien/<slug>.xml`).
-- **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`/app/static/rss/feeds/<slug>.xml`).
+- **🌟 Gesamt-Feed**: Alle aggregierten Artikel aus allen Kategorien chronologisch (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml`).
+- **📁 Kategorie-Feeds**: Für jedes Thema ein eigener Feed (z. B. `Tech & AI`, `Finanzen`, `Games` unter `.../static/rss/kategorien/<slug>.xml`).
+- **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`.../static/rss/feeds/<slug>.xml`).
 
 #### Aufruf & Nutzung:
-1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://dein-news-bot.streamlit.app/?page=rss` auf.
-2. Kopiere die gewünschte Feed-URL oder klicke auf **"➕ 1-Click Abo"**, um den Feed direkt in deinem RSS-Reader (z. B. **NetNewsWire**, **Feedly**, **Apple News**, **Inoreader**, **Thunderbird**, **Outlook**) einzubinden.
+1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?page=rss` auf.
+2. Kopiere die gewünschte CDN-URL oder klicke auf **"➕ 1-Click Abo"**, um den Feed direkt in deinem RSS-Reader (z. B. **NetNewsWire**, **Feedly**, **Apple News**, **Inoreader**, **Thunderbird**, **Outlook**) einzubinden.
 3. Jeder Feed kann zusätzlich als `.xml`-Datei heruntergeladen oder per Live-Code-Vorschau inspiziert werden.
+
 
 ---
 

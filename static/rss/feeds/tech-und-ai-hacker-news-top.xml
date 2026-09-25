@@ -5,9 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 15:49:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 15:58:31 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/app/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Classified Estimates Show the NSA Is Paying Billions to Test AI Models</title>
       <link>https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</link>
@@ -36,19 +36,19 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Allow Carriers on Planes</title>
-      <link>https://www.jefftk.com/p/allow-carriers-on-planes</link>
-      <guid isPermaLink="false">https://www.jefftk.com/p/allow-carriers-on-planes</guid>
-      <pubDate>Fri, 25 Sep 2026 13:00:10 GMT</pubDate>
+      <title>First Principles Thinking</title>
+      <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
+      <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
+      <pubDate>Fri, 25 Sep 2026 12:55:37 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>First Principles Thinking</title>
-      <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
-      <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
-      <pubDate>Fri, 25 Sep 2026 12:55:37 GMT</pubDate>
+      <title>Allow Carriers on Planes</title>
+      <link>https://www.jefftk.com/p/allow-carriers-on-planes</link>
+      <guid isPermaLink="false">https://www.jefftk.com/p/allow-carriers-on-planes</guid>
+      <pubDate>Fri, 25 Sep 2026 13:00:10 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

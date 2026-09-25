@@ -5,9 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 15:49:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 15:58:31 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/app/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts</title>
       <link>https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts/</link>
@@ -81,8 +81,8 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5/5 to attend: Leave further ahead.</title>
-      <link>https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-5-to-attend/</link>
+      <title>Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5 of 5 to attend: Momentum</title>
+      <link>https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-of-5-to-attend-momentum/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169398</guid>
       <pubDate>Fri, 25 Sep 2026 13:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>

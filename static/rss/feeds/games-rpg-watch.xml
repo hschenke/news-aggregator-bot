@@ -5,9 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 15:49:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 25 Sep 2026 15:58:31 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/app/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zenless Zone Zero - Roxy Character Demo</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60233</link>
