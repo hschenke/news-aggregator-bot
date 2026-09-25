@@ -280,22 +280,32 @@ col4.metric("🤖 LLM Engine", selected_model.replace("gemini-", "Gemini "))
 
 st.markdown("---")
 
-# Navigation Tabs
-tab1, tab2, tab3 = st.tabs([
-    "✨ KI-Tages-Briefing",
-    "📋 Alle Artikel durchsuchen",
-    "⚙️ Quellen & Feeds verwalten"
-])
+# Navigation Tabs: Wenn der Nutzer über einen Kategorien-/Feed-Link aus der E-Mail kommt,
+# wird der Tab 'Alle Artikel durchsuchen' direkt als aktiver Tab geöffnet!
+is_viewing_feed = bool(st.query_params.get("category") or st.query_params.get("feed"))
 
-# ----------------- TAB 1: KI-Briefing -----------------
-with tab1:
+if is_viewing_feed:
+    tab_articles, tab_briefing, tab_manage = st.tabs([
+        "📋 Alle Artikel durchsuchen",
+        "✨ KI-Tages-Briefing",
+        "⚙️ Quellen & Feeds verwalten"
+    ])
+else:
+    tab_briefing, tab_articles, tab_manage = st.tabs([
+        "✨ KI-Tages-Briefing",
+        "📋 Alle Artikel durchsuchen",
+        "⚙️ Quellen & Feeds verwalten"
+    ])
+
+# ----------------- TAB: KI-Briefing -----------------
+with tab_briefing:
     st.subheader("Synthetisiertes KI-Briefing")
     
     col_btn, col_info = st.columns([1, 2])
     with col_btn:
         generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
     with col_info:
-        st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes TL;DR-Briefing.")
+        st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
 
     if generate_clicked:
         with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
@@ -322,9 +332,9 @@ with tab1:
     else:
         st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
 
-# ----------------- TAB 2: Artikel durchsuchen -----------------
-with tab2:
-    filter_col1, filter_col2 = st.columns([1, 2])
+# ----------------- TAB: Artikel durchsuchen -----------------
+with tab_articles:
+    filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
     
     with filter_col1:
         category_options = ["Alle Kategorien"] + list(news_data.keys())
@@ -338,6 +348,24 @@ with tab2:
         selected_cat = st.selectbox("Nach Kategorie filtern:", category_options, index=default_cat_idx)
         
     with filter_col2:
+        if selected_cat != "Alle Kategorien":
+            cat_items = news_data.get(selected_cat, [])
+            available_feeds = sorted(list({item.get("source") for item in cat_items if item.get("source")}))
+            feed_options = ["Alle Feeds"] + available_feeds
+        else:
+            all_feeds = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}))
+            feed_options = ["Alle Feeds"] + all_feeds
+
+        default_feed_idx = 0
+        qp_feed = st.query_params.get("feed", "")
+        if qp_feed:
+            for idx, f in enumerate(feed_options):
+                if f.strip().lower() == qp_feed.strip().lower() or qp_feed.strip().lower() in f.strip().lower():
+                    default_feed_idx = idx
+                    break
+        selected_feed = st.selectbox("Nach Feed filtern:", feed_options, index=default_feed_idx)
+
+    with filter_col3:
         search_query = st.text_input("🔍 Artikel durchsuchen (Stichwort):", placeholder="z. B. AI, Apple, Wirtschaft...")
 
     # Artikel filtern
@@ -348,6 +376,8 @@ with tab2:
             
         matching_items = []
         for item in items:
+            if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
+                continue
             if search_query:
                 q = search_query.lower()
                 if q not in item["title"].lower() and q not in item.get("summary", "").lower():
@@ -373,8 +403,8 @@ with tab2:
     if displayed_count == 0:
         st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
-# ----------------- TAB 3: Quellen & Feeds verwalten -----------------
-with tab3:
+# ----------------- TAB: Quellen & Feeds verwalten -----------------
+with tab_manage:
     st.subheader("⚙️ Quellen & Feeds verwalten")
     st.caption("Verwalte deine RSS-Feeds und Einstellungen direkt im Web-Dashboard. Alle Änderungen werden automatisch in `config/sources.yaml` gespeichert.")
 
@@ -745,7 +775,7 @@ with tab3:
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx)
 
-        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot.streamlit.app"))
+        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
         setting_app_url = st.text_input(
             "Streamlit App URL:",
             value=default_app_url,

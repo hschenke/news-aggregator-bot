@@ -46,11 +46,15 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     except Exception:
         pass
 
-    return "https://news-aggregator-bot.streamlit.app"
+    return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
 
 
 def build_category_quicklinks(config: dict, streamlit_base_url: str) -> Dict[str, str]:
-    """Erstellt für jede Kategorie den Link-Block zur Streamlit App und den passenden RSS-Feeds."""
+    """
+    Erstellt für jede Kategorie den Link-Block.
+    WICHTIG: Die Feed-Links verweisen direkt auf die Streamlit-App (mit Kategorie- & Feed-Filter),
+    damit der Nutzer die formatierten Artikel sieht und nicht die unlesbare Roh-RSS-XML.
+    """
     category_links = {}
     for cat_item in config.get("categories", []):
         cat_name = cat_item.get("name", "").strip()
@@ -58,14 +62,15 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str) -> Dict[str
             continue
         feeds = cat_item.get("feeds", [])
         encoded_cat = urllib.parse.quote(cat_name)
-        app_url = f"{streamlit_base_url}/?category={encoded_cat}"
+        cat_app_url = f"{streamlit_base_url}/?category={encoded_cat}"
 
         feed_parts = []
         for f in feeds:
             fname = f.get("name", "Feed").strip()
-            furl = f.get("url", "").strip()
-            if furl:
-                feed_parts.append(f"[{fname}]({furl})")
+            encoded_feed = urllib.parse.quote(fname)
+            # Feed-Link öffnet direkt die Web-App mit Kategorie- und Feed-Filter
+            feed_app_url = f"{streamlit_base_url}/?category={encoded_cat}&feed={encoded_feed}"
+            feed_parts.append(f"[{fname}]({feed_app_url})")
 
         if len(feed_parts) == 1:
             feed_str = f"Feed: {feed_parts[0]}"
@@ -75,9 +80,9 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str) -> Dict[str
             feed_str = ""
 
         if feed_str:
-            category_links[cat_name] = f"> 🔗 [Streamlit App]({app_url}) · {feed_str}"
+            category_links[cat_name] = f"> 🔗 [Streamlit App]({cat_app_url}) · {feed_str}"
         else:
-            category_links[cat_name] = f"> 🔗 [Streamlit App]({app_url})"
+            category_links[cat_name] = f"> 🔗 [Streamlit App]({cat_app_url})"
 
     return category_links
 
@@ -86,6 +91,7 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
     """
     Bereinigt das KI-Briefing:
     - Entfernt jegliches Executive Summary oder einleitende Vorab-Zusammenfassungen
+    - Entfernt das Wort 'TL;DR:' vor den Zusammenfassungen
     - Stellt sicher, dass jede Kategorie als ersten Eintrag die Links zur Streamlit-App und zum Feed enthält
     - Garantiert Leerzeilen nach Quicklinks, damit Markdown saubere HTML-Listen (<ul><li>) erzeugt
     """
@@ -102,7 +108,12 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
     )
     text = re.sub(r"^(?:\s*---\s*\n+)+", "", text).strip()
 
-    # 2. Quicklinks pro Kategorie garantieren und Formatierung sicherstellen
+    # 2. Entferne 'TL;DR:' und 'TLDR:' Kennzeichnungen
+    text = re.sub(r"(?<=\*\*:\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"(?<=\]\):\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"\bTL;?DR:?\s*", "", text, flags=re.IGNORECASE)
+
+    # 3. Quicklinks pro Kategorie garantieren und Formatierung sicherstellen
     lines = text.split("\n")
     processed_lines = []
     current_cat = None
@@ -161,7 +172,7 @@ def summarize_news_with_gemini(
 ) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
-    Erstellt ein kompaktes TL;DR-Briefing ohne Executive Summary und verlinkt
+    Erstellt ein kompaktes Briefing ohne Executive Summary und verlinkt
     in jeder Kategorie als ersten Eintrag die Streamlit App sowie die Feeds.
     """
     try:
@@ -206,14 +217,15 @@ Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, ko
 
 WICHTIGE FORMATIERUNGSRICHTLINIEN:
 1. KEIN "Executive Summary" und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den Kategorien (z. B. "## 🤖 Tech & AI").
-2. Als ALLERERSTE Zeile direkt unter jeder Kategorie-Überschrift MUSST du exakt die vorgegebene Quicklinks-Zeile (Link zur Streamlit App & passendem Feed) übernehmen.
+2. Als ALLERERSTE Zeile direkt unter jeder Kategorie-Überschrift MUSST du exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) übernehmen.
 3. Wähle pro Kategorie bis zu {max_articles} der relevantesten Themen aus.
 4. PRO ARTIKEL:
    - KEINE Kernaussage und KEINE Bedeutung generieren!
-   - Erstelle stattdessen pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung im TL;DR-Stil (1 bis maximal 2 Sätze).
+   - Das Wort "TL;DR:" NICHT verwenden!
+   - Erstelle stattdessen pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
    - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
    - Format:
-     - **[Artikeltitel](Original-URL)**: TL;DR: <Prägnante Zusammenfassung in 1-2 Sätzen>
+     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
 5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und Emojis.
 
 Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
@@ -255,7 +267,7 @@ def _generate_fallback_summary(
     max_articles: int = 4,
     category_links: Dict[str, str] = None,
 ) -> str:
-    """Einfacher Markdown-Report ohne LLM (Fallback) im TL;DR-Format."""
+    """Einfacher Markdown-Report ohne LLM (Fallback)."""
     lines = []
     category_links = category_links or {}
     for cat, items in categorized_news.items():
@@ -268,7 +280,7 @@ def _generate_fallback_summary(
             summary = item.get("summary", "")
             source = item.get("source", "")
             if summary:
-                lines.append(f"- **[{title}]({link})**: TL;DR: {summary}")
+                lines.append(f"- **[{title}]({link})**: {summary}")
             elif source:
                 lines.append(f"- **[{title}]({link})** ({source})")
             else:
