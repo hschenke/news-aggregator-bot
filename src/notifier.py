@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -14,34 +15,204 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 load_dotenv()
 
 
+def _simple_markdown_fallback(md_text: str) -> str:
+    """Robuster Fallback zur Konvertierung von Markdown in HTML, falls das markdown-Paket fehlt."""
+    lines = md_text.splitlines()
+    html_lines = []
+    in_list = False
+    in_quote = False
+    quote_lines = []
+
+    def close_list():
+        nonlocal in_list
+        if in_list:
+            html_lines.append("</ul>")
+            in_list = False
+
+    def close_quote():
+        nonlocal in_quote, quote_lines
+        if in_quote:
+            content = " ".join(quote_lines)
+            content = _format_inline(content)
+            html_lines.append(f"<blockquote><p>{content}</p></blockquote>")
+            quote_lines = []
+            in_quote = False
+
+    def _format_inline(text: str) -> str:
+        text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
+        text = re.sub(r"\[(.*?)\]\((.*?)\)", r'<a href="\2">\1</a>', text)
+        return text
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            close_list()
+            close_quote()
+            continue
+
+        if stripped.startswith("## "):
+            close_list()
+            close_quote()
+            title = _format_inline(stripped[3:].strip())
+            html_lines.append(f"<h2>{title}</h2>")
+            continue
+
+        if stripped.startswith("### "):
+            close_list()
+            close_quote()
+            title = _format_inline(stripped[4:].strip())
+            html_lines.append(f"<h3>{title}</h3>")
+            continue
+
+        if stripped.startswith(">"):
+            close_list()
+            in_quote = True
+            quote_lines.append(stripped.lstrip("> ").strip())
+            continue
+
+        if stripped.startswith("- ") or stripped.startswith("* "):
+            close_quote()
+            if not in_list:
+                html_lines.append("<ul>")
+                in_list = True
+            item_text = _format_inline(stripped[2:].strip())
+            html_lines.append(f"<li>{item_text}</li>")
+            continue
+
+        close_list()
+        close_quote()
+        html_lines.append(f"<p>{_format_inline(stripped)}</p>")
+
+    close_list()
+    close_quote()
+    return "\n".join(html_lines)
+
+
+def inline_email_styles(html: str) -> str:
+    """
+    Wendet Inline-Styles auf HTML-Elemente an für maximale E-Mail-Client-Kompatibilität.
+    Verhindert, dass Mail-Clients wie Gmail oder Outlook die Stile im <head> verwerfen.
+    """
+    font_stack = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+
+    # 1. Blockquote styling (Callout-Box)
+    def style_blockquote(match):
+        bq_inner = match.group(1)
+        # Style <p> innerhalb von Blockquote
+        bq_inner = re.sub(
+            r"<p(\s[^>]*)?>",
+            rf'<p style="margin: 0; padding: 0; color: #475569; font-size: 13.5px; line-height: 1.5; font-family: {font_stack};">',
+            bq_inner,
+        )
+        # Style <a> innerhalb von Blockquote
+        bq_inner = re.sub(
+            r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
+            rf'<a \1href="\2"\3 target="_blank" style="color: #2563eb; font-weight: 600; text-decoration: none; font-family: {font_stack};">',
+            bq_inner,
+        )
+        return (
+            rf'<blockquote style="margin: 12px 0 20px 0; padding: 10px 16px; background-color: #f8fafc; '
+            rf'border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; border-radius: 8px; '
+            rf'color: #475569; font-size: 13.5px; line-height: 1.5; font-family: {font_stack};">'
+            + bq_inner
+            + "</blockquote>"
+        )
+
+    html = re.sub(r"<blockquote>(.*?)</blockquote>", style_blockquote, html, flags=re.DOTALL)
+
+    # 2. h2 styling
+    first_h2 = True
+    def style_h2(match):
+        nonlocal first_h2
+        m_top = "8px" if first_h2 else "32px"
+        first_h2 = False
+        attrs = match.group(1) or ""
+        content = match.group(2)
+        return (
+            f'<h2{attrs} style="font-family: {font_stack}; '
+            f'color: #0f172a; font-size: 20px; font-weight: 700; letter-spacing: -0.02em; '
+            f'border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-top: {m_top}; margin-bottom: 14px;">{content}</h2>'
+        )
+    html = re.sub(r"<h2(\s[^>]*)?>(.*?)</h2>", style_h2, html)
+
+    # 3. h3 styling
+    html = re.sub(
+        r"<h3(\s[^>]*)?>(.*?)</h3>",
+        rf'<h3\1 style="font-family: {font_stack}; color: #0f172a; font-size: 16px; font-weight: 600; margin-top: 20px; margin-bottom: 10px;">\2</h3>',
+        html,
+    )
+
+    # 4. ul styling
+    html = re.sub(
+        r"<ul(\s[^>]*)?>",
+        rf'<ul\1 style="padding-left: 20px; margin: 14px 0 24px 0; list-style-type: disc; font-family: {font_stack};">',
+        html,
+    )
+
+    # 5. li styling
+    html = re.sub(
+        r"<li(\s[^>]*)?>",
+        rf'<li\1 style="margin-bottom: 12px; font-size: 14.5px; line-height: 1.6; color: #334155; font-family: {font_stack};">',
+        html,
+    )
+
+    # 6. strong styling
+    html = re.sub(
+        r"<strong(\s[^>]*)?>(.*?)</strong>",
+        r'<strong\1 style="color: #0f172a; font-weight: 600;">\2</strong>',
+        html,
+    )
+
+    # 7. Verbleibende <a>-Tags (z. B. in Listen)
+    def style_a(match):
+        full_tag = match.group(0)
+        if 'style="' in full_tag:
+            return full_tag
+        return re.sub(
+            r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
+            rf'<a \1href="\2"\3 target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-family: {font_stack};">',
+            full_tag,
+        )
+    html = re.sub(r'<a\s+[^>]*>.*?</a>', style_a, html, flags=re.DOTALL)
+
+    # 8. Verbleibende <p>-Tags (außerhalb von Blockquotes)
+    def style_p(match):
+        full_tag = match.group(0)
+        if 'style="' in full_tag:
+            return full_tag
+        return rf'<p style="margin: 0 0 12px 0; line-height: 1.6; font-size: 14.5px; color: #334155; font-family: {font_stack};">'
+    html = re.sub(r"<p(\s[^>]*)?>", style_p, html)
+
+    return html
+
+
 def markdown_to_html_email(markdown_content: str) -> str:
-    """Wandelt einfaches Markdown in ein sauberes, responsives HTML-Email-Template um."""
-    # Einfache Markdown-Konvertierung falls markdown Paket nicht installiert
+    """Wandelt einfaches Markdown in ein sauberes, responsives HTML-Email-Template mit Inline-Styles um."""
     try:
         import markdown
-        body_html = markdown.markdown(markdown_content, extensions=["extra", "tables"])
+        raw_body_html = markdown.markdown(markdown_content, extensions=["extra", "tables"])
     except ImportError:
-        # Minimaler Fallback für Überschriften, Links und Listen
-        import re
-        body_html = markdown_content
-        body_html = re.sub(r"^### (.*)$", r"<h3>\1</h3>", body_html, flags=re.MULTILINE)
-        body_html = re.sub(r"^## (.*)$", r"<h2>\1</h2>", body_html, flags=re.MULTILINE)
-        body_html = re.sub(r"^# (.*)$", r"<h1>\1</h1>", body_html, flags=re.MULTILINE)
-        body_html = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", body_html)
-        body_html = re.sub(r"\[(.*?)\]\((.*?)\)", r'<a href="\2" target="_blank" style="color:#2563eb;text-decoration:underline;">\1</a>', body_html)
-        body_html = body_html.replace("\n", "<br>")
+        raw_body_html = _simple_markdown_fallback(markdown_content)
 
+    body_html = inline_email_styles(raw_body_html)
     current_date = datetime.now().strftime("%d.%m.%Y")
 
     html_template = f"""<!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="x-apple-disable-message-reformatting">
   <title>Dein Daily News Digest</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!--[if mso]>
+  <style>
+    * {{ font-family: sans-serif !important; }}
+  </style>
+  <![endif]-->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
@@ -142,24 +313,62 @@ def markdown_to_html_email(markdown_content: str) -> str:
     a {{
       color: #2563eb;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }}
     a:hover {{
       color: #1d4ed8;
       text-decoration: underline;
     }}
+    @media only screen and (max-width: 600px) {{
+      body {{
+        padding: 12px 6px !important;
+      }}
+      .outer-td {{
+        padding: 12px 6px !important;
+      }}
+      .container {{
+        border-radius: 12px !important;
+      }}
+      .header {{
+        padding: 24px 20px !important;
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+      }}
+      .content {{
+        padding: 24px 18px 32px 18px !important;
+      }}
+      .header h1 {{
+        font-size: 20px !important;
+      }}
+    }}
   </style>
 </head>
-<body>
-  <div class="container">
-    <div class="header" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); background-color: #0f172a; color: #ffffff !important; padding: 32px 36px; text-align: left;">
-      <h1 style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em;">⚡ News Aggregator Bot</h1>
-      <p style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #94a3b8 !important; margin: 0; font-size: 14px; font-weight: 500;">Tages-Briefing für den {current_date}</p>
-    </div>
-    <div class="content">
-      {body_html}
-    </div>
-  </div>
+<body style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; color: #1e293b; background-color: #f1f5f9; margin: 0; padding: 28px 12px; -webkit-font-smoothing: antialiased;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f1f5f9; width: 100% !important; margin: 0; padding: 0;">
+    <tr>
+      <td class="outer-td" align="center" valign="top" style="padding: 28px 12px;">
+        <!--[if (gte mso 9)|(IE)]>
+        <table role="presentation" width="680" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td width="680">
+        <![endif]-->
+        <div class="container" style="max-width: 680px; width: 100%; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04); border: 1px solid #e2e8f0; text-align: left;">
+          <div class="header" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); background-color: #0f172a; color: #ffffff !important; padding: 32px 36px; text-align: left; border-top-left-radius: 16px; border-top-right-radius: 16px;">
+            <h1 style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25;">⚡ News Aggregator Bot</h1>
+            <p style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #94a3b8 !important; margin: 0; font-size: 14px; font-weight: 500;">Tages-Briefing für den {current_date}</p>
+          </div>
+          <div class="content" style="padding: 36px 36px 44px 36px; background-color: #ffffff; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">
+            {body_html}
+          </div>
+        </div>
+        <!--[if (gte mso 9)|(IE)]>
+            </td>
+          </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
 """
