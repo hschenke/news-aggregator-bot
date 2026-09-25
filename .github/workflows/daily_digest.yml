@@ -42,10 +42,11 @@ jobs:
         run: |
           python src/main.py
 
-      - name: 🌐 (Optional) Deploy HTML Report to GitHub Pages
-        # Kann genutzt werden, um das tägliche Briefing zusätzlich als Web-App / Website zu hosten
+      - name: 📦 HTML-Vorschau als Artefakt archivieren
+        # Archiviert das generierte HTML-Briefing als herunterladbares Workflow-Artefakt
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: daily-digest-preview
           path: output/
+          if-no-files-found: ignore

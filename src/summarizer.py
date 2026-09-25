@@ -256,10 +256,14 @@ Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
         for model_name in candidate_models:
             try:
                 print(f"      -> Generiere mit Modell: {model_name}...")
-                response = client.models.generate_content(
-                    model=model_name,
-                    contents=prompt,
-                )
+                try:
+                    chat = client.chats.create(model=model_name)
+                    response = chat.send_message(prompt)
+                except AttributeError:
+                    response = client.models.generate_content(
+                        model=model_name,
+                        contents=prompt,
+                    )
                 if response and response.text:
                     cleaned_result = _clean_and_enhance_briefing(response.text, category_links)
                     return cleaned_result

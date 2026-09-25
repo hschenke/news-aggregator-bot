@@ -29,6 +29,7 @@ def run_pipeline():
 
     if total_items == 0:
         print("[!] Keine Artikel gefunden. Bitte Feeds in config/sources.yaml prüfen.")
+        Path("output").mkdir(parents=True, exist_ok=True)
         return
 
     # 2. Schritt: KI-Zusammenfassung generieren
