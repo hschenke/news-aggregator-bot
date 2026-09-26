@@ -503,11 +503,9 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
-# Deep-Link Query-Params säubern, damit URLs sauber bleiben und Defaults nicht überschreiben
-for qp_clean in ["category", "feed"]:
-    if qp_clean in st.query_params:
-        del st.query_params[qp_clean]
-
+qp_category = st.query_params.get("category", "").strip()
+qp_feed = st.query_params.get("feed", "").strip()
+is_viewing_feed = bool(qp_category or qp_feed)
 is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
 
 if is_viewing_rss:
@@ -515,6 +513,13 @@ if is_viewing_rss:
         for k in ["page", "tab", "view"]:
             if k in st.query_params:
                 del st.query_params[k]
+        st.rerun()
+elif is_viewing_feed:
+    if st.sidebar.button("🏠 Zum Briefing / Dashboard", use_container_width=True, key="sb_btn_feed_to_briefing"):
+        for k in ["category", "feed"]:
+            if k in st.query_params:
+                del st.query_params[k]
+        st.session_state["sel_articles_category"] = "Alle Kategorien"
         st.rerun()
 else:
     if st.sidebar.button("📡 RSS-Feeds abonnieren", use_container_width=True, key="sb_btn_to_rss"):
@@ -605,15 +610,19 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Navigation Tabs
-is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
-manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
-
+# Navigation Tabs: Wenn über Email-Link (Kategorie/Feed) geöffnet, 'Alle Artikel' direkt als ersten Tab öffnen!
 if is_viewing_rss:
     tab_rss, tab_briefing, tab_articles, tab_manage = st.tabs([
         "📡 RSS-Feeds",
         "✨ KI-Briefing",
         "📋 Alle Artikel",
+        manage_tab_title
+    ])
+elif is_viewing_feed:
+    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
+        "📋 Alle Artikel",
+        "✨ KI-Briefing",
+        "📡 RSS-Feeds",
         manage_tab_title
     ])
 else:
@@ -744,6 +753,16 @@ with tab_articles:
     if "chk_expand_feeds" not in st.session_state:
         st.session_state["chk_expand_feeds"] = True
 
+    # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
+    if qp_category:
+        for c in news_data.keys():
+            if c.strip().lower() == qp_category.lower():
+                st.session_state["sel_articles_category"] = c
+                if qp_feed:
+                    st.session_state["articles_cat_feed_memory"][c] = qp_feed
+                    st.session_state[f"sel_feed_for_{c}"] = qp_feed
+                break
+
     sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
     category_options = ["Alle Kategorien"] + sorted_all_categories
 
@@ -758,6 +777,11 @@ with tab_articles:
             options=category_options,
             key="sel_articles_category"
         )
+        if qp_category and selected_cat.strip().lower() != qp_category.lower():
+            if "category" in st.query_params:
+                del st.query_params["category"]
+            if "feed" in st.query_params:
+                del st.query_params["feed"]
 
     with filter_col2:
         if selected_cat != "Alle Kategorien":
@@ -821,8 +845,8 @@ with tab_articles:
         # Alle Artikel der Kategorie nach Datum absteigend sortieren
         cat_matching.sort(key=get_article_timestamp, reverse=True)
 
-        cat_is_expanded = (selected_cat != "Alle Kategorien") or expand_cats
-        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_expanded):
+        cat_is_expanded = bool(expand_cats)
+        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_expanded, key=f"exp_cat_{category}_{cat_is_expanded}"):
             # Innerhalb der Kategorie nach Feed gruppieren
             feeds_dict = {}
             for item in cat_matching:
@@ -836,8 +860,8 @@ with tab_articles:
                 # Artikel innerhalb des Feeds nach Datum sortieren
                 f_items.sort(key=get_article_timestamp, reverse=True)
 
-                feed_is_expanded = (selected_feed != "Alle Feeds") or expand_feeds
-                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_expanded):
+                feed_is_expanded = bool(expand_feeds)
+                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_expanded, key=f"exp_feed_{category}_{feed_name}_{feed_is_expanded}"):
                     cols = st.columns(2)
                     for idx, item in enumerate(f_items):
                         displayed_count += 1
