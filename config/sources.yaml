@@ -22,8 +22,7 @@ categories:
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
     include_keywords:
-    - Mahlsdorf
-    - Kaulsdorf
+    - Mitte
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)
