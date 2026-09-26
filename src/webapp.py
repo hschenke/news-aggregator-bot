@@ -556,33 +556,56 @@ selected_model = st.sidebar.selectbox(
 st.sidebar.markdown("---")
 
 # Refresh Button
-if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
+if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Liest alle RSS-Feeds frisch ein"):
     st.cache_data.clear()
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
 qp_category = st.query_params.get("category", "").strip()
 qp_feed = st.query_params.get("feed", "").strip()
-is_viewing_feed = bool(qp_category or qp_feed)
-is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
 
-if is_viewing_rss:
-    if st.sidebar.button("🏠 Zum Briefing / Dashboard", use_container_width=True, key="sb_btn_to_briefing"):
-        for k in ["page", "tab", "view"]:
-            if k in st.query_params:
-                del st.query_params[k]
-        st.rerun()
-elif is_viewing_feed:
-    if st.sidebar.button("🏠 Zum Briefing / Dashboard", use_container_width=True, key="sb_btn_feed_to_briefing"):
-        for k in ["category", "feed"]:
-            if k in st.query_params:
-                del st.query_params[k]
+# --- Sidebar Navigation ---
+st.sidebar.markdown("---")
+st.sidebar.markdown("<p style='margin-bottom:0.35rem; font-weight:600; font-size:0.9rem;'>🧭 Navigation</p>", unsafe_allow_html=True)
+
+active_nav_tab = st.session_state.get("active_nav_tab")
+qp_tab = (st.query_params.get("tab") or st.query_params.get("page") or st.query_params.get("view") or "").strip().lower()
+if qp_tab:
+    if qp_tab in ["articles", "artikel", "all"]:
+        active_nav_tab = "articles"
+    elif qp_tab in ["briefing", "ki", "ai"]:
+        active_nav_tab = "briefing"
+    elif qp_tab in ["rss", "feeds_rss"]:
+        active_nav_tab = "rss"
+    elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
+        active_nav_tab = "manage"
+if not active_nav_tab:
+    active_nav_tab = "articles"
+st.session_state["active_nav_tab"] = active_nav_tab
+
+manage_btn_label = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
+
+def navigate_to(tab_name: str):
+    st.session_state["active_nav_tab"] = tab_name
+    st.query_params["tab"] = tab_name
+    for k in ["page", "view", "category", "feed"]:
+        if k in st.query_params:
+            del st.query_params[k]
+    if tab_name == "articles":
         st.session_state["sel_articles_category"] = "Alle Kategorien"
-        st.rerun()
-else:
-    if st.sidebar.button("📡 RSS-Feeds abonnieren", use_container_width=True, key="sb_btn_to_rss"):
-        st.query_params["page"] = "rss"
-        st.rerun()
+    st.rerun()
+
+if st.sidebar.button("📋 Alle Artikel", use_container_width=True, type="primary" if active_nav_tab == "articles" else "secondary", key="sb_nav_articles", help="Alle aggregierten Artikel nach Kategorien und Quellen durchsuchen"):
+    navigate_to("articles")
+
+if st.sidebar.button("✨ KI-Briefing", use_container_width=True, type="primary" if active_nav_tab == "briefing" else "secondary", key="sb_nav_briefing", help="Synthetisiertes KI-Tagesbriefing von Gemini einsehen und generieren"):
+    navigate_to("briefing")
+
+if st.sidebar.button("📡 RSS-Feeds", use_container_width=True, type="primary" if active_nav_tab == "rss" else "secondary", key="sb_nav_rss", help="Eigene RSS-Feeds (Gesamt, Kategorien, Quellen) abonnieren"):
+    navigate_to("rss")
+
+if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == "manage" else "secondary", key="sb_nav_manage", help="Feeds hinzufügen/bearbeiten, Kategorien und Filterregeln verwalten"):
+    navigate_to("manage")
 
 # Unsaved changes status & buttons in sidebar
 if has_unsaved_changes and (st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()):
@@ -679,29 +702,58 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 if new_pool_articles > 0:
-    if st.sidebar.button("✓ Neue Artikel als gesehen markieren", use_container_width=True, key="sb_btn_mark_seen"):
+    st.sidebar.markdown("---")
+    st.sidebar.caption(f"🔔 **{new_pool_articles} neue Artikel** seit dem letzten Stand")
+    if st.sidebar.button(
+        "✓ Neue Artikel als gesehen markieren",
+        use_container_width=True,
+        key="sb_btn_mark_seen",
+        help="Markiert alle aktuellen Artikel im Pool als bekannt/gelesen und setzt den Zähler '+X neu' auf 0 zurück (ohne ein neues KI-Briefing generieren zu müssen)."
+    ):
         save_pool_state(news_data)
-        st.toast("Pool-Status aktualisiert!", icon="✅")
+        st.toast("Pool-Status aktualisiert – alle neuen Artikel als gesehen markiert!", icon="✅")
         st.rerun()
 
 is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
 manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
-# Navigation Tabs: Standardmäßig immer 'Alle Artikel' als erster Tab, danach 'KI-Briefing'!
-if is_viewing_rss:
-    tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
-        "📡 RSS-Feeds",
-        "📋 Alle Artikel",
-        "✨ KI-Briefing",
-        manage_tab_title
-    ])
+tab_titles = [
+    "📋 Alle Artikel",
+    "✨ KI-Briefing",
+    "📡 RSS-Feeds",
+    manage_tab_title
+]
+
+target_title_map = {
+    "articles": "📋 Alle Artikel",
+    "briefing": "✨ KI-Briefing",
+    "rss": "📡 RSS-Feeds",
+    "manage": manage_tab_title
+}
+target_tab_title = target_title_map.get(active_nav_tab, "📋 Alle Artikel")
+
+import inspect
+if "default" in inspect.signature(st.tabs).parameters:
+    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs(
+        tab_titles,
+        default=target_tab_title
+    )
 else:
-    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
-        "📋 Alle Artikel",
-        "✨ KI-Briefing",
-        "📡 RSS-Feeds",
-        manage_tab_title
-    ])
+    # Fallback für ältere Streamlit-Versionen ohne default-Parameter
+    if active_nav_tab == "briefing":
+        tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
+            "✨ KI-Briefing", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
+        ])
+    elif active_nav_tab == "rss":
+        tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
+            "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI-Briefing", manage_tab_title
+        ])
+    elif active_nav_tab == "manage":
+        tab_manage, tab_articles, tab_briefing, tab_rss = st.tabs([
+            manage_tab_title, "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds"
+        ])
+    else:
+        tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs(tab_titles)
 
 # ----------------- TAB: Alle Artikel -----------------
 with tab_articles:

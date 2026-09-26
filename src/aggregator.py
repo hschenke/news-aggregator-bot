@@ -684,49 +684,87 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[
     return False
 
 
+_POLICE_TEASER_CACHE: Dict[str, str] = {}
+_POLICE_CACHE_FILE = Path("data/police_teasers_cache.json")
+
+
+def _load_police_cache() -> None:
+    global _POLICE_TEASER_CACHE
+    if not _POLICE_TEASER_CACHE and _POLICE_CACHE_FILE.exists():
+        try:
+            with open(_POLICE_CACHE_FILE, "r", encoding="utf-8") as f:
+                _POLICE_TEASER_CACHE = json.load(f)
+        except Exception:
+            pass
+
+
+def _save_police_cache() -> None:
+    try:
+        _POLICE_CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        with open(_POLICE_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(_POLICE_TEASER_CACHE, f, ensure_ascii=False, indent=2)
+    except Exception:
+        pass
+
+
 def extract_police_teaser(url: str, session: Optional[requests.Session] = None) -> str:
     """Extrahiert den Ereignisort (Bezirk/Stadtteil) und Teaser-Text einer Berliner Polizeimeldung aus dem HTML-Body."""
     if not url or "berlin.de/polizei" not in url:
         return ""
-    try:
-        s = session or requests
-        r = s.get(
-            url,
-            timeout=4.0,
-            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsAggregatorBot/1.0"}
-        )
-        if r.status_code == 200:
-            district = ""
-            m_dist = re.search(r'title=[\'"]Ereignisort[\'"]>([^<]+)<', r.text, re.IGNORECASE)
-            if m_dist:
-                district = clean_html_text(m_dist.group(1)).strip()
+    _load_police_cache()
+    clean_u = unwrap_and_clean_url(url)
+    if clean_u in _POLICE_TEASER_CACHE and _POLICE_TEASER_CACHE[clean_u]:
+        return _POLICE_TEASER_CACHE[clean_u]
+    if url in _POLICE_TEASER_CACHE and _POLICE_TEASER_CACHE[url]:
+        return _POLICE_TEASER_CACHE[url]
 
-            teaser = ""
-            m_nr = re.search(r'<p[^>]*>\s*<strong>Nr\.\s*\d+</strong><br\s*/?>\s*(.*?)</p>', r.text, re.DOTALL | re.IGNORECASE)
-            if m_nr:
-                clean = clean_html_text(m_nr.group(1))
-                clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
-                if len(clean) > 300:
-                    clean = clean[:297] + "..."
-                teaser = clean
-            else:
-                for p in re.findall(r'<p.*?>(.*?)</p>', r.text, re.DOTALL):
-                    clean = clean_html_text(p)
-                    if len(clean) > 40 and not any(bad in clean.lower() for bad in ["barrierefrei", "berlin.de ist ein angebot", "kontakt zur ansprechperson", "landesbeauftragte", "impressum"]):
-                        clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
-                        if len(clean) > 300:
-                            clean = clean[:297] + "..."
-                        teaser = clean
-                        break
+    for attempt in range(2):
+        try:
+            s = session or requests
+            r = s.get(
+                url,
+                timeout=8.0,
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsAggregatorBot/1.0"}
+            )
+            if r.status_code == 200:
+                district = ""
+                m_dist = re.search(r'title=[\'"]Ereignisort[\'"]>([^<]+)<', r.text, re.IGNORECASE)
+                if m_dist:
+                    district = clean_html_text(m_dist.group(1)).strip()
 
-            if district and teaser:
-                return f"📍 **{district}** – {teaser}"
-            elif district:
-                return f"📍 **{district}**"
-            elif teaser:
-                return teaser
-    except Exception:
-        pass
+                teaser = ""
+                m_nr = re.search(r'<p[^>]*>\s*<strong>Nr\.\s*\d+</strong><br\s*/?>\s*(.*?)</p>', r.text, re.DOTALL | re.IGNORECASE)
+                if m_nr:
+                    clean = clean_html_text(m_nr.group(1))
+                    clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
+                    if len(clean) > 300:
+                        clean = clean[:297] + "..."
+                    teaser = clean
+                else:
+                    for p in re.findall(r'<p.*?>(.*?)</p>', r.text, re.DOTALL):
+                        clean = clean_html_text(p)
+                        if len(clean) > 40 and not any(bad in clean.lower() for bad in ["barrierefrei", "berlin.de ist ein angebot", "kontakt zur ansprechperson", "landesbeauftragte", "impressum"]):
+                            clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
+                            if len(clean) > 300:
+                                clean = clean[:297] + "..."
+                            teaser = clean
+                            break
+
+                res = ""
+                if district and teaser:
+                    res = f"📍 **{district}** – {teaser}"
+                elif district:
+                    res = f"📍 **{district}**"
+                elif teaser:
+                    res = teaser
+
+                if res:
+                    _POLICE_TEASER_CACHE[url] = res
+                    _POLICE_TEASER_CACHE[clean_u] = res
+                    _POLICE_TEASER_CACHE[get_canonical_url(url)] = res
+                    return res
+        except Exception:
+            pass
     return ""
 
 
@@ -749,18 +787,31 @@ def fetch_feed_items(
         norm_exc = normalize_keywords(exclude_keywords)
 
         # Spezialbehandlung für Berliner Polizei: RSS liefert standardmäßig leere description (<description><![CDATA[]]></description>)
-        # Wir laden Teaser & Ort parallel im Hintergrund nach (Dauer ca. 0.4s)
+        # Wir laden Teaser & Ort parallel im Hintergrund nach und nutzen einen persistenten Cache
         police_teasers = {}
         if "berlin.de/polizei" in feed_url:
+            _load_police_cache()
             urls_to_fetch = [unwrap_and_clean_url(getattr(e, "link", "")) for e in entries if getattr(e, "link", "")]
             urls_to_fetch = [u for u in urls_to_fetch if u]
-            if urls_to_fetch:
-                with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+
+            uncached_urls = []
+            for u in urls_to_fetch:
+                cached = _POLICE_TEASER_CACHE.get(u) or _POLICE_TEASER_CACHE.get(get_canonical_url(u))
+                if cached:
+                    police_teasers[u] = cached
+                else:
+                    uncached_urls.append(u)
+
+            if uncached_urls:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=6) as executor:
                     with requests.Session() as session:
-                        results = executor.map(lambda u: (u, extract_police_teaser(u, session)), urls_to_fetch)
+                        results = executor.map(lambda u: (u, extract_police_teaser(u, session)), uncached_urls)
                         for u, t in results:
                             if t:
                                 police_teasers[u] = t
+                                police_teasers[get_canonical_url(u)] = t
+                                police_teasers[unwrap_and_clean_url(u)] = t
+                _save_police_cache()
 
         seen_urls = set()
         seen_titles = set()
@@ -780,8 +831,20 @@ def fetch_feed_items(
             summary = clean_html_text(raw_summary)
 
             # Bei Berliner Polizei den nachgeladenen Teaser einsetzen falls summary leer ist
-            if (not summary or len(summary) < 5) and link in police_teasers:
-                summary = police_teasers[link]
+            if (not summary or len(summary) < 5 or not summary.startswith("📍")):
+                p_val = (
+                    police_teasers.get(link) or
+                    police_teasers.get(canon_link) or
+                    police_teasers.get(raw_link) or
+                    _POLICE_TEASER_CACHE.get(link) or
+                    _POLICE_TEASER_CACHE.get(canon_link) or
+                    _POLICE_TEASER_CACHE.get(raw_link) or
+                    ""
+                )
+                if not p_val and "berlin.de/polizei" in feed_url:
+                    p_val = extract_police_teaser(link)
+                if p_val:
+                    summary = p_val
 
             # 1. Stufe: Werbe- und Anzeigen-Filter (Global & quellenspezifisch)
             if filter_ads and is_ad_item(title, summary, custom_ad_keywords):
