@@ -134,6 +134,33 @@ st.markdown("""
             margin: 0.5rem 0 !important;
         }
     }
+    /* Sidebar Navigation ultra-kompakt & reduzierte Abstände */
+    [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        gap: 0.25rem !important;
+    }
+    [data-testid="stSidebar"] .stButton {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    [data-testid="stSidebar"] .stButton button,
+    [data-testid="stSidebar"] button[data-testid^="stBaseButton"] {
+        padding-top: 0.2rem !important;
+        padding-bottom: 0.2rem !important;
+        padding-left: 0.45rem !important;
+        padding-right: 0.45rem !important;
+        min-height: 2.0rem !important;
+        line-height: 1.15 !important;
+        font-size: 0.86rem !important;
+    }
+    [data-testid="stSidebar"] hr {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    [data-testid="stSidebar"] [data-testid="stAlert"] {
+        padding: 0.3rem 0.5rem !important;
+        margin-top: 0.1rem !important;
+        margin-bottom: 0.1rem !important;
+    }
     /* Kompakte KPI Chips-Leiste */
     .kpi-container {
         display: flex;
@@ -566,7 +593,6 @@ qp_feed = st.query_params.get("feed", "").strip()
 
 # --- Sidebar Navigation ---
 st.sidebar.markdown("---")
-st.sidebar.markdown("<p style='margin-bottom:0.35rem; font-weight:600; font-size:0.9rem;'>🧭 Navigation</p>", unsafe_allow_html=True)
 
 active_nav_tab = st.session_state.get("active_nav_tab")
 qp_tab = (st.query_params.get("tab") or st.query_params.get("page") or st.query_params.get("view") or "").strip().lower()
@@ -595,16 +621,16 @@ def navigate_to(tab_name: str):
         st.session_state["sel_articles_category"] = "Alle Kategorien"
     st.rerun()
 
-if st.sidebar.button("📋 Alle Artikel", use_container_width=True, type="primary" if active_nav_tab == "articles" else "secondary", key="sb_nav_articles", help="Alle aggregierten Artikel nach Kategorien und Quellen durchsuchen"):
+if st.sidebar.button("📋 Alle Artikel", use_container_width=True, type="primary" if active_nav_tab == "articles" else "secondary", key="sb_nav_articles"):
     navigate_to("articles")
 
-if st.sidebar.button("✨ KI-Briefing", use_container_width=True, type="primary" if active_nav_tab == "briefing" else "secondary", key="sb_nav_briefing", help="Synthetisiertes KI-Tagesbriefing von Gemini einsehen und generieren"):
+if st.sidebar.button("✨ KI-Briefing", use_container_width=True, type="primary" if active_nav_tab == "briefing" else "secondary", key="sb_nav_briefing"):
     navigate_to("briefing")
 
-if st.sidebar.button("📡 RSS-Feeds", use_container_width=True, type="primary" if active_nav_tab == "rss" else "secondary", key="sb_nav_rss", help="Eigene RSS-Feeds (Gesamt, Kategorien, Quellen) abonnieren"):
+if st.sidebar.button("📡 RSS-Feeds", use_container_width=True, type="primary" if active_nav_tab == "rss" else "secondary", key="sb_nav_rss"):
     navigate_to("rss")
 
-if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == "manage" else "secondary", key="sb_nav_manage", help="Feeds hinzufügen/bearbeiten, Kategorien und Filterregeln verwalten"):
+if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == "manage" else "secondary", key="sb_nav_manage"):
     navigate_to("manage")
 
 # Unsaved changes status & buttons in sidebar
@@ -703,7 +729,6 @@ st.markdown(f"""
 
 if new_pool_articles > 0:
     st.sidebar.markdown("---")
-    st.sidebar.caption(f"🔔 **{new_pool_articles} neue Artikel** seit dem letzten Stand")
     if st.sidebar.button(
         "✓ Neue Artikel als gesehen markieren",
         use_container_width=True,
@@ -717,43 +742,22 @@ if new_pool_articles > 0:
 is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
 manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
-tab_titles = [
-    "📋 Alle Artikel",
-    "✨ KI-Briefing",
-    "📡 RSS-Feeds",
-    manage_tab_title
-]
-
-target_title_map = {
-    "articles": "📋 Alle Artikel",
-    "briefing": "✨ KI-Briefing",
-    "rss": "📡 RSS-Feeds",
-    "manage": manage_tab_title
-}
-target_tab_title = target_title_map.get(active_nav_tab, "📋 Alle Artikel")
-
-import inspect
-if "default" in inspect.signature(st.tabs).parameters:
-    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs(
-        tab_titles,
-        default=target_tab_title
-    )
+if active_nav_tab == "briefing":
+    tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
+        "✨ KI-Briefing", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
+    ], key="tabs_nav_briefing")
+elif active_nav_tab == "rss":
+    tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
+        "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI-Briefing", manage_tab_title
+    ], key="tabs_nav_rss")
+elif active_nav_tab == "manage":
+    tab_manage, tab_articles, tab_briefing, tab_rss = st.tabs([
+        manage_tab_title, "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds"
+    ], key="tabs_nav_manage")
 else:
-    # Fallback für ältere Streamlit-Versionen ohne default-Parameter
-    if active_nav_tab == "briefing":
-        tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
-            "✨ KI-Briefing", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
-        ])
-    elif active_nav_tab == "rss":
-        tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
-            "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI-Briefing", manage_tab_title
-        ])
-    elif active_nav_tab == "manage":
-        tab_manage, tab_articles, tab_briefing, tab_rss = st.tabs([
-            manage_tab_title, "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds"
-        ])
-    else:
-        tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs(tab_titles)
+    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
+        "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds", manage_tab_title
+    ], key="tabs_nav_articles")
 
 # ----------------- TAB: Alle Artikel -----------------
 with tab_articles:
