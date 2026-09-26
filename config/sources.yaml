@@ -13,22 +13,25 @@ categories:
     url: https://joscha.com/rss/all/
 - name: Games
   feeds:
-  - name: RPG-Watch
-    url: https://rpgwatch.com/files/rss1.xml
   - name: Might & Magic Alert
     url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
+  - name: RPG-Watch
+    url: https://rpgwatch.com/files/rss1.xml
 - name: Policia
   feeds:
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+    include_keywords:
+    - Mahlsdorf
+    - Kaulsdorf
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)
     url: https://news.ycombinator.com/rss
-  - name: TechCrunch AI
-    url: https://techcrunch.com/category/artificial-intelligence/feed/
   - name: Heise Online News
     url: https://www.heise.de/rss/heise-atom.xml
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
 settings:
   language: de
   summary_style: tldr
