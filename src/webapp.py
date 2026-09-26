@@ -31,6 +31,7 @@ from src.aggregator import (
     trigger_rss_update_workflow,
     get_new_articles_count,
     save_pool_state,
+    clean_html_text,
 )
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key, get_streamlit_app_url
 from src.rss_generator import export_all_rss_feeds
@@ -881,12 +882,14 @@ with tab_articles:
                         displayed_count += 1
                         with cols[idx % 2]:
                             with st.container(border=True):
-                                st.markdown(f"**[{item['title']}]({item['link']})**")
+                                clean_title = clean_html_text(item.get("title", "Kein Titel"))
+                                clean_summary = clean_html_text(item.get("summary", ""))
+                                st.markdown(f"**[{clean_title}]({item['link']})**")
                                 pdate = format_article_date(item)
-                                pdate_badge = f" • 🕒 {pdate}" if pdate else ""
-                                st.caption(f"Quelle: **{item.get('source', 'Unbekannt')}**{pdate_badge}")
-                                if item.get("summary"):
-                                    st.write(item["summary"])
+                                if pdate:
+                                    st.caption(f"🕒 {pdate}")
+                                if clean_summary:
+                                    st.write(clean_summary)
 
     with col_stat:
         if displayed_count > 0:

@@ -1,6 +1,9 @@
 import os
 import json
 import base64
+import re
+import html
+import urllib.parse
 import requests
 import feedparser
 import yaml
@@ -551,26 +554,90 @@ def test_feed_connection(feed_url: str, timeout: int = 8) -> Dict[str, Any]:
 
 
 
+def clean_html_text(text: str) -> str:
+    """Bereinigt HTML-Tags (z. B. <b>, <i>, <a>), unescaped Entities (&amp;, &quot;) und normalisiert Whitespace."""
+    if not text:
+        return ""
+    # Zweifaches Unescaping für doppelt kodierte HTML-Entities
+    cleaned = html.unescape(text)
+    if any(entity in cleaned for entity in ["&lt;", "&gt;", "&amp;", "&quot;", "&#"]):
+        cleaned = html.unescape(cleaned)
+    # Alle HTML-Tags entfernen
+    cleaned = re.sub(r"<[^>]+>", "", cleaned)
+    # Typische geschützte Leerzeichen und Steuerzeichen aufräumen
+    cleaned = cleaned.replace("\xa0", " ").replace("&nbsp;", " ")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned
+
+
+def unwrap_and_clean_url(url: str) -> str:
+    """Löst Google Alert Redirect-URLs auf und extrahiert die tatsächliche Ziel-URL."""
+    if not url:
+        return ""
+    url = url.strip()
+    if "google.com/url?" in url:
+        try:
+            parsed = urllib.parse.urlparse(url)
+            qs = urllib.parse.parse_qs(parsed.query)
+            target = qs.get("url") or qs.get("q")
+            if target and target[0]:
+                url = target[0].strip()
+        except Exception:
+            pass
+    return url
+
+
+def get_canonical_url(url: str) -> str:
+    """Normalisiert URLs für die Duplikatsprüfung (entfernt Tracking-Parameter wie utm_*, fbclid)."""
+    url = unwrap_and_clean_url(url)
+    try:
+        parsed = urllib.parse.urlparse(url)
+        if parsed.query:
+            qs = urllib.parse.parse_qs(parsed.query, keep_blank_values=True)
+            filtered_qs = {
+                k: v for k, v in qs.items()
+                if not k.lower().startswith("utm_") and k.lower() not in {"fbclid", "gclid", "ocid", "cmpid", "ref"}
+            }
+            new_query = urllib.parse.urlencode(filtered_qs, doseq=True)
+            url = urllib.parse.urlunparse((
+                parsed.scheme,
+                parsed.netloc.lower(),
+                parsed.path.rstrip("/") or "/",
+                parsed.params,
+                new_query,
+                ""
+            ))
+    except Exception:
+        pass
+    return url.rstrip("/")
+
+
 def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any]]:
-    """Liest einen RSS- oder Atom-Feed ein und gibt alle verfügbaren Artikel zurück (nach Datum absteigend sortiert)."""
+    """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Duplikate und sortiert nach Datum."""
     try:
         parsed = feedparser.parse(feed_url)
         entries = getattr(parsed, "entries", [])
         if max_items is not None and max_items > 0:
             entries = entries[:max_items]
 
+        seen_urls = set()
+        seen_titles = set()
         items = []
+
         for entry in entries:
-            title = getattr(entry, "title", "Kein Titel").strip()
-            link = getattr(entry, "link", "").strip()
-            summary = getattr(entry, "summary", "")
-            
-            # Einfache HTML-Tags grob bereinigen falls vorhanden
-            if summary:
-                import re
-                summary = re.sub(r"<[^>]+>", "", summary).strip()
-                if len(summary) > 300:
-                    summary = summary[:297] + "..."
+            raw_title = getattr(entry, "title", "Kein Titel")
+            title = clean_html_text(raw_title)
+            if not title or title.lower() == "kein titel":
+                continue
+
+            raw_link = getattr(entry, "link", "").strip()
+            link = unwrap_and_clean_url(raw_link)
+            canon_link = get_canonical_url(link)
+
+            raw_summary = getattr(entry, "summary", "") or getattr(entry, "description", "")
+            summary = clean_html_text(raw_summary)
+            if len(summary) > 320:
+                summary = summary[:317] + "..."
 
             published = getattr(entry, "published", "") or getattr(entry, "updated", "")
             published_parsed = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)
@@ -599,6 +666,18 @@ def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any
                     except Exception:
                         pass
 
+            # Duplikatsprüfung innerhalb des Feeds (über Canonical URL & normalisierten Titel)
+            norm_title = re.sub(r"[\W_]+", "", title.lower())
+            if canon_link and canon_link in seen_urls:
+                continue
+            if norm_title and len(norm_title) > 12 and norm_title in seen_titles:
+                continue
+
+            if canon_link:
+                seen_urls.add(canon_link)
+            if norm_title and len(norm_title) > 12:
+                seen_titles.add(norm_title)
+
             items.append({
                 "title": title,
                 "link": link,
@@ -618,7 +697,7 @@ def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any
 
 
 def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> Dict[str, List[Dict[str, Any]]]:
-    """Sammelt alle News aus allen konfigurierten Kategorien und aktualisiert optional die RSS-Feeds."""
+    """Sammelt alle News aus allen konfigurierten Kategorien, bereinigt Duplikate und aktualisiert optional die RSS-Feeds."""
     config = load_sources(config_path)
     collected: Dict[str, List[Dict[str, Any]]] = {}
 
@@ -628,6 +707,9 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
     for cat in categories:
         cat_name = cat.get("name", "Allgemein")
         collected[cat_name] = []
+        cat_seen_urls = set()
+        cat_seen_titles = set()
+
         # Feeds alphabetisch sortieren
         feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
         for feed in feeds:
@@ -636,6 +718,20 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
             
             items = fetch_feed_items(url)
             for it in items:
+                canon_u = get_canonical_url(it.get("link", ""))
+                norm_t = re.sub(r"[\W_]+", "", it.get("title", "").lower())
+                
+                # Duplikate innerhalb derselben Kategorie herausfiltern
+                if canon_u and canon_u in cat_seen_urls:
+                    continue
+                if norm_t and len(norm_t) > 12 and norm_t in cat_seen_titles:
+                    continue
+                    
+                if canon_u:
+                    cat_seen_urls.add(canon_u)
+                if norm_t and len(norm_t) > 12:
+                    cat_seen_titles.add(norm_t)
+
                 it["source"] = feed_name
                 it["source_url"] = url
                 it["category"] = cat_name
