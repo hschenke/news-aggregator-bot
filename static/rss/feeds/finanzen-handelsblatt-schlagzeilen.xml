@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen&amp;feed=Handelsblatt+Schlagzeilen</link>
     <description>RSS-Feed für die Quelle 'Handelsblatt Schlagzeilen' (Kategorie: Finanzen).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 09:47:16 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 09:58:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-handelsblatt-schlagzeilen.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>+++ US-Zollpolitik +++: China und USA einigen sich auf Zollsenkungen für Waren im Wert von 30 Milliarden US-Dollar</title>
+      <link>https://www.handelsblatt.com/politik/international/us-zoelle-china-und-usa-einigen-sich-auf-zollsenkungen-details-am-montag/30026990.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/us-zoelle-china-und-usa-einigen-sich-auf-zollsenkungen-details-am-montag/30026990.html</guid>
+      <pubDate>Sat, 26 Sep 2026 09:52:33 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[USA wollen am Montag Details zu Handelsvereinbarungen mit China nennen +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
+    </item>
     <item>
       <title>Trump Watch: Trump setzt vor US-Zwischenwahlen alles auf KI und Rechenzentren – aber der Widerstand dagegen wächst</title>
       <link>https://www.handelsblatt.com/audio/trump-watch-podcast/trump-watch-trump-setzt-vor-us-zwischenwahlen-alles-auf-ki-und-rechenzentren/100257547.html</link>
@@ -187,15 +196,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Sie beeindrucken. Sie wühlen auf. Sie faszinieren. Sie erschrecken. Sie dokumentieren den großen Moment. Sie zeigen kleine Wunder. Oder sie erzählen eine Geschichte. Die Welt – ein Blickfang.]]></description>
-    </item>
-    <item>
-      <title>+++ US-Zollpolitik +++: USA wollen am Montag Details zu Handelsvereinbarungen mit China nennen</title>
-      <link>https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
   </channel>
 </rss>

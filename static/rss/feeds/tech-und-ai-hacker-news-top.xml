@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 09:47:16 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 09:58:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to keep enjoying programming in a world of LLMs</title>
+      <link>https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</link>
+      <guid isPermaLink="false">https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</guid>
+      <pubDate>Sat, 26 Sep 2026 09:41:58 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Floci: Locally emulating any cloud service</title>
+      <link>https://floci.io</link>
+      <guid isPermaLink="false">https://floci.io</guid>
+      <pubDate>Sat, 26 Sep 2026 08:31:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>Is your Postgres migration safe or not safe?</title>
       <link>https://safenotsafe.dev/</link>
@@ -216,28 +234,10 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>How I changed teaching after AI managed to do all my homework assignments</title>
-      <link>https://thelastsoftwareengineer.substack.com/p/how-i-changed-teaching-after-ai-managed</link>
-      <guid isPermaLink="false">https://thelastsoftwareengineer.substack.com/p/how-i-changed-teaching-after-ai-managed</guid>
-      <pubDate>Thu, 24 Sep 2026 20:51:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Postgres SELECT DISTINCT Does Not Scale</title>
       <link>https://www.dbos.dev/blog/postgres-select-distinct-does-not-scale</link>
       <guid isPermaLink="false">https://www.dbos.dev/blog/postgres-select-distinct-does-not-scale</guid>
       <pubDate>Thu, 24 Sep 2026 18:43:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>From Thin Air to Bootable Images: The Tine Build System</title>
-      <link>https://amutable.com/blog/tine-build-system</link>
-      <guid isPermaLink="false">https://amutable.com/blog/tine-build-system</guid>
-      <pubDate>Thu, 24 Sep 2026 13:25:11 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
