@@ -387,11 +387,11 @@ if not check_password():
 
 
 # --- Caching Data Loading ---
-@st.cache_data(ttl=1800, show_spinner=False)  # 30 Minuten Cache
+@st.cache_data(ttl=7200, show_spinner=False)  # 2 Stunden Cache
 def get_news_data():
     return collect_all_news()
 
-@st.cache_data(ttl=3600, show_spinner=False)
+@st.cache_data(ttl=7200, show_spinner=False)  # 2 Stunden Cache
 def get_sources_config():
     try:
         return load_sources()
@@ -887,7 +887,6 @@ with tab_articles:
                                 st.caption(f"Quelle: **{item.get('source', 'Unbekannt')}**{pdate_badge}")
                                 if item.get("summary"):
                                     st.write(item["summary"])
-                                st.link_button("↗ Zum Originalartikel", item["link"], use_container_width=True)
 
     with col_stat:
         if displayed_count > 0:
