@@ -3,6 +3,9 @@ import base64
 import requests
 import feedparser
 import yaml
+import calendar
+import email.utils
+import time
 from datetime import datetime, timezone
 from typing import List, Dict, Any
 from pathlib import Path
@@ -197,7 +200,7 @@ def trigger_rss_update_workflow() -> Dict[str, Any]:
 
 
 def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
-    """Lädt die Konfiguration aus sources.yaml."""
+    """Lädt die Konfiguration aus sources.yaml und garantiert alphabetische Kategoriensortierung."""
     path = get_sources_path(config_path)
     if not path.exists():
         raise FileNotFoundError(f"Konfigurationsdatei {path} nicht gefunden.")
@@ -207,6 +210,13 @@ def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
         data["categories"] = []
     if "settings" not in data:
         data["settings"] = {}
+
+    # Kategorien alphabetisch sortieren
+    data["categories"].sort(key=lambda c: c.get("name", "").strip().lower())
+    for cat in data["categories"]:
+        for f in cat.get("feeds", []):
+            f.pop("max_items", None)
+
     return data
 
 
@@ -216,6 +226,12 @@ def save_sources(
     sync_github: bool = True
 ) -> Dict[str, Any]:
     """Speichert die Quellenkonfiguration persistent in sources.yaml und synchronisiert mit GitHub (falls konfiguriert)."""
+    if "categories" in config:
+        config["categories"].sort(key=lambda c: c.get("name", "").strip().lower())
+        for cat in config["categories"]:
+            for f in cat.get("feeds", []):
+                f.pop("max_items", None)
+
     path = get_sources_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -231,10 +247,11 @@ def add_feed(
     category_name: str,
     feed_name: str,
     feed_url: str,
-    max_items: int = 5,
+    max_items: int = None,
     config_path: str = "config/sources.yaml",
     config: Dict[str, Any] = None,
     save_to_disk: bool = True,
+    **kwargs
 ) -> Dict[str, Any]:
     """
     Fügt einen neuen Feed zu einer Kategorie hinzu oder aktualisiert ihn, falls die URL bereits existiert.
@@ -243,7 +260,6 @@ def add_feed(
     category_name = category_name.strip()
     feed_name = feed_name.strip()
     feed_url = feed_url.strip()
-    max_items = max(1, int(max_items))
 
     if not category_name or not feed_name or not feed_url:
         raise ValueError("Kategorie, Feed-Name und Feed-URL dürfen nicht leer sein.")
@@ -263,6 +279,9 @@ def add_feed(
         target_category = {"name": category_name, "feeds": []}
         categories.append(target_category)
 
+    # Kategorien alphabetisch sortieren
+    categories.sort(key=lambda c: c.get("name", "").strip().lower())
+
     feeds = target_category.setdefault("feeds", [])
 
     # Prüfen, ob Feed mit der gleichen URL bereits in dieser Kategorie existiert
@@ -275,13 +294,16 @@ def add_feed(
     new_feed_obj = {
         "name": feed_name,
         "url": feed_url,
-        "max_items": max_items,
     }
 
     if existing_feed:
         existing_feed.update(new_feed_obj)
+        existing_feed.pop("max_items", None)
     else:
         feeds.append(new_feed_obj)
+
+    # Feeds alphabetisch sortieren
+    feeds.sort(key=lambda f: f.get("name", "").strip().lower())
 
     if save_to_disk:
         save_sources(config, config_path)
@@ -336,9 +358,10 @@ def update_feed(
     config_path: str = "config/sources.yaml",
     config: Dict[str, Any] = None,
     save_to_disk: bool = True,
+    **kwargs
 ) -> bool:
     """
-    Aktualisiert Name, URL, max_items und/oder Kategorie eines bestehenden Feeds.
+    Aktualisiert Name, URL und/oder Kategorie eines bestehenden Feeds.
     """
     if config is None:
         config = load_sources(config_path)
@@ -355,8 +378,7 @@ def update_feed(
                         f["name"] = new_name.strip()
                     if new_url is not None and new_url.strip():
                         f["url"] = new_url.strip()
-                    if new_max_items is not None:
-                        f["max_items"] = max(1, int(new_max_items))
+                    f.pop("max_items", None)
                     updated = True
 
                     if new_category and new_category.strip().lower() != category_name.strip().lower():
@@ -377,6 +399,11 @@ def update_feed(
                 target_cat = {"name": new_category.strip(), "feeds": []}
                 categories.append(target_cat)
             target_cat.setdefault("feeds", []).append(feed_to_move)
+
+        # Kategorien und Feeds alphabetisch sortieren
+        categories.sort(key=lambda c: c.get("name", "").strip().lower())
+        for c in categories:
+            c.get("feeds", []).sort(key=lambda f: f.get("name", "").strip().lower())
 
         if save_to_disk:
             save_sources(config, config_path)
@@ -414,8 +441,10 @@ def rename_category(
             found = True
             break
 
-    if found and save_to_disk:
-        save_sources(config, config_path)
+    if found:
+        categories.sort(key=lambda c: c.get("name", "").strip().lower())
+        if save_to_disk:
+            save_sources(config, config_path)
 
     return found
 
@@ -440,6 +469,7 @@ def add_category(
             return False  # existiert bereits
 
     categories.append({"name": category_name, "feeds": []})
+    categories.sort(key=lambda c: c.get("name", "").strip().lower())
     if save_to_disk:
         save_sources(config, config_path)
     return True
@@ -520,12 +550,16 @@ def test_feed_connection(feed_url: str, timeout: int = 8) -> Dict[str, Any]:
 
 
 
-def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, Any]]:
-    """Liest einen RSS- oder Atom-Feed ein und gibt relevante Artikel zurück."""
+def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any]]:
+    """Liest einen RSS- oder Atom-Feed ein und gibt alle verfügbaren Artikel zurück (nach Datum absteigend sortiert)."""
     try:
         parsed = feedparser.parse(feed_url)
+        entries = getattr(parsed, "entries", [])
+        if max_items is not None and max_items > 0:
+            entries = entries[:max_items]
+
         items = []
-        for entry in parsed.entries[:max_items]:
+        for entry in entries:
             title = getattr(entry, "title", "Kein Titel").strip()
             link = getattr(entry, "link", "").strip()
             summary = getattr(entry, "summary", "")
@@ -541,14 +575,41 @@ def fetch_feed_items(feed_url: str, max_items: int = 5) -> List[Dict[str, Any]]:
             published_parsed = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)
             guid = getattr(entry, "id", "") or link
 
+            timestamp = 0.0
+            if published_parsed and isinstance(published_parsed, time.struct_time):
+                try:
+                    timestamp = float(calendar.timegm(published_parsed))
+                except Exception:
+                    try:
+                        timestamp = float(time.mktime(published_parsed))
+                    except Exception:
+                        pass
+            if timestamp == 0.0 and published:
+                try:
+                    dt = email.utils.parsedate_to_datetime(published.strip())
+                    if dt:
+                        timestamp = dt.timestamp()
+                except Exception:
+                    pass
+                if timestamp == 0.0:
+                    try:
+                        dt = datetime.fromisoformat(published.strip().replace("Z", "+00:00"))
+                        timestamp = dt.timestamp()
+                    except Exception:
+                        pass
+
             items.append({
                 "title": title,
                 "link": link,
                 "summary": summary,
                 "published": published,
                 "published_parsed": published_parsed,
+                "timestamp": timestamp,
                 "guid": guid,
             })
+
+        # Artikel nach Datum sortieren (neueste zuerst)
+        items.sort(key=lambda x: x.get("timestamp", 0.0), reverse=True)
         return items
     except Exception as e:
         print(f"[Warnung] Fehler beim Abrufen von {feed_url}: {e}")
@@ -560,20 +621,27 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
     config = load_sources(config_path)
     collected: Dict[str, List[Dict[str, Any]]] = {}
 
-    for cat in config.get("categories", []):
+    # Kategorien alphabetisch sortieren
+    categories = sorted(config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
+
+    for cat in categories:
         cat_name = cat.get("name", "Allgemein")
         collected[cat_name] = []
-        for feed in cat.get("feeds", []):
+        # Feeds alphabetisch sortieren
+        feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+        for feed in feeds:
             url = feed.get("url")
-            max_items = feed.get("max_items", 5)
             feed_name = feed.get("name", url)
             
-            items = fetch_feed_items(url, max_items)
+            items = fetch_feed_items(url)
             for it in items:
                 it["source"] = feed_name
                 it["source_url"] = url
                 it["category"] = cat_name
                 collected[cat_name].append(it)
+
+        # Alle Artikel der Kategorie nach Datum sortieren
+        collected[cat_name].sort(key=lambda x: x.get("timestamp", 0.0), reverse=True)
 
     if export_rss:
         try:

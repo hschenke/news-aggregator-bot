@@ -404,23 +404,9 @@ if "working_sources_config" not in st.session_state:
 
 working_config = st.session_state["working_sources_config"]
 
-def on_feed_max_change(cat_name, feed_url, widget_key):
-    """Callback für st.number_input: Aktualisiert max_items sofort im Arbeitsentwurf."""
-    new_val = st.session_state.get(widget_key)
-    if new_val is not None:
-        update_feed(
-            category_name=cat_name,
-            old_url=feed_url,
-            new_max_items=int(new_val),
-            config=st.session_state["working_sources_config"],
-            save_to_disk=False,
-        )
-
 def harvest_global_settings():
     """Übernimmt ggf. im Formular eingetragene globale Einstellungen in den Arbeitsentwurf."""
     settings = st.session_state["working_sources_config"].setdefault("settings", {})
-    if "input_setting_max_cat" in st.session_state:
-        settings["max_articles_per_category"] = int(st.session_state["input_setting_max_cat"])
     if "input_setting_lang" in st.session_state:
         settings["language"] = str(st.session_state["input_setting_lang"])
     if "input_setting_style" in st.session_state:
@@ -463,7 +449,7 @@ def perform_discard_all():
     st.cache_data.clear()
     st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
     for k in list(st.session_state.keys()):
-        if k.startswith("feed_max_") or k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("input_setting_"):
+        if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("input_setting_"):
             del st.session_state[k]
     st.toast("↩️ Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
     st.rerun()
@@ -705,74 +691,178 @@ with tab_briefing:
 
 # ----------------- TAB: Artikel durchsuchen -----------------
 with tab_articles:
+    def get_article_timestamp(it: dict) -> float:
+        ts = it.get("timestamp")
+        if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+            return float(ts)
+        p = it.get("published_parsed")
+        if p and isinstance(p, time.struct_time):
+            try:
+                import calendar
+                return float(calendar.timegm(p))
+            except Exception:
+                pass
+        pub = it.get("published", "") or it.get("updated", "")
+        if pub and isinstance(pub, str):
+            try:
+                import email.utils
+                dt = email.utils.parsedate_to_datetime(pub.strip())
+                if dt:
+                    return dt.timestamp()
+            except Exception:
+                pass
+            try:
+                dt = datetime.fromisoformat(pub.strip().replace("Z", "+00:00"))
+                return dt.timestamp()
+            except Exception:
+                pass
+        return 0.0
+
+    def format_article_date(it: dict) -> str:
+        ts = get_article_timestamp(it)
+        if ts > 0:
+            try:
+                dt = datetime.fromtimestamp(ts)
+                return dt.strftime("%d.%m.%Y, %H:%M Uhr")
+            except Exception:
+                pass
+        pub = it.get("published", "") or it.get("updated", "")
+        if pub:
+            return str(pub)[:30]
+        return ""
+
+    # Session State initialisieren: Kategorie & Feed Auswahl merken
+    if "articles_selected_cat" not in st.session_state:
+        st.session_state["articles_selected_cat"] = "Alle Kategorien"
+    if "articles_cat_feed_memory" not in st.session_state:
+        st.session_state["articles_cat_feed_memory"] = {}
+
+    # Query Params verarbeiten (z. B. bei Deeplinks)
+    qp_cat = st.query_params.get("category", "")
+    qp_feed = st.query_params.get("feed", "")
+    if qp_cat:
+        for c in news_data.keys():
+            if c.strip().lower() == qp_cat.strip().lower():
+                st.session_state["articles_selected_cat"] = c
+                if qp_feed:
+                    st.session_state["articles_cat_feed_memory"][c] = qp_feed
+                break
+
+    sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
+    category_options = ["Alle Kategorien"] + sorted_all_categories
+
+    saved_cat = st.session_state.get("articles_selected_cat", "Alle Kategorien")
+    cat_index = 0
+    if saved_cat in category_options:
+        cat_index = category_options.index(saved_cat)
+
     filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
-    
+
     with filter_col1:
-        category_options = ["Alle Kategorien"] + list(news_data.keys())
-        default_cat_idx = 0
-        qp_cat = st.query_params.get("category", "")
-        if qp_cat:
-            for idx, c in enumerate(category_options):
-                if c.strip().lower() == qp_cat.strip().lower():
-                    default_cat_idx = idx
-                    break
-        selected_cat = st.selectbox("Kategorie:", category_options, index=default_cat_idx)
-        
+        selected_cat = st.selectbox(
+            "Kategorie:",
+            category_options,
+            index=cat_index,
+            key="sel_articles_cat_widget"
+        )
+        if selected_cat != st.session_state["articles_selected_cat"]:
+            st.session_state["articles_selected_cat"] = selected_cat
+
     with filter_col2:
         if selected_cat != "Alle Kategorien":
             cat_items = news_data.get(selected_cat, [])
-            available_feeds = sorted(list({item.get("source") for item in cat_items if item.get("source")}))
+            available_feeds = sorted(list({item.get("source") for item in cat_items if item.get("source")}), key=lambda x: x.strip().lower())
             feed_options = ["Alle Feeds"] + available_feeds
         else:
-            all_feeds = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}))
+            all_feeds = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
             feed_options = ["Alle Feeds"] + all_feeds
 
-        default_feed_idx = 0
-        qp_feed = st.query_params.get("feed", "")
-        if qp_feed:
-            for idx, f in enumerate(feed_options):
-                if f.strip().lower() == qp_feed.strip().lower() or qp_feed.strip().lower() in f.strip().lower():
-                    default_feed_idx = idx
-                    break
-        selected_feed = st.selectbox("Feed / Quelle:", feed_options, index=default_feed_idx)
+        remembered_feed = st.session_state["articles_cat_feed_memory"].get(selected_cat, "Alle Feeds")
+        feed_index = 0
+        if remembered_feed in feed_options:
+            feed_index = feed_options.index(remembered_feed)
+
+        selected_feed = st.selectbox(
+            "Feed / Quelle:",
+            feed_options,
+            index=feed_index,
+            key=f"sel_articles_feed_widget_{selected_cat}"
+        )
+        st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
 
     with filter_col3:
         search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...")
 
-    # Artikel filtern
+    col_stat, col_toggles = st.columns([3, 2], vertical_alignment="center")
+    with col_toggles:
+        c_tog1, c_tog2 = st.columns(2)
+        with c_tog1:
+            expand_cats = st.checkbox("📂 Kategorien auf", value=True, key="chk_expand_cats", help="Alle Kategorien aufklappen")
+        with c_tog2:
+            expand_feeds = st.checkbox("📡 Feeds auf", value=True, key="chk_expand_feeds", help="Alle Feeds innerhalb der Kategorien aufklappen")
+
     displayed_count = 0
-    for category, items in news_data.items():
+    categories_rendered = 0
+
+    for category in sorted_all_categories:
         if selected_cat != "Alle Kategorien" and category != selected_cat:
             continue
-            
-        matching_items = []
-        for item in items:
+
+        cat_items = news_data.get(category, [])
+
+        # Artikel filtern nach Feed und Suche
+        cat_matching = []
+        for item in cat_items:
             if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
                 continue
             if search_query:
                 q = search_query.lower()
-                if q not in item["title"].lower() and q not in item.get("summary", "").lower():
+                if q not in item.get("title", "").lower() and q not in item.get("summary", "").lower():
                     continue
-            matching_items.append(item)
-            
-        if not matching_items:
-            continue
-            
-        st.markdown(f"### {category} ({len(matching_items)})")
-        cols = st.columns(2)
-        
-        for idx, item in enumerate(matching_items):
-            displayed_count += 1
-            with cols[idx % 2]:
-                with st.container(border=True):
-                    st.markdown(f"**[{item['title']}]({item['link']})**")
-                    st.caption(f"Quelle: **{item.get('source', 'Unbekannt')}**")
-                    if item.get("summary"):
-                        st.write(item["summary"])
-                    st.link_button("↗ Zum Originalartikel", item["link"], use_container_width=True)
+            cat_matching.append(item)
 
-    if displayed_count == 0:
-        st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
+        if not cat_matching:
+            continue
+
+        categories_rendered += 1
+        # Alle Artikel der Kategorie nach Datum absteigend sortieren
+        cat_matching.sort(key=get_article_timestamp, reverse=True)
+
+        cat_is_expanded = (selected_cat != "Alle Kategorien") or expand_cats
+        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_expanded):
+            # Innerhalb der Kategorie nach Feed gruppieren
+            feeds_dict = {}
+            for item in cat_matching:
+                src = item.get("source", "Unbekannt")
+                feeds_dict.setdefault(src, []).append(item)
+
+            sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
+
+            for feed_name in sorted_feed_names:
+                f_items = feeds_dict[feed_name]
+                # Artikel innerhalb des Feeds nach Datum sortieren
+                f_items.sort(key=get_article_timestamp, reverse=True)
+
+                feed_is_expanded = (selected_feed != "Alle Feeds") or expand_feeds
+                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_expanded):
+                    cols = st.columns(2)
+                    for idx, item in enumerate(f_items):
+                        displayed_count += 1
+                        with cols[idx % 2]:
+                            with st.container(border=True):
+                                st.markdown(f"**[{item['title']}]({item['link']})**")
+                                pdate = format_article_date(item)
+                                pdate_badge = f" • 🕒 {pdate}" if pdate else ""
+                                st.caption(f"Quelle: **{item.get('source', 'Unbekannt')}**{pdate_badge}")
+                                if item.get("summary"):
+                                    st.write(item["summary"])
+                                st.link_button("↗ Zum Originalartikel", item["link"], use_container_width=True)
+
+    with col_stat:
+        if displayed_count > 0:
+            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien (chronologisch sortiert)")
+        else:
+            st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
 # ----------------- TAB: Eigene RSS-Feeds -----------------
 with tab_rss:
@@ -1010,13 +1100,14 @@ with tab_manage:
 
         st.markdown("---")
         with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=True):
-            categories_list = saved_sources_config.get("categories", [])
+            categories_list = sorted(saved_sources_config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
             if not categories_list:
                 st.info("Keine Kategorien konfiguriert.")
             for cat in categories_list:
-                st.markdown(f"**📁 {cat.get('name')}** ({len(cat.get('feeds', []))} Feeds)")
-                for f in cat.get("feeds", []):
-                    st.caption(f"• **{f.get('name')}** (`{f.get('url')}`) — Max. {f.get('max_items', 5)} Artikel")
+                feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+                st.markdown(f"**📁 {cat.get('name')}** ({len(feeds)} Feeds)")
+                for f in feeds:
+                    st.caption(f"• **{f.get('name')}** (`{f.get('url')}`)")
 
         st.stop()
 
@@ -1129,7 +1220,7 @@ with tab_manage:
 
         # Tab 1: Neuer Feed
         with subtab_feed1:
-            existing_categories = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
+            existing_categories = sorted([c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")], key=lambda x: x.strip().lower())
             cat_select_options = existing_categories + ["➕ [Neue Kategorie erstellen...]"]
 
             col_new1, col_new2 = st.columns(2)
@@ -1149,19 +1240,7 @@ with tab_manage:
             with col_new2:
                 new_feed_name = st.text_input("Name des Feeds:", placeholder="z. B. The Verge Tech", key="input_new_feed_name")
 
-            col_new3, col_new4 = st.columns([3, 1])
-            with col_new3:
-                new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml", key="input_new_feed_url")
-            with col_new4:
-                new_feed_max = st.number_input(
-                    "Max. Artikel:",
-                    min_value=1,
-                    max_value=50,
-                    value=5,
-                    step=1,
-                    help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden.",
-                    key="input_new_feed_max"
-                )
+            new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml", key="input_new_feed_url")
 
             col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
             with col_act1:
@@ -1196,7 +1275,6 @@ with tab_manage:
                             category_name=target_cat_name,
                             feed_name=new_feed_name,
                             feed_url=new_feed_url,
-                            max_items=new_feed_max,
                             config=working_config,
                             save_to_disk=False,
                         )
@@ -1205,13 +1283,13 @@ with tab_manage:
                     except Exception as e:
                         st.error(f"Fehler beim Hinzufügen des Feeds: {e}")
 
-        # Tab 2: Bestehenden Feed bearbeiten (Name, URL, Kategorie, Max. Artikel)
+        # Tab 2: Bestehenden Feed bearbeiten (Name, URL, Kategorie)
         with subtab_feed2:
             all_feed_options = []
             feed_dict = {}
-            for cat in working_config.get("categories", []):
+            for cat in sorted(working_config.get("categories", []), key=lambda c: c.get("name", "").strip().lower()):
                 cname = cat.get("name", "Allgemein")
-                for feed in cat.get("feeds", []):
+                for feed in sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower()):
                     fname = feed.get("name", "Unbenannt")
                     furl = feed.get("url", "")
                     label = f"[{cname}] {fname} ({furl})"
@@ -1227,7 +1305,7 @@ with tab_manage:
                     key="top_select_edit_feed"
                 )
                 curr_cname, curr_f = feed_dict[selected_edit_label]
-                all_cats = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
+                all_cats = sorted([c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")], key=lambda x: x.strip().lower())
 
                 col_e1, col_e2 = st.columns(2)
                 with col_e1:
@@ -1245,22 +1323,11 @@ with tab_manage:
                         key=f"top_edit_cat_{curr_f.get('url')}"
                     )
 
-                col_e3, col_e4 = st.columns([3, 1])
-                with col_e3:
-                    edit_furl = st.text_input(
-                        "Feed-URL ändern:",
-                        value=curr_f.get("url", ""),
-                        key=f"top_edit_url_{curr_f.get('url')}"
-                    )
-                with col_e4:
-                    edit_fmax = st.number_input(
-                        "Max. Artikel:",
-                        min_value=1,
-                        max_value=50,
-                        value=int(curr_f.get("max_items", 5)),
-                        step=1,
-                        key=f"top_edit_max_{curr_f.get('url')}"
-                    )
+                edit_furl = st.text_input(
+                    "Feed-URL ändern:",
+                    value=curr_f.get("url", ""),
+                    key=f"top_edit_url_{curr_f.get('url')}"
+                )
 
                 col_ebtn1, col_ebtn2, col_ebtn3 = st.columns([1, 2, 1], vertical_alignment="center")
                 with col_ebtn1:
@@ -1284,7 +1351,6 @@ with tab_manage:
                                     old_url=curr_f.get("url"),
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
-                                    new_max_items=edit_fmax,
                                     new_category=edit_fcat.strip(),
                                     config=working_config,
                                     save_to_disk=False,
@@ -1305,15 +1371,15 @@ with tab_manage:
 
     # --- Sektion 3: Aktive Feeds & Quellen bearbeiten / löschen ---
     st.markdown("### 📋 Aktive Feeds nach Kategorien")
-    st.caption("Hier kannst du für jeden Feed die maximale Anzahl der Artikel festlegen, Feeds löschen oder deren Details bearbeiten. Änderungen werden gesammelt.")
+    st.caption("Hier kannst du Feeds verwalten, löschen oder deren Details bearbeiten. Änderungen werden gesammelt.")
 
-    categories = working_config.get("categories", [])
+    categories = sorted(working_config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
     if not categories:
         st.info("Es sind aktuell keine Kategorien hinterlegt.")
 
     for cat_idx, cat in enumerate(categories):
         cat_name = cat.get("name", "Allgemein")
-        feeds = cat.get("feeds", [])
+        feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
 
         with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=True):
             # Kategorie Header Actions
@@ -1334,29 +1400,14 @@ with tab_manage:
                 for feed_idx, feed in enumerate(feeds):
                     f_name = feed.get("name", "Unbenannt")
                     f_url = feed.get("url", "")
-                    f_max = int(feed.get("max_items", 5))
                     key_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
 
                     with st.container(border=True):
-                        col_top1, col_top2 = st.columns([4, 2], vertical_alignment="center")
+                        col_top1, col_top2 = st.columns([5, 1], vertical_alignment="center")
                         with col_top1:
                             st.markdown(f"**{f_name}**")
                             st.caption(f"🔗 [{f_url}]({f_url})")
-
-                        col_f_max, col_f_del = st.columns([3, 1], vertical_alignment="bottom")
-                        with col_f_max:
-                            current_max_input = st.number_input(
-                                "Max. Artikel:",
-                                min_value=1,
-                                max_value=50,
-                                value=f_max,
-                                step=1,
-                                key=f"feed_max_{key_hash}",
-                                help="Maximale Anzahl der Artikel, die aus diesem Feed geladen werden.",
-                                on_change=on_feed_max_change,
-                                args=(cat_name, f_url, f"feed_max_{key_hash}")
-                            )
-                        with col_f_del:
+                        with col_top2:
                             with st.popover("🗑️ Löschen", use_container_width=True):
                                 st.markdown(f"Feed **'{f_name}'** wirklich entfernen?")
                                 if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
@@ -1386,7 +1437,6 @@ with tab_manage:
                                         f_url,
                                         new_name=edit_name_val.strip(),
                                         new_url=edit_url_val.strip(),
-                                        new_max_items=current_max_input,
                                         config=working_config,
                                         save_to_disk=False
                                     )
@@ -1398,23 +1448,13 @@ with tab_manage:
     # --- Sektion 4: Globale Einstellungen ---
     with st.expander("⚙️ Globale Einstellungen", expanded=False):
         current_settings = working_config.get("settings", {})
-        col_s1, col_s2, col_s3 = st.columns(3)
+        col_s1, col_s2 = st.columns(2)
         with col_s1:
-            setting_max_cat = st.number_input(
-                "Max. Artikel pro Kategorie (Briefing):",
-                min_value=1,
-                max_value=20,
-                value=int(current_settings.get("max_articles_per_category", 4)),
-                step=1,
-                key="input_setting_max_cat",
-                help="Steuert, wie viele Top-Themen pro Kategorie im KI-Briefing erscheinen."
-            )
-        with col_s2:
             current_lang = current_settings.get("language", "de")
             lang_options = ["de", "en", "fr", "es"]
             lang_idx = lang_options.index(current_lang) if current_lang in lang_options else 0
             setting_lang = st.selectbox("Sprache für Zusammenfassung:", options=lang_options, index=lang_idx, key="input_setting_lang")
-        with col_s3:
+        with col_s2:
             current_style = current_settings.get("summary_style", "tldr")
             style_options = ["tldr", "executive_bullet_points", "bullet_points", "narrative"]
             style_idx = style_options.index(current_style) if current_style in style_options else 0
@@ -1430,7 +1470,6 @@ with tab_manage:
 
         if st.button("✔️ Globale Einstellungen übernehmen", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
             new_settings_dict = {
-                "max_articles_per_category": setting_max_cat,
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),

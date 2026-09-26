@@ -201,6 +201,18 @@ def export_all_rss_feeds(
     cdn_prefix = f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/static/rss"
     raw_prefix = f"https://raw.githubusercontent.com/{repo}/{branch}/static/rss"
 
+    def sort_key(it):
+        ts = it.get("timestamp")
+        if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+            return float(ts)
+        p = it.get("published_parsed")
+        if p and isinstance(p, time.struct_time):
+            try:
+                return time.mktime(p)
+            except Exception:
+                pass
+        return 0.0
+
     all_articles: List[Dict[str, Any]] = []
     category_registry = []
     feed_registry = []
@@ -213,10 +225,10 @@ def export_all_rss_feeds(
     for c in categories_cfg:
         known_cat_names.add(c.get("name", "").strip())
 
-    for cat_name in sorted(list(known_cat_names)):
+    for cat_name in sorted(list(known_cat_names), key=lambda x: x.strip().lower()):
         if not cat_name:
             continue
-        cat_items = news_data.get(cat_name, [])
+        cat_items = sorted(news_data.get(cat_name, []), key=sort_key, reverse=True)
         all_articles.extend(cat_items)
 
         cat_slug = slugify(cat_name)
@@ -258,8 +270,6 @@ def export_all_rss_feeds(
             "xml_preview": cat_xml,
         })
 
-
-
     # 2. Einzelne Feeds erstellen (nach Quell-Feed gegliedert)
     # Gruppierung aller geladenen Artikel nach Source
     items_by_source: Dict[str, List[Dict[str, Any]]] = {}
@@ -270,9 +280,11 @@ def export_all_rss_feeds(
 
     # Feeds aus config abgleichen
     seen_feed_slugs = set()
-    for cat in categories_cfg:
+    sorted_cfg_cats = sorted(categories_cfg, key=lambda c: c.get("name", "").strip().lower())
+    for cat in sorted_cfg_cats:
         cat_name = cat.get("name", "Allgemein")
-        for f in cat.get("feeds", []):
+        sorted_feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+        for f in sorted_feeds:
             f_name = f.get("name", "Unbenannt")
             f_url = f.get("url", "")
             f_slug = slugify(f"{cat_name}-{f_name}")
@@ -280,7 +292,7 @@ def export_all_rss_feeds(
                 f_slug = slugify(f"{cat_name}-{f_name}-{seen_feed_slugs}")
             seen_feed_slugs.add(f_slug)
 
-            f_items = items_by_source.get(f_name, [])
+            f_items = sorted(items_by_source.get(f_name, []), key=sort_key, reverse=True)
             f_filename = f"{f_slug}.xml"
             f_file_path = feed_dir / f_filename
             f_cdn_url = f"{cdn_prefix}/feeds/{f_filename}"
@@ -315,16 +327,6 @@ def export_all_rss_feeds(
             })
 
     # 3. Gesamt-Feed erstellen (Alle Nachrichten)
-    # Sortieren nach Datum (falls vorhanden) oder beibehalten
-    def sort_key(it):
-        p = it.get("published_parsed")
-        if p and isinstance(p, time.struct_time):
-            try:
-                return time.mktime(p)
-            except Exception:
-                pass
-        return 0.0
-
     sorted_all_articles = sorted(all_articles, key=sort_key, reverse=True)
     all_filename = "all.xml"
     all_file_path = rss_root / all_filename

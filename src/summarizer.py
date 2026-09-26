@@ -195,7 +195,6 @@ def summarize_news_with_gemini(
         config = {"categories": []}
         settings = {}
 
-    max_articles = settings.get("max_articles_per_category", 5)
     language = settings.get("language", "de")
     lang_name = "Deutsch" if language == "de" else language
 
@@ -205,19 +204,20 @@ def summarize_news_with_gemini(
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
         print("[Hinweis] Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung...")
-        return _generate_fallback_summary(categorized_news, max_articles=max_articles, category_links=category_links)
+        return _generate_fallback_summary(categorized_news, category_links=category_links)
 
     try:
         from google import genai
         client = genai.Client(api_key=active_key)
 
         context_lines = []
-        for cat, items in categorized_news.items():
+        for cat, items in sorted(categorized_news.items(), key=lambda x: x[0].strip().lower()):
             context_lines.append(f"\n\n## {cat}")
             quicklink = category_links.get(cat, "")
             if quicklink:
                 context_lines.append(f"\nQuicklinks-Zeile für '{cat}':\n{quicklink}\n")
-            for item in items:
+            sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
+            for item in sorted_items:
                 context_lines.append(f"- **{item['title']}** (Quelle: {item.get('source', 'Unbekannt')})")
                 if item.get("summary"):
                     context_lines.append(f"  Auszug: {item['summary']}")
@@ -230,11 +230,11 @@ Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, ko
 WICHTIGE FORMATIERUNGSRICHTLINIEN:
 1. KEIN "Executive Summary" und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den Kategorien (z. B. "## 🤖 Tech & AI").
 2. Als ALLERERSTE Zeile direkt unter jeder Kategorie-Überschrift MUSST du exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) übernehmen.
-3. Wähle pro Kategorie bis zu {max_articles} der relevantesten Themen aus.
+3. Fasse pro Kategorie alle relevanten Themen aus den Artikeln prägnant und übersichtlich zusammen.
 4. PRO ARTIKEL:
    - KEINE Kernaussage und KEINE Bedeutung generieren!
    - Das Wort "TL;DR:" NICHT verwenden!
-   - Erstelle stattdessen pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
+   - Erstelle stattdessen pro Thema NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
    - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
    - Format:
      - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
@@ -272,25 +272,26 @@ Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
                 last_error = model_err
 
         print(f"[Fehler] Alle KI-Modelle schlugen fehl: {last_error}")
-        return _generate_fallback_summary(categorized_news, max_articles=max_articles, category_links=category_links)
+        return _generate_fallback_summary(categorized_news, category_links=category_links)
     except Exception as e:
         print(f"[Fehler] Initialisierungsfehler Gemini API: {e}")
-        return _generate_fallback_summary(categorized_news, max_articles=max_articles, category_links=category_links)
+        return _generate_fallback_summary(categorized_news, category_links=category_links)
 
 
 def _generate_fallback_summary(
     categorized_news: Dict[str, List[Dict[str, str]]],
-    max_articles: int = 4,
     category_links: Dict[str, str] = None,
+    **kwargs
 ) -> str:
     """Einfacher Markdown-Report ohne LLM (Fallback)."""
     lines = []
     category_links = category_links or {}
-    for cat, items in categorized_news.items():
+    for cat, items in sorted(categorized_news.items(), key=lambda x: x[0].strip().lower()):
         lines.append(f"## {cat}")
         if cat in category_links:
             lines.append(category_links[cat] + "\n")
-        for item in items[:max_articles]:
+        sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
+        for item in sorted_items:
             title = item.get("title", "Kein Titel")
             link = item.get("link", "#")
             summary = item.get("summary", "")

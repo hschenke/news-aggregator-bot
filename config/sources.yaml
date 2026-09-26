@@ -1,45 +1,35 @@
 categories:
-- name: Tech & AI
-  feeds:
-  - name: Hacker News (Top)
-    url: https://news.ycombinator.com/rss
-    max_items: 5
-  - name: TechCrunch AI
-    url: https://techcrunch.com/category/artificial-intelligence/feed/
-    max_items: 5
-  - name: Heise Online News
-    url: https://www.heise.de/rss/heise-atom.xml
-    max_items: 5
-- name: Finanzen
-  feeds:
-  - name: Handelsblatt Schlagzeilen
-    url: https://www.handelsblatt.com/contentexport/feed/top-themen
-    max_items: 4
-- name: Games
-  feeds:
-  - name: RPG-Watch
-    url: https://rpgwatch.com/files/rss1.xml
-    max_items: 15
-  - name: Might & Magic Alert
-    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
-    max_items: 5
-- name: Policia
-  feeds:
-  - name: Polizeimeldungen Berlin
-    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
-    max_items: 15
-- name: Fun
-  feeds:
-  - name: Joscha
-    url: https://joscha.com/rss/all/
-    max_items: 5
 - name: Berlin
   feeds:
   - name: Mahlsdorf
     url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
-    max_items: 20
+- name: Finanzen
+  feeds:
+  - name: Handelsblatt Schlagzeilen
+    url: https://www.handelsblatt.com/contentexport/feed/top-themen
+- name: Fun
+  feeds:
+  - name: Joscha
+    url: https://joscha.com/rss/all/
+- name: Games
+  feeds:
+  - name: Might & Magic Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
+  - name: RPG-Watch
+    url: https://rpgwatch.com/files/rss1.xml
+- name: Policia
+  feeds:
+  - name: Polizeimeldungen Berlin
+    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+- name: Tech & AI
+  feeds:
+  - name: Hacker News (Top)
+    url: https://news.ycombinator.com/rss
+  - name: Heise Online News
+    url: https://www.heise.de/rss/heise-atom.xml
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
 settings:
-  max_articles_per_category: 20
   language: de
   summary_style: tldr
   streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app

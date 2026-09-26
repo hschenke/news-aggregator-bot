@@ -181,8 +181,9 @@ streamlit run streamlit_app.py
 ## ⚙️ Feeds & Quellen direkt im Web-Dashboard verwalten
 
 Im Tab **"⚙️ Quellen & Feeds verwalten"** der Web-App kannst du:
-- **Neue RSS-Feeds hinzufügen**: Feed-URL, Name, Zielkategorie und die gewünschte maximale Artikelanzahl angeben – inklusive integriertem Verbindungstest (URL-Check).
-- **Bestehende Feeds bearbeiten & Max. Artikel anpassen**: Für jeden Feed kann die maximale Anzahl an abgerufenen Artikeln (`max_items`) dynamisch angepasst und gespeichert werden.
-- **Feeds löschen**: Feeds oder leere/ganze Kategorien sicher per Klick entfernen.
-- **Globale Einstellungen konfigurieren**: Max. Artikel pro Kategorie im Briefing, Sprache (`de`, `en`, etc.) und Zusammenfassungs-Stil.
-- **Persistente Synchronisation**: Alle Änderungen werden sofort in [`config/sources.yaml`](file:///c:/Users/holge/.gemini/antigravity/scratch/news-aggregator-bot/config/sources.yaml) zurückgespiegelt und stehen sowohl der Web-App als auch dem automatischen E-Mail-Digest zur Verfügung.
+- **Neue RSS-Feeds hinzufügen**: Feed-URL, Name und Zielkategorie angeben – inklusive integriertem Verbindungstest (URL-Check). Es werden stets alle im Feed verfügbaren Artikel geladen.
+- **Bestehende Feeds bearbeiten**: Details wie Name, URL oder Kategoriezuordnung jederzeit anpassen.
+- **Feeds & Kategorien löschen**: Feeds oder ganze Kategorien sicher per Klick entfernen.
+- **Globale Einstellungen konfigurieren**: Sprache (`de`, `en`, etc.) und Zusammenfassungs-Stil.
+- **Persistente Synchronisation**: Alle Änderungen werden sofort in `config/sources.yaml` zurückgespiegelt und stehen sowohl der Web-App als auch dem automatischen E-Mail-Digest zur Verfügung.
+- **Automatisches Sorting**: Kategorien werden stets alphabetisch sortiert, Artikel in Feeds und Kategorien chronologisch nach Datum absteigend.
