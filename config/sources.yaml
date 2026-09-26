@@ -21,6 +21,8 @@ categories:
   feeds:
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+    include_keywords:
+      - Mahlsdorf
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)
@@ -33,3 +35,5 @@ settings:
   language: de
   summary_style: tldr
   streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app
+  filter_ads: true
+

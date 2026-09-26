@@ -5,18 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 09:10:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 09:36:00 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>CAPTCHAs don't prove you're human – they prove you're American</title>
-      <link>https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</link>
-      <guid isPermaLink="false">https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</guid>
-      <pubDate>Sat, 26 Sep 2026 07:27:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
     <item>
       <title>Apple-Leaks: Details zu neuem Apple TV 4K, HomePod mini und iPad mini</title>
       <link>https://www.heise.de/news/Apple-Leaks-Details-zu-neuem-Apple-TV-4K-HomePod-mini-und-iPad-mini-11466840.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -43,15 +34,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Fotoagenturen solidarisieren sich mit TV-Sendern, Adobe schluckt Topaz Labs und Nikon streicht den Sucher. Plus: Gefiederte Fotostars.]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Cybersecurity im KMU – vom Sicherheitscheck zum Maßnahmenplan</title>
-      <link>https://www.heise.de/news/iX-Workshop-Cybersecurity-im-KMU-vom-Sicherheitscheck-zum-Massnahmenplan-11443190.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443190</guid>
-      <pubDate>Sat, 26 Sep 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Machen Sie Ihre Cybersecurity planbar: Bewerten Sie Ihren Sicherheitsstatus, setzen Sie die richtigen Prioritäten und entwickeln Sie einen konkreten Fahrplan.]]></description>
     </item>
     <item>
       <title>Is your Postgres migration safe or not safe?</title>
@@ -304,6 +286,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.]]></description>
+    </item>
+    <item>
+      <title>Eintracht Mahlsdorf II - Vereinsspielplan nach Datum - Transfermarkt</title>
+      <link>https://www.transfermarkt.de/eintracht-mahlsdorf-ii/vereinsspielplan/verein/33300/saison_id/2026</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:8069656779923318161</guid>
+      <pubDate>Fri, 25 Sep 2026 21:18:07 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[Diese Seite enthält eine kompakte Übersicht aller Spiele vom Verein E. Mahlsdorf II in chronologischer Reihenfolge für die Saison 26/27.]]></description>
     </item>
     <item>
       <title>FC Anker Wismar II - Vereinsspielplan nach Datum - Transfermarkt</title>
@@ -927,15 +918,6 @@
       <description><![CDATA[Über eine Schwachstelle bei HotelNetSolutions wurden Buchungsdaten von Hotelgästen abgegriffen. Kriminelle nutzen sie für glaubhafte Phishing-Nachrichten.]]></description>
     </item>
     <item>
-      <title>Tickets für BSV Eintracht Mahlsdorf in BERLIN am 26.09.2026 13:00 - kölnticket</title>
-      <link>https://www.koelnticket.de/event/bsv-eintracht-mahlsdorf-nofv-oberliga-nord-sportplatz-am-rosenhag-22158362/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3608751153300066688</guid>
-      <pubDate>Fri, 25 Sep 2026 11:36:30 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Jetzt Karten sichern für BSV Eintracht Mahlsdorf | NOFV Oberliga-Nord in BERLIN. BSV Eintracht Mahlsdorf Original-Tickets für den 26.09.2026 13:00 ...]]></description>
-    </item>
-    <item>
       <title>DMEXCO: Wenn der KI-Agent die Kampagne bucht</title>
       <link>https://www.heise.de/news/DMEXCO-Wenn-der-KI-Agent-die-Kampagne-bucht-11466422.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11466422</guid>
@@ -952,15 +934,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Bremen fordert höhere Bußgelder, Punkte und Fahrverbote gegen Autoposer. Der Bundesrat hat über die Initiative beraten – auch Lärmblitzer stehen zur Debatte.]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Active Directory Hardening – Vom Audit zur sicheren Umgebung</title>
-      <link>https://www.heise.de/news/iX-Workshop-Active-Directory-Hardening-Vom-Audit-zur-sicheren-Umgebung-11443184.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443184</guid>
-      <pubDate>Fri, 25 Sep 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Lernen in einer Übungsumgebung: Sicherheitsrisiken in der Windows-Active-Directory-Infrastruktur erkennen und beheben, um die IT vor Cyberangriffen zu schützen.]]></description>
     </item>
     <item>
       <title>#TGIQF: Das Quiz zu Alf und anderen netten Aliens</title>
@@ -1015,15 +988,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Apple wollte eigentlich mit dem iPhone 18 Pro (Max) auf den eigenen C2-Chip umstellen. Bei einem Modell für den US-Markt wurde das aber nicht umgesetzt.]]></description>
-    </item>
-    <item>
-      <title>Späti ausgeraubt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</guid>
-      <pubDate>Fri, 25 Sep 2026 10:12:15 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>WordPress-Lücke nur Stunden nach Patch attackiert</title>
@@ -1098,15 +1062,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>heise-Angebot: M365 Copilot im Unternehmen – Agents mit Copilot Studio und Foundry entwickeln</title>
-      <link>https://www.heise.de/news/M365-Copilot-im-Unternehmen-Agents-mit-Copilot-Studio-und-Foundry-entwickeln-11426765.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11426765</guid>
-      <pubDate>Fri, 25 Sep 2026 09:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[M365 Copilot ist mehr als ein KI-Assistent in Office. Agents lassen sich produktiv entwickeln und mit Copilot Studio und Foundry unternehmensweit skalieren.]]></description>
-    </item>
-    <item>
       <title>Versionsturbo: iOS 27.2 wird vor iOS 27.1 getestet</title>
       <link>https://www.heise.de/news/iOS-27-2-Warum-die-Beta-frueher-erschien-als-iOS-27-1-11457251.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11457251</guid>
@@ -1125,15 +1080,6 @@
       <description><![CDATA[Seit mehr als 30 Jahren nutze ich Windows-Rechner, doch nun liebäugele ich mit dem Mac Mini. Zumindest fürs Büro.]]></description>
     </item>
     <item>
-      <title>13-Jährige bei Unfall erheblich verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</guid>
-      <pubDate>Fri, 25 Sep 2026 08:11:47 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Studie schätzt Strombedarf für E-Lkw bis 2045 in Europa auf 200 TWh</title>
       <link>https://www.heise.de/news/Studie-schaetzt-Strombedarf-fuer-E-Lkw-bis-2045-in-Europa-auf-200-TWh-11464997.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11464997</guid>
@@ -1141,15 +1087,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Eine Studie von ICCT und Fraunhofer ISI zeigt, wo in Europa Ladebedarf für E-Lkw entsteht. Die meiste Energie wird an Depots benötigt und nicht an Autobahnen.]]></description>
-    </item>
-    <item>
-      <title>Kinder auf Tretrollern angefahren</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</guid>
-      <pubDate>Fri, 25 Sep 2026 08:03:14 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Neobank Revolut: Cybergang „Imnotavillain“ behauptet Datendiebstahl</title>
@@ -1224,24 +1161,6 @@
       <description><![CDATA[Im Angesicht des Aufstiegs der Radikalen lassen Merz und die Union an ihren Reformen zweifeln. Dabei beweisen zwei Regierungen, dass gerade bürgerliche Politik zum Erfolg führen kann.]]></description>
     </item>
     <item>
-      <title>heise-Angebot: Jetzt in der Make 5/26: Agentic Coding für Maker</title>
-      <link>https://www.heise.de/news/Jetzt-in-der-Make-5-26-Agentic-Coding-fuer-Maker-11464813.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11464813</guid>
-      <pubDate>Fri, 25 Sep 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bis es läuft: KI-Agenten legen bei der Entwicklung selbst Hand an, statt nur zu beraten – und nehmen Makern so viel Arbeit ab.]]></description>
-    </item>
-    <item>
-      <title>Jugendlicher mit Schussverletzungen im Krankenhaus</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</guid>
-      <pubDate>Fri, 25 Sep 2026 06:59:41 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>F-Droid 2.0: Alternativer App-Store für Android bekommt großes Update</title>
       <link>https://www.heise.de/news/F-Droid-2-0-Alternativer-App-Store-fuer-Android-bekommt-grosses-Update-11465359.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11465359</guid>
@@ -1258,15 +1177,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[systemd-report bündelt Systemdaten und Messwerte in signierten JSON-Berichten. Das soll die Verwaltung großer Linux-Flotten erleichtern.]]></description>
-    </item>
-    <item>
-      <title>Regenbogenbank im Großen Tiergarten erneut beschädigt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</guid>
-      <pubDate>Fri, 25 Sep 2026 06:35:53 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Jetzt updaten! Attacken auf Roundcube-Webmail-Instanzen beobachtet</title>
@@ -1384,15 +1294,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Mehr Tempo beim Coding – mit KI-Assistenten effizient programmieren</title>
-      <link>https://www.heise.de/news/iX-Workshop-Mehr-Tempo-beim-Coding-mit-KI-Assistenten-effizient-programmieren-11443178.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443178</guid>
-      <pubDate>Fri, 25 Sep 2026 05:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erfahren Sie, wie Sie produktiv mit KI-Assistenten programmieren und lernen Sie die Stärken und Schwächen der Tools für den Einsatz in eigenen Projekten kennen.]]></description>
     </item>
     <item>
       <title>US-Regierung will Klage von X gegen Millionenstrafe der EU beitreten</title>
@@ -1647,15 +1548,6 @@
       <description><![CDATA[US-Ausgaben für Bau von KI-Rechenzentren sind gigantisch. Ähnliches gab es aber in früheren Boom-Phasen. Das Niveau ist trotzdem beispiellos, so eine Studie.]]></description>
     </item>
     <item>
-      <title>Allgemeinverfügung zur Kampfmittelbeseitigung am 30. September 2026</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</guid>
-      <pubDate>Thu, 24 Sep 2026 13:24:40 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Top 10: Der beste Akku-Rasenmäher im Test</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-bester-akku-rasenmaeher-im-test-stihl-vor-gardena-einhell-und-makita/ft2r6hp?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11464384</guid>
@@ -1728,24 +1620,6 @@
       <description><![CDATA[Ein Angreifer hat hunderte Online-Shops mit KI-Agenten angegriffen und dabei Daten von mehr als 600.000 Kreditkarten abgegriffen.]]></description>
     </item>
     <item>
-      <title>Bauarbeiter bei Auseinandersetzungen verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</guid>
-      <pubDate>Thu, 24 Sep 2026 11:49:28 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Berlin startet mit KI-gestütztem Videoschutz</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</guid>
-      <pubDate>Thu, 24 Sep 2026 11:30:00 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Neues watchOS behebt Neustartfehler bei Apple Watch Series 12 und Ultra 4</title>
       <link>https://www.heise.de/news/Neues-watchOS-behebt-Neustartfehler-bei-Apple-Watch-Series-12-und-Ultra-4-11464574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11464574</guid>
@@ -1762,15 +1636,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Nach dem Ransomware-Angriff – sicher entscheiden und kommunizieren</title>
-      <link>https://www.heise.de/news/iX-Workshop-Nach-dem-Ransomware-Angriff-sicher-entscheiden-und-kommunizieren-11443172.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443172</guid>
-      <pubDate>Thu, 24 Sep 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erfahren Sie in einer praxisnahen Simulation, wie Sie auf einen Ransomware-Angriff strategisch reagieren und mit den Konsequenzen sicher umgehen.]]></description>
     </item>
     <item>
       <title>Nach Analyse von DNA-Datenbanken: Claude soll neues Enzymsystem entdeckt haben</title>
@@ -1809,15 +1674,6 @@
       <description><![CDATA[OHB hat eine Sonde aktiviert, die ESA und JAXA Anfang 2028 zu einem erdnahen Asteroiden schicken wollen. Die Mission dient zur planetaren Verteidigung.]]></description>
     </item>
     <item>
-      <title>Sachbeschädigung durch Feuer und Farbschmiererei</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</guid>
-      <pubDate>Thu, 24 Sep 2026 10:29:41 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Prozess um Bitcoin-Milliarden: Noch keine Verständigung</title>
       <link>https://www.heise.de/news/Prozess-um-Bitcoin-Milliarden-Noch-keine-Verstaendigung-11464478.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11464478</guid>
@@ -1845,15 +1701,6 @@
       <description><![CDATA[Return to the legendary world of Erathia in Heroes of Might & Magic III Remake, a faithful reimagining of one of the most celebrated turn-based ...]]></description>
     </item>
     <item>
-      <title>Versuchter Raub auf Motorrollerfahrerin – Tatverdächtige festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</guid>
-      <pubDate>Thu, 24 Sep 2026 10:14:01 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Qualcomm kündigt Linux-Support für Snapdragon X2 an</title>
       <link>https://www.heise.de/news/Qualcomm-kuendigt-Linux-Support-fuer-Snapdragon-X2-an-11463854.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463854</guid>
@@ -1870,15 +1717,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein Gesetzesentwurf von Bernie Sanders fordert 20 Jahre Gefängnisstrafe für die Entwicklung einer Superintelligenz, die die Menschheit vernichten könnte.]]></description>
-    </item>
-    <item>
-      <title>Mann kündigte Amoktat an – mehrere Waffen beschlagnahmt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</guid>
-      <pubDate>Thu, 24 Sep 2026 09:34:20 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Renault zeigt Designstudie R8-Gordini-Coupé als Elektroauto</title>
@@ -1906,15 +1744,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Die Roboterhand der ETH Zürich erinnert an das "Eiskalte Händchen" der Addams Family: Sie kann laufen und mit Objekten interagieren.]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: IT-Summit 2026: Digitale Souveränität in der Praxis</title>
-      <link>https://www.heise.de/news/IT-Summit-2026-Digitale-Souveraenitaet-in-der-Praxis-11461379.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11461379</guid>
-      <pubDate>Thu, 24 Sep 2026 09:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Raus aus der AWS/VMware/M365/OpenAI-Falle: Der IT Summit 2026 zeigt funktionierende Alternativen in den Bereichen KI, Modern Workplace, Cloud und Infrastruktur.]]></description>
     </item>
     <item>
       <title>Weltraumteleskop Hubble: 200.000 Orbits, 8 Milliarden Kilometer um die Erde</title>
@@ -1953,24 +1782,6 @@
       <description><![CDATA[IT-Verantwortliche haben bis zum 14. Dezember Zeit, den Speicherort ihrer Microsoft-365-Daten auszuwählen: im eigenen Land oder EU.]]></description>
     </item>
     <item>
-      <title>Überfall auf Hotel</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</guid>
-      <pubDate>Thu, 24 Sep 2026 08:17:32 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Seniorin fährt Kind an</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</guid>
-      <pubDate>Thu, 24 Sep 2026 08:07:00 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Die Welt in Bildern: Blickfang</title>
       <link>https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</guid>
@@ -1996,15 +1807,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Android-Geräte von Google sperren sich automatisch, wenn sie Nutzern schnell aus der Hand gezogen werden. Apple will ein ähnliches Feature liefern – nur wann?]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Cloud Security Masterclass – Angriff und Verteidigung in AWS</title>
-      <link>https://www.heise.de/news/iX-Workshop-Cloud-Security-Masterclass-Angriff-und-Verteidigung-in-AWS-11443166.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443166</guid>
-      <pubDate>Thu, 24 Sep 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erfahren Sie, wie Angreifer Fehlkonfigurationen und mangelnde Härtung der Amazon Cloud ausnutzen und wie Sie AWS-Dienste und Cloud-Identitäten dagegen schützen.]]></description>
     </item>
     <item>
       <title>Qliphah in Providence's Shadow - Released</title>
@@ -2097,15 +1899,6 @@
       <description><![CDATA[Der EU-Automarkt wächst wieder. Volkswagen steht unter Druck, chinesische Marken bauen ihre Marktanteile aus. Der E-Antrieb wird immer beliebter.]]></description>
     </item>
     <item>
-      <title>heise-Angebot: Software-Architektur zwischen KI, Innovation und digitaler Souveränität</title>
-      <link>https://www.heise.de/news/Software-Architektur-zwischen-KI-Innovation-und-digitaler-Souveraenitaet-11452572.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11452572</guid>
-      <pubDate>Thu, 24 Sep 2026 05:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die OOP 2027 ist „Beyond the Hype“: Über 120 Sessions zeigen, welche Trends, Technologien und Ideen Softwareprofis wirklich weiterbringen.]]></description>
-    </item>
-    <item>
       <title>Beaten Path - Announced for 2027</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60222</link>
       <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60222</guid>
@@ -2187,6 +1980,15 @@
       <description><![CDATA[Die Nikon Z5IIC übernimmt viel Technik der Z5II, verzichtet aber auf den Sucher. Bereits ab Mitte Oktober soll sie in den Handel kommen.]]></description>
     </item>
     <item>
+      <title>16GB iPod Nano 3G Upgrade</title>
+      <link>https://tuckerosman.com/projects/16gb-ipod-nano</link>
+      <guid isPermaLink="false">https://tuckerosman.com/projects/16gb-ipod-nano</guid>
+      <pubDate>Thu, 24 Sep 2026 02:58:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>KI-Bescheide ohne menschliches Zutun in Österreich</title>
       <link>https://www.heise.de/news/KI-Bescheide-ohne-menschliches-Zutun-in-Oesterreich-11463844.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463844</guid>
@@ -2205,13 +2007,13 @@
       <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
     <item>
-      <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
-      <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463750</guid>
+      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
+      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463780</guid>
       <pubDate>Thu, 24 Sep 2026 02:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
+      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
       <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
@@ -2223,6 +2025,15 @@
       <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
     </item>
     <item>
+      <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
+      <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463750</guid>
+      <pubDate>Thu, 24 Sep 2026 02:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
+    </item>
+    <item>
       <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
       <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463824</guid>
@@ -2230,15 +2041,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
-    </item>
-    <item>
-      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
-      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463780</guid>
-      <pubDate>Thu, 24 Sep 2026 02:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
       <title>Heroes of Might &amp; Magic 4 (Taktik &amp; Strategie) - 4P.de</title>
@@ -2367,15 +2169,6 @@
       <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
     </item>
     <item>
-      <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</guid>
-      <pubDate>Wed, 23 Sep 2026 13:02:35 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Bosch Rotak 18V-32 im Test: Starker Akku-Rasenmäher mit Mulchfunktion für 155 €</title>
       <link>https://www.heise.de/bestenlisten/testbericht/bosch-rotak-18v-32-im-test-starker-akku-rasenmaeher-mit-mulchfunktion-fuer-155-euro/k2l1xpv?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463080</guid>
@@ -2466,42 +2259,6 @@
       <description><![CDATA[Regierungen und Hersteller aus aller Welt buhlen um lokale Fertigungskapazität von ASML. Der beklagt derweil das geringe Interesse in Europa.]]></description>
     </item>
     <item>
-      <title>Distanzelektroimpulsgerät eingesetzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</guid>
-      <pubDate>Wed, 23 Sep 2026 11:19:53 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Festnahme nach Straßenraub</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</guid>
-      <pubDate>Wed, 23 Sep 2026 11:11:28 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>14-jähriger E-Scooter-Fahrer flüchtet vor Verkehrskontrolle – Beamter setzt DEIG ein</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</guid>
-      <pubDate>Wed, 23 Sep 2026 11:05:08 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>heise-Angebot: iX-Workshop: Identitäten in Entra ID mit Conditional Access Policies schützen</title>
-      <link>https://www.heise.de/news/iX-Workshop-Identitaeten-in-Entra-ID-mit-Conditional-Access-Policies-schuetzen-11443158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443158</guid>
-      <pubDate>Wed, 23 Sep 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erfahren Sie, wie Sie die Zero-Trust-Architektur mit Zugriffsrichtlinien in Entra ID umsetzen und so Ihr Unternehmensnetzwerk effektiv schützen.]]></description>
-    </item>
-    <item>
       <title>Ab 2028: Bundeskabinett beschließt Ende der Kassenbon-Pflicht</title>
       <link>https://www.heise.de/news/Bundeskabinett-beschliesst-Ende-der-Kassenbon-Pflicht-ab-2028-11463222.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463222</guid>
@@ -2583,24 +2340,6 @@
       <description><![CDATA[Die Zahl der Einstiegstellen für Absolventen ist laut einer aktuellen Auswertung stark gefallen. IT-Jobs trifft es besonders.]]></description>
     </item>
     <item>
-      <title>Nach Brand in Seniorenheim – Patient im Krankenhaus verstorben</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</guid>
-      <pubDate>Wed, 23 Sep 2026 08:27:54 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Frau bei Sturz in Linienbus lebensgefährlich verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</guid>
-      <pubDate>Wed, 23 Sep 2026 08:19:02 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Heroes of Might and Magic III Actionfigur 1/12 Arch Devil (Deluxe Version) 15 cm</title>
       <link>https://shazament.com/products/heroes-of-might-and-magic-iii-actionfigur-112-arch-devil-del?srsltid=249561081</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1301061657763443099</guid>
@@ -2608,15 +2347,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[... Might and Magic III basiert! Der mächtige Erz-Teufel tritt an, um die Mächte der Hölle zu repräsentieren! Diese fantastische Figur wurde von Grund ...]]></description>
-    </item>
-    <item>
-      <title>Unter Alkoholeinfluss – E-Scooter-Fahrerin fährt gegen wartendes Auto</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</guid>
-      <pubDate>Tue, 22 Sep 2026 13:41:15 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Dark Messiah of Might &amp; Magic - Test | PC Games 12/2006 Heft-DVD | Video</title>
@@ -2628,132 +2358,6 @@
       <description><![CDATA[Schau dir das Video Dark Messiah of Might & Magic - Test | PC Games 12/2006 Heft-DVD zu Dark Messiah of Might & Magic an und entdecke mehr Videos ...]]></description>
     </item>
     <item>
-      <title>Tödlicher Verkehrsunfall – Zeuginnen und Zeugen gesucht</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</guid>
-      <pubDate>Tue, 22 Sep 2026 11:08:28 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Ermittlungen nach Schussabgabe auf Wohnungsfenster</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</guid>
-      <pubDate>Tue, 22 Sep 2026 10:36:15 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Allgemeinverfügung zum 52. Berlin-Marathon erlassen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</guid>
-      <pubDate>Tue, 22 Sep 2026 09:17:54 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Überfall auf Geldtransporter – Zeuginnen und Zeugen gesucht</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717101.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717101.php</guid>
-      <pubDate>Tue, 22 Sep 2026 08:37:36 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Kind bei Unfall verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717074.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717074.php</guid>
-      <pubDate>Tue, 22 Sep 2026 08:11:57 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Motorradfahrer bei Verkehrsunfall auf der Stadtautobahn verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717068.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717068.php</guid>
-      <pubDate>Tue, 22 Sep 2026 07:58:39 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Raub mit Schusswaffe</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717056.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717056.php</guid>
-      <pubDate>Tue, 22 Sep 2026 07:49:33 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Koordinierte internationale Kontrollmaßnahmen in indischen Restaurants wegen des Verdachts des Menschenhandels zum Zwecke der Arbeitsausbeutung</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716861.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716861.php</guid>
-      <pubDate>Mon, 21 Sep 2026 12:17:08 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Verdacht des bandenmäßigen Drogenhandels mit Waffen – vier Festnahmen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716784.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716784.php</guid>
-      <pubDate>Mon, 21 Sep 2026 10:58:00 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Mehrere Straftaten festgestellt – Polizeilicher Staatsschutz ermittelt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716770.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716770.php</guid>
-      <pubDate>Mon, 21 Sep 2026 10:45:23 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Festnahme nach Handel mit Arzneimitteln</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716752.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716752.php</guid>
-      <pubDate>Mon, 21 Sep 2026 10:33:12 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Beraubt und durch Stiche verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716653.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716653.php</guid>
-      <pubDate>Mon, 21 Sep 2026 08:59:14 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Brand auf Schulgelände</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716567.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716567.php</guid>
-      <pubDate>Mon, 21 Sep 2026 07:59:33 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Raubüberfall auf Lokal</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716503.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716503.php</guid>
-      <pubDate>Mon, 21 Sep 2026 07:26:26 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>NICHTLUSTIG-Cartoon: EINSCHLAFEN</title>
       <link>https://joscha.com/nichtlustig/260921/</link>
       <guid isPermaLink="false">https://joscha.com/rss/all/36ac8e558ac7690b6f44e2cb5ef93322</guid>
@@ -2761,150 +2365,6 @@
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'EINSCHLAFEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
-    </item>
-    <item>
-      <title>Unbekannter beschädigt Einsatzfahrzeug der Polizei</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716380.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716380.php</guid>
-      <pubDate>Sun, 20 Sep 2026 09:13:21 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Jugendliche nach mehreren mutmaßlichen Raubtaten im Mauerpark festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716379.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716379.php</guid>
-      <pubDate>Sun, 20 Sep 2026 09:04:47 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Mann nach schwerer Körperverletzung festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716378.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716378.php</guid>
-      <pubDate>Sun, 20 Sep 2026 08:54:21 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Bedrohung mit Schusswaffe am U-Bahnhof Schönleinstraße</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716376.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716376.php</guid>
-      <pubDate>Sun, 20 Sep 2026 08:38:07 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Bedrohung mit Machete - Tatverdächtiger festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716375.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716375.php</guid>
-      <pubDate>Sun, 20 Sep 2026 08:29:30 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Polizeiliche Einsatzmaßnahmen an kriminalitätsbelasteten Orten</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716373.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716373.php</guid>
-      <pubDate>Sun, 20 Sep 2026 08:05:55 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Polizisten mit Waffe bedroht - Wohnungsdurchsuchung</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716310.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716310.php</guid>
-      <pubDate>Sat, 19 Sep 2026 10:48:04 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Festnahme nach Brandstiftung an Wohnmobilen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716297.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716297.php</guid>
-      <pubDate>Sat, 19 Sep 2026 08:43:47 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Unbekannter schlägt Parteimitglied</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716295.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716295.php</guid>
-      <pubDate>Sat, 19 Sep 2026 08:15:22 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Festnahmen nach Scheinankäufen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716233.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716233.php</guid>
-      <pubDate>Fri, 18 Sep 2026 13:13:24 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Drogenerkennung im Straßenverkehr – Bilanz zu Schwerpunktkontrollen im Rahmen der 7. Berliner DiS-Tage</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716234.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716234.php</guid>
-      <pubDate>Fri, 18 Sep 2026 13:01:00 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Aktionswoche zur Verkehrsunfallprävention von Seniorinnen und Senioren</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716209.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716209.php</guid>
-      <pubDate>Fri, 18 Sep 2026 12:24:02 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Verkehrsunfall – Beifahrerin im Krankenhaus</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716194.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716194.php</guid>
-      <pubDate>Fri, 18 Sep 2026 12:07:36 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Nach versuchtem Totschlag – Mordkommission sucht weiter nach Zeuginnen und Zeugen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1712872.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1712872.php</guid>
-      <pubDate>Fri, 18 Sep 2026 10:33:00 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Schussabgabe durch Polizeibeamten</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716068.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716068.php</guid>
-      <pubDate>Fri, 18 Sep 2026 10:18:20 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>64-Jähriger vermisst – Polizei bittet um Mithilfe</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</guid>
-      <pubDate>Fri, 18 Sep 2026 09:07:52 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[Mit der Veröffentlichung von Fotos bittet die Polizei Berlin um Mithilfe bei der Suche nach dem 64-jährigen Thomas Ralf Hans FREDRICHSDORF und seinem Auto.]]></description>
     </item>
     <item>
       <title>NICHTLUSTIG-Cartoon: HÖHLENMALEREIEN</title>

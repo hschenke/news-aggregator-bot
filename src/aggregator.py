@@ -10,8 +10,9 @@ import yaml
 import calendar
 import email.utils
 import time
+import concurrent.futures
 from datetime import datetime, timezone
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from pathlib import Path
 
 
@@ -255,6 +256,8 @@ def add_feed(
     config_path: str = "config/sources.yaml",
     config: Dict[str, Any] = None,
     save_to_disk: bool = True,
+    include_keywords: Any = None,
+    exclude_keywords: Any = None,
     **kwargs
 ) -> Dict[str, Any]:
     """
@@ -299,6 +302,12 @@ def add_feed(
         "name": feed_name,
         "url": feed_url,
     }
+    norm_inc = normalize_keywords(include_keywords)
+    if norm_inc:
+        new_feed_obj["include_keywords"] = norm_inc
+    norm_exc = normalize_keywords(exclude_keywords)
+    if norm_exc:
+        new_feed_obj["exclude_keywords"] = norm_exc
 
     if existing_feed:
         existing_feed.update(new_feed_obj)
@@ -362,10 +371,12 @@ def update_feed(
     config_path: str = "config/sources.yaml",
     config: Dict[str, Any] = None,
     save_to_disk: bool = True,
+    include_keywords: Any = None,
+    exclude_keywords: Any = None,
     **kwargs
 ) -> bool:
     """
-    Aktualisiert Name, URL und/oder Kategorie eines bestehenden Feeds.
+    Aktualisiert Name, URL, Keywords und/oder Kategorie eines bestehenden Feeds.
     """
     if config is None:
         config = load_sources(config_path)
@@ -383,6 +394,21 @@ def update_feed(
                     if new_url is not None and new_url.strip():
                         f["url"] = new_url.strip()
                     f.pop("max_items", None)
+
+                    if include_keywords is not None:
+                        norm_inc = normalize_keywords(include_keywords)
+                        if norm_inc:
+                            f["include_keywords"] = norm_inc
+                        else:
+                            f.pop("include_keywords", None)
+
+                    if exclude_keywords is not None:
+                        norm_exc = normalize_keywords(exclude_keywords)
+                        if norm_exc:
+                            f["exclude_keywords"] = norm_exc
+                        else:
+                            f.pop("exclude_keywords", None)
+
                     updated = True
 
                     if new_category and new_category.strip().lower() != category_name.strip().lower():
@@ -612,13 +638,105 @@ def get_canonical_url(url: str) -> str:
     return url.rstrip("/")
 
 
-def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any]]:
-    """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Duplikate und sortiert nach Datum."""
+def normalize_keywords(kw: Any) -> List[str]:
+    """Wandelt Keywords (Liste, String oder None) in eine bereinigte Liste von Strings um."""
+    if not kw:
+        return []
+    if isinstance(kw, str):
+        return [k.strip() for k in kw.split(",") if k.strip()]
+    if isinstance(kw, (list, set, tuple)):
+        res = []
+        for k in kw:
+            if isinstance(k, str):
+                res.extend([x.strip() for x in k.split(",") if x.strip()])
+            elif k is not None:
+                res.append(str(k).strip())
+        return [r for r in res if r]
+    return []
+
+
+DEFAULT_AD_PATTERNS = [
+    r"^heise-angebot:",
+    r"\b(?:anzeige|advertorial|partnerangebot|sonderveröffentlichung)\b",
+    r"^(?:anzeige|werbung|sponsored|gesponsert|partnerangebot):",
+    r"\[(?:anzeige|werbung|sponsored)\]",
+    r"\bdeal(?:s)? des tages\b",
+    r"^rabatt-aktion\b",
+]
+
+
+def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[str]] = None) -> bool:
+    """Prüft, ob ein Artikel Werbung, Anzeige, gesponsertes Angebot oder Deal ist."""
+    t_clean = (title or "").strip().lower()
+    s_clean = (summary or "").strip().lower()
+
+    for pat in DEFAULT_AD_PATTERNS:
+        if re.search(pat, t_clean, re.IGNORECASE):
+            return True
+
+    if custom_ad_keywords:
+        for kw in custom_ad_keywords:
+            k = kw.strip().lower()
+            if k and (k in t_clean or k in s_clean):
+                return True
+
+    return False
+
+
+def extract_police_teaser(url: str, session: Optional[requests.Session] = None) -> str:
+    """Extrahiert den Teaser-Text und Ereignisort einer Berliner Polizeimeldung aus dem HTML-Body."""
+    if not url or "berlin.de/polizei" not in url:
+        return ""
+    try:
+        s = session or requests
+        r = s.get(
+            url,
+            timeout=4.0,
+            headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsAggregatorBot/1.0"}
+        )
+        if r.status_code == 200:
+            m = re.search(r'<p>\s*<strong>Nr\.\s*\d+</strong><br>(.*?)</p>', r.text, re.DOTALL)
+            if m:
+                clean = clean_html_text(m.group(1))
+                if len(clean) > 320:
+                    clean = clean[:317] + "..."
+                return clean
+    except Exception:
+        pass
+    return ""
+
+
+def fetch_feed_items(
+    feed_url: str,
+    max_items: int = None,
+    include_keywords: Optional[List[str]] = None,
+    exclude_keywords: Optional[List[str]] = None,
+    filter_ads: bool = True,
+    custom_ad_keywords: Optional[List[str]] = None,
+) -> List[Dict[str, Any]]:
+    """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Werbung & Keywords, dedupliziert und sortiert nach Datum."""
     try:
         parsed = feedparser.parse(feed_url)
         entries = getattr(parsed, "entries", [])
         if max_items is not None and max_items > 0:
             entries = entries[:max_items]
+
+        norm_inc = normalize_keywords(include_keywords)
+        norm_exc = normalize_keywords(exclude_keywords)
+
+        # Spezialbehandlung für Berliner Polizei: RSS liefert standardmäßig leere description (<description><![CDATA[]]></description>)
+        # Wir laden Teaser & Ort parallel im Hintergrund nach (Dauer ca. 0.4s)
+        police_teasers = {}
+        if "berlin.de/polizei" in feed_url:
+            urls_to_fetch = [unwrap_and_clean_url(getattr(e, "link", "")) for e in entries if getattr(e, "link", "")]
+            urls_to_fetch = [u for u in urls_to_fetch if u]
+            if urls_to_fetch:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+                    with requests.Session() as session:
+                        results = executor.map(lambda u: (u, extract_police_teaser(u, session)), urls_to_fetch)
+                        for u, t in results:
+                            if t:
+                                police_teasers[u] = t
 
         seen_urls = set()
         seen_titles = set()
@@ -636,6 +754,25 @@ def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any
 
             raw_summary = getattr(entry, "summary", "") or getattr(entry, "description", "")
             summary = clean_html_text(raw_summary)
+
+            # Bei Berliner Polizei den nachgeladenen Teaser einsetzen falls summary leer ist
+            if (not summary or len(summary) < 5) and link in police_teasers:
+                summary = police_teasers[link]
+
+            # 1. Stufe: Werbe- und Anzeigen-Filter (Global & quellenspezifisch)
+            if filter_ads and is_ad_item(title, summary, custom_ad_keywords):
+                continue
+
+            # 2. Stufe: Feed-spezifische Keyword-Filterung
+            search_corpus = f"{title} {summary}".lower()
+            if norm_exc:
+                if any(kw.lower() in search_corpus for kw in norm_exc):
+                    continue
+
+            if norm_inc:
+                if not any(kw.lower() in search_corpus for kw in norm_inc):
+                    continue
+
             if len(summary) > 320:
                 summary = summary[:317] + "..."
 
@@ -699,6 +836,10 @@ def fetch_feed_items(feed_url: str, max_items: int = None) -> List[Dict[str, Any
 def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> Dict[str, List[Dict[str, Any]]]:
     """Sammelt alle News aus allen konfigurierten Kategorien, bereinigt Duplikate und aktualisiert optional die RSS-Feeds."""
     config = load_sources(config_path)
+    settings = config.get("settings", {})
+    filter_ads = settings.get("filter_ads", True)
+    custom_ad_keywords = settings.get("ad_keywords", [])
+
     collected: Dict[str, List[Dict[str, Any]]] = {}
 
     # Kategorien alphabetisch sortieren
@@ -715,8 +856,16 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
         for feed in feeds:
             url = feed.get("url")
             feed_name = feed.get("name", url)
-            
-            items = fetch_feed_items(url)
+            inc_kw = feed.get("include_keywords", [])
+            exc_kw = feed.get("exclude_keywords", [])
+
+            items = fetch_feed_items(
+                url,
+                include_keywords=inc_kw,
+                exclude_keywords=exc_kw,
+                filter_ads=filter_ads,
+                custom_ad_keywords=custom_ad_keywords,
+            )
             for it in items:
                 canon_u = get_canonical_url(it.get("link", ""))
                 norm_t = re.sub(r"[\W_]+", "", it.get("title", "").lower())

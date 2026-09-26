@@ -99,9 +99,14 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 
 Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS 2.0 Feeds** über ein weltweites CDN (jsDelivr / GitHub) bereit – 24/7 online, ohne Standby oder Ladezeiten:
 
-- **🌟 Gesamt-Feed**: Alle aggregierten Artikel aus allen Kategorien chronologisch (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml`).
+- **🌟 Gesamt-Feed**: Alle aggregierten, werbefreien Artikel aus allen Kategorien chronologisch (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml`).
+- **✨ KI-Briefing Feed**: Das tägliche, kuratierte Gemini KI-Briefing als RSS-Post für deinen Reader (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml`).
 - **📁 Kategorie-Feeds**: Für jedes Thema ein eigener Feed (z. B. `Tech & AI`, `Finanzen`, `Games` unter `.../static/rss/kategorien/<slug>.xml`).
 - **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`.../static/rss/feeds/<slug>.xml`).
+
+> 🛡️ **Intelligenter Hybrid-Filter**:
+> - **Werbe- & Anzeigen-Filter**: Entfernt störende Promotion- und Werbeartikel (wie `heise-Angebot:`, `Anzeige:`, `Sponsored`) automatisch aus allen Feeds und dem KI-Prompt.
+> - **Feed-spezifische Keyword-Filter**: Einzelne Feeds können nach Keywords gefiltert werden (z. B. bei den *Berliner Polizeimeldungen* nur Einsätze aus `Mahlsdorf`). Inklusive automatischer HTML-Teaser-Anreicherung bei Feeds mit leeren Beschreibungen.
 
 #### Aufruf & Nutzung:
 1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?page=rss` auf.

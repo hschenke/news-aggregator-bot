@@ -941,6 +941,11 @@ with tab_briefing:
                 st.session_state["cached_summary"] = ai_summary
                 st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
                 save_pool_state(news_data)
+                try:
+                    from src.rss_generator import export_briefing_rss
+                    export_briefing_rss(ai_summary)
+                except Exception:
+                    pass
 
     if "cached_summary" in st.session_state:
         st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")
@@ -1055,6 +1060,39 @@ with tab_rss:
 
             with st.expander("👁️ RSS-XML-Vorschau anzeigen", expanded=False):
                 st.code(all_info.get("xml_preview", ""), language="xml")
+
+        briefing_info = rss_registry.get("briefing")
+        if briefing_info:
+            with st.container(border=True):
+                col_br_h1, col_br_h2 = st.columns([3, 1], vertical_alignment="center")
+                with col_br_h1:
+                    st.markdown("### ✨ KI-Briefing Feed")
+                    st.write("Abonniere das tägliche, von Gemini KI synthetisierte und kuratierte Briefing direkt in deinem RSS-Reader.")
+                with col_br_h2:
+                    st.metric("Tages-Briefings", 1)
+
+                br_url = briefing_info.get("url") or briefing_info.get("cdn_url", "")
+                br_proto_url = br_url.replace("https://", "feed://").replace("http://", "feed://")
+
+                st.code(br_url, language="text")
+
+                col_b1, col_b2, col_b3 = st.columns(3)
+                with col_b1:
+                    st.link_button("↗️ Im Browser öffnen", br_url, use_container_width=True)
+                with col_b2:
+                    st.download_button(
+                        "📥 XML herunterladen",
+                        data=briefing_info.get("xml_preview", ""),
+                        file_name="news_bot_briefing.xml",
+                        mime="application/rss+xml",
+                        use_container_width=True,
+                        key="dl_btn_briefing_rss"
+                    )
+                with col_b3:
+                    st.link_button("➕ 1-Click Abo (feed://)", br_proto_url, use_container_width=True, help="Öffnet das KI-Briefing direkt im Standard-RSS-Reader")
+
+                with st.expander("👁️ RSS-XML-Vorschau anzeigen", expanded=False):
+                    st.code(briefing_info.get("xml_preview", ""), language="xml")
 
         st.markdown("---")
 
@@ -1338,6 +1376,13 @@ with tab_manage:
 
             new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml", key="input_new_feed_url")
 
+            new_feed_keywords = st.text_input(
+                "🔍 Nur Artikel mit Keywords aufnehmen (optional, Komma-getrennt):",
+                placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                key="input_new_feed_keywords",
+                help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
+            )
+
             col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
             with col_act1:
                 test_clicked = st.button("🔍 Feed-URL testen", use_container_width=True, key="btn_test_new_feed")
@@ -1371,6 +1416,7 @@ with tab_manage:
                             category_name=target_cat_name,
                             feed_name=new_feed_name,
                             feed_url=new_feed_url,
+                            include_keywords=new_feed_keywords.strip() if new_feed_keywords.strip() else None,
                             config=working_config,
                             save_to_disk=False,
                         )
@@ -1425,6 +1471,16 @@ with tab_manage:
                     key=f"top_edit_url_{curr_f.get('url')}"
                 )
 
+                curr_inc = curr_f.get("include_keywords", [])
+                curr_inc_str = ", ".join(curr_inc) if isinstance(curr_inc, list) else str(curr_inc or "")
+                edit_fkeywords = st.text_input(
+                    "🔍 Nur Artikel mit Keywords aufnehmen (optional, Komma-getrennt):",
+                    value=curr_inc_str,
+                    placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                    key=f"top_edit_kw_{curr_f.get('url')}",
+                    help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
+                )
+
                 col_ebtn1, col_ebtn2, col_ebtn3 = st.columns([1, 2, 1], vertical_alignment="center")
                 with col_ebtn1:
                     if st.button("🔍 Feed testen", use_container_width=True, key=f"top_test_{curr_f.get('url')}"):
@@ -1448,6 +1504,7 @@ with tab_manage:
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
                                     new_category=edit_fcat.strip(),
+                                    include_keywords=edit_fkeywords.strip() if edit_fkeywords.strip() else None,
                                     config=working_config,
                                     save_to_disk=False,
                                 )
@@ -1502,7 +1559,9 @@ with tab_manage:
                         col_top1, col_top2 = st.columns([5, 1], vertical_alignment="center")
                         with col_top1:
                             st.markdown(f"**{f_name}**")
-                            st.caption(f"🔗 [{f_url}]({f_url})")
+                            f_kws = feed.get("include_keywords", [])
+                            kw_badge = f" • 🔍 Filter: `{', '.join(f_kws)}`" if f_kws else ""
+                            st.caption(f"🔗 [{f_url}]({f_url}){kw_badge}")
                         with col_top2:
                             with st.popover("🗑️ Löschen", use_container_width=True):
                                 st.markdown(f"Feed **'{f_name}'** wirklich entfernen?")
@@ -1517,6 +1576,15 @@ with tab_manage:
                                 edit_name_val = st.text_input("Name ändern:", value=f_name, key=f"edit_name_{key_hash}")
                             with col_ed2:
                                 edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{key_hash}")
+
+                            f_kws_str = ", ".join(f_kws) if isinstance(f_kws, list) else str(f_kws or "")
+                            edit_kw_val = st.text_input(
+                                "Keywords filtern (optional, Komma-getrennt):",
+                                value=f_kws_str,
+                                placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                                key=f"edit_kw_{key_hash}",
+                                help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
+                            )
 
                             col_t_btn, col_s_btn = st.columns(2)
                             with col_t_btn:
@@ -1533,6 +1601,7 @@ with tab_manage:
                                         f_url,
                                         new_name=edit_name_val.strip(),
                                         new_url=edit_url_val.strip(),
+                                        include_keywords=edit_kw_val.strip() if edit_kw_val.strip() else None,
                                         config=working_config,
                                         save_to_disk=False
                                     )
@@ -1556,19 +1625,30 @@ with tab_manage:
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx, key="input_setting_style")
 
-        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
-        setting_app_url = st.text_input(
-            "Streamlit App URL:",
-            value=default_app_url,
-            key="input_setting_app_url",
-            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
-        )
+        col_s3, col_s4 = st.columns(2)
+        with col_s3:
+            default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
+            setting_app_url = st.text_input(
+                "Streamlit App URL:",
+                value=default_app_url,
+                key="input_setting_app_url",
+                help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+            )
+        with col_s4:
+            current_filter_ads = current_settings.get("filter_ads", True)
+            setting_filter_ads = st.checkbox(
+                "🚫 Werbe- & Anzeigen-Filter aktiv",
+                value=current_filter_ads,
+                key="input_setting_filter_ads",
+                help="Entfernt automatisch Promotion- und Werbeartikel wie 'heise-Angebot', 'Anzeige', 'Sponsored' etc."
+            )
 
         if st.button("✔️ Globale Einstellungen übernehmen", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
             new_settings_dict = {
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),
+                "filter_ads": setting_filter_ads,
             }
             update_settings(new_settings_dict, config=working_config, save_to_disk=False)
             st.toast("Globale Einstellungen übernommen (noch nicht gespeichert).", icon="⚙️")

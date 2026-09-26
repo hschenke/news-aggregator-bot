@@ -355,13 +355,108 @@ def export_all_rss_feeds(
         "xml_preview": all_xml,
     }
 
-
+    # 4. Optional: KI-Briefing Feed prüfen
+    briefing_file = rss_root / "briefing.xml"
+    briefing_registry = None
+    if briefing_file.exists():
+        try:
+            briefing_registry = {
+                "title": "Tägliches KI-Briefing",
+                "slug": "briefing",
+                "filename": "briefing.xml",
+                "file_path": str(briefing_file),
+                "url": f"{cdn_prefix}/briefing.xml",
+                "cdn_url": f"{cdn_prefix}/briefing.xml",
+                "raw_url": f"{raw_prefix}/briefing.xml",
+                "app_url": f"{base_url}/?tab=briefing",
+                "item_count": 1,
+                "xml_preview": briefing_file.read_text(encoding="utf-8"),
+            }
+        except Exception:
+            pass
 
     return {
         "all": all_registry,
+        "briefing": briefing_registry,
         "categories": category_registry,
         "feeds": feed_registry,
         "updated_at": datetime.now().strftime("%d.%m.%Y, %H:%M:%S Uhr"),
         "base_url": base_url,
         "static_http_prefix": static_http_prefix,
+    }
+
+
+def export_briefing_rss(
+    briefing_markdown: str,
+    base_url: Optional[str] = None,
+    briefing_date_str: Optional[str] = None,
+) -> Dict[str, Any]:
+    """
+    Erstellt oder aktualisiert den KI-Briefing RSS-Feed (static/rss/briefing.xml).
+    Enthält das synthetisierte Tages-Briefing als lesbaren RSS-Eintrag für RSS-Reader.
+    """
+    rss_root = get_static_rss_dir()
+    briefing_file_path = rss_root / "briefing.xml"
+
+    repo = "hschenke/news-aggregator-bot"
+    branch = "main"
+    try:
+        from src.aggregator import get_github_sync_config
+        gh_cfg = get_github_sync_config()
+        if gh_cfg.get("repo"):
+            repo = gh_cfg["repo"]
+        if gh_cfg.get("branch"):
+            branch = gh_cfg["branch"]
+    except Exception:
+        pass
+
+    cdn_url = f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/static/rss/briefing.xml"
+    raw_url = f"https://raw.githubusercontent.com/{repo}/{branch}/static/rss/briefing.xml"
+
+    if not base_url:
+        from src.summarizer import get_streamlit_app_url
+        base_url = get_streamlit_app_url()
+    base_url = (base_url or "").rstrip("/")
+
+    today_str = briefing_date_str or datetime.now().strftime("%d.%m.%Y")
+    today_iso = datetime.now().strftime("%Y-%m-%d")
+
+    # In HTML umwandeln für optimale RSS-Reader-Darstellung
+    try:
+        import markdown
+        briefing_html = markdown.markdown(briefing_markdown)
+    except Exception:
+        briefing_html = briefing_markdown.replace("\n", "<br/>")
+
+    item = {
+        "title": f"News Bot — KI-Briefing ({today_str})",
+        "link": f"{base_url}/?tab=briefing",
+        "guid": f"briefing-{today_iso}",
+        "published": format_rfc822(datetime.now(timezone.utc)),
+        "summary": briefing_html,
+        "category": "KI-Briefing",
+        "source": "News Aggregator Bot AI",
+        "source_url": base_url,
+    }
+
+    briefing_xml = generate_rss_xml(
+        title="News Bot — Tägliches KI-Briefing",
+        link=f"{base_url}/?tab=briefing",
+        description="Das tägliche, von Gemini KI synthetisierte und kuratierte News-Briefing.",
+        items=[item],
+        self_url=cdn_url,
+        category_name="KI-Briefing",
+    )
+    briefing_file_path.write_text(briefing_xml, encoding="utf-8")
+
+    return {
+        "title": "Tägliches KI-Briefing",
+        "slug": "briefing",
+        "filename": "briefing.xml",
+        "file_path": str(briefing_file_path),
+        "url": cdn_url,
+        "cdn_url": cdn_url,
+        "raw_url": raw_url,
+        "app_url": f"{base_url}/?tab=briefing",
+        "xml_preview": briefing_xml,
     }

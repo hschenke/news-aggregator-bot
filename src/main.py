@@ -14,6 +14,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from src.aggregator import collect_all_news, save_pool_state
 from src.summarizer import summarize_news_with_gemini
 from src.notifier import dispatch_digest
+from src.rss_generator import export_briefing_rss
 
 
 def run_pipeline():
@@ -37,6 +38,11 @@ def run_pipeline():
     print("\n[2/3] 🧠 Generiere kuratierte Zusammenfassung mit LLM...")
     summary = summarize_news_with_gemini(news)
     print("      -> Zusammenfassung erfolgreich generiert.")
+    try:
+        export_briefing_rss(summary)
+        print("      -> KI-Briefing RSS-Feed (briefing.xml) erfolgreich bereitgestellt.")
+    except Exception as e:
+        print(f"      [Hinweis] Briefing-RSS konnte nicht exportiert werden: {e}")
 
     # 3. Schritt: Distribution (HTML generieren + E-Mail versenden)
     print("\n[3/3] 📬 Erstelle Digest & versende...")

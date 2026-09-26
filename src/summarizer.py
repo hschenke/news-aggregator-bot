@@ -211,6 +211,8 @@ def summarize_news_with_gemini(
 
         context_lines = []
         for cat, items in sorted(categorized_news.items(), key=lambda x: x[0].strip().lower()):
+            if not items:
+                continue
             context_lines.append(f"\n\n## {cat}")
             quicklink = category_links.get(cat, "")
             if quicklink:
@@ -238,6 +240,9 @@ WICHTIGE FORMATIERUNGSRICHTLINIEN:
    - Format:
      - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
 5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und Emojis.
+6. WERBE- UND RELEVANZ-FILTER:
+   - Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.
+   - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.
 
 Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
 {"".join(context_lines)}
@@ -286,6 +291,8 @@ def _generate_fallback_summary(
     lines = []
     category_links = category_links or {}
     for cat, items in sorted(categorized_news.items(), key=lambda x: x[0].strip().lower()):
+        if not items:
+            continue
         lines.append(f"## {cat}")
         if cat in category_links:
             lines.append(category_links[cat] + "\n")

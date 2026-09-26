@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News Bot — Tägliches KI-Briefing</title>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=briefing</link>
+    <description>Das tägliche, von Gemini KI synthetisierte und kuratierte News-Briefing.</description>
+    <language>de</language>
+    <lastBuildDate>Sat, 26 Sep 2026 09:35:38 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>News Bot — KI-Briefing (26.09.2026)</title>
+      <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=briefing</link>
+      <guid isPermaLink="false">briefing-2026-09-26</guid>
+      <pubDate>Sat, 26 Sep 2026 09:35:38 +0000</pubDate>
+      <category>KI-Briefing</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">News Aggregator Bot AI</source>
+      <description><![CDATA[<h2>🤖 Tech &amp; AI</h2>
+<blockquote>
+<p>🔗 <a href="https://news-aggregator-bot.streamlit.app">Streamlit App</a>
+- <strong><a href="https://example.com">Beispiel</a></strong>: Ein wichtiger neuer Durchbruch in der KI-Entwicklung.</p>
+</blockquote>]]></description>
+    </item>
+  </channel>
+</rss>
