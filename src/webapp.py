@@ -610,6 +610,8 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
+manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
+
 # Navigation Tabs: Wenn über Email-Link (Kategorie/Feed) geöffnet, 'Alle Artikel' direkt als ersten Tab öffnen!
 if is_viewing_rss:
     tab_rss, tab_briefing, tab_articles, tab_manage = st.tabs([
