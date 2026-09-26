@@ -660,6 +660,7 @@ DEFAULT_AD_PATTERNS = [
     r"\b(?:anzeige|advertorial|partnerangebot|sonderveröffentlichung)\b",
     r"^(?:anzeige|werbung|sponsored|gesponsert|partnerangebot):",
     r"\[(?:anzeige|werbung|sponsored)\]",
+    r"\b(?:sponsored post|sponsored content)\b",
     r"\bdeal(?:s)? des tages\b",
     r"^rabatt-aktion\b",
 ]
@@ -671,7 +672,7 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[
     s_clean = (summary or "").strip().lower()
 
     for pat in DEFAULT_AD_PATTERNS:
-        if re.search(pat, t_clean, re.IGNORECASE):
+        if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
             return True
 
     if custom_ad_keywords:
@@ -684,7 +685,7 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[
 
 
 def extract_police_teaser(url: str, session: Optional[requests.Session] = None) -> str:
-    """Extrahiert den Teaser-Text und Ereignisort einer Berliner Polizeimeldung aus dem HTML-Body."""
+    """Extrahiert den Ereignisort (Bezirk/Stadtteil) und Teaser-Text einer Berliner Polizeimeldung aus dem HTML-Body."""
     if not url or "berlin.de/polizei" not in url:
         return ""
     try:
@@ -695,21 +696,35 @@ def extract_police_teaser(url: str, session: Optional[requests.Session] = None) 
             headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsAggregatorBot/1.0"}
         )
         if r.status_code == 200:
-            m = re.search(r'<p>\s*<strong>Nr\.\s*\d+</strong><br>(.*?)</p>', r.text, re.DOTALL)
-            if m:
-                clean = clean_html_text(m.group(1))
-                if len(clean) > 320:
-                    clean = clean[:317] + "..."
-                return clean
+            district = ""
+            m_dist = re.search(r'title=[\'"]Ereignisort[\'"]>([^<]+)<', r.text, re.IGNORECASE)
+            if m_dist:
+                district = clean_html_text(m_dist.group(1)).strip()
 
-            # Robuster Fallback: Erster Textabsatz mit Inhalt (z. B. Fahndungen, Zeugenaufrufe)
-            for p in re.findall(r'<p.*?>(.*?)</p>', r.text, re.DOTALL):
-                clean = clean_html_text(p)
-                if len(clean) > 40 and not any(bad in clean.lower() for bad in ["barrierefrei", "berlin.de ist ein angebot", "kontakt zur ansprechperson", "landesbeauftragte", "impressum"]):
-                    clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
-                    if len(clean) > 320:
-                        clean = clean[:317] + "..."
-                    return clean
+            teaser = ""
+            m_nr = re.search(r'<p[^>]*>\s*<strong>Nr\.\s*\d+</strong><br\s*/?>\s*(.*?)</p>', r.text, re.DOTALL | re.IGNORECASE)
+            if m_nr:
+                clean = clean_html_text(m_nr.group(1))
+                clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
+                if len(clean) > 300:
+                    clean = clean[:297] + "..."
+                teaser = clean
+            else:
+                for p in re.findall(r'<p.*?>(.*?)</p>', r.text, re.DOTALL):
+                    clean = clean_html_text(p)
+                    if len(clean) > 40 and not any(bad in clean.lower() for bad in ["barrierefrei", "berlin.de ist ein angebot", "kontakt zur ansprechperson", "landesbeauftragte", "impressum"]):
+                        clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
+                        if len(clean) > 300:
+                            clean = clean[:297] + "..."
+                        teaser = clean
+                        break
+
+            if district and teaser:
+                return f"📍 **{district}** – {teaser}"
+            elif district:
+                return f"📍 **{district}**"
+            elif teaser:
+                return teaser
     except Exception:
         pass
     return ""

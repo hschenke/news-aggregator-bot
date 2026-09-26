@@ -423,8 +423,8 @@ if not check_password():
 def get_news_data():
     return collect_all_news()
 
-@st.cache_data(ttl=10, show_spinner=False)  # 10 Sekunden Cache für Quellen-Konfiguration
 def get_sources_config():
+    """Liest die Konfiguration direkt und unzensiert/ungecacht von der Festplatte."""
     try:
         return load_sources()
     except Exception:
@@ -436,10 +436,11 @@ saved_sources_config = get_sources_config()
 if "working_sources_config" not in st.session_state:
     st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
     st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
+    st.session_state["has_unsaved_changes"] = False
 else:
     # Wenn sich sources.yaml auf der Festplatte/GitHub geändert hat und der Nutzer keine ungespeicherten Änderungen hat:
     if st.session_state.get("last_loaded_saved_config") != saved_sources_config:
-        if st.session_state.get("working_sources_config") == st.session_state.get("last_loaded_saved_config"):
+        if not st.session_state.get("has_unsaved_changes", False) and st.session_state.get("working_sources_config") == st.session_state.get("last_loaded_saved_config"):
             st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
             st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
 
@@ -478,7 +479,10 @@ def perform_save_all():
 
         gh_res = save_sources(cfg_to_save, sync_github=True)
         st.cache_data.clear()
-        st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
+        fresh_cfg = load_sources()
+        st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
+        st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
+        st.session_state["has_unsaved_changes"] = False
         if gh_res.get("success"):
             st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
             st.toast("Gespeichert & mit GitHub / CDN synchronisiert!", icon="🚀")
@@ -496,14 +500,20 @@ def perform_save_all():
 def perform_discard_all():
     """Verwirft alle ungespeicherten Änderungen und setzt auf den Stand der sources.yaml zurück."""
     st.cache_data.clear()
-    st.session_state["working_sources_config"] = copy.deepcopy(load_sources())
+    fresh_cfg = load_sources()
+    st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
+    st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
+    st.session_state["has_unsaved_changes"] = False
     for k in list(st.session_state.keys()):
-        if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("input_setting_"):
+        if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("edit_inc_") or k.startswith("edit_exc_") or k.startswith("input_setting_"):
             del st.session_state[k]
     st.toast("↩️ Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
     st.rerun()
 
-has_unsaved_changes = (working_config != saved_sources_config)
+has_unsaved_changes = bool(
+    st.session_state.get("has_unsaved_changes", False) or
+    (working_config != saved_sources_config)
+)
 
 
 # --- Sidebar ---
@@ -932,7 +942,7 @@ with tab_articles:
                                 if pdate:
                                     st.caption(f"🕒 {pdate}")
                                 if clean_summary:
-                                    st.write(clean_summary)
+                                    st.markdown(clean_summary)
 
     with col_stat:
         if displayed_count > 0:
@@ -1386,6 +1396,7 @@ with tab_manage:
                     else:
                         success = add_category(cat_clean, config=working_config, save_to_disk=False)
                         if success:
+                            st.session_state["has_unsaved_changes"] = True
                             st.toast(f"Kategorie '{cat_clean}' angelegt (noch nicht gespeichert).", icon="📁")
                             st.rerun()
                         else:
@@ -1411,13 +1422,14 @@ with tab_manage:
                         else:
                             try:
                                 rename_category(cat_to_rename, new_cat_name_input.strip(), config=working_config, save_to_disk=False)
+                                st.session_state["has_unsaved_changes"] = True
                                 st.toast(f"Kategorie in '{new_cat_name_input.strip()}' umbenannt (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"Fehler beim Umbenennen: {e}")
 
     # --- Sektion 2: RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten) ---
-    with st.expander("📡 RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten)", expanded=True):
+    with st.expander("📡 RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten)", expanded=False):
         subtab_feed1, subtab_feed2 = st.tabs(["➕ Neuen Feed hinzufügen", "✏️ Bestehenden Feed bearbeiten"])
 
         # Tab 1: Neuer Feed
@@ -1493,11 +1505,12 @@ with tab_manage:
                             category_name=target_cat_name,
                             feed_name=new_feed_name,
                             feed_url=new_feed_url,
-                            include_keywords=new_feed_include.strip() if new_feed_include.strip() else None,
-                            exclude_keywords=new_feed_exclude.strip() if new_feed_exclude.strip() else None,
+                            include_keywords=new_feed_include.strip(),
+                            exclude_keywords=new_feed_exclude.strip(),
                             config=working_config,
                             save_to_disk=False,
                         )
+                        st.session_state["has_unsaved_changes"] = True
                         st.toast(f"Feed '{new_feed_name}' zu '{target_cat_name}' hinzugefügt (noch nicht gespeichert).", icon="📡")
                         st.rerun()
                     except Exception as e:
@@ -1582,7 +1595,7 @@ with tab_manage:
                             else:
                                 st.error(f"❌ Nicht erreichbar: {t_res['error']}")
                 with col_ebtn2:
-                    if st.button("✔️ Änderungen übernehmen", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
+                    if st.button("✔️ Im Entwurf vormerken", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
                         if not edit_fname.strip():
                             st.error("Der Feed-Name darf nicht leer sein.")
                         elif not edit_furl.strip() or not (edit_furl.strip().startswith("http://") or edit_furl.strip().startswith("https://")):
@@ -1595,11 +1608,12 @@ with tab_manage:
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
                                     new_category=edit_fcat.strip(),
-                                    include_keywords=edit_finclude.strip() if edit_finclude.strip() else None,
-                                    exclude_keywords=edit_fexclude.strip() if edit_fexclude.strip() else None,
+                                    include_keywords=edit_finclude.strip(),
+                                    exclude_keywords=edit_fexclude.strip(),
                                     config=working_config,
                                     save_to_disk=False,
                                 )
+                                st.session_state["has_unsaved_changes"] = True
                                 st.toast(f"Feed '{edit_fname}' aktualisiert (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
@@ -1609,6 +1623,7 @@ with tab_manage:
                         st.markdown(f"Feed **'{curr_f.get('name')}'** wirklich entfernen?")
                         if st.button("Bestätigen", key=f"top_del_{curr_f.get('url')}", type="primary", use_container_width=True):
                             delete_feed(curr_cname, curr_f.get("url"), config=working_config, save_to_disk=False)
+                            st.session_state["has_unsaved_changes"] = True
                             st.toast(f"Feed '{curr_f.get('name')}' entfernt (noch nicht gespeichert).", icon="🗑️")
                             st.rerun()
 
@@ -1626,7 +1641,7 @@ with tab_manage:
         cat_name = cat.get("name", "Allgemein")
         feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
 
-        with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=True):
+        with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=False):
             # Kategorie Header Actions
             col_cat_info, col_cat_del = st.columns([5, 1], vertical_alignment="center")
             with col_cat_info:
@@ -1636,6 +1651,7 @@ with tab_manage:
                     st.markdown(f"Kategorie **'{cat_name}'** samt aller Feeds wirklich löschen?")
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
                         delete_category(cat_name, config=working_config, save_to_disk=False)
+                        st.session_state["has_unsaved_changes"] = True
                         st.toast(f"Kategorie '{cat_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                         st.rerun()
 
@@ -1665,6 +1681,7 @@ with tab_manage:
                                 st.markdown(f"Feed **'{f_name}'** wirklich entfernen?")
                                 if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                     delete_feed(cat_name, f_url, config=working_config, save_to_disk=False)
+                                    st.session_state["has_unsaved_changes"] = True
                                     st.toast(f"Feed '{f_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                                     st.rerun()
 
@@ -1695,7 +1712,7 @@ with tab_manage:
                                     help="Artikel mit diesen Wörtern werden ignoriert."
                                 )
 
-                            col_t_btn, col_s_btn = st.columns(2)
+                            col_t_btn, col_s_btn, col_d_btn = st.columns([1, 1, 1])
                             with col_t_btn:
                                 if st.button("🔍 Feed testen", key=f"btn_test_{key_hash}", use_container_width=True):
                                     t_res = test_feed_connection(edit_url_val.strip())
@@ -1704,19 +1721,33 @@ with tab_manage:
                                     else:
                                         st.error(f"❌ Fehler: {t_res['error']}")
                             with col_s_btn:
-                                if st.button("✔️ Details übernehmen", key=f"btn_save_all_{key_hash}", type="primary", use_container_width=True):
+                                if st.button("✔️ Im Entwurf vormerken", key=f"btn_save_all_{key_hash}", use_container_width=True, help="Übernimmt die Feed-Anpassung in den Arbeitsentwurf"):
                                     update_feed(
                                         cat_name,
                                         f_url,
                                         new_name=edit_name_val.strip(),
                                         new_url=edit_url_val.strip(),
-                                        include_keywords=edit_inc_val.strip() if edit_inc_val.strip() else None,
-                                        exclude_keywords=edit_exc_val.strip() if edit_exc_val.strip() else None,
+                                        include_keywords=edit_inc_val.strip(),
+                                        exclude_keywords=edit_exc_val.strip(),
                                         config=working_config,
                                         save_to_disk=False
                                     )
+                                    st.session_state["has_unsaved_changes"] = True
                                     st.toast("Feed-Details übernommen (noch nicht gespeichert).", icon="✏️")
                                     st.rerun()
+                            with col_d_btn:
+                                if st.button("💾 Direkt speichern & pushen", key=f"btn_direct_{key_hash}", type="primary", use_container_width=True, help="Speichert sofort dauerhaft in sources.yaml und synchronisiert zu GitHub & CDN"):
+                                    update_feed(
+                                        cat_name,
+                                        f_url,
+                                        new_name=edit_name_val.strip(),
+                                        new_url=edit_url_val.strip(),
+                                        include_keywords=edit_inc_val.strip(),
+                                        exclude_keywords=edit_exc_val.strip(),
+                                        config=working_config,
+                                        save_to_disk=False
+                                    )
+                                    perform_save_all()
 
     st.markdown("---")
 
@@ -1735,23 +1766,23 @@ with tab_manage:
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx, key="input_setting_style")
 
-        col_s3, col_s4 = st.columns(2)
-        with col_s3:
-            default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
-            setting_app_url = st.text_input(
-                "Streamlit App URL:",
-                value=default_app_url,
-                key="input_setting_app_url",
-                help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
-            )
-        with col_s4:
-            current_filter_ads = current_settings.get("filter_ads", True)
-            setting_filter_ads = st.checkbox(
-                "🚫 Werbe- & Anzeigen-Filter aktiv",
-                value=current_filter_ads,
-                key="input_setting_filter_ads",
-                help="Entfernt automatisch Promotion- und Werbeartikel wie 'heise-Angebot', 'Anzeige', 'Sponsored' etc."
-            )
+        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
+        setting_app_url = st.text_input(
+            "Streamlit App URL:",
+            value=default_app_url,
+            key="input_setting_app_url",
+            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+        )
+
+        st.markdown("---")
+
+        current_filter_ads = current_settings.get("filter_ads", True)
+        setting_filter_ads = st.checkbox(
+            "🚫 Werbe- & Anzeigen-Filter aktiv",
+            value=current_filter_ads,
+            key="input_setting_filter_ads",
+            help="Entfernt automatisch Promotion- und Werbeartikel wie 'heise-Angebot', 'Anzeige', 'Sponsored' etc."
+        )
 
         default_ad_kws = current_settings.get("ad_keywords")
         if not default_ad_kws or not isinstance(default_ad_kws, list):
@@ -1763,29 +1794,47 @@ with tab_manage:
 
         if setting_filter_ads:
             setting_ad_keywords_str = st.text_area(
-                "🚫 Auszuschließende Werbe-Keywords & Promotion-Muster (Komma-getrennt):",
+                "Auszuschließende Werbe-Keywords & Promotion-Muster (Komma-getrennt):",
                 value=", ".join(default_ad_kws),
                 key="input_setting_ad_keywords",
-                help="Artikel, deren Titel oder Teaser diese Begriffe enthalten, werden bei aktivem Werbefilter automatisch herausgefiltert.",
-                height=80
+                help="Auszuschließende Werbe-Keywords & Promotion-Muster (Komma-getrennt). Artikel, deren Titel oder Teaser diese Begriffe enthalten, werden bei aktivem Werbefilter automatisch herausgefiltert.",
+                label_visibility="collapsed",
+                height=70
             )
         else:
             setting_ad_keywords_str = ", ".join(default_ad_kws)
 
-        if st.button("✔️ Globale Einstellungen übernehmen", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
-            parsed_ad_kws = [k.strip() for k in setting_ad_keywords_str.split(",") if k.strip()]
-            new_settings_dict = {
-                "language": setting_lang,
-                "summary_style": setting_style,
-                "streamlit_app_url": setting_app_url.strip(),
-                "filter_ads": setting_filter_ads,
-                "ad_keywords": parsed_ad_kws,
-            }
-            if "custom_prompt_directives" in current_settings:
-                new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
-            update_settings(new_settings_dict, config=working_config, save_to_disk=False)
-            st.toast("Globale Einstellungen übernommen (noch nicht gespeichert).", icon="⚙️")
-            st.rerun()
+        col_g1, col_g2 = st.columns(2)
+        with col_g1:
+            if st.button("✔️ Im Entwurf vormerken", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
+                parsed_ad_kws = [k.strip() for k in setting_ad_keywords_str.split(",") if k.strip()]
+                new_settings_dict = {
+                    "language": setting_lang,
+                    "summary_style": setting_style,
+                    "streamlit_app_url": setting_app_url.strip(),
+                    "filter_ads": setting_filter_ads,
+                    "ad_keywords": parsed_ad_kws,
+                }
+                if "custom_prompt_directives" in current_settings:
+                    new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
+                update_settings(new_settings_dict, config=working_config, save_to_disk=False)
+                st.session_state["has_unsaved_changes"] = True
+                st.toast("Globale Einstellungen im Entwurf übernommen (noch nicht gespeichert).", icon="⚙️")
+                st.rerun()
+        with col_g2:
+            if st.button("💾 Direkt speichern & pushen", type="primary", use_container_width=True, key="btn_save_global_settings_direct"):
+                parsed_ad_kws = [k.strip() for k in setting_ad_keywords_str.split(",") if k.strip()]
+                new_settings_dict = {
+                    "language": setting_lang,
+                    "summary_style": setting_style,
+                    "streamlit_app_url": setting_app_url.strip(),
+                    "filter_ads": setting_filter_ads,
+                    "ad_keywords": parsed_ad_kws,
+                }
+                if "custom_prompt_directives" in current_settings:
+                    new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
+                update_settings(new_settings_dict, config=working_config, save_to_disk=False)
+                perform_save_all()
 
         st.caption("🔒 **Sicherheitshinweis:** Sensible Zugangsdaten wie `APP_PASSWORD` oder API-Keys werden niemals in `sources.yaml` gespeichert, sondern sicher als Secrets in **GitHub Actions** und **Streamlit Cloud** verwaltet.")
 
