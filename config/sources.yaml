@@ -22,8 +22,8 @@ categories:
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
     include_keywords:
-    - Mitte
-    - Friedrichshain
+    - Mahlsdorf
+    - Kaulsdorf
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)
