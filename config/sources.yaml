@@ -13,10 +13,10 @@ categories:
     url: https://joscha.com/rss/all/
 - name: Games
   feeds:
-  - name: Might & Magic Alert
-    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
   - name: RPG-Watch
     url: https://rpgwatch.com/files/rss1.xml
+  - name: Might & Magic Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
 - name: Policia
   feeds:
   - name: Polizeimeldungen Berlin
@@ -25,11 +25,12 @@ categories:
   feeds:
   - name: Hacker News (Top)
     url: https://news.ycombinator.com/rss
-  - name: Heise Online News
-    url: https://www.heise.de/rss/heise-atom.xml
   - name: TechCrunch AI
     url: https://techcrunch.com/category/artificial-intelligence/feed/
+  - name: Heise Online News
+    url: https://www.heise.de/rss/heise-atom.xml
 settings:
+  max_articles_per_category: 20
   language: de
   summary_style: tldr
   streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app
