@@ -37,6 +37,37 @@ from src.summarizer import summarize_news_with_gemini, get_configured_api_key, g
 from src.rss_generator import export_all_rss_feeds
 
 try:
+    import zoneinfo
+    BERLIN_TZ = zoneinfo.ZoneInfo("Europe/Berlin")
+except Exception:
+    from datetime import timezone, timedelta
+    BERLIN_TZ = timezone(timedelta(hours=2))
+
+def get_local_now() -> datetime:
+    """Gibt die aktuelle Zeit in der Zeitzone Europe/Berlin zurück."""
+    return datetime.now(BERLIN_TZ)
+
+def format_local_dt(dt_or_ts: Any, fmt: str = "%d.%m.%Y, %H:%M Uhr") -> str:
+    """Formatiert einen Zeitstempel oder Datetime verlässlich in Europe/Berlin."""
+    if dt_or_ts is None:
+        return ""
+    if isinstance(dt_or_ts, (int, float)):
+        if dt_or_ts <= 0:
+            return ""
+        try:
+            from datetime import timezone
+            dt = datetime.fromtimestamp(dt_or_ts, tz=timezone.utc).astimezone(BERLIN_TZ)
+            return dt.strftime(fmt)
+        except Exception:
+            return ""
+    if isinstance(dt_or_ts, datetime):
+        if dt_or_ts.tzinfo is None:
+            from datetime import timezone
+            dt_or_ts = dt_or_ts.replace(tzinfo=timezone.utc)
+        return dt_or_ts.astimezone(BERLIN_TZ).strftime(fmt)
+    return str(dt_or_ts)
+
+try:
     from streamlit_cookies_controller import CookieController
     cookie_controller = CookieController(key="news_bot_auth_cookie_ctrl")
 except Exception:
@@ -388,11 +419,11 @@ if not check_password():
 
 
 # --- Caching Data Loading ---
-@st.cache_data(ttl=7200, show_spinner=False)  # 2 Stunden Cache
+@st.cache_data(ttl=1800, show_spinner=False)  # 30 Minuten Cache für News
 def get_news_data():
     return collect_all_news()
 
-@st.cache_data(ttl=7200, show_spinner=False)  # 2 Stunden Cache
+@st.cache_data(ttl=10, show_spinner=False)  # 10 Sekunden Cache für Quellen-Konfiguration
 def get_sources_config():
     try:
         return load_sources()
@@ -404,6 +435,13 @@ def get_sources_config():
 saved_sources_config = get_sources_config()
 if "working_sources_config" not in st.session_state:
     st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
+    st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
+else:
+    # Wenn sich sources.yaml auf der Festplatte/GitHub geändert hat und der Nutzer keine ungespeicherten Änderungen hat:
+    if st.session_state.get("last_loaded_saved_config") != saved_sources_config:
+        if st.session_state.get("working_sources_config") == st.session_state.get("last_loaded_saved_config"):
+            st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
+            st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
 
 working_config = st.session_state["working_sources_config"]
 
@@ -417,6 +455,13 @@ def harvest_global_settings():
         settings["summary_style"] = str(st.session_state["input_setting_style"])
     if "input_setting_app_url" in st.session_state:
         settings["streamlit_app_url"] = str(st.session_state["input_setting_app_url"]).strip()
+    if "input_setting_filter_ads" in st.session_state:
+        settings["filter_ads"] = bool(st.session_state["input_setting_filter_ads"])
+    if "input_setting_ad_keywords" in st.session_state:
+        raw_kws = str(st.session_state["input_setting_ad_keywords"])
+        settings["ad_keywords"] = [k.strip() for k in raw_kws.split(",") if k.strip()]
+    if "input_ki_prompt_directives" in st.session_state:
+        settings["custom_prompt_directives"] = str(st.session_state["input_ki_prompt_directives"]).strip()
 
 def perform_save_all():
     """Speichert den gesamten Arbeitsentwurf persistent in sources.yaml und synchronisiert mit GitHub."""
@@ -603,7 +648,7 @@ total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categorie
 new_pool_articles = get_new_articles_count(news_data)
 
 st.title("📰 Daily News Briefing")
-st.caption(f"Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
+st.caption(f"Aktualisiert: {get_local_now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
 # KPI Row (Kompakt & Mobile-optimiert)
 engine_short = selected_model.replace("gemini-", "").replace("-flash-lite", " Flash-Lite").replace("-flash", " Flash")
@@ -680,11 +725,9 @@ with tab_articles:
     def format_article_date(it: dict) -> str:
         ts = get_article_timestamp(it)
         if ts > 0:
-            try:
-                dt = datetime.fromtimestamp(ts)
-                return dt.strftime("%d.%m.%Y, %H:%M Uhr")
-            except Exception:
-                pass
+            formatted = format_local_dt(ts)
+            if formatted:
+                return formatted
         pub = it.get("published", "") or it.get("updated", "")
         if pub:
             return str(pub)[:30]
@@ -902,6 +945,30 @@ with tab_articles:
 with tab_briefing:
     st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ Synthetisiertes KI-Briefing</h3>", unsafe_allow_html=True)
     
+    current_prompt_directives = working_config.get("settings", {}).get("custom_prompt_directives")
+    if not current_prompt_directives:
+        current_prompt_directives = (
+            "- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.\n"
+            "- Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."
+        )
+
+    with st.expander("⚙️ Redaktionelle Anweisungen & Filter für die KI (Prompt-Steuerung)", expanded=False):
+        st.caption("Diese Anweisungen steuern Gemini direkt. Du kannst Filter anpassen, Relevanzkriterien definieren oder Schwerpunkte setzen:")
+        ki_prompt_directives = st.text_area(
+            "Anweisungen für Gemini KI:",
+            value=current_prompt_directives,
+            key="input_ki_prompt_directives",
+            help="Hier kannst du z. B. vorgeben: 'Filtere reine Werbung und Sonderangebote heraus. Ignoriere Krypto. Fokussiere auf Berliner Lokalthemen.'",
+            height=100,
+            disabled=not is_admin
+        )
+        if is_admin:
+            if st.button("💾 Direktiven als Standard in sources.yaml speichern", key="btn_save_ki_directives", use_container_width=True):
+                working_config.setdefault("settings", {})["custom_prompt_directives"] = ki_prompt_directives.strip()
+                save_sources(working_config, sync_github=True)
+                st.toast("KI-Direktiven gespeichert & mit GitHub synchronisiert!", icon="💾")
+                st.rerun()
+
     col_btn, col_info = st.columns([1, 2], vertical_alignment="center")
     with col_btn:
         if is_admin:
@@ -936,10 +1003,11 @@ with tab_briefing:
                 ai_summary = summarize_news_with_gemini(
                     news_data,
                     api_key=user_api_key,
-                    model=selected_model
+                    model=selected_model,
+                    custom_directives=ki_prompt_directives,
                 )
                 st.session_state["cached_summary"] = ai_summary
-                st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
+                st.session_state["summary_timestamp"] = get_local_now().strftime("%d.%m.%Y, %H:%M Uhr")
                 save_pool_state(news_data)
                 try:
                     from src.rss_generator import export_briefing_rss
@@ -956,7 +1024,7 @@ with tab_briefing:
         st.download_button(
             label="📥 Briefing als Markdown herunterladen",
             data=st.session_state["cached_summary"],
-            file_name=f"news_briefing_{datetime.now().strftime('%Y%m%d')}.md",
+            file_name=f"news_briefing_{get_local_now().strftime('%Y%m%d')}.md",
             mime="text/markdown",
         )
     else:
@@ -1376,12 +1444,21 @@ with tab_manage:
 
             new_feed_url = st.text_input("RSS- oder Atom-Feed URL:", placeholder="https://www.theverge.com/rss/index.xml", key="input_new_feed_url")
 
-            new_feed_keywords = st.text_input(
-                "🔍 Nur Artikel mit Keywords aufnehmen (optional, Komma-getrennt):",
-                placeholder="z. B. Mahlsdorf, Kaulsdorf",
-                key="input_new_feed_keywords",
-                help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
-            )
+            col_kw1, col_kw2 = st.columns(2)
+            with col_kw1:
+                new_feed_include = st.text_input(
+                    "🟢 Nur mit Keywords aufnehmen (Einschließen / Whitelist):",
+                    placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                    key="input_new_feed_include",
+                    help="Wenn ausgefüllt, werden NUR Artikel übernommen, die mindestens eines dieser Wörter in Titel oder Text enthalten."
+                )
+            with col_kw2:
+                new_feed_exclude = st.text_input(
+                    "🔴 Mit Keywords ausschließen (Ausschließen / Blacklist):",
+                    placeholder="z. B. Krypto, Sport, Werbung",
+                    key="input_new_feed_exclude",
+                    help="Artikel, die mindestens eines dieser Wörter enthalten, werden verworfen."
+                )
 
             col_act1, col_act2 = st.columns([1, 2], vertical_alignment="center")
             with col_act1:
@@ -1416,7 +1493,8 @@ with tab_manage:
                             category_name=target_cat_name,
                             feed_name=new_feed_name,
                             feed_url=new_feed_url,
-                            include_keywords=new_feed_keywords.strip() if new_feed_keywords.strip() else None,
+                            include_keywords=new_feed_include.strip() if new_feed_include.strip() else None,
+                            exclude_keywords=new_feed_exclude.strip() if new_feed_exclude.strip() else None,
                             config=working_config,
                             save_to_disk=False,
                         )
@@ -1473,13 +1551,26 @@ with tab_manage:
 
                 curr_inc = curr_f.get("include_keywords", [])
                 curr_inc_str = ", ".join(curr_inc) if isinstance(curr_inc, list) else str(curr_inc or "")
-                edit_fkeywords = st.text_input(
-                    "🔍 Nur Artikel mit Keywords aufnehmen (optional, Komma-getrennt):",
-                    value=curr_inc_str,
-                    placeholder="z. B. Mahlsdorf, Kaulsdorf",
-                    key=f"top_edit_kw_{curr_f.get('url')}",
-                    help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
-                )
+                curr_exc = curr_f.get("exclude_keywords", [])
+                curr_exc_str = ", ".join(curr_exc) if isinstance(curr_exc, list) else str(curr_exc or "")
+
+                col_ek1, col_ek2 = st.columns(2)
+                with col_ek1:
+                    edit_finclude = st.text_input(
+                        "🟢 Nur mit Keywords aufnehmen (Einschließen / Whitelist):",
+                        value=curr_inc_str,
+                        placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                        key=f"top_edit_inc_{curr_f.get('url')}",
+                        help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
+                    )
+                with col_ek2:
+                    edit_fexclude = st.text_input(
+                        "🔴 Mit Keywords ausschließen (Ausschließen / Blacklist):",
+                        value=curr_exc_str,
+                        placeholder="z. B. Sport, Krypto",
+                        key=f"top_edit_exc_{curr_f.get('url')}",
+                        help="Artikel mit diesen Wörtern werden ignoriert."
+                    )
 
                 col_ebtn1, col_ebtn2, col_ebtn3 = st.columns([1, 2, 1], vertical_alignment="center")
                 with col_ebtn1:
@@ -1504,7 +1595,8 @@ with tab_manage:
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
                                     new_category=edit_fcat.strip(),
-                                    include_keywords=edit_fkeywords.strip() if edit_fkeywords.strip() else None,
+                                    include_keywords=edit_finclude.strip() if edit_finclude.strip() else None,
+                                    exclude_keywords=edit_fexclude.strip() if edit_fexclude.strip() else None,
                                     config=working_config,
                                     save_to_disk=False,
                                 )
@@ -1559,8 +1651,14 @@ with tab_manage:
                         col_top1, col_top2 = st.columns([5, 1], vertical_alignment="center")
                         with col_top1:
                             st.markdown(f"**{f_name}**")
-                            f_kws = feed.get("include_keywords", [])
-                            kw_badge = f" • 🔍 Filter: `{', '.join(f_kws)}`" if f_kws else ""
+                            f_inc = feed.get("include_keywords", [])
+                            f_exc = feed.get("exclude_keywords", [])
+                            badges = []
+                            if f_inc:
+                                badges.append(f"🟢 Nur: `{', '.join(f_inc)}`")
+                            if f_exc:
+                                badges.append(f"🔴 Ohne: `{', '.join(f_exc)}`")
+                            kw_badge = f" • {' | '.join(badges)}" if badges else ""
                             st.caption(f"🔗 [{f_url}]({f_url}){kw_badge}")
                         with col_top2:
                             with st.popover("🗑️ Löschen", use_container_width=True):
@@ -1577,14 +1675,25 @@ with tab_manage:
                             with col_ed2:
                                 edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{key_hash}")
 
-                            f_kws_str = ", ".join(f_kws) if isinstance(f_kws, list) else str(f_kws or "")
-                            edit_kw_val = st.text_input(
-                                "Keywords filtern (optional, Komma-getrennt):",
-                                value=f_kws_str,
-                                placeholder="z. B. Mahlsdorf, Kaulsdorf",
-                                key=f"edit_kw_{key_hash}",
-                                help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
-                            )
+                            f_inc_str = ", ".join(f_inc) if isinstance(f_inc, list) else str(f_inc or "")
+                            f_exc_str = ", ".join(f_exc) if isinstance(f_exc, list) else str(f_exc or "")
+                            col_ek1, col_ek2 = st.columns(2)
+                            with col_ek1:
+                                edit_inc_val = st.text_input(
+                                    "🟢 Nur Artikel mit Keywords aufnehmen (Einschließen):",
+                                    value=f_inc_str,
+                                    placeholder="z. B. Mahlsdorf, Kaulsdorf",
+                                    key=f"edit_inc_{key_hash}",
+                                    help="Wenn ausgefüllt, werden nur Artikel übernommen, die mindestens eines dieser Wörter enthalten."
+                                )
+                            with col_ek2:
+                                edit_exc_val = st.text_input(
+                                    "🔴 Artikel mit Keywords ausschließen (Ausschließen):",
+                                    value=f_exc_str,
+                                    placeholder="z. B. Sport, Krypto",
+                                    key=f"edit_exc_{key_hash}",
+                                    help="Artikel mit diesen Wörtern werden ignoriert."
+                                )
 
                             col_t_btn, col_s_btn = st.columns(2)
                             with col_t_btn:
@@ -1601,7 +1710,8 @@ with tab_manage:
                                         f_url,
                                         new_name=edit_name_val.strip(),
                                         new_url=edit_url_val.strip(),
-                                        include_keywords=edit_kw_val.strip() if edit_kw_val.strip() else None,
+                                        include_keywords=edit_inc_val.strip() if edit_inc_val.strip() else None,
+                                        exclude_keywords=edit_exc_val.strip() if edit_exc_val.strip() else None,
                                         config=working_config,
                                         save_to_disk=False
                                     )
@@ -1643,13 +1753,36 @@ with tab_manage:
                 help="Entfernt automatisch Promotion- und Werbeartikel wie 'heise-Angebot', 'Anzeige', 'Sponsored' etc."
             )
 
+        default_ad_kws = current_settings.get("ad_keywords")
+        if not default_ad_kws or not isinstance(default_ad_kws, list):
+            default_ad_kws = [
+                "heise-angebot", "anzeige", "werbung", "sponsored",
+                "gesponsert", "advertorial", "partnerangebot",
+                "deal des tages", "rabatt-aktion"
+            ]
+
+        if setting_filter_ads:
+            setting_ad_keywords_str = st.text_area(
+                "🚫 Auszuschließende Werbe-Keywords & Promotion-Muster (Komma-getrennt):",
+                value=", ".join(default_ad_kws),
+                key="input_setting_ad_keywords",
+                help="Artikel, deren Titel oder Teaser diese Begriffe enthalten, werden bei aktivem Werbefilter automatisch herausgefiltert.",
+                height=80
+            )
+        else:
+            setting_ad_keywords_str = ", ".join(default_ad_kws)
+
         if st.button("✔️ Globale Einstellungen übernehmen", type="secondary", use_container_width=True, key="btn_apply_global_settings"):
+            parsed_ad_kws = [k.strip() for k in setting_ad_keywords_str.split(",") if k.strip()]
             new_settings_dict = {
                 "language": setting_lang,
                 "summary_style": setting_style,
                 "streamlit_app_url": setting_app_url.strip(),
                 "filter_ads": setting_filter_ads,
+                "ad_keywords": parsed_ad_kws,
             }
+            if "custom_prompt_directives" in current_settings:
+                new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
             update_settings(new_settings_dict, config=working_config, save_to_disk=False)
             st.toast("Globale Einstellungen übernommen (noch nicht gespeichert).", icon="⚙️")
             st.rerun()

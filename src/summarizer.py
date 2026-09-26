@@ -180,6 +180,7 @@ def summarize_news_with_gemini(
     api_key: str = None,
     model: str = None,
     config_path: str = "config/sources.yaml",
+    custom_directives: str = None,
 ) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
@@ -199,6 +200,13 @@ def summarize_news_with_gemini(
 
     streamlit_app_url = get_streamlit_app_url(config_path)
     category_links = build_category_quicklinks(config, streamlit_app_url, config_path)
+
+    active_directives = (custom_directives or "").strip()
+    if not active_directives:
+        active_directives = (settings.get("custom_prompt_directives") or "").strip()
+    if not active_directives:
+        active_directives = """- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.
+- Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."""
 
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
@@ -240,9 +248,8 @@ WICHTIGE FORMATIERUNGSRICHTLINIEN:
    - Format:
      - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
 5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und Emojis.
-6. WERBE- UND RELEVANZ-FILTER:
-   - Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.
-   - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.
+6. REDAKTIONELLE FILTER & ANWEISUNGEN:
+{active_directives}
 
 Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
 {"".join(context_lines)}

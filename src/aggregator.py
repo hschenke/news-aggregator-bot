@@ -701,6 +701,15 @@ def extract_police_teaser(url: str, session: Optional[requests.Session] = None) 
                 if len(clean) > 320:
                     clean = clean[:317] + "..."
                 return clean
+
+            # Robuster Fallback: Erster Textabsatz mit Inhalt (z. B. Fahndungen, Zeugenaufrufe)
+            for p in re.findall(r'<p.*?>(.*?)</p>', r.text, re.DOTALL):
+                clean = clean_html_text(p)
+                if len(clean) > 40 and not any(bad in clean.lower() for bad in ["barrierefrei", "berlin.de ist ein angebot", "kontakt zur ansprechperson", "landesbeauftragte", "impressum"]):
+                    clean = re.sub(r"^Nr\.\s*\d+\s*", "", clean).strip()
+                    if len(clean) > 320:
+                        clean = clean[:317] + "..."
+                    return clean
     except Exception:
         pass
     return ""
