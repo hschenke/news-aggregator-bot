@@ -23,6 +23,7 @@ categories:
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
     include_keywords:
     - Mitte
+    - Friedrichshain
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)
