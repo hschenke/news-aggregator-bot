@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 07:25:59 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 07:43:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -171,15 +171,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Platform-independent SIMD in Go</title>
-      <link>https://go.dev/blog/simd-experiment</link>
-      <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
-      <pubDate>Fri, 25 Sep 2026 11:47:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>I wrote a ray tracer in Brainfuck</title>
       <link>https://epestr.com/blog/writing-a-ray-tracer-in-brainfuck/</link>
       <guid isPermaLink="false">https://epestr.com/blog/writing-a-ray-tracer-in-brainfuck/</guid>
@@ -247,6 +238,15 @@
       <link>https://adekau.github.io/posts/2020/llamas.html</link>
       <guid isPermaLink="false">https://adekau.github.io/posts/2020/llamas.html</guid>
       <pubDate>Thu, 24 Sep 2026 12:03:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Scientists build most accurate atomic clock</title>
+      <link>https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</link>
+      <guid isPermaLink="false">https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</guid>
+      <pubDate>Thu, 24 Sep 2026 01:00:01 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

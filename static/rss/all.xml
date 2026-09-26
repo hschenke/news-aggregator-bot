@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 07:25:59 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 07:43:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -126,9 +126,9 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Künstliche Intelligenz: KI von OpenAI brachte Nutzer-Bilder zu Online-Plattformen</title>
-      <link>https://www.handelsblatt.com/technik/ki/kuenstliche-intelligenz-ki-von-openai-brachte-nutzer-bilder-zu-online-plattformen/100257541.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/technik/ki/kuenstliche-intelligenz-ki-von-openai-brachte-nutzer-bilder-zu-online-plattformen/100257541.html</guid>
+      <title>Künstliche Intelligenz: OpenAI-KI griff wohl auf öffentliche Daten von US-Behörden zu</title>
+      <link>https://www.handelsblatt.com/technik/ki/kuenstliche-intelligenz-openai-ki-griff-wohl-auf-oeffentliche-daten-von-us-behoerden-zu/100257541.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/technik/ki/kuenstliche-intelligenz-openai-ki-griff-wohl-auf-oeffentliche-daten-von-us-behoerden-zu/100257541.html</guid>
       <pubDate>Sat, 26 Sep 2026 01:56:07 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
@@ -923,15 +923,6 @@ Guild Saga: Vanished Worlds Makes Me Want to Play More CRPGs
       <description><![CDATA[Alf wurde 40: Der kleine Chaot vom Melmac begeisterte ab 1986 große wie kleine Fans. Wir feiern mit einem Quiz zu freundlichen Aliens aus Film und Fernsehen.]]></description>
     </item>
     <item>
-      <title>Platform-independent SIMD in Go</title>
-      <link>https://go.dev/blog/simd-experiment</link>
-      <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
-      <pubDate>Fri, 25 Sep 2026 11:47:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Korrodierende Schraube am Lenkgetriebe: Rückruf für VW und Audi</title>
       <link>https://www.heise.de/news/VW-und-Audi-rufen-fast-eine-Million-Autos-wegen-Lenkungsproblem-zurueck-11466254.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11466254</guid>
@@ -1382,15 +1373,6 @@ Qliphah in Providence's Shadow Review - The Mystery of a Unique Action RPG Syste
 Score: 7/10]]></description>
     </item>
     <item>
-      <title>heise+ | Apple Watch Series 12 und Ultra 4 im Test: Sensor-Spurt rund um die Uhr</title>
-      <link>https://www.heise.de/tests/Apple-Watch-Series-12-und-Ultra-4-im-Test-Sensor-Spurt-rund-um-die-Uhr-11464792.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11464792</guid>
-      <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
-    </item>
-    <item>
       <title>heise-Angebot: iX-Workshop: Mehr Tempo beim Coding – mit KI-Assistenten effizient programmieren</title>
       <link>https://www.heise.de/news/iX-Workshop-Mehr-Tempo-beim-Coding-mit-KI-Assistenten-effizient-programmieren-11443178.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11443178</guid>
@@ -1398,6 +1380,15 @@ Score: 7/10]]></description>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Erfahren Sie, wie Sie produktiv mit KI-Assistenten programmieren und lernen Sie die Stärken und Schwächen der Tools für den Einsatz in eigenen Projekten kennen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | Apple Watch Series 12 und Ultra 4 im Test: Sensor-Spurt rund um die Uhr</title>
+      <link>https://www.heise.de/tests/Apple-Watch-Series-12-und-Ultra-4-im-Test-Sensor-Spurt-rund-um-die-Uhr-11464792.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11464792</guid>
+      <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
     </item>
     <item>
       <title>US-Regierung will Klage von X gegen Millionenstrafe der EU beitreten</title>
@@ -2235,15 +2226,6 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
     <item>
-      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
-      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463824</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
-    </item>
-    <item>
       <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
       <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463880</guid>
@@ -2260,6 +2242,15 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
+    </item>
+    <item>
+      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
+      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463824</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
       <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
@@ -2287,6 +2278,15 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[HeroesOfMightAndMagic #OldenEra #HoMM #Strategiespiel #XYONI Heroes of Might and Magic: Olden Era LIVE – Die Legende ist zurück!]]></description>
+    </item>
+    <item>
+      <title>Scientists build most accurate atomic clock</title>
+      <link>https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</link>
+      <guid isPermaLink="false">https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</guid>
+      <pubDate>Thu, 24 Sep 2026 01:00:01 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>A new world airport and its baggage</title>
@@ -2370,15 +2370,6 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
-      <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463574</guid>
-      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
-    </item>
-    <item>
       <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
       <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463430</guid>
@@ -2386,6 +2377,15 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
+    </item>
+    <item>
+      <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
+      <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463574</guid>
+      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>

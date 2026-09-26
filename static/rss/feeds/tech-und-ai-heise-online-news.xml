@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 07:25:59 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 07:43:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -486,15 +486,6 @@
       <description><![CDATA[Der ADAC hat 16 Winterreifen für Kleinwagen getestet. Das Ergebnis ist ernüchternd: Nur Continental und Michelin überzeugen, drei Modelle fallen durch.]]></description>
     </item>
     <item>
-      <title>heise+ | Apple Watch Series 12 und Ultra 4 im Test: Sensor-Spurt rund um die Uhr</title>
-      <link>https://www.heise.de/tests/Apple-Watch-Series-12-und-Ultra-4-im-Test-Sensor-Spurt-rund-um-die-Uhr-11464792.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11464792</guid>
-      <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
-    </item>
-    <item>
       <title>heise-Angebot: iX-Workshop: Mehr Tempo beim Coding – mit KI-Assistenten effizient programmieren</title>
       <link>https://www.heise.de/news/iX-Workshop-Mehr-Tempo-beim-Coding-mit-KI-Assistenten-effizient-programmieren-11443178.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11443178</guid>
@@ -502,6 +493,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Erfahren Sie, wie Sie produktiv mit KI-Assistenten programmieren und lernen Sie die Stärken und Schwächen der Tools für den Einsatz in eigenen Projekten kennen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | Apple Watch Series 12 und Ultra 4 im Test: Sensor-Spurt rund um die Uhr</title>
+      <link>https://www.heise.de/tests/Apple-Watch-Series-12-und-Ultra-4-im-Test-Sensor-Spurt-rund-um-die-Uhr-11464792.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11464792</guid>
+      <pubDate>Fri, 25 Sep 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
     </item>
     <item>
       <title>US-Regierung will Klage von X gegen Millionenstrafe der EU beitreten</title>
@@ -1044,15 +1044,6 @@
       <description><![CDATA[Amtliche Bescheide ganz ohne Beamte, erstellt von einer KI. Das wird in Österreich legalisiert. Zudem ziehen Chatbots in die Amtsstuben ein.]]></description>
     </item>
     <item>
-      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
-      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463824</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
-    </item>
-    <item>
       <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
       <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463880</guid>
@@ -1069,6 +1060,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
+    </item>
+    <item>
+      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
+      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463824</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
       <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
@@ -1143,15 +1143,6 @@
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
-      <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463574</guid>
-      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
-    </item>
-    <item>
       <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
       <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463430</guid>
@@ -1159,6 +1150,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
+    </item>
+    <item>
+      <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
+      <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463574</guid>
+      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
     </item>
     <item>
       <title>Bosch Rotak 18V-32 im Test: Starker Akku-Rasenmäher mit Mulchfunktion für 155 €</title>
