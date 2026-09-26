@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 09:37:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 09:46:57 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -2016,6 +2016,15 @@
       <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
+      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
+      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463824</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
+    </item>
+    <item>
       <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
       <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463880</guid>
@@ -2032,15 +2041,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
-    </item>
-    <item>
-      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
-      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463824</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
       <title>Heroes of Might &amp; Magic 4 (Taktik &amp; Strategie) - 4P.de</title>
@@ -2115,15 +2115,6 @@
       <description><![CDATA[Eine maßgeschneiderte KI-Lösung soll Abgeordneten und Verwaltung die Arbeit erleichtern und gleichzeitig strikte Datenschutzstandards im Parlament garantieren.]]></description>
     </item>
     <item>
-      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
-      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463388</guid>
-      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
-    </item>
-    <item>
       <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
       <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463646</guid>
@@ -2131,6 +2122,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
+    </item>
+    <item>
+      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
+      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463388</guid>
+      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
     </item>
     <item>
       <title>Mercedes-Benz will Serienfahrzeuge mit dem Wayve AI Driver ausstatten</title>
@@ -2151,15 +2151,6 @@
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
-      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463430</guid>
-      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
-    </item>
-    <item>
       <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
       <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463574</guid>
@@ -2167,6 +2158,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
+    </item>
+    <item>
+      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
+      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463430</guid>
+      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
     </item>
     <item>
       <title>Bosch Rotak 18V-32 im Test: Starker Akku-Rasenmäher mit Mulchfunktion für 155 €</title>
