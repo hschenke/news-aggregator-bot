@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen&amp;feed=Handelsblatt+Schlagzeilen</link>
     <description>RSS-Feed für die Quelle 'Handelsblatt Schlagzeilen' (Kategorie: Finanzen).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 10:11:20 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 10:11:42 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-handelsblatt-schlagzeilen.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,6 +25,15 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[USA wollen am Montag Details zu Handelsvereinbarungen mit China nennen +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
+    </item>
+    <item>
+      <title>Stützungsfall: Bankhaus RSA hat fast 450 Millionen Euro an Garantien erhalten</title>
+      <link>https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/stuetzungsfall-bankhaus-rsa-hat-fast-450-millionen-euro-an-garantien-erhalten/100257511.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/stuetzungsfall-bankhaus-rsa-hat-fast-450-millionen-euro-an-garantien-erhalten/100257511.html</guid>
+      <pubDate>Sat, 26 Sep 2026 09:13:27 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Das oberbayerische Kreditinstitut benötigt eine deutlich höhere Unterstützung der BVR-Sicherungseinrichtung als bisher bekannt. Das Portfolio notleidender Kredite ist besonders groß.]]></description>
     </item>
     <item>
       <title>Trump Watch: Trump setzt vor US-Zwischenwahlen alles auf KI und Rechenzentren – aber der Widerstand dagegen wächst</title>
@@ -52,15 +61,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Ob Hypothekenzinsen oder Autokredite – die höheren Anleiherenditen am Bondmarkt schlagen sich auch in anderen Bereichen nieder. Wo die Belastung für Verbraucher besonders hoch ist.]]></description>
-    </item>
-    <item>
-      <title>Arbeitszeit: Teuer und ineffizient? So viel hat Ihr letztes Meeting gekostet</title>
-      <link>https://www.handelsblatt.com/karriere/arbeitszeit-teuer-und-ineffizient-so-viel-hat-ihr-letztes-meeting-gekostet-01/100245523.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/karriere/arbeitszeit-teuer-und-ineffizient-so-viel-hat-ihr-letztes-meeting-gekostet-01/100245523.html</guid>
-      <pubDate>Sat, 26 Sep 2026 05:55:00 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Corporate Deutschland sitzt und redet. Doch viele Meetings liefern wenig Output. Der Handelsblatt-Rechner hilft Ihnen, Kosten von Meetings besser zu schätzen – und diese effizienter zu führen.]]></description>
     </item>
     <item>
       <title>+++ USA +++: US-Sender CNN darf Trump nicht auf Reise nach Tennessee begleiten</title>
