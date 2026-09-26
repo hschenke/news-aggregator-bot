@@ -702,11 +702,14 @@ with tab_articles:
     # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
     qp_exp_cats = st.query_params.get("exp_cats")
     qp_exp_feeds = st.query_params.get("exp_feeds")
+    qp_sort = st.query_params.get("sort")
 
     if "chk_expand_cats" not in st.session_state:
         st.session_state["chk_expand_cats"] = False if qp_exp_cats == "0" else True
     if "chk_expand_feeds" not in st.session_state:
         st.session_state["chk_expand_feeds"] = False if qp_exp_feeds == "0" else True
+    if "chk_sort_oldest" not in st.session_state:
+        st.session_state["chk_sort_oldest"] = True if qp_sort == "oldest" else False
 
     def on_toggle_expand_cats():
         val = bool(st.session_state.get("chk_expand_cats", True))
@@ -729,6 +732,14 @@ with tab_articles:
         for k in list(st.session_state.keys()):
             if k.startswith("exp_feed_"):
                 st.session_state[k] = val
+
+    def on_toggle_sort():
+        val = bool(st.session_state.get("chk_sort_oldest", False))
+        if val:
+            st.query_params["sort"] = "oldest"
+        else:
+            if "sort" in st.query_params:
+                del st.query_params["sort"]
 
     # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
     if qp_category:
@@ -787,13 +798,24 @@ with tab_articles:
     with filter_col3:
         search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...")
 
-    col_stat, col_toggles = st.columns([3, 2], vertical_alignment="center")
+    col_stat, col_toggles = st.columns([4, 6], vertical_alignment="center")
     with col_toggles:
-        c_tog1, c_tog2 = st.columns(2)
+        c_tog1, c_tog2, c_tog3 = st.columns(3)
         with c_tog1:
             expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
         with c_tog2:
             expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
+        with c_tog3:
+            sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Neueste Artikel zuerst. Aktivieren, um die ältesten Artikel zuerst anzuzeigen.")
+
+    descending_sort = not bool(st.session_state.get("chk_sort_oldest", False))
+
+    def get_sort_key(it: dict) -> float:
+        ts = get_article_timestamp(it)
+        if descending_sort:
+            return ts if ts > 0 else -1.0
+        else:
+            return ts if ts > 0 else float("inf")
 
     displayed_count = 0
     categories_rendered = 0
@@ -819,8 +841,8 @@ with tab_articles:
             continue
 
         categories_rendered += 1
-        # Alle Artikel der Kategorie nach Datum absteigend sortieren
-        cat_matching.sort(key=get_article_timestamp, reverse=True)
+        # Alle Artikel der Kategorie nach Datum sortieren
+        cat_matching.sort(key=get_sort_key, reverse=descending_sort)
 
         cat_slug = "".join(c if c.isalnum() else "_" for c in category)
         cat_key = f"exp_cat_{cat_slug}"
@@ -843,7 +865,7 @@ with tab_articles:
             for feed_name in sorted_feed_names:
                 f_items = feeds_dict[feed_name]
                 # Artikel innerhalb des Feeds nach Datum sortieren
-                f_items.sort(key=get_article_timestamp, reverse=True)
+                f_items.sort(key=get_sort_key, reverse=descending_sort)
 
                 feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
                 feed_key = f"exp_feed_{cat_slug}_{feed_slug}"
@@ -869,7 +891,8 @@ with tab_articles:
 
     with col_stat:
         if displayed_count > 0:
-            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien (chronologisch sortiert)")
+            sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", False)) else "neueste zuerst"
+            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
         else:
             st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 

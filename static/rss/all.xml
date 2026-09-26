@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 08:41:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 08:49:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAPTCHAs don't prove you're human – they prove you're American</title>
+      <link>https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</link>
+      <guid isPermaLink="false">https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</guid>
+      <pubDate>Sat, 26 Sep 2026 07:27:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>Apple-Leaks: Details zu neuem Apple TV 4K, HomePod mini und iPad mini</title>
       <link>https://www.heise.de/news/Apple-Leaks-Details-zu-neuem-Apple-TV-4K-HomePod-mini-und-iPad-mini-11466840.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -43,6 +52,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Machen Sie Ihre Cybersecurity planbar: Bewerten Sie Ihren Sicherheitsstatus, setzen Sie die richtigen Prioritäten und entwickeln Sie einen konkreten Fahrplan.]]></description>
+    </item>
+    <item>
+      <title>Is your Postgres migration safe or not safe?</title>
+      <link>https://safenotsafe.dev/</link>
+      <guid isPermaLink="false">https://safenotsafe.dev/</guid>
+      <pubDate>Sat, 26 Sep 2026 06:33:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Sozialreformen: Ministerpräsident Lies: „Ein Gerechtigkeitscheck muss der Maßstab sein“</title>
@@ -1400,15 +1418,6 @@ Qliphah in Providence's Shadow Review - The Mystery of a Unique Action RPG Syste
 Score: 7/10]]></description>
     </item>
     <item>
-      <title>heise-Angebot: iX-Workshop: Mehr Tempo beim Coding – mit KI-Assistenten effizient programmieren</title>
-      <link>https://www.heise.de/news/iX-Workshop-Mehr-Tempo-beim-Coding-mit-KI-Assistenten-effizient-programmieren-11443178.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11443178</guid>
-      <pubDate>Fri, 25 Sep 2026 05:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erfahren Sie, wie Sie produktiv mit KI-Assistenten programmieren und lernen Sie die Stärken und Schwächen der Tools für den Einsatz in eigenen Projekten kennen.]]></description>
-    </item>
-    <item>
       <title>heise+ | Apple Watch Series 12 und Ultra 4 im Test: Sensor-Spurt rund um die Uhr</title>
       <link>https://www.heise.de/tests/Apple-Watch-Series-12-und-Ultra-4-im-Test-Sensor-Spurt-rund-um-die-Uhr-11464792.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
       <guid isPermaLink="false">http://heise.de/-11464792</guid>
@@ -1416,6 +1425,15 @@ Score: 7/10]]></description>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Dauerhafte Pulsmessung, S11-Chip und die Messung der persönlichen „Tagesform“: Wir haben geprüft, was das Watch-Update bringt – und ob es am Akku zehrt.]]></description>
+    </item>
+    <item>
+      <title>heise-Angebot: iX-Workshop: Mehr Tempo beim Coding – mit KI-Assistenten effizient programmieren</title>
+      <link>https://www.heise.de/news/iX-Workshop-Mehr-Tempo-beim-Coding-mit-KI-Assistenten-effizient-programmieren-11443178.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11443178</guid>
+      <pubDate>Fri, 25 Sep 2026 05:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Erfahren Sie, wie Sie produktiv mit KI-Assistenten programmieren und lernen Sie die Stärken und Schwächen der Tools für den Einsatz in eigenen Projekten kennen.]]></description>
     </item>
     <item>
       <title>US-Regierung will Klage von X gegen Millionenstrafe der EU beitreten</title>
@@ -1704,15 +1722,6 @@ Score: 7/10]]></description>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Die Datenschutzkonferenz warnt beim Aufrüsten der Geheimdienste vor dem Aushöhlen von Grundrechten. Das Zusammenwirken neuer Sicherheitsgesetze sei zu beachten.]]></description>
-    </item>
-    <item>
-      <title>Two and a half years without a gallbladder</title>
-      <link>https://tracydurnell.com/2026/09/16/two-and-a-half-years-without-a-gallbladder/</link>
-      <guid isPermaLink="false">https://tracydurnell.com/2026/09/16/two-and-a-half-years-without-a-gallbladder/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:40:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Elektroautos überholen Verbrenner bei VW-Bestellungen in Deutschland</title>
@@ -2262,13 +2271,13 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
     <item>
-      <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
-      <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463750</guid>
+      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
+      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463780</guid>
       <pubDate>Thu, 24 Sep 2026 02:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
+      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
       <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
@@ -2280,13 +2289,13 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
-      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
-      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463780</guid>
+      <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
+      <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463750</guid>
       <pubDate>Thu, 24 Sep 2026 02:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
+      <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
     </item>
     <item>
       <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
@@ -2406,15 +2415,6 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
-      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463430</guid>
-      <pubDate>Wed, 23 Sep 2026 13:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
-    </item>
-    <item>
       <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
       <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463574</guid>
@@ -2422,6 +2422,15 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
+    </item>
+    <item>
+      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
+      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463430</guid>
+      <pubDate>Wed, 23 Sep 2026 13:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
@@ -2818,15 +2827,6 @@ What happens when a sci-fi villain invades a fantasy realm? Why, a party of adve
       <category>Fun</category>
       <source url="https://joscha.com/rss/all/">Joscha</source>
       <description><![CDATA[Kennst du schon den NICHTLUSTIG-Cartoon 'EINSCHLAFEN' von Joscha Sauer?Hier geht's zum Bonuspanel!]]></description>
-    </item>
-    <item>
-      <title>How video games inspire great UX (2019)</title>
-      <link>https://jenson.org/games/</link>
-      <guid isPermaLink="false">https://jenson.org/games/</guid>
-      <pubDate>Sun, 20 Sep 2026 15:00:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Unbekannter beschädigt Einsatzfahrzeug der Polizei</title>

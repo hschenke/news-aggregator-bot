@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 08:41:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 08:49:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CAPTCHAs don't prove you're human – they prove you're American</title>
+      <link>https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</link>
+      <guid isPermaLink="false">https://shkspr.mobi/blog/2017/11/captchas-dont-prove-youre-human-they-prove-youre-american/</guid>
+      <pubDate>Sat, 26 Sep 2026 07:27:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Is your Postgres migration safe or not safe?</title>
+      <link>https://safenotsafe.dev/</link>
+      <guid isPermaLink="false">https://safenotsafe.dev/</guid>
+      <pubDate>Sat, 26 Sep 2026 06:33:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>Alberta's image as world's only rat-free region shattered by discovery of rat</title>
       <link>https://www.theguardian.com/world/2026/sep/25/alberta-canada-rat-patrol</link>
@@ -225,15 +243,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Two and a half years without a gallbladder</title>
-      <link>https://tracydurnell.com/2026/09/16/two-and-a-half-years-without-a-gallbladder/</link>
-      <guid isPermaLink="false">https://tracydurnell.com/2026/09/16/two-and-a-half-years-without-a-gallbladder/</guid>
-      <pubDate>Thu, 24 Sep 2026 12:40:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>From Thin Air to Bootable Images: The Tine Build System</title>
       <link>https://amutable.com/blog/tine-build-system</link>
       <guid isPermaLink="false">https://amutable.com/blog/tine-build-system</guid>
@@ -265,15 +274,6 @@
       <link>https://computer.rip/2026-09-20-denver-baggage.html</link>
       <guid isPermaLink="false">https://computer.rip/2026-09-20-denver-baggage.html</guid>
       <pubDate>Wed, 23 Sep 2026 21:30:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>How video games inspire great UX (2019)</title>
-      <link>https://jenson.org/games/</link>
-      <guid isPermaLink="false">https://jenson.org/games/</guid>
-      <pubDate>Sun, 20 Sep 2026 15:00:13 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
