@@ -67,22 +67,20 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path
     app_pw = get_configured_app_password(config_path)
     auth_param = f"&auth={generate_readonly_auth_token(app_pw)}" if app_pw else ""
 
+    app_link = f"{streamlit_base_url}/?auth={generate_readonly_auth_token(app_pw)}" if app_pw else f"{streamlit_base_url}/"
+
     category_links = {}
     for cat_item in config.get("categories", []):
         cat_name = cat_item.get("name", "").strip()
         if not cat_name:
             continue
         feeds = cat_item.get("feeds", [])
-        encoded_cat = urllib.parse.quote(cat_name)
-        cat_app_url = f"{streamlit_base_url}/?category={encoded_cat}{auth_param}"
 
         feed_parts = []
         for f in feeds:
             fname = f.get("name", "Feed").strip()
-            encoded_feed = urllib.parse.quote(fname)
-            # Feed-Link öffnet direkt die Web-App mit Kategorie- und Feed-Filter
-            feed_app_url = f"{streamlit_base_url}/?category={encoded_cat}&feed={encoded_feed}{auth_param}"
-            feed_parts.append(f"[{fname}]({feed_app_url})")
+            furl = f.get("url", "#")
+            feed_parts.append(f"[{fname}]({furl})")
 
         if len(feed_parts) == 1:
             feed_str = f"Feed: {feed_parts[0]}"
@@ -92,9 +90,9 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path
             feed_str = ""
 
         if feed_str:
-            category_links[cat_name] = f"> 🔗 [Streamlit App]({cat_app_url}) · {feed_str}"
+            category_links[cat_name] = f"> 🔗 [Streamlit App]({app_link}) · {feed_str}"
         else:
-            category_links[cat_name] = f"> 🔗 [Streamlit App]({cat_app_url})"
+            category_links[cat_name] = f"> 🔗 [Streamlit App]({app_link})"
 
     return category_links
 

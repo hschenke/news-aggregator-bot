@@ -407,6 +407,7 @@ working_config = st.session_state["working_sources_config"]
 def harvest_global_settings():
     """Übernimmt ggf. im Formular eingetragene globale Einstellungen in den Arbeitsentwurf."""
     settings = st.session_state["working_sources_config"].setdefault("settings", {})
+    settings.pop("max_articles_per_category", None)
     if "input_setting_lang" in st.session_state:
         settings["language"] = str(st.session_state["input_setting_lang"])
     if "input_setting_style" in st.session_state:
@@ -501,6 +502,11 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True):
     st.cache_data.clear()
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
+
+# Deep-Link Query-Params säubern, damit URLs sauber bleiben und Defaults nicht überschreiben
+for qp_clean in ["category", "feed"]:
+    if qp_clean in st.query_params:
+        del st.query_params[qp_clean]
 
 is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
 
@@ -599,8 +605,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# Navigation Tabs: Je nach URL-Parametern wird der passende Tab direkt als aktiver Tab geöffnet!
-is_viewing_feed = bool(st.query_params.get("category") or st.query_params.get("feed"))
+# Navigation Tabs
 is_viewing_rss = bool(st.query_params.get("page") == "rss" or st.query_params.get("tab") == "rss" or st.query_params.get("view") == "rss")
 manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
@@ -609,13 +614,6 @@ if is_viewing_rss:
         "📡 RSS-Feeds",
         "✨ KI-Briefing",
         "📋 Alle Artikel",
-        manage_tab_title
-    ])
-elif is_viewing_feed:
-    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
-        "📋 Alle Artikel",
-        "✨ KI-Briefing",
-        "📡 RSS-Feeds",
         manage_tab_title
     ])
 else:
@@ -731,42 +729,31 @@ with tab_articles:
             return str(pub)[:30]
         return ""
 
-    # Session State initialisieren: Kategorie & Feed Auswahl merken
-    if "articles_selected_cat" not in st.session_state:
-        st.session_state["articles_selected_cat"] = "Alle Kategorien"
+    # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
+    # Eventuell verbliebene Legacy-Keys aufräumen
+    for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
+        if legacy_k in st.session_state:
+            del st.session_state[legacy_k]
+
+    if "sel_articles_category" not in st.session_state:
+        st.session_state["sel_articles_category"] = "Alle Kategorien"
     if "articles_cat_feed_memory" not in st.session_state:
         st.session_state["articles_cat_feed_memory"] = {}
-
-    # Query Params verarbeiten (z. B. bei Deeplinks)
-    qp_cat = st.query_params.get("category", "")
-    qp_feed = st.query_params.get("feed", "")
-    if qp_cat:
-        for c in news_data.keys():
-            if c.strip().lower() == qp_cat.strip().lower():
-                st.session_state["articles_selected_cat"] = c
-                if qp_feed:
-                    st.session_state["articles_cat_feed_memory"][c] = qp_feed
-                break
 
     sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
     category_options = ["Alle Kategorien"] + sorted_all_categories
 
-    saved_cat = st.session_state.get("articles_selected_cat", "Alle Kategorien")
-    cat_index = 0
-    if saved_cat in category_options:
-        cat_index = category_options.index(saved_cat)
+    if st.session_state["sel_articles_category"] not in category_options:
+        st.session_state["sel_articles_category"] = "Alle Kategorien"
 
     filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
 
     with filter_col1:
         selected_cat = st.selectbox(
             "Kategorie:",
-            category_options,
-            index=cat_index,
-            key="sel_articles_cat_widget"
+            options=category_options,
+            key="sel_articles_category"
         )
-        if selected_cat != st.session_state["articles_selected_cat"]:
-            st.session_state["articles_selected_cat"] = selected_cat
 
     with filter_col2:
         if selected_cat != "Alle Kategorien":
@@ -777,16 +764,18 @@ with tab_articles:
             all_feeds = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
             feed_options = ["Alle Feeds"] + all_feeds
 
+        feed_widget_key = f"sel_feed_for_{selected_cat}"
         remembered_feed = st.session_state["articles_cat_feed_memory"].get(selected_cat, "Alle Feeds")
-        feed_index = 0
-        if remembered_feed in feed_options:
-            feed_index = feed_options.index(remembered_feed)
+        if remembered_feed not in feed_options:
+            remembered_feed = "Alle Feeds"
+
+        if feed_widget_key not in st.session_state or st.session_state[feed_widget_key] not in feed_options:
+            st.session_state[feed_widget_key] = remembered_feed
 
         selected_feed = st.selectbox(
             "Feed / Quelle:",
-            feed_options,
-            index=feed_index,
-            key=f"sel_articles_feed_widget_{selected_cat}"
+            options=feed_options,
+            key=feed_widget_key
         )
         st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
 
