@@ -11,7 +11,7 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 # Sicherstellen, dass das Projektverzeichnis im Suchpfad ist
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from src.aggregator import collect_all_news
+from src.aggregator import collect_all_news, save_pool_state
 from src.summarizer import summarize_news_with_gemini
 from src.notifier import dispatch_digest
 
@@ -41,6 +41,7 @@ def run_pipeline():
     # 3. Schritt: Distribution (HTML generieren + E-Mail versenden)
     print("\n[3/3] 📬 Erstelle Digest & versende...")
     dispatch_digest(summary)
+    save_pool_state(news)
 
     print("\n" + "=" * 60)
     print("✨ Pipeline erfolgreich abgeschlossen!")

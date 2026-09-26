@@ -29,6 +29,8 @@ from src.aggregator import (
     get_github_sync_config,
     sync_sources_to_github,
     trigger_rss_update_workflow,
+    get_new_articles_count,
+    save_pool_state,
 )
 from src.summarizer import summarize_news_with_gemini, get_configured_api_key, get_streamlit_app_url
 from src.rss_generator import export_all_rss_feeds
@@ -596,109 +598,56 @@ total_categories = len(news_data)
 total_articles = sum(len(items) for items in news_data.values())
 total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categories", []))
 
+# Neue Artikel im Pool ermitteln
+new_pool_articles = get_new_articles_count(news_data)
+
 st.title("📰 Daily News Briefing")
 st.caption(f"Aktualisiert: {datetime.now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
 # KPI Row (Kompakt & Mobile-optimiert)
 engine_short = selected_model.replace("gemini-", "").replace("-flash-lite", " Flash-Lite").replace("-flash", " Flash")
+
+# Pool-Badge: Blaues Highlight NUR wenn tatsächlich neue Artikel hinzugekommen sind
+if new_pool_articles > 0:
+    pool_chip_html = f'<span class="kpi-chip kpi-pool" title="{new_pool_articles} neue Artikel seit dem letzten Briefing">📄 <strong>{total_articles}</strong> Artikel im Pool (+{new_pool_articles} neu)</span>'
+else:
+    pool_chip_html = f'<span class="kpi-chip">📄 <strong>{total_articles}</strong> Artikel im Pool</span>'
+
 st.markdown(f"""
 <div class="kpi-container">
     <span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>
     <span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>
-    <span class="kpi-chip kpi-pool">📄 <strong>{total_articles}</strong> Artikel im Pool</span>
+    {pool_chip_html}
     <span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>
 </div>
 """, unsafe_allow_html=True)
 
+if new_pool_articles > 0:
+    if st.sidebar.button("✓ Neue Artikel als gesehen markieren", use_container_width=True, key="sb_btn_mark_seen"):
+        save_pool_state(news_data)
+        st.toast("Pool-Status aktualisiert!", icon="✅")
+        st.rerun()
+
+is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
 manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
-# Navigation Tabs: Wenn über Email-Link (Kategorie/Feed) geöffnet, 'Alle Artikel' direkt als ersten Tab öffnen!
+# Navigation Tabs: Standardmäßig immer 'Alle Artikel' als erster Tab, danach 'KI-Briefing'!
 if is_viewing_rss:
-    tab_rss, tab_briefing, tab_articles, tab_manage = st.tabs([
+    tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
         "📡 RSS-Feeds",
-        "✨ KI-Briefing",
         "📋 Alle Artikel",
+        "✨ KI-Briefing",
         manage_tab_title
     ])
-elif is_viewing_feed:
+else:
     tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
         "📋 Alle Artikel",
         "✨ KI-Briefing",
         "📡 RSS-Feeds",
         manage_tab_title
     ])
-else:
-    tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
-        "✨ KI-Briefing",
-        "📋 Alle Artikel",
-        "📡 RSS-Feeds",
-        manage_tab_title
-    ])
 
-# ----------------- TAB: KI-Briefing -----------------
-with tab_briefing:
-    st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ Synthetisiertes KI-Briefing</h3>", unsafe_allow_html=True)
-    
-    is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
-    
-    col_btn, col_info = st.columns([1, 2], vertical_alignment="center")
-    with col_btn:
-        if is_admin:
-            generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
-        else:
-            with st.popover("🔒 Neues Briefing (Admin)", use_container_width=True):
-                st.markdown("#### 🔑 Admin-Freischaltung")
-                st.caption("Das Generieren neuer KI-Briefings verbraucht Gemini API-Kontingente und ist Administratoren vorbehalten:")
-                admin_gen_pw = st.text_input("App-Passwort:", type="password", key="gen_unlock_pw", placeholder="••••••••")
-                if st.button("🔓 Freischalten & Generieren", type="primary", key="gen_unlock_btn", use_container_width=True):
-                    expected_password = get_configured_app_password()
-                    if admin_gen_pw == expected_password:
-                        set_admin_session_cookie(expected_password)
-                        st.session_state["trigger_generate"] = True
-                        st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
-                        st.rerun()
-                    else:
-                        st.error("❌ Falsches Passwort.")
-            generate_clicked = st.session_state.pop("trigger_generate", False)
-
-    with col_info:
-        if is_admin:
-            st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
-        else:
-            st.caption("👁️ **Lese-Modus:** Du kannst das bestehende Briefing lesen. Das Anstoßen einer neuen KI-Generierung erfordert Admin-Rechte.")
-
-    if generate_clicked:
-        if not is_admin:
-            st.warning("⚠️ Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
-        else:
-            with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
-                ai_summary = summarize_news_with_gemini(
-                    news_data,
-                    api_key=user_api_key,
-                    model=selected_model
-                )
-                st.session_state["cached_summary"] = ai_summary
-                st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
-
-    if "cached_summary" in st.session_state:
-        st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")
-        st.markdown(st.session_state["cached_summary"])
-        
-        st.markdown("---")
-        # Download-Möglichkeit als Markdown
-        st.download_button(
-            label="📥 Briefing als Markdown herunterladen",
-            data=st.session_state["cached_summary"],
-            file_name=f"news_briefing_{datetime.now().strftime('%Y%m%d')}.md",
-            mime="text/markdown",
-        )
-    else:
-        if is_admin:
-            st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
-        else:
-            st.info("💡 Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
-
-# ----------------- TAB: Artikel durchsuchen -----------------
+# ----------------- TAB: Alle Artikel -----------------
 with tab_articles:
     def get_article_timestamp(it: dict) -> float:
         ts = it.get("timestamp")
@@ -741,7 +690,6 @@ with tab_articles:
         return ""
 
     # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
-    # Eventuell verbliebene Legacy-Keys aufräumen
     for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
         if legacy_k in st.session_state:
             del st.session_state[legacy_k]
@@ -750,10 +698,37 @@ with tab_articles:
         st.session_state["sel_articles_category"] = "Alle Kategorien"
     if "articles_cat_feed_memory" not in st.session_state:
         st.session_state["articles_cat_feed_memory"] = {}
+
+    # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
+    qp_exp_cats = st.query_params.get("exp_cats")
+    qp_exp_feeds = st.query_params.get("exp_feeds")
+
     if "chk_expand_cats" not in st.session_state:
-        st.session_state["chk_expand_cats"] = True
+        st.session_state["chk_expand_cats"] = False if qp_exp_cats == "0" else True
     if "chk_expand_feeds" not in st.session_state:
-        st.session_state["chk_expand_feeds"] = True
+        st.session_state["chk_expand_feeds"] = False if qp_exp_feeds == "0" else True
+
+    def on_toggle_expand_cats():
+        val = bool(st.session_state.get("chk_expand_cats", True))
+        if val:
+            if "exp_cats" in st.query_params:
+                del st.query_params["exp_cats"]
+        else:
+            st.query_params["exp_cats"] = "0"
+        for k in list(st.session_state.keys()):
+            if k.startswith("exp_cat_"):
+                st.session_state[k] = val
+
+    def on_toggle_expand_feeds():
+        val = bool(st.session_state.get("chk_expand_feeds", True))
+        if val:
+            if "exp_feeds" in st.query_params:
+                del st.query_params["exp_feeds"]
+        else:
+            st.query_params["exp_feeds"] = "0"
+        for k in list(st.session_state.keys()):
+            if k.startswith("exp_feed_"):
+                st.session_state[k] = val
 
     # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
     if qp_category:
@@ -816,9 +791,9 @@ with tab_articles:
     with col_toggles:
         c_tog1, c_tog2 = st.columns(2)
         with c_tog1:
-            expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", help="Alle Kategorien aufklappen")
+            expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
         with c_tog2:
-            expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", help="Alle Feeds innerhalb der Kategorien aufklappen")
+            expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
 
     displayed_count = 0
     categories_rendered = 0
@@ -847,8 +822,16 @@ with tab_articles:
         # Alle Artikel der Kategorie nach Datum absteigend sortieren
         cat_matching.sort(key=get_article_timestamp, reverse=True)
 
-        cat_is_expanded = bool(expand_cats)
-        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_expanded, key=f"exp_cat_{category}_{cat_is_expanded}"):
+        cat_slug = "".join(c if c.isalnum() else "_" for c in category)
+        cat_key = f"exp_cat_{cat_slug}"
+        if cat_key not in st.session_state:
+            st.session_state[cat_key] = st.session_state.get("chk_expand_cats", True)
+
+        # Wenn per E-Mail Deeplink aufgerufen, diese Kategorie immer aufklappen
+        if qp_category and category.strip().lower() == qp_category.lower():
+            st.session_state[cat_key] = True
+
+        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=st.session_state[cat_key], key=cat_key, on_change="rerun"):
             # Innerhalb der Kategorie nach Feed gruppieren
             feeds_dict = {}
             for item in cat_matching:
@@ -862,8 +845,15 @@ with tab_articles:
                 # Artikel innerhalb des Feeds nach Datum sortieren
                 f_items.sort(key=get_article_timestamp, reverse=True)
 
-                feed_is_expanded = bool(expand_feeds)
-                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_expanded, key=f"exp_feed_{category}_{feed_name}_{feed_is_expanded}"):
+                feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
+                feed_key = f"exp_feed_{cat_slug}_{feed_slug}"
+                if feed_key not in st.session_state:
+                    st.session_state[feed_key] = st.session_state.get("chk_expand_feeds", True)
+
+                if qp_feed and feed_name.strip().lower() == qp_feed.lower():
+                    st.session_state[feed_key] = True
+
+                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=st.session_state[feed_key], key=feed_key, on_change="rerun"):
                     cols = st.columns(2)
                     for idx, item in enumerate(f_items):
                         displayed_count += 1
@@ -882,6 +872,68 @@ with tab_articles:
             st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien (chronologisch sortiert)")
         else:
             st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
+
+# ----------------- TAB: KI-Briefing -----------------
+with tab_briefing:
+    st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ Synthetisiertes KI-Briefing</h3>", unsafe_allow_html=True)
+    
+    col_btn, col_info = st.columns([1, 2], vertical_alignment="center")
+    with col_btn:
+        if is_admin:
+            generate_clicked = st.button("🚀 Neues Briefing generieren", type="primary", use_container_width=True)
+        else:
+            with st.popover("🔒 Neues Briefing (Admin)", use_container_width=True):
+                st.markdown("#### 🔑 Admin-Freischaltung")
+                st.caption("Das Generieren neuer KI-Briefings verbraucht Gemini API-Kontingente und ist Administratoren vorbehalten:")
+                admin_gen_pw = st.text_input("App-Passwort:", type="password", key="gen_unlock_pw", placeholder="••••••••")
+                if st.button("🔓 Freischalten & Generieren", type="primary", key="gen_unlock_btn", use_container_width=True):
+                    expected_password = get_configured_app_password()
+                    if admin_gen_pw == expected_password:
+                        set_admin_session_cookie(expected_password)
+                        st.session_state["trigger_generate"] = True
+                        st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
+                        st.rerun()
+                    else:
+                        st.error("❌ Falsches Passwort.")
+            generate_clicked = st.session_state.pop("trigger_generate", False)
+
+    with col_info:
+        if is_admin:
+            st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
+        else:
+            st.caption("👁️ **Lese-Modus:** Du kannst das bestehende Briefing lesen. Das Anstoßen einer neuen KI-Generierung erfordert Admin-Rechte.")
+
+    if generate_clicked:
+        if not is_admin:
+            st.warning("⚠️ Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
+        else:
+            with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
+                ai_summary = summarize_news_with_gemini(
+                    news_data,
+                    api_key=user_api_key,
+                    model=selected_model
+                )
+                st.session_state["cached_summary"] = ai_summary
+                st.session_state["summary_timestamp"] = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
+                save_pool_state(news_data)
+
+    if "cached_summary" in st.session_state:
+        st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")
+        st.markdown(st.session_state["cached_summary"])
+        
+        st.markdown("---")
+        # Download-Möglichkeit als Markdown
+        st.download_button(
+            label="📥 Briefing als Markdown herunterladen",
+            data=st.session_state["cached_summary"],
+            file_name=f"news_briefing_{datetime.now().strftime('%Y%m%d')}.md",
+            mime="text/markdown",
+        )
+    else:
+        if is_admin:
+            st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
+        else:
+            st.info("💡 Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
 
 # ----------------- TAB: Eigene RSS-Feeds -----------------
 with tab_rss:

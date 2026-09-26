@@ -1,4 +1,5 @@
 import os
+import json
 import base64
 import requests
 import feedparser
@@ -651,6 +652,100 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
             print(f"[Hinweis] RSS-Feed-Export konnte nicht ausgeführt werden: {e}")
                 
     return collected
+
+
+def get_pool_state_path(state_path: str = "output/pool_state.json") -> Path:
+    """Ermittelt den Pfad zur pool_state.json-Datei und stellt das Verzeichnis sicher."""
+    p = Path(state_path)
+    if not p.is_absolute():
+        p = Path(__file__).resolve().parent.parent / state_path
+    p.parent.mkdir(parents=True, exist_ok=True)
+    return p
+
+
+def load_pool_state(state_path: str = "output/pool_state.json") -> Dict[str, Any]:
+    """Lädt den gespeicherten Zustand der bekannten Artikel-URLs."""
+    p = get_pool_state_path(state_path)
+    if p.exists():
+        try:
+            with open(p, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {"known_urls": [], "last_count": 0, "last_updated": None}
+
+
+def save_pool_state(articles_or_urls: Any, state_path: str = "output/pool_state.json") -> Dict[str, Any]:
+    """Speichert den aktuellen Satz bekannter Artikel-URLs persistent ab."""
+    p = get_pool_state_path(state_path)
+    urls = []
+    if isinstance(articles_or_urls, (list, set)):
+        for item in articles_or_urls:
+            if isinstance(item, dict):
+                u = item.get("link") or item.get("id")
+                if u:
+                    urls.append(str(u).strip())
+            elif isinstance(item, str):
+                urls.append(item.strip())
+    elif isinstance(articles_or_urls, dict):
+        for items in articles_or_urls.values():
+            if isinstance(items, list):
+                for item in items:
+                    if isinstance(item, dict):
+                        u = item.get("link") or item.get("id")
+                        if u:
+                            urls.append(str(u).strip())
+                    elif isinstance(item, str):
+                        urls.append(item.strip())
+
+    # Dubletten entfernen unter Beibehaltung der Reihenfolge
+    seen = set()
+    deduped = []
+    for u in urls:
+        if u and u not in seen:
+            seen.add(u)
+            deduped.append(u)
+
+    data = {
+        "known_urls": deduped,
+        "last_count": len(deduped),
+        "last_updated": datetime.now(timezone.utc).isoformat()
+    }
+    try:
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"[Hinweis] Fehler beim Speichern des Pool-Status: {e}")
+    return data
+
+
+def get_new_articles_count(current_news: Dict[str, List[Dict[str, Any]]], state_path: str = "output/pool_state.json") -> int:
+    """
+    Ermittelt, wie viele Artikel neu hinzugekommen sind im Vergleich zum gespeicherten Pool-Zustand.
+    Falls noch kein Pool-Zustand existiert, wird der aktuelle Stand als Basis initialisiert (0 neue Artikel).
+    """
+    p = get_pool_state_path(state_path)
+    current_urls = {
+        (item.get("link") or item.get("id") or "").strip()
+        for items in current_news.values()
+        for item in items
+        if (item.get("link") or item.get("id"))
+    }
+    current_urls.discard("")
+
+    if not p.exists():
+        save_pool_state(current_news, state_path)
+        return 0
+
+    state = load_pool_state(state_path)
+    known = set(state.get("known_urls", []))
+    if not known:
+        save_pool_state(current_news, state_path)
+        return 0
+
+    new_urls = current_urls - known
+    return len(new_urls)
+
 
 
 
