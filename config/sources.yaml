@@ -33,6 +33,11 @@ categories:
   - name: Joscha
     url: https://joscha.com/rss/all/
     max_items: 5
+- name: Berlin
+  feeds:
+  - name: Mahlsdorf
+    url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
+    max_items: 20
 settings:
   max_articles_per_category: 20
   language: de

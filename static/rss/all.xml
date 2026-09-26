@@ -5,9 +5,63 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 05:01:11 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 06:19:54 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Morning Briefing Plus: Gegen das Gejammer und Gezeter</title>
+      <link>https://www.handelsblatt.com/meinung/morningbriefing/morning-briefing-plus-gegen-das-gejammer-und-gezeter/100257410.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/meinung/morningbriefing/morning-briefing-plus-gegen-das-gejammer-und-gezeter/100257410.html</guid>
+      <pubDate>Sat, 26 Sep 2026 06:11:31 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Deutschland brauche endlich eine positive Zukunftserzählung, heißt es allerorten. Mein Kollege hätte da eine. Was uns diese Woche sonst noch beschäftigt hat.]]></description>
+    </item>
+    <item>
+      <title>Dynamisches Potpourri: Die Bilder der Woche 39</title>
+      <link>https://www.heise.de/news/Dynamisches-Potpourri-Die-Bilder-der-Woche-39-11466632.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11466632</guid>
+      <pubDate>Sat, 26 Sep 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[DIese Woche fiel die Auswahl der Redaktion auf gänzlich unterschiedliche Bilder. Genießen SIe eine dynamische Motivsammlung.]]></description>
+    </item>
+    <item>
+      <title>+++ USA +++: US-Sender CNN darf Trump nicht auf Reise nach Tennessee begleiten</title>
+      <link>https://www.handelsblatt.com/politik/international/usa-us-sender-cnn-darf-trump-nicht-auf-reise-nach-tennessee-begleiten/29669594.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-us-sender-cnn-darf-trump-nicht-auf-reise-nach-tennessee-begleiten/29669594.html</guid>
+      <pubDate>Sat, 26 Sep 2026 05:53:28 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Republikaner scheitern mit Wahlkreis-Umbau für Missouri +++ Trump will vom Kongress bewilligte Mittel zurückhalten +++ Xi Jinping lädt Trump zu nächstem Treffen nach China ein +++ Der Newsblog.]]></description>
+    </item>
+    <item>
+      <title>Developer-Häppchen: Google erweitert KI-Abos und GitLab fixt kritische Lücken</title>
+      <link>https://www.heise.de/news/Developer-Haeppchen-Google-erweitert-KI-Abos-und-GitLab-fixt-kritische-Luecken-11464142.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11464142</guid>
+      <pubDate>Sat, 26 Sep 2026 05:46:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Laravel, Symfony, PyPy, Azul, Google, GitLab, Sublime Text und VS Code.]]></description>
+    </item>
+    <item>
+      <title>Rust statt Ruby – Rails-Gründer Hanssons neues Projekt</title>
+      <link>https://www.heise.de/news/Rust-statt-Ruby-Rails-Gruender-Hanssons-neues-Projekt-11465387.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11465387</guid>
+      <pubDate>Sat, 26 Sep 2026 05:34:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ruby-on-Rails-Erfinder David Heinemeier Hansson (DHH) verzichtet in seinem neuesten Projekt auf Rails und löst damit Unruhe in der Community aus.]]></description>
+    </item>
+    <item>
+      <title>Laptop zu, Agent arbeitet weiter: Docker Sandboxes ziehen in die Cloud</title>
+      <link>https://www.heise.de/news/Laptop-zu-Agent-arbeitet-weiter-Docker-Sandboxes-ziehen-in-die-Cloud-11466464.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11466464</guid>
+      <pubDate>Sat, 26 Sep 2026 05:12:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Docker bietet jetzt Cloud Sandboxes für Coding-Agenten an. Längere Aufgaben können so vom Laptop in die Cloud verlagert werden.]]></description>
+    </item>
     <item>
       <title>KI-Rechenzentren: Tolle Technik, miese Bilanz | c’t uplink</title>
       <link>https://www.heise.de/news/KI-Rechenzentren-Tolle-Technik-miese-Bilanz-c-t-uplink-11466084.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -18,10 +72,10 @@
       <description><![CDATA[Viel Rechenleistung auf kleinster Fläche, aber auch ein enormer Ressourcenverbrauch. Über Chancen und Risiken von KI-Rechenzentren sprechen wir in c’t uplink.]]></description>
     </item>
     <item>
-      <title>We're gonna need a lot more mathematicians</title>
-      <link>https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/</link>
-      <guid isPermaLink="false">https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/</guid>
-      <pubDate>Sat, 26 Sep 2026 02:46:54 GMT</pubDate>
+      <title>A single function Jev-like wrapper for LLMs, including vision models</title>
+      <link>http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html</link>
+      <guid isPermaLink="false">http://allanrbo.blogspot.com/2026/09/a-jev-like-wrapper-for-llms-including.html</guid>
+      <pubDate>Sat, 26 Sep 2026 04:20:58 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -52,15 +106,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.]]></description>
-    </item>
-    <item>
-      <title>40 Jahre „Castlevania“: Ein Liebesbrief an das fantastische Kino</title>
-      <link>https://www.heise.de/hintergrund/40-Jahre-Castlevania-Ein-Liebesbrief-an-das-fantastische-Kino-11465413.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11465413</guid>
-      <pubDate>Fri, 25 Sep 2026 22:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Am 26. September 1986 legte Konami mit „Castlevania“ den Grundstein für eine vier Jahrzehnte überdauernde Spielereihe. Ihr Schöpfer blieb Fans lange verborgen.]]></description>
     </item>
     <item>
       <title>Revealing the details of how OpenAI agents hacked Hugging Face</title>
@@ -135,24 +180,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Top 10: Das beste mobile Solarpanel im Test – faltbare Solarmodule bis 400 Watt</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-mobile-solarpanel-im-test-faltbare-solarmodule-bis-400-watt/94gczh6?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11466576</guid>
-      <pubDate>Fri, 25 Sep 2026 18:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mobile Solarpanels für Powerstation, Camping & Co.: Wir zeigen, welche Panels sich am besten eignen und wie man dabei Geld spart.]]></description>
-    </item>
-    <item>
-      <title>Landtagswahlen: Erfolgreich mit „Erlebnispopulismus“ – warum die AfD mehr Menschen erreicht als die CDU</title>
-      <link>https://www.handelsblatt.com/politik/deutschland/afd-erlebnispopulismus-was-andere-parteien-daraus-lernen-koennen/100255264.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/afd-erlebnispopulismus-was-andere-parteien-daraus-lernen-koennen/100255264.html</guid>
-      <pubDate>Fri, 25 Sep 2026 17:32:38 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Die AfD schafft es, Wähler zu mobilisieren, die andere Parteien längst verloren haben. Experten sehen dahinter eine Strategie, die weit über Social Media hinausgeht.]]></description>
-    </item>
-    <item>
       <title>USA und China: Xi lobt „richtige Haltung“ zu Taiwan und lacht über Trumps Lieblingswitz</title>
       <link>https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</guid>
@@ -183,24 +210,6 @@ Guild Saga: Vanished Worlds Makes Me Want to Play More CRPGs
 
 
 &nbsp;]]></description>
-    </item>
-    <item>
-      <title>KI-Rechenzentren: Abwärme heizt angrenzende Wohngebiete auf</title>
-      <link>https://www.heise.de/news/KI-Rechenzentren-Abwaerme-heizt-angrenzende-Wohngebiete-auf-11466676.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11466676</guid>
-      <pubDate>Fri, 25 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[KI-Rechenzentren geben enorme Mengen Abwärme ab. Erste Studien belegen, dass dies die Temperaturen in angrenzenden Wohngebieten messbar ansteigen lässt.]]></description>
-    </item>
-    <item>
-      <title>Big Brother Awards: Negativpreise für Digital-Omnibus, Steuer-ID &amp; Smart Glasses</title>
-      <link>https://www.heise.de/news/Big-Brother-Awards-2026-Negativpreis-fuer-Dobrindt-EU-Kommission-Telekom-Co-11463202.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463202</guid>
-      <pubDate>Fri, 25 Sep 2026 16:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Big Brother Award geht in diesem Jahr an die EU-Kommission, Innenminister Dobrindt, Telekom, Fielmann, Apollo-Optik und die Evangelische Nordkirche.]]></description>
     </item>
     <item>
       <title>PC Spiele gebraucht kaufen in Nieder-Eschbach - Frankfurt am Main | kleinanzeigen.de</title>
@@ -523,15 +532,6 @@ Two strangers share one house at the end of the world. Their only hope: trust ea
 
 We are making Vortex Force: A tactical JRPG roguelite with a scifi twist
 What happens when a sci-fi villain invades a fantasy realm? Why, a party of adventurers comes to the rescue of course! In Vortex Force, you command a growing force ...]]></description>
-    </item>
-    <item>
-      <title>+++ US-Zollpolitik +++: USA wollen am Montag Details zu Handelsvereinbarungen mit China nennen</title>
-      <link>https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
