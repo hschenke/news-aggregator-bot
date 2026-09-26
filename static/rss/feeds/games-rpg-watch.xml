@@ -5,9 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 16:25:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 05:01:11 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Guild Saga: Vanished Worlds - Preview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60234</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60234</guid>
+      <pubDate>Fri, 25 Sep 2026 16:02:33 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Noisy Pixel checked out version 0.8 of the Early Access title&nbsp;Guild Saga: Vanished Worlds:
+
+Guild Saga: Vanished Worlds Makes Me Want to Play More CRPGs
+
+
+&nbsp;]]></description>
+    </item>
     <item>
       <title>Zenless Zone Zero - Roxy Character Demo</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60233</link>
@@ -185,19 +199,6 @@ Two strangers share one house at the end of the world. Their only hope: trust ea
 
 We are making Vortex Force: A tactical JRPG roguelite with a scifi twist
 What happens when a sci-fi villain invades a fantasy realm? Why, a party of adventurers comes to the rescue of course! In Vortex Force, you command a growing force ...]]></description>
-    </item>
-    <item>
-      <title>CONTROL Resonant - Release Day</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</guid>
-      <pubDate>Thu, 24 Sep 2026 04:54:44 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The action RPG CONTROL Resonant will be released today:
-
-CONTROL Resonant - Launch Trailer
-
-Explore a warped Manhattan on the brink of paranatural annihilation in this thrilling action-adventure RPG. Unleash the extraordinary powers of Dylan Faden as he fights for his humanity and our survival ag...]]></description>
     </item>
   </channel>
 </rss>

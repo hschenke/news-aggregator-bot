@@ -5,9 +5,185 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 25 Sep 2026 16:25:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 05:01:11 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KI-Rechenzentren: Tolle Technik, miese Bilanz | c’t uplink</title>
+      <link>https://www.heise.de/news/KI-Rechenzentren-Tolle-Technik-miese-Bilanz-c-t-uplink-11466084.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11466084</guid>
+      <pubDate>Sat, 26 Sep 2026 04:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Viel Rechenleistung auf kleinster Fläche, aber auch ein enormer Ressourcenverbrauch. Über Chancen und Risiken von KI-Rechenzentren sprechen wir in c’t uplink.]]></description>
+    </item>
+    <item>
+      <title>We're gonna need a lot more mathematicians</title>
+      <link>https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/</link>
+      <guid isPermaLink="false">https://terrytao.wordpress.com/2026/09/24/were-gonna-need-a-lot-more-mathematicians/</guid>
+      <pubDate>Sat, 26 Sep 2026 02:46:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>At Meta Connect, the company’s smart glasses were everywhere</title>
+      <link>https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3169081</guid>
+      <pubDate>Sat, 26 Sep 2026 01:08:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.]]></description>
+    </item>
+    <item>
+      <title>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers</title>
+      <link>https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170030</guid>
+      <pubDate>Fri, 25 Sep 2026 23:11:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Boom Supersonic CEO Blake Scholl said the company's new stationary power plants were no longer in Crusoe's near-term plans.]]></description>
+    </item>
+    <item>
+      <title>Unsecured OpenAI agents posted 53 user images on the internet without the lab’s knowledge</title>
+      <link>https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170070</guid>
+      <pubDate>Fri, 25 Sep 2026 22:20:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[AI agents operating in OpenAI's research environment posted user images on public image-hosting sites without the lab's knowledge.]]></description>
+    </item>
+    <item>
+      <title>40 Jahre „Castlevania“: Ein Liebesbrief an das fantastische Kino</title>
+      <link>https://www.heise.de/hintergrund/40-Jahre-Castlevania-Ein-Liebesbrief-an-das-fantastische-Kino-11465413.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11465413</guid>
+      <pubDate>Fri, 25 Sep 2026 22:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Am 26. September 1986 legte Konami mit „Castlevania“ den Grundstein für eine vier Jahrzehnte überdauernde Spielereihe. Ihr Schöpfer blieb Fans lange verborgen.]]></description>
+    </item>
+    <item>
+      <title>Revealing the details of how OpenAI agents hacked Hugging Face</title>
+      <link>https://swarmtraces.org/</link>
+      <guid isPermaLink="false">https://swarmtraces.org/</guid>
+      <pubDate>Fri, 25 Sep 2026 21:09:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Meta opens early access program for new Muse features</title>
+      <link>https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170007</guid>
+      <pubDate>Fri, 25 Sep 2026 20:34:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Anyone interested in joining has to ask Muse to put them on the list.]]></description>
+    </item>
+    <item>
+      <title>Chemie: BASF arbeitet an Übernahme von Evonik – Aktien reagieren deutlich</title>
+      <link>https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</guid>
+      <pubDate>Fri, 25 Sep 2026 19:41:40 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[In Deutschlands Chemieindustrie bahnt sich ein Milliarden-Zusammenschluss an: BASF prüft den Kauf von Evonik. Beide bestätigen eine Kontaktaufnahme. Nun gibt es erste Details zum möglichen Deal.]]></description>
+    </item>
+    <item>
+      <title>Ubisoft &lt;b&gt;Might&lt;/b&gt; &amp;amp; &lt;b&gt;Magic&lt;/b&gt; Heroes Brettspiel, Fantasy, inkl. Spielregel - PicClick DE</title>
+      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://picclick.de/Ubisoft-Might-Magic-Heroes-Brettspiel-Fantasy-inkl-206579318886.html&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw1gr5BpsP1rNe6TtiDj5VCu</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:294641528608349398</guid>
+      <pubDate>Fri, 25 Sep 2026 19:28:42 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[Ubisoft Might &amp; Magic Heroes Brettspiel, Fantasy, inkl. Spielregel. EUR 50,00 Sofort-Kaufen oder Preisvorschlag, EUR 7,69 Versand,&nbsp;...]]></description>
+    </item>
+    <item>
+      <title>Anthropic to pay Akamai $11.6 billion over seven years in cloud deal</title>
+      <link>https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3169815</guid>
+      <pubDate>Fri, 25 Sep 2026 19:13:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Anthropic has committed $11.6 billion over seven years to Akamai's cloud infrastructure, a bet on CPUs that could grow to about $20 billion, and in an unusual arrangement, Akamai is giving Anthropic a potential stake of up to 5% of its stock that grows as Anthropic spends more.]]></description>
+    </item>
+    <item>
+      <title>Can Imax, Dolby and New VR Glasses Help Meta Reboot Its Immersive Entertainment Ambitions?</title>
+      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.imdb.com/de/news/ni66033101/%3Fref_%3Dnwc_art_perm&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw3BpmsKoZyiJHP_pN8fxt5g</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6367746857498704164</guid>
+      <pubDate>Fri, 25 Sep 2026 19:03:34 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[... could show the film in its full-scale, immersive glory. Meta is betting that it can bring a little bit of that magic to the home. Or the office&nbsp;...]]></description>
+    </item>
+    <item>
+      <title>Hela: of Mice &amp;amp; &lt;b&gt;Magic&lt;/b&gt; streicht Skilltrees für Hexenkessel - PlayFront</title>
+      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://playfront.de/hela-of-mice-magic-streicht-skilltrees-fuer-hexenkessel/&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw12notRHSxiZndddLiAH3Cx</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:5906545355713945385</guid>
+      <pubDate>Fri, 25 Sep 2026 18:57:26 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[You Might Also Like. Ace Combat 8 Reviews &middot; Latest &middot; Ace Combat 8 im Review-Check: Test feiern die Rückkehr der Jet-Giganten. 25&nbsp;...]]></description>
+    </item>
+    <item>
+      <title>Ollaya – Ollama for open-source, Jev-style decision models</title>
+      <link>https://ollaya.dev/</link>
+      <guid isPermaLink="false">https://ollaya.dev/</guid>
+      <pubDate>Fri, 25 Sep 2026 18:33:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Top 10: Das beste mobile Solarpanel im Test – faltbare Solarmodule bis 400 Watt</title>
+      <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-mobile-solarpanel-im-test-faltbare-solarmodule-bis-400-watt/94gczh6?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11466576</guid>
+      <pubDate>Fri, 25 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mobile Solarpanels für Powerstation, Camping & Co.: Wir zeigen, welche Panels sich am besten eignen und wie man dabei Geld spart.]]></description>
+    </item>
+    <item>
+      <title>Landtagswahlen: Erfolgreich mit „Erlebnispopulismus“ – warum die AfD mehr Menschen erreicht als die CDU</title>
+      <link>https://www.handelsblatt.com/politik/deutschland/afd-erlebnispopulismus-was-andere-parteien-daraus-lernen-koennen/100255264.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/afd-erlebnispopulismus-was-andere-parteien-daraus-lernen-koennen/100255264.html</guid>
+      <pubDate>Fri, 25 Sep 2026 17:32:38 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Die AfD schafft es, Wähler zu mobilisieren, die andere Parteien längst verloren haben. Experten sehen dahinter eine Strategie, die weit über Social Media hinausgeht.]]></description>
+    </item>
+    <item>
+      <title>USA und China: Xi lobt „richtige Haltung“ zu Taiwan und lacht über Trumps Lieblingswitz</title>
+      <link>https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</guid>
+      <pubDate>Fri, 25 Sep 2026 16:53:31 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Von Rivalität keine Spur: Der US-Präsident empfängt Chinas Staats- und Parteichef in Washington mit großen Gesten. Eine Äußerung Xis zum Konfliktthema Taiwan sorgt für Rätselraten.]]></description>
+    </item>
+    <item>
+      <title>Rheintalbahn-Sperrung Anfang Oktober - Radio Regenbogen</title>
+      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.regenbogen.de/nachrichten/dpa-baden-wuerttemberg/rheintalbahn-sperrung-anfang-oktober&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw0wwOZvOobarS3YKT8rP4k9</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:9731463479059499621</guid>
+      <pubDate>Fri, 25 Sep 2026 16:47:26 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[TAKE THAT mit COULD IT BE MAGIC. Startseite &middot; Service &middot; Kontakt &middot; Newsletter &middot; Jobs &amp; Praktika &middot; Pressekontakt &middot; Presse &amp; Downloads &middot; Empfang.]]></description>
+    </item>
+    <item>
+      <title>Guild Saga: Vanished Worlds - Preview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60234</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60234</guid>
+      <pubDate>Fri, 25 Sep 2026 16:02:33 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Noisy Pixel checked out version 0.8 of the Early Access title&nbsp;Guild Saga: Vanished Worlds:
+
+Guild Saga: Vanished Worlds Makes Me Want to Play More CRPGs
+
+
+&nbsp;]]></description>
+    </item>
     <item>
       <title>KI-Rechenzentren: Abwärme heizt angrenzende Wohngebiete auf</title>
       <link>https://www.heise.de/news/KI-Rechenzentren-Abwaerme-heizt-angrenzende-Wohngebiete-auf-11466676.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -18,7 +194,7 @@
       <description><![CDATA[KI-Rechenzentren geben enorme Mengen Abwärme ab. Erste Studien belegen, dass dies die Temperaturen in angrenzenden Wohngebieten messbar ansteigen lässt.]]></description>
     </item>
     <item>
-      <title>Big Brother Awards 2026: Negativpreis für Dobrindt, EU-Kommission, Telekom &amp; Co.</title>
+      <title>Big Brother Awards: Negativpreise für Digital-Omnibus, Steuer-ID &amp; Smart Glasses</title>
       <link>https://www.heise.de/news/Big-Brother-Awards-2026-Negativpreis-fuer-Dobrindt-EU-Kommission-Telekom-Co-11463202.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463202</guid>
       <pubDate>Fri, 25 Sep 2026 16:00:00 GMT</pubDate>
@@ -27,145 +203,19 @@
       <description><![CDATA[Der Big Brother Award geht in diesem Jahr an die EU-Kommission, Innenminister Dobrindt, Telekom, Fielmann, Apollo-Optik und die Evangelische Nordkirche.]]></description>
     </item>
     <item>
-      <title>For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts</title>
-      <link>https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169293</guid>
-      <pubDate>Fri, 25 Sep 2026 15:48:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The latest unauthorized agent swarms were discovered by researchers.]]></description>
-    </item>
-    <item>
-      <title>Chemie: BASF arbeitet an Übernahme von Evonik – Aktien reagieren kräftig</title>
-      <link>https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/industrie/chemie-basf-arbeitet-an-uebernahme-von-evonik/100257452.html</guid>
-      <pubDate>Fri, 25 Sep 2026 15:42:00 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[In Deutschlands Chemieindustrie bahnt sich ein Milliarden-Zusammenschluss an: BASF prüft den Kauf von Evonik. Beide bestätigen eine Kontaktaufnahme. Nun gibt es erste Details zum möglichen Deal.]]></description>
-    </item>
-    <item>
-      <title>Anthropic’s founders seek voting control ahead of IPO</title>
-      <link>https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169652</guid>
-      <pubDate>Fri, 25 Sep 2026 15:40:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic is asking its shareholders to approve a  structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters.]]></description>
-    </item>
-    <item>
-      <title>heise+ | Optische Speicher mit Terabyte-Kapazität: Folio Photonics im Check</title>
-      <link>https://www.heise.de/hintergrund/Optische-Speicher-mit-Terabyte-Kapazitaet-Folio-Photonics-im-Check-11359706.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11359706</guid>
-      <pubDate>Fri, 25 Sep 2026 15:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Folio Photonics will mit mehrschichtigen optischen Disks den Markt für Archivspeicher aufmischen. Die Daten sollen mindestens 50 Jahre halten.]]></description>
-    </item>
-    <item>
-      <title>Classified Estimates Show the NSA Is Paying Billions to Test AI Models</title>
-      <link>https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</link>
-      <guid isPermaLink="false">https://www.washingtonsun.com/technology/classified-estimates-nsa-paying-billions-to-test-ai-models</guid>
-      <pubDate>Fri, 25 Sep 2026 15:27:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Warum diese Chipfirma niemand nachbauen kann</title>
-      <link>https://www.heise.de/news/Warum-diese-Chipfirma-niemand-nachbauen-kann-11466614.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11466614</guid>
-      <pubDate>Fri, 25 Sep 2026 15:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bei TSMC in Taiwan wird nahezu jeder High-End-Chip gefertigt: c't 3003 erklärt, warum die Firma zurzeit konkurrenzlos ist.]]></description>
-    </item>
-    <item>
-      <title>TechCrunch Disrupt 2026: Ricursive Intelligence’s Anna Goldie and Azalia Mirhoseini on when AI starts designing its own hardware</title>
-      <link>https://techcrunch.com/2026/09/25/techcrunch-disrupt-2026-ricursive-intelligences-anna-goldie-and-azalia-mirhoseini-on-when-ai-starts-designing-its-own-hardware/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169500</guid>
-      <pubDate>Fri, 25 Sep 2026 15:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[At TechCrunch Disrupt 2026, Ricursive Intelligence co-founders Anna Goldie and Azalia Mirhoseini will take the Disrupt Stage to discuss closing the loop between AI and chip development Save up to $200 on your pass before today ends.]]></description>
-    </item>
-    <item>
-      <title>Beats-360-Zubehör: Warten auf Apples Discount</title>
-      <link>https://www.heise.de/news/Beats-360-Zubehoer-Warten-auf-Apples-Discount-11466672.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11466672</guid>
-      <pubDate>Fri, 25 Sep 2026 14:56:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum Verkaufsstart der neuen Beats-Kopfhörer-Topmodelle räumt Apple auf Zubehör einen deutlichen Rabatt ein. In Deutschland ist er aber noch nicht eingetroffen.]]></description>
-    </item>
-    <item>
-      <title>RUSS BALLARD kommt auf „He Can Do &lt;b&gt;Magic&lt;/b&gt;“ Tour 2027 - lifePR</title>
-      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.lifepr.de/inaktiv/ass-concerts-promotion-gmbh/russ-ballard-kommt-auf-he-can-do-magic-tour-2027/boxid/1074144&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw1mZStQEXZvpcu9DvwD2pu9</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:52529751855888668</guid>
-      <pubDate>Fri, 25 Sep 2026 14:21:15 GMT</pubDate>
+      <title>PC Spiele gebraucht kaufen in Nieder-Eschbach - Frankfurt am Main | kleinanzeigen.de</title>
+      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.kleinanzeigen.de/s-pc-videospiele/pc_spiele/c227l4342%2Bpc_videospiele.art_s:pc_spiele&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw2RirYYoGTwWPRrXkt55ocu</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3701127284205717527</guid>
+      <pubDate>Fri, 25 Sep 2026 14:40:10 GMT</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[... Can Do Magic“-Tour auf die deutschen Bühnen zurück. Als Sänger und Leadgitarrist von Argent feierte BALLARD internationale Erfolge. Darüber hinaus&nbsp;...]]></description>
+      <description><![CDATA[15 € VB. Heroes of Might and Magic V Gold Edition&nbsp;...]]></description>
     </item>
     <item>
-      <title>Affected by layoffs? Don’t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass</title>
-      <link>https://techcrunch.com/2026/09/25/disrupt-2026-layoff-expo-plus-passes-available-for-75-dollars/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169207</guid>
-      <pubDate>Fri, 25 Sep 2026 14:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Your next opportunity could be one conversation away. Get your Expo+ Pass for just $75. Limited to the first 100 qualifying people.]]></description>
-    </item>
-    <item>
-      <title>Last 24 hours to save up to $200 on TechCrunch Disrupt 2026. Reason 5 of 5 to attend: Momentum</title>
-      <link>https://techcrunch.com/2026/09/25/last-24-hours-to-save-up-to-200-on-techcrunch-disrupt-2026-reason-5-of-5-to-attend-momentum/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169398</guid>
-      <pubDate>Fri, 25 Sep 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Last 24 hours to save up to $200 on your TechCrunch Disrupt 2026 pass. Leave the event further in your startup's trajectory than where you started. Don't miss your chance to save and to push the needle.]]></description>
-    </item>
-    <item>
-      <title>First Principles Thinking</title>
-      <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
-      <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
-      <pubDate>Fri, 25 Sep 2026 13:55:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Friedensgespräche: USA schlagen Dreiertreffen mit Ukraine und Russland vor</title>
-      <link>https://www.handelsblatt.com/politik/international/friedensgespraeche-usa-schlagen-dreiertreffen-mit-ukraine-und-russland-vor/100257481.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/friedensgespraeche-usa-schlagen-dreiertreffen-mit-ukraine-und-russland-vor/100257481.html</guid>
-      <pubDate>Fri, 25 Sep 2026 13:07:11 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Die USA haben ein trilaterales direktes Treffen mit der Ukraine und Russland in den Emiraten vorgeschlagen. Kiew wartet auf einen Termin, Moskau signalisiert Gesprächsbereitschaft.]]></description>
-    </item>
-    <item>
-      <title>Risiko Lenkungsausfall: Volkswagen-Konzern ruft Millionen Autos zurück – Weitere Konzernmarken neben VW und Audi betroffen</title>
-      <link>https://www.handelsblatt.com/unternehmen/industrie/volkswagen-vw-ruft-millionen-autos-zurueck-weitere-konzernmarken-betroffen/100257392.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/industrie/volkswagen-vw-ruft-millionen-autos-zurueck-weitere-konzernmarken-betroffen/100257392.html</guid>
-      <pubDate>Fri, 25 Sep 2026 12:52:23 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Ein Schraubenabriss kann bei mehreren Modellen aus dem VW-Konzern zum Ausfall der Lenkung führen. Der Rückruf könnte nach Handelsblatt-Informationen noch größer ausfallen als bislang bekannt.]]></description>
-    </item>
-    <item>
-      <title>Platform-Independent SIMD in Go</title>
-      <link>https://go.dev/blog/simd-experiment</link>
-      <guid isPermaLink="false">https://go.dev/blog/simd-experiment</guid>
-      <pubDate>Fri, 25 Sep 2026 11:47:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Git-bug: Distributed, offline-first bug tracker embedded in Git</title>
-      <link>https://github.com/git-bug/git-bug</link>
-      <guid isPermaLink="false">https://github.com/git-bug/git-bug</guid>
-      <pubDate>Fri, 25 Sep 2026 11:38:31 GMT</pubDate>
+      <title>Show HN: Jev Plays Pokémon Red</title>
+      <link>https://jev-pokemon.vercel.app/</link>
+      <guid isPermaLink="false">https://jev-pokemon.vercel.app/</guid>
+      <pubDate>Fri, 25 Sep 2026 14:28:07 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -214,15 +264,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Pentium II at 600Mhz with Voodoo 3 Emulated on 86Box with M6 Mac Mini</title>
-      <link>https://nyaa.sh/reviews/mac-mini-m6-emulation</link>
-      <guid isPermaLink="false">https://nyaa.sh/reviews/mac-mini-m6-emulation</guid>
-      <pubDate>Fri, 25 Sep 2026 07:27:45 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Zenless Zone Zero - Roxy Character Demo</title>
@@ -315,22 +356,13 @@ Qliphah in Providence's Shadow Review - The Mystery of a Unique Action RPG Syste
 Score: 7/10]]></description>
     </item>
     <item>
-      <title>USA und China: Xi lobt „richtige Haltung“ zu Taiwan und lacht über Trumps Lieblingswitz</title>
-      <link>https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</guid>
-      <pubDate>Fri, 25 Sep 2026 05:08:13 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Von Rivalität keine Spur: Der US-Präsident empfängt Chinas Staats- und Parteichef in Washington mit großen Gesten. Eine Äußerung Xis zum Konfliktthema Taiwan sorgt für Rätselraten.]]></description>
-    </item>
-    <item>
-      <title>Heroes of &lt;b&gt;Might&lt;/b&gt; and &lt;b&gt;Magic&lt;/b&gt; III: The Board Game - Endless Possibilities - Gamefound</title>
-      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://gamefound.com/de/projects/archon-studio/heroes-of-might-and-magic-iii-the-board-game-factory-bulwark-forge-expansions/updates/8&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw0Xo196XUaWdNBAhGZRXW4a</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:9735821355602886294</guid>
-      <pubDate>Thu, 24 Sep 2026 17:38:52 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Heroes of Might and Magic III: The Board Game - Factory, Bulwark &amp; Forge Expansions. von Archon Studio. Lead mighty heroes and command iconic&nbsp;...]]></description>
+      <title>Plan mode is dead</title>
+      <link>https://www.aymannadeem.com/artificial/intelligence,/developer/tools/2026/09/24/plan-mode-is-dead.html</link>
+      <guid isPermaLink="false">https://www.aymannadeem.com/artificial/intelligence,/developer/tools/2026/09/24/plan-mode-is-dead.html</guid>
+      <pubDate>Fri, 25 Sep 2026 03:59:11 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Allgemeinverfügung zur Kampfmittelbeseitigung am 30. September 2026</title>
@@ -367,15 +399,6 @@ Score: 7/10]]></description>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Heroes of &lt;b&gt;Might&lt;/b&gt; and &lt;b&gt;Magic&lt;/b&gt; III Remake STEAM digital für Windows - Playasia</title>
-      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.play-asia.com/de/heroes-of-might-and-magic-iii-remake/13/70kdsf&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw3IZsdZloprE5-mifJK31zE</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1370275617867508560</guid>
-      <pubDate>Thu, 24 Sep 2026 11:14:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Return to the legendary world of Erathia in Heroes of Might &amp; Magic III Remake, a faithful reimagining of one of the most celebrated turn-based&nbsp;...]]></description>
     </item>
     <item>
       <title>Versuchter Raub auf Motorrollerfahrerin – Tatverdächtige festgenommen</title>
@@ -502,35 +525,13 @@ We are making Vortex Force: A tactical JRPG roguelite with a scifi twist
 What happens when a sci-fi villain invades a fantasy realm? Why, a party of adventurers comes to the rescue of course! In Vortex Force, you command a growing force ...]]></description>
     </item>
     <item>
-      <title>CONTROL Resonant - Release Day</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60219</guid>
-      <pubDate>Thu, 24 Sep 2026 04:54:44 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The action RPG CONTROL Resonant will be released today:
-
-CONTROL Resonant - Launch Trailer
-
-Explore a warped Manhattan on the brink of paranatural annihilation in this thrilling action-adventure RPG. Unleash the extraordinary powers of Dylan Faden as he fights for his humanity and our survival ag...]]></description>
-    </item>
-    <item>
-      <title>Preisvergleich für &lt;b&gt;Might&lt;/b&gt; &amp;amp; &lt;b&gt;Magic&lt;/b&gt; Heroes Online - 7500 Hero Seals Beste Preise - G2A</title>
-      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.g2a.com/de/might-magic-heroes-online-7500-hero-seals-p10000048499&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw0GkpaYxaua8OV5xfmVSRCL</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6176494231920796184</guid>
-      <pubDate>Thu, 24 Sep 2026 04:41:11 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Might &amp; Magic Heroes Online - 7500 Hero Seals. zum besten Preis kaufen ⭐ Entdecke unschlagbare Preise, erstaunliche Verkäufe und exklusive&nbsp;...]]></description>
-    </item>
-    <item>
-      <title>Heroes of &lt;b&gt;Might&lt;/b&gt; &amp;amp; &lt;b&gt;Magic&lt;/b&gt; 4 (Taktik &amp;amp; Strategie) - 4P.de</title>
-      <link>https://www.google.com/url?rct=j&amp;sa=t&amp;url=https://www.4p.de/page/1983%3Fw%3D%25E5%25B9%25BF%25E4%25B8%259C%25E6%259C%2588%25E9%25A5%25BC%25E5%258E%2582%25E5%25AE%25B6%25E6%2589%25B9%25E5%258F%2591%25E5%259C%25B0%25E5%259D%2580%25E5%258D%258F%25E5%258A%25A9%25E2%2598%25AA%25EF%25B8%258F%25E7%2594%25B5%25E8%25AF%259D%253A%252086.19927487682%25F0%259F%25A5%259D%25E5%258A%25A0%25E6%258B%25BF%25E5%25A4%25A7%25E4%25B8%25AD%25E5%259B%25BD%25E5%258D%2581%25E5%25A4%25A7%25E6%259C%2588%25E9%25A5%25BC%25E5%258E%2582%25E5%25AE%25B6%25F0%259F%2590%258B%25E5%258C%2597%25E4%25BA%25AC%25E7%259A%2584%25E6%259C%2588%25E9%25A5%25BC%25E6%2598%25AF%25E4%25BB%2580%25E4%25B9%2588%25E9%25A6%2585%25E7%259A%2584%25F0%259F%2592%2584%25E5%259C%25A8%25E8%25BF%2599%25E6%259C%2588%25E5%259C%2586%25E4%25BA%25BA%25E5%259B%25A2%25E5%259C%2586%25E7%259A%2584%25E6%2597%25B6%25E5%2588%25BB%25EF%25BC%258C%25E6%2588%2591%25E4%25BB%25AC%25E7%259A%2584%25E6%259C%2588%25E9%25A5%25BC%25E4%25B8%258D%25E4%25BB%2585%25E6%2598%25AF%25E8%258A%2582%25E6%2597%25A5%25E7%259A%2584%25E8%25B1%25A1%25E5%25BE%2581%25EF%25BC%258C%25E6%259B%25B4%25E6%2598%25AF%25E6%2583%2585%25E6%2584%259F%25E7%259A%2584%25E4%25BC%25A0%25E9%2580%2592%25E8%2580%2585%25E3%2580%2582%25E6%25AF%258F%25E4%25B8%2580%25E5%258F%25A3%25E9%2583%25BD%25E8%2595%25B4%25E5%2590%25AB%25E7%259D%2580%25E6%25B7%25B1%25E6%25B7%25B1%25E7%259A%2584%25E6%2580%259D%25E5%25BF%25B5%25E5%2592%258C%25E7%25BE%258E%25E5%25A5%25BD%25E7%259A%2584%25E7%25A5%259D%25E7%25A6%258F%25E3%2580%2582%25F0%259F%2593%258C%25E5%259C%2586%25E5%25BD%25A2%25E6%259C%2588%25E9%25A5%25BC%25E7%259B%2592%25F0%259F%258F%25B0%25E4%25B8%25AD%25E7%25A7%258B%25E5%25B0%258F%25E6%259C%2588%25E9%25A5%25BC%253Ftext%253DYBZQ&amp;ct=ga&amp;cd=CAIyGWZlMzYzMTQ5NTYwMWI1YTY6ZGU6ZGU6REU&amp;usg=AOvVaw35ZHOL2f2nd2Z5EzAsybuR</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7734350937307295690</guid>
-      <pubDate>Thu, 24 Sep 2026 02:17:30 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Heroes of Might &amp; Magic 4 (Taktik &amp; Strategie) – Heroes of Might &amp; Magic 4. Veröffentlicht inTests &middot; Heroes of Might &amp; Magic 4 (Taktik&nbsp;...]]></description>
+      <title>+++ US-Zollpolitik +++: USA wollen am Montag Details zu Handelsvereinbarungen mit China nennen</title>
+      <link>https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/us-zoelle-usa-wollen-am-montag-details-zu-handelsvereinbarungen-mit-china-nennen/30026990.html</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[USA und China verlängern Vereinbarung im Zollstreit bis Januar +++ US-Regierung – Zusatzzölle gegen China erneut aufgeschoben +++ Der Newsblog.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
