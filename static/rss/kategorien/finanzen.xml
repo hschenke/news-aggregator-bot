@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Finanzen' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 10:13:06 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 10:15:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/finanzen.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -34,15 +34,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Das oberbayerische Kreditinstitut benötigt eine deutlich höhere Unterstützung der BVR-Sicherungseinrichtung als bisher bekannt. Das Portfolio notleidender Kredite ist besonders groß.]]></description>
-    </item>
-    <item>
-      <title>Pflegeversicherung: SPD will bei Pflegereform Leistungskürzung verhindern</title>
-      <link>https://www.handelsblatt.com/politik/deutschland/pflegeversicherung-spd-will-bei-pflegereform-leistungskuerzung-verhindern/100257586.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/pflegeversicherung-spd-will-bei-pflegereform-leistungskuerzung-verhindern/100257586.html</guid>
-      <pubDate>Sat, 26 Sep 2026 09:08:32 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Der Pflegeversicherung drohen Milliardendefizite, CDU-Gesundheitsminister Linnemann will nächste Woche im Kabinett eine Kehrtwende einleiten. Doch kurz vorher macht der Koalitionspartner Druck.]]></description>
     </item>
     <item>
       <title>Trump Watch: Trump setzt vor US-Zwischenwahlen alles auf KI und Rechenzentren – aber der Widerstand dagegen wächst</title>
@@ -169,6 +160,15 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Ein folgenreiches Eingeständnis hat die angesehene Deutsche zur überzeugten Hardlinerin geformt. Ihr vorzeitiger Abschied wird die Statik unter den Notenbankern verändern.]]></description>
+    </item>
+    <item>
+      <title>Kommentar: Kanzler ohne Plan</title>
+      <link>https://www.handelsblatt.com/meinung/kommentare/kommentar-kanzler-ohne-plan/100257028.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/meinung/kommentare/kommentar-kanzler-ohne-plan/100257028.html</guid>
+      <pubDate>Fri, 25 Sep 2026 10:47:59 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Mit Friedrich Merz ist der zweite Kanzler in kurzer Zeit de facto gescheitert. Deutschland droht unregierbar zu werden. Das liegt aber nicht am Volk – sondern der Politik selbst.]]></description>
     </item>
     <item>
       <title>Windkraft: Drohende Offshore-Krise wird zum Stresstest für Siemens Energy</title>
