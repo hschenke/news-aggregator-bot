@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 10:56:28 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 11:32:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breaking Up with Google Play: Why Conversations Is Now Free</title>
+      <link>https://gultsch.de/posts/breaking-up-with-google-play/</link>
+      <guid isPermaLink="false">https://gultsch.de/posts/breaking-up-with-google-play/</guid>
+      <pubDate>Sat, 26 Sep 2026 10:55:56 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>Schlappe für Online-Autoverkäufer: „Bestellen“-Button reicht laut Urteil nicht</title>
       <link>https://www.heise.de/news/Schlappe-fuer-Online-Autoverkaeufer-Bestellen-Button-reicht-laut-Urteil-nicht-11466826.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -27,10 +36,10 @@
       <description><![CDATA[Trotz anhaltender Datenschutzkontroversen verzeichnen Smart-Glasses weiterhin starke Zuwächse, mit Meta als klarem Marktführer.]]></description>
     </item>
     <item>
-      <title>How to keep enjoying programming in a world of LLMs</title>
-      <link>https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</link>
-      <guid isPermaLink="false">https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</guid>
-      <pubDate>Sat, 26 Sep 2026 09:41:58 GMT</pubDate>
+      <title>One Month Without AI</title>
+      <link>https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html</link>
+      <guid isPermaLink="false">https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html</guid>
+      <pubDate>Sat, 26 Sep 2026 10:08:21 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -76,15 +85,6 @@
       <link>https://safenotsafe.dev/</link>
       <guid isPermaLink="false">https://safenotsafe.dev/</guid>
       <pubDate>Sat, 26 Sep 2026 07:33:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Alberta's image as world's only rat-free region shattered by discovery of rat</title>
-      <link>https://www.theguardian.com/world/2026/sep/25/alberta-canada-rat-patrol</link>
-      <guid isPermaLink="false">https://www.theguardian.com/world/2026/sep/25/alberta-canada-rat-patrol</guid>
-      <pubDate>Sat, 26 Sep 2026 06:51:12 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -1708,15 +1708,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[GPT-6 Sol und Luna sind deutlich günstiger als ihre Vorgänger. Bei der Leistung bleibt der Generationssprung weitgehend aus.]]></description>
-    </item>
-    <item>
-      <title>Studie als KI-Agent: Stanford-Tool macht Forschungsartikel interaktiv</title>
-      <link>https://www.heise.de/news/Studie-als-KI-Agent-Stanford-Tool-macht-Forschungsartikel-interaktiv-11463076.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463076</guid>
-      <pubDate>Wed, 23 Sep 2026 10:41:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Paper2Agent wurde ein kostenloses Framework entwickelt, das aus einzelnen Studien interaktive KI-Agenten macht, welche auch untereinander kommunizieren.]]></description>
     </item>
   </channel>
 </rss>

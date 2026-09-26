@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 10:56:28 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 11:32:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -1258,15 +1258,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[GPT-6 Sol und Luna sind deutlich günstiger als ihre Vorgänger. Bei der Leistung bleibt der Generationssprung weitgehend aus.]]></description>
-    </item>
-    <item>
-      <title>Studie als KI-Agent: Stanford-Tool macht Forschungsartikel interaktiv</title>
-      <link>https://www.heise.de/news/Studie-als-KI-Agent-Stanford-Tool-macht-Forschungsartikel-interaktiv-11463076.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463076</guid>
-      <pubDate>Wed, 23 Sep 2026 10:41:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Paper2Agent wurde ein kostenloses Framework entwickelt, das aus einzelnen Studien interaktive KI-Agenten macht, welche auch untereinander kommunizieren.]]></description>
     </item>
   </channel>
 </rss>
