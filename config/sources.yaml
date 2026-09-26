@@ -11,6 +11,10 @@ categories:
   feeds:
   - name: Joscha
     url: https://joscha.com/rss/all/
+- name: Fußball
+  feeds:
+  - name: Transfermarkt
+    url: https://www.transfermarkt.de/rss
 - name: Games
   feeds:
   - name: Might & Magic Alert

@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen&amp;feed=Handelsblatt+Schlagzeilen</link>
     <description>RSS-Feed für die Quelle 'Handelsblatt Schlagzeilen' (Kategorie: Finanzen).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 11:32:36 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 12:18:42 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-handelsblatt-schlagzeilen.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Krankenversicherung: Ökonomen schlagen Solidarbeitrag für Gutverdiener vor statt Bürgerversicherung</title>
+      <link>https://www.handelsblatt.com/politik/deutschland/krankenversicherung-solidarbeitrag-fuer-gutverdiener-statt-buergerversicherung/100257192.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/krankenversicherung-solidarbeitrag-fuer-gutverdiener-statt-buergerversicherung/100257192.html</guid>
+      <pubDate>Sat, 26 Sep 2026 11:41:35 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Private Krankenversicherung behalten, Gutverdienende stärker beteiligen: Ökonomen des Kiel-Instituts schlagen einen Mittelweg zwischen dem heutigen System und einer Bürgerversicherung vor.]]></description>
+    </item>
+    <item>
+      <title>Die Welt in Bildern: Blickfang</title>
+      <link>https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</guid>
+      <pubDate>Sat, 26 Sep 2026 11:30:00 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Sie beeindrucken. Sie wühlen auf. Sie faszinieren. Sie erschrecken. Sie dokumentieren den großen Moment. Sie zeigen kleine Wunder. Oder sie erzählen eine Geschichte. Die Welt – ein Blickfang.]]></description>
+    </item>
     <item>
       <title>Reichtum: Elitenforscher über die oberen 100.000: „Man erkennt sich am souveränen Auftreten“</title>
       <link>https://www.handelsblatt.com/unternehmen/reichtum-die-oberen-100.000-man-erkennt-sich-am-souveraenen-auftreten/100257518.html</link>
@@ -162,15 +180,6 @@
       <description><![CDATA[Der Ex-Verwaltungsratschef der italienischen Fideuram-Bank wurde Opfer eines KI-Betrugs. Er ließ 95 Millionen Euro aus dem Bankvermögen überweisen. Nur ein Teil konnte zurückgeholt werden.]]></description>
     </item>
     <item>
-      <title>Parteitag: Nächster Schritt zur Regierung: Linke in Berlin will mit SPD und Grünen verhandeln</title>
-      <link>https://www.handelsblatt.com/politik/deutschland/berlin-linke-will-mit-gruenen-und-spd-regieren/100257358.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/berlin-linke-will-mit-gruenen-und-spd-regieren/100257358.html</guid>
-      <pubDate>Fri, 25 Sep 2026 18:04:05 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Auf ihrem Parteitag entscheiden sich die Linken in Berlin für Koalitionsgespräche mit der SPD und den Grünen. Ob sie eine Regierung anführen wird, hängt an der SPD – und offenen Kontroversen.]]></description>
-    </item>
-    <item>
       <title>USA und China: Xi lobt „richtige Haltung“ zu Taiwan und lacht über Trumps Lieblingswitz</title>
       <link>https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-und-china-richtige-haltung-xi-lobt-donald-trumps-sicht-auf-taiwan/100256859.html</guid>
@@ -187,15 +196,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Im Angesicht des Aufstiegs der Radikalen lassen Merz und die Union an ihren Reformen zweifeln. Dabei beweisen zwei Regierungen, dass gerade bürgerliche Politik zum Erfolg führen kann.]]></description>
-    </item>
-    <item>
-      <title>Die Welt in Bildern: Blickfang</title>
-      <link>https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html</guid>
-      <pubDate>Thu, 24 Sep 2026 08:26:00 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Sie beeindrucken. Sie wühlen auf. Sie faszinieren. Sie erschrecken. Sie dokumentieren den großen Moment. Sie zeigen kleine Wunder. Oder sie erzählen eine Geschichte. Die Welt – ein Blickfang.]]></description>
     </item>
   </channel>
 </rss>

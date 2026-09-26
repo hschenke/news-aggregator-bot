@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 26 Sep 2026 11:32:36 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 26 Sep 2026 12:18:42 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI informiert „Dutzende“ Institutionen über unbefugte KI-Interaktionen</title>
+      <link>https://www.heise.de/news/KI-von-OpenAI-stellte-Nutzer-Bilder-auf-Online-Plattformen-11466970.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11466970</guid>
+      <pubDate>Sat, 26 Sep 2026 11:27:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[OpenAIs KI platzierte Bilder seiner Nutzer auf Online-Plattformen. Es ist der erste bekannte Sicherheitsvorfall bei dem ChatGPT-Nutzerdaten involviert sind.]]></description>
+    </item>
     <item>
       <title>Breaking Up with Google Play: Why Conversations Is Now Free</title>
       <link>https://gultsch.de/posts/breaking-up-with-google-play/</link>
@@ -40,6 +49,15 @@
       <link>https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html</link>
       <guid isPermaLink="false">https://blog.bustikiller.com/2026/09/25/one-month-without-ai.html</guid>
       <pubDate>Sat, 26 Sep 2026 10:08:21 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The Copilot+ PC brand is dead</title>
+      <link>https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding</link>
+      <guid isPermaLink="false">https://www.windowscentral.com/microsoft/windows-11/the-copilot-pc-brand-is-dead-microsoft-and-pc-makers-quietly-pull-back-on-tarnished-windows-11-ai-pc-branding</guid>
+      <pubDate>Sat, 26 Sep 2026 09:55:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -79,6 +97,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Fotoagenturen solidarisieren sich mit TV-Sendern, Adobe schluckt Topaz Labs und Nikon streicht den Sucher. Plus: Gefiederte Fotostars.]]></description>
+    </item>
+    <item>
+      <title>The far side of the Moon provides clues to a previous magnetic field</title>
+      <link>https://ethz.ch/en/news-and-events/eth-news/news/2026/09/the-far-side-of-the-moon-provides-clues-to-a-previous-magnetic-field.html</link>
+      <guid isPermaLink="false">https://ethz.ch/en/news-and-events/eth-news/news/2026/09/the-far-side-of-the-moon-provides-clues-to-a-previous-magnetic-field.html</guid>
+      <pubDate>Sat, 26 Sep 2026 07:49:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Is your Postgres migration safe or not safe?</title>
@@ -178,15 +205,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.]]></description>
-    </item>
-    <item>
-      <title>One Piece of Flock Camera Data Put This Innocent Woman in Jail for 13 Days</title>
-      <link>https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide</link>
-      <guid isPermaLink="false">https://www.jezebel.com/flock-cameras-data-innocent-woman-arrested-lindsey-isaacs-palm-beach-florida-lawsuit-vehicular-homicide</guid>
-      <pubDate>Sat, 26 Sep 2026 00:59:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers</title>
@@ -526,15 +544,6 @@
       <link>https://sunilsadasivan.com/writing/first-principles-thinking/</link>
       <guid isPermaLink="false">https://sunilsadasivan.com/writing/first-principles-thinking/</guid>
       <pubDate>Fri, 25 Sep 2026 13:55:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: Hacker Atlas - A map of what Hacker News talks about</title>
-      <link>https://hackeratlas.com/</link>
-      <guid isPermaLink="false">https://hackeratlas.com/</guid>
-      <pubDate>Fri, 25 Sep 2026 13:37:54 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -943,15 +952,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Nähern sich verdächtige Flugdrohnen Kritischer Infrastruktur, soll deren Betreiber die Drohnen vom Himmel holen. Lizenzen dafür sind in Österreich geplant.]]></description>
-    </item>
-    <item>
-      <title>Remembering Johannes Doerfert</title>
-      <link>https://blog.llvm.org/posts/2026-09-24-rememberingjohannesdoerfert/</link>
-      <guid isPermaLink="false">https://blog.llvm.org/posts/2026-09-24-rememberingjohannesdoerfert/</guid>
-      <pubDate>Thu, 24 Sep 2026 23:36:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>The Murky History of Soviet-Born Tetris</title>
@@ -1449,15 +1449,6 @@
       <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
     </item>
     <item>
-      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
-      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463824</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
-    </item>
-    <item>
       <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
       <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463750</guid>
@@ -1465,6 +1456,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
+    </item>
+    <item>
+      <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
+      <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463824</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
       <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
@@ -1480,6 +1480,15 @@
       <link>https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</link>
       <guid isPermaLink="false">https://phys.org/news/2026-09-scientists-world-accurate-atomic-clock.html</guid>
       <pubDate>Thu, 24 Sep 2026 01:00:01 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Calculating atmospheric drag on satellites for a Cubesat [pdf]</title>
+      <link>https://www.osti.gov/servlets/purl/1124870</link>
+      <guid isPermaLink="false">https://www.osti.gov/servlets/purl/1124870</guid>
+      <pubDate>Thu, 24 Sep 2026 00:34:11 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -1521,15 +1530,6 @@
       <description><![CDATA[Eine maßgeschneiderte KI-Lösung soll Abgeordneten und Verwaltung die Arbeit erleichtern und gleichzeitig strikte Datenschutzstandards im Parlament garantieren.]]></description>
     </item>
     <item>
-      <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
-      <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463646</guid>
-      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
-    </item>
-    <item>
       <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
       <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463388</guid>
@@ -1537,6 +1537,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
+    </item>
+    <item>
+      <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
+      <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463646</guid>
+      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
     </item>
     <item>
       <title>Mercedes-Benz will Serienfahrzeuge mit dem Wayve AI Driver ausstatten</title>
@@ -1699,15 +1708,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das Teilen des Live-Standorts per Smartphone ist für viele Alltag. Doch was als praktisch und sicher gilt, birgt auch Risiken für die Privatsphäre.]]></description>
-    </item>
-    <item>
-      <title>GPT-6 Sol und Luna: OpenAI halbiert die Preise</title>
-      <link>https://www.heise.de/news/GPT-6-Sol-und-Luna-OpenAI-halbiert-die-Preise-11463052.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463052</guid>
-      <pubDate>Wed, 23 Sep 2026 10:49:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[GPT-6 Sol und Luna sind deutlich günstiger als ihre Vorgänger. Bei der Leistung bleibt der Generationssprung weitgehend aus.]]></description>
     </item>
   </channel>
 </rss>
