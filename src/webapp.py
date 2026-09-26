@@ -739,6 +739,10 @@ with tab_articles:
         st.session_state["sel_articles_category"] = "Alle Kategorien"
     if "articles_cat_feed_memory" not in st.session_state:
         st.session_state["articles_cat_feed_memory"] = {}
+    if "chk_expand_cats" not in st.session_state:
+        st.session_state["chk_expand_cats"] = True
+    if "chk_expand_feeds" not in st.session_state:
+        st.session_state["chk_expand_feeds"] = True
 
     sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
     category_options = ["Alle Kategorien"] + sorted_all_categories
@@ -786,9 +790,9 @@ with tab_articles:
     with col_toggles:
         c_tog1, c_tog2 = st.columns(2)
         with c_tog1:
-            expand_cats = st.checkbox("📂 Kategorien auf", value=True, key="chk_expand_cats", help="Alle Kategorien aufklappen")
+            expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", help="Alle Kategorien aufklappen")
         with c_tog2:
-            expand_feeds = st.checkbox("📡 Feeds auf", value=True, key="chk_expand_feeds", help="Alle Feeds innerhalb der Kategorien aufklappen")
+            expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", help="Alle Feeds innerhalb der Kategorien aufklappen")
 
     displayed_count = 0
     categories_rendered = 0
