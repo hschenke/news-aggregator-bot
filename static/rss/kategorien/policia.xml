@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 27 Sep 2026 07:48:22 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 10:37:20 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homophober Angriff</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718567.php</link>
+      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718567.php</guid>
+      <pubDate>Sun, 27 Sep 2026 10:25:10 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Tempelhof-Schöneberg** – In der vergangenen Nacht wurde ein Mann in Schöneberg von Unbekannten attackiert. Nach derzeitigem Kenntnisstand lief der 31-Jährige gegen 2:25 Uhr zusammen mit seinem 24-jährigem Freund über den Viktoria-Luise-Platz, als ihnen zwei Unbekannte entgegenkamen. Einer der Unbekannten hielt e...]]></description>
+    </item>
     <item>
       <title>Mann bei Raub mit Messer verletzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718523.php</link>
@@ -448,15 +457,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **berlinweit** – Die Polizei Berlin führt von Montag bis Mittwoch sowie am Freitag kommender Woche, vom 21. bis zum 23. und am 25. September, eine Aktionswoche zur Verkehrsunfallprävention zum Schutz von Fußgängerinnen und Fußgängern im Seniorenalter durch. Die Veranstaltungen mit dem Titel „Lass uns gehen – aber...]]></description>
-    </item>
-    <item>
-      <title>Verkehrsunfall – Beifahrerin im Krankenhaus</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716194.php</link>
-      <guid isPermaLink="false">https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716194.php</guid>
-      <pubDate>Fri, 18 Sep 2026 13:07:36 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Mitte** – Gestern Abend kam es in Mitte zu einem Verkehrsunfall, nachdem der Fahrzeugführer von der Fahrbahn abkam und sich im Anschluss überschlug. Nach derzeitigen Erkenntnissen befuhr der 29-jährige Fahrzeugführer gegen 21 Uhr den Grunertunnel in Richtung Spandauer Straße. Nachdem er den Tunnel verlasse...]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,63 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 27 Sep 2026 07:48:22 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 10:37:20 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Missing Link: Vom Herzbefund zur Behandlung – was Algorithmen nicht leisten</title>
+      <link>https://www.heise.de/hintergrund/Missing-Link-Vom-Herzbefund-zur-Behandlung-was-Algorithmen-nicht-leisten-11467142.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11467142</guid>
+      <pubDate>Sun, 27 Sep 2026 10:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Algorithmen erkennen Herzprobleme, über Wearables und Co. auch aus der Ferne. Doch wer prüft die Hinweise und sorgt dafür, dass Patienten behandelt werden?]]></description>
+    </item>
+    <item>
+      <title>Patent-Urteil: Apple soll 5,7 Milliarden Dollar zahlen</title>
+      <link>https://www.heise.de/news/Patent-Urteil-Apple-soll-5-7-Milliarden-Dollar-zahlen-11467192.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11467192</guid>
+      <pubDate>Sun, 27 Sep 2026 09:56:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples Vibration von iPhone und Apple Watch verletzt Patente, befanden US-Geschworene. Geklagt hatte ein anderes US-Unternehmen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | Audio-Restaurator: So retten Sie Musik von stark beschädigten Audio-CDs</title>
+      <link>https://www.heise.de/ratgeber/Audio-Restaurator-So-retten-Sie-Musik-von-stark-beschaedigten-Audio-CDs-11436535.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11436535</guid>
+      <pubDate>Sun, 27 Sep 2026 09:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wenn Audio-CDs extrem zerkratzt sind und selbst eine äußerst akkurat vorgehende Ripping-Software wie Exact Audio Copy scheitert, gibt es noch Rettungsanker.]]></description>
+    </item>
+    <item>
+      <title>Meta Blocks President Lula's Facebook Page, Campaign Ads 2 Weeks from Election</title>
+      <link>https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/</link>
+      <guid isPermaLink="false">https://www.reddit.com/r/worldnews/comments/1wr3id3/meta_blocks_president_lulas_facebook_page_and/</guid>
+      <pubDate>Sun, 27 Sep 2026 08:44:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Video: MeshCore — So kommuniziert ihr auch beim Blackout</title>
+      <link>https://www.heise.de/news/Video-MeshCore-So-kommuniziert-ihr-auch-beim-Blackout-11464276.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11464276</guid>
+      <pubDate>Sun, 27 Sep 2026 08:03:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wenn der Strom ausfällt, fällt meist auch das Handynetz aus. MeshCore hält euch trotzdem in Kontakt. Wie das geht, erklären wir im Video.]]></description>
+    </item>
+    <item>
+      <title>OpenAI Feared "Optics" of what might appear on Hacker News</title>
+      <link>https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/</link>
+      <guid isPermaLink="false">https://authorsguild.org/news/ag-v-openai-top-execs-knew-mass-book-piracy-was-illegal/</guid>
+      <pubDate>Sun, 27 Sep 2026 06:19:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>heise+ | PS5 leiser machen: Weniger Lärm bei UHD-Blu-rays, Blu-rays und Spielen</title>
       <link>https://www.heise.de/ratgeber/PS5-leiser-machen-Weniger-Laerm-bei-UHD-Blu-rays-Blu-rays-und-Spielen-11403528.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
@@ -16,6 +70,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein ratterndes Disc-Laufwerk in der Playstation 5 kann einem den Film- oder Spielabend vermiesen. Wir zeigen, wie Sie die Konsole leiser machen.]]></description>
+    </item>
+    <item>
+      <title>The internet discovers TLA+. Now what?</title>
+      <link>https://reasonable.io/blog/tla-tutorial/</link>
+      <guid isPermaLink="false">https://reasonable.io/blog/tla-tutorial/</guid>
+      <pubDate>Sun, 27 Sep 2026 05:26:15 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>What is the size of Yemen? (2024)</title>
@@ -36,15 +99,6 @@
       <description><![CDATA[The limited test covers select products and users, with a broader rollout planned for later in October.]]></description>
     </item>
     <item>
-      <title>Real-time feedback: My closing move in every interview</title>
-      <link>https://mgrebler.substack.com/p/real-time-feedback-my-closing-move</link>
-      <guid isPermaLink="false">https://mgrebler.substack.com/p/real-time-feedback-my-closing-move</guid>
-      <pubDate>Sun, 27 Sep 2026 01:01:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Insurers claim AI is already increasing healthcare costs</title>
       <link>https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3170285</guid>
@@ -52,15 +106,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.]]></description>
-    </item>
-    <item>
-      <title>Welcome to the Medical Clinic at the Interplanetary Relay Station</title>
-      <link>https://www.lightspeedmagazine.com/fiction/welcome-to-the-medical-clinic-at-the-interplanetary-relay-station/</link>
-      <guid isPermaLink="false">https://www.lightspeedmagazine.com/fiction/welcome-to-the-medical-clinic-at-the-interplanetary-relay-station/</guid>
-      <pubDate>Sat, 26 Sep 2026 20:08:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>DeepSeek Elastic Compute (DSec)</title>
@@ -103,15 +148,6 @@
       <link>https://github.com/reladraw/reladraw</link>
       <guid isPermaLink="false">https://github.com/reladraw/reladraw</guid>
       <pubDate>Sat, 26 Sep 2026 17:10:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Evolution of Vending Machines</title>
-      <link>https://www.saturdayeveningpost.com/2026/09/from-holy-water-to-frozen-meals-the-evolution-of-vending-machines/</link>
-      <guid isPermaLink="false">https://www.saturdayeveningpost.com/2026/09/from-holy-water-to-frozen-meals-the-evolution-of-vending-machines/</guid>
-      <pubDate>Sat, 26 Sep 2026 17:01:45 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -360,15 +396,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Bob Mackie dressed stars–if they were brave enough</title>
-      <link>https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</link>
-      <guid isPermaLink="false">https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</guid>
-      <pubDate>Fri, 25 Sep 2026 23:41:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers</title>
       <link>https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3170030</guid>
@@ -403,6 +430,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Am 26. September 1986 legte Konami mit „Castlevania“ den Grundstein für eine vier Jahrzehnte überdauernde Spielereihe. Ihr Schöpfer blieb Fans lange verborgen.]]></description>
+    </item>
+    <item>
+      <title>Finally, A True Blue Rose Exists</title>
+      <link>https://www.sciencenews.org/article/true-blue-rose-pigment-copigment</link>
+      <guid isPermaLink="false">https://www.sciencenews.org/article/true-blue-rose-pigment-copigment</guid>
+      <pubDate>Fri, 25 Sep 2026 20:44:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Meta opens early access program for new Muse features</title>
@@ -477,10 +513,10 @@
       <description><![CDATA[Frontier AI models are finishing Alan Turing's World War II codebreaking work.]]></description>
     </item>
     <item>
-      <title>Snap Wants to be a State Actor??–Kansas v. Snap</title>
-      <link>https://blog.ericgoldman.org/archives/2026/09/snap-wants-to-be-a-state-actor-kansas-v-snap.htm</link>
-      <guid isPermaLink="false">https://blog.ericgoldman.org/archives/2026/09/snap-wants-to-be-a-state-actor-kansas-v-snap.htm</guid>
-      <pubDate>Fri, 25 Sep 2026 17:12:04 GMT</pubDate>
+      <title>LP Voting and Investor Consent for AIFs</title>
+      <link>https://taghash.io/blog/lp-voting-and-investor-consent-for-aifs-a-practical-workflow</link>
+      <guid isPermaLink="false">https://taghash.io/blog/lp-voting-and-investor-consent-for-aifs-a-practical-workflow</guid>
+      <pubDate>Fri, 25 Sep 2026 17:23:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -610,6 +646,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Um die stark gestiegenen Preise an den Zapfsäulen zu drücken, soll ab dem 1. Oktober nochmals eine milliardenteure Steuersenkung greifen.]]></description>
+    </item>
+    <item>
+      <title>C's Flexible Integer Sizes Were Not a Design Mistake</title>
+      <link>https://pikuma.com/blog/c-integer-sizes-not-a-mistake</link>
+      <guid isPermaLink="false">https://pikuma.com/blog/c-integer-sizes-not-a-mistake</guid>
+      <pubDate>Fri, 25 Sep 2026 14:23:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Affected by layoffs? Don’t miss this $75 deal for your TechCrunch Disrupt 2026 Expo+ Pass</title>
@@ -1125,15 +1170,6 @@
       <description><![CDATA[Die Google-Health-App, ehemals Fitbit, erhält neue KI-Funktionen. Unter anderem ziehen die mit der Pixel Watch 5 angekündigten Health-Guardian-Funktionen ein.]]></description>
     </item>
     <item>
-      <title>LA Metro has some of the slowest escalators</title>
-      <link>https://basin.la/articles/ninety-feet-a-minute.html</link>
-      <guid isPermaLink="false">https://basin.la/articles/ninety-feet-a-minute.html</guid>
-      <pubDate>Thu, 24 Sep 2026 16:52:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>DLR-Forschungswindpark Wivaldi bekommt ein drittes Windrad</title>
       <link>https://www.heise.de/news/DLR-Forschungswindpark-Wivaldi-bekommt-ein-drittes-Windrad-11465029.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11465029</guid>
@@ -1602,15 +1638,6 @@
       <description><![CDATA[Eine maßgeschneiderte KI-Lösung soll Abgeordneten und Verwaltung die Arbeit erleichtern und gleichzeitig strikte Datenschutzstandards im Parlament garantieren.]]></description>
     </item>
     <item>
-      <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
-      <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463646</guid>
-      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
-    </item>
-    <item>
       <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
       <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463388</guid>
@@ -1618,6 +1645,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
+    </item>
+    <item>
+      <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
+      <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463646</guid>
+      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
     </item>
     <item>
       <title>Mercedes-Benz will Serienfahrzeuge mit dem Wayve AI Driver ausstatten</title>
@@ -1690,42 +1726,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein Start-up will die Datenschutzbedenken bei Smart Glasses zerstreuen und eliminiert Kamera, Display und das Speichern von Audioaufzeichnungen.]]></description>
-    </item>
-    <item>
-      <title>KI-Update: Klage gegen OpenAI, Kill Switch, Neue Modelle, AI Summit, Mobilfunk</title>
-      <link>https://www.heise.de/news/KI-Update-Klage-gegen-OpenAI-Kill-Switch-Neue-Modelle-AI-Summit-Mobilfunk-11460979.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11460979</guid>
-      <pubDate>Wed, 23 Sep 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das "KI-Update" liefert werktäglich eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
-    </item>
-    <item>
-      <title>Anthropic: KI-Firma eröffnet Biologie-Labor bei San Francisco</title>
-      <link>https://www.heise.de/news/Anthropic-eroeffnet-Biologie-Labor-unter-anderem-fuer-Medikamentenforschung-11463036.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463036</guid>
-      <pubDate>Wed, 23 Sep 2026 12:46:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anthropic hat ein Biologie-Labor bei San Francisco eröffnet. Dort soll wohl an Medikamenten geforscht werden, auch für seltene Krankheiten.]]></description>
-    </item>
-    <item>
-      <title>iPhone 18 Pro (Max) im Teardown: Neue Blende, neues Face ID, alter USB-C-Nerv</title>
-      <link>https://www.heise.de/news/iPhone-18-Pro-Max-im-Teardown-Neue-Blende-neues-Face-ID-alter-USB-C-Nerv-11460871.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11460871</guid>
-      <pubDate>Wed, 23 Sep 2026 12:35:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Äußerlich unterscheiden sich Apples Pro-Modelle kaum von den Vorgängern. Doch im Inneren tut sich recht viel, wie die iFixit-Öffnung zeigt.]]></description>
-    </item>
-    <item>
-      <title>Enorme Nachfrage nach openDesk – Partnerprogramm startet jetzt</title>
-      <link>https://www.heise.de/news/Enorme-Nachfrage-nach-openDesk-Partnerprogramm-startet-jetzt-11463168.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463168</guid>
-      <pubDate>Wed, 23 Sep 2026 12:29:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das ZenDiS hat ein Partnerprogramm für openDesk gestartet. Privatwirtschaftliche Cloud-Anbieter können so eigene Angebote aufbauen.]]></description>
     </item>
   </channel>
 </rss>
