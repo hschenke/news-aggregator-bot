@@ -14,7 +14,7 @@ categories:
 - name: Fußball
   feeds:
   - name: Kicker
-    url: https://newsfeed.kicker.de/news/aktuell
+    url: https://newsfeed.kicker.de/news/fussball
   - name: Transfermarkt
     url: https://www.transfermarkt.de/rss
 - name: Games
