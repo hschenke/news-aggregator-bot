@@ -5,34 +5,16 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 27 Sep 2026 07:47:58 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 07:48:22 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Kiel reagiert mit Frust auf Videobeweis</title>
-      <link>https://www.kicker.de/kiel-reagiert-mit-frust-auf-videobeweis-1256294/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/kiel-reagiert-mit-frust-auf-videobeweis-1256294/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 07:27:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Der THW Kiel hadert im dramatischen Derby gegen Flensburg mit dem Videobeweis, der den Hausherren den Sieg kostet. Selbst der Gegner zeigt Verständnis.]]></description>
-    </item>
-    <item>
-      <title>Ex-Star Osman schockt Panathinaikos: Erste Pleite unter Obradovic</title>
-      <link>https://www.kicker.de/ex-star-osman-schockt-panathinaikos-erste-pleite-unter-obradovic-1256300/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/ex-star-osman-schockt-panathinaikos-erste-pleite-unter-obradovic-1256300/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 07:26:17 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Panathinaikos Athen hat im griechischen Supercup die erste Saisonniederlage einstecken müssen. Gegen PAOK Thessaloniki wurde ausgerechnet Ex-Pana-Spieler Cedi Osman mit einem Buzzerbeater zum Matchwinner.]]></description>
-    </item>
     <item>
       <title>LIVE!-Blog zum Griechenland-Spiel: Mehrere Startelf-Wechsel zu erwarten</title>
       <link>https://www.kicker.de/live-blog-zum-griechenland-spiel-mehrere-startelf-wechsel-zu-erwarten-1255562/artikel#omrss</link>
       <guid isPermaLink="false">https://www.kicker.de/live-blog-zum-griechenland-spiel-mehrere-startelf-wechsel-zu-erwarten-1255562/artikel#omrss</guid>
       <pubDate>Sun, 27 Sep 2026 07:21:21 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[An diesem Donnerstag spielt die deutsche Nationalelf erstmals unter dem Bundestrainer Jürgen Klopp. In unserem LIVE!-Blog gibt es letzte Infos und Eindrücke aus Amsterdam.]]></description>
     </item>
     <item>
@@ -41,26 +23,8 @@
       <guid isPermaLink="false">https://www.kicker.de/usa-gegen-peru-2026-nationalteams-freundschaftsspiele-5254883/spielbericht#omrss</guid>
       <pubDate>Sun, 27 Sep 2026 07:09:45 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[In der MLS knackte er schon zahlreiche Rekorde, jetzt wurde Cavan Sullivan noch vor seinem 17. Geburtstag US-Nationalspieler. Sein Wechsel nach Europa steht bereits fest.]]></description>
-    </item>
-    <item>
-      <title>"Schrei der Befreiung" - "Meisterleistung an Kaltblütigkeit": Pressestimmen zum Russell-Sieg</title>
-      <link>https://www.kicker.de/schrei-der-befreiung-meisterleistung-an-kaltbluetigkeit-pressestimmen-zum-russell-sieg-1256288/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/schrei-der-befreiung-meisterleistung-an-kaltbluetigkeit-pressestimmen-zum-russell-sieg-1256288/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 07:06:43 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Das WM-Duell in der Formel 1 wird wieder etwas spannender. George Russell feiert in Baku seinen dritten Saisonsieg. WM-Spitzenreiter Kimi Antonelli betreibt Schadensbegrenzung.]]></description>
-    </item>
-    <item>
-      <title>College Football Week 4: Upsets, Rekorde und ein Last-Second-Drama</title>
-      <link>https://www.kicker.de/college-football-week-4-upsets-rekorde-und-ein-last-second-drama-1256285/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/college-football-week-4-upsets-rekorde-und-ein-last-second-drama-1256285/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 06:46:16 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Week 4 im College Football hatte alles zu bieten. Mehrere gerankte Teams stolperten, Iowa schockte Michigan mit dem letzten Spielzug und Florida setzte mit einem deutlichen Erfolg gegen Ole Miss eines der größten Ausrufezeichen des Wochenendes.]]></description>
     </item>
     <item>
       <title>Ukraine-Krieg: Treffen in New York: Wadephul fordert Deeskalation – Lawrow kritisiert Forderungen</title>
@@ -77,7 +41,7 @@
       <guid isPermaLink="false">https://www.kicker.de/mueller-brilliert-bei-vancouvers-3-3-spektakel-1256284/video#omrss</guid>
       <pubDate>Sun, 27 Sep 2026 06:29:17 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Trotz Vorlage und Tor von Thomas Müller mussten sich die Vancouver Whitecaps gegen DC United mit einem Unentschieden begnügen. Die Highlights des Spiels gibt es hier im Video.]]></description>
     </item>
     <item>
@@ -90,15 +54,6 @@
       <description><![CDATA[Um die Managementtechniken des Konzerns ranken sich viele Legenden. Ehemalige Führungskräfte verraten exklusiv, wie sie funktionieren und wie sie sich auf andere Firmen übertragen lassen.]]></description>
     </item>
     <item>
-      <title>Zverev holt an der Seite von Ruud die nächsten Zähler für Team Europa</title>
-      <link>https://www.kicker.de/zverev-holt-an-der-seite-von-ruud-die-naechsten-zaehler-fuer-team-europa-1256281/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/zverev-holt-an-der-seite-von-ruud-die-naechsten-zaehler-fuer-team-europa-1256281/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 06:19:42 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[US-Open-Champion Alexander Zverev hat in der Nachtschicht im Doppel mit dem Norweger Casper Ruud doch noch wichtige Punkte für das Team Europa beim Laver Cup eingefahren.]]></description>
-    </item>
-    <item>
       <title>Interview: Miele-Chef: „Vermögende haben eine besondere Verantwortung“</title>
       <link>https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/miele-chef-vermoegende-haben-eine-besondere-verantwortung/100255119.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/miele-chef-vermoegende-haben-eine-besondere-verantwortung/100255119.html</guid>
@@ -106,15 +61,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Reinhard Zinkann, Chef des Mittelständlers Miele, erklärt, warum der Westfälische Friedenspreis an die Nato geht, was er gegen den Rechtsruck tun will und in welchem Fall er Steuererhöhungen gutheißen würde.]]></description>
-    </item>
-    <item>
-      <title>Olympia-Kandidat München - Chancen, Kosten und sehr viel Arbeit</title>
-      <link>https://www.kicker.de/olympia-kandidat-muenchen-chancen-kosten-und-sehr-viel-arbeit-1256271/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/olympia-kandidat-muenchen-chancen-kosten-und-sehr-viel-arbeit-1256271/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 06:00:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Die neue Folge kicker Daily!]]></description>
     </item>
     <item>
       <title>KI: OpenAI pausiert KI-Training nach neuem Zwischenfall – Altman und Amodei sollen vor Untersuchungsausschuss</title>
@@ -140,17 +86,8 @@
       <guid isPermaLink="false">https://www.kicker.de/schlotterbeck-gegen-griechenland-nicht-im-kader-1256274/artikel#omrss</guid>
       <pubDate>Sun, 27 Sep 2026 05:10:46 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Die deutsche Nationalelf peilt gegen Griechenland den ersten Sieg unter Jürgen Klopp an. Nico Schlotterbeck steht in Augsburg nicht im Kader - einem Teamkollegen winkt nun der zweite Länderspieleinsatz.]]></description>
-    </item>
-    <item>
-      <title>Konkurrenz für Schröder und Anderson: Hornets traden Hield für Ex-Top-10-Pick</title>
-      <link>https://www.kicker.de/konkurrenz-fuer-schroeder-und-anderson-hornets-traden-hield-fuer-ex-top-10-pick-1256273/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/konkurrenz-fuer-schroeder-und-anderson-hornets-traden-hield-fuer-ex-top-10-pick-1256273/artikel#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 04:32:31 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Die Charlotte Hornets haben Buddy Hield wenige Tage nach dem Trade mit den Atlanta Hawks weitergereicht. Dafür erhalten die Hornets mit Rob Dillingham einen weiteren Guard.]]></description>
     </item>
     <item>
       <title>Wer überträgt Deutschland gegen Griechenland heute live im TV &amp; Stream?</title>
@@ -158,7 +95,7 @@
       <guid isPermaLink="false">https://www.kicker.de/wer-uebertraegt-deutschland-gegen-griechenland-heute-live-im-tv-stream-1255861/artikel#omrss</guid>
       <pubDate>Sun, 27 Sep 2026 04:00:00 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Das DFB-Team empfängt in der Nations League Griechenland - für Bundestrainer Jürgen Klopp ist es das erste Heimspiel im neuen Amt. Wo ihr die Partie live verfolgen könnt, erfahrt ihr hier.]]></description>
     </item>
     <item>
@@ -234,21 +171,12 @@
       <description><![CDATA[Der Whitehat-Forscher 0xQuit hat eine Webseite eingerichtet, auf der Magic Eden-Nutzer ihre NFTs aus der Limit Break's Payment Processor V2- ...]]></description>
     </item>
     <item>
-      <title>Polens Volleyballer verteidigen EM-Titel</title>
-      <link>https://www.kicker.de/polens-volleyballer-verteidigen-em-titel-1256261/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/polens-volleyballer-verteidigen-em-titel-1256261/artikel#omrss</guid>
-      <pubDate>Sat, 26 Sep 2026 21:30:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Beide Teams besiegten Deutschlands Volleyballer bei der EM. Im Finale der Turnierfavoriten behält Polen gegen Frankreich die Oberhand.]]></description>
-    </item>
-    <item>
       <title>Unbeirrt in der U 21: Brunner macht "sein Ding" - und "will weit kommen"</title>
       <link>https://www.kicker.de/unbeirrt-in-der-u-21-brunner-macht-sein-ding-und-will-weit-kommen-1256256/artikel#omrss</link>
       <guid isPermaLink="false">https://www.kicker.de/unbeirrt-in-der-u-21-brunner-macht-sein-ding-und-will-weit-kommen-1256256/artikel#omrss</guid>
       <pubDate>Sat, 26 Sep 2026 21:05:59 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Erstes U-21-Länderspiel, erster Doppelpack: Paris Brunner macht beim deutschen 4:0-Sieg in Lettland sportlich einfach da weiter, wo er in dieser Saison in Monaco losgelegt hat. Trotz aller Nebengeräusche.]]></description>
     </item>
     <item>
@@ -261,21 +189,12 @@
       <description><![CDATA[Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.]]></description>
     </item>
     <item>
-      <title>Durch Videobeweis: Kiel wird in denkwürdigem Nord-Thriller der Sieg entrissen</title>
-      <link>https://www.kicker.de/durch-videobeweis-kiel-wird-in-denkwuerdigem-nord-thriller-der-sieg-entrissen-1256237/video#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/durch-videobeweis-kiel-wird-in-denkwuerdigem-nord-thriller-der-sieg-entrissen-1256237/video#omrss</guid>
-      <pubDate>Sat, 26 Sep 2026 20:56:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Der THW Kiel und die SG Flensburg-Handewitt lieferten sich ein weiteres denkwürdiges Nord-Derby, das sich zu einem Nord-Thriller entwickelte: Die Kieler drehten im ersten Abschnitt einen Drei-Tore-Rückstand, verspielten dann im zweiten eine Fünf-Tore-Führung und bekamen den vermeintlichen Siegtreffer nach Videobewei...]]></description>
-    </item>
-    <item>
       <title>Nach Kanes Elfer-Fehlschuss: Oyarzabal lupft Spanien zum Sieg in England</title>
       <link>https://www.kicker.de/england-gegen-spanien-2026-uefa-nations-league-5193285/spielbericht#omrss</link>
       <guid isPermaLink="false">https://www.kicker.de/england-gegen-spanien-2026-uefa-nations-league-5193285/spielbericht#omrss</guid>
       <pubDate>Sat, 26 Sep 2026 20:51:58 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[In einer unterhaltsamen Partie im Wembley hat Spanien einen Traumstart erwischt, zwischenzeitlich in Rückstand gelegen und am Ende doch gewonnen. Harry Kane verschoss einen Elfmeter für England.]]></description>
     </item>
     <item>
@@ -284,7 +203,7 @@
       <guid isPermaLink="false">https://www.kicker.de/fuer-etwas-groesseres-einstehen-irland-torhueter-bazunu-will-nicht-gegen-israel-auflaufen-1256240/artikel#omrss</guid>
       <pubDate>Sat, 26 Sep 2026 20:50:29 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Gavin Bazunu will bei Irlands Nations-League-Auftakt gegen Israel nicht dabei sein. Über die sozialen Medien erklärte der Torhüter seine Entscheidung. Zuvor hatte erst ein Votum innerhalb Irlands Nationalmannschaft über einen Antritt entschieden.]]></description>
     </item>
     <item>
@@ -306,15 +225,6 @@
       <description><![CDATA[Der Flugzeugbauer hat ein weiteres Problem bei seiner Pannen-Maschine 737 Max eingeräumt. Zwei Airlines haben gebeten, vorerst keine neuen Maschinen mit der betroffenen Software auszuliefern.]]></description>
     </item>
     <item>
-      <title>Pleiß-Show reicht Vechta in Frankfurt nicht - Ludwigsburg gewinnt Offensivspektakel</title>
-      <link>https://www.kicker.de/pleiss-show-reicht-vechta-in-frankfurt-nicht-ludwigsburg-gewinnt-offensivspektakel-1256222/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/pleiss-show-reicht-vechta-in-frankfurt-nicht-ludwigsburg-gewinnt-offensivspektakel-1256222/artikel#omrss</guid>
-      <pubDate>Sat, 26 Sep 2026 20:15:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[Frankfurt hat gegen Vechta den ersten Saisonsieg gefeiert und RASTA trotz einer starken Leistung von Tibor Pleiß die nächste Niederlage zugefügt. Ludwigsburg setzte sich derweil in einem offensiv geprägten Duell bei Bamberg durch.]]></description>
-    </item>
-    <item>
       <title>Welcome to the Medical Clinic at the Interplanetary Relay Station</title>
       <link>https://www.lightspeedmagazine.com/fiction/welcome-to-the-medical-clinic-at-the-interplanetary-relay-station/</link>
       <guid isPermaLink="false">https://www.lightspeedmagazine.com/fiction/welcome-to-the-medical-clinic-at-the-interplanetary-relay-station/</guid>
@@ -333,22 +243,40 @@
       <description><![CDATA[Einfamilienhaus (Haus/Miete): 5 Zimmer - 177 qm - Mahlsdorf (Hellersdorf) bei ImmobilienScout24 (Scout-ID: 171126652)]]></description>
     </item>
     <item>
-      <title>Trotz schwacher Manning-Leistung: Longhorns schlagen Volunteers knapp</title>
-      <link>https://www.kicker.de/trotz-schwacher-manning-leistung-longhorns-schlagen-volunteers-knapp-1256212/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/trotz-schwacher-manning-leistung-longhorns-schlagen-volunteers-knapp-1256212/artikel#omrss</guid>
-      <pubDate>Sat, 26 Sep 2026 19:51:00 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
-      <description><![CDATA[In Tennessee trafen nach 57 Jahren erneut die Tennessee Volunteers auf die Texas Longhorns. In einem von der Defense geprägten Spiel setzten sich die Texas Longhorns am Ende knapp durch und halten ihren Favoriten-Status weiter aufrecht.]]></description>
-    </item>
-    <item>
       <title>Kreilach in Rijeka von HNK und Union emotional verabschiedet</title>
       <link>https://www.kicker.de/hnk-rijeka-gegen-union-2026-vereine-freundschaftsspiele-5261883/spielbericht#omrss</link>
       <guid isPermaLink="false">https://www.kicker.de/hnk-rijeka-gegen-union-2026-vereine-freundschaftsspiele-5261883/spielbericht#omrss</guid>
       <pubDate>Sat, 26 Sep 2026 19:46:11 GMT</pubDate>
       <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/aktuell">Kicker</source>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Damir Kreilach, ehemaliger Kapitän von Union Berlin und HNK Rijeka ist am Samstag in Kroatien emotional in den Fußballruhestand verabschiedet worden.]]></description>
+    </item>
+    <item>
+      <title>Von Klopp angezündeter Tah: "Okay, wir gehen jetzt gemeinsam durchs Feuer"</title>
+      <link>https://www.kicker.de/von-klopp-angezuendeter-tah-okay-wir-gehen-jetzt-gemeinsam-durchs-feuer-1256140/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/von-klopp-angezuendeter-tah-okay-wir-gehen-jetzt-gemeinsam-durchs-feuer-1256140/artikel#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 19:44:35 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Die DFB-Pressekonferenz mit Jonathan Tah beginnt und endet kurios: Auf dem Platz klappen die Absprachen mit Bundestrainer Jürgen Klopp jedenfalls besser als beim Einschmuggler-Spiel.]]></description>
+    </item>
+    <item>
+      <title>Tzolis: "Schön, wenn Herr Klopp uns lobend erwähnt"</title>
+      <link>https://www.kicker.de/tzolis-schoen-wenn-herr-klopp-uns-lobend-erwaehnt-1256211/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/tzolis-schoen-wenn-herr-klopp-uns-lobend-erwaehnt-1256211/artikel#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 19:10:48 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[In der Pressekonferenz der griechischen Nationalelf vor dem Spiel am Sonntag gegen Deutschland traten Trainer Ivan Jovanovic und Arsenal-Flügelstürmer Christos Tzolis vor die Kameras und stellten sich den Fragen. Der Coach sieht den Außenseiter noch in der Findungsphase.]]></description>
+    </item>
+    <item>
+      <title>Brunner feiert "Traumstart" und Tresoldi jagt Littbarski-Rekord</title>
+      <link>https://www.kicker.de/brunner-feiert-traumstart-und-tresoldi-jagt-littbarski-rekord-1256230/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/brunner-feiert-traumstart-und-tresoldi-jagt-littbarski-rekord-1256230/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 19:09:04 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Über kaum jemanden aus dem U-21-Kader wurde in den letzten Tagen so viel gesprochen wie über Paris Brunner. Auch auf dem Platz war er nun im Mittelpunkt, durch seine zwei Tore brachte er Deutschland auf die Siegerstraße.]]></description>
     </item>
     <item>
       <title>Heilerziehungspflegehelferin – Mahlsdorf – WfbM (m/w/d) | Jobsuche der BA</title>
@@ -358,6 +286,24 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Stellenangebot für » Heilerziehungspflegehelferin – Mahlsdorf – WfbM (m/w/d) bei biac Personalservice GmbH NL Medizin/ Soziales » in Berlin ...]]></description>
+    </item>
+    <item>
+      <title>Brunner über Torjubel: "Nie meine Absicht, schlechte Dinge zu tun"</title>
+      <link>https://www.kicker.de/brunner-ueber-torjubel-nie-meine-absicht-schlechte-dinge-zu-tun-1256227/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/brunner-ueber-torjubel-nie-meine-absicht-schlechte-dinge-zu-tun-1256227/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 18:43:19 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Nachdem er in Monaco bereits kaum zu stoppen war, setzte Paris Brunner seinen Lauf auch in der deutschen U 21 fort. Anschließend sprach er im exklusiven kicker-Interview über seine Torquote und den Wirbel um seinen Torjubel.]]></description>
+    </item>
+    <item>
+      <title>Bochum trifft beinahe per direkter Ecke: Werder feiert 1:0-Sieg</title>
+      <link>https://www.kicker.de/bochum-trifft-beinahe-per-direkter-ecke-werder-feiert-1-0-sieg-1256220/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/bochum-trifft-beinahe-per-direkter-ecke-werder-feiert-1-0-sieg-1256220/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 18:25:22 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Bochum lieferte Bremen einen großen Kampf, musste sich am Ende aber doch geschlagen geben. Der Bundesligist aus dem Norden durfte feiern. Die Highlights gibt es hier im Video.]]></description>
     </item>
     <item>
       <title>DeepSeek Elastic Compute (DSec)</title>
@@ -387,6 +333,15 @@
       <description><![CDATA[Ferngesteuerte Boote machen einfach Spaß. Wir zeigen die besten RC-Boote für Einsteiger – vom schnellen Speedboot bis zur gemütlichen Yacht.]]></description>
     </item>
     <item>
+      <title>Verfrühte Olympia-Freude bei Tah: "Hat er das nicht eben gesagt?"</title>
+      <link>https://www.kicker.de/verfruehte-olympia-freude-bei-tah-hat-er-das-nicht-eben-gesagt-1256215/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/verfruehte-olympia-freude-bei-tah-hat-er-das-nicht-eben-gesagt-1256215/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 17:56:06 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[In die PK von Jonathan Tah platzte die Nachricht, dass München als deutscher Olympiabewerber ausgewählt wurde. Der Verteidiger interpretierte dies schon als Zuschlag zugunsten der bayerischen Landeshauptstadt für die Spiele.]]></description>
+    </item>
+    <item>
       <title>Kommentar: Trump gefährdet mit seiner Außenpolitik die demokratische Welt</title>
       <link>https://www.handelsblatt.com/meinung/kommentare/kommentar-trump-gefaehrdet-mit-seiner-aussenpolitik-die-demokratische-welt/100256385.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/meinung/kommentare/kommentar-trump-gefaehrdet-mit-seiner-aussenpolitik-die-demokratische-welt/100256385.html</guid>
@@ -403,6 +358,15 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[That's right, everyone! We've managed to prepare one of the most iconic campaigns in the world of Heroes of Might and Magic III, and this time, you'll ...]]></description>
+    </item>
+    <item>
+      <title>Irland-Coach vor dem Israel-Spiel: "Niemand fühlt sich wohl damit"</title>
+      <link>https://www.kicker.de/irland-coach-vor-dem-israel-spiel-niemand-fuehlt-sich-wohl-damit-1256208/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/irland-coach-vor-dem-israel-spiel-niemand-fuehlt-sich-wohl-damit-1256208/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 17:34:54 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Irlands Nationaltrainer Heimir Hallgrimsson bezog auf der Pre-Match-Pressekonferenz erneut klar Stellung über seine Sicht auf das Spiel gegen Israel. Sein Team tritt trotz großer Bedenken an.]]></description>
     </item>
     <item>
       <title>Anschlusspapier: KI, Handel und Militär – China und USA wollen Dialog stärken</title>
@@ -441,6 +405,15 @@
       <description><![CDATA[Redglyph spotted a video about the history of RPGs: Pixel Playback: The 50-Year Evolution of RPGs]]></description>
     </item>
     <item>
+      <title>City-Fans besorgt: "Werden uns auseinandernehmen"</title>
+      <link>https://www.kicker.de/city-fans-besorgt-werden-uns-auseinandernehmen-1256202/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/city-fans-besorgt-werden-uns-auseinandernehmen-1256202/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 17:12:24 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Unter den Fans von Manchester City herrscht Fassungslosigkeit. Viele fühlen sich nach dem kolportierten Schuldspruch von der Klubführung belogen und fürchten ein drastisches Exempel der Premier League.]]></description>
+    </item>
+    <item>
       <title>Show HN: Reladraw – A diagram language where you decide where to place things</title>
       <link>https://github.com/reladraw/reladraw</link>
       <guid isPermaLink="false">https://github.com/reladraw/reladraw</guid>
@@ -459,6 +432,15 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
+      <title>Erste Diagnose gestellt: Mbappé fehlt Real wohl nicht</title>
+      <link>https://www.kicker.de/erste-diagnose-gestellt-mbappe-fehlt-real-wohl-nicht-1256045/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/erste-diagnose-gestellt-mbappe-fehlt-real-wohl-nicht-1256045/artikel#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 17:01:03 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Kylian Mbappé brachte Frankreich in der Türkei noch in Führung, bevor er dann verletzt ausgewechselt werden musste. Am frühen Samstagabend wurde eine erste Diagnose seiner Knieverletzung gestellt.]]></description>
+    </item>
+    <item>
       <title>Kunden und Mitarbeiter von Lieferdienst Flink werden erpresst</title>
       <link>https://www.heise.de/news/Kunden-und-Mitarbeiter-von-Lieferdienst-Flink-werden-erpresst-11467086.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467086</guid>
@@ -475,6 +457,24 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Eintracht Mahlsdorf III. Eintracht Mahlsdorf III. Squad size: 8; Average age: 30.2; Foreigners: 4 50.0 %. National team players: 0 ...]]></description>
+    </item>
+    <item>
+      <title>Doch keine Überraschung: Potsdam verspielt 2:0 nach Roter Karte</title>
+      <link>https://www.kicker.de/doch-keine-ueberraschung-potsdam-verspielt-2-0-nach-roter-karte-1256199/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/doch-keine-ueberraschung-potsdam-verspielt-2-0-nach-roter-karte-1256199/video#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 16:49:54 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Turbine Potsdam konnte lang von der Pokal-Überraschung träumen, doch spät rettete sich Stuttgart in die Verlängerung. Dort behielt der VfB die Oberhand. Die Highlights der Partie gibt es hier im Video.]]></description>
+    </item>
+    <item>
+      <title>City-Boss über Finanzverstöße: "Zuversicht genauso groß wie zu Beginn"</title>
+      <link>https://www.kicker.de/city-boss-ueber-finanzverstoesse-zuversicht-genauso-gross-wie-zu-beginn-1256170/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/city-boss-ueber-finanzverstoesse-zuversicht-genauso-gross-wie-zu-beginn-1256170/artikel#omrss</guid>
+      <pubDate>Sat, 26 Sep 2026 16:18:30 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Nachdem am Freitag über englische Medien durchgesickert war, dass Manchester City offenbar in 114 von 115 Finanzverstößen schuldig gesprochen wurde, äußerte sich Klubboss Khaldoon Al Mubarak zu Wort.]]></description>
     </item>
     <item>
       <title>E-Scooter-Vermieter haften künftig für Unfälle</title>
@@ -2403,15 +2403,6 @@
       <description><![CDATA[Amtliche Bescheide ganz ohne Beamte, erstellt von einer KI. Das wird in Österreich legalisiert. Zudem ziehen Chatbots in die Amtsstuben ein.]]></description>
     </item>
     <item>
-      <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
-      <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463880</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
-    </item>
-    <item>
       <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
       <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463750</guid>
@@ -2421,15 +2412,6 @@
       <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
     </item>
     <item>
-      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
-      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463780</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
-    </item>
-    <item>
       <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
       <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463824</guid>
@@ -2437,6 +2419,24 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
+    </item>
+    <item>
+      <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
+      <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463880</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
+    </item>
+    <item>
+      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
+      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463780</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
       <title>Frauen heimlich mit Kamerabrille gefilmt: Frankreichs Justiz ermittelt</title>
@@ -2466,15 +2466,6 @@
       <description><![CDATA[Eine maßgeschneiderte KI-Lösung soll Abgeordneten und Verwaltung die Arbeit erleichtern und gleichzeitig strikte Datenschutzstandards im Parlament garantieren.]]></description>
     </item>
     <item>
-      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
-      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463388</guid>
-      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
-    </item>
-    <item>
       <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
       <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463646</guid>
@@ -2482,6 +2473,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
+    </item>
+    <item>
+      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
+      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463388</guid>
+      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
     </item>
     <item>
       <title>Mercedes-Benz will Serienfahrzeuge mit dem Wayve AI Driver ausstatten</title>
@@ -2502,15 +2502,6 @@
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
-      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463430</guid>
-      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
-    </item>
-    <item>
       <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
       <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463574</guid>
@@ -2518,6 +2509,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
+    </item>
+    <item>
+      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
+      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463430</guid>
+      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
