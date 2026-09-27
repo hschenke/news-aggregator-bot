@@ -5,32 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 27 Sep 2026 05:01:19 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 07:44:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>If we do not stop to help each other, what do we become?</title>
-      <link>https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/</link>
-      <guid isPermaLink="false">https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/</guid>
-      <pubDate>Sun, 27 Sep 2026 03:20:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
     <item>
       <title>What is the size of Yemen? (2024)</title>
       <link>https://theborys.substack.com/p/what-is-the-size-of-yemen</link>
       <guid isPermaLink="false">https://theborys.substack.com/p/what-is-the-size-of-yemen</guid>
       <pubDate>Sun, 27 Sep 2026 02:40:26 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>OpenAI agents tried to bruteforce a UN website's API fields</title>
-      <link>https://swarmcha.se/posts/openai-unctad</link>
-      <guid isPermaLink="false">https://swarmcha.se/posts/openai-unctad</guid>
-      <pubDate>Sun, 27 Sep 2026 01:08:07 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -117,6 +99,15 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
+      <title>Improving site performance by shipping more CSS</title>
+      <link>https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/</link>
+      <guid isPermaLink="false">https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/</guid>
+      <pubDate>Sat, 26 Sep 2026 13:10:05 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>How to keep enjoying programming in a world of LLMs</title>
       <link>https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</link>
       <guid isPermaLink="false">https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705</guid>
@@ -130,6 +121,15 @@
       <link>https://lexontech.org/fifteen-years-later-the-apple-cards-origin-story</link>
       <guid isPermaLink="false">https://lexontech.org/fifteen-years-later-the-apple-cards-origin-story</guid>
       <pubDate>Sat, 26 Sep 2026 09:13:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Flip Fluid on Flip Dots</title>
+      <link>https://mitxela.com/projects/flipflip</link>
+      <guid isPermaLink="false">https://mitxela.com/projects/flipflip</guid>
+      <pubDate>Sat, 26 Sep 2026 07:50:24 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -153,19 +153,19 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>How one Twitch chat message became code execution on a streamer’s PC</title>
-      <link>https://blog.scrt.ch/2026/09/22/how-one-twitch-chat-message-became-code-execution-on-a-streamers-pc/</link>
-      <guid isPermaLink="false">https://blog.scrt.ch/2026/09/22/how-one-twitch-chat-message-became-code-execution-on-a-streamers-pc/</guid>
-      <pubDate>Sat, 26 Sep 2026 01:13:38 GMT</pubDate>
+      <title>Generate fonts where every LLM token is the same width</title>
+      <link>https://ampdot.mesh.host/token-space-fonts.html</link>
+      <guid isPermaLink="false">https://ampdot.mesh.host/token-space-fonts.html</guid>
+      <pubDate>Sat, 26 Sep 2026 00:30:03 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Generate fonts where every LLM token is the same width</title>
-      <link>https://ampdot.mesh.host/token-space-fonts.html</link>
-      <guid isPermaLink="false">https://ampdot.mesh.host/token-space-fonts.html</guid>
-      <pubDate>Sat, 26 Sep 2026 00:30:03 GMT</pubDate>
+      <title>Bob Mackie dressed stars–if they were brave enough</title>
+      <link>https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</link>
+      <guid isPermaLink="false">https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</guid>
+      <pubDate>Fri, 25 Sep 2026 23:41:12 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

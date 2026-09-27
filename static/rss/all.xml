@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 27 Sep 2026 05:01:19 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 27 Sep 2026 07:44:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ukraine-Krieg: Treffen in New York: Wadephul fordert Deeskalation – Lawrow kritisiert Forderungen</title>
+      <link>https://www.handelsblatt.com/politik/international/treffen-bei-un-wadephul-fordert-deeskalation-lawrow-kritisiert-forderungen/100257694.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/treffen-bei-un-wadephul-fordert-deeskalation-lawrow-kritisiert-forderungen/100257694.html</guid>
+      <pubDate>Sun, 27 Sep 2026 06:41:10 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Die Außenminister Deutschlands und Russlands haben sich zum ersten Mal seit Beginn des Ukraine-Kriegs bilateral getroffen. Eine Annäherung zeichnet sich nicht ab.]]></description>
+    </item>
+    <item>
+      <title>Management: Das Erfolgsprinzip von Amazon – und was andere Unternehmen davon lernen können</title>
+      <link>https://www.handelsblatt.com/unternehmen/management/fuehrungskraefte-was-ehemalige-top-manager-ueber-den-erfolg-von-amazon-verraten-02/100244278.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/management/fuehrungskraefte-was-ehemalige-top-manager-ueber-den-erfolg-von-amazon-verraten-02/100244278.html</guid>
+      <pubDate>Sun, 27 Sep 2026 06:24:00 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Um die Managementtechniken des Konzerns ranken sich viele Legenden. Ehemalige Führungskräfte verraten exklusiv, wie sie funktionieren und wie sie sich auf andere Firmen übertragen lassen.]]></description>
+    </item>
+    <item>
+      <title>Interview: Miele-Chef: „Vermögende haben eine besondere Verantwortung“</title>
+      <link>https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/miele-chef-vermoegende-haben-eine-besondere-verantwortung/100255119.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/miele-chef-vermoegende-haben-eine-besondere-verantwortung/100255119.html</guid>
+      <pubDate>Sun, 27 Sep 2026 06:12:00 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Reinhard Zinkann, Chef des Mittelständlers Miele, erklärt, warum der Westfälische Friedenspreis an die Nato geht, was er gegen den Rechtsruck tun will und in welchem Fall er Steuererhöhungen gutheißen würde.]]></description>
+    </item>
+    <item>
+      <title>KI: OpenAI pausiert KI-Training nach neuem Zwischenfall – Altman und Amodei sollen vor Untersuchungsausschuss</title>
+      <link>https://www.handelsblatt.com/technik/ki/openai-pausiert-ki-training-nach-neuem-zwischenfall/100257653.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/technik/ki/openai-pausiert-ki-training-nach-neuem-zwischenfall/100257653.html</guid>
+      <pubDate>Sun, 27 Sep 2026 05:44:34 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Berichte über außer Kontrolle geratene KI-Modelle häufen sich. OpenAI will nun an wichtigen Stellen bei der Sicherheit nachbessern. Die Chefs von OpenAI und Amodei sollen sich in Australien erklären.]]></description>
+    </item>
+    <item>
+      <title>heise+ | PS5 leiser machen: Weniger Lärm bei UHD-Blu-rays, Blu-rays und Spielen</title>
+      <link>https://www.heise.de/ratgeber/PS5-leiser-machen-Weniger-Laerm-bei-UHD-Blu-rays-Blu-rays-und-Spielen-11403528.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11403528</guid>
+      <pubDate>Sun, 27 Sep 2026 05:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ein ratterndes Disc-Laufwerk in der Playstation 5 kann einem den Film- oder Spielabend vermiesen. Wir zeigen, wie Sie die Konsole leiser machen.]]></description>
+    </item>
     <item>
       <title>RPG Crawler - CRPG News Roundup</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60246</link>
@@ -18,13 +63,13 @@
       <description><![CDATA[Like every week the RPG Crawler sums up the CRPG news: CRPG News Roundup (9-26-2026)]]></description>
     </item>
     <item>
-      <title>If we do not stop to help each other, what do we become?</title>
-      <link>https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/</link>
-      <guid isPermaLink="false">https://blog.codinghorror.com/if-we-do-not-stop-to-help-each-other-what-do-we-become/</guid>
-      <pubDate>Sun, 27 Sep 2026 03:20:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
+      <title>Aktuelles - Alles-Mahlsdorf.de</title>
+      <link>https://alles-mahlsdorf.de/category/aktuelles-aus-mahlsdorf/page/107/?_=1790478000010</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15902087989716063783</guid>
+      <pubDate>Sun, 27 Sep 2026 03:16:18 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[Wer vertritt Mahlsdorf im Berliner Parlament? Nächste Wahl-Kandidatin steht fest. 10. Januar 2021. Im kommenden Herbst bekommt Mahlsdorf einen oder ...]]></description>
     </item>
     <item>
       <title>What is the size of Yemen? (2024)</title>
@@ -36,6 +81,15 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
+      <title>NOFV-Oberliga Nord - Kreuztabelle 26/27 - Transfermarkt</title>
+      <link>https://www.transfermarkt.de/nofv-oberliga-nord/kreuztabelle/wettbewerb/OBLF</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10493089247607632511</guid>
+      <pubDate>Sun, 27 Sep 2026 02:31:04 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[Kreuztabelle ; SV Siedenbollentin, -, 25 ; SV Lichtenberg 47 · 10, - ; Berliner AK 07, 15 · 29 ; Eintracht Mahlsdorf · 16 · 15 ...]]></description>
+    </item>
+    <item>
       <title>Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India</title>
       <link>https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3170226</guid>
@@ -43,15 +97,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The limited test covers select products and users, with a broader rollout planned for later in October.]]></description>
-    </item>
-    <item>
-      <title>OpenAI agents tried to bruteforce a UN website's API fields</title>
-      <link>https://swarmcha.se/posts/openai-unctad</link>
-      <guid isPermaLink="false">https://swarmcha.se/posts/openai-unctad</guid>
-      <pubDate>Sun, 27 Sep 2026 01:08:07 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Real-time feedback: My closing move in every interview</title>
@@ -63,13 +108,13 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>KI: OpenAI pausiert KI-Training nach neuem Zwischenfall</title>
-      <link>https://www.handelsblatt.com/technik/it-internet/ki-openai-pausiert-ki-training-nach-neuem-zwischenfall/100257653.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/technik/it-internet/ki-openai-pausiert-ki-training-nach-neuem-zwischenfall/100257653.html</guid>
-      <pubDate>Sat, 26 Sep 2026 22:35:38 GMT</pubDate>
+      <title>Apple Watch: Apple soll nach Patent-Urteil 5,7 Milliarden Dollar zahlen</title>
+      <link>https://www.handelsblatt.com/technik/it-internet/apple-watch-patent-urteil-apple-soll-57-milliarden-dollar-zahlen/100257659.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/technik/it-internet/apple-watch-patent-urteil-apple-soll-57-milliarden-dollar-zahlen/100257659.html</guid>
+      <pubDate>Sat, 26 Sep 2026 23:48:05 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Berichte über außer Kontrolle geratene KI-Modelle häufen sich. Nun zieht OpenAI Konsequenzen, um an wichtigen Stellen bei der Sicherheit nachzubessern.]]></description>
+      <description><![CDATA[Hinter Vibrations-Alarmen von iPhone und Apple Watch steckt die sogenannte „Taptic Engine“. US-Geschworene befanden, dass Apple bei dem Mechanismus Patente verletzt hat. Es geht um viel Geld.]]></description>
     </item>
     <item>
       <title>Magic Eden-Nutzer können nun ihre NFTs zurückfordern, die vor dem Sicherheitsverstoß ...</title>
@@ -115,6 +160,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Einfamilienhaus mit 177 m² Wohnfläche in Berlin-Mahlsdorf - ImmoScout24</title>
+      <link>https://www.immobilienscout24.de/expose/171126652</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11003403335329145332</guid>
+      <pubDate>Sat, 26 Sep 2026 20:04:43 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[Einfamilienhaus (Haus/Miete): 5 Zimmer - 177 qm - Mahlsdorf (Hellersdorf) bei ImmobilienScout24 (Scout-ID: 171126652)]]></description>
     </item>
     <item>
       <title>Heilerziehungspflegehelferin – Mahlsdorf – WfbM (m/w/d) | Jobsuche der BA</title>
@@ -234,6 +288,15 @@
       <description><![CDATA[Kunden des Lieferdienstes Flink erhalten derzeit Erpressungsmails. Nach einem Datenverlust wollte Flink nämlich nicht zahlen.]]></description>
     </item>
     <item>
+      <title>Eintracht Mahlsdorf III - Cup history - Transfermarkt</title>
+      <link>https://www.transfermarkt.com/eintracht-mahlsdorf-iii/pokalhistorie/verein/62239</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2391664340383015054</guid>
+      <pubDate>Sat, 26 Sep 2026 16:55:51 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[Eintracht Mahlsdorf III. Eintracht Mahlsdorf III. Squad size: 8; Average age: 30.2; Foreigners: 4 50.0 %. National team players: 0 ...]]></description>
+    </item>
+    <item>
       <title>E-Scooter-Vermieter haften künftig für Unfälle</title>
       <link>https://www.heise.de/news/E-Scooter-Vermieter-haften-kuenftig-fuer-Unfaelle-11467036.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467036</guid>
@@ -286,24 +349,6 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Spieltag. BSV Eintracht MahlsdorfMahlsdorf. FC Mecklenburg SchwerinMeck SN. 3. 1 · Abpfiff · Tabelle ...]]></description>
-    </item>
-    <item>
-      <title>+++ Iran-Krieg +++: Trump lehnt iranischen Vorschlag zur Öffnung der Straße von Hormus ab</title>
-      <link>https://www.handelsblatt.com/politik/international/iran-krieg-trump-lehnt-iranischen-vorschlag-zur-oeffnung-der-strasse-von-hormus-ab/100136895.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/iran-krieg-trump-lehnt-iranischen-vorschlag-zur-oeffnung-der-strasse-von-hormus-ab/100136895.html</guid>
-      <pubDate>Sat, 26 Sep 2026 15:16:29 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Iran bei Atomprogramm in Verhandlungen offenbar unnachgiebig +++ Iran legt wohl Sieben-Tage-Plan zur Beendigung des Krieges vor +++ Netanjahu verteidigt Kriege bei UN-Rede +++ Der Newsblog.]]></description>
-    </item>
-    <item>
-      <title>+++ Ukraine-Krieg +++: Wadephul trifft Lawrow in New York zu Gesprächen</title>
-      <link>https://www.handelsblatt.com/politik/international/ukraine-krieg-moskau-schliesst-konsulat-in-st.-petersburg123/27982126.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/ukraine-krieg-moskau-schliesst-konsulat-in-st.-petersburg123/27982126.html</guid>
-      <pubDate>Sat, 26 Sep 2026 14:46:59 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Dänemark und Polen warnen vor wachsendem Risiko eines russischen Angriffs auf einen NATO-Staat +++ Die Ukraine bittet die Partner um weitere 27 Milliarden Dollar für Verteidigung +++ Der Newsblog.]]></description>
     </item>
     <item>
       <title>Go Concurrency Distilled</title>
@@ -441,6 +486,15 @@
       <description><![CDATA[Der Skandal um Cambridge Analytica erschütterte einst das Vertrauen in Facebook. Im Nachgang führt der Fall nun zu einem neuen Urteil gegen den Meta-Konzern.]]></description>
     </item>
     <item>
+      <title>Improving site performance by shipping more CSS</title>
+      <link>https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/</link>
+      <guid isPermaLink="false">https://github.blog/engineering/architecture-optimization/improving-site-performance-by-shipping-more-css/</guid>
+      <pubDate>Sat, 26 Sep 2026 13:10:05 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>BSV Eintracht Mahlsdorf bezwingt den FC Mecklenburg Schwerin - FuPa</title>
       <link>https://www.fupa.net/news/bsv-eintracht-mahlsdorf-bezwingt-den-fc-mecklenburg-schwerin-3174614</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1670889059258291176</guid>
@@ -567,15 +621,6 @@
       <description><![CDATA[OpenAIs KI platzierte Bilder seiner Nutzer auf Online-Plattformen. Es ist der erste bekannte Sicherheitsvorfall bei dem ChatGPT-Nutzerdaten involviert sind.]]></description>
     </item>
     <item>
-      <title>Aktuelles - Alles-Mahlsdorf.de</title>
-      <link>https://alles-mahlsdorf.de/category/aktuelles-aus-mahlsdorf/page/96/?_=1790420400010</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15246489367758919116</guid>
-      <pubDate>Sat, 26 Sep 2026 11:19:28 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Mehrere zehntausend Fahrzeuge passieren die B1 in Mahlsdorf täglich, die Strecke ist eine wichtige Verbindung zwischen dem östlichen Brandenburg ...]]></description>
-    </item>
-    <item>
       <title>Reichtum: Elitenforscher über die oberen 100.000: „Man erkennt sich am souveränen Auftreten“</title>
       <link>https://www.handelsblatt.com/unternehmen/reichtum-die-oberen-100.000-man-erkennt-sich-am-souveraenen-auftreten/100257518.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/unternehmen/reichtum-die-oberen-100.000-man-erkennt-sich-am-souveraenen-auftreten/100257518.html</guid>
@@ -619,15 +664,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Trotz anhaltender Datenschutzkontroversen verzeichnen Smart-Glasses weiterhin starke Zuwächse, mit Meta als klarem Marktführer.]]></description>
-    </item>
-    <item>
-      <title>Insight Innovation: An dieser Technologie hängt Intels Comeback</title>
-      <link>https://www.handelsblatt.com/technik/it-internet/halbleiter-an-dieser-technologie-haengt-intels-comeback/100246256.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/technik/it-internet/halbleiter-an-dieser-technologie-haengt-intels-comeback/100246256.html</guid>
-      <pubDate>Sat, 26 Sep 2026 10:00:03 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Mit einem neuen Fertigungsprozess wagt der Chiphersteller einen fundamentalen Wechsel in der Transistorarchitektur. Anleger feiern den technischen Fortschritt – aber eine Sache fehlt noch.]]></description>
     </item>
     <item>
       <title>Tesla: „Wenn in den USA einer Go sagt“ – Tesla-Ausbau in Grünheide weiter offen</title>
@@ -684,6 +720,15 @@
       <description><![CDATA[Fotoagenturen solidarisieren sich mit TV-Sendern, Adobe schluckt Topaz Labs und Nikon streicht den Sucher. Plus: Gefiederte Fotostars.]]></description>
     </item>
     <item>
+      <title>Flip Fluid on Flip Dots</title>
+      <link>https://mitxela.com/projects/flipflip</link>
+      <guid isPermaLink="false">https://mitxela.com/projects/flipflip</guid>
+      <pubDate>Sat, 26 Sep 2026 07:50:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Sozialreformen: Ministerpräsident Lies: „Ein Gerechtigkeitscheck muss der Maßstab sein“</title>
       <link>https://www.handelsblatt.com/politik/deutschland/interview-sozialreformen-ein-gerechtigkeitscheck-muss-der-massstab-sein/100256542.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/politik/deutschland/interview-sozialreformen-ein-gerechtigkeitscheck-muss-der-massstab-sein/100256542.html</guid>
@@ -691,15 +736,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Niedersachsens Regierungschef (SPD) fordert im Interview, den Reformkurs sozial abzufedern. Zugleich drängt er auf stärkere Entlastungen, um die Wirtschaft anzukurbeln.]]></description>
-    </item>
-    <item>
-      <title>Immobilien: Was die hohen Anleiherenditen für US-Verbraucher bedeuten</title>
-      <link>https://www.handelsblatt.com/finanzen/maerkte/immobilien-was-die-hohen-anleiherenditen-fuer-us-verbraucher-bedeuten/100257448.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/finanzen/maerkte/immobilien-was-die-hohen-anleiherenditen-fuer-us-verbraucher-bedeuten/100257448.html</guid>
-      <pubDate>Sat, 26 Sep 2026 06:53:31 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Ob Hypothekenzinsen oder Autokredite – die höheren Anleiherenditen am Bondmarkt schlagen sich auch in anderen Bereichen nieder. Wo die Belastung für Verbraucher besonders hoch ist.]]></description>
     </item>
     <item>
       <title>Eintracht Mahlsdorf - Rekord-Abgänge | Seite 3 - Transfermarkt</title>
@@ -718,6 +754,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[DIese Woche fiel die Auswahl der Redaktion auf gänzlich unterschiedliche Bilder. Genießen SIe eine dynamische Motivsammlung.]]></description>
+    </item>
+    <item>
+      <title>+++ USA +++: USA lockern Spritsparvorgaben für Autos deutlich</title>
+      <link>https://www.handelsblatt.com/politik/international/usa-usa-lockern-spritsparvorgaben-fuer-autos-deutlich/29669594.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/politik/international/usa-usa-lockern-spritsparvorgaben-fuer-autos-deutlich/29669594.html</guid>
+      <pubDate>Sat, 26 Sep 2026 05:53:28 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[US-Sender CNN darf Trump nicht auf Reise nach Tennessee begleiten +++ Republikaner scheitern mit Wahlkreis-Umbau für Missouri +++ Der Newsblog.]]></description>
     </item>
     <item>
       <title>Developer-Häppchen – Google KI-Abos, GitLab-Lücken und VS-Code-Agenten</title>
@@ -792,42 +837,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Spiele &amp; Ergebnisse - Brandenburg - FuPa</title>
-      <link>https://www.fupa.net/region/brandenburg/matches?date=2026-09-26</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14389335947654621314</guid>
-      <pubDate>Sat, 26 Sep 2026 03:02:50 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[RSV Eintracht 1949RSV Eintr. Chemnitzer FCChemnitzerFC. 16:00live. PUSH. Tabelle · NOFV-Oberliga Nord. 6. Spieltag. BSV Eintracht Mahlsdorf ...]]></description>
-    </item>
-    <item>
-      <title>Neues Urteil: Rückschlag für Meta vor Gericht wegen Cambridge Analytica</title>
-      <link>https://www.handelsblatt.com/technik/it-internet/neues-urteil-rueckschlag-fuer-meta-vor-gericht-wegen-cambridge-analytica/100257559.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/technik/it-internet/neues-urteil-rueckschlag-fuer-meta-vor-gericht-wegen-cambridge-analytica/100257559.html</guid>
-      <pubDate>Sat, 26 Sep 2026 02:55:27 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Der Skandal um Cambridge Analytica erschütterte einst das Vertrauen in Facebook. Im Nachgang führt der Fall nun zu einem neuen Urteil gegen den Meta-Konzern. Das könnte für ihn teuer werden.]]></description>
-    </item>
-    <item>
-      <title>Altbau mit Sanierungsbedarf in Mahlsdorf - zvg-KI.de</title>
-      <link>https://zvg-ki.de/berlin/zwangsversteigerung/12544/altbau-mit-sanierungsbedarf-in-mahlsdorf/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15335697569917222611</guid>
-      <pubDate>Sat, 26 Sep 2026 01:35:38 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Zwangsversteigerung: Einfamilienhaus in Berlin, Mahlsdorf. Verkehrswert: . Termin: 12.11.2026. Grundbuch. – ...]]></description>
-    </item>
-    <item>
-      <title>How one Twitch chat message became code execution on a streamer’s PC</title>
-      <link>https://blog.scrt.ch/2026/09/22/how-one-twitch-chat-message-became-code-execution-on-a-streamers-pc/</link>
-      <guid isPermaLink="false">https://blog.scrt.ch/2026/09/22/how-one-twitch-chat-message-became-code-execution-on-a-streamers-pc/</guid>
-      <pubDate>Sat, 26 Sep 2026 01:13:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Dragon's Tear, der Dungeon-Crawler, den ich hier kürzlich gepostet habe, hat jetzt einen ... - Reddit</title>
       <link>https://www.reddit.com/r/MightAndMagic/comments/1wq2ilp/dragons_tear_the_dungeon_crawler_i_posted_here/?tl=de</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1835176750496358475</guid>
@@ -855,15 +864,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Mozartstraã e, Mahlsdorf Fotos 13 Bilder - Bahnbilder.de</title>
-      <link>https://www.bahnbilder.de/name/galerie/geo/deutschland-berlin-marzahn+hellersdorf-mahlsdorf/strasse/mozartstraa-e.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13739090920225337050</guid>
-      <pubDate>Sat, 26 Sep 2026 00:02:51 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[13 Bilder - Deutschland > Berlin > Marzahn-Hellersdorf > Mahlsdorf (11.12.2017) - Regionalbahnhof Mahlsdorf: Seit dem 10.12.2017.]]></description>
-    </item>
-    <item>
       <title>Stevens rocks the rim! Motorola Magic Moment - Euroleague Basketball</title>
       <link>https://www.euroleaguebasketball.net/de/euroleague/videos/stevens-rocks-the-rim-motorola-magic-moment/?feedId=62bac866d7681e7971f128d7&amp;title=Motorola%20Magic%20Moments</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11461559217273574895</guid>
@@ -880,6 +880,15 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Virtus hits in transition as Bo Klintman sends it high for Aliou Diarra, who rocks the rim!]]></description>
+    </item>
+    <item>
+      <title>Bob Mackie dressed stars–if they were brave enough</title>
+      <link>https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</link>
+      <guid isPermaLink="false">https://www.economist.com/obituary/2026/09/24/bob-mackie-dressed-stars-if-they-were-brave-enough</guid>
+      <pubDate>Fri, 25 Sep 2026 23:41:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Crusoe abandons $1.25B plan to use Boom turbines at AI data centers</title>
@@ -2067,7 +2076,7 @@
       <pubDate>Thu, 24 Sep 2026 09:17:32 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – In der vergangenen Nacht kam es zu einem schweren Raub auf ein Hotel in Charlottenburg. Nach bisherigen Ermittlungen betrat gegen 23:25 Uhr ein junger Mann das Hotel am Kurfürstendamm und forderte unter Vorhalt von Pfefferspray die Herausgabe von Geld. Die 24-jährige Rezeptionistin...]]></description>
     </item>
     <item>
       <title>Seniorin fährt Kind an</title>
@@ -2076,7 +2085,7 @@
       <pubDate>Thu, 24 Sep 2026 09:07:00 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Gestern Mittag ereignete sich ein Verkehrsunfall in Westend, bei dem ein Kind schwer verletzt wurde. Als die 13-Jährige kurz vor 14 Uhr die Fahrbahn des Spandauer Damms in Richtung Königin-Elisabeth-Straße überquerte, wurde sie von einer aus dem Fürstenbrunner Weg kommenden Seniori...]]></description>
+      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Sicherheitspatch gegen Schadcode repariert SolarWinds Observability Self-Hosted</title>
@@ -2214,15 +2223,6 @@
       <description><![CDATA[Amtliche Bescheide ganz ohne Beamte, erstellt von einer KI. Das wird in Österreich legalisiert. Zudem ziehen Chatbots in die Amtsstuben ein.]]></description>
     </item>
     <item>
-      <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
-      <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463880</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
-    </item>
-    <item>
       <title>Neue VR-Brille von Meta: Ultrakompakt und 100 Gramm leicht</title>
       <link>https://www.heise.de/news/Neue-VR-Brille-von-Meta-Ultrakompakt-und-100-Gramm-leicht-11463824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463824</guid>
@@ -2232,15 +2232,6 @@
       <description><![CDATA[Mit einer besonders schlanken und leichten Premium-VR-Brille will Meta der Branche neues Leben einhauchen. Die „Meta VR Glasses“ erscheinen im Frühjahr 2027.]]></description>
     </item>
     <item>
-      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
-      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463780</guid>
-      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
-    </item>
-    <item>
       <title>Connect 2026: Meta zeigt neue Smart-Glasses-Generation mit und ohne Kamera</title>
       <link>https://www.heise.de/news/Connect-2026-Meta-zeigt-neue-Smart-Glasses-Generation-mit-und-ohne-Kamera-11463750.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463750</guid>
@@ -2248,6 +2239,24 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Meta baut weiterhin auf Smart Glasses und erweitert das Sortiment um ein Modell ohne Kameras. Dazu kommt ein neuer persönlicher KI-Agent.]]></description>
+    </item>
+    <item>
+      <title>Meta VR Glasses ausprobiert: Was kann die ultraleichte VR-Brille?</title>
+      <link>https://www.heise.de/hintergrund/Meta-VR-Glasses-ausprobiert-Was-kann-die-Mikro-VR-Brille-11463880.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463880</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Meta VR Glasses sollen den VR-Markt wieder in Schwung bringen und neue Nutzerschichten erschließen. Hat die ultraleichte VR-Brille das Zeug dazu?]]></description>
+    </item>
+    <item>
+      <title>Neue VR-Spiele auf der Meta Connect 2026: „Beat Saber“ bekommt Handtracking</title>
+      <link>https://www.heise.de/news/Neue-VR-Spiele-auf-der-Meta-Connect-2026-Beat-Saber-bekommt-Handtracking-11463780.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463780</guid>
+      <pubDate>Thu, 24 Sep 2026 03:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zum Start der neuen VR Glasses kündigt Meta mehrere neue VR-Spiele an. Der ewige VR-Hit „Beat Saber“ soll sein bislang größtes Update erhalten.]]></description>
     </item>
     <item>
       <title>Frauen heimlich mit Kamerabrille gefilmt: Frankreichs Justiz ermittelt</title>
@@ -2277,15 +2286,6 @@
       <description><![CDATA[Eine maßgeschneiderte KI-Lösung soll Abgeordneten und Verwaltung die Arbeit erleichtern und gleichzeitig strikte Datenschutzstandards im Parlament garantieren.]]></description>
     </item>
     <item>
-      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
-      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463388</guid>
-      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
-    </item>
-    <item>
       <title>Das Blue Yeti bekommt nach 17 Jahren einen offiziellen Nachfolger</title>
       <link>https://www.heise.de/news/Das-Blue-Yeti-bekommt-nach-17-Jahren-einen-offiziellen-Nachfolger-11463646.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463646</guid>
@@ -2293,6 +2293,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Logitech will KI in einem USB-Mikrofon unterbringen. Gedacht ist es auch für „ASMRtists“, die um das Mikrofon herum rascheln.]]></description>
+    </item>
+    <item>
+      <title>Logitech bringt erste Mäuse mit Wechselakku nach Europa</title>
+      <link>https://www.heise.de/news/Logitech-bringt-erste-Maeuse-mit-Wechselakku-nach-Europa-11463388.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463388</guid>
+      <pubDate>Wed, 23 Sep 2026 16:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Logitech hat die Gaming-Maus G502 X überarbeitet. In Europa bekommt sie einen austauschbaren Akku – auch wenn Logitechs Gaming-Chef davon nicht viel hält.]]></description>
     </item>
     <item>
       <title>Mercedes-Benz will Serienfahrzeuge mit dem Wayve AI Driver ausstatten</title>
@@ -2313,15 +2322,6 @@
       <description><![CDATA[SoftBank leiht sich wohl weitere 11 Milliarden von Investoren, um seine dritte Teilzahlung an OpenAI zu finanzieren. Die Anleihen gelten als Hoch-Risiko.]]></description>
     </item>
     <item>
-      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
-      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11463430</guid>
-      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
-    </item>
-    <item>
       <title>Flixtrain: Stundentakt zwischen Berlin und Hamburg ab 2027</title>
       <link>https://www.heise.de/news/Flixtrain-Stundentakt-zwischen-Berlin-und-Hamburg-ab-2027-11463574.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11463574</guid>
@@ -2329,6 +2329,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit Dutzenden neuen Zügen will das Unternehmen Flix im Fernverkehr auf der Schiene ab 2028 stärker angreifen. Schon vorher soll die Flotte wachsen.]]></description>
+    </item>
+    <item>
+      <title>AWS CloudWatch: KI soll bei Incidents mit ermitteln</title>
+      <link>https://www.heise.de/news/AWS-CloudWatch-KI-soll-bei-Incidents-mit-ermitteln-11463430.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11463430</guid>
+      <pubDate>Wed, 23 Sep 2026 14:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[AWS führt CloudWatch Omni ein: Eine neue Oberfläche für das Monitoring von Anwendungen und KI-Agenten. Agenten helfen auch bei der Auswertung mit.]]></description>
     </item>
     <item>
       <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
@@ -2544,7 +2553,7 @@
       <pubDate>Mon, 21 Sep 2026 11:58:00 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Einsatzkräfte der 13. und 14. Einsatzhundertschaft nahmen am vergangenen Freitag eine mutmaßliche Drogenbande in Friedrichshain fest. Nach bisherigen Erkenntnissen beobachteten Beamtinnen und Beamte in ziviler Kleidung gegen 21:10 Uhr in der Jessnerstraße eine Drogenübergabe zwischen...]]></description>
+      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Mehrere Straftaten festgestellt – Polizeilicher Staatsschutz ermittelt</title>
@@ -2670,7 +2679,7 @@
       <pubDate>Sat, 19 Sep 2026 09:43:47 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Marzahn-Hellersdorf** – In Marzahn nahmen Polizeikräfte gestern Abend einen Tatverdächtigen nach einer Brandstiftung auf einem Firmengelände fest. Gegen 22 Uhr hatte ein vorbeifahrender Autofahrer auf dem Gelände eines Autohändlers am Nordring ein brennendes Wohnmobil bemerkt und die Feuerwehr alarmiert. Das Feu...]]></description>
+      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Unbekannter schlägt Parteimitglied</title>
@@ -2679,7 +2688,7 @@
       <pubDate>Sat, 19 Sep 2026 09:15:22 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – In Charlottenburg-Nord wurde gestern Abend ein Mitglied einer Partei von einem Unbekannten angegriffen. Den bisherigen Ermittlungen zufolge befand sich der 36-Jährige gegen 18:30 Uhr mit einer 35-jährigen Begleiterin, ebenfalls Mitglied dieser Partei, in einem Mehrfamilienhaus am H...]]></description>
+      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Festnahmen nach Scheinankäufen</title>
@@ -2706,7 +2715,7 @@
       <pubDate>Fri, 18 Sep 2026 13:24:02 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **berlinweit** – Die Polizei Berlin führt von Montag bis Mittwoch sowie am Freitag kommender Woche, vom 21. bis zum 23. und am 25. September, eine Aktionswoche zur Verkehrsunfallprävention zum Schutz von Fußgängerinnen und Fußgängern im Seniorenalter durch. Die Veranstaltungen mit dem Titel „Lass uns gehen – aber...]]></description>
+      <description><![CDATA[]]></description>
     </item>
     <item>
       <title>Verkehrsunfall – Beifahrerin im Krankenhaus</title>
