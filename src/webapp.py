@@ -139,6 +139,11 @@ st.markdown("""
         hr {
             margin: 0.5rem 0 !important;
         }
+        /* Mobile: Spalten in horizontalen Blöcken (z.B. Artikel-Karten) auf volle Breite umbrechen */
+        [data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+            min-width: 100% !important;
+            flex: 1 1 100% !important;
+        }
     }
     /* Infobox & Zitate Styling */
     blockquote {
@@ -160,17 +165,41 @@ st.markdown("""
     }
     [data-testid="stSidebar"] .stButton button,
     [data-testid="stSidebar"] button[data-testid^="stBaseButton"] {
-        padding-top: 0.2rem !important;
-        padding-bottom: 0.2rem !important;
-        padding-left: 0.45rem !important;
-        padding-right: 0.45rem !important;
-        min-height: 2.0rem !important;
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.25rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        min-height: 2.1rem !important;
         line-height: 1.15 !important;
-        font-size: 0.86rem !important;
+        font-size: 0.88rem !important;
+        border-radius: 0.45rem !important;
+    }
+    /* Aktives Tab im linken Navigationsbereich immer blau hervorheben */
+    [data-testid="stSidebar"] button[data-testid="stBaseButton-primary"],
+    [data-testid="stSidebar"] button[kind="primary"] {
+        background-color: #2563EB !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        border: 1px solid #1d4ed8 !important;
+        box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3) !important;
+    }
+    [data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"],
+    [data-testid="stSidebar"] button[kind="secondary"] {
+        background-color: transparent !important;
+        border: 1px solid rgba(128, 128, 128, 0.22) !important;
+        color: var(--text-color) !important;
+    }
+    [data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"]:hover,
+    [data-testid="stSidebar"] button[kind="secondary"]:hover {
+        background-color: rgba(37, 99, 235, 0.08) !important;
+        border-color: #2563EB !important;
+        color: #2563EB !important;
     }
     [data-testid="stSidebar"] hr {
-        margin-top: 0.25rem !important;
-        margin-bottom: 0.25rem !important;
+        border: none !important;
+        border-top: 1px solid rgba(128, 128, 128, 0.25) !important;
+        margin-top: 0.45rem !important;
+        margin-bottom: 0.45rem !important;
     }
     [data-testid="stSidebar"] [data-testid="stAlert"] {
         padding: 0.3rem 0.5rem !important;
@@ -513,6 +542,10 @@ def perform_save_all():
     """Speichert den gesamten Arbeitsentwurf persistent in sources.yaml und synchronisiert mit GitHub."""
     harvest_global_settings()
     cfg_to_save = st.session_state.get("working_sources_config", {})
+    # Immer im Tab Verwalten bleiben
+    st.session_state["active_nav_tab"] = "manage"
+    st.session_state["main_tabs_nav"] = "⚙️ Verwalten"
+    st.query_params["tab"] = "manage"
     try:
         # RSS-Feeds vor dem Push frisch aufbereiten, damit sie sofort aktuell auf GitHub/CDN landen
         try:
@@ -549,6 +582,9 @@ def perform_discard_all():
     st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
     st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
     st.session_state["has_unsaved_changes"] = False
+    st.session_state["active_nav_tab"] = "manage"
+    st.session_state["main_tabs_nav"] = "⚙️ Verwalten"
+    st.query_params["tab"] = "manage"
     for k in list(st.session_state.keys()):
         if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("edit_inc_") or k.startswith("edit_exc_") or k.startswith("input_setting_"):
             del st.session_state[k]
@@ -598,7 +634,7 @@ selected_model = st.sidebar.selectbox(
     help="Flash-Lite ist ultraschnell & sparsam, Flash bietet mehr Nuancen."
 )
 
-st.sidebar.markdown("---")
+st.sidebar.divider()
 
 # Refresh Button
 if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Liest alle RSS-Feeds frisch ein"):
@@ -606,50 +642,97 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Lie
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
+st.sidebar.divider()
+
 qp_category = st.query_params.get("category", "").strip()
 qp_feed = st.query_params.get("feed", "").strip()
-
-# --- Sidebar Navigation ---
-st.sidebar.markdown("---")
-
-active_nav_tab = st.session_state.get("active_nav_tab")
 qp_tab = (st.query_params.get("tab") or st.query_params.get("page") or st.query_params.get("view") or "").strip().lower()
+
+# Tab identifier constants
+TAB_ID_ARTICLES = "articles"
+TAB_ID_KI = "ki"
+TAB_ID_MANAGE = "manage"
+TAB_ID_FEEDLY = "feedly"
+
+# Tab Labels (Feste Reihenfolge: Artikel, KI, Verwalten, Feedly)
+TAB_LABEL_ARTICLES = "📋 Artikel"
+TAB_LABEL_KI = "✨ KI"
+manage_suffix = " 🔴" if has_unsaved_changes else ""
+TAB_LABEL_MANAGE = f"⚙️ Verwalten{manage_suffix}"
+TAB_LABEL_FEEDLY = "📡 Feedly"
+
+TAB_ORDER = [TAB_LABEL_ARTICLES, TAB_LABEL_KI, TAB_LABEL_MANAGE, TAB_LABEL_FEEDLY]
+
+def label_to_tab_id(label: str) -> str:
+    if "Artikel" in label:
+        return TAB_ID_ARTICLES
+    if "KI" in label:
+        return TAB_ID_KI
+    if "Verwalten" in label or "Quellen" in label:
+        return TAB_ID_MANAGE
+    if "Feedly" in label or "RSS" in label:
+        return TAB_ID_FEEDLY
+    return TAB_ID_ARTICLES
+
+def tab_id_to_label(tab_id: str) -> str:
+    if tab_id == TAB_ID_KI or tab_id == "briefing":
+        return TAB_LABEL_KI
+    if tab_id == TAB_ID_MANAGE or tab_id in ["settings", "feeds", "quellen"]:
+        return TAB_LABEL_MANAGE
+    if tab_id in [TAB_ID_FEEDLY, "rss", "feeds_rss"]:
+        return TAB_LABEL_FEEDLY
+    return TAB_LABEL_ARTICLES
+
+# Aktiven Nav-Tab ermitteln & synchronisieren
+if "main_tabs_nav" in st.session_state:
+    active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
+else:
+    active_nav_tab = st.session_state.get("active_nav_tab")
+
 if qp_tab:
     if qp_tab in ["articles", "artikel", "all"]:
-        active_nav_tab = "articles"
+        active_nav_tab = TAB_ID_ARTICLES
     elif qp_tab in ["ki", "briefing", "ai"]:
-        active_nav_tab = "ki"
-    elif qp_tab in ["rss", "feeds_rss"]:
-        active_nav_tab = "rss"
+        active_nav_tab = TAB_ID_KI
+    elif qp_tab in ["rss", "feeds_rss", "feedly"]:
+        active_nav_tab = TAB_ID_FEEDLY
     elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
-        active_nav_tab = "manage"
-if not active_nav_tab:
-    active_nav_tab = "articles"
-st.session_state["active_nav_tab"] = active_nav_tab
+        active_nav_tab = TAB_ID_MANAGE
 
-manage_btn_label = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
+if qp_category:
+    # E-Mail Deeplinks führen immer zu den Artikeln
+    active_nav_tab = TAB_ID_ARTICLES
+
+if not active_nav_tab:
+    active_nav_tab = TAB_ID_ARTICLES
+
+st.session_state["active_nav_tab"] = active_nav_tab
+st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
 
 def navigate_to(tab_name: str):
     st.session_state["active_nav_tab"] = tab_name
+    st.session_state["main_tabs_nav"] = tab_id_to_label(tab_name)
     st.query_params["tab"] = tab_name
     for k in ["page", "view", "category", "feed"]:
         if k in st.query_params:
             del st.query_params[k]
-    if tab_name == "articles":
+    if tab_name == TAB_ID_ARTICLES:
         st.session_state["sel_articles_category"] = "Alle Kategorien"
     st.rerun()
 
-if st.sidebar.button("📋 Alle Artikel", use_container_width=True, type="primary" if active_nav_tab == "articles" else "secondary", key="sb_nav_articles"):
-    navigate_to("articles")
+manage_btn_label = TAB_LABEL_MANAGE
 
-if st.sidebar.button("✨ KI", use_container_width=True, type="primary" if active_nav_tab in ["ki", "briefing"] else "secondary", key="sb_nav_ki"):
-    navigate_to("ki")
+if st.sidebar.button("📋 Artikel", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_ARTICLES else "secondary", key="sb_nav_articles"):
+    navigate_to(TAB_ID_ARTICLES)
 
-if st.sidebar.button("📡 RSS-Feeds", use_container_width=True, type="primary" if active_nav_tab == "rss" else "secondary", key="sb_nav_rss"):
-    navigate_to("rss")
+if st.sidebar.button("✨ KI", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_KI else "secondary", key="sb_nav_ki"):
+    navigate_to(TAB_ID_KI)
 
-if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == "manage" else "secondary", key="sb_nav_manage"):
-    navigate_to("manage")
+if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == TAB_ID_MANAGE else "secondary", key="sb_nav_manage"):
+    navigate_to(TAB_ID_MANAGE)
+
+if st.sidebar.button("📡 Feedly", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_FEEDLY else "secondary", key="sb_nav_rss"):
+    navigate_to(TAB_ID_FEEDLY)
 
 # Unsaved changes status & buttons in sidebar
 if has_unsaved_changes and (st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()):
@@ -758,275 +841,270 @@ if new_pool_articles > 0:
         st.rerun()
 
 is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
-manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
-if active_nav_tab in ["ki", "briefing"]:
-    tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
-        "✨ KI", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
-    ], key="tabs_nav_ki")
-elif active_nav_tab == "rss":
-    tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
-        "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI", manage_tab_title
-    ], key="tabs_nav_rss")
-elif active_nav_tab == "manage":
-    tab_manage, tab_articles, tab_briefing, tab_rss = st.tabs([
-        manage_tab_title, "📋 Alle Artikel", "✨ KI", "📡 RSS-Feeds"
-    ], key="tabs_nav_manage")
-else:
-    tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
-        "📋 Alle Artikel", "✨ KI", "📡 RSS-Feeds", manage_tab_title
-    ], key="tabs_nav_articles")
+# Tabs in fester Reihenfolge: Artikel, KI, Verwalten, Feedly
+tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
+    TAB_ORDER,
+    key="main_tabs_nav",
+    on_change="rerun"
+)
 
-# ----------------- TAB: Alle Artikel -----------------
-with tab_articles:
-    def get_article_timestamp(it: dict) -> float:
-        ts = it.get("timestamp")
-        if ts is not None and isinstance(ts, (int, float)) and ts > 0:
-            return float(ts)
-        p = it.get("published_parsed")
-        if p and isinstance(p, time.struct_time):
-            try:
-                import calendar
-                return float(calendar.timegm(p))
-            except Exception:
-                pass
-        pub = it.get("published", "") or it.get("updated", "")
-        if pub and isinstance(pub, str):
-            try:
-                import email.utils
-                dt = email.utils.parsedate_to_datetime(pub.strip())
-                if dt:
+# ----------------- TAB: Artikel -----------------
+if tab_articles.open:
+    with tab_articles:
+        def get_article_timestamp(it: dict) -> float:
+            ts = it.get("timestamp")
+            if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+                return float(ts)
+            p = it.get("published_parsed")
+            if p and isinstance(p, time.struct_time):
+                try:
+                    import calendar
+                    return float(calendar.timegm(p))
+                except Exception:
+                    pass
+            pub = it.get("published", "") or it.get("updated", "")
+            if pub and isinstance(pub, str):
+                try:
+                    import email.utils
+                    dt = email.utils.parsedate_to_datetime(pub.strip())
+                    if dt:
+                        return dt.timestamp()
+                except Exception:
+                    pass
+                try:
+                    dt = datetime.fromisoformat(pub.strip().replace("Z", "+00:00"))
                     return dt.timestamp()
-            except Exception:
-                pass
-            try:
-                dt = datetime.fromisoformat(pub.strip().replace("Z", "+00:00"))
-                return dt.timestamp()
-            except Exception:
-                pass
-        return 0.0
+                except Exception:
+                    pass
+            return 0.0
 
-    def format_article_date(it: dict) -> str:
-        ts = get_article_timestamp(it)
-        if ts > 0:
-            formatted = format_local_dt(ts)
-            if formatted:
-                return formatted
-        pub = it.get("published", "") or it.get("updated", "")
-        if pub:
-            return str(pub)[:30]
-        return ""
+        def format_article_date(it: dict) -> str:
+            ts = get_article_timestamp(it)
+            if ts > 0:
+                formatted = format_local_dt(ts)
+                if formatted:
+                    return formatted
+            pub = it.get("published", "") or it.get("updated", "")
+            if pub:
+                return str(pub)[:30]
+            return ""
 
-    # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
-    for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
-        if legacy_k in st.session_state:
-            del st.session_state[legacy_k]
+        # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
+        for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
+            if legacy_k in st.session_state:
+                del st.session_state[legacy_k]
 
-    if "sel_articles_category" not in st.session_state:
-        st.session_state["sel_articles_category"] = "Alle Kategorien"
-    if "articles_cat_feed_memory" not in st.session_state:
-        st.session_state["articles_cat_feed_memory"] = {}
+        if "sel_articles_category" not in st.session_state:
+            st.session_state["sel_articles_category"] = "Alle Kategorien"
+        if "articles_cat_feed_memory" not in st.session_state:
+            st.session_state["articles_cat_feed_memory"] = {}
 
-    # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
-    qp_exp_cats = st.query_params.get("exp_cats")
-    qp_exp_feeds = st.query_params.get("exp_feeds")
-    qp_sort = st.query_params.get("sort")
+        # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
+        qp_exp_cats = st.query_params.get("exp_cats")
+        qp_exp_feeds = st.query_params.get("exp_feeds")
+        qp_sort = st.query_params.get("sort")
 
-    if "chk_expand_cats" not in st.session_state:
-        st.session_state["chk_expand_cats"] = False if qp_exp_cats == "0" else True
-    if "chk_expand_feeds" not in st.session_state:
-        st.session_state["chk_expand_feeds"] = False if qp_exp_feeds == "0" else True
-    if "chk_sort_oldest" not in st.session_state:
-        st.session_state["chk_sort_oldest"] = True if qp_sort == "oldest" else False
+        # Standardmäßig beim ersten Aufruf IMMER alles zugeklappt lassen
+        if "chk_expand_cats" not in st.session_state:
+            st.session_state["chk_expand_cats"] = True if qp_exp_cats == "1" else False
+        if "chk_expand_feeds" not in st.session_state:
+            st.session_state["chk_expand_feeds"] = True if qp_exp_feeds == "1" else False
+        if "chk_sort_oldest" not in st.session_state:
+            st.session_state["chk_sort_oldest"] = True if qp_sort == "oldest" else False
 
-    def on_toggle_expand_cats():
-        val = bool(st.session_state.get("chk_expand_cats", True))
-        if val:
-            if "exp_cats" in st.query_params:
-                del st.query_params["exp_cats"]
+        def on_toggle_expand_cats():
+            val = bool(st.session_state.get("chk_expand_cats", False))
+            if val:
+                st.query_params["exp_cats"] = "1"
+            else:
+                if "exp_cats" in st.query_params:
+                    del st.query_params["exp_cats"]
+
+        def on_toggle_expand_feeds():
+            val = bool(st.session_state.get("chk_expand_feeds", False))
+            if val:
+                st.query_params["exp_feeds"] = "1"
+            else:
+                if "exp_feeds" in st.query_params:
+                    del st.query_params["exp_feeds"]
+
+        def on_toggle_sort():
+            val = bool(st.session_state.get("chk_sort_oldest", False))
+            if val:
+                st.query_params["sort"] = "oldest"
+            else:
+                if "sort" in st.query_params:
+                    del st.query_params["sort"]
+
+        # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
+        if qp_category:
+            for c in news_data.keys():
+                if c.strip().lower() == qp_category.lower():
+                    st.session_state["sel_articles_category"] = c
+                    if qp_feed:
+                        st.session_state["articles_cat_feed_memory"][c] = qp_feed
+                        st.session_state[f"sel_feed_for_{c}"] = qp_feed
+                    break
+
+        sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
+        category_options = ["Alle Kategorien"] + sorted_all_categories
+
+        if st.session_state["sel_articles_category"] not in category_options:
+            st.session_state["sel_articles_category"] = "Alle Kategorien"
+
+        current_cat = st.session_state.get("sel_articles_category", "Alle Kategorien")
+
+        if current_cat != "Alle Kategorien":
+            cat_items_pre = news_data.get(current_cat, [])
+            available_feeds_pre = sorted(list({item.get("source") for item in cat_items_pre if item.get("source")}), key=lambda x: x.strip().lower())
+            feed_options = ["Alle Feeds"] + available_feeds_pre
         else:
-            st.query_params["exp_cats"] = "0"
-        for k in list(st.session_state.keys()):
-            if k.startswith("exp_cat_"):
-                st.session_state[k] = val
+            all_feeds_pre = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
+            feed_options = ["Alle Feeds"] + all_feeds_pre
 
-    def on_toggle_expand_feeds():
-        val = bool(st.session_state.get("chk_expand_feeds", True))
-        if val:
-            if "exp_feeds" in st.query_params:
-                del st.query_params["exp_feeds"]
-        else:
-            st.query_params["exp_feeds"] = "0"
-        for k in list(st.session_state.keys()):
-            if k.startswith("exp_feed_"):
-                st.session_state[k] = val
-
-    def on_toggle_sort():
-        val = bool(st.session_state.get("chk_sort_oldest", False))
-        if val:
-            st.query_params["sort"] = "oldest"
-        else:
-            if "sort" in st.query_params:
-                del st.query_params["sort"]
-
-    # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
-    if qp_category:
-        for c in news_data.keys():
-            if c.strip().lower() == qp_category.lower():
-                st.session_state["sel_articles_category"] = c
-                if qp_feed:
-                    st.session_state["articles_cat_feed_memory"][c] = qp_feed
-                    st.session_state[f"sel_feed_for_{c}"] = qp_feed
-                break
-
-    sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
-    category_options = ["Alle Kategorien"] + sorted_all_categories
-
-    if st.session_state["sel_articles_category"] not in category_options:
-        st.session_state["sel_articles_category"] = "Alle Kategorien"
-
-    filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
-
-    with filter_col1:
-        selected_cat = st.selectbox(
-            "Kategorie:",
-            options=category_options,
-            key="sel_articles_category"
-        )
-        if qp_category and selected_cat.strip().lower() != qp_category.lower():
-            if "category" in st.query_params:
-                del st.query_params["category"]
-            if "feed" in st.query_params:
-                del st.query_params["feed"]
-
-    with filter_col2:
-        if selected_cat != "Alle Kategorien":
-            cat_items = news_data.get(selected_cat, [])
-            available_feeds = sorted(list({item.get("source") for item in cat_items if item.get("source")}), key=lambda x: x.strip().lower())
-            feed_options = ["Alle Feeds"] + available_feeds
-        else:
-            all_feeds = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
-            feed_options = ["Alle Feeds"] + all_feeds
-
-        feed_widget_key = f"sel_feed_for_{selected_cat}"
-        remembered_feed = st.session_state["articles_cat_feed_memory"].get(selected_cat, "Alle Feeds")
+        feed_widget_key = f"sel_feed_for_{current_cat}"
+        remembered_feed = st.session_state["articles_cat_feed_memory"].get(current_cat, "Alle Feeds")
         if remembered_feed not in feed_options:
             remembered_feed = "Alle Feeds"
 
         if feed_widget_key not in st.session_state or st.session_state[feed_widget_key] not in feed_options:
             st.session_state[feed_widget_key] = remembered_feed
 
-        selected_feed = st.selectbox(
-            "Feed / Quelle:",
-            options=feed_options,
-            key=feed_widget_key
-        )
-        st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
+        # Zusammenklappbarer Filter- & Suchbereich (Mobile-optimiert)
+        filter_summary_items = []
+        if current_cat != "Alle Kategorien":
+            filter_summary_items.append(f"📁 {current_cat}")
+        curr_selected_feed = st.session_state.get(feed_widget_key, "Alle Feeds")
+        if curr_selected_feed != "Alle Feeds":
+            filter_summary_items.append(f"📡 {curr_selected_feed}")
+        active_search_text = st.session_state.get("input_search_query", "").strip()
+        if active_search_text:
+            filter_summary_items.append(f"🔍 '{active_search_text}'")
 
-    with filter_col3:
-        search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...")
+        filter_title = f"🔍 Filter & Suche ({', '.join(filter_summary_items)})" if filter_summary_items else "🔍 Filter & Suche"
 
-    col_stat, col_toggles = st.columns([4, 6], vertical_alignment="center")
-    with col_toggles:
-        c_tog1, c_tog2, c_tog3 = st.columns(3)
-        with c_tog1:
-            expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
-        with c_tog2:
-            expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
-        with c_tog3:
-            sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Neueste Artikel zuerst. Aktivieren, um die ältesten Artikel zuerst anzuzeigen.")
+        with st.expander(filter_title, expanded=False):
+            filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
 
-    descending_sort = not bool(st.session_state.get("chk_sort_oldest", False))
+            with filter_col1:
+                selected_cat = st.selectbox(
+                    "Kategorie:",
+                    options=category_options,
+                    key="sel_articles_category"
+                )
+                if qp_category and selected_cat.strip().lower() != qp_category.lower():
+                    if "category" in st.query_params:
+                        del st.query_params["category"]
+                    if "feed" in st.query_params:
+                        del st.query_params["feed"]
 
-    def get_sort_key(it: dict) -> float:
-        ts = get_article_timestamp(it)
-        if descending_sort:
-            return ts if ts > 0 else -1.0
-        else:
-            return ts if ts > 0 else float("inf")
+            with filter_col2:
+                selected_feed = st.selectbox(
+                    "Feed / Quelle:",
+                    options=feed_options,
+                    key=feed_widget_key
+                )
+                st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
 
-    displayed_count = 0
-    categories_rendered = 0
+            with filter_col3:
+                search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...", key="input_search_query")
 
-    for category in sorted_all_categories:
-        if selected_cat != "Alle Kategorien" and category != selected_cat:
-            continue
+            c_tog1, c_tog2, c_tog3 = st.columns(3)
+            with c_tog1:
+                expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
+            with c_tog2:
+                expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
+            with c_tog3:
+                sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Neueste Artikel zuerst. Aktivieren, um die ältesten Artikel zuerst anzuzeigen.")
 
-        cat_items = news_data.get(category, [])
+        col_stat_placeholder = st.empty()
 
-        # Artikel filtern nach Feed und Suche
-        cat_matching = []
-        for item in cat_items:
-            if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
+        descending_sort = not bool(st.session_state.get("chk_sort_oldest", False))
+
+        def get_sort_key(it: dict) -> float:
+            ts = get_article_timestamp(it)
+            if descending_sort:
+                return ts if ts > 0 else -1.0
+            else:
+                return ts if ts > 0 else float("inf")
+
+        displayed_count = 0
+        categories_rendered = 0
+
+        for category in sorted_all_categories:
+            if selected_cat != "Alle Kategorien" and category != selected_cat:
                 continue
-            if search_query:
-                q = search_query.lower()
-                if q not in item.get("title", "").lower() and q not in item.get("summary", "").lower():
+
+            cat_items = news_data.get(category, [])
+
+            # Artikel filtern nach Feed und Suche
+            cat_matching = []
+            for item in cat_items:
+                if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
                     continue
-            cat_matching.append(item)
+                if search_query:
+                    q = search_query.lower()
+                    if q not in item.get("title", "").lower() and q not in item.get("summary", "").lower():
+                        continue
+                    cat_matching.append(item)
+                else:
+                    cat_matching.append(item)
 
-        if not cat_matching:
-            continue
+            if not cat_matching:
+                continue
 
-        categories_rendered += 1
-        # Alle Artikel der Kategorie nach Datum sortieren
-        cat_matching.sort(key=get_sort_key, reverse=descending_sort)
+            categories_rendered += 1
+            # Alle Artikel der Kategorie nach Datum sortieren
+            cat_matching.sort(key=get_sort_key, reverse=descending_sort)
 
-        cat_slug = "".join(c if c.isalnum() else "_" for c in category)
-        cat_key = f"exp_cat_{cat_slug}"
-        if cat_key not in st.session_state:
-            st.session_state[cat_key] = st.session_state.get("chk_expand_cats", True)
+            cat_slug = "".join(c if c.isalnum() else "_" for c in category)
+            # Deeplink aus E-Mail klappt diese Kategorie immer auf, sonst Filter-Checkbox
+            cat_is_open = True if (qp_category and category.strip().lower() == qp_category.lower()) else bool(st.session_state.get("chk_expand_cats", False))
 
-        # Wenn per E-Mail Deeplink aufgerufen, diese Kategorie immer aufklappen
-        if qp_category and category.strip().lower() == qp_category.lower():
-            st.session_state[cat_key] = True
+            with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_open):
+                # Innerhalb der Kategorie nach Feed gruppieren
+                feeds_dict = {}
+                for item in cat_matching:
+                    src = item.get("source", "Unbekannt")
+                    feeds_dict.setdefault(src, []).append(item)
 
-        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=st.session_state[cat_key], key=cat_key, on_change="rerun"):
-            # Innerhalb der Kategorie nach Feed gruppieren
-            feeds_dict = {}
-            for item in cat_matching:
-                src = item.get("source", "Unbekannt")
-                feeds_dict.setdefault(src, []).append(item)
+                sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
 
-            sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
+                for feed_name in sorted_feed_names:
+                    f_items = feeds_dict[feed_name]
+                    # Artikel innerhalb des Feeds nach Datum sortieren
+                    f_items.sort(key=get_sort_key, reverse=descending_sort)
 
-            for feed_name in sorted_feed_names:
-                f_items = feeds_dict[feed_name]
-                # Artikel innerhalb des Feeds nach Datum sortieren
-                f_items.sort(key=get_sort_key, reverse=descending_sort)
+                    feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
+                    # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox
+                    feed_is_open = True if (qp_feed and feed_name.strip().lower() == qp_feed.lower()) else bool(st.session_state.get("chk_expand_feeds", False))
 
-                feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
-                feed_key = f"exp_feed_{cat_slug}_{feed_slug}"
-                if feed_key not in st.session_state:
-                    st.session_state[feed_key] = st.session_state.get("chk_expand_feeds", True)
+                    with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
+                        cols = st.columns(2)
+                        for idx, item in enumerate(f_items):
+                            displayed_count += 1
+                            with cols[idx % 2]:
+                                with st.container(border=True):
+                                    clean_title = clean_html_text(item.get("title", "Kein Titel"))
+                                    clean_summary = clean_html_text(item.get("summary", ""))
+                                    pdate = format_article_date(item)
+                                    date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
+                                    summary_str = f"<div style='font-size:0.88rem; line-height:1.45;'>{clean_summary}</div>" if clean_summary else ""
+                                    st.markdown(
+                                        f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
+                                        unsafe_allow_html=True
+                                    )
 
-                if qp_feed and feed_name.strip().lower() == qp_feed.lower():
-                    st.session_state[feed_key] = True
-
-                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=st.session_state[feed_key], key=feed_key, on_change="rerun"):
-                    cols = st.columns(2)
-                    for idx, item in enumerate(f_items):
-                        displayed_count += 1
-                        with cols[idx % 2]:
-                            with st.container(border=True):
-                                clean_title = clean_html_text(item.get("title", "Kein Titel"))
-                                clean_summary = clean_html_text(item.get("summary", ""))
-                                st.markdown(f"**[{clean_title}]({item['link']})**")
-                                pdate = format_article_date(item)
-                                if pdate:
-                                    st.caption(f"🕒 {pdate}")
-                                if clean_summary:
-                                    st.markdown(clean_summary)
-
-    with col_stat:
-        if displayed_count > 0:
-            sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", False)) else "neueste zuerst"
-            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
-        else:
-            st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
+        with col_stat_placeholder:
+            if displayed_count > 0:
+                sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", False)) else "neueste zuerst"
+                st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
+            else:
+                st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
 # ----------------- TAB: KI -----------------
-with tab_briefing:
+with tab_ki:
     st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ KI-Synthese & Briefing</h3>", unsafe_allow_html=True)
     
     current_prompt_directives = working_config.get("settings", {}).get("custom_prompt_directives")
@@ -1142,9 +1220,9 @@ with tab_briefing:
         else:
             st.info("💡 Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
 
-# ----------------- TAB: Eigene RSS-Feeds -----------------
-with tab_rss:
-    st.subheader("📡 Eigene RSS-Feeds abonnieren")
+# ----------------- TAB: Feedly -----------------
+with tab_feedly:
+    st.subheader("📡 Feedly & RSS-Feeds abonnieren")
     st.caption("Verwandle deinen News Aggregator Bot in deinen persönlichen RSS-Server! Alle gesammelten Artikel stehen als standardkonforme RSS 2.0 Feeds zur Verfügung.")
 
     app_base_url = working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
@@ -1204,16 +1282,11 @@ with tab_rss:
     # Feeds exportieren und Registry laden
     rss_registry = export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
 
-    # 1. Gesamt-Feed (Alle Nachrichten)
+    # 1. Gesamt-Feed (Alle Nachrichten) & KI-Briefing Feed
     if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:
         all_info = rss_registry.get("all", {})
-        with st.container(border=True):
-            col_all_h1, col_all_h2 = st.columns([3, 1], vertical_alignment="center")
-            with col_all_h1:
-                st.markdown("### 🌟 Alle Nachrichten (Gesamt-Feed)")
-                st.write("Enthält alle aggregierten Artikel aus sämtlichen Kategorien und Quellen chronologisch geordnet.")
-            with col_all_h2:
-                st.metric("Gesamtartikel", all_info.get("item_count", 0))
+        with st.expander(f"🌟 **Gesamt-Feed (Alle Nachrichten)** ({all_info.get('item_count', 0)} Artikel)", expanded=False):
+            st.write("Enthält alle aggregierten Artikel aus sämtlichen Kategorien und Quellen chronologisch geordnet.")
 
             all_url = all_info.get("url") or all_info.get("cdn_url", "")
             feed_proto_url = all_url.replace("https://", "feed://").replace("http://", "feed://")
@@ -1240,13 +1313,8 @@ with tab_rss:
 
         briefing_info = rss_registry.get("briefing")
         if briefing_info:
-            with st.container(border=True):
-                col_br_h1, col_br_h2 = st.columns([3, 1], vertical_alignment="center")
-                with col_br_h1:
-                    st.markdown("### ✨ KI-Briefing Feed")
-                    st.write("Abonniere das tägliche, von Gemini KI synthetisierte und kuratierte Briefing direkt in deinem RSS-Reader.")
-                with col_br_h2:
-                    st.metric("Tages-Briefings", 1)
+            with st.expander("✨ **KI-Briefing Feed**", expanded=False):
+                st.write("Abonniere das tägliche, von Gemini KI synthetisierte und kuratierte Briefing direkt in deinem RSS-Reader.")
 
                 br_url = briefing_info.get("url") or briefing_info.get("cdn_url", "")
                 br_proto_url = br_url.replace("https://", "feed://").replace("http://", "feed://")
@@ -1271,107 +1339,101 @@ with tab_rss:
                 with st.expander("👁️ RSS-XML-Vorschau anzeigen", expanded=False):
                     st.code(briefing_info.get("xml_preview", ""), language="xml")
 
-        st.markdown("---")
-
     # 2. Kategorie-Feeds
     if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:
         categories_rss = rss_registry.get("categories", [])
-        st.markdown(f"### 📁 Feeds nach Themen-Kategorien ({len(categories_rss)})")
-        st.write("Abonniere gezielt nur die Themen, die dich interessieren:")
+        with st.expander(f"📁 **Feeds nach Themen-Kategorien** ({len(categories_rss)})", expanded=False):
+            st.caption("Abonniere gezielt nur die Themen, die dich interessieren:")
 
-        cat_cols = st.columns(2)
-        for idx, cat_item in enumerate(categories_rss):
-            with cat_cols[idx % 2]:
-                with st.container(border=True):
-                    col_ch1, col_ch2 = st.columns([3, 1], vertical_alignment="center")
-                    with col_ch1:
-                        st.markdown(f"#### 📁 {cat_item['name']}")
-                    with col_ch2:
-                        st.caption(f"**{cat_item['item_count']}** Artikel")
+            cat_cols = st.columns(2)
+            for idx, cat_item in enumerate(categories_rss):
+                with cat_cols[idx % 2]:
+                    with st.container(border=True):
+                        col_ch1, col_ch2 = st.columns([3, 1], vertical_alignment="center")
+                        with col_ch1:
+                            st.markdown(f"#### 📁 {cat_item['name']}")
+                        with col_ch2:
+                            st.caption(f"**{cat_item['item_count']}** Artikel")
 
-                    st.caption(f"Enthält Beiträge aus {cat_item['feed_count']} konfigurierten Feeds.")
-                    cat_url = cat_item.get("url") or cat_item.get("cdn_url", "")
-                    cat_feed_proto = cat_url.replace("https://", "feed://").replace("http://", "feed://")
+                        st.caption(f"Enthält Beiträge aus {cat_item['feed_count']} konfigurierten Feeds.")
+                        cat_url = cat_item.get("url") or cat_item.get("cdn_url", "")
+                        cat_feed_proto = cat_url.replace("https://", "feed://").replace("http://", "feed://")
 
-                    st.code(cat_url, language="text")
+                        st.code(cat_url, language="text")
 
-                    col_cbtn1, col_cbtn2, col_cbtn3 = st.columns(3)
-                    with col_cbtn1:
-                        st.link_button("↗️ Öffnen", cat_url, use_container_width=True)
-                    with col_cbtn2:
-                        st.download_button(
-                            "📥 XML",
-                            data=cat_item['xml_preview'],
-                            file_name=f"{cat_item['slug']}.xml",
-                            mime="application/rss+xml",
-                            use_container_width=True,
-                            key=f"dl_cat_{cat_item['slug']}"
-                        )
-                    with col_cbtn3:
-                        st.link_button("➕ 1-Click", cat_feed_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
+                        col_cbtn1, col_cbtn2, col_cbtn3 = st.columns(3)
+                        with col_cbtn1:
+                            st.link_button("↗️ Öffnen", cat_url, use_container_width=True)
+                        with col_cbtn2:
+                            st.download_button(
+                                "📥 XML",
+                                data=cat_item['xml_preview'],
+                                file_name=f"{cat_item['slug']}.xml",
+                                mime="application/rss+xml",
+                                use_container_width=True,
+                                key=f"dl_cat_{cat_item['slug']}"
+                            )
+                        with col_cbtn3:
+                            st.link_button("➕ 1-Click", cat_feed_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
 
-                    with st.expander(f"👁️ XML ({cat_item['name']}) ansehen", expanded=False):
-                        st.code(cat_item['xml_preview'], language="xml")
-
-        st.markdown("---")
+                        with st.expander(f"👁️ XML ({cat_item['name']}) ansehen", expanded=False):
+                            st.code(cat_item['xml_preview'], language="xml")
 
     # 3. Einzel-Feeds nach Quellen
     if rss_feed_view_mode in ["Alle Feeds", "Nur Einzel-Feeds"]:
         feeds_rss = rss_registry.get("feeds", [])
-        st.markdown(f"### 📡 Feeds einzelner Quellen ({len(feeds_rss)})")
-        st.write("Aufbereitete Feeds für jede spezifische Nachrichtenquelle:")
+        with st.expander(f"📡 **Feeds einzelner Quellen** ({len(feeds_rss)})", expanded=False):
+            st.caption("Aufbereitete Feeds für jede spezifische Nachrichtenquelle:")
 
-        all_cat_options = ["Alle Kategorien"] + sorted(list({f['category'] for f in feeds_rss}))
-        selected_feed_cat = st.selectbox("Quellen filtern nach Kategorie:", all_cat_options, key="sel_filter_source_cat")
+            all_cat_options = ["Alle Kategorien"] + sorted(list({f['category'] for f in feeds_rss}))
+            selected_feed_cat = st.selectbox("Quellen filtern nach Kategorie:", all_cat_options, key="sel_filter_source_cat")
 
-        filtered_feeds = [f for f in feeds_rss if selected_feed_cat == "Alle Kategorien" or f['category'] == selected_feed_cat]
+            filtered_feeds = [f for f in feeds_rss if selected_feed_cat == "Alle Kategorien" or f['category'] == selected_feed_cat]
 
-        feed_grid = st.columns(2)
-        for idx, f_item in enumerate(filtered_feeds):
-            with feed_grid[idx % 2]:
-                with st.container(border=True):
-                    col_fh1, col_fh2 = st.columns([3, 1], vertical_alignment="center")
-                    with col_fh1:
-                        st.markdown(f"**📡 {f_item['name']}**")
-                    with col_fh2:
-                        st.caption(f"📁 {f_item['category']}")
+            feed_grid = st.columns(2)
+            for idx, f_item in enumerate(filtered_feeds):
+                with feed_grid[idx % 2]:
+                    with st.container(border=True):
+                        col_fh1, col_fh2 = st.columns([3, 1], vertical_alignment="center")
+                        with col_fh1:
+                            st.markdown(f"**📡 {f_item['name']}**")
+                        with col_fh2:
+                            st.caption(f"📁 {f_item['category']}")
 
-                    st.caption(f"Artikel im Pool: **{f_item['item_count']}** • [Original-Feed ansehen]({f_item['original_url']})")
-                    f_url = f_item.get("url") or f_item.get("cdn_url", "")
-                    f_proto = f_url.replace("https://", "feed://").replace("http://", "feed://")
+                        st.caption(f"Artikel im Pool: **{f_item['item_count']}** • [Original-Feed ansehen]({f_item['original_url']})")
+                        f_url = f_item.get("url") or f_item.get("cdn_url", "")
+                        f_proto = f_url.replace("https://", "feed://").replace("http://", "feed://")
 
-                    st.code(f_url, language="text")
+                        st.code(f_url, language="text")
 
-                    col_fbtn1, col_fbtn2, col_fbtn3 = st.columns(3)
-                    with col_fbtn1:
-                        st.link_button("↗️ Öffnen", f_url, use_container_width=True)
-                    with col_fbtn2:
-                        st.download_button(
-                            "📥 XML",
-                            data=f_item['xml_preview'],
-                            file_name=f"{f_item['slug']}.xml",
-                            mime="application/rss+xml",
-                            use_container_width=True,
-                            key=f"dl_single_feed_{f_item['slug']}"
-                        )
-                    with col_fbtn3:
-                        st.link_button("➕ 1-Click", f_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
+                        col_fbtn1, col_fbtn2, col_fbtn3 = st.columns(3)
+                        with col_fbtn1:
+                            st.link_button("↗️ Öffnen", f_url, use_container_width=True)
+                        with col_fbtn2:
+                            st.download_button(
+                                "📥 XML",
+                                data=f_item['xml_preview'],
+                                file_name=f"{f_item['slug']}.xml",
+                                mime="application/rss+xml",
+                                use_container_width=True,
+                                key=f"dl_single_feed_{f_item['slug']}"
+                            )
+                        with col_fbtn3:
+                            st.link_button("➕ 1-Click", f_proto, use_container_width=True, help="1-Click Abo via feed:// Protokoll")
 
-                    with st.expander(f"👁️ XML ({f_item['name']}) ansehen", expanded=False):
-                        st.code(f_item['xml_preview'], language="xml")
-
-        st.markdown("---")
+                        with st.expander(f"👁️ XML ({f_item['name']}) ansehen", expanded=False):
+                            st.code(f_item['xml_preview'], language="xml")
 
     # 4. Anleitung für RSS-Reader
-    with st.expander("ℹ️ **Anleitung: Wie binde ich diese Feeds in meinen RSS-Reader ein?**", expanded=False):
+    with st.expander("ℹ️ **Anleitung: Wie binde ich diese Feeds in Feedly / RSS-Reader ein?**", expanded=False):
         all_example_url = rss_registry.get("all", {}).get("url") or "https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml"
         st.markdown(f"""
         ### So abonnierst du deine persönlichen Feeds:
         1. **URL kopieren**: Klicke oben im Kasten des gewünschten Feeds auf das Kopier-Icon des Code-Blocks (z. B. `{all_example_url}`).
-        2. **RSS-Reader öffnen**: Starte deinen bevorzugten News-Reader (z. B. *NetNewsWire*, *Feedly*, *Apple News*, *Inoreader*, *Thunderbird*, *Outlook* etc.).
+        2. **RSS-Reader öffnen**: Starte deinen bevorzugten News-Reader (z. B. *Feedly*, *NetNewsWire*, *Apple News*, *Inoreader*, *Thunderbird*, *Outlook* etc.).
         3. **Feed hinzufügen**:
-           - **NetNewsWire / Reeder**: Menü `Feed` > `Add Web Feed...` > URL einfügen > `Add`.
            - **Feedly**: In der linken Seitenleiste auf `+` (Follow Sources) klicken > URL einfügen > `Follow`.
+           - **NetNewsWire / Reeder**: Menü `Feed` > `Add Web Feed...` > URL einfügen > `Add`.
            - **Inoreader**: Suchfeld oben > URL einfügen > `Abonnieren`.
            - **Thunderbird**: Ordner "Blogs & News-Feeds" auswählen > `Feed-Abonnements verwalten` > `Hinzufügen` > URL einfügen.
         4. **Tipp für macOS & iOS**: Wenn dein Reader das URL-Schema `feed://` unterstützt, kannst du einfach auf **'➕ 1-Click'** klicken, um den Feed direkt mit einem Klick zu öffnen und zu abonnieren!
@@ -1410,7 +1472,7 @@ with tab_manage:
                         st.error("❌ Falsches Passwort.")
 
         st.markdown("---")
-        with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=True):
+        with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=False):
             categories_list = sorted(saved_sources_config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
             if not categories_list:
                 st.info("Keine Kategorien konfiguriert.")
