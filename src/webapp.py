@@ -195,16 +195,21 @@ st.markdown("""
         border-color: #2563EB !important;
         color: #2563EB !important;
     }
-    [data-testid="stSidebar"] hr {
+    [data-testid="stSidebar"] hr,
+    [data-testid="stSidebar"] [data-testid="stDivider"] {
         border: none !important;
-        border-top: 1px solid rgba(128, 128, 128, 0.25) !important;
-        margin-top: 0.45rem !important;
-        margin-bottom: 0.45rem !important;
+        border-top: 1px solid rgba(128, 128, 128, 0.28) !important;
+        margin-top: 0.6rem !important;
+        margin-bottom: 0.6rem !important;
+        margin-left: -1rem !important;
+        margin-right: -1rem !important;
+        width: calc(100% + 2rem) !important;
     }
     [data-testid="stSidebar"] [data-testid="stAlert"] {
-        padding: 0.3rem 0.5rem !important;
+        padding: 0.25rem 0.5rem !important;
         margin-top: 0.1rem !important;
-        margin-bottom: 0.1rem !important;
+        margin-bottom: 0.2rem !important;
+        font-size: 0.82rem !important;
     }
     /* Kompakte KPI Chips-Leiste */
     .kpi-container {
@@ -481,7 +486,7 @@ def check_password() -> bool:
                         st.toast("Erfolgreich im Lese-Modus angemeldet!", icon="👁️")
                         st.rerun()
                     else:
-                        st.error("❌ Falsches Passwort. Bitte erneut versuchen.")
+                        st.error("Falsches Passwort. Bitte erneut versuchen.")
 
     return False
 
@@ -543,8 +548,7 @@ def perform_save_all():
     harvest_global_settings()
     cfg_to_save = st.session_state.get("working_sources_config", {})
     # Immer im Tab Verwalten bleiben
-    st.session_state["active_nav_tab"] = "manage"
-    st.session_state["main_tabs_nav"] = "⚙️ Verwalten"
+    st.session_state["pending_nav_tab"] = "manage"
     st.query_params["tab"] = "manage"
     try:
         # RSS-Feeds vor dem Push frisch aufbereiten, damit sie sofort aktuell auf GitHub/CDN landen
@@ -562,18 +566,18 @@ def perform_save_all():
         st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
         st.session_state["has_unsaved_changes"] = False
         if gh_res.get("success"):
-            st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
+            st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
             st.toast("Gespeichert & mit GitHub / CDN synchronisiert!", icon="🚀")
         else:
             err = gh_res.get("error")
             if err and "Kein GITHUB_TOKEN" not in err:
                 st.session_state["save_feedback"] = ("warning", f"In `sources.yaml` gespeichert, aber GitHub-Sync fehlgeschlagen: {err}")
             else:
-                st.session_state["save_feedback"] = ("success", "✅ Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert!")
+                st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert!")
                 st.toast("In sources.yaml gespeichert!", icon="💾")
         st.rerun()
     except Exception as e:
-        st.error(f"❌ Fehler beim Speichern: {e}")
+        st.error(f"Fehler beim Speichern: {e}")
 
 def perform_discard_all():
     """Verwirft alle ungespeicherten Änderungen und setzt auf den Stand der sources.yaml zurück."""
@@ -582,13 +586,12 @@ def perform_discard_all():
     st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
     st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
     st.session_state["has_unsaved_changes"] = False
-    st.session_state["active_nav_tab"] = "manage"
-    st.session_state["main_tabs_nav"] = "⚙️ Verwalten"
+    st.session_state["pending_nav_tab"] = "manage"
     st.query_params["tab"] = "manage"
     for k in list(st.session_state.keys()):
         if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("edit_inc_") or k.startswith("edit_exc_") or k.startswith("input_setting_"):
             del st.session_state[k]
-    st.toast("↩️ Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
+    st.toast("Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
     st.rerun()
 
 has_unsaved_changes = bool(
@@ -634,7 +637,7 @@ selected_model = st.sidebar.selectbox(
     help="Flash-Lite ist ultraschnell & sparsam, Flash bietet mehr Nuancen."
 )
 
-st.sidebar.divider()
+st.sidebar.markdown("---")
 
 # Refresh Button
 if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Liest alle RSS-Feeds frisch ein"):
@@ -642,7 +645,7 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Lie
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
-st.sidebar.divider()
+st.sidebar.markdown("---")
 
 qp_category = st.query_params.get("category", "").strip()
 qp_feed = st.query_params.get("feed", "").strip()
@@ -684,34 +687,38 @@ def tab_id_to_label(tab_id: str) -> str:
     return TAB_LABEL_ARTICLES
 
 # Aktiven Nav-Tab ermitteln & synchronisieren
-if "main_tabs_nav" in st.session_state:
+if "pending_nav_tab" in st.session_state:
+    target_tab_id = st.session_state.pop("pending_nav_tab")
+    active_nav_tab = target_tab_id
+    st.session_state["active_nav_tab"] = active_nav_tab
+    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
+    st.query_params["tab"] = active_nav_tab
+elif qp_category:
+    # E-Mail Deeplinks führen immer zu den Artikeln
+    active_nav_tab = TAB_ID_ARTICLES
+    st.session_state["active_nav_tab"] = active_nav_tab
+    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
+    st.query_params["tab"] = active_nav_tab
+elif "main_tabs_nav" in st.session_state:
     active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
+    st.session_state["active_nav_tab"] = active_nav_tab
+    st.query_params["tab"] = active_nav_tab
 else:
-    active_nav_tab = st.session_state.get("active_nav_tab")
-
-if qp_tab:
-    if qp_tab in ["articles", "artikel", "all"]:
-        active_nav_tab = TAB_ID_ARTICLES
-    elif qp_tab in ["ki", "briefing", "ai"]:
+    # Erstaufruf: Query-Param prüfen falls vorhanden, sonst Standard Artikel
+    if qp_tab in ["ki", "briefing", "ai"]:
         active_nav_tab = TAB_ID_KI
     elif qp_tab in ["rss", "feeds_rss", "feedly"]:
         active_nav_tab = TAB_ID_FEEDLY
     elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
         active_nav_tab = TAB_ID_MANAGE
-
-if qp_category:
-    # E-Mail Deeplinks führen immer zu den Artikeln
-    active_nav_tab = TAB_ID_ARTICLES
-
-if not active_nav_tab:
-    active_nav_tab = TAB_ID_ARTICLES
-
-st.session_state["active_nav_tab"] = active_nav_tab
-st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
+    else:
+        active_nav_tab = TAB_ID_ARTICLES
+    st.session_state["active_nav_tab"] = active_nav_tab
+    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
+    st.query_params["tab"] = active_nav_tab
 
 def navigate_to(tab_name: str):
-    st.session_state["active_nav_tab"] = tab_name
-    st.session_state["main_tabs_nav"] = tab_id_to_label(tab_name)
+    st.session_state["pending_nav_tab"] = tab_name
     st.query_params["tab"] = tab_name
     for k in ["page", "view", "category", "feed"]:
         if k in st.query_params:
@@ -748,9 +755,19 @@ if get_configured_app_password():
     st.sidebar.markdown("---")
     current_role = st.session_state.get("auth_role", ROLE_READONLY)
     if current_role == ROLE_ADMIN:
-        st.sidebar.success("**Admin (Vollzugriff)**", icon="🛡️")
+        st.sidebar.markdown(
+            '<div style="display:flex; align-items:center; gap:6px; padding:4px 8px; border-radius:5px; background:rgba(34, 197, 94, 0.1); border-left:3px solid #22c55e; font-size:0.8rem; font-weight:600; color:#16a34a; margin: 2px 0 4px 0;">'
+            '<span>🛡️</span><span>Admin (Vollzugriff)</span>'
+            '</div>',
+            unsafe_allow_html=True
+        )
     else:
-        st.sidebar.info("**Lese-Modus (E-Mail)**", icon="👁️")
+        st.sidebar.markdown(
+            '<div style="display:flex; align-items:center; gap:6px; padding:4px 8px; border-radius:5px; background:rgba(59, 130, 246, 0.1); border-left:3px solid #3b82f6; font-size:0.8rem; font-weight:600; color:#2563eb; margin: 2px 0 4px 0;">'
+            '<span>👁️</span><span>Lese-Modus (E-Mail)</span>'
+            '</div>',
+            unsafe_allow_html=True
+        )
         with st.sidebar.popover("🔑 Admin-Freischaltung", use_container_width=True):
             st.caption("Passwort eingeben, um Feeds & Einstellungen bearbeiten zu können:")
             side_admin_pw = st.text_input("App-Passwort:", type="password", key="sidebar_admin_pw_input")
@@ -850,258 +867,284 @@ tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
 )
 
 # ----------------- TAB: Artikel -----------------
-if tab_articles.open:
-    with tab_articles:
-        def get_article_timestamp(it: dict) -> float:
-            ts = it.get("timestamp")
-            if ts is not None and isinstance(ts, (int, float)) and ts > 0:
-                return float(ts)
-            p = it.get("published_parsed")
-            if p and isinstance(p, time.struct_time):
-                try:
-                    import calendar
-                    return float(calendar.timegm(p))
-                except Exception:
-                    pass
-            pub = it.get("published", "") or it.get("updated", "")
-            if pub and isinstance(pub, str):
-                try:
-                    import email.utils
-                    dt = email.utils.parsedate_to_datetime(pub.strip())
-                    if dt:
-                        return dt.timestamp()
-                except Exception:
-                    pass
-                try:
-                    dt = datetime.fromisoformat(pub.strip().replace("Z", "+00:00"))
+with tab_articles:
+    def get_article_timestamp(it: dict) -> float:
+        ts = it.get("timestamp")
+        if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+            return float(ts)
+        p = it.get("published_parsed")
+        if p and isinstance(p, time.struct_time):
+            try:
+                import calendar
+                return float(calendar.timegm(p))
+            except Exception:
+                pass
+        pub = it.get("published", "") or it.get("updated", "")
+        if pub and isinstance(pub, str):
+            try:
+                import email.utils
+                dt = email.utils.parsedate_to_datetime(pub.strip())
+                if dt:
                     return dt.timestamp()
-                except Exception:
-                    pass
-            return 0.0
+            except Exception:
+                pass
+            try:
+                dt = datetime.fromisoformat(pub.strip().replace("Z", "+00:00"))
+                return dt.timestamp()
+            except Exception:
+                pass
+        return 0.0
 
-        def format_article_date(it: dict) -> str:
-            ts = get_article_timestamp(it)
-            if ts > 0:
-                formatted = format_local_dt(ts)
-                if formatted:
-                    return formatted
-            pub = it.get("published", "") or it.get("updated", "")
-            if pub:
-                return str(pub)[:30]
-            return ""
+    def format_article_date(it: dict) -> str:
+        ts = get_article_timestamp(it)
+        if ts > 0:
+            formatted = format_local_dt(ts)
+            if formatted:
+                return formatted
+        pub = it.get("published", "") or it.get("updated", "")
+        if pub:
+            return str(pub)[:30]
+        return ""
 
-        # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
-        for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
-            if legacy_k in st.session_state:
-                del st.session_state[legacy_k]
+    # 1. State initialisieren: Default ist IMMER "Alle Kategorien"
+    for legacy_k in ["articles_selected_cat", "sel_articles_cat_widget"]:
+        if legacy_k in st.session_state:
+            del st.session_state[legacy_k]
 
-        if "sel_articles_category" not in st.session_state:
-            st.session_state["sel_articles_category"] = "Alle Kategorien"
-        if "articles_cat_feed_memory" not in st.session_state:
-            st.session_state["articles_cat_feed_memory"] = {}
+    if "sel_articles_category" not in st.session_state:
+        st.session_state["sel_articles_category"] = "Alle Kategorien"
+    if "articles_cat_feed_memory" not in st.session_state:
+        st.session_state["articles_cat_feed_memory"] = {}
 
-        # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
-        qp_exp_cats = st.query_params.get("exp_cats")
-        qp_exp_feeds = st.query_params.get("exp_feeds")
-        qp_sort = st.query_params.get("sort")
+    # Checkboxen Persistenz über Query Params (bleibt über Browser-Reloads / F5 erhalten)
+    qp_exp_cats = st.query_params.get("exp_cats")
+    qp_exp_feeds = st.query_params.get("exp_feeds")
+    qp_sort = st.query_params.get("sort")
 
-        # Standardmäßig beim ersten Aufruf IMMER alles zugeklappt lassen
-        if "chk_expand_cats" not in st.session_state:
-            st.session_state["chk_expand_cats"] = True if qp_exp_cats == "1" else False
-        if "chk_expand_feeds" not in st.session_state:
-            st.session_state["chk_expand_feeds"] = True if qp_exp_feeds == "1" else False
-        if "chk_sort_oldest" not in st.session_state:
-            st.session_state["chk_sort_oldest"] = True if qp_sort == "oldest" else False
+    # Standardmäßig beim ersten Aufruf IMMER alles zugeklappt lassen
+    if "chk_expand_cats" not in st.session_state:
+        st.session_state["chk_expand_cats"] = True if qp_exp_cats == "1" else False
+    if "chk_expand_feeds" not in st.session_state:
+        st.session_state["chk_expand_feeds"] = True if qp_exp_feeds == "1" else False
 
-        def on_toggle_expand_cats():
-            val = bool(st.session_state.get("chk_expand_cats", False))
-            if val:
-                st.query_params["exp_cats"] = "1"
-            else:
-                if "exp_cats" in st.query_params:
-                    del st.query_params["exp_cats"]
-
-        def on_toggle_expand_feeds():
-            val = bool(st.session_state.get("chk_expand_feeds", False))
-            if val:
-                st.query_params["exp_feeds"] = "1"
-            else:
-                if "exp_feeds" in st.query_params:
-                    del st.query_params["exp_feeds"]
-
-        def on_toggle_sort():
-            val = bool(st.session_state.get("chk_sort_oldest", False))
-            if val:
-                st.query_params["sort"] = "oldest"
-            else:
-                if "sort" in st.query_params:
-                    del st.query_params["sort"]
-
-        # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
-        if qp_category:
-            for c in news_data.keys():
-                if c.strip().lower() == qp_category.lower():
-                    st.session_state["sel_articles_category"] = c
-                    if qp_feed:
-                        st.session_state["articles_cat_feed_memory"][c] = qp_feed
-                        st.session_state[f"sel_feed_for_{c}"] = qp_feed
-                    break
-
-        sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
-        category_options = ["Alle Kategorien"] + sorted_all_categories
-
-        if st.session_state["sel_articles_category"] not in category_options:
-            st.session_state["sel_articles_category"] = "Alle Kategorien"
-
-        current_cat = st.session_state.get("sel_articles_category", "Alle Kategorien")
-
-        if current_cat != "Alle Kategorien":
-            cat_items_pre = news_data.get(current_cat, [])
-            available_feeds_pre = sorted(list({item.get("source") for item in cat_items_pre if item.get("source")}), key=lambda x: x.strip().lower())
-            feed_options = ["Alle Feeds"] + available_feeds_pre
+    # Sortierung: Standard ist AN (Älteste zuerst), Zustand über Cookies/LocalStorage/URL merken
+    if "chk_sort_oldest" not in st.session_state:
+        cookie_sort = None
+        if hasattr(st, "context") and hasattr(st.context, "cookies"):
+            try:
+                cookie_sort = st.context.cookies.get("news_bot_sort_oldest")
+            except Exception:
+                pass
+        if qp_sort == "newest":
+            st.session_state["chk_sort_oldest"] = False
+        elif qp_sort == "oldest":
+            st.session_state["chk_sort_oldest"] = True
+        elif cookie_sort == "0":
+            st.session_state["chk_sort_oldest"] = False
+        elif cookie_sort == "1":
+            st.session_state["chk_sort_oldest"] = True
         else:
-            all_feeds_pre = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
-            feed_options = ["Alle Feeds"] + all_feeds_pre
+            # Standard ist AN: älteste zuerst
+            st.session_state["chk_sort_oldest"] = True
 
-        feed_widget_key = f"sel_feed_for_{current_cat}"
-        remembered_feed = st.session_state["articles_cat_feed_memory"].get(current_cat, "Alle Feeds")
-        if remembered_feed not in feed_options:
-            remembered_feed = "Alle Feeds"
+    def on_toggle_expand_cats():
+        val = bool(st.session_state.get("chk_expand_cats", False))
+        if val:
+            st.query_params["exp_cats"] = "1"
+        else:
+            if "exp_cats" in st.query_params:
+                del st.query_params["exp_cats"]
 
-        if feed_widget_key not in st.session_state or st.session_state[feed_widget_key] not in feed_options:
-            st.session_state[feed_widget_key] = remembered_feed
+    def on_toggle_expand_feeds():
+        val = bool(st.session_state.get("chk_expand_feeds", False))
+        if val:
+            st.query_params["exp_feeds"] = "1"
+        else:
+            if "exp_feeds" in st.query_params:
+                del st.query_params["exp_feeds"]
 
-        # Zusammenklappbarer Filter- & Suchbereich (Mobile-optimiert)
-        filter_summary_items = []
-        if current_cat != "Alle Kategorien":
-            filter_summary_items.append(f"📁 {current_cat}")
-        curr_selected_feed = st.session_state.get(feed_widget_key, "Alle Feeds")
-        if curr_selected_feed != "Alle Feeds":
-            filter_summary_items.append(f"📡 {curr_selected_feed}")
-        active_search_text = st.session_state.get("input_search_query", "").strip()
-        if active_search_text:
-            filter_summary_items.append(f"🔍 '{active_search_text}'")
+    def on_toggle_sort():
+        val = bool(st.session_state.get("chk_sort_oldest", True))
+        st.query_params["sort"] = "oldest" if val else "newest"
+        cookie_val = "1" if val else "0"
+        embed_client_script(f"""
+        (function() {{
+            try {{
+                document.cookie = "news_bot_sort_oldest={cookie_val}; path=/; max-age=31536000; SameSite=Lax";
+                localStorage.setItem("news_bot_sort_oldest", "{cookie_val}");
+                if (window.parent && window.parent !== window) {{
+                    window.parent.document.cookie = "news_bot_sort_oldest={cookie_val}; path=/; max-age=31536000; SameSite=Lax";
+                    window.parent.localStorage.setItem("news_bot_sort_oldest", "{cookie_val}");
+                }}
+            }} catch(e) {{}}
+        }})();
+        """)
 
-        filter_title = f"🔍 Filter & Suche ({', '.join(filter_summary_items)})" if filter_summary_items else "🔍 Filter & Suche"
+    # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
+    if qp_category:
+        for c in news_data.keys():
+            if c.strip().lower() == qp_category.lower():
+                st.session_state["sel_articles_category"] = c
+                if qp_feed:
+                    st.session_state["articles_cat_feed_memory"][c] = qp_feed
+                    st.session_state[f"sel_feed_for_{c}"] = qp_feed
+                break
 
-        with st.expander(filter_title, expanded=False):
-            filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
+    sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
+    category_options = ["Alle Kategorien"] + sorted_all_categories
 
-            with filter_col1:
-                selected_cat = st.selectbox(
-                    "Kategorie:",
-                    options=category_options,
-                    key="sel_articles_category"
-                )
-                if qp_category and selected_cat.strip().lower() != qp_category.lower():
-                    if "category" in st.query_params:
-                        del st.query_params["category"]
-                    if "feed" in st.query_params:
-                        del st.query_params["feed"]
+    if st.session_state["sel_articles_category"] not in category_options:
+        st.session_state["sel_articles_category"] = "Alle Kategorien"
 
-            with filter_col2:
-                selected_feed = st.selectbox(
-                    "Feed / Quelle:",
-                    options=feed_options,
-                    key=feed_widget_key
-                )
-                st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
+    current_cat = st.session_state.get("sel_articles_category", "Alle Kategorien")
 
-            with filter_col3:
-                search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...", key="input_search_query")
+    if current_cat != "Alle Kategorien":
+        cat_items_pre = news_data.get(current_cat, [])
+        available_feeds_pre = sorted(list({item.get("source") for item in cat_items_pre if item.get("source")}), key=lambda x: x.strip().lower())
+        feed_options = ["Alle Feeds"] + available_feeds_pre
+    else:
+        all_feeds_pre = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
+        feed_options = ["Alle Feeds"] + all_feeds_pre
 
-            c_tog1, c_tog2, c_tog3 = st.columns(3)
-            with c_tog1:
-                expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
-            with c_tog2:
-                expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
-            with c_tog3:
-                sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Neueste Artikel zuerst. Aktivieren, um die ältesten Artikel zuerst anzuzeigen.")
+    feed_widget_key = f"sel_feed_for_{current_cat}"
+    remembered_feed = st.session_state["articles_cat_feed_memory"].get(current_cat, "Alle Feeds")
+    if remembered_feed not in feed_options:
+        remembered_feed = "Alle Feeds"
 
-        col_stat_placeholder = st.empty()
+    if feed_widget_key not in st.session_state or st.session_state[feed_widget_key] not in feed_options:
+        st.session_state[feed_widget_key] = remembered_feed
 
-        descending_sort = not bool(st.session_state.get("chk_sort_oldest", False))
+    # Zusammenklappbarer Filter- & Suchbereich (Mobile-optimiert)
+    filter_summary_items = []
+    if current_cat != "Alle Kategorien":
+        filter_summary_items.append(f"📁 {current_cat}")
+    curr_selected_feed = st.session_state.get(feed_widget_key, "Alle Feeds")
+    if curr_selected_feed != "Alle Feeds":
+        filter_summary_items.append(f"📡 {curr_selected_feed}")
+    active_search_text = st.session_state.get("input_search_query", "").strip()
+    if active_search_text:
+        filter_summary_items.append(f"🔍 '{active_search_text}'")
 
-        def get_sort_key(it: dict) -> float:
-            ts = get_article_timestamp(it)
-            if descending_sort:
-                return ts if ts > 0 else -1.0
-            else:
-                return ts if ts > 0 else float("inf")
+    filter_title = f"🔍 Filter & Suche ({', '.join(filter_summary_items)})" if filter_summary_items else "🔍 Filter & Suche"
 
-        displayed_count = 0
-        categories_rendered = 0
+    with st.expander(filter_title, expanded=False):
+        filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
 
-        for category in sorted_all_categories:
-            if selected_cat != "Alle Kategorien" and category != selected_cat:
+        with filter_col1:
+            selected_cat = st.selectbox(
+                "Kategorie:",
+                options=category_options,
+                key="sel_articles_category"
+            )
+            if qp_category and selected_cat.strip().lower() != qp_category.lower():
+                if "category" in st.query_params:
+                    del st.query_params["category"]
+                if "feed" in st.query_params:
+                    del st.query_params["feed"]
+
+        with filter_col2:
+            selected_feed = st.selectbox(
+                "Feed / Quelle:",
+                options=feed_options,
+                key=feed_widget_key
+            )
+            st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
+
+        with filter_col3:
+            search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...", key="input_search_query")
+
+        c_tog1, c_tog2, c_tog3 = st.columns(3)
+        with c_tog1:
+            expand_cats = st.checkbox("📂 Kategorien auf", key="chk_expand_cats", on_change=on_toggle_expand_cats, help="Alle Kategorien aufklappen")
+        with c_tog2:
+            expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
+        with c_tog3:
+            sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Älteste Artikel zuerst (chronologisch). Deaktivieren, um die neuesten Artikel zuerst anzuzeigen.")
+
+    col_stat_placeholder = st.empty()
+
+    descending_sort = not bool(st.session_state.get("chk_sort_oldest", True))
+
+    def get_sort_key(it: dict) -> float:
+        ts = get_article_timestamp(it)
+        if descending_sort:
+            return ts if ts > 0 else -1.0
+        else:
+            return ts if ts > 0 else float("inf")
+
+    displayed_count = 0
+    categories_rendered = 0
+
+    for category in sorted_all_categories:
+        if selected_cat != "Alle Kategorien" and category != selected_cat:
+            continue
+
+        cat_items = news_data.get(category, [])
+
+        # Artikel filtern nach Feed und Suche
+        cat_matching = []
+        for item in cat_items:
+            if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
                 continue
-
-            cat_items = news_data.get(category, [])
-
-            # Artikel filtern nach Feed und Suche
-            cat_matching = []
-            for item in cat_items:
-                if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
+            if search_query:
+                q = search_query.lower()
+                if q not in item.get("title", "").lower() and q not in item.get("summary", "").lower():
                     continue
-                if search_query:
-                    q = search_query.lower()
-                    if q not in item.get("title", "").lower() and q not in item.get("summary", "").lower():
-                        continue
-                    cat_matching.append(item)
-                else:
-                    cat_matching.append(item)
-
-            if not cat_matching:
-                continue
-
-            categories_rendered += 1
-            # Alle Artikel der Kategorie nach Datum sortieren
-            cat_matching.sort(key=get_sort_key, reverse=descending_sort)
-
-            cat_slug = "".join(c if c.isalnum() else "_" for c in category)
-            # Deeplink aus E-Mail klappt diese Kategorie immer auf, sonst Filter-Checkbox
-            cat_is_open = True if (qp_category and category.strip().lower() == qp_category.lower()) else bool(st.session_state.get("chk_expand_cats", False))
-
-            with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_open):
-                # Innerhalb der Kategorie nach Feed gruppieren
-                feeds_dict = {}
-                for item in cat_matching:
-                    src = item.get("source", "Unbekannt")
-                    feeds_dict.setdefault(src, []).append(item)
-
-                sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
-
-                for feed_name in sorted_feed_names:
-                    f_items = feeds_dict[feed_name]
-                    # Artikel innerhalb des Feeds nach Datum sortieren
-                    f_items.sort(key=get_sort_key, reverse=descending_sort)
-
-                    feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
-                    # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox
-                    feed_is_open = True if (qp_feed and feed_name.strip().lower() == qp_feed.lower()) else bool(st.session_state.get("chk_expand_feeds", False))
-
-                    with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
-                        cols = st.columns(2)
-                        for idx, item in enumerate(f_items):
-                            displayed_count += 1
-                            with cols[idx % 2]:
-                                with st.container(border=True):
-                                    clean_title = clean_html_text(item.get("title", "Kein Titel"))
-                                    clean_summary = clean_html_text(item.get("summary", ""))
-                                    pdate = format_article_date(item)
-                                    date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
-                                    summary_str = f"<div style='font-size:0.88rem; line-height:1.45;'>{clean_summary}</div>" if clean_summary else ""
-                                    st.markdown(
-                                        f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
-                                        unsafe_allow_html=True
-                                    )
-
-        with col_stat_placeholder:
-            if displayed_count > 0:
-                sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", False)) else "neueste zuerst"
-                st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
+                cat_matching.append(item)
             else:
-                st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
+                cat_matching.append(item)
+
+        if not cat_matching:
+            continue
+
+        categories_rendered += 1
+        # Alle Artikel der Kategorie nach Datum sortieren
+        cat_matching.sort(key=get_sort_key, reverse=descending_sort)
+
+        cat_slug = "".join(c if c.isalnum() else "_" for c in category)
+        # Deeplink aus E-Mail klappt diese Kategorie immer auf, sonst Filter-Checkbox
+        cat_is_open = True if (qp_category and category.strip().lower() == qp_category.lower()) else bool(st.session_state.get("chk_expand_cats", False))
+
+        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_open):
+            # Innerhalb der Kategorie nach Feed gruppieren
+            feeds_dict = {}
+            for item in cat_matching:
+                src = item.get("source", "Unbekannt")
+                feeds_dict.setdefault(src, []).append(item)
+
+            sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
+
+            for feed_name in sorted_feed_names:
+                f_items = feeds_dict[feed_name]
+                # Artikel innerhalb des Feeds nach Datum sortieren
+                f_items.sort(key=get_sort_key, reverse=descending_sort)
+
+                feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
+                # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox
+                feed_is_open = True if (qp_feed and feed_name.strip().lower() == qp_feed.lower()) else bool(st.session_state.get("chk_expand_feeds", False))
+
+                with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
+                    cols = st.columns(2)
+                    for idx, item in enumerate(f_items):
+                        displayed_count += 1
+                        with cols[idx % 2]:
+                            with st.container(border=True):
+                                clean_title = clean_html_text(item.get("title", "Kein Titel"))
+                                clean_summary = clean_html_text(item.get("summary", ""))
+                                pdate = format_article_date(item)
+                                date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
+                                summary_str = f"<div style='font-size:0.88rem; line-height:1.45;'>{clean_summary}</div>" if clean_summary else ""
+                                st.markdown(
+                                    f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
+                                    unsafe_allow_html=True
+                                )
+
+    with col_stat_placeholder:
+        if displayed_count > 0:
+            sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", True)) else "neueste zuerst"
+            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
+        else:
+            st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
 # ----------------- TAB: KI -----------------
 with tab_ki:
@@ -1172,7 +1215,7 @@ with tab_ki:
                         st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
                         st.rerun()
                     else:
-                        st.error("❌ Falsches Passwort.")
+                        st.error("Falsches Passwort.")
             generate_clicked = st.session_state.pop("trigger_generate", False)
 
     with col_info:
@@ -1183,7 +1226,7 @@ with tab_ki:
 
     if generate_clicked:
         if not is_admin:
-            st.warning("⚠️ Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
+            st.warning("Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
         else:
             with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
                 ai_summary = summarize_news_with_gemini(
@@ -1216,9 +1259,9 @@ with tab_ki:
         )
     else:
         if is_admin:
-            st.info("💡 Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
+            st.info("Klicke auf den Button **'Neues Briefing generieren'**, um dein persönliches KI-Briefing zu erstellen.")
         else:
-            st.info("💡 Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
+            st.info("Aktuell liegt noch kein generiertes Briefing für diese Sitzung vor. Schalte oben den Admin-Modus frei, um ein neues Briefing mit Gemini zu generieren.")
 
 # ----------------- TAB: Feedly -----------------
 with tab_feedly:
@@ -1255,7 +1298,7 @@ with tab_feedly:
                         include_rss_feeds=True
                     )
                     if push_res.get("success"):
-                        st.success("✅ RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
+                        st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
                         st.toast("Feeds zu CDN gepusht!", icon="🚀")
                     else:
                         trig_res = trigger_rss_update_workflow()
@@ -1263,7 +1306,7 @@ with tab_feedly:
                             st.info("⚡ GitHub Action 'Update RSS Feeds' wurde angestoßen!")
                             st.toast("GitHub Action gestartet!", icon="⚡")
                         else:
-                            st.error(f"❌ Fehler: {push_res.get('error')}")
+                            st.error(f"Fehler: {push_res.get('error')}")
     else:
         col_rss_act1, col_rss_act2 = st.columns([1, 1])
         with col_rss_act1:
@@ -1469,7 +1512,7 @@ with tab_manage:
                         st.toast("Admin-Berechtigung erteilt!", icon="🛡️")
                         st.rerun()
                     else:
-                        st.error("❌ Falsches Passwort.")
+                        st.error("Falsches Passwort.")
 
         st.markdown("---")
         with st.expander("👁️ Aktuell konfigurierte Kategorien & Feeds ansehen (Schreibgeschützt)", expanded=False):
@@ -1492,9 +1535,9 @@ with tab_manage:
     if feedback:
         level, msg = feedback
         if level == "success":
-            st.success(msg, icon="✅")
+            st.success(msg)
         elif level == "warning":
-            st.warning(msg, icon="⚠️")
+            st.warning(msg)
 
     # Oberer Status- und Speicher-Bereich
     if has_unsaved_changes:
@@ -1618,11 +1661,11 @@ with tab_manage:
 
         with st.expander(box_header, expanded=True):
             if success and item_count > 0:
-                st.success(f"✅ **Stream erfolgreich verifiziert:** **{title}** ({stream_type}) — **{item_count} Einträge** gefunden!")
+                st.success(f"**Stream erfolgreich verifiziert:** **{title}** ({stream_type}) — **{item_count} Einträge** gefunden!")
             elif success and item_count == 0:
-                st.warning(f"⚠️ **Stream erreichbar, aber leer:** **{title}** ({stream_type}) lieferte aktuell **0 Artikel**.")
+                st.warning(f"**Stream erreichbar, aber leer:** **{title}** ({stream_type}) lieferte aktuell **0 Artikel**.")
             else:
-                st.error(f"❌ **Stream-Test fehlgeschlagen:** {err or 'Unbekannter Fehler'}")
+                st.error(f"**Stream-Test fehlgeschlagen:** {err or 'Unbekannter Fehler'}")
 
             # Übersichtliche 2-Spalten-Struktur statt gequetschter 4 Spalten
             col_info1, col_info2 = st.columns(2)
@@ -1648,9 +1691,9 @@ with tab_manage:
                 st.info(f"**Beschreibung:** {t_res['description']}")
 
             if warn:
-                st.warning(f"⚠️ **Hinweis:** {warn}")
+                st.warning(f"**Hinweis:** {warn}")
             if is_redir:
-                st.info(f"ℹ️ **URL-Weiterleitung:** Die Ziel-URL leitet weiter auf `{final_url}`.")
+                st.info(f"**URL-Weiterleitung:** Die Ziel-URL leitet weiter auf `{final_url}`.")
 
             # Artikel-Vorschau direkt in der Infobox
             if sample_items:
@@ -1670,7 +1713,7 @@ with tab_manage:
 
             if disc:
                 st.markdown("---")
-                st.info("💡 **Auf dieser Webseite gefundene alternative RSS/Atom-Feeds:**")
+                st.info("**Auf dieser Webseite gefundene alternative RSS/Atom-Feeds:**")
                 for d in disc:
                     st.markdown(f"- **{d['title']}**: `{d['url']}`")
 
@@ -1893,7 +1936,7 @@ with tab_manage:
                         st.rerun()
 
             if not feeds:
-                st.info(f"💡 In der Kategorie '{cat_name}' sind noch keine Feeds hinterlegt. Du kannst oben einen neuen Feed hinzufügen oder diese Kategorie löschen.")
+                st.info(f"In der Kategorie '{cat_name}' sind noch keine Feeds hinterlegt. Du kannst oben einen neuen Feed hinzufügen oder diese Kategorie löschen.")
             else:
                 for feed_idx, feed in enumerate(feeds):
                     f_name = feed.get("name", "Unbenannt")
@@ -2106,10 +2149,10 @@ with tab_manage:
                         with st.spinner("Pushe zu GitHub..."):
                             sync_res = sync_sources_to_github(config_dict=working_config)
                             if sync_res["success"]:
-                                st.success("✅ Erfolgreich zu GitHub synchronisiert!")
+                                st.success("Erfolgreich zu GitHub synchronisiert!")
                                 st.toast("Zu GitHub gepusht!", icon="🐙")
                             else:
-                                st.error(f"❌ Fehler: {sync_res['error']}")
+                                st.error(f"Fehler: {sync_res['error']}")
         except Exception as e:
             st.error(f"Fehler bei der Vorschau: {e}")
 
