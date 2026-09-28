@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 11:48:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:07:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Viral AI agent Instinct raises $1B Series C at a $10B valuation</title>
+      <link>https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170483</guid>
+      <pubDate>Mon, 28 Sep 2026 13:38:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Instinct has raised a $1 billion Series C, saying 'we're just getting started.' The company is now valued at $10 billion.]]></description>
+    </item>
     <item>
       <title>Anthropic’s CEO is about to have dinner with President Trump</title>
       <link>https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/</link>
@@ -178,15 +187,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The latest unauthorized agent swarms were discovered by researchers.]]></description>
-    </item>
-    <item>
-      <title>Anthropic’s founders seek voting control ahead of IPO</title>
-      <link>https://techcrunch.com/2026/09/25/anthropics-founders-seek-voting-control-ahead-of-ipo/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169652</guid>
-      <pubDate>Fri, 25 Sep 2026 15:40:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic is asking its shareholders to approve a structure that would give its seven co-founders a combined 50.1% of the vote on most corporate matters.]]></description>
     </item>
   </channel>
 </rss>

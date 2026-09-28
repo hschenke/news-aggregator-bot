@@ -3,10 +3,12 @@ categories:
   feeds:
   - name: Mahlsdorf
     url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
-- name: Finanzen
+- name: Finanzen & Coins
   feeds:
-  - name: Handelsblatt Schlagzeilen
-    url: https://www.handelsblatt.com/contentexport/feed/top-themen
+  - name: Finanzen - News
+    url: https://www.finanzen.net/rss/news
+  - name: Investing de
+    url: https://de.investing.com/rss/news_301.rss
 - name: Fun
   feeds:
   - name: Joscha
@@ -54,3 +56,26 @@ settings:
     Advertorials oder gesponserte Beiträge strikt heraus.
 
     - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.'
+  custom_main_prompt: "Du bist ein professioneller News-Kurator und Redakteur für\
+    \ ein Daily News Briefing.\nDeine Aufgabe ist es, aus den folgenden Roh-Nachrichten\
+    \ ein übersichtliches, kompaktes und leicht lesbares Tages-Briefing auf {lang_name}\
+    \ zu erstellen.\n\nWICHTIGE FORMATIERUNGSRICHTLINIEN:\n1. KEIN \"Executive Summary\"\
+    \ und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den\
+    \ Kategorien (z. B. \"## \U0001F916 Tech & AI\").\n2. INFOBOX GLEICH AM ANFANG\
+    \ JEDER KATEGORIE:\n   - Erstelle direkt unter jeder Kategorie-Überschrift (##)\
+    \ als Allererstes eine Infobox (Markdown Blockquote mit '>').\n   - Fasse darin\
+    \ alle wichtigsten News und Entwicklungen dieser Kategorie kurz, knapp und prägnant\
+    \ in 2 bis maximal 3 Sätzen zusammen.\n   - Format:\n     > \U0001F4A1 **Kompakt:**\
+    \ <Kurze, knappe Zusammenfassung aller wichtigsten News dieser Kategorie>\n3.\
+    \ QUICKLINKS-ZEILE:\n   - Setze direkt nach der Infobox exakt die vorgegebene\
+    \ Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.\n4. DIE TOP\
+    \ 5 ARTIKEL PRO KATEGORIE:\n   - Wähle pro Kategorie maximal die TOP 5 wichtigsten\
+    \ und relevantesten Artikel aus.\n   - Verlinke den Artikeltitel direkt mit der\
+    \ Originalquelle als Markdown-Link.\n   - Erstelle pro Artikel NUR EINE einzige\
+    \ kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten\
+    \ Titel.\n   - KEINE Kernaussage und KEINE Bedeutung generieren! Das Wort \"TL;DR:\"\
+    \ NICHT verwenden!\n   - Format:\n     - **[Artikeltitel](Original-URL)**: <Prägnante\
+    \ Zusammenfassung in 1-2 Sätzen>\n5. Verwende sauberes Markdown mit gut strukturierten\
+    \ Zwischenüberschriften (##) und passenden Emojis.\n6. REDAKTIONELLE FILTER &\
+    \ ANWEISUNGEN:\n{active_directives}\n\nHier sind die aktuellen Roh-Nachrichten\
+    \ nach Kategorien gegliedert:\n{context_data}"

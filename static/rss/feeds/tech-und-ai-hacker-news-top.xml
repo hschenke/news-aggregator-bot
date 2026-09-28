@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 11:48:58 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:07:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Does Reddit have an astroturfing problem? What the data suggests</title>
+      <link>https://www.petervijeh.com/projects/reddit-astroturf</link>
+      <guid isPermaLink="false">https://www.petervijeh.com/projects/reddit-astroturf</guid>
+      <pubDate>Mon, 28 Sep 2026 13:30:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Hntui – A TUI for Hacker News</title>
+      <link>https://github.com/ahmd-sh/hntui</link>
+      <guid isPermaLink="false">https://github.com/ahmd-sh/hntui</guid>
+      <pubDate>Mon, 28 Sep 2026 12:11:20 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The smart home graveyard is getting crowded</title>
+      <link>https://www.theverge.com/column/1000778/smart-home-june-oven-graveyard</link>
+      <guid isPermaLink="false">https://www.theverge.com/column/1000778/smart-home-june-oven-graveyard</guid>
+      <pubDate>Mon, 28 Sep 2026 11:27:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>Parley: Federated, decentralised chat that speaks plain IRC</title>
       <link>https://git.mills.io/prologic/parley</link>
@@ -18,19 +45,19 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>SpaceX's Starship launching to orbit for first time ever today</title>
-      <link>https://www.space.com/space-exploration/launches-spacecraft/spacexs-starship-megarocket-launching-to-orbit-for-1st-time-ever-on-sept-28-watch-it-live</link>
-      <guid isPermaLink="false">https://www.space.com/space-exploration/launches-spacecraft/spacexs-starship-megarocket-launching-to-orbit-for-1st-time-ever-on-sept-28-watch-it-live</guid>
-      <pubDate>Mon, 28 Sep 2026 09:15:04 GMT</pubDate>
+      <title>Show HN: PaperMono, e-ink fridge magnet shopping list with mobile web page</title>
+      <link>https://github.com/seamusc/papermono-shopping-list</link>
+      <guid isPermaLink="false">https://github.com/seamusc/papermono-shopping-list</guid>
+      <pubDate>Mon, 28 Sep 2026 10:14:41 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Three Days in August: What a DDoS Attack Exposed in Our Network</title>
-      <link>https://nine.ch/en/blog/ddos-attack-august-2026-postmortem/</link>
-      <guid isPermaLink="false">https://nine.ch/en/blog/ddos-attack-august-2026-postmortem/</guid>
-      <pubDate>Mon, 28 Sep 2026 09:13:36 GMT</pubDate>
+      <title>SpaceX's Starship launching to orbit for first time ever today</title>
+      <link>https://www.space.com/space-exploration/launches-spacecraft/spacexs-starship-megarocket-launching-to-orbit-for-1st-time-ever-on-sept-28-watch-it-live</link>
+      <guid isPermaLink="false">https://www.space.com/space-exploration/launches-spacecraft/spacexs-starship-megarocket-launching-to-orbit-for-1st-time-ever-on-sept-28-watch-it-live</guid>
+      <pubDate>Mon, 28 Sep 2026 09:15:04 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -144,15 +171,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>What I did at Recurse Center</title>
-      <link>https://thill.me/2026/09/11/what-i-did-at-rc.html</link>
-      <guid isPermaLink="false">https://thill.me/2026/09/11/what-i-did-at-rc.html</guid>
-      <pubDate>Sun, 27 Sep 2026 19:04:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Malleable software: Restoring user agency in a world of locked-down apps (2025)</title>
       <link>https://www.inkandswitch.com/essay/malleable-software/</link>
       <guid isPermaLink="false">https://www.inkandswitch.com/essay/malleable-software/</guid>
@@ -166,15 +184,6 @@
       <link>https://loficities.com/</link>
       <guid isPermaLink="false">https://loficities.com/</guid>
       <pubDate>Sun, 27 Sep 2026 18:44:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Oral history of John Chowning, inventor of FM synthesis [video]</title>
-      <link>https://www.youtube.com/watch?v=e1Xn3030IvM</link>
-      <guid isPermaLink="false">https://www.youtube.com/watch?v=e1Xn3030IvM</guid>
-      <pubDate>Sun, 27 Sep 2026 18:02:43 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -256,15 +265,6 @@
       <link>https://www.youtube.com/watch?v=25x0UuSCKuU</link>
       <guid isPermaLink="false">https://www.youtube.com/watch?v=25x0UuSCKuU</guid>
       <pubDate>Sat, 26 Sep 2026 00:14:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Previously unheard recordings of John Coltrane, captured by Frank Tiberi</title>
-      <link>https://www.jazzwise.com/content/news/john-coltrane-centenary-celebrations-see-impulse-records-release-the-legendary-tiberi-tapes</link>
-      <guid isPermaLink="false">https://www.jazzwise.com/content/news/john-coltrane-centenary-celebrations-see-impulse-records-release-the-legendary-tiberi-tapes</guid>
-      <pubDate>Fri, 25 Sep 2026 14:38:06 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
