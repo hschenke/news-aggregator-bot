@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 05:01:15 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:02:51 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RPGFan - RPGs coming this Week</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60256</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60256</guid>
+      <pubDate>Mon, 28 Sep 2026 05:09:00 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGFan presents some upcoming RPGs.]]></description>
+    </item>
+    <item>
+      <title>RPGamer - News Round-Up</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60255</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60255</guid>
+      <pubDate>Mon, 28 Sep 2026 05:07:31 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGamer sums up last week's RPG news.]]></description>
+    </item>
+    <item>
+      <title>Honkai: Star Rail - Version 4.6 released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60254</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60254</guid>
+      <pubDate>Mon, 28 Sep 2026 04:55:07 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Honkai: Star Rail Version 4.6 has been released: Pearl Character Trailer: "The Way to Paint a Form of Hope"]]></description>
+    </item>
     <item>
       <title>Scourge of the Reptiles - Progress Report</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60253</link>
@@ -115,33 +142,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Couchpotato spotted an accolades trailer for The Adventures of Elliot: The Millennium Tales: The Adventures of Elliot: The Millennium Tales - Official Accolades Trailer]]></description>
-    </item>
-    <item>
-      <title>Last Epoch - Season 5 starts on October 1</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60241</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60241</guid>
-      <pubDate>Sat, 26 Sep 2026 14:02:48 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Season 5 of Last Epoch starts on October 1: Last Epoch - Official Season 5 Overview Thanks Couchpotato!]]></description>
-    </item>
-    <item>
-      <title>Persona 5 Royal - Erica Lindbeck interview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60240</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60240</guid>
-      <pubDate>Sat, 26 Sep 2026 12:21:41 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[GamesRadar interviewed voice artist Erica Lindbeck: Persona 5 was a make-or-break point in my career | Erica Lindbeck interview Thanks Couchpotato!]]></description>
-    </item>
-    <item>
-      <title>Wo Long 2: Wings of Ember - Preview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60239</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60239</guid>
-      <pubDate>Sat, 26 Sep 2026 12:18:08 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Fextralife checked out the Wo Long 2: Wings of Ember demo: Wo Long 2 DEMO Impressions - FUN But A Little Rough... Thanks Couchpotato!]]></description>
     </item>
   </channel>
 </rss>

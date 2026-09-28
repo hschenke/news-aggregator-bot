@@ -16,7 +16,7 @@ categories:
   - name: Kicker
     url: https://newsfeed.kicker.de/news/fussball
   - name: Transfermarkt
-    url: https://www.transfermarkt.de/rss
+    url: https://www.transfermarkt.de/rss/news
 - name: Games
   feeds:
   - name: Might & Magic Alert
