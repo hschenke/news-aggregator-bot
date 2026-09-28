@@ -98,13 +98,45 @@ def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path
     return category_links
 
 
+DEFAULT_MAIN_PROMPT_TEMPLATE = """Du bist ein professioneller News-Kurator und Redakteur für ein Daily News Briefing.
+Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, kompaktes und leicht lesbares Tages-Briefing auf {lang_name} zu erstellen.
+
+WICHTIGE FORMATIERUNGSRICHTLINIEN:
+1. KEIN "Executive Summary" und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den Kategorien (z. B. "## 🤖 Tech & AI").
+2. INFOBOX GLEICH AM ANFANG JEDER KATEGORIE:
+   - Erstelle direkt unter jeder Kategorie-Überschrift (##) als Allererstes eine Infobox (Markdown Blockquote mit '>').
+   - Fasse darin alle wichtigsten News und Entwicklungen dieser Kategorie kurz, knapp und prägnant in 2 bis maximal 3 Sätzen zusammen.
+   - Format:
+     > 💡 **Kompakt:** <Kurze, knappe Zusammenfassung aller wichtigsten News dieser Kategorie>
+3. QUICKLINKS-ZEILE:
+   - Setze direkt nach der Infobox exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.
+4. DIE TOP 5 ARTIKEL PRO KATEGORIE:
+   - Wähle pro Kategorie maximal die TOP 5 wichtigsten und relevantesten Artikel aus.
+   - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
+   - Erstelle pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
+   - KEINE Kernaussage und KEINE Bedeutung generieren! Das Wort "TL;DR:" NICHT verwenden!
+   - Format:
+     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
+5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und passenden Emojis.
+6. REDAKTIONELLE FILTER & ANWEISUNGEN:
+{active_directives}
+
+Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
+{context_data}
+"""
+
+DEFAULT_DIRECTIVES = """- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.
+- Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."""
+
+
 def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> str:
     """
     Bereinigt das KI-Briefing:
     - Entfernt jegliches Executive Summary oder einleitende Vorab-Zusammenfassungen
     - Entfernt das Wort 'TL;DR:' vor den Zusammenfassungen
-    - Stellt sicher, dass jede Kategorie als ersten Eintrag die Links zur Streamlit-App und zum Feed enthält
-    - Garantiert Leerzeilen nach Quicklinks, damit Markdown saubere HTML-Listen (<ul><li>) erzeugt
+    - Stellt sicher, dass jede Kategorie als Infobox eine kurze Zusammenfassung und die Quicklinks enthält
+    - Begrenzt die Artikelanzahl pro Kategorie strikt auf die TOP 5
+    - Garantiert Leerzeilen nach Blockquotes, damit Markdown saubere HTML-Elemente erzeugt
     """
     # 1. Executive Summary & übergeordnete Titel entfernen
     text = re.sub(
@@ -124,17 +156,26 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
     text = re.sub(r"(?<=\]\):\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\bTL;?DR:?\s*", "", text, flags=re.IGNORECASE)
 
-    # 3. Quicklinks pro Kategorie garantieren und Formatierung sicherstellen
+    # 3. Strukturierung pro Kategorie: Quicklinks, Infobox und Top 5 Begrenzung
     lines = text.split("\n")
     processed_lines = []
     current_cat = None
     cat_links_inserted = False
+    cat_item_count = 0
 
     header_pattern = re.compile(r"^(#{2,3})\s+(.*)$")
 
     for line in lines:
         match = header_pattern.match(line.strip())
         if match:
+            if current_cat and not cat_links_inserted:
+                ql = category_links.get(current_cat)
+                if ql:
+                    processed_lines.append("")
+                    processed_lines.append(ql)
+                    processed_lines.append("")
+                cat_links_inserted = True
+
             raw_title = match.group(2).strip()
             cleaned_title = re.sub(r"[^\w\s&]", "", raw_title).strip().lower()
 
@@ -147,28 +188,54 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
 
             current_cat = matched_cat
             cat_links_inserted = False
+            cat_item_count = 0
             processed_lines.append(line)
             continue
 
-        if current_cat and not cat_links_inserted:
-            if "Streamlit App" in line:
+        stripped = line.strip()
+
+        # Erkennung von Quicklinks
+        if current_cat and "Streamlit App" in stripped:
+            cat_links_inserted = True
+            clean_line = stripped if stripped.startswith(">") else f"> {stripped}"
+            processed_lines.append(clean_line)
+            processed_lines.append("")
+            continue
+
+        # Erkennung von Infoboxen (> ...)
+        if current_cat and stripped.startswith(">"):
+            processed_lines.append(stripped)
+            processed_lines.append("")
+            continue
+
+        # Erkennung von Artikellistenpunkten (- oder *)
+        if current_cat and (stripped.startswith("- ") or stripped.startswith("* ")):
+            if not cat_links_inserted:
+                ql = category_links.get(current_cat)
+                if ql:
+                    processed_lines.append(ql)
+                    processed_lines.append("")
                 cat_links_inserted = True
-                clean_line = line.strip()
-                if not clean_line.startswith(">"):
-                    clean_line = f"> {clean_line}"
-                processed_lines.append(clean_line)
-                processed_lines.append("")  # Leerzeile für saubere <ul> Listen in Markdown
-                continue
-            elif line.strip().startswith("-") or line.strip().startswith("*"):
-                quicklink = category_links.get(current_cat)
-                if quicklink:
-                    processed_lines.append(quicklink)
-                    processed_lines.append("")  # Leerzeile für saubere Listen
-                cat_links_inserted = True
+
+            cat_item_count += 1
+            if cat_item_count <= 5:
                 processed_lines.append(line)
-                continue
+            continue
+
+        # Fortsetzungszeilen von Artikeln (z.B. eingerückte Zeilen)
+        if current_cat and cat_item_count > 0:
+            if cat_item_count <= 5:
+                processed_lines.append(line)
+            continue
 
         processed_lines.append(line)
+
+    if current_cat and not cat_links_inserted:
+        ql = category_links.get(current_cat)
+        if ql:
+            processed_lines.append("")
+            processed_lines.append(ql)
+            processed_lines.append("")
 
     result = "\n".join(processed_lines)
     result = re.sub(r"\n{3,}", "\n\n", result)
@@ -180,12 +247,13 @@ def summarize_news_with_gemini(
     api_key: str = None,
     model: str = None,
     config_path: str = "config/sources.yaml",
+    main_prompt_template: str = None,
     custom_directives: str = None,
 ) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
-    Erstellt ein kompaktes Briefing ohne Executive Summary und verlinkt
-    in jeder Kategorie als ersten Eintrag die Streamlit App sowie die Feeds.
+    Erstellt ein kompaktes Briefing ohne Executive Summary mit einer Infobox pro Kategorie,
+    Quicklinks zur Streamlit App & Feeds sowie den Top 5 verlinkten Artikeln pro Kategorie.
     """
     try:
         from src.aggregator import load_sources
@@ -205,8 +273,13 @@ def summarize_news_with_gemini(
     if not active_directives:
         active_directives = (settings.get("custom_prompt_directives") or "").strip()
     if not active_directives:
-        active_directives = """- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.
-- Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."""
+        active_directives = DEFAULT_DIRECTIVES
+
+    active_main_template = (main_prompt_template or "").strip()
+    if not active_main_template:
+        active_main_template = (settings.get("custom_main_prompt") or "").strip()
+    if not active_main_template:
+        active_main_template = DEFAULT_MAIN_PROMPT_TEMPLATE
 
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
@@ -232,28 +305,19 @@ def summarize_news_with_gemini(
                     context_lines.append(f"  Auszug: {item['summary']}")
                 context_lines.append(f"  Link: {item['link']}")
 
-        prompt = f"""
-Du bist ein professioneller News-Kurator und Redakteur für ein Daily News Briefing.
-Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, kompaktes und leicht lesbares Tages-Briefing auf {lang_name} zu erstellen.
+        context_data_str = "".join(context_lines)
 
-WICHTIGE FORMATIERUNGSRICHTLINIEN:
-1. KEIN "Executive Summary" und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den Kategorien (z. B. "## 🤖 Tech & AI").
-2. Als ALLERERSTE Zeile direkt unter jeder Kategorie-Überschrift MUSST du exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) übernehmen.
-3. Fasse pro Kategorie alle relevanten Themen aus den Artikeln prägnant und übersichtlich zusammen.
-4. PRO ARTIKEL:
-   - KEINE Kernaussage und KEINE Bedeutung generieren!
-   - Das Wort "TL;DR:" NICHT verwenden!
-   - Erstelle stattdessen pro Thema NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
-   - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
-   - Format:
-     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
-5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und Emojis.
-6. REDAKTIONELLE FILTER & ANWEISUNGEN:
-{active_directives}
-
-Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
-{"".join(context_lines)}
-"""
+        prompt = active_main_template
+        if "{lang_name}" in prompt:
+            prompt = prompt.replace("{lang_name}", lang_name)
+        if "{active_directives}" in prompt:
+            prompt = prompt.replace("{active_directives}", active_directives)
+        else:
+            prompt += f"\n\nREDAKTIONELLE FILTER & ANWEISUNGEN:\n{active_directives}\n"
+        if "{context_data}" in prompt:
+            prompt = prompt.replace("{context_data}", context_data_str)
+        else:
+            prompt += f"\n\nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data_str}\n"
 
         preferred_model = model or os.getenv("GEMINI_MODEL")
         default_candidates = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"]
@@ -301,10 +365,16 @@ def _generate_fallback_summary(
         if not items:
             continue
         lines.append(f"## {cat}")
+
+        sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
+        top_items = sorted_items[:5]
+
+        lines.append(f"> 💡 **Kompakt:** Die wichtigsten {len(top_items)} Meldungen der Kategorie '{cat}'.\n")
+
         if cat in category_links:
             lines.append(category_links[cat] + "\n")
-        sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
-        for item in sorted_items:
+
+        for item in top_items:
             title = item.get("title", "Kein Titel")
             link = item.get("link", "#")
             summary = item.get("summary", "")

@@ -33,7 +33,13 @@ from src.aggregator import (
     save_pool_state,
     clean_html_text,
 )
-from src.summarizer import summarize_news_with_gemini, get_configured_api_key, get_streamlit_app_url
+from src.summarizer import (
+    summarize_news_with_gemini,
+    get_configured_api_key,
+    get_streamlit_app_url,
+    DEFAULT_MAIN_PROMPT_TEMPLATE,
+    DEFAULT_DIRECTIVES,
+)
 from src.rss_generator import export_all_rss_feeds
 
 try:
@@ -133,6 +139,16 @@ st.markdown("""
         hr {
             margin: 0.5rem 0 !important;
         }
+    }
+    /* Infobox & Zitate Styling */
+    blockquote {
+        margin: 0.75rem 0 !important;
+        padding: 0.65rem 1.1rem !important;
+        background-color: rgba(59, 130, 246, 0.07) !important;
+        border-left: 4px solid #3b82f6 !important;
+        border-radius: 6px !important;
+        font-size: 0.95rem !important;
+        line-height: 1.55 !important;
     }
     /* Sidebar Navigation ultra-kompakt & reduzierte Abstände */
     [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
@@ -490,6 +506,8 @@ def harvest_global_settings():
         settings["ad_keywords"] = [k.strip() for k in raw_kws.split(",") if k.strip()]
     if "input_ki_prompt_directives" in st.session_state:
         settings["custom_prompt_directives"] = str(st.session_state["input_ki_prompt_directives"]).strip()
+    if "input_ki_main_prompt" in st.session_state:
+        settings["custom_main_prompt"] = str(st.session_state["input_ki_main_prompt"]).strip()
 
 def perform_save_all():
     """Speichert den gesamten Arbeitsentwurf persistent in sources.yaml und synchronisiert mit GitHub."""
@@ -599,8 +617,8 @@ qp_tab = (st.query_params.get("tab") or st.query_params.get("page") or st.query_
 if qp_tab:
     if qp_tab in ["articles", "artikel", "all"]:
         active_nav_tab = "articles"
-    elif qp_tab in ["briefing", "ki", "ai"]:
-        active_nav_tab = "briefing"
+    elif qp_tab in ["ki", "briefing", "ai"]:
+        active_nav_tab = "ki"
     elif qp_tab in ["rss", "feeds_rss"]:
         active_nav_tab = "rss"
     elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
@@ -624,8 +642,8 @@ def navigate_to(tab_name: str):
 if st.sidebar.button("📋 Alle Artikel", use_container_width=True, type="primary" if active_nav_tab == "articles" else "secondary", key="sb_nav_articles"):
     navigate_to("articles")
 
-if st.sidebar.button("✨ KI-Briefing", use_container_width=True, type="primary" if active_nav_tab == "briefing" else "secondary", key="sb_nav_briefing"):
-    navigate_to("briefing")
+if st.sidebar.button("✨ KI", use_container_width=True, type="primary" if active_nav_tab in ["ki", "briefing"] else "secondary", key="sb_nav_ki"):
+    navigate_to("ki")
 
 if st.sidebar.button("📡 RSS-Feeds", use_container_width=True, type="primary" if active_nav_tab == "rss" else "secondary", key="sb_nav_rss"):
     navigate_to("rss")
@@ -742,21 +760,21 @@ if new_pool_articles > 0:
 is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
 manage_tab_title = "⚙️ Feeds & Quellen 🔴" if has_unsaved_changes else "⚙️ Feeds & Quellen"
 
-if active_nav_tab == "briefing":
+if active_nav_tab in ["ki", "briefing"]:
     tab_briefing, tab_articles, tab_rss, tab_manage = st.tabs([
-        "✨ KI-Briefing", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
-    ], key="tabs_nav_briefing")
+        "✨ KI", "📋 Alle Artikel", "📡 RSS-Feeds", manage_tab_title
+    ], key="tabs_nav_ki")
 elif active_nav_tab == "rss":
     tab_rss, tab_articles, tab_briefing, tab_manage = st.tabs([
-        "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI-Briefing", manage_tab_title
+        "📡 RSS-Feeds", "📋 Alle Artikel", "✨ KI", manage_tab_title
     ], key="tabs_nav_rss")
 elif active_nav_tab == "manage":
     tab_manage, tab_articles, tab_briefing, tab_rss = st.tabs([
-        manage_tab_title, "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds"
+        manage_tab_title, "📋 Alle Artikel", "✨ KI", "📡 RSS-Feeds"
     ], key="tabs_nav_manage")
 else:
     tab_articles, tab_briefing, tab_rss, tab_manage = st.tabs([
-        "📋 Alle Artikel", "✨ KI-Briefing", "📡 RSS-Feeds", manage_tab_title
+        "📋 Alle Artikel", "✨ KI", "📡 RSS-Feeds", manage_tab_title
     ], key="tabs_nav_articles")
 
 # ----------------- TAB: Alle Artikel -----------------
@@ -1007,33 +1025,57 @@ with tab_articles:
         else:
             st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
-# ----------------- TAB: KI-Briefing -----------------
+# ----------------- TAB: KI -----------------
 with tab_briefing:
-    st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ Synthetisiertes KI-Briefing</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='margin-top:0.25rem; margin-bottom:0.4rem;'>✨ KI-Synthese & Briefing</h3>", unsafe_allow_html=True)
     
     current_prompt_directives = working_config.get("settings", {}).get("custom_prompt_directives")
     if not current_prompt_directives:
-        current_prompt_directives = (
-            "- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte, Advertorials oder gesponserte Beiträge strikt heraus.\n"
-            "- Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."
-        )
+        current_prompt_directives = DEFAULT_DIRECTIVES
 
-    with st.expander("⚙️ Redaktionelle Anweisungen & Filter für die KI (Prompt-Steuerung)", expanded=False):
-        st.caption("Diese Anweisungen steuern Gemini direkt. Du kannst Filter anpassen, Relevanzkriterien definieren oder Schwerpunkte setzen:")
+    current_main_prompt = working_config.get("settings", {}).get("custom_main_prompt")
+    if not current_main_prompt:
+        current_main_prompt = DEFAULT_MAIN_PROMPT_TEMPLATE
+
+    with st.expander("⚙️ KI-Prompt-Konfiguration (Hauptprompt & Direktiven)", expanded=False):
+        st.caption("Hier kannst du den vollständigen Haupt-/Systemprompt sowie redaktionelle Richtlinien für Gemini steuern.")
+        
+        ki_main_prompt = st.text_area(
+            "Haupt-Prompt für Gemini (Rolle, Struktur & Format):",
+            value=current_main_prompt,
+            key="input_ki_main_prompt",
+            help="Definiert die Rollen- und Strukturvorgaben für Gemini (Infobox, Top 5 Links). Die Platzhalter {lang_name}, {active_directives} und {context_data} werden automatisch eingesetzt.",
+            height=200,
+            disabled=not is_admin,
+        )
+        
         ki_prompt_directives = st.text_area(
-            "Anweisungen für Gemini KI:",
+            "Redaktionelle Filter & Direktiven (Erweiterte Regeln):",
             value=current_prompt_directives,
             key="input_ki_prompt_directives",
             help="Hier kannst du z. B. vorgeben: 'Filtere reine Werbung und Sonderangebote heraus. Ignoriere Krypto. Fokussiere auf Berliner Lokalthemen.'",
             height=100,
-            disabled=not is_admin
+            disabled=not is_admin,
         )
+        
         if is_admin:
-            if st.button("💾 Direktiven als Standard in sources.yaml speichern", key="btn_save_ki_directives", use_container_width=True):
-                working_config.setdefault("settings", {})["custom_prompt_directives"] = ki_prompt_directives.strip()
-                save_sources(working_config, sync_github=True)
-                st.toast("KI-Direktiven gespeichert & mit GitHub synchronisiert!", icon="💾")
-                st.rerun()
+            col_save_p, col_reset_p = st.columns([1, 1])
+            with col_save_p:
+                if st.button("💾 Prompts als Standard in sources.yaml speichern", key="btn_save_ki_prompts", use_container_width=True):
+                    working_config.setdefault("settings", {})["custom_main_prompt"] = ki_main_prompt.strip()
+                    working_config.setdefault("settings", {})["custom_prompt_directives"] = ki_prompt_directives.strip()
+                    save_sources(working_config, sync_github=True)
+                    st.toast("Haupt-Prompt & Direktiven dauerhaft gespeichert & synchronisiert!", icon="💾")
+                    st.rerun()
+            with col_reset_p:
+                if st.button("🔄 Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
+                    working_config.setdefault("settings", {})["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+                    st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+                    save_sources(working_config, sync_github=True)
+                    st.toast("Standard-Hauptprompt wiederhergestellt & synchronisiert!", icon="🔄")
+                    st.rerun()
+        else:
+            st.caption("🔒 **Lese-Modus:** Das Anpassen und Speichern der Prompts erfordert Admin-Rechte.")
 
     col_btn, col_info = st.columns([1, 2], vertical_alignment="center")
     with col_btn:
@@ -1070,6 +1112,7 @@ with tab_briefing:
                     news_data,
                     api_key=user_api_key,
                     model=selected_model,
+                    main_prompt_template=ki_main_prompt,
                     custom_directives=ki_prompt_directives,
                 )
                 st.session_state["cached_summary"] = ai_summary
@@ -1947,6 +1990,8 @@ with tab_manage:
                 }
                 if "custom_prompt_directives" in current_settings:
                     new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
+                if "custom_main_prompt" in current_settings:
+                    new_settings_dict["custom_main_prompt"] = current_settings["custom_main_prompt"]
                 update_settings(new_settings_dict, config=working_config, save_to_disk=False)
                 st.session_state["has_unsaved_changes"] = True
                 st.toast("Globale Einstellungen im Entwurf übernommen (noch nicht gespeichert).", icon="⚙️")
@@ -1963,6 +2008,8 @@ with tab_manage:
                 }
                 if "custom_prompt_directives" in current_settings:
                     new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
+                if "custom_main_prompt" in current_settings:
+                    new_settings_dict["custom_main_prompt"] = current_settings["custom_main_prompt"]
                 update_settings(new_settings_dict, config=working_config, save_to_disk=False)
                 perform_save_all()
 

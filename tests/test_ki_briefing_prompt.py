@@ -1,0 +1,67 @@
+import unittest
+from src.summarizer import (
+    _clean_and_enhance_briefing,
+    _generate_fallback_summary,
+    DEFAULT_MAIN_PROMPT_TEMPLATE,
+    DEFAULT_DIRECTIVES,
+)
+from src.notifier import markdown_to_html_email
+
+
+class TestKiBriefingPrompt(unittest.TestCase):
+    def test_clean_and_enhance_briefing_caps_at_top_5(self):
+        text = """## 🤖 Tech & AI
+> 💡 **Kompakt:** Die wichtigsten News zusammengefasst in zwei Sätzen.
+- **[A](http://a)**: Beschreibung 1
+- **[B](http://b)**: Beschreibung 2
+- **[C](http://c)**: Beschreibung 3
+- **[D](http://d)**: Beschreibung 4
+- **[E](http://e)**: Beschreibung 5
+- **[F](http://f)**: Beschreibung 6
+- **[G](http://g)**: Beschreibung 7
+"""
+        cat_links = {"Tech & AI": "> 🔗 [Streamlit App](http://app)"}
+        result = _clean_and_enhance_briefing(text, cat_links)
+
+        self.assertIn("## 🤖 Tech & AI", result)
+        self.assertIn("💡 **Kompakt:**", result)
+        self.assertIn("Streamlit App", result)
+        self.assertIn("[A](http://a)", result)
+        self.assertIn("[E](http://e)", result)
+        # Articles beyond Top 5 must be excluded
+        self.assertNotIn("[F](http://f)", result)
+        self.assertNotIn("[G](http://g)", result)
+
+    def test_fallback_summary_contains_infobox_and_top_5(self):
+        news = {
+            "Berlin": [
+                {"title": f"Meldung {i}", "link": f"http://berlin.de/{i}", "summary": f"Text {i}"}
+                for i in range(1, 10)
+            ]
+        }
+        res = _generate_fallback_summary(news, category_links={"Berlin": "> 🔗 [Streamlit App](http://app)"})
+        self.assertIn("## Berlin", res)
+        self.assertIn("> 💡 **Kompakt:**", res)
+        self.assertIn("Meldung 1", res)
+        self.assertIn("Meldung 5", res)
+        self.assertNotIn("Meldung 6", res)
+
+    def test_email_rendering_styles_infobox_distinctly(self):
+        md = """## 🤖 Tech & AI
+
+> 💡 **Kompakt:** KI-Trends von heute.
+
+> 🔗 [Streamlit App](http://app)
+
+- **[Titel 1](http://t1)**: News 1
+"""
+        html = markdown_to_html_email(md)
+        self.assertIn("<!DOCTYPE html>", html)
+        self.assertIn("Kompakt:", html)
+        self.assertIn("#eff6ff", html)  # Infobox background color
+        self.assertIn("#2563eb", html)  # Infobox border accent
+        self.assertIn("Streamlit App", html)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -95,28 +95,49 @@ def inline_email_styles(html: str) -> str:
     """
     font_stack = "'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
 
-    # 1. Blockquote styling (Callout-Box)
+    # 1. Blockquote styling (Callout-Box & Infobox)
     def style_blockquote(match):
         bq_inner = match.group(1)
-        # Style <p> innerhalb von Blockquote
-        bq_inner = re.sub(
-            r"<p(\s[^>]*)?>",
-            rf'<p style="margin: 0; padding: 0; color: #475569; font-size: 13.5px; line-height: 1.5; font-family: {font_stack};">',
-            bq_inner,
-        )
-        # Style <a> innerhalb von Blockquote
-        bq_inner = re.sub(
-            r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
-            rf'<a \1href="\2"\3 target="_blank" style="color: #2563eb; font-weight: 600; text-decoration: none; font-family: {font_stack};">',
-            bq_inner,
-        )
-        return (
-            rf'<blockquote style="margin: 12px 0 20px 0; padding: 10px 16px; background-color: #f8fafc; '
-            rf'border: 1px solid #e2e8f0; border-left: 4px solid #3b82f6; border-radius: 8px; '
-            rf'color: #475569; font-size: 13.5px; line-height: 1.5; font-family: {font_stack};">'
-            + bq_inner
-            + "</blockquote>"
-        )
+        is_infobox = "💡" in bq_inner or "Kompakt" in bq_inner or "Streamlit App" not in bq_inner
+
+        if is_infobox:
+            # Spezielles Styling für die Infobox der wichtigsten News pro Kategorie
+            bq_inner = re.sub(
+                r"<p(\s[^>]*)?>",
+                rf'<p style="margin: 0; padding: 0; color: #1e3a8a; font-size: 14px; font-weight: 500; line-height: 1.55; font-family: {font_stack};">',
+                bq_inner,
+            )
+            bq_inner = re.sub(
+                r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
+                rf'<a \1href="\2"\3 target="_blank" style="color: #1d4ed8; font-weight: 600; text-decoration: underline; font-family: {font_stack};">',
+                bq_inner,
+            )
+            return (
+                rf'<blockquote style="margin: 10px 0 14px 0; padding: 12px 18px; background-color: #eff6ff; '
+                rf'border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; border-radius: 8px; '
+                rf'color: #1e3a8a; font-size: 14px; line-height: 1.55; font-family: {font_stack};">'
+                + bq_inner
+                + "</blockquote>"
+            )
+        else:
+            # Dezentes Styling für die Streamlit-App & Feed Quicklinks-Zeile
+            bq_inner = re.sub(
+                r"<p(\s[^>]*)?>",
+                rf'<p style="margin: 0; padding: 0; color: #64748b; font-size: 13px; line-height: 1.45; font-family: {font_stack};">',
+                bq_inner,
+            )
+            bq_inner = re.sub(
+                r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
+                rf'<a \1href="\2"\3 target="_blank" style="color: #2563eb; font-weight: 600; text-decoration: none; font-family: {font_stack};">',
+                bq_inner,
+            )
+            return (
+                rf'<blockquote style="margin: 6px 0 16px 0; padding: 8px 14px; background-color: #f8fafc; '
+                rf'border: 1px solid #e2e8f0; border-left: 3px solid #94a3b8; border-radius: 6px; '
+                rf'color: #64748b; font-size: 13px; line-height: 1.45; font-family: {font_stack};">'
+                + bq_inner
+                + "</blockquote>"
+            )
 
     html = re.sub(r"<blockquote>(.*?)</blockquote>", style_blockquote, html, flags=re.DOTALL)
 

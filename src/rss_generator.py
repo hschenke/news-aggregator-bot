@@ -430,7 +430,7 @@ def export_briefing_rss(
 
     item = {
         "title": f"News Bot — KI-Briefing ({today_str})",
-        "link": f"{base_url}/?tab=briefing",
+        "link": f"{base_url}/?tab=ki",
         "guid": f"briefing-{today_iso}",
         "published": format_rfc822(datetime.now(timezone.utc)),
         "summary": briefing_html,
@@ -441,7 +441,7 @@ def export_briefing_rss(
 
     briefing_xml = generate_rss_xml(
         title="News Bot — Tägliches KI-Briefing",
-        link=f"{base_url}/?tab=briefing",
+        link=f"{base_url}/?tab=ki",
         description="Das tägliche, von Gemini KI synthetisierte und kuratierte News-Briefing.",
         items=[item],
         self_url=cdn_url,
@@ -457,6 +457,6 @@ def export_briefing_rss(
         "url": cdn_url,
         "cdn_url": cdn_url,
         "raw_url": raw_url,
-        "app_url": f"{base_url}/?tab=briefing",
+        "app_url": f"{base_url}/?tab=ki",
         "xml_preview": briefing_xml,
     }
