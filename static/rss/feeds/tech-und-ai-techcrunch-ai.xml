@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 14:07:10 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:07:39 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modulate raises $25M for its voice models and analysis suite</title>
+      <link>https://techcrunch.com/2026/09/28/modulate-raises-25m-for-its-voice-models-and-analysis-suite/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170298</guid>
+      <pubDate>Mon, 28 Sep 2026 14:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Modulate deploys its models to detect deepfake, fraud and scam]]></description>
+    </item>
+    <item>
+      <title>Insuretech Outmarket raises $34.5M just months after prior round</title>
+      <link>https://techcrunch.com/2026/09/28/insuretech-outmarket-raises-34-5m-just-months-after-prior-round/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3170338</guid>
+      <pubDate>Mon, 28 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The startup uses AI to automate tedious paperwork for insurance agencies and brokers.]]></description>
+    </item>
+    <item>
+      <title>Your final chance to grab your exhibit table at TechCrunch Disrupt 2026 is Oct. 2</title>
+      <link>https://techcrunch.com/2026/09/28/disrupt-2026-exhibitor-program-extended-until-oct-2/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3169782</guid>
+      <pubDate>Mon, 28 Sep 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The last day to book your Disrupt 2026 exhibit table is this Friday, October 2 at 11:59 p.m. PT. Secure your exhibit table and get your startup in front of 10,000+ founders, investors and tech leaders at San Francisco's Moscone West on Oct 13-15.]]></description>
+    </item>
     <item>
       <title>Viral AI agent Instinct raises $1B Series C at a $10B valuation</title>
       <link>https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/</link>
@@ -160,33 +187,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Frontier AI models are finishing Alan Turing's World War II codebreaking work.]]></description>
-    </item>
-    <item>
-      <title>Meta is putting its muscle behind Muse as the AI app takes off</title>
-      <link>https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169621</guid>
-      <pubDate>Fri, 25 Sep 2026 16:16:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Muse is topping the app store charts and adding users at a rapid clip, while Meta ramps up the personal AI agent's promotion across its own apps and beyond.]]></description>
-    </item>
-    <item>
-      <title>Meta’s AI Tamagotchi bet is…working?</title>
-      <link>https://techcrunch.com/video/will-metas-ai-tamagotchi-bet-isworking/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_video&amp;p=3169926</guid>
-      <pubDate>Fri, 25 Sep 2026 16:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[When AI leaders at OpenAI and Anthropic started talking about “pacing the frontier,” maybe someone should have asked: what pace? Now it’s turned into model drop week for both companies as Anthropic rolled out Opus 5.5, followed by OpenAI’s GPT-6 model updates just 90 minutes later. But the company that stole the spo...]]></description>
-    </item>
-    <item>
-      <title>For months, OpenAI’s agent swarms have been attacking online databases to find obscure facts</title>
-      <link>https://techcrunch.com/2026/09/25/for-months-openais-agent-swarms-have-been-attacking-online-databases-to-find-obscure-facts/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3169293</guid>
-      <pubDate>Fri, 25 Sep 2026 15:48:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The latest unauthorized agent swarms were discovered by researchers.]]></description>
     </item>
   </channel>
 </rss>

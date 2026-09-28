@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 14:07:10 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 14:07:39 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>64-Jähriger wieder da</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</guid>
+      <pubDate>Mon, 28 Sep 2026 13:56:00 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Reinickendorf** – Der 64-Jährige, der seit dem 10. September 2026 in Tegel vermisst wurde, ist inzwischen wohlbehalten an einer Tankstelle im Land Brandenburg angetroffen worden. Die Öffentlichkeitsfahndung hat sich somit erledigt.]]></description>
+    </item>
     <item>
       <title>Live-Einbruchversuch und Experten-Tipps: Polizei Berlin zeigt wirksame Sicherungstechnik am Tag des Einbruchschutzes am 25. Oktober 2026</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718998.php</link>
@@ -60,7 +69,7 @@
       <pubDate>Sun, 27 Sep 2026 10:48:59 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Steglitz-Zehlendorf** – In der vergangenen Nacht erlitten drei junge Männer in Zehlendorf nach einem Angriff Verletzungen. Nach derzeitigem Ermittlungsstand waren die beiden 17-Jährigen und der 18-Jährige gegen 22:20 Uhr in der Königstraße unterwegs, als sie unvermittelt aus einer Gruppe von 15 bis 20 Personen h...]]></description>
+      <description><![CDATA[📍 **Steglitz-Zehlendorf** – In der vergangenen Nacht erlitten drei junge Männer in Zehlendorf nach einem Angriff Verletzungen. Nach derzeitigem Ermittlungsstand waren die beiden 17-Jährigen und der 18-Jährige gegen 22:20 Uhr im Königsweg unterwegs, als sie unvermittelt aus einer Gruppe von 15 bis 20 Personen heraus ...]]></description>
     </item>
     <item>
       <title>Heranwachsender mit Messer verletzt</title>
@@ -448,15 +457,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Gestern Abend wurden Einsatzkräfte zu einer Bedrohung mit einer Schusswaffe am U-Bahnhof Schönleinstraße in Kreuzberg alarmiert. Nach bisherigen Erkenntnissen hatten Zeugen gegen 23 Uhr in einer U-Bahn der U-Bahnlinie 8 einen unbekannten Mann beobachtet, der mutmaßlich Drogen konsumi...]]></description>
-    </item>
-    <item>
-      <title>Bedrohung mit Machete - Tatverdächtiger festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716375.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716375.php</guid>
-      <pubDate>Sun, 20 Sep 2026 09:29:30 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Marzahn-Hellersdorf** – Gestern Nachmittag kam es in Hellersdorf zu einer Auseinandersetzung zwischen zwei Männern, bei der einer von beiden verletzt und mit einer Machete bedroht worden sein soll. Nach bisherigen Erkenntnissen gerieten ein 35-Jähriger und ein 33-Jähriger gegen 14:10 Uhr in einer Wohnung in der ...]]></description>
     </item>
   </channel>
 </rss>
