@@ -155,22 +155,22 @@ st.markdown("""
         font-size: 0.95rem !important;
         line-height: 1.55 !important;
     }
-    /* Sidebar Navigation ultra-kompakt & reduzierte Abstände */
+    /* Sidebar Navigation ausgewogene Abstände & saubere Bereichstrennung */
     [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
-        gap: 0.25rem !important;
+        gap: 0.45rem !important;
     }
     [data-testid="stSidebar"] .stButton {
         margin-top: 0 !important;
-        margin-bottom: 0 !important;
+        margin-bottom: 0.15rem !important;
     }
     [data-testid="stSidebar"] .stButton button,
     [data-testid="stSidebar"] button[data-testid^="stBaseButton"] {
-        padding-top: 0.25rem !important;
-        padding-bottom: 0.25rem !important;
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-        min-height: 2.1rem !important;
-        line-height: 1.15 !important;
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        padding-left: 0.65rem !important;
+        padding-right: 0.65rem !important;
+        min-height: 2.25rem !important;
+        line-height: 1.2 !important;
         font-size: 0.88rem !important;
         border-radius: 0.45rem !important;
     }
@@ -195,20 +195,26 @@ st.markdown("""
         border-color: #2563EB !important;
         color: #2563EB !important;
     }
+    /* Trennlinien über volle Breite mit angenehmem Abstand nach oben & unten */
     [data-testid="stSidebar"] hr,
     [data-testid="stSidebar"] [data-testid="stDivider"] {
         border: none !important;
         border-top: 1px solid rgba(128, 128, 128, 0.28) !important;
-        margin-top: 0.6rem !important;
-        margin-bottom: 0.6rem !important;
+        margin-top: 0.85rem !important;
+        margin-bottom: 0.85rem !important;
         margin-left: -1rem !important;
         margin-right: -1rem !important;
         width: calc(100% + 2rem) !important;
+        display: block !important;
+    }
+    [data-testid="stSidebar"] div[data-testid="stMarkdownContainer"]:has(hr) {
+        margin: 0 !important;
+        padding: 0 !important;
     }
     [data-testid="stSidebar"] [data-testid="stAlert"] {
-        padding: 0.25rem 0.5rem !important;
-        margin-top: 0.1rem !important;
-        margin-bottom: 0.2rem !important;
+        padding: 0.35rem 0.6rem !important;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.35rem !important;
         font-size: 0.82rem !important;
     }
     /* Kompakte KPI Chips-Leiste */
@@ -756,14 +762,14 @@ if get_configured_app_password():
     current_role = st.session_state.get("auth_role", ROLE_READONLY)
     if current_role == ROLE_ADMIN:
         st.sidebar.markdown(
-            '<div style="display:flex; align-items:center; gap:6px; padding:4px 8px; border-radius:5px; background:rgba(34, 197, 94, 0.1); border-left:3px solid #22c55e; font-size:0.8rem; font-weight:600; color:#16a34a; margin: 2px 0 4px 0;">'
+            '<div style="display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:6px; background:rgba(34, 197, 94, 0.12); border:1px solid rgba(34, 197, 94, 0.28); font-size:0.83rem; font-weight:600; color:#16a34a; margin-top:0.25rem; margin-bottom:0.55rem;">'
             '<span>🛡️</span><span>Admin (Vollzugriff)</span>'
             '</div>',
             unsafe_allow_html=True
         )
     else:
         st.sidebar.markdown(
-            '<div style="display:flex; align-items:center; gap:6px; padding:4px 8px; border-radius:5px; background:rgba(59, 130, 246, 0.1); border-left:3px solid #3b82f6; font-size:0.8rem; font-weight:600; color:#2563eb; margin: 2px 0 4px 0;">'
+            '<div style="display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:6px; background:rgba(59, 130, 246, 0.09); border:1px solid rgba(59, 130, 246, 0.28); font-size:0.83rem; font-weight:600; color:#2563eb; margin-top:0.25rem; margin-bottom:0.55rem;">'
             '<span>👁️</span><span>Lese-Modus (E-Mail)</span>'
             '</div>',
             unsafe_allow_html=True
