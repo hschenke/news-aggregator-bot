@@ -1484,6 +1484,97 @@ with tab_manage:
                             except Exception as e:
                                 st.error(f"Fehler beim Umbenennen: {e}")
 
+    def render_feed_test_result(t_res: Dict[str, Any]) -> None:
+        """Rendert eine detaillierte und informative Auswertung eines Feed-Tests."""
+        if not t_res:
+            return
+
+        success = t_res.get("success", False)
+        item_count = t_res.get("item_count", 0)
+        title = t_res.get("title", "Unbekannter Titel")
+        stream_type = t_res.get("stream_type", "Unbekannt")
+        status_code = t_res.get("status_code", "-")
+        latency_ms = t_res.get("latency_ms", 0)
+        content_type = t_res.get("content_type", "")
+        content_len = t_res.get("content_length", 0)
+        err = t_res.get("error")
+        warn = t_res.get("warning")
+        is_redir = t_res.get("is_redirected", False)
+        final_url = t_res.get("final_url", "")
+        sample_items = t_res.get("sample_items", [])
+        disc = t_res.get("autodiscovered_feeds", [])
+
+        if success and item_count > 0:
+            st.success(f"✅ **Stream verifiziert:** **{title}** ({stream_type}) — **{item_count} Einträge** gefunden!")
+        elif success and item_count == 0:
+            st.warning(f"⚠️ **Stream erreichbar, aber leer:** **{title}** ({stream_type}) lieferte aktuell **0 Artikel**.")
+        else:
+            st.error(f"❌ **Stream-Test fehlgeschlagen:** {err or 'Unbekannter Fehler'}")
+
+        # Kennzahlen-Kacheln
+        m_col1, m_col2, m_col3, m_col4 = st.columns(4)
+        with m_col1:
+            st.metric("Stream-Format", stream_type)
+        with m_col2:
+            st.metric("Server-Status", f"HTTP {status_code}", f"{latency_ms} ms", delta_color="off")
+        with m_col3:
+            st.metric("Gefundene Artikel", f"{item_count} Einträge")
+        with m_col4:
+            ct_clean = content_type.split(";")[0].strip() if content_type else "unbekannt"
+            size_kb = f"{content_len / 1024:.1f} KB" if content_len else "-"
+            st.metric("Content-Type", ct_clean, size_kb, delta_color="off")
+
+        # Warnungen / Weiterleitungen
+        if warn:
+            st.warning(f"⚠️ **Hinweis:** {warn}")
+        if is_redir:
+            st.info(f"ℹ️ **URL-Weiterleitung:** Die Ziel-URL leitet weiter auf `{final_url}`.")
+
+        # Detaillierte Feed-Metadaten
+        desc = t_res.get("description")
+        site_url = t_res.get("site_url")
+        lang = t_res.get("language")
+        last_up = t_res.get("last_updated")
+
+        meta_parts = []
+        if site_url:
+            meta_parts.append(f"🌐 [Website der Quelle]({site_url})")
+        if lang:
+            meta_parts.append(f"🗣️ Sprache: `{lang}`")
+        if last_up:
+            meta_parts.append(f"🕒 Stand: `{last_up}`")
+
+        if desc or meta_parts:
+            with st.container(border=True):
+                if desc:
+                    st.markdown(f"**Beschreibung:** {desc}")
+                if meta_parts:
+                    st.caption(" • ".join(meta_parts))
+
+        # Artikel-Vorschau
+        if sample_items:
+            with st.expander(f"📰 Vorschau der neuesten Einträge ({min(len(sample_items), 3)} von {item_count})", expanded=True):
+                for idx, item in enumerate(sample_items, 1):
+                    i_title = item.get("title", "Ohne Titel")
+                    i_link = item.get("link", "")
+                    i_pub = item.get("published", "")
+                    i_desc = item.get("summary", "")
+
+                    title_md = f"**[{i_title}]({i_link})**" if i_link else f"**{i_title}**"
+                    pub_badge = f" • 🕒 `{i_pub}`" if i_pub else ""
+                    st.markdown(f"{idx}. {title_md}{pub_badge}")
+                    if i_desc:
+                        st.caption(i_desc)
+                    if idx < len(sample_items):
+                        st.markdown("---")
+
+        # Autodiscovered Feeds
+        if disc:
+            with st.container(border=True):
+                st.info("💡 **Auf dieser Webseite gefundene alternative RSS/Atom-Feeds:**")
+                for d in disc:
+                    st.markdown(f"- **{d['title']}**: `{d['url']}`")
+
     # --- Sektion 2: RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten) ---
     with st.expander("📡 RSS-Feeds verwalten (Neu aufnehmen & Bearbeiten)", expanded=False):
         subtab_feed1, subtab_feed2 = st.tabs(["➕ Neuen Feed hinzufügen", "✏️ Bestehenden Feed bearbeiten"])
@@ -1538,15 +1629,9 @@ with tab_manage:
                 if not new_feed_url.strip():
                     st.warning("Bitte gib zuerst eine Feed-URL ein.")
                 else:
-                    with st.spinner("Prüfe Feed-URL..."):
+                    with st.spinner("Prüfe Feed-URL und Stream..."):
                         test_res = test_feed_connection(new_feed_url)
-                        if test_res["success"]:
-                            st.success(
-                                f"✅ Feed erreichbar: **{test_res['title']}** "
-                                f"({test_res['item_count']} Einträge gefunden. Neuester: *'{test_res['latest_title']}'*)"
-                            )
-                        else:
-                            st.error(f"❌ Feed nicht erreichbar oder ungültig: {test_res['error']}")
+                        render_feed_test_result(test_res)
 
             if add_clicked:
                 if not target_cat_name:
@@ -1644,12 +1729,9 @@ with tab_manage:
                 col_ebtn1, col_ebtn2, col_ebtn3 = st.columns([1, 2, 1], vertical_alignment="center")
                 with col_ebtn1:
                     if st.button("🔍 Feed testen", use_container_width=True, key=f"top_test_{curr_f.get('url')}"):
-                        with st.spinner("Prüfe Feed-URL..."):
+                        with st.spinner("Prüfe Feed-URL und Stream..."):
                             t_res = test_feed_connection(edit_furl.strip())
-                            if t_res["success"]:
-                                st.success(f"✅ Erreichbar: **{t_res['title']}** ({t_res['item_count']} Einträge gefunden)")
-                            else:
-                                st.error(f"❌ Nicht erreichbar: {t_res['error']}")
+                            render_feed_test_result(t_res)
                 with col_ebtn2:
                     if st.button("✔️ Im Entwurf vormerken", type="primary", use_container_width=True, key=f"top_save_{curr_f.get('url')}"):
                         if not edit_fname.strip():
@@ -1771,11 +1853,9 @@ with tab_manage:
                             col_t_btn, col_s_btn, col_d_btn = st.columns([1, 1, 1])
                             with col_t_btn:
                                 if st.button("🔍 Feed testen", key=f"btn_test_{key_hash}", use_container_width=True):
-                                    t_res = test_feed_connection(edit_url_val.strip())
-                                    if t_res["success"]:
-                                        st.success(f"✅ Erreichbar: '{t_res['title']}' ({t_res['item_count']} Einträge gefunden)")
-                                    else:
-                                        st.error(f"❌ Fehler: {t_res['error']}")
+                                    with st.spinner("Prüfe Feed-URL und Stream..."):
+                                        t_res = test_feed_connection(edit_url_val.strip())
+                                        render_feed_test_result(t_res)
                             with col_s_btn:
                                 if st.button("✔️ Im Entwurf vormerken", key=f"btn_save_all_{key_hash}", use_container_width=True, help="Übernimmt die Feed-Anpassung in den Arbeitsentwurf"):
                                     update_feed(

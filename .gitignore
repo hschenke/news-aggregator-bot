@@ -7,4 +7,5 @@ __pycache__/
 *.pyd
 .pytest_cache/
 output/
+data/
 .streamlit/secrets.toml
