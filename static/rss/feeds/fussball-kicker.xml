@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Kicker</link>
     <description>RSS-Feed für die Quelle 'Kicker' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:24:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:42:47 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-kicker.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nach der bitteren Derby-Pleite: FCN-Coach Wolf will "den Finger in die Wunde legen"</title>
+      <link>https://www.kicker.de/nach-der-bitteren-derby-pleite-fcn-coach-wolf-will-den-finger-in-die-wunde-legen-1256576/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/nach-der-bitteren-derby-pleite-fcn-coach-wolf-will-den-finger-in-die-wunde-legen-1256576/artikel#omrss</guid>
+      <pubDate>Mon, 28 Sep 2026 07:29:01 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Es läuft einfach nicht beim 1. FC Nürnberg II. Ausgerechnet im kleinen Frankenderby im Fürther Ronhof musste der amtierende Meister den nächsten Rückschlag in einer bislang enttäuschende Saison hinnehmen. Trainer Andreas Wolf kündigt eine unbequeme Analyse an.]]></description>
+    </item>
     <item>
       <title>TV-Quoten: Knapp elf Millionen sehen Niederlage gegen Griechenland</title>
       <link>https://www.kicker.de/tv-quoten-knapp-elf-millionen-sehen-niederlage-gegen-griechenland-1256594/artikel#omrss</link>
@@ -178,15 +187,6 @@
       <category>Fußball</category>
       <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[100 Länderspiele sind eine Schallmauer, die in der langen Historie des DFB nur wenige Spieler durchbrochen haben - zum Beispiel Joshua Kimmich. Der steht in den Top 10 des Rankings.]]></description>
-    </item>
-    <item>
-      <title>"Qualität fällt nicht vom Himmel": Was Klopp nachdenklich stimmen muss</title>
-      <link>https://www.kicker.de/qualitaet-faellt-nicht-vom-himmel-was-klopp-nachdenklich-stimmen-muss-1256502/video#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/qualitaet-faellt-nicht-vom-himmel-was-klopp-nachdenklich-stimmen-muss-1256502/video#omrss</guid>
-      <pubDate>Sun, 27 Sep 2026 20:09:19 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[So hatte sich Bundestrainer Jürgen Klopp sein Heim-Debüt nicht vorgestellt: Gegen Griechenland verlor eine ideenlose und fahrige Nationalmannschaft mit 0:1. Das sollte Klopp nachdenklich stimmen, analysiert kicker-Chefreporter Oliver Hartmann.]]></description>
     </item>
   </channel>
 </rss>

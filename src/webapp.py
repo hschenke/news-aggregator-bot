@@ -1485,7 +1485,7 @@ with tab_manage:
                                 st.error(f"Fehler beim Umbenennen: {e}")
 
     def render_feed_test_result(t_res: Dict[str, Any]) -> None:
-        """Rendert eine detaillierte und informative Auswertung eines Feed-Tests."""
+        """Rendert eine übersichtliche, einklappbare Infobox mit allen Stream-Testergebnissen."""
         if not t_res:
             return
 
@@ -1504,56 +1504,53 @@ with tab_manage:
         sample_items = t_res.get("sample_items", [])
         disc = t_res.get("autodiscovered_feeds", [])
 
-        if success and item_count > 0:
-            st.success(f"✅ **Stream verifiziert:** **{title}** ({stream_type}) — **{item_count} Einträge** gefunden!")
-        elif success and item_count == 0:
-            st.warning(f"⚠️ **Stream erreichbar, aber leer:** **{title}** ({stream_type}) lieferte aktuell **0 Artikel**.")
-        else:
-            st.error(f"❌ **Stream-Test fehlgeschlagen:** {err or 'Unbekannter Fehler'}")
+        icon = "✅" if (success and item_count > 0) else ("⚠️" if success else "❌")
+        box_header = (
+            f"{icon} Stream-Test Ergebnis: {title} ({stream_type} • {item_count} Artikel)"
+            if (success and item_count > 0)
+            else f"{icon} Stream-Test: {title} ({'0 Artikel' if success else err or 'Fehlgeschlagen'})"
+        )
 
-        # Kennzahlen-Kacheln
-        m_col1, m_col2, m_col3, m_col4 = st.columns(4)
-        with m_col1:
-            st.metric("Stream-Format", stream_type)
-        with m_col2:
-            st.metric("Server-Status", f"HTTP {status_code}", f"{latency_ms} ms", delta_color="off")
-        with m_col3:
-            st.metric("Gefundene Artikel", f"{item_count} Einträge")
-        with m_col4:
-            ct_clean = content_type.split(";")[0].strip() if content_type else "unbekannt"
-            size_kb = f"{content_len / 1024:.1f} KB" if content_len else "-"
-            st.metric("Content-Type", ct_clean, size_kb, delta_color="off")
+        with st.expander(box_header, expanded=True):
+            if success and item_count > 0:
+                st.success(f"✅ **Stream erfolgreich verifiziert:** **{title}** ({stream_type}) — **{item_count} Einträge** gefunden!")
+            elif success and item_count == 0:
+                st.warning(f"⚠️ **Stream erreichbar, aber leer:** **{title}** ({stream_type}) lieferte aktuell **0 Artikel**.")
+            else:
+                st.error(f"❌ **Stream-Test fehlgeschlagen:** {err or 'Unbekannter Fehler'}")
 
-        # Warnungen / Weiterleitungen
-        if warn:
-            st.warning(f"⚠️ **Hinweis:** {warn}")
-        if is_redir:
-            st.info(f"ℹ️ **URL-Weiterleitung:** Die Ziel-URL leitet weiter auf `{final_url}`.")
+            # Übersichtliche 2-Spalten-Struktur statt gequetschter 4 Spalten
+            col_info1, col_info2 = st.columns(2)
+            with col_info1:
+                st.markdown(f"• **Stream-Format:** `{stream_type}`")
+                st.markdown(f"• **Gefundene Artikel:** **{item_count}** Einträge")
+                if t_res.get("site_url"):
+                    st.markdown(f"• **Website der Quelle:** [{t_res['site_url']}]({t_res['site_url']})")
+                elif final_url:
+                    st.markdown(f"• **Ziel-URL:** `{final_url}`")
+                if t_res.get("language"):
+                    st.markdown(f"• **Sprache:** `{t_res['language']}`")
+            with col_info2:
+                status_badge = f"`HTTP {status_code}`" if status_code else "`-`"
+                st.markdown(f"• **Server-Status:** {status_badge} ({latency_ms} ms)")
+                ct_clean = content_type.split(";")[0].strip() if content_type else "unbekannt"
+                size_str = f" • {content_len / 1024:.1f} KB" if content_len else ""
+                st.markdown(f"• **Content-Type:** `{ct_clean}`{size_str}")
+                if t_res.get("last_updated"):
+                    st.markdown(f"• **Stand:** `{t_res['last_updated']}`")
 
-        # Detaillierte Feed-Metadaten
-        desc = t_res.get("description")
-        site_url = t_res.get("site_url")
-        lang = t_res.get("language")
-        last_up = t_res.get("last_updated")
+            if t_res.get("description"):
+                st.info(f"**Beschreibung:** {t_res['description']}")
 
-        meta_parts = []
-        if site_url:
-            meta_parts.append(f"🌐 [Website der Quelle]({site_url})")
-        if lang:
-            meta_parts.append(f"🗣️ Sprache: `{lang}`")
-        if last_up:
-            meta_parts.append(f"🕒 Stand: `{last_up}`")
+            if warn:
+                st.warning(f"⚠️ **Hinweis:** {warn}")
+            if is_redir:
+                st.info(f"ℹ️ **URL-Weiterleitung:** Die Ziel-URL leitet weiter auf `{final_url}`.")
 
-        if desc or meta_parts:
-            with st.container(border=True):
-                if desc:
-                    st.markdown(f"**Beschreibung:** {desc}")
-                if meta_parts:
-                    st.caption(" • ".join(meta_parts))
-
-        # Artikel-Vorschau
-        if sample_items:
-            with st.expander(f"📰 Vorschau der neuesten Einträge ({min(len(sample_items), 3)} von {item_count})", expanded=True):
+            # Artikel-Vorschau direkt in der Infobox
+            if sample_items:
+                st.markdown("---")
+                st.markdown(f"**📰 Vorschau der neuesten Einträge ({min(len(sample_items), 3)} von {item_count}):**")
                 for idx, item in enumerate(sample_items, 1):
                     i_title = item.get("title", "Ohne Titel")
                     i_link = item.get("link", "")
@@ -1565,12 +1562,9 @@ with tab_manage:
                     st.markdown(f"{idx}. {title_md}{pub_badge}")
                     if i_desc:
                         st.caption(i_desc)
-                    if idx < len(sample_items):
-                        st.markdown("---")
 
-        # Autodiscovered Feeds
-        if disc:
-            with st.container(border=True):
+            if disc:
+                st.markdown("---")
                 st.info("💡 **Auf dieser Webseite gefundene alternative RSS/Atom-Feeds:**")
                 for d in disc:
                     st.markdown(f"- **{d['title']}**: `{d['url']}`")

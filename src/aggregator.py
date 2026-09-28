@@ -541,27 +541,32 @@ def update_settings(
         save_sources(config, config_path)
 
 
+FEED_REQUEST_HEADERS_READER = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) NetNewsWire/6.1"
+    ),
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
+    "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Accept-Encoding": "gzip, deflate",
+}
+
+FEED_REQUEST_HEADERS_BOT = {
+    "User-Agent": "Feedfetcher-Google; (+http://www.google.com/feedfetcher.html)",
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
+    "Accept-Language": "de-DE,de;q=0.9",
+    "Accept-Encoding": "gzip, deflate",
+}
+
 FEED_REQUEST_HEADERS_BROWSER = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
     ),
-    "Accept": (
-        "application/rss+xml, application/rdf+xml, application/atom+xml, "
-        "application/xml;q=0.9, text/xml;q=0.8, text/html;q=0.7, */*;q=0.5"
-    ),
+    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
     "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
     "Accept-Encoding": "gzip, deflate",
     "Cache-Control": "no-cache",
-}
-
-FEED_REQUEST_HEADERS_READER = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
-        "(KHTML, like Gecko) NetNewsWire/6.1"
-    ),
-    "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-    "Accept-Language": "de-DE,de;q=0.9,en;q=0.8",
 }
 
 
@@ -624,8 +629,8 @@ def autodiscover_rss_feeds(raw_content: bytes, base_url: str) -> List[Dict[str, 
 def fetch_feed_raw(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
     """
     Lädt die Rohdaten einer Feed-URL robust mittels requests herunter.
-    Unterstützt automatische Browser-Header, Fallback-Header bei 403/406,
-    Gzip-Dekomprimierung, Redirects und Latenzmessung.
+    Unterstützt automatische RSS-Header, Fallback-Header bei 202/403/406,
+    WAF-Bypass-Proxy (Jina AI) und lokalen Projekt-Mirror.
     """
     feed_url = (feed_url or "").strip()
     if not (feed_url.startswith("http://") or feed_url.startswith("https://")):
@@ -639,9 +644,11 @@ def fetch_feed_raw(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
             "is_redirected": False,
             "content_type": "",
             "latency_ms": 0,
+            "is_proxied": False,
+            "is_cached_mirror": False,
         }
 
-    header_variants = [FEED_REQUEST_HEADERS_BROWSER, FEED_REQUEST_HEADERS_READER]
+    header_variants = [FEED_REQUEST_HEADERS_READER, FEED_REQUEST_HEADERS_BOT, FEED_REQUEST_HEADERS_BROWSER]
     last_err = None
     last_resp = None
 
@@ -652,12 +659,122 @@ def fetch_feed_raw(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
                 resp = session.get(feed_url, headers=headers, timeout=timeout, allow_redirects=True)
                 last_resp = resp
                 if resp.status_code == 200:
+                    # Validieren, dass nicht ein HTML-Challenge-Body fälschlicherweise mit 200 kam
+                    head_l = resp.content[:1500].lower()
+                    if b"<rss" in head_l or b"<feed" in head_l or b"<?xml" in head_l or b"<rdf:rdf" in head_l:
+                        break
+                    if "text/html" in resp.headers.get("content-type", "").lower():
+                        continue
                     break
-                if resp.status_code in [403, 406]:
+                # Bei WAF-Challenge (202), Forbidden (403), Not Acceptable (406) etc. nächsten Headersatz probieren
+                if resp.status_code in [202, 403, 406, 429, 503]:
                     continue
                 break
         except Exception as e:
             last_err = e
+
+    latency_ms = int((time.time() - t0) * 1000)
+
+    # 1. Erfolgreicher Direktabruf (echter XML-Stream mit Status 200)
+    if last_resp is not None and last_resp.status_code == 200:
+        head_l = last_resp.content[:1500].lower()
+        if b"<rss" in head_l or b"<feed" in head_l or b"<?xml" in head_l or b"<rdf:rdf" in head_l or "xml" in last_resp.headers.get("content-type", "").lower():
+            return {
+                "success": True,
+                "status_code": 200,
+                "content": last_resp.content,
+                "headers": dict(last_resp.headers),
+                "final_url": str(last_resp.url),
+                "is_redirected": str(last_resp.url).rstrip("/") != feed_url.rstrip("/"),
+                "content_type": last_resp.headers.get("content-type", ""),
+                "latency_ms": latency_ms,
+                "is_proxied": False,
+                "is_cached_mirror": False,
+                "error": None,
+            }
+
+    # 2. Versuch über WAF-Bypass-Proxy (r.jina.ai) bei 202 (AWS WAF Challenge), 403 (Forbidden) oder HTML-Challenge
+    if last_resp is None or last_resp.status_code in [202, 403, 406, 429, 500, 502, 503] or ("text/html" in getattr(last_resp, "headers", {}).get("content-type", "").lower()):
+        try:
+            proxy_url = f"https://r.jina.ai/{feed_url}"
+            with requests.Session() as session:
+                p_resp = session.get(proxy_url, timeout=timeout)
+                if p_resp.status_code == 200:
+                    text_p = p_resp.text
+                    idx_rss = text_p.find("<rss")
+                    if idx_rss == -1:
+                        idx_rss = text_p.find("<feed")
+                    if idx_rss != -1:
+                        clean_xml = text_p[idx_rss:].encode("utf-8")
+                        return {
+                            "success": True,
+                            "status_code": 200,
+                            "content": clean_xml,
+                            "headers": {"content-type": "application/rss+xml; charset=utf-8"},
+                            "final_url": feed_url,
+                            "is_redirected": False,
+                            "content_type": "application/rss+xml; charset=utf-8",
+                            "latency_ms": int((time.time() - t0) * 1000),
+                            "is_proxied": True,
+                            "is_cached_mirror": False,
+                            "error": None,
+                        }
+        except Exception:
+            pass
+
+    # 3. Versuch: Synchronisierter lokaler oder GitHub-Projekt-Mirror (static/rss/feeds/)
+    try:
+        clean_url_key = feed_url.replace("https://", "").replace("http://", "").strip("/")
+        feed_dir = Path("static/rss/feeds")
+        if feed_dir.exists():
+            for xml_file in feed_dir.glob("*.xml"):
+                content = xml_file.read_bytes()
+                if feed_url.encode("utf-8") in content or clean_url_key.encode("utf-8") in content:
+                    return {
+                        "success": True,
+                        "status_code": 200,
+                        "content": content,
+                        "headers": {"content-type": "application/rss+xml; charset=utf-8"},
+                        "final_url": feed_url,
+                        "is_redirected": False,
+                        "content_type": "application/rss+xml; charset=utf-8",
+                        "latency_ms": int((time.time() - t0) * 1000),
+                        "is_proxied": False,
+                        "is_cached_mirror": True,
+                        "error": None,
+                    }
+    except Exception:
+        pass
+
+    # 4. Falls alles fehlschlägt, letzten HTTP-Fehler zurückgeben
+    if last_resp is not None:
+        return {
+            "success": False,
+            "status_code": last_resp.status_code,
+            "content": last_resp.content,
+            "headers": dict(last_resp.headers),
+            "final_url": str(last_resp.url),
+            "is_redirected": str(last_resp.url).rstrip("/") != feed_url.rstrip("/"),
+            "content_type": last_resp.headers.get("content-type", ""),
+            "latency_ms": latency_ms,
+            "is_proxied": False,
+            "is_cached_mirror": False,
+            "error": f"HTTP {last_resp.status_code}" if last_resp.status_code != 200 else "Kein valider RSS-Stream",
+        }
+
+    return {
+        "success": False,
+        "status_code": 0,
+        "content": b"",
+        "headers": {},
+        "final_url": feed_url,
+        "is_redirected": False,
+        "content_type": "",
+        "latency_ms": latency_ms,
+        "is_proxied": False,
+        "is_cached_mirror": False,
+        "error": str(last_err or "Verbindungsaufbau fehlgeschlagen"),
+    }
 
     latency_ms = int((time.time() - t0) * 1000)
 
@@ -859,7 +976,11 @@ def test_feed_connection(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
     display_title = feed_title or (f"Feed ({urllib.parse.urlparse(feed_url).netloc})" if entries else "Unbekannter Titel")
 
     warning = None
-    if len(entries) == 0:
+    if raw_res.get("is_proxied"):
+        warning = "Der Feed liegt hinter einem WAF-/Bot-Schutz (z. B. CloudFront HTTP 202) und wurde erfolgreich über einen WAF-Proxy geladen."
+    elif raw_res.get("is_cached_mirror"):
+        warning = "Der Feed liegt hinter einem WAF-/Bot-Schutz und wurde aus dem synchronisierten Projekt-Mirror geladen."
+    elif len(entries) == 0:
         warning = "Feed ist erreichbar und syntaktisch valide, enthält aber aktuell 0 Einträge."
     elif raw_res.get("is_redirected"):
         warning = f"URL wurde weitergeleitet auf: {final_url}"

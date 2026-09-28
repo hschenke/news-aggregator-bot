@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Finanzen' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:24:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:42:47 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/finanzen.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dax aktuell: Dax öffnet unverändert – Ölpreisanstieg und fallende Tech-Werte machen Anleger vorsichtig</title>
+      <link>https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-oeffnet-unveraendert-tech-werte-machen-anleger-vorsichtig/100257824.html</link>
+      <guid isPermaLink="false">https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-oeffnet-unveraendert-tech-werte-machen-anleger-vorsichtig/100257824.html</guid>
+      <pubDate>Mon, 28 Sep 2026 07:38:29 GMT</pubDate>
+      <category>Finanzen</category>
+      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
+      <description><![CDATA[Der deutsche Leitindex startet verhalten in die neue Woche. Nachdem Trump die Bedingungen des Irans zur Öffnung der Straße von Hormus abgelehnt hat, zieht der Ölpreis wieder an.]]></description>
+    </item>
     <item>
       <title>Lexus ES: So fährt sich die japanische Antwort auf die Mercedes E-Klasse</title>
       <link>https://www.handelsblatt.com/mobilitaet/motor/lexus-es-so-faehrt-sich-die-japanische-antwort-auf-die-mercedes-e-klasse/100257876.html</link>
@@ -27,7 +36,7 @@
       <description><![CDATA[Sorgen vor steigenden Zinsen und den geopolitischen Spannungen im Nahen Osten haben die asiatischen Börsen belastet. Besonders in China ging es abwärts.]]></description>
     </item>
     <item>
-      <title>Interview: Herr van Rijswijk, warum halten Sie am kostenlosen Girokonto für deutsche Kunden fest?</title>
+      <title>Interview: ING-Chef zur Commerzbank-Übernahme: „Kunden werden sich verstärkt nach Alternativen umsehen“</title>
       <link>https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/ing-chef-van-rijswijk-wir-wollen-der-kaeufer-sein-nicht-uebernahmeziel/100255687.html</link>
       <guid isPermaLink="false">https://www.handelsblatt.com/finanzen/banken-versicherungen/banken/ing-chef-van-rijswijk-wir-wollen-der-kaeufer-sein-nicht-uebernahmeziel/100255687.html</guid>
       <pubDate>Mon, 28 Sep 2026 07:01:16 GMT</pubDate>
@@ -43,15 +52,6 @@
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
       <description><![CDATA[Deutschlands Wirtschaft wächst stärker als erwartet. Doch der schuldenfinanzierte Aufschwung dürfte rasch verpuffen, wenn wir die bessere Konjunktur nicht nutzen. Ein Gastbeitrag.]]></description>
-    </item>
-    <item>
-      <title>Dax aktuell: Dax öffnet unverändert – Ölpreisanstieg und fallende Tech-Werte machen Anleger vorsichtig</title>
-      <link>https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-oeffnet-unveraendert-tech-werte-machen-anleger-vorsichtig/100257824.html</link>
-      <guid isPermaLink="false">https://www.handelsblatt.com/finanzen/maerkte/marktberichte/dax-aktuell-dax-oeffnet-unveraendert-tech-werte-machen-anleger-vorsichtig/100257824.html</guid>
-      <pubDate>Mon, 28 Sep 2026 06:58:14 GMT</pubDate>
-      <category>Finanzen</category>
-      <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Der deutsche Leitindex startet verhalten in die neue Woche. Nachdem Trump die Bedingungen des Irans zur Öffnung der Straße von Hormus abgelehnt hat, zieht der Ölpreis wieder an.]]></description>
     </item>
     <item>
       <title>Kommentar: Linnemann spart mit der Kürzung der Kinderkrankheitstage bei den Falschen</title>
@@ -168,7 +168,7 @@
       <pubDate>Mon, 28 Sep 2026 00:59:48 GMT</pubDate>
       <category>Finanzen</category>
       <source url="https://www.handelsblatt.com/contentexport/feed/top-themen">Handelsblatt Schlagzeilen</source>
-      <description><![CDATA[Mercedes will die Van-Fabrik in Ludwigsfelde abgeben, KNDS wäre interessiert. Doch eine Milliardenbestellung der Bundeswehr lässt auf sich warten – für 1800 Beschäftigte drängt die Zeit.]]></description>
+      <description><![CDATA[Der Autobauer will die Van-Fabrik in Ludwigsfelde abgeben, der Panzerbauer hat Interesse, sie zu übernehmen oder zumindest einen Teil der Produktionskapazitäten zu nutzen. Doch es gibt ein Problem.]]></description>
     </item>
     <item>
       <title>Softwarekonzern: SAP-Chef sieht historische Wachstumschance durch KI-Produkte</title>

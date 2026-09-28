@@ -5,23 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:24:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:42:47 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Prompting Claude Opus 5.5</title>
-      <link>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5</link>
-      <guid isPermaLink="false">https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5</guid>
-      <pubDate>Mon, 28 Sep 2026 06:33:29 GMT</pubDate>
+      <title>Maybe don't let Muse run your Facebook Marketplace account</title>
+      <link>https://www.threads.com/@matt.j.robb/post/DdxwAJnDhNy</link>
+      <guid isPermaLink="false">https://www.threads.com/@matt.j.robb/post/DdxwAJnDhNy</guid>
+      <pubDate>Mon, 28 Sep 2026 07:15:22 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>An Antidote to Roko's Basilisk</title>
-      <link>https://news.ycombinator.com/item?id=49874609</link>
-      <guid isPermaLink="false">https://news.ycombinator.com/item?id=49874609</guid>
-      <pubDate>Mon, 28 Sep 2026 06:15:29 GMT</pubDate>
+      <title>Prompting Claude Opus 5.5</title>
+      <link>https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5</link>
+      <guid isPermaLink="false">https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5</guid>
+      <pubDate>Mon, 28 Sep 2026 06:33:29 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -40,6 +40,15 @@
       <link>https://arxiv.org/abs/2110.01834</link>
       <guid isPermaLink="false">https://arxiv.org/abs/2110.01834</guid>
       <pubDate>Mon, 28 Sep 2026 02:23:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Nissan's third generation e-POWER powertrain</title>
+      <link>https://www.nissan-global.com/EN/INNOVATION/TECHNOLOGY/ARCHIVE/E_POWER_GEN3/</link>
+      <guid isPermaLink="false">https://www.nissan-global.com/EN/INNOVATION/TECHNOLOGY/ARCHIVE/E_POWER_GEN3/</guid>
+      <pubDate>Mon, 28 Sep 2026 01:31:23 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -67,6 +76,15 @@
       <link>https://www.historyofinformation.com/detail.php?entryid=4341</link>
       <guid isPermaLink="false">https://www.historyofinformation.com/detail.php?entryid=4341</guid>
       <pubDate>Mon, 28 Sep 2026 00:22:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Lunar Terminator Paradox</title>
+      <link>https://notes.secretsauce.net/notes/2026/09/27_lunar-terminator-paradox.html</link>
+      <guid isPermaLink="false">https://notes.secretsauce.net/notes/2026/09/27_lunar-terminator-paradox.html</guid>
+      <pubDate>Sun, 27 Sep 2026 20:06:17 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -207,15 +225,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>The Cartesian Hand: In-Hand Manipulation with All-Linear Fingers</title>
-      <link>https://generalroboticslab.com/cartesian_handv1</link>
-      <guid isPermaLink="false">https://generalroboticslab.com/cartesian_handv1</guid>
-      <pubDate>Sat, 26 Sep 2026 04:27:39 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Guitar amp and effects pedal built on the Waveshare ESP32-S3-Touch-AMOLED-2.06</title>
       <link>https://github.com/dashersw/coyopedal</link>
       <guid isPermaLink="false">https://github.com/dashersw/coyopedal</guid>
@@ -265,15 +274,6 @@
       <link>https://shnatsel.github.io/state-of-simd-rust-2026/</link>
       <guid isPermaLink="false">https://shnatsel.github.io/state-of-simd-rust-2026/</guid>
       <pubDate>Fri, 25 Sep 2026 12:46:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>A New Experiment Meta-Strategy</title>
-      <link>https://chillphysicsenjoyer.substack.com/p/a-new-experiment-meta-strategy</link>
-      <guid isPermaLink="false">https://chillphysicsenjoyer.substack.com/p/a-new-experiment-meta-strategy</guid>
-      <pubDate>Fri, 25 Sep 2026 12:20:04 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
