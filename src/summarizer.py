@@ -2,8 +2,11 @@ import os
 import sys
 import re
 import urllib.parse
-from typing import Dict, List, Any
+import logging
+from typing import Any
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -49,7 +52,7 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
 
 
-def build_category_quicklinks(config: dict, streamlit_base_url: str, config_path: str = "config/sources.yaml") -> Dict[str, str]:
+def build_category_quicklinks(config: dict[str, Any], streamlit_base_url: str, config_path: str = "config/sources.yaml") -> dict[str, str]:
     """
     Erstellt für jede Kategorie den Link-Block.
     WICHTIG: Die Feed-Links verweisen direkt auf die Streamlit-App (mit Kategorie- & Feed-Filter),
@@ -129,7 +132,43 @@ DEFAULT_DIRECTIVES = """- Filtere reine Werbung, Angebote, Sonderaktionen, Rabat
 - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten."""
 
 
-def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> str:
+def _strip_executive_summaries(text: str) -> str:
+    """Entfernt Executive Summary Abschnitte und globale Überschriften."""
+    cleaned = re.sub(
+        r"(?is)^#{1,3}\s*(?:📌\s*)?Executive Summary.*?(?=\n#{1,3}\s+[^\n]+|\Z)",
+        "",
+        text,
+    )
+    cleaned = re.sub(
+        r"(?i)^#{1,2}\s+(?:📊\s*)?(?:Daily\s+)?(?:Executive\s+)?Briefing[^\n]*\n+",
+        "",
+        cleaned.strip(),
+    )
+    return re.sub(r"^(?:\s*---\s*\n+)+", "", cleaned).strip()
+
+
+def _strip_tldr_markers(text: str) -> str:
+    """Entfernt redundante TL;DR Kennzeichnungen aus Aufzählungspunkten."""
+    text = re.sub(r"(?<=\*\*:\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"(?<=\]\):\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
+    return re.sub(r"\bTL;?DR:?\s*", "", text, flags=re.IGNORECASE)
+
+
+def _match_category_name(raw_title: str, available_categories: list[str]) -> str | None:
+    """Findet die passende Kategorie anhand von Normalisierung und Substring-Matching."""
+    cleaned_title = re.sub(r"[^\w\s&]", "", raw_title).strip().lower()
+    for cat_name in available_categories:
+        c_clean = re.sub(r"[^\w\s&]", "", cat_name).strip().lower()
+        if c_clean and (c_clean in cleaned_title or cleaned_title in c_clean):
+            return cat_name
+    return None
+
+
+def _clean_and_enhance_briefing(
+    text: str,
+    category_links: dict[str, str],
+    max_items_per_category: int = 5,
+) -> str:
     """
     Bereinigt das KI-Briefing:
     - Entfernt jegliches Executive Summary oder einleitende Vorab-Zusammenfassungen
@@ -138,55 +177,34 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
     - Begrenzt die Artikelanzahl pro Kategorie strikt auf die TOP 5
     - Garantiert Leerzeilen nach Blockquotes, damit Markdown saubere HTML-Elemente erzeugt
     """
-    # 1. Executive Summary & übergeordnete Titel entfernen
-    text = re.sub(
-        r"(?is)^#{1,3}\s*(?:📌\s*)?Executive Summary.*?(?=\n#{1,3}\s+[^\n]+|\Z)",
-        "",
-        text,
-    )
-    text = re.sub(
-        r"(?i)^#{1,2}\s+(?:📊\s*)?(?:Daily\s+)?(?:Executive\s+)?Briefing[^\n]*\n+",
-        "",
-        text.strip(),
-    )
-    text = re.sub(r"^(?:\s*---\s*\n+)+", "", text).strip()
+    text = _strip_executive_summaries(text)
+    text = _strip_tldr_markers(text)
 
-    # 2. Entferne 'TL;DR:' und 'TLDR:' Kennzeichnungen
-    text = re.sub(r"(?<=\*\*:\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"(?<=\]\):\s)(?:TL;?DR:?\s*)", "", text, flags=re.IGNORECASE)
-    text = re.sub(r"\bTL;?DR:?\s*", "", text, flags=re.IGNORECASE)
-
-    # 3. Strukturierung pro Kategorie: Quicklinks, Infobox und Top 5 Begrenzung
     lines = text.split("\n")
-    processed_lines = []
-    current_cat = None
+    processed_lines: list[str] = []
+    current_cat: str | None = None
     cat_links_inserted = False
     cat_item_count = 0
 
     header_pattern = re.compile(r"^(#{2,3})\s+(.*)$")
+    available_cats = list(category_links.keys())
+
+    def flush_quicklinks_if_needed():
+        nonlocal cat_links_inserted
+        if current_cat and not cat_links_inserted:
+            ql = category_links.get(current_cat)
+            if ql:
+                processed_lines.append("")
+                processed_lines.append(ql)
+                processed_lines.append("")
+            cat_links_inserted = True
 
     for line in lines:
         match = header_pattern.match(line.strip())
         if match:
-            if current_cat and not cat_links_inserted:
-                ql = category_links.get(current_cat)
-                if ql:
-                    processed_lines.append("")
-                    processed_lines.append(ql)
-                    processed_lines.append("")
-                cat_links_inserted = True
-
+            flush_quicklinks_if_needed()
             raw_title = match.group(2).strip()
-            cleaned_title = re.sub(r"[^\w\s&]", "", raw_title).strip().lower()
-
-            matched_cat = None
-            for cat_name in category_links.keys():
-                c_clean = re.sub(r"[^\w\s&]", "", cat_name).strip().lower()
-                if c_clean and (c_clean in cleaned_title or cleaned_title in c_clean):
-                    matched_cat = cat_name
-                    break
-
-            current_cat = matched_cat
+            current_cat = _match_category_name(raw_title, available_cats)
             cat_links_inserted = False
             cat_item_count = 0
             processed_lines.append(line)
@@ -210,32 +228,21 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
 
         # Erkennung von Artikellistenpunkten (- oder *)
         if current_cat and (stripped.startswith("- ") or stripped.startswith("* ")):
-            if not cat_links_inserted:
-                ql = category_links.get(current_cat)
-                if ql:
-                    processed_lines.append(ql)
-                    processed_lines.append("")
-                cat_links_inserted = True
-
+            flush_quicklinks_if_needed()
             cat_item_count += 1
-            if cat_item_count <= 5:
+            if cat_item_count <= max_items_per_category:
                 processed_lines.append(line)
             continue
 
         # Fortsetzungszeilen von Artikeln (z.B. eingerückte Zeilen)
         if current_cat and cat_item_count > 0:
-            if cat_item_count <= 5:
+            if cat_item_count <= max_items_per_category:
                 processed_lines.append(line)
             continue
 
         processed_lines.append(line)
 
-    if current_cat and not cat_links_inserted:
-        ql = category_links.get(current_cat)
-        if ql:
-            processed_lines.append("")
-            processed_lines.append(ql)
-            processed_lines.append("")
+    flush_quicklinks_if_needed()
 
     result = "\n".join(processed_lines)
     result = re.sub(r"\n{3,}", "\n\n", result)
@@ -243,12 +250,12 @@ def _clean_and_enhance_briefing(text: str, category_links: Dict[str, str]) -> st
 
 
 def summarize_news_with_gemini(
-    categorized_news: Dict[str, List[Dict[str, str]]],
-    api_key: str = None,
-    model: str = None,
+    categorized_news: dict[str, list[dict[str, Any]]],
+    api_key: str | None = None,
+    model: str | None = None,
     config_path: str = "config/sources.yaml",
-    main_prompt_template: str = None,
-    custom_directives: str = None,
+    main_prompt_template: str | None = None,
+    custom_directives: str | None = None,
 ) -> str:
     """
     Fasst die gesammelten Nachrichten mit dem Google Gemini Modell zusammen.
@@ -259,7 +266,8 @@ def summarize_news_with_gemini(
         from src.aggregator import load_sources
         config = load_sources(config_path)
         settings = config.get("settings", {})
-    except Exception:
+    except Exception as exc:
+        logger.warning("Quellen konnten nicht geladen werden (%s). Verwende Defaults.", exc)
         config = {"categories": []}
         settings = {}
 
@@ -283,6 +291,7 @@ def summarize_news_with_gemini(
 
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
+        logger.info("Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung.")
         print("[Hinweis] Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung...")
         return _generate_fallback_summary(categorized_news, category_links=category_links)
 
@@ -330,6 +339,7 @@ def summarize_news_with_gemini(
         last_error = None
         for model_name in candidate_models:
             try:
+                logger.info("Generiere mit KI-Modell: %s", model_name)
                 print(f"      -> Generiere mit Modell: {model_name}...")
                 try:
                     chat = client.chats.create(model=model_name)
@@ -343,20 +353,23 @@ def summarize_news_with_gemini(
                     cleaned_result = _clean_and_enhance_briefing(response.text, category_links)
                     return cleaned_result
             except Exception as model_err:
+                logger.warning("Modell %s temporär nicht erreichbar (%s). Versuche Alternative...", model_name, model_err)
                 print(f"      [Warnung] Modell {model_name} temporär nicht erreichbar ({model_err}). Versuche Alternative...")
                 last_error = model_err
 
+        logger.error("Alle KI-Modelle schlugen fehl: %s", last_error)
         print(f"[Fehler] Alle KI-Modelle schlugen fehl: {last_error}")
         return _generate_fallback_summary(categorized_news, category_links=category_links)
-    except Exception as e:
-        print(f"[Fehler] Initialisierungsfehler Gemini API: {e}")
+    except Exception as exc:
+        logger.error("Initialisierungsfehler Gemini API: %s", exc)
+        print(f"[Fehler] Initialisierungsfehler Gemini API: {exc}")
         return _generate_fallback_summary(categorized_news, category_links=category_links)
 
 
 def _generate_fallback_summary(
-    categorized_news: Dict[str, List[Dict[str, str]]],
-    category_links: Dict[str, str] = None,
-    **kwargs
+    categorized_news: dict[str, list[dict[str, Any]]],
+    category_links: dict[str, str] | None = None,
+    **kwargs: Any,
 ) -> str:
     """Einfacher Markdown-Report ohne LLM (Fallback)."""
     lines = []

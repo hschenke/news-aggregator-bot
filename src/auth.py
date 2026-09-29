@@ -3,7 +3,6 @@ import time
 import hmac
 import hashlib
 from pathlib import Path
-from typing import Optional
 
 AUTH_SALT_READONLY = b"news_bot_readonly_salt_v1"
 AUTH_SALT_ADMIN = b"news_bot_admin_salt_v1"
@@ -100,7 +99,7 @@ def verify_admin_token(token: str, password: str, max_age_seconds: int = ADMIN_E
         return False
 
 
-def get_auth_role(credential: str, password: str) -> Optional[str]:
+def get_auth_role(credential: str, password: str) -> str | None:
     """
     Prüft die übergebene Eingabe (Passwort oder Token) und ermittelt die Berechtigung:
     - ROLE_ADMIN ("admin"): Wenn das echte APP_PASSWORD im Klartext oder ein gültiges 24h-Admin-Token vorliegt.

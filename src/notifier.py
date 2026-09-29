@@ -2,12 +2,17 @@ import os
 import sys
 import re
 import smtplib
+import logging
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from pathlib import Path
 from datetime import datetime
 import requests
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
+
+DEFAULT_HTTP_TIMEOUT: int = 15
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -407,46 +412,56 @@ def save_html_preview(html_content: str, output_dir: str = "output") -> str:
     return str(file_path.resolve())
 
 
-def send_email_via_resend(html_content: str, subject: str = None) -> bool:
-    """Sendet die E-Mail über die moderne Resend API."""
+def send_email_via_resend(html_content: str, subject: str | None = None) -> bool:
+    """Sendet die E-Mail über die moderne Resend API mit konfiguriertem Timeout."""
     api_key = os.getenv("RESEND_API_KEY")
     email_to = os.getenv("EMAIL_TO")
     email_from = os.getenv("EMAIL_FROM", "News Bot <onboarding@resend.dev>")
     
     if not api_key or api_key.startswith("re_your_"):
+        logger.info("Kein gültiger RESEND_API_KEY vorhanden. E-Mail Versand übersprungen.")
         print("[Hinweis] Kein gültiger RESEND_API_KEY vorhanden. E-Mail Versand übersprungen.")
         return False
 
     if not email_to or "@example.com" in email_to:
+        logger.info("Kein gültiger EMAIL_TO Empfänger eingetragen.")
         print("[Hinweis] Kein gültiger EMAIL_TO Empfänger eingetragen.")
         return False
 
     if not subject:
         subject = f"📰 Dein Daily News Digest - {datetime.now().strftime('%d.%m.%Y')}"
 
-    response = requests.post(
-        "https://api.resend.com/emails",
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "from": email_from,
-            "to": [email_to],
-            "subject": subject,
-            "html": html_content,
-        },
-    )
+    try:
+        response = requests.post(
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "from": email_from,
+                "to": [email_to],
+                "subject": subject,
+                "html": html_content,
+            },
+            timeout=DEFAULT_HTTP_TIMEOUT,
+        )
 
-    if response.status_code in [200, 201]:
-        print(f"🚀 E-Mail erfolgreich via Resend versendet an {email_to}!")
-        return True
-    else:
-        print(f"[Fehler] Resend API Fehler ({response.status_code}): {response.text}")
+        if response.status_code in [200, 201]:
+            logger.info("E-Mail erfolgreich via Resend versendet an %s", email_to)
+            print(f"🚀 E-Mail erfolgreich via Resend versendet an {email_to}!")
+            return True
+        else:
+            logger.error("Resend API Fehler (%d): %s", response.status_code, response.text)
+            print(f"[Fehler] Resend API Fehler ({response.status_code}): {response.text}")
+            return False
+    except requests.RequestException as exc:
+        logger.error("Netzwerkfehler beim Resend E-Mail-Versand: %s", exc)
+        print(f"[Fehler] Netzwerkfehler beim Resend E-Mail-Versand: {exc}")
         return False
 
 
-def send_email_via_smtp(html_content: str, subject: str = None) -> bool:
+def send_email_via_smtp(html_content: str, subject: str | None = None) -> bool:
     """Sendet die E-Mail per klassischem SMTP."""
     smtp_host = os.getenv("SMTP_HOST")
     smtp_port = int(os.getenv("SMTP_PORT", 587))
@@ -455,6 +470,7 @@ def send_email_via_smtp(html_content: str, subject: str = None) -> bool:
     email_to = os.getenv("EMAIL_TO")
 
     if not all([smtp_host, smtp_user, smtp_pass, email_to]) or "@example.com" in email_to:
+        logger.info("Unvollständige SMTP-Zugangsdaten in .env.")
         print("[Hinweis] Unvollständige SMTP-Zugangsdaten in .env.")
         return False
 
@@ -468,18 +484,20 @@ def send_email_via_smtp(html_content: str, subject: str = None) -> bool:
     msg.attach(MIMEText(html_content, "html"))
 
     try:
-        with smtplib.SMTP(smtp_host, smtp_port) as server:
+        with smtplib.SMTP(smtp_host, smtp_port, timeout=DEFAULT_HTTP_TIMEOUT) as server:
             server.starttls()
             server.login(smtp_user, smtp_pass)
             server.sendmail(smtp_user, email_to, msg.as_string())
+        logger.info("E-Mail erfolgreich via SMTP versendet an %s", email_to)
         print(f"🚀 E-Mail erfolgreich via SMTP versendet an {email_to}!")
         return True
-    except Exception as e:
-        print(f"[Fehler] SMTP Versand fehlgeschlagen: {e}")
+    except (smtplib.SMTPException, OSError) as exc:
+        logger.error("SMTP Versand fehlgeschlagen: %s", exc)
+        print(f"[Fehler] SMTP Versand fehlgeschlagen: {exc}")
         return False
 
 
-def dispatch_digest(markdown_summary: str):
+def dispatch_digest(markdown_summary: str) -> None:
     """Hauptverteiler: Erstellt HTML, speichert Vorschau und sendet Mail (sofern konfiguriert)."""
     html = markdown_to_html_email(markdown_summary)
     
@@ -493,4 +511,5 @@ def dispatch_digest(markdown_summary: str):
     elif provider == "smtp":
         send_email_via_smtp(html)
     else:
+        logger.info("Unbekannter EMAIL_PROVIDER '%s'. Nur lokale Vorschau gespeichert.", provider)
         print(f"[Info] Unbekannter EMAIL_PROVIDER '{provider}'. Nur lokale Vorschau gespeichert.")

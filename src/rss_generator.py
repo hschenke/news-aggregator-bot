@@ -17,7 +17,7 @@ import urllib.parse
 from xml.sax.saxutils import escape as xml_escape
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, List, Any, Optional
+from typing import Any
 
 
 def slugify(text: str) -> str:
@@ -80,10 +80,10 @@ def generate_rss_xml(
     title: str,
     link: str,
     description: str,
-    items: List[Dict[str, Any]],
-    self_url: Optional[str] = None,
+    items: list[dict[str, Any]],
+    self_url: str | None = None,
     language: str = "de",
-    category_name: Optional[str] = None,
+    category_name: str | None = None,
 ) -> str:
     """
     Erstellt ein standardkonformes RSS 2.0 XML Dokument mit Atom Self-Link.
@@ -155,37 +155,33 @@ def generate_rss_xml(
     return xml_content.strip()
 
 
-def export_all_rss_feeds(
-    news_data: Dict[str, List[Dict[str, Any]]],
-    config: Optional[Dict[str, Any]] = None,
-    base_url: Optional[str] = None,
-) -> Dict[str, Any]:
-    """
-    Erzeugt alle RSS-Dateien im Verzeichnis static/rss/ und liefert ein Verzeichnis (Registry) zurück.
-    Erstellte Feeds:
-    1. Gesamt-Feed: static/rss/all.xml
-    2. Kategorie-Feeds: static/rss/kategorien/<cat_slug>.xml
-    3. Einzel-Feeds: static/rss/feeds/<feed_slug>.xml
-    """
-    rss_root = get_static_rss_dir()
-    cat_dir = rss_root / "kategorien"
-    feed_dir = rss_root / "feeds"
-    cat_dir.mkdir(parents=True, exist_ok=True)
-    feed_dir.mkdir(parents=True, exist_ok=True)
+def _sort_article_key(item: dict[str, Any]) -> float:
+    """Extrahiert einen Zeitstempel zur Sortierung von Artikeln."""
+    ts = item.get("timestamp")
+    if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+        return float(ts)
+    p = item.get("published_parsed")
+    if p and isinstance(p, time.struct_time):
+        try:
+            return time.mktime(p)
+        except (ValueError, OverflowError):
+            pass
+    return 0.0
 
-    # Basis-URL ermitteln
+
+def _resolve_feed_urls(
+    config: dict[str, Any] | None,
+    base_url: str | None,
+) -> tuple[str, str, str, str]:
+    """Ermittelt Basis-URL, CDN-Präfix, Raw-GitHub-Präfix und Streamlit-Präfix."""
     if not base_url:
         if config:
             base_url = config.get("settings", {}).get("streamlit_app_url")
         if not base_url:
             from src.summarizer import get_streamlit_app_url
             base_url = get_streamlit_app_url()
-    base_url = (base_url or "").rstrip("/")
+    clean_base_url = (base_url or "").rstrip("/")
 
-    # Streamlit serviert Dateien unter /app/static/...
-    static_http_prefix = f"{base_url}/app/static/rss"
-
-    # GitHub / CDN URLs für 100%ige Verfügbarkeit (ohne Streamlit Cloud Standby)
     repo = "hschenke/news-aggregator-bot"
     branch = "main"
     try:
@@ -200,27 +196,22 @@ def export_all_rss_feeds(
 
     cdn_prefix = f"https://cdn.jsdelivr.net/gh/{repo}@{branch}/static/rss"
     raw_prefix = f"https://raw.githubusercontent.com/{repo}/{branch}/static/rss"
+    static_http_prefix = f"{clean_base_url}/app/static/rss"
+    return clean_base_url, cdn_prefix, raw_prefix, static_http_prefix
 
-    def sort_key(it):
-        ts = it.get("timestamp")
-        if ts is not None and isinstance(ts, (int, float)) and ts > 0:
-            return float(ts)
-        p = it.get("published_parsed")
-        if p and isinstance(p, time.struct_time):
-            try:
-                return time.mktime(p)
-            except Exception:
-                pass
-        return 0.0
 
-    all_articles: List[Dict[str, Any]] = []
-    category_registry = []
-    feed_registry = []
+def _export_category_feeds(
+    news_data: dict[str, list[dict[str, Any]]],
+    categories_cfg: list[dict[str, Any]],
+    cat_dir: Path,
+    cdn_prefix: str,
+    raw_prefix: str,
+    base_url: str,
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Erzeugt die XML-Feeds für alle bekannten Kategorien."""
+    all_articles: list[dict[str, Any]] = []
+    category_registry: list[dict[str, Any]] = []
 
-    # 1. Kategorie-Feeds erstellen
-    categories_cfg = config.get("categories", []) if config else []
-    
-    # Alle Kategorien durchgehen (sowohl aus config als auch aus geladenen news_data)
     known_cat_names = set(news_data.keys())
     for c in categories_cfg:
         known_cat_names.add(c.get("name", "").strip())
@@ -228,7 +219,7 @@ def export_all_rss_feeds(
     for cat_name in sorted(list(known_cat_names), key=lambda x: x.strip().lower()):
         if not cat_name:
             continue
-        cat_items = sorted(news_data.get(cat_name, []), key=sort_key, reverse=True)
+        cat_items = sorted(news_data.get(cat_name, []), key=_sort_article_key, reverse=True)
         all_articles.extend(cat_items)
 
         cat_slug = slugify(cat_name)
@@ -249,7 +240,6 @@ def export_all_rss_feeds(
         )
         cat_file_path.write_text(cat_xml, encoding="utf-8")
 
-        # Anzahl konfigurierter Feeds in dieser Kategorie ermitteln
         cfg_feed_count = 0
         for c in categories_cfg:
             if c.get("name", "").strip().lower() == cat_name.lower():
@@ -270,16 +260,26 @@ def export_all_rss_feeds(
             "xml_preview": cat_xml,
         })
 
-    # 2. Einzelne Feeds erstellen (nach Quell-Feed gegliedert)
-    # Gruppierung aller geladenen Artikel nach Source
-    items_by_source: Dict[str, List[Dict[str, Any]]] = {}
+    return all_articles, category_registry
+
+
+def _export_source_feeds(
+    news_data: dict[str, list[dict[str, Any]]],
+    categories_cfg: list[dict[str, Any]],
+    feed_dir: Path,
+    cdn_prefix: str,
+    raw_prefix: str,
+    base_url: str,
+) -> list[dict[str, Any]]:
+    """Erzeugt die XML-Feeds für alle einzelnen Quell-Feeds."""
+    items_by_source: dict[str, list[dict[str, Any]]] = {}
     for items_list in news_data.values():
         for item in items_list:
             src = item.get("source", "Unbekannt")
             items_by_source.setdefault(src, []).append(item)
 
-    # Feeds aus config abgleichen
-    seen_feed_slugs = set()
+    feed_registry: list[dict[str, Any]] = []
+    seen_feed_slugs: set[str] = set()
     sorted_cfg_cats = sorted(categories_cfg, key=lambda c: c.get("name", "").strip().lower())
     for cat in sorted_cfg_cats:
         cat_name = cat.get("name", "Allgemein")
@@ -292,7 +292,7 @@ def export_all_rss_feeds(
                 f_slug = slugify(f"{cat_name}-{f_name}-{seen_feed_slugs}")
             seen_feed_slugs.add(f_slug)
 
-            f_items = sorted(items_by_source.get(f_name, []), key=sort_key, reverse=True)
+            f_items = sorted(items_by_source.get(f_name, []), key=_sort_article_key, reverse=True)
             f_filename = f"{f_slug}.xml"
             f_file_path = feed_dir / f_filename
             f_cdn_url = f"{cdn_prefix}/feeds/{f_filename}"
@@ -325,9 +325,18 @@ def export_all_rss_feeds(
                 "item_count": len(f_items),
                 "xml_preview": f_xml,
             })
+    return feed_registry
 
-    # 3. Gesamt-Feed erstellen (Alle Nachrichten)
-    sorted_all_articles = sorted(all_articles, key=sort_key, reverse=True)
+
+def _export_global_feed(
+    all_articles: list[dict[str, Any]],
+    rss_root: Path,
+    cdn_prefix: str,
+    raw_prefix: str,
+    base_url: str,
+) -> dict[str, Any]:
+    """Erzeugt den globalen Gesamt-Feed (all.xml)."""
+    sorted_all_articles = sorted(all_articles, key=_sort_article_key, reverse=True)
     all_filename = "all.xml"
     all_file_path = rss_root / all_filename
     all_cdn_url = f"{cdn_prefix}/{all_filename}"
@@ -342,7 +351,7 @@ def export_all_rss_feeds(
     )
     all_file_path.write_text(all_xml, encoding="utf-8")
 
-    all_registry = {
+    return {
         "title": "Alle Nachrichten (Gesamt-Feed)",
         "slug": "all",
         "filename": all_filename,
@@ -355,25 +364,67 @@ def export_all_rss_feeds(
         "xml_preview": all_xml,
     }
 
-    # 4. Optional: KI-Briefing Feed prüfen
+
+def _get_briefing_registry(
+    rss_root: Path,
+    cdn_prefix: str,
+    raw_prefix: str,
+    base_url: str,
+) -> dict[str, Any] | None:
+    """Liest die Metadaten des briefing.xml Feeds aus, falls vorhanden."""
     briefing_file = rss_root / "briefing.xml"
-    briefing_registry = None
-    if briefing_file.exists():
-        try:
-            briefing_registry = {
-                "title": "Tägliches KI-Briefing",
-                "slug": "briefing",
-                "filename": "briefing.xml",
-                "file_path": str(briefing_file),
-                "url": f"{cdn_prefix}/briefing.xml",
-                "cdn_url": f"{cdn_prefix}/briefing.xml",
-                "raw_url": f"{raw_prefix}/briefing.xml",
-                "app_url": f"{base_url}/?tab=briefing",
-                "item_count": 1,
-                "xml_preview": briefing_file.read_text(encoding="utf-8"),
-            }
-        except Exception:
-            pass
+    if not briefing_file.exists():
+        return None
+    try:
+        return {
+            "title": "Tägliches KI-Briefing",
+            "slug": "briefing",
+            "filename": "briefing.xml",
+            "file_path": str(briefing_file),
+            "url": f"{cdn_prefix}/briefing.xml",
+            "cdn_url": f"{cdn_prefix}/briefing.xml",
+            "raw_url": f"{raw_prefix}/briefing.xml",
+            "app_url": f"{base_url}/?tab=briefing",
+            "item_count": 1,
+            "xml_preview": briefing_file.read_text(encoding="utf-8"),
+        }
+    except Exception:
+        return None
+
+
+def export_all_rss_feeds(
+    news_data: dict[str, list[dict[str, Any]]],
+    config: dict[str, Any] | None = None,
+    base_url: str | None = None,
+) -> dict[str, Any]:
+    """
+    Erzeugt alle RSS-Dateien im Verzeichnis static/rss/ und liefert ein Verzeichnis (Registry) zurück.
+    Erstellte Feeds:
+    1. Gesamt-Feed: static/rss/all.xml
+    2. Kategorie-Feeds: static/rss/kategorien/<cat_slug>.xml
+    3. Einzel-Feeds: static/rss/feeds/<feed_slug>.xml
+    """
+    rss_root = get_static_rss_dir()
+    cat_dir = rss_root / "kategorien"
+    feed_dir = rss_root / "feeds"
+    cat_dir.mkdir(parents=True, exist_ok=True)
+    feed_dir.mkdir(parents=True, exist_ok=True)
+
+    base_url, cdn_prefix, raw_prefix, static_http_prefix = _resolve_feed_urls(config, base_url)
+    categories_cfg = config.get("categories", []) if config else []
+
+    all_articles, category_registry = _export_category_feeds(
+        news_data, categories_cfg, cat_dir, cdn_prefix, raw_prefix, base_url
+    )
+    feed_registry = _export_source_feeds(
+        news_data, categories_cfg, feed_dir, cdn_prefix, raw_prefix, base_url
+    )
+    all_registry = _export_global_feed(
+        all_articles, rss_root, cdn_prefix, raw_prefix, base_url
+    )
+    briefing_registry = _get_briefing_registry(
+        rss_root, cdn_prefix, raw_prefix, base_url
+    )
 
     return {
         "all": all_registry,
@@ -388,9 +439,9 @@ def export_all_rss_feeds(
 
 def export_briefing_rss(
     briefing_markdown: str,
-    base_url: Optional[str] = None,
-    briefing_date_str: Optional[str] = None,
-) -> Dict[str, Any]:
+    base_url: str | None = None,
+    briefing_date_str: str | None = None,
+) -> dict[str, Any]:
     """
     Erstellt oder aktualisiert den KI-Briefing RSS-Feed (static/rss/briefing.xml).
     Enthält das synthetisierte Tages-Briefing als lesbaren RSS-Eintrag für RSS-Reader.

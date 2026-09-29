@@ -4,6 +4,7 @@ import base64
 import re
 import html
 import urllib.parse
+import logging
 import requests
 import feedparser
 import yaml
@@ -12,8 +13,13 @@ import email.utils
 import time
 import concurrent.futures
 from datetime import datetime, timezone
-from typing import List, Dict, Any, Optional
+from typing import Any
 from pathlib import Path
+
+from src.models import Article
+from src.exceptions import NewsAggregatorError, ConfigurationError, FeedFetchError
+
+logger = logging.getLogger(__name__)
 
 
 def get_sources_path(config_path: str = "config/sources.yaml") -> Path:
@@ -26,7 +32,7 @@ def get_sources_path(config_path: str = "config/sources.yaml") -> Path:
     return path
 
 
-def get_github_sync_config() -> Dict[str, str]:
+def get_github_sync_config() -> dict[str, str]:
     """Liest GitHub Sync Konfiguration aus Umgebungsvariablen oder Streamlit Secrets."""
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
     repo = os.getenv("GITHUB_REPO", "hschenke/news-aggregator-bot")
@@ -55,11 +61,11 @@ def get_github_sync_config() -> Dict[str, str]:
 
 
 def sync_sources_to_github(
-    config_dict: Dict[str, Any] = None,
+    config_dict: dict[str, Any] | None = None,
     config_path: str = "config/sources.yaml",
     commit_message: str = "chore(config): update sources.yaml and RSS feeds via web dashboard",
     include_rss_feeds: bool = True
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """
     Pusht die aktuelle sources.yaml und alle generierten static/rss/*.xml Feeds
     direkt per GitHub Git Data API (Trees & Commits) in einem einzigen atomaren Commit.
@@ -179,7 +185,7 @@ def sync_sources_to_github(
         return {"success": False, "commit_url": None, "error": str(e)}
 
 
-def trigger_rss_update_workflow() -> Dict[str, Any]:
+def trigger_rss_update_workflow() -> dict[str, Any]:
     """Löst den GitHub Actions Workflow 'update_rss.yml' per workflow_dispatch aus."""
     gh_cfg = get_github_sync_config()
     token = gh_cfg["token"]
@@ -204,7 +210,7 @@ def trigger_rss_update_workflow() -> Dict[str, Any]:
 
 
 
-def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
+def load_sources(config_path: str = "config/sources.yaml") -> dict[str, Any]:
     """Lädt die Konfiguration aus sources.yaml und garantiert alphabetische Kategoriensortierung."""
     path = get_sources_path(config_path)
     if not path.exists():
@@ -226,10 +232,10 @@ def load_sources(config_path: str = "config/sources.yaml") -> Dict[str, Any]:
 
 
 def save_sources(
-    config: Dict[str, Any],
+    config: dict[str, Any],
     config_path: str = "config/sources.yaml",
     sync_github: bool = True
-) -> Dict[str, Any]:
+) -> dict[str, Any]:
     """Speichert die Quellenkonfiguration persistent in sources.yaml und synchronisiert mit GitHub (falls konfiguriert)."""
     if "categories" in config:
         config["categories"].sort(key=lambda c: c.get("name", "").strip().lower())
@@ -252,14 +258,14 @@ def add_feed(
     category_name: str,
     feed_name: str,
     feed_url: str,
-    max_items: int = None,
+    max_items: int | None = None,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
     include_keywords: Any = None,
     exclude_keywords: Any = None,
-    **kwargs
-) -> Dict[str, Any]:
+    **kwargs: Any,
+) -> dict[str, Any]:
     """
     Fügt einen neuen Feed zu einer Kategorie hinzu oder aktualisiert ihn, falls die URL bereits existiert.
     Speichert die Änderungen in sources.yaml zurück, falls save_to_disk=True.
@@ -328,7 +334,7 @@ def delete_feed(
     feed_url: str,
     delete_empty_category: bool = False,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> bool:
     """
@@ -364,16 +370,16 @@ def delete_feed(
 def update_feed(
     category_name: str,
     old_url: str,
-    new_name: str = None,
-    new_url: str = None,
-    new_max_items: int = None,
-    new_category: str = None,
+    new_name: str | None = None,
+    new_url: str | None = None,
+    new_max_items: int | None = None,
+    new_category: str | None = None,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
     include_keywords: Any = None,
     exclude_keywords: Any = None,
-    **kwargs
+    **kwargs: Any,
 ) -> bool:
     """
     Aktualisiert Name, URL, Keywords und/oder Kategorie eines bestehenden Feeds.
@@ -445,7 +451,7 @@ def rename_category(
     old_name: str,
     new_name: str,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> bool:
     """Benennt eine bestehende Kategorie um."""
@@ -482,7 +488,7 @@ def rename_category(
 def add_category(
     category_name: str,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> bool:
     """Fügt eine neue Kategorie ohne Feeds hinzu, falls sie noch nicht existiert."""
@@ -508,7 +514,7 @@ def add_category(
 def delete_category(
     category_name: str,
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> bool:
     """Löscht eine komplette Kategorie inklusive aller Feeds aus sources.yaml oder dem config-Objekt."""
@@ -527,9 +533,9 @@ def delete_category(
 
 
 def update_settings(
-    new_settings: Dict[str, Any],
+    new_settings: dict[str, Any],
     config_path: str = "config/sources.yaml",
-    config: Dict[str, Any] = None,
+    config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> None:
     """Aktualisiert den settings-Abschnitt in sources.yaml oder im config-Objekt."""
@@ -600,9 +606,9 @@ def determine_stream_type(version: str, content_type: str, raw_content: bytes) -
     return "Unbekanntes Format"
 
 
-def autodiscover_rss_feeds(raw_content: bytes, base_url: str) -> List[Dict[str, str]]:
+def autodiscover_rss_feeds(raw_content: bytes, base_url: str) -> list[dict[str, str]]:
     """Sucht in HTML-Inhalten nach verlinkten RSS/Atom-Feeds (<link rel='alternate' ...>)."""
-    discovered: List[Dict[str, str]] = []
+    discovered: list[dict[str, str]] = []
     if not raw_content:
         return discovered
     try:
@@ -626,7 +632,7 @@ def autodiscover_rss_feeds(raw_content: bytes, base_url: str) -> List[Dict[str, 
     return discovered
 
 
-def fetch_feed_raw(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
+def fetch_feed_raw(feed_url: str, timeout: int = 10) -> dict[str, Any]:
     """
     Lädt die Rohdaten einer Feed-URL robust mittels requests herunter.
     Unterstützt automatische RSS-Header, Fallback-Header bei 202/403/406,
@@ -804,7 +810,7 @@ def fetch_feed_raw(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
     }
 
 
-def test_feed_connection(feed_url: str, timeout: int = 10) -> Dict[str, Any]:
+def test_feed_connection(feed_url: str, timeout: int = 10) -> dict[str, Any]:
     """Testet die Erreichbarkeit, Stream-Validität und Metadaten einer Feed-URL."""
     feed_url = (feed_url or "").strip()
     if not feed_url:
@@ -1071,7 +1077,7 @@ def get_canonical_url(url: str) -> str:
     return url.rstrip("/")
 
 
-def normalize_keywords(kw: Any) -> List[str]:
+def normalize_keywords(kw: Any) -> list[str]:
     """Wandelt Keywords (Liste, String oder None) in eine bereinigte Liste von Strings um."""
     if not kw:
         return []
@@ -1099,7 +1105,7 @@ DEFAULT_AD_PATTERNS = [
 ]
 
 
-def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[str]] = None) -> bool:
+def is_ad_item(title: str, summary: str = "", custom_ad_keywords: list[str] | None = None) -> bool:
     """Prüft, ob ein Artikel Werbung, Anzeige, gesponsertes Angebot oder Deal ist."""
     t_clean = (title or "").strip().lower()
     s_clean = (summary or "").strip().lower()
@@ -1117,7 +1123,7 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: Optional[List[
     return False
 
 
-_POLICE_TEASER_CACHE: Dict[str, str] = {}
+_POLICE_TEASER_CACHE: dict[str, str] = {}
 _POLICE_CACHE_FILE = Path("data/police_teasers_cache.json")
 
 
@@ -1140,7 +1146,7 @@ def _save_police_cache() -> None:
         pass
 
 
-def extract_police_teaser(url: str, session: Optional[requests.Session] = None) -> str:
+def extract_police_teaser(url: str, session: requests.Session | None = None) -> str:
     """Extrahiert den Ereignisort (Bezirk/Stadtteil) und Teaser-Text einer Berliner Polizeimeldung aus dem HTML-Body."""
     if not url or "berlin.de/polizei" not in url:
         return ""
@@ -1203,12 +1209,12 @@ def extract_police_teaser(url: str, session: Optional[requests.Session] = None) 
 
 def fetch_feed_items(
     feed_url: str,
-    max_items: int = None,
-    include_keywords: Optional[List[str]] = None,
-    exclude_keywords: Optional[List[str]] = None,
+    max_items: int | None = None,
+    include_keywords: list[str] | None = None,
+    exclude_keywords: list[str] | None = None,
     filter_ads: bool = True,
-    custom_ad_keywords: Optional[List[str]] = None,
-) -> List[Dict[str, Any]]:
+    custom_ad_keywords: list[str] | None = None,
+) -> list[dict[str, Any]]:
     """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Werbung & Keywords, dedupliziert und sortiert nach Datum."""
     try:
         raw_res = fetch_feed_raw(feed_url)
@@ -1350,32 +1356,34 @@ def fetch_feed_items(
             if norm_title and len(norm_title) > 12:
                 seen_titles.add(norm_title)
 
-            items.append({
-                "title": title,
-                "link": link,
-                "summary": summary,
-                "published": published,
-                "published_parsed": published_parsed,
-                "timestamp": timestamp,
-                "guid": guid,
-            })
+            article = Article(
+                title=title,
+                link=link,
+                summary=summary,
+                published=published,
+                published_parsed=published_parsed,
+                timestamp=timestamp,
+                guid=guid,
+            )
+            items.append(article.to_dict())
 
         # Artikel nach Datum sortieren (neueste zuerst)
         items.sort(key=lambda x: x.get("timestamp", 0.0), reverse=True)
         return items
     except Exception as e:
+        logger.warning("Fehler beim Abrufen von %s: %s", feed_url, e)
         print(f"[Warnung] Fehler beim Abrufen von {feed_url}: {e}")
         return []
 
 
-def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> Dict[str, List[Dict[str, Any]]]:
+def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> dict[str, list[dict[str, Any]]]:
     """Sammelt alle News aus allen konfigurierten Kategorien, bereinigt Duplikate und aktualisiert optional die RSS-Feeds."""
     config = load_sources(config_path)
     settings = config.get("settings", {})
     filter_ads = settings.get("filter_ads", True)
     custom_ad_keywords = settings.get("ad_keywords", [])
 
-    collected: Dict[str, List[Dict[str, Any]]] = {}
+    collected: dict[str, list[dict[str, Any]]] = {}
 
     # Kategorien alphabetisch sortieren
     categories = sorted(config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
@@ -1443,7 +1451,7 @@ def get_pool_state_path(state_path: str = "output/pool_state.json") -> Path:
     return p
 
 
-def load_pool_state(state_path: str = "output/pool_state.json") -> Dict[str, Any]:
+def load_pool_state(state_path: str = "output/pool_state.json") -> dict[str, Any]:
     """Lädt den gespeicherten Zustand der bekannten Artikel-URLs."""
     p = get_pool_state_path(state_path)
     if p.exists():
@@ -1455,7 +1463,7 @@ def load_pool_state(state_path: str = "output/pool_state.json") -> Dict[str, Any
     return {"known_urls": [], "last_count": 0, "last_updated": None}
 
 
-def save_pool_state(articles_or_urls: Any, state_path: str = "output/pool_state.json") -> Dict[str, Any]:
+def save_pool_state(articles_or_urls: Any, state_path: str = "output/pool_state.json") -> dict[str, Any]:
     """Speichert den aktuellen Satz bekannter Artikel-URLs persistent ab."""
     p = get_pool_state_path(state_path)
     urls = []
@@ -1495,11 +1503,12 @@ def save_pool_state(articles_or_urls: Any, state_path: str = "output/pool_state.
         with open(p, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
     except Exception as e:
+        logger.warning("Fehler beim Speichern des Pool-Status: %s", e)
         print(f"[Hinweis] Fehler beim Speichern des Pool-Status: {e}")
     return data
 
 
-def get_new_articles_count(current_news: Dict[str, List[Dict[str, Any]]], state_path: str = "output/pool_state.json") -> int:
+def get_new_articles_count(current_news: dict[str, list[dict[str, Any]]], state_path: str = "output/pool_state.json") -> int:
     """
     Ermittelt, wie viele Artikel neu hinzugekommen sind im Vergleich zum gespeicherten Pool-Zustand.
     Falls noch kein Pool-Zustand existiert, wird der aktuelle Stand als Basis initialisiert (0 neue Artikel).

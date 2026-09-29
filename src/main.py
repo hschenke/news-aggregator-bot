@@ -1,5 +1,6 @@
 import sys
 import time
+import logging
 from pathlib import Path
 
 # Sicherstellen, dass UTF-8 im Windows-Terminal unterstützt wird
@@ -16,8 +17,11 @@ from src.summarizer import summarize_news_with_gemini
 from src.notifier import dispatch_digest
 from src.rss_generator import export_briefing_rss
 
+logger = logging.getLogger(__name__)
 
-def run_pipeline():
+
+def run_pipeline() -> None:
+    logger.info("News Aggregator Bot: Pipeline gestartet.")
     print("=" * 60)
     print("🤖 News Aggregator Bot: Pipeline gestartet...")
     print("=" * 60)
