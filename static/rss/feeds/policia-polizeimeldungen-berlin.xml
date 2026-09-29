@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia&amp;feed=Polizeimeldungen+Berlin</link>
     <description>RSS-Feed für die Quelle 'Polizeimeldungen Berlin' (Kategorie: Policia).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 28 Sep 2026 14:07:39 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 05:01:38 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/policia-polizeimeldungen-berlin.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Messerangriff verletzte Polizisten und Schussabgabe</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719167.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719167.php</guid>
+      <pubDate>Mon, 28 Sep 2026 14:35:38 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Mitte** – Gestern Abend wurden Einsatzkräfte des Regionalabschnitts 17/18 nach Wedding alarmiert. Nach bisherigen Erkenntnissen und Zeugenaussagen kam es zwischen einer Gruppe von vier Personen im Alter von zwölf bis 16 Jahren sowie einem 28-Jährigen in einem Lokal in der Torfstraße gegen 19:45 Uhr zunächs...]]></description>
+    </item>
+    <item>
+      <title>13-Jährige vermisst – Polizei bittet um Mithilfe</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719143.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719143.php</guid>
+      <pubDate>Mon, 28 Sep 2026 14:05:05 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Marzahn-Hellersdorf** – Mit der Veröffentlichung eines Fotos bittet die Polizei Berlin um Mithilfe bei der Suche nach der 13-jährigen Bảo Anh LE. Sie selbst nennt sich Aiden. Am Mittwoch, den 23. September 2026, verließ Bảo Anh LE gegen 7 Uhr eine Einrichtung der Jugendhilfe in Marzahn-Hellersdorf, um zur Schule...]]></description>
+    </item>
     <item>
       <title>64-Jähriger wieder da</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</link>
@@ -439,24 +457,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – Gestern Abend nahmen Polizeikräfte in Prenzlauer Berg zwei Jugendliche fest, die im Verdacht stehen, gemeinsam mit einem weiteren, bislang unbekannten Täter, mehrere Gleichaltrige beraubt zu haben. Nach bisherigen Erkenntnissen sprachen die drei Tatverdächtigen gegen 20:30 Uhr auf der Tribüne im ...]]></description>
-    </item>
-    <item>
-      <title>Mann nach schwerer Körperverletzung festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716378.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716378.php</guid>
-      <pubDate>Sun, 20 Sep 2026 09:54:21 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Marzahn-Hellersdorf** – In der vergangenen Nacht ist ein Mann in Hellersdorf bei einer Auseinandersetzung erheblich verletzt worden. Polizeikräfte nahmen kurz darauf einen Tatverdächtigen fest. Nach bisherigen Erkenntnissen hatten zwei Zeugen gegen 1 Uhr in der Lyonel-Feininger-Straße einen zunächst verbalen Str...]]></description>
-    </item>
-    <item>
-      <title>Bedrohung mit Schusswaffe am U-Bahnhof Schönleinstraße</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716376.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716376.php</guid>
-      <pubDate>Sun, 20 Sep 2026 09:38:07 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Gestern Abend wurden Einsatzkräfte zu einer Bedrohung mit einer Schusswaffe am U-Bahnhof Schönleinstraße in Kreuzberg alarmiert. Nach bisherigen Erkenntnissen hatten Zeugen gegen 23 Uhr in einer U-Bahn der U-Bahnlinie 8 einen unbekannten Mann beobachtet, der mutmaßlich Drogen konsumi...]]></description>
     </item>
   </channel>
 </rss>
