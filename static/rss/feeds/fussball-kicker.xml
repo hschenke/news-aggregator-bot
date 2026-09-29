@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Kicker</link>
     <description>RSS-Feed für die Quelle 'Kicker' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 29 Sep 2026 15:04:28 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 15:53:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-kicker.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Di Salvo nimmt Tresoldi in die Verantwortung</title>
+      <link>https://www.kicker.de/di-salvo-nimmt-tresoldi-in-die-verantwortung-1256956/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/di-salvo-nimmt-tresoldi-in-die-verantwortung-1256956/artikel#omrss</guid>
+      <pubDate>Tue, 29 Sep 2026 14:42:10 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Nachdem Kapitän Tom Bischof wie geplant zur A-Mannschaft gestoßen ist, unterzieht U-21-Coach Antonio Di Salvo seinen erfahrensten Recken, Nicolo Tresoldi einer neuen Tauglichkeitsprüfung.]]></description>
+    </item>
+    <item>
+      <title>"Klopps zweiter Kader hat Ergebnisdruck"</title>
+      <link>https://www.kicker.de/klopps-zweiter-kader-hat-ergebnisdruck-1256958/video#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/klopps-zweiter-kader-hat-ergebnisdruck-1256958/video#omrss</guid>
+      <pubDate>Tue, 29 Sep 2026 13:47:09 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Vor dem dritten Spiel unter dem neuen Bundestrainer Jürgen Klopp ist im Trainingslager in Herzogenaurach der zweite Kader vom XXL-Aufgebot zusammengetroffen. Für kicker-Reporter Sebastian Wolff ist klar: Dieses Team hat gegen Serbien und in Griechenland schon Ergebnisdruck.]]></description>
+    </item>
     <item>
       <title>Pflichtspieljahr beendet: Sturmtalent Musah fehlt Bremen monatelang</title>
       <link>https://www.kicker.de/pflichtspieljahr-beendet-sturmtalent-musah-fehlt-bremen-monatelang-1256949/artikel#omrss</link>
@@ -169,24 +187,6 @@
       <category>Fußball</category>
       <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Vitaly Janelt ist einer von elf Neulingen, die Jürgen Klopp für seinen XXL-Kader nominiert hat und doch unterscheidet er sich von den anderen Debütanten: Der Mittelfeldspieler des FC Brentford ist bereits 28 Jahre alt und durfte nun einen Schritt vollziehen, auf den er lange gewartet hat. Zu lange?]]></description>
-    </item>
-    <item>
-      <title>Wück nominiert Neuling Baum - Berger pausiert</title>
-      <link>https://www.kicker.de/wueck-nominiert-neuling-baum-berger-pausiert-1254028/artikel#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/wueck-nominiert-neuling-baum-berger-pausiert-1254028/artikel#omrss</guid>
-      <pubDate>Tue, 29 Sep 2026 09:18:14 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[Frauen-Bundestrainer Christian Wück geht die beiden interkontinentalen Tests mit frischem Personal an: Lisa Baum vom FC Arsenal ist erstmals im DFB-Aufgebot dabei. Derweil fehlt Stammkeeperin Ann-Katrin Berger.]]></description>
-    </item>
-    <item>
-      <title>Jeltsch über Klopp: "Vermittelt diese Ehre, für das Land spielen zu dürfen"</title>
-      <link>https://www.kicker.de/jeltsch-ueber-klopp-vermittelt-diese-ehre-fuer-das-land-spielen-zu-duerfen-1256883/video#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/jeltsch-ueber-klopp-vermittelt-diese-ehre-fuer-das-land-spielen-zu-duerfen-1256883/video#omrss</guid>
-      <pubDate>Tue, 29 Sep 2026 09:03:05 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[Finn Jeltsch berichtet von seinen bisherigen Erfahrungen bei der Nationalmannschaft. Der Stuttgarter schwärmt von Jürgen Klopps positiver Art.]]></description>
     </item>
   </channel>
 </rss>

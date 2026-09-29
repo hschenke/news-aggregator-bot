@@ -3,6 +3,8 @@ Strukturierte, unveränderliche Datenmodelle für den News Aggregator Bot.
 Bietet Typsicherheit, Validierung und vollständige Mapping-Abwärtskompatibilität.
 """
 
+from __future__ import annotations
+
 from dataclasses import dataclass, field, asdict
 from typing import Any
 
@@ -33,7 +35,7 @@ class Article:
         return data
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any] | "Article") -> "Article":
+    def from_dict(cls, data: dict[str, Any] | Article) -> Article:
         """Erstellt eine Article-Instanz aus einem Dictionary oder gibt das Objekt unverändert zurück."""
         if isinstance(data, cls):
             return data
