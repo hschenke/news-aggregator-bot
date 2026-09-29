@@ -611,10 +611,10 @@ has_unsaved_changes = bool(
 # --- Sidebar ---
 app_version = get_app_version()
 st.sidebar.markdown(
-    f"<h2 style='margin-top:0.2rem; margin-bottom:0.25rem; font-size:1.35rem; display:flex; align-items:center; gap:8px;'>"
-    f"<span>📰 News Bot</span>"
-    f"<span style='font-size:0.75rem; font-weight:600; padding:2px 7px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; vertical-align:middle;'>{app_version}</span>"
-    f"</h2>",
+    f"<div style='display:flex; align-items:center; margin-top:0.2rem; margin-bottom:0.35rem;'>"
+    f"<h2 style='margin:0; font-size:1.35rem; line-height:1.2; font-weight:700;'>📰 News Bot</h2>"
+    f"<span style='margin-left:10px; font-size:0.72rem; font-weight:600; padding:2px 8px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; display:inline-block; line-height:1.2;'>{app_version}</span>"
+    f"</div>",
     unsafe_allow_html=True,
 )
 
