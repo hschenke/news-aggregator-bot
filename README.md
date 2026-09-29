@@ -105,6 +105,7 @@ Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS
 - **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`.../static/rss/feeds/<slug>.xml`).
 
 > 🛡️ **Intelligenter Hybrid-Filter**:
+> - **Maximales Artikel-Alter (Wochenfilter)**: Artikel, die älter als die konfigurierte Anzahl an Wochen sind (Standard: 20 Wochen), werden bereits beim Einlesen und in der Anzeige automatisch herausgefiltert.
 > - **Werbe- & Anzeigen-Filter**: Entfernt störende Promotion- und Werbeartikel (wie `heise-Angebot:`, `Anzeige:`, `Sponsored`) automatisch aus allen Feeds und dem KI-Prompt.
 > - **Feed-spezifische Keyword-Filter**: Einzelne Feeds können nach Keywords gefiltert werden (z. B. bei den *Berliner Polizeimeldungen* nur Einsätze aus `Mahlsdorf`). Inklusive automatischer HTML-Teaser-Anreicherung bei Feeds mit leeren Beschreibungen.
 
@@ -189,6 +190,6 @@ Im Tab **"⚙️ Quellen & Feeds verwalten"** der Web-App kannst du:
 - **Neue RSS-Feeds hinzufügen**: Feed-URL, Name und Zielkategorie angeben – inklusive integriertem Verbindungstest (URL-Check). Es werden stets alle im Feed verfügbaren Artikel geladen.
 - **Bestehende Feeds bearbeiten**: Details wie Name, URL oder Kategoriezuordnung jederzeit anpassen.
 - **Feeds & Kategorien löschen**: Feeds oder ganze Kategorien sicher per Klick entfernen.
-- **Globale Einstellungen konfigurieren**: Sprache (`de`, `en`, etc.) und Zusammenfassungs-Stil.
+- **Globale Einstellungen konfigurieren**: Sprache (`de`, `en`, etc.), Zusammenfassungs-Stil, Basis-URL sowie **maximales Artikel-Alter in Wochen** (Standard: 20 Wochen).
 - **Persistente Synchronisation**: Alle Änderungen werden sofort in `config/sources.yaml` zurückgespiegelt und stehen sowohl der Web-App als auch dem automatischen E-Mail-Digest zur Verfügung.
 - **Automatisches Sorting**: Kategorien werden stets alphabetisch sortiert, Artikel in Feeds und Kategorien chronologisch nach Datum absteigend.

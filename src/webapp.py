@@ -34,6 +34,11 @@ from src.aggregator import (
     save_pool_state,
     clean_html_text,
     format_summary_html,
+    DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    is_article_too_old,
+    filter_articles_by_age,
+    filter_news_data_by_age,
+    get_article_timestamp,
 )
 from src.summarizer import (
     summarize_news_with_gemini,
@@ -588,6 +593,11 @@ def harvest_global_settings():
         settings["summary_style"] = str(st.session_state["input_setting_style"])
     if "input_setting_app_url" in st.session_state:
         settings["streamlit_app_url"] = str(st.session_state["input_setting_app_url"]).strip()
+    if "input_setting_max_age_weeks" in st.session_state:
+        try:
+            settings["max_article_age_weeks"] = int(st.session_state["input_setting_max_age_weeks"])
+        except (ValueError, TypeError):
+            settings["max_article_age_weeks"] = DEFAULT_MAX_ARTICLE_AGE_WEEKS
     if "input_setting_filter_ads" in st.session_state:
         settings["filter_ads"] = bool(st.session_state["input_setting_filter_ads"])
     if "input_setting_ad_keywords" in st.session_state:
@@ -877,6 +887,18 @@ if get_configured_app_password():
 # --- Main Layout & Data Loading ---
 with st.spinner("Lade aktuelle Nachrichten aus den RSS-Feeds..."):
     news_data = get_news_data()
+
+# Altersfilterung gemäß globalen Einstellungen anwenden (Standard: 20 Wochen)
+current_settings = working_config.get("settings", {})
+max_age_weeks_setting = current_settings.get("max_article_age_weeks")
+if max_age_weeks_setting is None:
+    max_age_weeks_setting = current_settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
+try:
+    active_max_age_weeks = int(max_age_weeks_setting) if max_age_weeks_setting is not None else DEFAULT_MAX_ARTICLE_AGE_WEEKS
+except (ValueError, TypeError):
+    active_max_age_weeks = DEFAULT_MAX_ARTICLE_AGE_WEEKS
+
+news_data = filter_news_data_by_age(news_data, max_age_weeks=active_max_age_weeks)
 
 # Kennzahlen berechnen
 total_categories = len(news_data)
@@ -1250,7 +1272,8 @@ with tab_articles:
     with col_stat_placeholder:
         if displayed_count > 0:
             sort_label = "älteste zuerst" if bool(st.session_state.get("chk_sort_oldest", True)) else "neueste zuerst"
-            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label})")
+            age_filter_note = f" • Max. Alter: {active_max_age_weeks} Wochen" if active_max_age_weeks > 0 else ""
+            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label}{age_filter_note})")
         else:
             st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
 
@@ -2140,7 +2163,7 @@ with tab_manage:
     # --- Sektion 4: Globale Einstellungen ---
     with st.expander("⚙️ Globale Einstellungen", expanded=False):
         current_settings = working_config.get("settings", {})
-        col_s1, col_s2 = st.columns(2)
+        col_s1, col_s2, col_s3 = st.columns(3)
         with col_s1:
             current_lang = current_settings.get("language", "de")
             lang_options = ["de", "en", "fr", "es"]
@@ -2151,6 +2174,23 @@ with tab_manage:
             style_options = ["tldr", "executive_bullet_points", "bullet_points", "narrative"]
             style_idx = style_options.index(current_style) if current_style in style_options else 0
             setting_style = st.selectbox("Briefing-Stil:", options=style_options, index=style_idx, key="input_setting_style")
+        with col_s3:
+            raw_age = current_settings.get("max_article_age_weeks")
+            if raw_age is None:
+                raw_age = current_settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
+            try:
+                curr_age_val = int(raw_age)
+            except (ValueError, TypeError):
+                curr_age_val = DEFAULT_MAX_ARTICLE_AGE_WEEKS
+            setting_max_age = st.number_input(
+                "Max. Artikel-Alter (Wochen):",
+                min_value=0,
+                max_value=104,
+                value=curr_age_val,
+                step=1,
+                key="input_setting_max_age_weeks",
+                help="Artikel, die älter als diese Anzahl an Wochen sind, werden automatisch herausgefiltert und nicht angezeigt (Standard: 20 Wochen). 0 = Keine Altersbegrenzung."
+            )
 
         default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
         setting_app_url = st.text_input(
@@ -2198,6 +2238,7 @@ with tab_manage:
                     "language": setting_lang,
                     "summary_style": setting_style,
                     "streamlit_app_url": setting_app_url.strip(),
+                    "max_article_age_weeks": int(setting_max_age),
                     "filter_ads": setting_filter_ads,
                     "ad_keywords": parsed_ad_kws,
                 }
@@ -2216,6 +2257,7 @@ with tab_manage:
                     "language": setting_lang,
                     "summary_style": setting_style,
                     "streamlit_app_url": setting_app_url.strip(),
+                    "max_article_age_weeks": int(setting_max_age),
                     "filter_ads": setting_filter_ads,
                     "ad_keywords": parsed_ad_kws,
                 }

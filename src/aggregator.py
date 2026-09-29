@@ -1138,6 +1138,149 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: list[str] | No
     return False
 
 
+DEFAULT_MAX_ARTICLE_AGE_WEEKS: int = 20
+SECONDS_PER_WEEK: int = 7 * 24 * 60 * 60  # 604_800 Sekunden pro Woche
+
+
+def get_article_timestamp(item: Any) -> float:
+    """
+    Ermittelt den Unix-Timestamp (Sekunden seit Epoch) eines Artikels, Eintrags oder Datums.
+    Unterstützt Article-Objekte, Dictionaries, feedparser-Entries, Datetime-Objekte und Zahlen.
+    Gibt 0.0 zurück, falls kein valides Datum extrahiert werden kann.
+    """
+    if item is None:
+        return 0.0
+
+    if isinstance(item, (int, float)):
+        return float(item) if item > 0 else 0.0
+
+    if isinstance(item, datetime):
+        return item.timestamp()
+
+    if isinstance(item, time.struct_time):
+        try:
+            return float(calendar.timegm(item))
+        except Exception:
+            try:
+                return float(time.mktime(item))
+            except Exception:
+                return 0.0
+
+    # 1. Direkter Timestamp
+    ts = None
+    if isinstance(item, dict):
+        ts = item.get("timestamp")
+    elif hasattr(item, "timestamp"):
+        ts = getattr(item, "timestamp")
+
+    if ts is not None and isinstance(ts, (int, float)) and ts > 0:
+        return float(ts)
+
+    # 2. Parsed struct_time aus RSS/Atom
+    parsed_time = None
+    if isinstance(item, dict):
+        parsed_time = item.get("published_parsed") or item.get("updated_parsed")
+    elif hasattr(item, "published_parsed") or hasattr(item, "updated_parsed"):
+        parsed_time = getattr(item, "published_parsed", None) or getattr(item, "updated_parsed", None)
+
+    if parsed_time and isinstance(parsed_time, time.struct_time):
+        try:
+            return float(calendar.timegm(parsed_time))
+        except Exception:
+            try:
+                return float(time.mktime(parsed_time))
+            except Exception:
+                pass
+
+    # 3. String-Datum (RFC-822 oder ISO-8601)
+    pub_str = ""
+    if isinstance(item, dict):
+        pub_str = item.get("published") or item.get("updated") or ""
+    elif hasattr(item, "published") or hasattr(item, "updated"):
+        pub_str = getattr(item, "published", "") or getattr(item, "updated", "") or ""
+
+    if isinstance(pub_str, str) and pub_str.strip():
+        s = pub_str.strip()
+        try:
+            dt = email.utils.parsedate_to_datetime(s)
+            if dt:
+                return dt.timestamp()
+        except Exception:
+            pass
+        try:
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+            return dt.timestamp()
+        except Exception:
+            pass
+
+    return 0.0
+
+
+def is_article_too_old(
+    article_or_dict: Any,
+    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    now_ts: float | None = None,
+) -> bool:
+    """
+    Prüft, ob ein Artikel älter als max_age_weeks Wochen ist.
+    Gibt True zurück, wenn der Artikel älter als der Stichtag ist und herausgefiltert werden soll.
+    Falls max_age_weeks None oder <= 0 ist, wird keine Altersbegrenzung angewendet (gibt False zurück).
+    Artikel ohne ermittelbares Datum (timestamp <= 0.0) werden nicht als zu alt gewertet.
+    """
+    if max_age_weeks is None or max_age_weeks <= 0:
+        return False
+
+    ts = get_article_timestamp(article_or_dict)
+    if ts <= 0.0:
+        return False
+
+    if now_ts is None:
+        now_ts = time.time()
+
+    cutoff_ts = now_ts - (float(max_age_weeks) * SECONDS_PER_WEEK)
+    return ts < cutoff_ts
+
+
+def filter_articles_by_age(
+    articles: list[dict[str, Any]],
+    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    now_ts: float | None = None,
+) -> list[dict[str, Any]]:
+    """Filtert eine Artikelliste und schließt alle Artikel aus, die älter als max_age_weeks Wochen sind."""
+    if max_age_weeks is None or max_age_weeks <= 0:
+        return articles
+
+    if now_ts is None:
+        now_ts = time.time()
+
+    return [
+        article for article in articles
+        if not is_article_too_old(article, max_age_weeks=max_age_weeks, now_ts=now_ts)
+    ]
+
+
+def filter_news_data_by_age(
+    news_data: dict[str, list[dict[str, Any]]],
+    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    now_ts: float | None = None,
+) -> dict[str, list[dict[str, Any]]]:
+    """Filtert ein nach Kategorien gruppiertes News-Dictionary nach maximalem Artikel-Alter."""
+    if max_age_weeks is None or max_age_weeks <= 0:
+        return news_data
+
+    if now_ts is None:
+        now_ts = time.time()
+
+    filtered: dict[str, list[dict[str, Any]]] = {}
+    for category_name, items in news_data.items():
+        filtered[category_name] = filter_articles_by_age(
+            items,
+            max_age_weeks=max_age_weeks,
+            now_ts=now_ts,
+        )
+    return filtered
+
+
 _POLICE_TEASER_CACHE: dict[str, str] = {}
 _POLICE_CACHE_FILE = Path("data/police_teasers_cache.json")
 
@@ -1229,6 +1372,7 @@ def fetch_feed_items(
     exclude_keywords: list[str] | None = None,
     filter_ads: bool = True,
     custom_ad_keywords: list[str] | None = None,
+    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
 ) -> list[dict[str, Any]]:
     """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Werbung & Keywords, dedupliziert und sortiert nach Datum."""
     try:
@@ -1359,6 +1503,11 @@ def fetch_feed_items(
                     except Exception:
                         pass
 
+            # 3. Stufe: Altersprüfung (Artikel älter als max_age_weeks Wochen herausfiltern)
+            if max_age_weeks is not None and max_age_weeks > 0 and timestamp > 0.0:
+                if is_article_too_old({"timestamp": timestamp}, max_age_weeks=max_age_weeks):
+                    continue
+
             # Duplikatsprüfung innerhalb des Feeds (über Canonical URL & normalisierten Titel)
             norm_title = re.sub(r"[\W_]+", "", title.lower())
             if canon_link and canon_link in seen_urls:
@@ -1397,6 +1546,13 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
     settings = config.get("settings", {})
     filter_ads = settings.get("filter_ads", True)
     custom_ad_keywords = settings.get("ad_keywords", [])
+    max_age_weeks_raw = settings.get("max_article_age_weeks")
+    if max_age_weeks_raw is None:
+        max_age_weeks_raw = settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
+    try:
+        max_age_weeks = int(max_age_weeks_raw) if max_age_weeks_raw is not None else DEFAULT_MAX_ARTICLE_AGE_WEEKS
+    except (ValueError, TypeError):
+        max_age_weeks = DEFAULT_MAX_ARTICLE_AGE_WEEKS
 
     collected: dict[str, list[dict[str, Any]]] = {}
 
@@ -1423,8 +1579,13 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
                 exclude_keywords=exc_kw,
                 filter_ads=filter_ads,
                 custom_ad_keywords=custom_ad_keywords,
+                max_age_weeks=max_age_weeks,
             )
             for it in items:
+                # Zusätzliche Absicherung gegen veraltete Artikel
+                if is_article_too_old(it, max_age_weeks=max_age_weeks):
+                    continue
+
                 canon_u = get_canonical_url(it.get("link", ""))
                 norm_t = re.sub(r"[\W_]+", "", it.get("title", "").lower())
                 

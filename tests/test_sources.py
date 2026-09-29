@@ -121,6 +121,7 @@ class TestSourcesManagement(unittest.TestCase):
             {
                 "filter_ads": False,
                 "ad_keywords": ["werbung", "deal"],
+                "max_article_age_weeks": 12,
                 "custom_prompt_directives": "Keine Filter anwenden."
             },
             config=self.config,
@@ -129,6 +130,7 @@ class TestSourcesManagement(unittest.TestCase):
         s = self.config["settings"]
         self.assertFalse(s["filter_ads"])
         self.assertEqual(s["ad_keywords"], ["werbung", "deal"])
+        self.assertEqual(s["max_article_age_weeks"], 12)
         self.assertEqual(s["custom_prompt_directives"], "Keine Filter anwenden.")
 
 
