@@ -41,6 +41,7 @@ from src.summarizer import (
     get_streamlit_app_url,
     DEFAULT_MAIN_PROMPT_TEMPLATE,
     DEFAULT_DIRECTIVES,
+    AVAILABLE_GEMINI_MODELS,
 )
 from src.rss_generator import export_all_rss_feeds
 from src.__version__ import get_app_version
@@ -693,9 +694,9 @@ else:
 # Model Selection
 selected_model = st.sidebar.selectbox(
     "KI-Modell",
-    options=["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"],
+    options=AVAILABLE_GEMINI_MODELS,
     index=0,
-    help="Flash-Lite ist ultraschnell & sparsam, Flash bietet mehr Nuancen."
+    help="Gemini 3.8 Flash ist das neueste Modell. Bei hoher Auslastung federt die Fallback-Kette automatisch bis 3.5 ab.",
 )
 
 st.sidebar.markdown("---")

@@ -83,7 +83,7 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
    Füge deine Secrets im TOML-Format ein:
    ```toml
    GEMINI_API_KEY = "AIzaSy..."
-   GEMINI_MODEL = "gemini-3.5-flash-lite"
+   GEMINI_MODEL = "gemini-3.8-flash"
 
    # Optional: Passwortschutz gegen unbefugte Fremdnutzung
    APP_PASSWORD = "mein_geheimes_passwort"

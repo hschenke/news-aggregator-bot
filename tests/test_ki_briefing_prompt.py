@@ -4,6 +4,9 @@ from src.summarizer import (
     _generate_fallback_summary,
     DEFAULT_MAIN_PROMPT_TEMPLATE,
     DEFAULT_DIRECTIVES,
+    AVAILABLE_GEMINI_MODELS,
+    DEFAULT_GEMINI_MODEL,
+    get_candidate_models,
 )
 from src.notifier import markdown_to_html_email
 
@@ -61,6 +64,29 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertIn("#eff6ff", html)  # Infobox background color
         self.assertIn("#2563eb", html)  # Infobox border accent
         self.assertIn("Streamlit App", html)
+
+    def test_gemini_models_and_fallback_order(self):
+        """Prüft die absteigende Sortierung der Modelle (3.8 bis 3.5) und die Fallback-Kette."""
+        expected_models = [
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
+            "gemini-3.6-flash",
+            "gemini-3.5-flash",
+            "gemini-3.5-flash-lite",
+        ]
+        self.assertEqual(AVAILABLE_GEMINI_MODELS, expected_models)
+        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemini-3.8-flash")
+
+        # Standardauswahl ohne explizite Angabe
+        candidates = get_candidate_models()
+        self.assertEqual(candidates, expected_models)
+        self.assertEqual(candidates[0], "gemini-3.8-flash")
+
+        # Auswahl mit bevorzugtem Modell
+        candidates_36 = get_candidate_models("gemini-3.6-flash")
+        self.assertEqual(candidates_36[0], "gemini-3.6-flash")
+        self.assertEqual(set(candidates_36), set(expected_models))
+        self.assertEqual(len(candidates_36), len(expected_models))
 
 
 if __name__ == "__main__":

@@ -13,6 +13,29 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 
 load_dotenv()
 
+AVAILABLE_GEMINI_MODELS: list[str] = [
+    "gemini-3.8-flash",
+    "gemini-3.7-flash",
+    "gemini-3.6-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
+]
+DEFAULT_GEMINI_MODEL: str = AVAILABLE_GEMINI_MODELS[0]
+
+
+def get_candidate_models(preferred_model: str | None = None) -> list[str]:
+    """
+    Ermittelt die geordnete Liste an KI-Modellkandidaten inklusive Fallback-Kette.
+    Das bevorzugte Modell steht an erster Stelle, gefolgt von den weiteren verfügbaren
+    Modellen in absteigender Reihenfolge (vom neuesten 3.8 bis zum ältesten 3.5).
+    """
+    selected = preferred_model or os.getenv("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
+    candidates: list[str] = [selected]
+    for model_name in AVAILABLE_GEMINI_MODELS:
+        if model_name not in candidates:
+            candidates.append(model_name)
+    return [m for m in candidates if m]
+
 
 def get_configured_api_key() -> str:
     """Ermittelt den Gemini API-Key aus Umgebungsvariablen oder Streamlit Secrets."""
@@ -328,13 +351,7 @@ def summarize_news_with_gemini(
         else:
             prompt += f"\n\nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data_str}\n"
 
-        preferred_model = model or os.getenv("GEMINI_MODEL")
-        default_candidates = ["gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-3.5-flash"]
-        candidate_models = [preferred_model] if preferred_model else default_candidates
-        for dm in default_candidates:
-            if dm not in candidate_models:
-                candidate_models.append(dm)
-        candidate_models = [m for m in candidate_models if m]
+        candidate_models = get_candidate_models(model)
 
         last_error = None
         for model_name in candidate_models:
