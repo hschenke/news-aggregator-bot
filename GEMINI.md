@@ -15,4 +15,13 @@
   - **Patch (`v0.X.Y`)**: Bei Bugfixes, Dependency-/Workflow-Updates oder kleineren Detailanpassungen.
 - **Tag auf Bestätigung setzen**: Fragt der Benutzer nach oder bestätigt den Vorschlag, erstelle sofort den annotierten Tag und pushe ihn mit `git push origin <tag>`.
 
+## Python Clean Code Standard
+- **Verbindliche Beachtung des `python-clean-code` Skills**: Bei jeglicher Programmier- und Refactoring-Arbeit in diesem Projekt MUSS der projektinterne Skill [.agents/skills/python-clean-code/SKILL.md](file:///c:/Users/holge/.gemini/antigravity/scratch/news-aggregator-bot/.agents/skills/python-clean-code/SKILL.md) strikt beachtet und angewendet werden:
+  - **Moderne Typisierung & Datenmodelle**: Verwendung moderner Type Hints (`str | None`, `list[...]`, `dict[...]`) und strukturierter Daten (`@dataclass(frozen=True)` / Pydantic) statt loser Dictionaries mit Magic Keys.
+  - **Netzwerk-Resilienz & Fehlerbehandlung**: Explizite Timeouts bei jedem HTTP-Call, Retry-Strategien mit Exponential Backoff, isoliertes Abfangen und Protokollieren von Einzelfeed-Fehlern, keine Silent Fails (`except: pass`), spezifische Exceptions.
+  - **Logging**: Durchgängige Verwendung des Standard-Moduls `logging` anstelle von `print()`.
+  - **Separation of Concerns**: Strikte architektonische Trennung (Ingestion/Scraper -> Processing/Transformation -> Storage/Persistence -> Presentation/UI). Keine Business-Logik oder Scraping-Code in Streamlit-Views.
+  - **Refactoring-Workflow**: 4-Stufen-Ablauf einhalten (Analyse & Smell-Audit -> Refactoring-Plan -> Durchführung -> Verifikation/Tests).
+
+
 
