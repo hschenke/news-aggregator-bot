@@ -7,6 +7,7 @@ import time
 import copy
 from pathlib import Path
 from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional
 
 # Projekt-Root zum Python-Pfad hinzufügen
 project_root = Path(__file__).resolve().parent.parent
