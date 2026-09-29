@@ -42,6 +42,7 @@ from src.summarizer import (
     DEFAULT_DIRECTIVES,
 )
 from src.rss_generator import export_all_rss_feeds
+from src.__version__ import get_app_version
 
 try:
     import zoneinfo
@@ -608,7 +609,14 @@ has_unsaved_changes = bool(
 
 
 # --- Sidebar ---
-st.sidebar.markdown("<h2 style='margin-top:0.2rem; margin-bottom:0.25rem; font-size:1.35rem;'>📰 News Bot</h2>", unsafe_allow_html=True)
+app_version = get_app_version()
+st.sidebar.markdown(
+    f"<h2 style='margin-top:0.2rem; margin-bottom:0.25rem; font-size:1.35rem; display:flex; align-items:center; gap:8px;'>"
+    f"<span>📰 News Bot</span>"
+    f"<span style='font-size:0.75rem; font-weight:600; padding:2px 7px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; vertical-align:middle;'>{app_version}</span>"
+    f"</h2>",
+    unsafe_allow_html=True,
+)
 
 # GitHub-Synchronisation Statusanzeige in der Navigationsleiste
 gh_cfg = get_github_sync_config()

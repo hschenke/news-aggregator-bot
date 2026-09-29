@@ -3,6 +3,7 @@ News Aggregator Bot Package
 """
 
 from src.models import Article
+from src.__version__ import __version__, get_app_version
 from src.exceptions import (
     NewsAggregatorError,
     ConfigurationError,
@@ -13,6 +14,8 @@ from src.exceptions import (
 
 __all__ = [
     "Article",
+    "__version__",
+    "get_app_version",
     "NewsAggregatorError",
     "ConfigurationError",
     "FeedFetchError",
