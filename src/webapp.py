@@ -33,6 +33,7 @@ from src.aggregator import (
     get_new_articles_count,
     save_pool_state,
     clean_html_text,
+    format_summary_html,
 )
 from src.summarizer import (
     summarize_news_with_gemini,
@@ -95,9 +96,9 @@ st.set_page_config(
 # Custom Styling (Kompakt & Mobile-optimiert)
 st.markdown("""
 <style>
-    /* Haupt-Container kompakter auf Desktop & Mobile */
+    /* Haupt-Container mit ausreichend Abstand zur fixierten Streamlit-Headerleiste */
     .block-container {
-        padding-top: 1.4rem !important;
+        padding-top: 3.5rem !important;
         padding-bottom: 2rem !important;
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
@@ -105,13 +106,14 @@ st.markdown("""
     }
     @media (max-width: 768px) {
         .block-container {
-            padding-top: 0.75rem !important;
+            padding-top: 3.25rem !important;
             padding-bottom: 1.5rem !important;
             padding-left: 0.5rem !important;
             padding-right: 0.5rem !important;
         }
         h1 {
-            font-size: 1.4rem !important;
+            font-size: 1.3rem !important;
+            margin-top: 0.2rem !important;
             margin-bottom: 0.1rem !important;
             line-height: 1.2 !important;
         }
@@ -146,6 +148,30 @@ st.markdown("""
             min-width: 100% !important;
             flex: 1 1 100% !important;
         }
+    }
+    /* Suchleiste: Input, Go-Button und X-Button immer horizontal in einer Zeile halten */
+    .st-key-search_input_group [data-testid="stHorizontalBlock"] {
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-end !important;
+        gap: 0.35rem !important;
+    }
+    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+        min-width: 0 !important;
+        flex: initial !important;
+    }
+    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"]:first-child {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+    }
+    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"]:not(:first-child) {
+        flex: 0 0 auto !important;
+        min-width: 2.75rem !important;
+    }
+    .st-key-search_input_group button {
+        padding-left: 0.4rem !important;
+        padding-right: 0.4rem !important;
+        min-width: 2.75rem !important;
     }
     /* Infobox & Zitate Styling */
     blockquote {
@@ -995,6 +1021,9 @@ with tab_articles:
         }})();
         """)
 
+    def on_clear_search():
+        st.session_state["input_search_query"] = ""
+
     # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
     if qp_category:
         for c in news_data.keys():
@@ -1040,9 +1069,13 @@ with tab_articles:
     if active_search_text:
         filter_summary_items.append(f"🔍 '{active_search_text}'")
 
-    filter_title = f"🔍 Filter & Suche ({', '.join(filter_summary_items)})" if filter_summary_items else "🔍 Filter & Suche"
+    is_filtering = bool(
+        current_cat != "Alle Kategorien"
+        or curr_selected_feed != "Alle Feeds"
+        or active_search_text
+    )
 
-    with st.expander(filter_title, expanded=False):
+    with st.expander("🔍 Filter & Suche", expanded=is_filtering, key="expander_filter_search"):
         filter_col1, filter_col2, filter_col3 = st.columns([1, 1, 2])
 
         with filter_col1:
@@ -1066,7 +1099,31 @@ with tab_articles:
             st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
 
         with filter_col3:
-            search_query = st.text_input("🔍 Suche:", placeholder="z. B. AI, Apple, Wirtschaft...", key="input_search_query")
+            with st.container(key="search_input_group"):
+                scol1, scol2, scol3 = st.columns([5, 1.2, 1.2], vertical_alignment="bottom")
+                with scol1:
+                    search_query = st.text_input(
+                        "🔍 Suche:",
+                        placeholder="z. B. AI, Apple, Wirtschaft...",
+                        key="input_search_query",
+                    )
+                with scol2:
+                    st.button(
+                        "Go",
+                        key="btn_search_go",
+                        type="primary",
+                        use_container_width=True,
+                        help="Suche ausführen",
+                    )
+                with scol3:
+                    st.button(
+                        "✕",
+                        key="btn_search_clear",
+                        type="secondary",
+                        use_container_width=True,
+                        on_click=on_clear_search,
+                        help="Suchfeld leeren",
+                    )
 
         c_tog1, c_tog2, c_tog3 = st.columns(3)
         with c_tog1:
@@ -1075,6 +1132,9 @@ with tab_articles:
             expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
         with c_tog3:
             sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Älteste Artikel zuerst (chronologisch). Deaktivieren, um die neuesten Artikel zuerst anzuzeigen.")
+
+    if filter_summary_items:
+        st.caption(f"⚡ Aktive Filter: **{' • '.join(filter_summary_items)}**")
 
     col_stat_placeholder = st.empty()
 
@@ -1117,10 +1177,19 @@ with tab_articles:
         cat_matching.sort(key=get_sort_key, reverse=descending_sort)
 
         cat_slug = "".join(c if c.isalnum() else "_" for c in category)
-        # Deeplink aus E-Mail klappt diese Kategorie immer auf, sonst Filter-Checkbox
-        cat_is_open = True if (qp_category and category.strip().lower() == qp_category.lower()) else bool(st.session_state.get("chk_expand_cats", False))
+        # Deeplink aus E-Mail klappt diese Kategorie immer auf, sonst Filter-Checkbox oder aktive Suche/Auswahl
+        cat_is_open = True if (
+            is_filtering
+            or (qp_category and category.strip().lower() == qp_category.lower())
+            or bool(st.session_state.get("chk_expand_cats", False))
+        ) else False
 
-        with st.expander(f"📁 **{category}** ({len(cat_matching)} Artikel)", expanded=cat_is_open):
+        feeds_in_cat = {item.get("source") for item in cat_matching if item.get("source")}
+        num_feeds = len(feeds_in_cat)
+        feed_label = f"{num_feeds} Feed" if num_feeds == 1 else f"{num_feeds} Feeds"
+        item_label = f"{len(cat_matching)} Artikel" if len(cat_matching) != 1 else "1 Artikel"
+
+        with st.expander(f"📁 **{category}** ({feed_label}, {item_label})", expanded=cat_is_open):
             # Innerhalb der Kategorie nach Feed gruppieren
             feeds_dict = {}
             for item in cat_matching:
@@ -1135,8 +1204,12 @@ with tab_articles:
                 f_items.sort(key=get_sort_key, reverse=descending_sort)
 
                 feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
-                # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox
-                feed_is_open = True if (qp_feed and feed_name.strip().lower() == qp_feed.lower()) else bool(st.session_state.get("chk_expand_feeds", False))
+                # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox oder aktive Suche/Auswahl
+                feed_is_open = True if (
+                    is_filtering
+                    or (qp_feed and feed_name.strip().lower() == qp_feed.lower())
+                    or bool(st.session_state.get("chk_expand_feeds", False))
+                ) else False
 
                 with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
                     cols = st.columns(2)
@@ -1145,7 +1218,7 @@ with tab_articles:
                         with cols[idx % 2]:
                             with st.container(border=True):
                                 clean_title = clean_html_text(item.get("title", "Kein Titel"))
-                                clean_summary = clean_html_text(item.get("summary", ""))
+                                clean_summary = format_summary_html(item.get("summary", ""))
                                 pdate = format_article_date(item)
                                 date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
                                 summary_str = f"<div style='font-size:0.88rem; line-height:1.45;'>{clean_summary}</div>" if clean_summary else ""
@@ -1280,7 +1353,7 @@ with tab_ki:
 
 # ----------------- TAB: Feedly -----------------
 with tab_feedly:
-    st.subheader("📡 Feedly & RSS-Feeds abonnieren")
+    st.subheader("📡 RSS Exposure")
     st.caption("Verwandle deinen News Aggregator Bot in deinen persönlichen RSS-Server! Alle gesammelten Artikel stehen als standardkonforme RSS 2.0 Feeds zur Verfügung.")
 
     app_base_url = working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()

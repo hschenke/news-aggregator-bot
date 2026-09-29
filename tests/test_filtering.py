@@ -8,6 +8,7 @@ from src.aggregator import (
     is_ad_item,
     DEFAULT_AD_PATTERNS,
     clean_html_text,
+    format_summary_html,
 )
 
 
@@ -34,6 +35,25 @@ class TestFilteringAndScraping(unittest.TestCase):
         raw = "<p>Hallo &amp; Willkommen bei <b>Berlin.de</b>!&nbsp;&quot;Test&quot;</p>"
         cleaned = clean_html_text(raw)
         self.assertEqual(cleaned, 'Hallo & Willkommen bei Berlin.de! "Test"')
+
+    def test_format_summary_html(self):
+        # 1. Police Teaser mit Bezirk in Markdown-Fettdruck
+        raw_teaser = "📍 **Steglitz-Zehlendorf** – Einsatzkräfte wurden alarmiert."
+        formatted = format_summary_html(raw_teaser)
+        self.assertEqual(formatted, "📍 <strong>Steglitz-Zehlendorf</strong> – Einsatzkräfte wurden alarmiert.")
+        self.assertNotIn("**", formatted)
+
+        # 2. HTML-Tags werden bereinigt und Fettdruck bleibt intakt
+        html_input = "<p>📍 **Tempelhof-Schöneberg** – <i>Gestern Abend</i> &amp; Nacht...</p>"
+        formatted_html = format_summary_html(html_input)
+        self.assertEqual(formatted_html, "📍 <strong>Tempelhof-Schöneberg</strong> – Gestern Abend & Nacht...")
+
+        # 3. Leerstring / None
+        self.assertEqual(format_summary_html(""), "")
+        self.assertEqual(format_summary_html(None), "")
+
+        # 4. Normaler Text ohne Markdown bleibt unverändert
+        self.assertEqual(format_summary_html("Einfacher Text ohne Formatierung."), "Einfacher Text ohne Formatierung.")
 
     def test_police_district_and_teaser_extraction(self):
         # Simuliertes HTML von berlin.de/polizei
@@ -68,6 +88,11 @@ class TestFilteringAndScraping(unittest.TestCase):
         formatted = f"📍 **{district}** – {teaser}"
         self.assertIn("📍 **Charlottenburg-Wilmersdorf**", formatted)
         self.assertIn("Heute Morgen kam es zu einem schweren Raub", formatted)
+
+        # 4. Umwandlung zu HTML für Web-App Container
+        html_ready = format_summary_html(formatted)
+        self.assertEqual(html_ready, f"📍 <strong>{district}</strong> – {teaser}")
+        self.assertNotIn("**", html_ready)
 
 
 if __name__ == "__main__":

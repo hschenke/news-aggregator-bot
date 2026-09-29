@@ -1035,6 +1035,21 @@ def clean_html_text(text: str) -> str:
     return cleaned
 
 
+def format_summary_html(text: str) -> str:
+    """
+    Bereitet eine Zusammenfassung für HTML-Container auf:
+    1. Bereinigt HTML-Tags via clean_html_text().
+    2. Wandelt Markdown-Fettdruck (**Text**) in HTML <strong>Text</strong> um,
+       sodass Text in HTML-Elementen wie <div> verlässlich fett gerendert wird.
+    """
+    if not text:
+        return ""
+    cleaned = clean_html_text(text)
+    if not cleaned:
+        return ""
+    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", cleaned)
+
+
 def unwrap_and_clean_url(url: str) -> str:
     """Löst Google Alert Redirect-URLs auf und extrahiert die tatsächliche Ziel-URL."""
     if not url:
