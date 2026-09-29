@@ -88,6 +88,26 @@ class TestWebappMobileFeatures(unittest.TestCase):
         on_clear_search()
         self.assertEqual(mock_session_state["input_search_query"], "")
 
+    def test_webapp_layout_integrity(self):
+        """Prüft Quelltext-Integrität in webapp.py gegen Layout-Regressionen."""
+        from pathlib import Path
+        webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
+
+        # 1. Sidebar muss auf "auto" stehen, damit Mobile nicht verdeckt wird
+        self.assertIn('initial_sidebar_state="auto"', webapp_code)
+
+        # 2. Kein fragiles position: absolute auf btn_search_clear
+        self.assertNotIn("position: absolute !important;\n        right: 0.35rem", webapp_code)
+
+        # 3. Mobile CSS muss die Suchleiste mit stColumn und flex: 1 1 0 flexibel halten
+        self.assertIn('[data-testid="stHorizontalBlock"]:has(.st-key-input_search_query)', webapp_code)
+        self.assertIn('flex: 1 1 0 !important;', webapp_code)
+        self.assertIn('[data-testid="stColumn"]:has(.st-key-btn_search_clear)', webapp_code)
+        self.assertIn('[data-testid="stColumn"]:has(.st-key-btn_search_go)', webapp_code)
+
+        # 4. Feedly Subheader Name
+        self.assertIn('"📡 RSS Exposure"', webapp_code)
+
 
 if __name__ == "__main__":
     unittest.main()

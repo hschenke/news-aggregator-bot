@@ -9,3 +9,5 @@ __pycache__/
 output/
 data/
 .streamlit/secrets.toml
+tests/preview_*.png
+screen_*.png
