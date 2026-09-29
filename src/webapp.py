@@ -143,35 +143,83 @@ st.markdown("""
         hr {
             margin: 0.5rem 0 !important;
         }
-        /* Mobile: Spalten in horizontalen Blöcken (z.B. Artikel-Karten) auf volle Breite umbrechen */
-        [data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+        /* Mobile: Spalten in horizontalen Blöcken (z.B. Artikel-Karten) auf volle Breite umbrechen,
+           ABER die Suchzeile (mit .st-key-input_search_query) explizit ausschließen! */
+        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)) > div[data-testid="column"] {
             min-width: 100% !important;
             flex: 1 1 100% !important;
         }
     }
-    /* Suchleiste: Input, Go-Button und X-Button immer horizontal in einer Zeile halten */
-    .st-key-search_input_group [data-testid="stHorizontalBlock"] {
+    /* Suchleiste: Suchfeld und Go-Button immer horizontal und exakt im Rahmen halten */
+    [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) {
+        display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: flex-end !important;
-        gap: 0.35rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 0.4rem !important;
     }
-    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"] {
+    [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) > div[data-testid="column"]:has(.st-key-input_search_query) {
         min-width: 0 !important;
-        flex: initial !important;
-    }
-    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"]:first-child {
         flex: 1 1 auto !important;
-        min-width: 0 !important;
+        position: relative !important;
     }
-    .st-key-search_input_group [data-testid="stHorizontalBlock"] > div[data-testid="column"]:not(:first-child) {
+    [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) > div[data-testid="column"]:has(.st-key-btn_search_go) {
+        min-width: 3.5rem !important;
+        max-width: 4.5rem !important;
         flex: 0 0 auto !important;
-        min-width: 2.75rem !important;
+        width: auto !important;
     }
-    .st-key-search_input_group button {
-        padding-left: 0.4rem !important;
-        padding-right: 0.4rem !important;
-        min-width: 2.75rem !important;
+    [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) > div[data-testid="column"]:has(.st-key-btn_search_go) button {
+        min-width: 3.5rem !important;
+        width: 100% !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    /* Eingebettetes X für Suchfeld-Reset */
+    div[data-testid="column"]:has(.st-key-input_search_query) .st-key-btn_search_clear {
+        position: absolute !important;
+        right: 0.35rem !important;
+        bottom: 0.25rem !important;
+        z-index: 10 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+    }
+    div[data-testid="column"]:has(.st-key-input_search_query) .st-key-btn_search_clear button {
+        background: transparent !important;
+        border: none !important;
+        color: #94a3b8 !important;
+        box-shadow: none !important;
+        min-height: 2rem !important;
+        height: 2rem !important;
+        min-width: 2rem !important;
+        width: 2rem !important;
+        padding: 0 !important;
+        font-size: 0.95rem !important;
+        font-weight: bold !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 9999px !important;
+        transition: color 0.15s ease, background-color 0.15s ease !important;
+    }
+    div[data-testid="column"]:has(.st-key-input_search_query) .st-key-btn_search_clear button:hover,
+    div[data-testid="column"]:has(.st-key-input_search_query) .st-key-btn_search_clear button:active {
+        color: #ef4444 !important;
+        background-color: rgba(239, 68, 68, 0.12) !important;
+        border: none !important;
+    }
+    /* Wenn das Feld leer ist (Placeholder sichtbar), X ausblenden */
+    div[data-testid="column"]:has(.st-key-input_search_query input:placeholder-shown) .st-key-btn_search_clear {
+        display: none !important;
+    }
+    /* Platz im Textfeld für das eingebettete X schaffen */
+    .st-key-input_search_query input {
+        padding-right: 2.2rem !important;
     }
     /* Infobox & Zitate Styling */
     blockquote {
@@ -1099,31 +1147,28 @@ with tab_articles:
             st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
 
         with filter_col3:
-            with st.container(key="search_input_group"):
-                scol1, scol2, scol3 = st.columns([5, 1.2, 1.2], vertical_alignment="bottom")
-                with scol1:
-                    search_query = st.text_input(
-                        "🔍 Suche:",
-                        placeholder="z. B. AI, Apple, Wirtschaft...",
-                        key="input_search_query",
-                    )
-                with scol2:
-                    st.button(
-                        "Go",
-                        key="btn_search_go",
-                        type="primary",
-                        use_container_width=True,
-                        help="Suche ausführen",
-                    )
-                with scol3:
-                    st.button(
-                        "✕",
-                        key="btn_search_clear",
-                        type="secondary",
-                        use_container_width=True,
-                        on_click=on_clear_search,
-                        help="Suchfeld leeren",
-                    )
+            c_search_box, c_search_btn = st.columns([5, 1], vertical_alignment="bottom")
+            with c_search_box:
+                search_query = st.text_input(
+                    "🔍 Suche:",
+                    placeholder="z. B. AI, Apple, Wirtschaft...",
+                    key="input_search_query",
+                )
+                st.button(
+                    "✕",
+                    key="btn_search_clear",
+                    type="secondary",
+                    on_click=on_clear_search,
+                    help="Suche zurücksetzen",
+                )
+            with c_search_btn:
+                st.button(
+                    "Go",
+                    key="btn_search_go",
+                    type="primary",
+                    use_container_width=True,
+                    help="Suche ausführen",
+                )
 
         c_tog1, c_tog2, c_tog3 = st.columns(3)
         with c_tog1:

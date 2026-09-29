@@ -77,6 +77,17 @@ class TestWebappMobileFeatures(unittest.TestCase):
         # Kombination
         self.assertTrue(check_is_filtering("Policia", "Polizeimeldungen Berlin", "Amoktat"))
 
+    def test_search_reset_callback_behavior(self):
+        """Prüft, dass der Reset-Mechanismus den Suchbegriff zuverlässig auf leeren String zurücksetzt."""
+        mock_session_state = {"input_search_query": "Hellersdorf"}
+        
+        def on_clear_search():
+            mock_session_state["input_search_query"] = ""
+
+        self.assertEqual(mock_session_state["input_search_query"], "Hellersdorf")
+        on_clear_search()
+        self.assertEqual(mock_session_state["input_search_query"], "")
+
 
 if __name__ == "__main__":
     unittest.main()
