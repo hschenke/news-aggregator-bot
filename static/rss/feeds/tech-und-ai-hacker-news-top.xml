@@ -5,23 +5,41 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 29 Sep 2026 05:01:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 11:26:24 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Profit Margins of the Largest Companies</title>
-      <link>https://www.visualcapitalist.com/ranked-how-profitable-are-the-worlds-largest-companies/</link>
-      <guid isPermaLink="false">https://www.visualcapitalist.com/ranked-how-profitable-are-the-worlds-largest-companies/</guid>
-      <pubDate>Tue, 29 Sep 2026 02:55:41 GMT</pubDate>
+      <title>New Cyber-OSINT model released</title>
+      <link>https://twitter.com/0x0SojalSec/status/2104736980768866439</link>
+      <guid isPermaLink="false">https://twitter.com/0x0SojalSec/status/2104736980768866439</guid>
+      <pubDate>Tue, 29 Sep 2026 10:23:33 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Bluegraph – Explore NOAA buoy data, rebuilt in 3D from measured spectra</title>
-      <link>https://bluegraph.io/</link>
-      <guid isPermaLink="false">https://bluegraph.io/</guid>
-      <pubDate>Tue, 29 Sep 2026 01:29:31 GMT</pubDate>
+      <title>AI companies leak data to advertisers [pdf]</title>
+      <link>https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf</link>
+      <guid isPermaLink="false">https://jorgegarciaherrero.com/wp-content/interactivos/20260916-Prompt-like-a-butterfly-sting-like-a-tracker-(clean).pdf</guid>
+      <pubDate>Tue, 29 Sep 2026 09:03:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Using any C++ library in Godot</title>
+      <link>https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html</link>
+      <guid isPermaLink="false">https://blog.conan.io/cpp/conan/gamedev/godot/cmake/2026/09/29/Using-Any-Cpp-Library-In-Godot.html</guid>
+      <pubDate>Tue, 29 Sep 2026 08:40:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Startup Nights 2026 is comming up on 5-6 Nov. in Switzerland</title>
+      <link>https://www.startup-nights.ch/event/</link>
+      <guid isPermaLink="false">https://www.startup-nights.ch/event/</guid>
+      <pubDate>Tue, 29 Sep 2026 07:49:12 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -45,15 +63,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Show HN: Pac-Bench – How well can models one-shot a Pac-Man game?</title>
-      <link>https://jonclegg.github.io/pacman-bakeoff/</link>
-      <guid isPermaLink="false">https://jonclegg.github.io/pacman-bakeoff/</guid>
-      <pubDate>Mon, 28 Sep 2026 22:43:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>ESP32S3 cluster running 1.58-bit (BitNet) Language model</title>
       <link>https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster</link>
       <guid isPermaLink="false">https://github.com/Low-Zi-Hong/ESP32s3-LLM-Cluster</guid>
@@ -72,7 +81,7 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>World Labs Is Joining AMD</title>
+      <title>World Labs is Joining AMD</title>
       <link>https://www.worldlabs.ai/blog/amd-announcement</link>
       <guid isPermaLink="false">https://www.worldlabs.ai/blog/amd-announcement</guid>
       <pubDate>Mon, 28 Sep 2026 20:18:05 GMT</pubDate>
@@ -180,15 +189,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Cf: The Agentic CLI for the Cloudflare API</title>
-      <link>https://blog.cloudflare.com/cloudflare-cf-cli-launch/</link>
-      <guid isPermaLink="false">https://blog.cloudflare.com/cloudflare-cf-cli-launch/</guid>
-      <pubDate>Mon, 28 Sep 2026 15:28:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Show HN: HN.watch – Videos of all Hacker News posts</title>
       <link>https://hn.watch/</link>
       <guid isPermaLink="false">https://hn.watch/</guid>
@@ -207,64 +207,64 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Behold the pawpaw</title>
-      <link>https://www.cbc.ca/radio/thecurrent/pawpaw-tropical-fruit-canada-9.7356882</link>
-      <guid isPermaLink="false">https://www.cbc.ca/radio/thecurrent/pawpaw-tropical-fruit-canada-9.7356882</guid>
-      <pubDate>Mon, 28 Sep 2026 01:46:29 GMT</pubDate>
+      <title>The systems that no one will test</title>
+      <link>https://blog.christianperone.com/2026/09/the-systems-that-no-one-will-test/</link>
+      <guid isPermaLink="false">https://blog.christianperone.com/2026/09/the-systems-that-no-one-will-test/</guid>
+      <pubDate>Mon, 28 Sep 2026 10:51:46 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Who Killed Paulina Borsook's Career?</title>
-      <link>https://www.wired.com/story/paulina-borsook-profile/</link>
-      <guid isPermaLink="false">https://www.wired.com/story/paulina-borsook-profile/</guid>
-      <pubDate>Sun, 27 Sep 2026 14:25:00 GMT</pubDate>
+      <title>Booted up in 1993, this server still runs – but not for much longer (2017)</title>
+      <link>https://www.computerworld.com/article/1673071/booted-up-in-1993-this-server-still-runs-but-not-for-much-longer-2.html</link>
+      <guid isPermaLink="false">https://www.computerworld.com/article/1673071/booted-up-in-1993-this-server-still-runs-but-not-for-much-longer-2.html</guid>
+      <pubDate>Sun, 27 Sep 2026 20:13:22 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Simulating Airband Am Radios</title>
+      <title>When did Google get so weird?</title>
+      <link>https://sancho.bearblog.dev/google-weird/</link>
+      <guid isPermaLink="false">https://sancho.bearblog.dev/google-weird/</guid>
+      <pubDate>Sun, 27 Sep 2026 20:12:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Software occlusion culling in Block Game</title>
+      <link>https://enikofox.com/posts/software-rendered-occlusion-culling-in-block-game/</link>
+      <guid isPermaLink="false">https://enikofox.com/posts/software-rendered-occlusion-culling-in-block-game/</guid>
+      <pubDate>Sun, 27 Sep 2026 14:07:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Four CHI '26 papers I wish I wrote</title>
+      <link>https://countingfromzero.blog/2026/04/24/four-chi-26-papers-i-wish-i-wrote/</link>
+      <guid isPermaLink="false">https://countingfromzero.blog/2026/04/24/four-chi-26-papers-i-wish-i-wrote/</guid>
+      <pubDate>Sun, 27 Sep 2026 05:23:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Hermann Weyl – Frank Aydelotte memorandum (1945)</title>
+      <link>https://albert.ias.edu/server/api/core/bitstreams/9feac6ca-38d1-4f5c-9876-75915f1a5762/content</link>
+      <guid isPermaLink="false">https://albert.ias.edu/server/api/core/bitstreams/9feac6ca-38d1-4f5c-9876-75915f1a5762/content</guid>
+      <pubDate>Sun, 27 Sep 2026 03:26:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Simulating Airband AM Radios</title>
       <link>https://bitbashing.io/am-radio.html</link>
       <guid isPermaLink="false">https://bitbashing.io/am-radio.html</guid>
       <pubDate>Sun, 27 Sep 2026 02:01:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>What reversing, modernising old games tells us about the economic impact of AI</title>
-      <link>https://this.os.isfine.org/blog/posts/what-reverse-engineering-and-modernising-an-old-war-game-tells-us-about-the-econ/</link>
-      <guid isPermaLink="false">https://this.os.isfine.org/blog/posts/what-reverse-engineering-and-modernising-an-old-war-game-tells-us-about-the-econ/</guid>
-      <pubDate>Sat, 26 Sep 2026 23:49:01 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>What is the best shape of a city? Modelling effect of urban form on distance</title>
-      <link>https://journals.sagepub.com/doi/10.1177/23998083261458842</link>
-      <guid isPermaLink="false">https://journals.sagepub.com/doi/10.1177/23998083261458842</guid>
-      <pubDate>Sat, 26 Sep 2026 17:23:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>How to win a beer with high-dimensional statistics</title>
-      <link>https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/</link>
-      <guid isPermaLink="false">https://jamiesimon.io/blog/how-to-win-a-beer-with-high-dimensional-statistics/</guid>
-      <pubDate>Sat, 26 Sep 2026 16:40:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Art Forger Who Became a National Hero</title>
-      <link>https://priceonomics.com/the-art-forger-who-became-a-national-hero/</link>
-      <guid isPermaLink="false">https://priceonomics.com/the-art-forger-who-became-a-national-hero/</guid>
-      <pubDate>Sat, 26 Sep 2026 15:00:27 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

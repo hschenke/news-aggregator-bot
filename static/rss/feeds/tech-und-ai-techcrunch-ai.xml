@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 29 Sep 2026 05:01:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 11:26:24 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic’s prospectus details losses, growth, and, yes, a warning that its AI could end humanity</title>
+      <link>https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3171132</guid>
+      <pubDate>Tue, 29 Sep 2026 05:13:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[In its prospectus, Anthropic just told investors it's losing tens of billions of dollars a year, but also growing like crazy, and — oh yeah — its own AI might pose an existential risk to humanity.]]></description>
+    </item>
     <item>
       <title>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort</title>
       <link>https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises/</link>
@@ -178,15 +187,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[This will be the first one-on-one meeting between Dario Amodei and Donald Trump.]]></description>
-    </item>
-    <item>
-      <title>Can Muse overcome Meta’s trust issues?</title>
-      <link>https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3170334</guid>
-      <pubDate>Sun, 27 Sep 2026 19:57:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[On Equity, we discussed how Meta's AI announcement managed to steal the spotlight from OpenAI and Anthropic.]]></description>
     </item>
   </channel>
 </rss>

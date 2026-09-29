@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Tue, 29 Sep 2026 05:01:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 29 Sep 2026 11:26:24 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Festnahme nach Einbruch in Bäckerei</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719443.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719443.php</guid>
+      <pubDate>Tue, 29 Sep 2026 10:43:30 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Pankow** – In der vergangenen Nacht brachen zwei Männer in eine Bäckerei in Niederschönhausen ein. Nach bisherigen Erkenntnissen verschafften sich die beiden gegen 22:50 Uhr Zugang zu der Bäckerei in der Dietzgenstraße. Ein Zeuge hörte Geräusche aus dem Laden und alarmierte die Polizei, die im unmittelbaren...]]></description>
+    </item>
+    <item>
+      <title>Regenbogenbank erneut beschädigt</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719347.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719347.php</guid>
+      <pubDate>Tue, 29 Sep 2026 08:44:13 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Mitte** – In Tiergarten haben Unbekannte eine als Gedenkort anlässlich des Anschlags auf den Berliner CSD aufgestellte Regenbogenbank beschädigt. Nach ersten Erkenntnissen stellten Einsatzkräfte der Polizei im Rahmen ihrer Streifentätigkeit die Beschädigung gegen 2:20 Uhr in der Straße Ahornsteig im Großen...]]></description>
+    </item>
     <item>
       <title>Messerangriff verletzte Polizisten und Schussabgabe</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719167.php</link>
@@ -439,24 +457,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Gestern Abend kam es im Ortsteil Charlottenburg-Nord zu einem schweren Raub. Nach bisherigen Erkenntnissen alarmierten Zeugen gegen 21:15 Uhr die Polizei zu einem Lokal an der Goebelstraße. Zuvor sollen zwei bislang unbekannte Jugendliche an der Eingangstür geklingelt haben. Ein 60...]]></description>
-    </item>
-    <item>
-      <title>Unbekannter beschädigt Einsatzfahrzeug der Polizei</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716380.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716380.php</guid>
-      <pubDate>Sun, 20 Sep 2026 10:13:21 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Pankow** – Bei einer Veranstaltung in Rosenthal wurde am Samstagabend ein Einsatzfahrzeug der Polizei beschädigt. Nach bisherigen Erkenntnissen kam es gegen 22:30 Uhr während eines Festes in der Hauptstraße zu einer Auseinandersetzung zwischen mehreren Personen. Im Verlauf des Geschehens warf ein bislang un...]]></description>
-    </item>
-    <item>
-      <title>Jugendliche nach mehreren mutmaßlichen Raubtaten im Mauerpark festgenommen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716379.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716379.php</guid>
-      <pubDate>Sun, 20 Sep 2026 10:04:47 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Pankow** – Gestern Abend nahmen Polizeikräfte in Prenzlauer Berg zwei Jugendliche fest, die im Verdacht stehen, gemeinsam mit einem weiteren, bislang unbekannten Täter, mehrere Gleichaltrige beraubt zu haben. Nach bisherigen Erkenntnissen sprachen die drei Tatverdächtigen gegen 20:30 Uhr auf der Tribüne im ...]]></description>
     </item>
   </channel>
 </rss>
