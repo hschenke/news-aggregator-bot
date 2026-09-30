@@ -654,7 +654,17 @@ def perform_discard_all():
     st.session_state["pending_nav_tab"] = "manage"
     st.query_params["tab"] = "manage"
     for k in list(st.session_state.keys()):
-        if k.startswith("edit_name_") or k.startswith("edit_url_") or k.startswith("edit_inc_") or k.startswith("edit_exc_") or k.startswith("input_setting_"):
+        if (
+            k.startswith("edit_name_")
+            or k.startswith("edit_url_")
+            or k.startswith("edit_inc_")
+            or k.startswith("edit_exc_")
+            or k.startswith("edit_cat_")
+            or k.startswith("edit_custom_cat_")
+            or k.startswith("top_edit_")
+            or k.startswith("top_custom_")
+            or k.startswith("input_setting_")
+        ):
             del st.session_state[k]
     st.toast("Alle Änderungen verworfen. Gespeicherter Stand wiederhergestellt.", icon="↩️")
     st.rerun()
@@ -1953,6 +1963,7 @@ with tab_manage:
                 )
                 curr_cname, curr_f = feed_dict[selected_edit_label]
                 all_cats = sorted([c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")], key=lambda x: x.strip().lower())
+                top_cat_options = all_cats + ["➕ [Neue Kategorie erstellen...]"]
 
                 col_e1, col_e2 = st.columns(2)
                 with col_e1:
@@ -1965,10 +1976,21 @@ with tab_manage:
                     cat_index = all_cats.index(curr_cname) if curr_cname in all_cats else 0
                     edit_fcat = st.selectbox(
                         "Kategorie ändern / verschieben:",
-                        options=all_cats,
+                        options=top_cat_options,
                         index=cat_index,
-                        key=f"top_edit_cat_{curr_f.get('url')}"
+                        key=f"top_edit_cat_{curr_f.get('url')}",
+                        help="Wähle eine bestehende Kategorie oder erstelle eine neue, um diesen Feed dorthin zu verschieben."
                     )
+
+                if edit_fcat == "➕ [Neue Kategorie erstellen...]":
+                    top_custom_cat = st.text_input(
+                        "Name der neuen Ziel-Kategorie:",
+                        placeholder="z. B. Wissenschaft & Raumfahrt",
+                        key=f"top_custom_cat_{curr_f.get('url')}"
+                    )
+                    target_top_cat = top_custom_cat.strip()
+                else:
+                    target_top_cat = edit_fcat.strip()
 
                 edit_furl = st.text_input(
                     "Feed-URL ändern:",
@@ -2011,6 +2033,8 @@ with tab_manage:
                             st.error("Der Feed-Name darf nicht leer sein.")
                         elif not edit_furl.strip() or not (edit_furl.strip().startswith("http://") or edit_furl.strip().startswith("https://")):
                             st.error("Bitte gib eine gültige URL an.")
+                        elif not target_top_cat:
+                            st.error("Bitte gib einen Namen für die Ziel-Kategorie an.")
                         else:
                             try:
                                 update_feed(
@@ -2018,14 +2042,17 @@ with tab_manage:
                                     old_url=curr_f.get("url"),
                                     new_name=edit_fname.strip(),
                                     new_url=edit_furl.strip(),
-                                    new_category=edit_fcat.strip(),
+                                    new_category=target_top_cat,
                                     include_keywords=edit_finclude.strip(),
                                     exclude_keywords=edit_fexclude.strip(),
                                     config=working_config,
                                     save_to_disk=False,
                                 )
                                 st.session_state["has_unsaved_changes"] = True
-                                st.toast(f"Feed '{edit_fname}' aktualisiert (noch nicht gespeichert).", icon="✏️")
+                                if target_top_cat.lower() != curr_cname.lower():
+                                    st.toast(f"Feed '{edit_fname}' in Kategorie '{target_top_cat}' verschoben (noch nicht gespeichert).", icon="📦")
+                                else:
+                                    st.toast(f"Feed '{edit_fname}' aktualisiert (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
                                 st.error(f"Fehler beim Übernehmen: {e}")
@@ -2047,6 +2074,11 @@ with tab_manage:
     categories = sorted(working_config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
     if not categories:
         st.info("Es sind aktuell keine Kategorien hinterlegt.")
+
+    all_category_names = sorted(
+        list({c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")}),
+        key=lambda x: x.lower()
+    )
 
     for cat_idx, cat in enumerate(categories):
         cat_name = cat.get("name", "Allgemein")
@@ -2101,7 +2133,27 @@ with tab_manage:
                             with col_ed1:
                                 edit_name_val = st.text_input("Name ändern:", value=f_name, key=f"edit_name_{key_hash}")
                             with col_ed2:
-                                edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{key_hash}")
+                                cat_select_options = all_category_names + ["➕ [Neue Kategorie erstellen...]"]
+                                cat_default_idx = all_category_names.index(cat_name) if cat_name in all_category_names else 0
+                                edit_cat_choice = st.selectbox(
+                                    "Kategorie ändern / verschieben:",
+                                    options=cat_select_options,
+                                    index=cat_default_idx,
+                                    key=f"edit_cat_{key_hash}",
+                                    help="Wähle eine bestehende Kategorie oder erstelle eine neue, um diesen Feed dorthin zu verschieben."
+                                )
+
+                            if edit_cat_choice == "➕ [Neue Kategorie erstellen...]":
+                                custom_cat_input = st.text_input(
+                                    "Name der neuen Ziel-Kategorie:",
+                                    placeholder="z. B. Wissenschaft & Raumfahrt",
+                                    key=f"edit_custom_cat_{key_hash}"
+                                )
+                                target_category_val = custom_cat_input.strip()
+                            else:
+                                target_category_val = edit_cat_choice.strip()
+
+                            edit_url_val = st.text_input("URL ändern:", value=f_url, key=f"edit_url_{key_hash}")
 
                             f_inc_str = ", ".join(f_inc) if isinstance(f_inc, list) else str(f_inc or "")
                             f_exc_str = ", ".join(f_exc) if isinstance(f_exc, list) else str(f_exc or "")
@@ -2131,32 +2183,57 @@ with tab_manage:
                                         render_feed_test_result(t_res)
                             with col_s_btn:
                                 if st.button("✔️ Im Entwurf vormerken", key=f"btn_save_all_{key_hash}", use_container_width=True, help="Übernimmt die Feed-Anpassung in den Arbeitsentwurf"):
-                                    update_feed(
-                                        cat_name,
-                                        f_url,
-                                        new_name=edit_name_val.strip(),
-                                        new_url=edit_url_val.strip(),
-                                        include_keywords=edit_inc_val.strip(),
-                                        exclude_keywords=edit_exc_val.strip(),
-                                        config=working_config,
-                                        save_to_disk=False
-                                    )
-                                    st.session_state["has_unsaved_changes"] = True
-                                    st.toast("Feed-Details übernommen (noch nicht gespeichert).", icon="✏️")
-                                    st.rerun()
+                                    if not edit_name_val.strip():
+                                        st.error("Der Feed-Name darf nicht leer sein.")
+                                    elif not edit_url_val.strip() or not (edit_url_val.strip().startswith("http://") or edit_url_val.strip().startswith("https://")):
+                                        st.error("Bitte gib eine gültige URL an (beginnend mit http:// oder https://).")
+                                    elif not target_category_val:
+                                        st.error("Bitte gib einen Namen für die Ziel-Kategorie an.")
+                                    else:
+                                        try:
+                                            update_feed(
+                                                cat_name,
+                                                f_url,
+                                                new_name=edit_name_val.strip(),
+                                                new_url=edit_url_val.strip(),
+                                                new_category=target_category_val,
+                                                include_keywords=edit_inc_val.strip(),
+                                                exclude_keywords=edit_exc_val.strip(),
+                                                config=working_config,
+                                                save_to_disk=False
+                                            )
+                                            st.session_state["has_unsaved_changes"] = True
+                                            if target_category_val.lower() != cat_name.lower():
+                                                st.toast(f"Feed '{edit_name_val.strip()}' in Kategorie '{target_category_val}' verschoben (noch nicht gespeichert).", icon="📦")
+                                            else:
+                                                st.toast("Feed-Details übernommen (noch nicht gespeichert).", icon="✏️")
+                                            st.rerun()
+                                        except Exception as e:
+                                            st.error(f"Fehler beim Übernehmen: {e}")
                             with col_d_btn:
                                 if st.button("💾 Direkt speichern & pushen", key=f"btn_direct_{key_hash}", type="primary", use_container_width=True, help="Speichert sofort dauerhaft in sources.yaml und synchronisiert zu GitHub & CDN"):
-                                    update_feed(
-                                        cat_name,
-                                        f_url,
-                                        new_name=edit_name_val.strip(),
-                                        new_url=edit_url_val.strip(),
-                                        include_keywords=edit_inc_val.strip(),
-                                        exclude_keywords=edit_exc_val.strip(),
-                                        config=working_config,
-                                        save_to_disk=False
-                                    )
-                                    perform_save_all()
+                                    if not edit_name_val.strip():
+                                        st.error("Der Feed-Name darf nicht leer sein.")
+                                    elif not edit_url_val.strip() or not (edit_url_val.strip().startswith("http://") or edit_url_val.strip().startswith("https://")):
+                                        st.error("Bitte gib eine gültige URL an (beginnend mit http:// oder https://).")
+                                    elif not target_category_val:
+                                        st.error("Bitte gib einen Namen für die Ziel-Kategorie an.")
+                                    else:
+                                        try:
+                                            update_feed(
+                                                cat_name,
+                                                f_url,
+                                                new_name=edit_name_val.strip(),
+                                                new_url=edit_url_val.strip(),
+                                                new_category=target_category_val,
+                                                include_keywords=edit_inc_val.strip(),
+                                                exclude_keywords=edit_exc_val.strip(),
+                                                config=working_config,
+                                                save_to_disk=False
+                                            )
+                                            perform_save_all()
+                                        except Exception as e:
+                                            st.error(f"Fehler beim Speichern: {e}")
 
     st.markdown("---")
 

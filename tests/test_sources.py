@@ -104,6 +104,59 @@ class TestSourcesManagement(unittest.TestCase):
         self.assertNotIn("include_keywords", feed)
         self.assertNotIn("exclude_keywords", feed)
 
+    def test_update_feed_move_to_existing_category(self):
+        # Feed aus 'Berlin' nach 'Tech' verschieben
+        res = update_feed(
+            category_name="Berlin",
+            old_url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss",
+            new_category="Tech",
+            config=self.config,
+            save_to_disk=False,
+        )
+        self.assertTrue(res)
+        berlin_cat = next(c for c in self.config["categories"] if c["name"] == "Berlin")
+        tech_cat = next(c for c in self.config["categories"] if c["name"] == "Tech")
+        self.assertEqual(len(berlin_cat["feeds"]), 0)
+        self.assertEqual(len(tech_cat["feeds"]), 2)
+        moved_feed = next(f for f in tech_cat["feeds"] if "berlin.de" in f["url"])
+        self.assertEqual(moved_feed["name"], "Polizeimeldungen Berlin")
+
+    def test_update_feed_move_to_new_category(self):
+        # Feed in eine ganz neue Kategorie verschieben
+        res = update_feed(
+            category_name="Berlin",
+            old_url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss",
+            new_name="Polizei News",
+            new_category="Blaulicht & Sicherheit",
+            config=self.config,
+            save_to_disk=False,
+        )
+        self.assertTrue(res)
+        cat_names = [c["name"] for c in self.config["categories"]]
+        self.assertIn("Blaulicht & Sicherheit", cat_names)
+        new_cat = next(c for c in self.config["categories"] if c["name"] == "Blaulicht & Sicherheit")
+        self.assertEqual(len(new_cat["feeds"]), 1)
+        self.assertEqual(new_cat["feeds"][0]["name"], "Polizei News")
+
+    def test_update_feed_move_and_change_url_simultaneously(self):
+        # URL und Kategorie gleichzeitig ändern
+        res = update_feed(
+            category_name="Berlin",
+            old_url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss",
+            new_url="https://www.berlin.de/polizei/neuer_feed.xml",
+            new_name="Berlin Polizei Neu",
+            new_category="Tech",
+            config=self.config,
+            save_to_disk=False,
+        )
+        self.assertTrue(res)
+        berlin_cat = next(c for c in self.config["categories"] if c["name"] == "Berlin")
+        tech_cat = next(c for c in self.config["categories"] if c["name"] == "Tech")
+        self.assertEqual(len(berlin_cat["feeds"]), 0)
+        self.assertEqual(len(tech_cat["feeds"]), 2)
+        moved_feed = next(f for f in tech_cat["feeds"] if f["url"] == "https://www.berlin.de/polizei/neuer_feed.xml")
+        self.assertEqual(moved_feed["name"], "Berlin Polizei Neu")
+
     def test_category_crud_operations(self):
         # Add category
         self.assertTrue(add_category("Wissenschaft", config=self.config, save_to_disk=False))

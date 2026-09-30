@@ -108,6 +108,11 @@ class TestWebappMobileFeatures(unittest.TestCase):
         # 4. Feedly Subheader Name
         self.assertIn('"📡 RSS Exposure"', webapp_code)
 
+        # 5. Kategorie-Verschieben in Feed-Details und Tab 2
+        self.assertIn('"Kategorie ändern / verschieben:"', webapp_code)
+        self.assertIn('cat_select_options = all_category_names + ["➕ [Neue Kategorie erstellen...]"]', webapp_code)
+        self.assertIn('new_category=target_category_val', webapp_code)
+
 
 if __name__ == "__main__":
     unittest.main()

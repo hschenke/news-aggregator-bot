@@ -383,58 +383,90 @@ def update_feed(
 ) -> bool:
     """
     Aktualisiert Name, URL, Keywords und/oder Kategorie eines bestehenden Feeds.
+    Ermöglicht auch das Verschieben von Feeds in bestehende oder neue Kategorien.
     """
     if config is None:
         config = load_sources(config_path)
     categories = config.get("categories", [])
     updated = False
     feed_to_move = None
+    source_cat = None
+    target_feed = None
 
+    # Zuerst in der angegebenen Kategorie suchen
     for cat in categories:
         if cat.get("name", "").strip().lower() == category_name.strip().lower():
-            feeds = cat.get("feeds", [])
-            for f in feeds:
+            for f in cat.get("feeds", []):
                 if f.get("url", "").strip() == old_url.strip():
-                    if new_name is not None and new_name.strip():
-                        f["name"] = new_name.strip()
-                    if new_url is not None and new_url.strip():
-                        f["url"] = new_url.strip()
-                    f.pop("max_items", None)
-
-                    if include_keywords is not None:
-                        norm_inc = normalize_keywords(include_keywords)
-                        if norm_inc:
-                            f["include_keywords"] = norm_inc
-                        else:
-                            f.pop("include_keywords", None)
-
-                    if exclude_keywords is not None:
-                        norm_exc = normalize_keywords(exclude_keywords)
-                        if norm_exc:
-                            f["exclude_keywords"] = norm_exc
-                        else:
-                            f.pop("exclude_keywords", None)
-
-                    updated = True
-
-                    if new_category and new_category.strip().lower() != category_name.strip().lower():
-                        feed_to_move = dict(f)
-                        cat["feeds"] = [x for x in feeds if x.get("url", "").strip() != old_url.strip()]
+                    source_cat = cat
+                    target_feed = f
                     break
-            if updated:
+            if source_cat:
                 break
+
+    # Fallback: Falls category_name nicht exakt passte, in allen Kategorien nach old_url suchen
+    if not source_cat:
+        for cat in categories:
+            for f in cat.get("feeds", []):
+                if f.get("url", "").strip() == old_url.strip():
+                    source_cat = cat
+                    target_feed = f
+                    break
+            if source_cat:
+                break
+
+    if source_cat and target_feed:
+        if new_name is not None and new_name.strip():
+            target_feed["name"] = new_name.strip()
+        if new_url is not None and new_url.strip():
+            target_feed["url"] = new_url.strip()
+        target_feed.pop("max_items", None)
+
+        if include_keywords is not None:
+            norm_inc = normalize_keywords(include_keywords)
+            if norm_inc:
+                target_feed["include_keywords"] = norm_inc
+            else:
+                target_feed.pop("include_keywords", None)
+
+        if exclude_keywords is not None:
+            norm_exc = normalize_keywords(exclude_keywords)
+            if norm_exc:
+                target_feed["exclude_keywords"] = norm_exc
+            else:
+                target_feed.pop("exclude_keywords", None)
+
+        updated = True
+
+        actual_cat_name = source_cat.get("name", "").strip()
+        if new_category and new_category.strip().lower() != actual_cat_name.lower():
+            feed_to_move = dict(target_feed)
+            # Feed sicher aus der bisherigen Kategorie entfernen
+            source_cat["feeds"] = [x for x in source_cat.get("feeds", []) if x is not target_feed]
 
     if updated:
         if feed_to_move and new_category:
             target_cat = None
+            target_cat_name_clean = new_category.strip()
             for c in categories:
-                if c.get("name", "").strip().lower() == new_category.strip().lower():
+                if c.get("name", "").strip().lower() == target_cat_name_clean.lower():
                     target_cat = c
                     break
             if not target_cat:
-                target_cat = {"name": new_category.strip(), "feeds": []}
+                target_cat = {"name": target_cat_name_clean, "feeds": []}
                 categories.append(target_cat)
-            target_cat.setdefault("feeds", []).append(feed_to_move)
+
+            target_feeds = target_cat.setdefault("feeds", [])
+            target_url = feed_to_move.get("url", "").strip()
+            existing_idx = None
+            for idx, tf in enumerate(target_feeds):
+                if tf.get("url", "").strip() == target_url:
+                    existing_idx = idx
+                    break
+            if existing_idx is not None:
+                target_feeds[existing_idx] = feed_to_move
+            else:
+                target_feeds.append(feed_to_move)
 
         # Kategorien und Feeds alphabetisch sortieren
         categories.sort(key=lambda c: c.get("name", "").strip().lower())
