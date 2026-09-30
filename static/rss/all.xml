@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:22:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monaco will mit Brunner verlängern - Gisdol unterschreibt in Bulgarien</title>
+      <link>https://www.kicker.de/transferticker-953155/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/transferticker-953155/artikel#omrss</guid>
+      <pubDate>Wed, 30 Sep 2026 09:18:01 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Wer wechselt wohin? Wer ist wo im Gespräch? Wer verlängert? In unserem Transferticker bleibst du auf dem Laufenden.]]></description>
+    </item>
     <item>
       <title>In eigener Sache: So legst du finanzen.net als bevorzugte Quelle bei Google fest</title>
       <link>https://www.finanzen.net/nachricht/aktien/in-eigener-sache-in-eigener-sache-so-legst-du-finanzen-net-als-bevorzugte-quelle-bei-google-fest-15688821</link>
@@ -61,6 +70,15 @@
       <category>Finanzen &amp; Coins</category>
       <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
       <description><![CDATA[Nordex wird in den nächsten beiden Jahren 34 neue Windenergieanlagen mit einer Gesamterzeugungsleistung von 175 Megawatt in Frankreich, Portugal und Spanien errichten. Zum Einsatz kommen ...]]></description>
+    </item>
+    <item>
+      <title>LMU München: Daten von 600.000 Studierenden abgeflossen</title>
+      <link>https://www.heise.de/news/LMU-Muenchen-Daten-von-600-000-Studierenden-abgeflossen-11470683.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470683</guid>
+      <pubDate>Wed, 30 Sep 2026 09:11:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Ludwig-Maximilians-Universität München wurde Opfer eines Cyberangriffs. Nun wird das Ausmaß der betroffenen Daten klar.]]></description>
     </item>
     <item>
       <title>EQS-Adhoc: SBF passt Ergebnisprognose für 2026 aufgrund der vorläufigen Insolvenzverwaltung eines Kunden an</title>
@@ -247,9 +265,9 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718519.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718519.php</guid>
       <pubDate>Wed, 30 Sep 2026 07:53:00 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Spandau** – In der vergangenen Nach wurde eine 41-jährige Autofahrerin bei einem Verkehrsunfall in Gatow erheblich verletzt. Nach den bisherigen Erkenntnissen befuhr die Frau gegen 0:30 Uhr mit einem Pkw den Groß-Glienicker Weg in Richtung Siedlung Habichtwald. Aus bislang ungeklärter Ursache kam die 41-Jähr...]]></description>
+      <description><![CDATA[📍 **Spandau** – Die 41-jährige Autofahrerin, die vergangenen Samstag bei einem so genannten Alleinunfall in Gatow lebensgefährliche Verletzungen davontrug, ist bereits in der Nacht zu Montag in einem Krankenhaus verstorben.]]></description>
     </item>
     <item>
       <title>Why Is Sam Altman a Free Man?</title>
@@ -405,15 +423,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
-      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469158</guid>
-      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
-    </item>
-    <item>
       <title>Trump: KI-Firmen sollen sich selbst beaufsichtigen</title>
       <link>https://www.heise.de/news/Trump-KI-Firmen-sollen-sich-selbst-beaufsichtigen-11470445.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470445</guid>
@@ -421,6 +430,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit Wochen wird weltweit über Risiken Künstlicher Intelligenz diskutiert. US-Präsident Trump will, dass die Unternehmen sich gegenseitig kontrollieren.]]></description>
+    </item>
+    <item>
+      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469158</guid>
+      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
     </item>
     <item>
       <title>Elektroauto Ventra reduziert von Reifen- und Bremsabrieb verursachten Feinstaub</title>
@@ -846,15 +864,6 @@
       <description><![CDATA[OpenAI's newly announced suite of office features puts it into more direct competition with more traditional software companies.]]></description>
     </item>
     <item>
-      <title>Kapitän Moerstedt geht voran: Deutsche U 20 schlägt auch Italien</title>
-      <link>https://www.kicker.de/deutschland-gegen-italien-2026-u-nationalteams-freundschaftsspiele-5262134/spielbericht#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/deutschland-gegen-italien-2026-u-nationalteams-freundschaftsspiele-5262134/spielbericht#omrss</guid>
-      <pubDate>Tue, 29 Sep 2026 17:32:45 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[Die deutsche U-20-Nationalmannschaft startet makellos in die neue Saison. Im zweiten Spiel bezwang die Auswahl von Hannes Wolf Italien mit 3:0.]]></description>
-    </item>
-    <item>
       <title>AI-powered app maker Wabi pivots to a messaging experience</title>
       <link>https://techcrunch.com/2026/09/29/ai-powered-app-maker-wabi-pivots-to-a-messaging-experience/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3171437</guid>
@@ -963,15 +972,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Buchvorstellung: The Secret Life of Circuits</title>
-      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11470135</guid>
-      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
-    </item>
-    <item>
       <title>Pentagon will 30 Millionen Dollar für KI-Lügendetektor ausgeben</title>
       <link>https://www.heise.de/news/Pentagon-will-30-Millionen-Dollar-fuer-KI-Luegendetektor-ausgeben-11470046.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470046</guid>
@@ -979,6 +979,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das US-Verteidigungsministerium will in den kommenden Jahren rund 30 Millionen Dollar für einen KI-Lügendetektor ausgeben. Forscher zweifeln an dem Konzept.]]></description>
+    </item>
+    <item>
+      <title>Buchvorstellung: The Secret Life of Circuits</title>
+      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470135</guid>
+      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
     </item>
     <item>
       <title>Aktuelles - Alles-Mahlsdorf.de</title>
@@ -1309,7 +1318,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719543.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719543.php</guid>
       <pubDate>Tue, 29 Sep 2026 12:25:58 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Reinickendorf** – Gemeinsame Meldung Polizei und Staatsanwaltschaft Berlin Nr. 1276 Gestern gegen 14 Uhr entdeckten Bootsfahrer einen im Tegeler See treibenden Leichnam und alarmierten die Berliner Feuerwehr, die den toten Mann barg. Da die Auffindesituation auf ein Tötungsdelikt schließen ließ, übernahm eine Mo...]]></description>
     </item>
@@ -1341,13 +1350,13 @@
       <description><![CDATA[SMS nur, wenn die E-Mail nicht ankommt: Apprise 2.0 lernt Eskalationsstufen, Zeitlimits und gezielte Wiederholungen. Nicht alles bleibt kompatibel.]]></description>
     </item>
     <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
+      <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469629</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
+      <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
     </item>
     <item>
       <title>Zahlen, bitte! – Saturn-Hexagon: 29.000 Kilometer breites mysteriöses Sechseck</title>
@@ -1359,13 +1368,13 @@
       <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
     </item>
     <item>
-      <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
-      <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469629</guid>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>IServ - iss-mahlsdorf-berlin.de</title>
@@ -1444,7 +1453,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719443.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719443.php</guid>
       <pubDate>Tue, 29 Sep 2026 10:43:30 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – In der vergangenen Nacht brachen zwei Männer in eine Bäckerei in Niederschönhausen ein. Nach bisherigen Erkenntnissen verschafften sich die beiden gegen 22:50 Uhr Zugang zu der Bäckerei in der Dietzgenstraße. Ein Zeuge hörte Geräusche aus dem Laden und alarmierte die Polizei, die im unmittelbaren...]]></description>
     </item>
@@ -1552,7 +1561,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719347.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719347.php</guid>
       <pubDate>Tue, 29 Sep 2026 08:44:13 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – In Tiergarten haben Unbekannte eine als Gedenkort anlässlich des Anschlags auf den Berliner CSD aufgestellte Regenbogenbank beschädigt. Nach ersten Erkenntnissen stellten Einsatzkräfte der Polizei im Rahmen ihrer Streifentätigkeit die Beschädigung gegen 2:20 Uhr in der Straße Ahornsteig im Großen...]]></description>
     </item>
@@ -2047,7 +2056,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719167.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719167.php</guid>
       <pubDate>Mon, 28 Sep 2026 14:35:38 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Gestern Abend wurden Einsatzkräfte des Regionalabschnitts 17/18 nach Wedding alarmiert. Nach bisherigen Erkenntnissen und Zeugenaussagen kam es zwischen einer Gruppe von vier Personen im Alter von zwölf bis 16 Jahren sowie einem 28-Jährigen in einem Lokal in der Torfstraße gegen 19:45 Uhr zunächs...]]></description>
     </item>
@@ -2065,7 +2074,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719143.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1719143.php</guid>
       <pubDate>Mon, 28 Sep 2026 14:05:05 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Marzahn-Hellersdorf** – Mit der Veröffentlichung eines Fotos bittet die Polizei Berlin um Mithilfe bei der Suche nach der 13-jährigen Bảo Anh LE. Sie selbst nennt sich Aiden. Am Mittwoch, den 23. September 2026, verließ Bảo Anh LE gegen 7 Uhr eine Einrichtung der Jugendhilfe in Marzahn-Hellersdorf, um zur Schule...]]></description>
     </item>
@@ -2083,7 +2092,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716014.php</guid>
       <pubDate>Mon, 28 Sep 2026 13:56:00 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Reinickendorf** – Der 64-Jährige, der seit dem 10. September 2026 in Tegel vermisst wurde, ist inzwischen wohlbehalten an einer Tankstelle im Land Brandenburg angetroffen worden. Die Öffentlichkeitsfahndung hat sich somit erledigt.]]></description>
     </item>
@@ -2106,15 +2115,6 @@
       <description><![CDATA[Der Raspi-Hersteller verdreifacht seinen Nettogewinn. Gleichzeitig sind die verkauften Stückzahlen aber nur um 17 Prozent gestiegen.]]></description>
     </item>
     <item>
-      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
-      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11468027</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
-    </item>
-    <item>
       <title>KI-Update kompakt: Kardiologie, KI-Agenten, Rechenzentren, Cyberangriffe</title>
       <link>https://www.heise.de/news/KI-Update-kompakt-Kardiologie-KI-Agenten-Rechenzentren-Cyberangriffe-11467935.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467935</guid>
@@ -2122,6 +2122,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
+      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11468027</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
     </item>
     <item>
       <title>Bundesrat fordert strengere Regeln und Direktanstellung für Lieferdienste</title>
@@ -2209,7 +2218,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718998.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718998.php</guid>
       <pubDate>Mon, 28 Sep 2026 11:52:24 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **berlinweit** – Zu Beginn der dunklen Jahreszeit steigen die Einbruchszahlen erfahrungsgemäß wieder an, da Täter verstärkt im Schutz der früh einsetzenden Dunkelheit agieren. Doch Bürgerinnen und Bürger können sich effektiv vor Einbrüchen schützen – in Berlin bleibt es bei fast jeder zweiten Tat beim Versuch.]]></description>
     </item>
@@ -2254,7 +2263,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718916.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718916.php</guid>
       <pubDate>Mon, 28 Sep 2026 10:38:37 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Neukölln** – Gestern Abend kam es in Britz zu einem Angriff, bei dem ein Mann eine Stichverletzung erlitt. Nach bisherigen Erkenntnissen lief der 30-Jährige gegen 20:35 Uhr durch die Fennpfuhl-Parkanlage, als plötzlich mehrere Personen dort aufgetaucht und ihn bedroht haben sollen. Aus der Gruppe heraus soll ...]]></description>
     </item>
@@ -2272,7 +2281,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718894.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718894.php</guid>
       <pubDate>Mon, 28 Sep 2026 10:22:39 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – In der vergangenen Nacht kam es in Moabit zu einer Auseinandersetzung, bei der ein Mann verletzt wurde. Nach bisherigen Erkenntnissen wurde ein 28-Jähriger gegen 22 Uhr auf dem Gehweg vor einer Bar in der Turmstraße mit einer Stichverletzung im Brustbereich festgestellt. Der bislang unbekannte Ta...]]></description>
     </item>
@@ -2637,20 +2646,11 @@
       <description><![CDATA[Der Eufy Hydrojet S2 kombiniert starke Teppichreinigung, gute Hinderniserkennung und viel Automation. Beim Wischen zeigt er aber Schwächen.]]></description>
     </item>
     <item>
-      <title>Autonomes Fahren: Warum VW bei Moia die Reißleine ziehen könnte</title>
-      <link>https://www.heise.de/news/VW-prueft-Ausstieg-aus-Robotaxi-Dienst-Moia-Deutschland-verliert-Anschluss-11467298.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467298</guid>
-      <pubDate>Sun, 27 Sep 2026 13:58:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[VW prüft laut Insidern verschiedene Ausstiegsoptionen für Moia: Verliert die deutsche Autoindustrie bei autonomer Mobilität den Anschluss?]]></description>
-    </item>
-    <item>
       <title>Flucht vor Polizeikontrolle endete mit Verkehrsunfall</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718579.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718579.php</guid>
       <pubDate>Sun, 27 Sep 2026 11:57:44 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Tempelhof-Schöneberg** – Bereits in der Nacht vom vergangenen Freitag zum Samstag flüchtete ein Mann in Mariendorf vor einer Polizeikontrolle und fuhr gegen ein Baustellenfahrzeug. Nach derzeitigem Kenntnisstand wollten Polizeieinsatzkräfte des Abschnitts 44 gegen 23:45 Uhr einen Audi am Mariendorfer Damm überpr...]]></description>
     </item>
@@ -2659,7 +2659,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718578.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718578.php</guid>
       <pubDate>Sun, 27 Sep 2026 11:43:46 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Heute früh brannte ein Auto in Charlottenburg. Nach den bisherigen Ermittlungen wurde eine Anwohnerin der Keplerstraße gegen 5:40 Uhr durch einen lauten Knall geweckt. Von ihrem Balkon aus bemerkte sie einen brennenden BMW sowie eine Person, die sich anschließend in Richtung Olbers...]]></description>
     </item>
@@ -2668,7 +2668,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718572.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718572.php</guid>
       <pubDate>Sun, 27 Sep 2026 10:48:59 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Steglitz-Zehlendorf** – In der vergangenen Nacht erlitten drei junge Männer in Zehlendorf nach einem Angriff Verletzungen. Nach derzeitigem Ermittlungsstand waren die beiden 17-Jährigen und der 18-Jährige gegen 22:20 Uhr im Königsweg unterwegs, als sie unvermittelt aus einer Gruppe von 15 bis 20 Personen heraus ...]]></description>
     </item>
@@ -2677,7 +2677,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718571.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718571.php</guid>
       <pubDate>Sun, 27 Sep 2026 10:43:23 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Gestern Nachmittag wurde in Mitte eine Heranwachsender mit einem Messer verletzt. Nach bisherigen Erkenntnissen geriet der 18-Jährige gegen 16:30 Uhr auf dem Parkplatz eines Einkaufsmarktes in der Karl-Liebknecht-Straße gemeinsam mit zwei Begleitern mit einer mehrköpfigen Personengruppe in einen ...]]></description>
     </item>
@@ -2686,7 +2686,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718567.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718567.php</guid>
       <pubDate>Sun, 27 Sep 2026 10:25:10 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Tempelhof-Schöneberg** – In der vergangenen Nacht wurde ein Mann in Schöneberg von Unbekannten attackiert. Nach derzeitigem Kenntnisstand lief der 31-Jährige gegen 2:25 Uhr zusammen mit seinem 24-jährigem Freund über den Viktoria-Luise-Platz, als ihnen zwei Unbekannte entgegenkamen. Einer der Unbekannten hielt e...]]></description>
     </item>
@@ -2704,7 +2704,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718523.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718523.php</guid>
       <pubDate>Sat, 26 Sep 2026 12:03:22 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – In der vergangenen Nacht wurde ein Mann bei einem Raub in Kreuzberg verletzt. Nach bisherigen Erkenntnissen soll eine bislang unbekannte Frau den 60-Jährigen Mann im Görlitzer Park gegen 0:30 Uhr mit einem Messer verletzt und ihm anschließend Bargeld abgenommen haben. Anschließend so...]]></description>
     </item>
@@ -2713,7 +2713,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718522.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718522.php</guid>
       <pubDate>Sat, 26 Sep 2026 11:57:08 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Mit in der Spitze rund 3400 Personen fand gestern in Mitte eine Versammlung zum Thema „Krieg und Krise frisst dein Leben. Zusammen kämpfen wir dagegen! Schulstreik gegen Wehrpflicht“ statt. Im Verlauf der Versammlung wurden mehrfach polizeifeindliche Sprechchöre skandiert. Die Auftaktkundgebung a...]]></description>
     </item>
@@ -2722,7 +2722,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718351.php</guid>
       <pubDate>Fri, 25 Sep 2026 11:12:15 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Heute Morgen kam es zu einem schweren Raub auf einen Spätkauf in Wilmersdorf. Nach den bisherigen Ermittlungen betrat gegen 5:45 Uhr ein Mann das Geschäft in der Uhlandstraße und forderte unter Vorhalt einer mutmaßlichen Schusswaffe die Herausgabe von Geld. Der 28-jährige Mitarbeit...]]></description>
     </item>
@@ -2731,7 +2731,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718262.php</guid>
       <pubDate>Fri, 25 Sep 2026 09:11:47 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – In der vergangenen Nacht ereignete sich in Prenzlauer Berg ein Verkehrsunfall, bei dem ein 13-jähriges Mädchen erheblich verletzt wurde. Nach derzeitigem Kenntnisstand befuhr ein 50-jähriger Fahrer mit seinem Pkw gegen 1:30 Uhr die Prenzlauer Allee in Richtung Danziger Straße. An der Kreuzung Hei...]]></description>
     </item>
@@ -2740,7 +2740,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718257.php</guid>
       <pubDate>Fri, 25 Sep 2026 09:03:14 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Steglitz-Zehlendorf** – Gestern Nachmittag wurden zwei Zehnjährige bei einem Verkehrsunfall in Steglitz verletzt. Nach derzeitigen Erkenntnissen und Zeugenaussagen waren die Jungen gegen 16 Uhr auf ihren Tretrollern auf dem Gehweg der Lessingstraße unterwegs. In der Absicht, die Fahrbahn der Bergstraße in Richtu...]]></description>
     </item>
@@ -2749,7 +2749,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718201.php</guid>
       <pubDate>Fri, 25 Sep 2026 07:59:41 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Steglitz-Zehlendorf** – Seit der vergangenen Nacht ermitteln die 8. Mordkommission des Landeskriminalamts und die Staatsanwaltschaft Berlin zu einem versuchten Tötungsdelikt in Steglitz. Kurz nach 22 Uhr stellten alarmierte Einsatzkräfte auf dem Gehweg der Düppelstraße einen Jugendlichen mit Schussverletzungen i...]]></description>
     </item>
@@ -2758,7 +2758,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718187.php</guid>
       <pubDate>Fri, 25 Sep 2026 07:35:53 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Einsatzkräfte des Regionalabschnitts 27/28 stellten gestern Abend eine Sachbeschädigung an einer als Gedenkort aufgestellten Regenbogenbank in Tiergarten fest. Nach ersten Erkenntnissen hatten bislang Unbekannte auf noch nicht geklärte Weise eine der Holzlatten der bunten Bank demontiert, die ers...]]></description>
     </item>
@@ -2767,7 +2767,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718070.php</guid>
       <pubDate>Thu, 24 Sep 2026 14:24:40 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Spandau** – Am Mittwoch, den 30. September 2026 wird durch die Polizeien der Länder Berlin und Brandenburg ab 9:30 Uhr im Zusammenhang mit einer Kampfmittelbeseitigung in Brandenburg ein Sperrkreis eingerichtet, welcher sich in Teilen bis nach Berlin-Gatow erstreckt. Die Maßnahmen gelten bis zur Aufhebung de...]]></description>
     </item>
@@ -2776,7 +2776,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718012.php</guid>
       <pubDate>Thu, 24 Sep 2026 12:49:28 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Bei einem mehrstündigen Polizeieinsatz in Friedrichshain wurden gestern Nachmittag zwei Bauarbeiter durch Angriffe aus einem Gebäude heraus verletzt. Gegen 14 Uhr wurden Einsatzkräfte des Polizeiabschnitts 51 zu einem Baustellengelände an einem Mehrfamilienhaus in der Gürtelstraße al...]]></description>
     </item>
@@ -2785,7 +2785,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</guid>
       <pubDate>Thu, 24 Sep 2026 12:30:00 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Tempelhof-Schöneberg** – An den kriminalitätsbelasteten Orten (kbO) ist eine hohe Anzahl von Straftaten feststellbar, die das Sicherheitsgefühl beeinträchtigen. Dies gilt insbesondere für Gewaltvorfälle. Verglichen zur Gesamtfläche Berlins ist ein sehr kleiner Teil der Stadt als kbO eingestuft. Die Polizei Berli...]]></description>
     </item>
@@ -2794,7 +2794,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</guid>
       <pubDate>Thu, 24 Sep 2026 11:29:41 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Lichtenberg** – In der vergangenen Nacht kam es zu einer Sachbeschädigung durch Feuer und einer Farbschmiererei in Rummelsburg. Nach bisherigen Erkenntnissen stellte ein Mitarbeiter eines Sicherheitsdienstes gegen 3:40 Uhr einen etwa 5 × 5 Meter großen Schriftzug an einer Hausfassade und Fensterfront in der Mark...]]></description>
     </item>
@@ -2803,7 +2803,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717917.php</guid>
       <pubDate>Thu, 24 Sep 2026 11:14:01 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Neukölln** – Gestern Abend wurde eine Frau bei einem versuchten schweren Raub in Neukölln verletzt. Nach bisherigen Erkenntnissen stellte eine 43-jährige Frau gegen 20:20 Uhr ihren Motorroller in der Delbrückstraße ab, als sich ihr drei junge Männer näherten. Einer der Tatverdächtigen soll der Frau Pfefferspr...]]></description>
     </item>
@@ -2812,7 +2812,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717897.php</guid>
       <pubDate>Thu, 24 Sep 2026 10:34:20 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Marzahn-Hellersdorf** – In der vergangenen Nacht wurden Polizeieinsatzkräfte aufgrund einer verdächtigen Person zu einer Bar nach Marzahn alarmiert. Nach bisherigen Ermittlungen und Zeugenaussagen habe ein 47-jähriger Mann gegen 1 Uhr nach vorangegangenen Streitigkeiten in einer Lokalität in der Max-Herrmann-Str...]]></description>
     </item>
@@ -2821,7 +2821,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</guid>
       <pubDate>Thu, 24 Sep 2026 09:17:32 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – In der vergangenen Nacht kam es zu einem schweren Raub auf ein Hotel in Charlottenburg. Nach bisherigen Ermittlungen betrat gegen 23:25 Uhr ein junger Mann das Hotel am Kurfürstendamm und forderte unter Vorhalt von Pfefferspray die Herausgabe von Geld. Die 24-jährige Rezeptionistin...]]></description>
     </item>
@@ -2830,7 +2830,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</guid>
       <pubDate>Thu, 24 Sep 2026 09:07:00 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Gestern Mittag ereignete sich ein Verkehrsunfall in Westend, bei dem ein Kind schwer verletzt wurde. Als die 13-Jährige kurz vor 14 Uhr die Fahrbahn des Spandauer Damms in Richtung Königin-Elisabeth-Straße überquerte, wurde sie von einer aus dem Fürstenbrunner Weg kommenden Seniori...]]></description>
     </item>
@@ -2839,7 +2839,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</guid>
       <pubDate>Wed, 23 Sep 2026 14:02:35 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **berlinweit** – Heute Morgen wurden im Auftrag der Ermittlungsgruppe Telum der Staatsanwaltschaft Berlin in sechs Bezirken insgesamt 14 Durchsuchungsbeschlüsse für elf Wohnanschriften, drei Gewerbeobjekte und mehrere Pkw vollstreckt. Die seit April diesen Jahres andauernden Ermittlungen wegen des Verdachts des g...]]></description>
     </item>
@@ -2848,7 +2848,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</guid>
       <pubDate>Wed, 23 Sep 2026 12:19:53 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Lichtenberg** – Gestern Mittag setzten Polizeieinsatzkräfte in Lichtenberg gegen einen Mann das Distanzelektroimpulsgerät (DEIG) ein. Nach derzeitigem Kenntnisstand wurde der 20-Jährige gegen 12 Uhr wegen seines psychischen Ausnahmezustandes durch die Einsatzkräfte in ein Krankenhaus in der Herzbergstraße gebrac...]]></description>
     </item>
@@ -2857,7 +2857,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</guid>
       <pubDate>Wed, 23 Sep 2026 12:11:28 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Weil er auffällig in einem Rucksack wühlte und diesen anschließend in ein Gebüsch warf, wurden Einsatzkräfte der Polizei gestern Mittag auf einen Mann in Charlottenburg aufmerksam. Bei der anschließenden Personendurchsuchung sowie der Überprüfung des Rucksacks stellten die Einsatzk...]]></description>
     </item>
@@ -2866,7 +2866,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</guid>
       <pubDate>Wed, 23 Sep 2026 12:05:08 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Treptow-Köpenick** – Bei einer Verkehrssonderkontrolle in Köpenick hat ein Polizist gestern Nachmittag das Distanzelektroimpulsgerät gegen einen 14-jährigen E-Scooter-Fahrer eingesetzt. Den bisherigen Ermittlungen zufolge führten Einsatzkräfte der Polizeidirektion 3 (Ost) auf dem Müggelheimer Damm in Fahrtrichtu...]]></description>
     </item>
@@ -2875,7 +2875,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</guid>
       <pubDate>Wed, 23 Sep 2026 09:27:54 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Nach einem Brand in einem Kreuzberger Seniorenpflegewohnheim am vergangenen Samstag ist der einst schwerverletzte 74-Jährige gestern Nachmittag in einem Krankenhaus verstorben. Kräfte von Polizei und Feuerwehr wurden am Vormittag des 19. Septembers zu einer Seniorenpflegeeinrichtung ...]]></description>
     </item>
@@ -2884,7 +2884,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</guid>
       <pubDate>Wed, 23 Sep 2026 09:19:02 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Gestern Nachmittag wurden Einsatzkräfte der Polizei Berlin zu einem Verkehrsunfall nach Mitte alarmiert. Nach bisherigen Erkenntnissen soll ein 31-jähriger Busfahrer eines BVG-Linienbusses gegen 13:30 Uhr an der Bushaltestelle Nikolaiviertel am Mühlendamm in Richtung Fischerinsel losgefahren sein...]]></description>
     </item>
@@ -2893,7 +2893,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</guid>
       <pubDate>Tue, 22 Sep 2026 14:41:15 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Treptow-Köpenick** – Heute früh ereignete sich ein Verkehrsunfall im Ortsteil Plänterwald. Gegen 5:30 Uhr soll ein Autofahrer auf der Köpenicker Landstraße in Fahrtrichtung zur Straße Am Treptower Park bei roter Ampel gewartet haben, um anschließend nach links in den Dammweg abzubiegen. In diesem Moment sei eine...]]></description>
     </item>
@@ -2902,7 +2902,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</guid>
       <pubDate>Tue, 22 Sep 2026 12:08:28 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – Die Polizei Berlin sucht Zeuginnen und Zeugen zu einem tödlichen Verkehrsunfall, der sich in der Nacht von Freitag zu Sonnabend, den 19. September 2026, in Prenzlauer Berg ereignete. Nach derzeitigem Kenntnisstand befuhr gegen 2:45 Uhr ein 31-jähriger Fahrer eines BMW mit stark überhöhter Geschwi...]]></description>
     </item>
@@ -2911,7 +2911,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</guid>
       <pubDate>Tue, 22 Sep 2026 11:36:15 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Neukölln** – Gestern Morgen wurden Einsatzkräfte der Polizei Berlin wegen eines beschädigten Fensters in den Ortsteil Britz alarmiert. Nach bisherigen Erkenntnissen hatte eine 57-jährige Anwohnerin gegen 8 Uhr in der Backbergstraße ein Einschussloch in der Scheibe ihres doppelverglasten Schlafzimmerfensters b...]]></description>
     </item>
@@ -2920,7 +2920,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</guid>
       <pubDate>Tue, 22 Sep 2026 10:17:54 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Aufgrund des 52. BMW Berlin-Marathons am 26. und 27. September hat die Polizei Berlin eine temporäre Allgemeinverfügung zur Erhöhung der öffentlichen Sicherheit und Ordnung erlassen.]]></description>
     </item>
@@ -2929,7 +2929,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717101.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717101.php</guid>
       <pubDate>Tue, 22 Sep 2026 09:37:36 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Fluchtfahrzeug nach Überfall eines Geldtransporters in der Nordstraße]]></description>
     </item>
@@ -2938,7 +2938,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717074.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717074.php</guid>
       <pubDate>Tue, 22 Sep 2026 09:11:57 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Reinickendorf** – Gestern Nachmittag ereignete sich in Reinickendorf ein Verkehrsunfall, bei dem ein Kind verletzt wurde. Nach bisherigen Erkenntnissen und Zeugenaussagen befuhr ein 19-jähriger Autofahrer gegen 16 Uhr die Reginhardstraße in Fahrtrichtung Residenzstraße. Auf Höhe der Kreuzung Reginhardstraße/Lett...]]></description>
     </item>
@@ -2947,7 +2947,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717068.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717068.php</guid>
       <pubDate>Tue, 22 Sep 2026 08:58:39 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Tempelhof-Schöneberg** – Gestern Morgen kam es in Tempelhof zu einem Verkehrsunfall auf der Stadtautobahn. Nach derzeitigen Erkenntnissen befuhr ein 32-jähriger Motorradfahrer gegen 7:20 Uhr die Autobahn auf Höhe der Anschlussstelle Alboinstraße in Fahrtrichtung Kreuz Schöneberg. Bei einem Überholvorgang soll er...]]></description>
     </item>
@@ -2956,7 +2956,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717056.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717056.php</guid>
       <pubDate>Tue, 22 Sep 2026 08:49:33 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Spandau** – Gestern Mittag ereignete sich in Spandau ein schwerer Raub, bei dem unter Vorhalten einer Schusswaffe Bargeld und ein Handy geraubt wurden. Nach derzeitigem Kenntnisstand hatte sich ein 23-Jähriger in einem Hinterhof des Askanierrings mit dem späteren Täter zum Kauf mehrerer Handys verabredet. Ge...]]></description>
     </item>
@@ -2965,7 +2965,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716861.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716861.php</guid>
       <pubDate>Mon, 21 Sep 2026 13:17:08 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **berlinweit** – Gemeinsame Meldung Polizei Berlin, Hauptzollamt Berlin und Europol Nr. 1232 Im Rahmen der jährlich von Europol initiierten EMPACT Action Days unterstützte die Gemeinsame Ermittlungsgruppe Arbeitsausbeutung des Landeskriminalamtes und des Hauptzollamtes Berlin am Freitagabend Maßnahmen der niederl...]]></description>
     </item>
@@ -2974,7 +2974,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716784.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716784.php</guid>
       <pubDate>Mon, 21 Sep 2026 11:58:00 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Einsatzkräfte der 13. und 14. Einsatzhundertschaft nahmen am vergangenen Freitag eine mutmaßliche Drogenbande in Friedrichshain fest. Nach bisherigen Erkenntnissen beobachteten Beamtinnen und Beamte in ziviler Kleidung gegen 21:10 Uhr in der Jessnerstraße eine Drogenübergabe zwischen...]]></description>
     </item>
@@ -2983,7 +2983,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716770.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716770.php</guid>
       <pubDate>Mon, 21 Sep 2026 11:45:23 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – Gestern Abend wurden Einsatzkräfte der Polizei Berlin wegen mehrerer Farbschmierereien nach Blankenburg alarmiert. Nach bisherigen Erkenntnissen stellten sie gegen 19 Uhr im Bereich Schäferstege mehrere strafbare Graffiti auf dem dortigen Gehweg fest. Die Schmierereien, unter anderem ein Hakenkre...]]></description>
     </item>
@@ -2992,7 +2992,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716752.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716752.php</guid>
       <pubDate>Mon, 21 Sep 2026 11:33:12 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Tempelhof-Schöneberg** – Gestern Abend wurden Polizeieinsatzkräfte in Schöneberg auf zwei Personen aufmerksam. Nach derzeitigem Kenntnisstand beobachteten die zivilen Einsatzkräfte gegen 18 Uhr einen Mann und eine Frau in der Kurfürstenstraße bei der Übergabe einer Tasche und einer größeren Menge Geld. Anschließ...]]></description>
     </item>
@@ -3001,7 +3001,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716653.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716653.php</guid>
       <pubDate>Mon, 21 Sep 2026 09:59:14 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Neukölln** – Einsatzkräfte des Polizeiabschnitts 55 erhielten gestern Abend Kenntnis von einem verletzten Mann in Neukölln. In der Nogatstraße angekommen, übernahmen sie gegen 21:10 Uhr die Erstversorgung eines 19-Jährigen, der mehrere Stichverletzungen aufwies. Der Verletzte gab außerdem an, um sein Handy un...]]></description>
     </item>
@@ -3010,7 +3010,7 @@
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1716567.php</link>
       <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1716567.php</guid>
       <pubDate>Mon, 21 Sep 2026 08:59:33 GMT</pubDate>
-      <category>Policia</category>
+      <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Steglitz-Zehlendorf** – Einsatzkräfte von Polizei und Feuerwehr wurden gestern Nachmittag zu einem Brand auf einem Schulgelände in Steglitz alarmiert. Am Einsatzort in der Lauenburger Straße angekommen, bemerkten die Kolleginnen und Kollegen kurz vor 18 Uhr Flammen an der Cafeteria, einem Gebäude auf dem Hof der...]]></description>
     </item>

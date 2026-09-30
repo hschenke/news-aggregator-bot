@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:22:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LMU München: Daten von 600.000 Studierenden abgeflossen</title>
+      <link>https://www.heise.de/news/LMU-Muenchen-Daten-von-600-000-Studierenden-abgeflossen-11470683.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470683</guid>
+      <pubDate>Wed, 30 Sep 2026 09:11:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Ludwig-Maximilians-Universität München wurde Opfer eines Cyberangriffs. Nun wird das Ausmaß der betroffenen Daten klar.]]></description>
+    </item>
     <item>
       <title>Bericht: Apple unter John Ternus soll schneller werden</title>
       <link>https://www.heise.de/news/Bericht-Apple-unter-John-Ternus-soll-schneller-werden-11470297.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -144,15 +153,6 @@
       <description><![CDATA[Im Podcasts geht es hauptsächlich um diverse Sicherheitslücken und Bugs. Die sind aus unterschiedlichen Gründen relevant – aber allesamt sehr interessant.]]></description>
     </item>
     <item>
-      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
-      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469158</guid>
-      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
-    </item>
-    <item>
       <title>Trump: KI-Firmen sollen sich selbst beaufsichtigen</title>
       <link>https://www.heise.de/news/Trump-KI-Firmen-sollen-sich-selbst-beaufsichtigen-11470445.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470445</guid>
@@ -160,6 +160,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit Wochen wird weltweit über Risiken Künstlicher Intelligenz diskutiert. US-Präsident Trump will, dass die Unternehmen sich gegenseitig kontrollieren.]]></description>
+    </item>
+    <item>
+      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469158</guid>
+      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
     </item>
     <item>
       <title>Elektroauto Ventra reduziert von Reifen- und Bremsabrieb verursachten Feinstaub</title>
@@ -468,15 +477,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Buchvorstellung: The Secret Life of Circuits</title>
-      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11470135</guid>
-      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
-    </item>
-    <item>
       <title>Pentagon will 30 Millionen Dollar für KI-Lügendetektor ausgeben</title>
       <link>https://www.heise.de/news/Pentagon-will-30-Millionen-Dollar-fuer-KI-Luegendetektor-ausgeben-11470046.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470046</guid>
@@ -484,6 +484,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das US-Verteidigungsministerium will in den kommenden Jahren rund 30 Millionen Dollar für einen KI-Lügendetektor ausgeben. Forscher zweifeln an dem Konzept.]]></description>
+    </item>
+    <item>
+      <title>Buchvorstellung: The Secret Life of Circuits</title>
+      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470135</guid>
+      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
     </item>
     <item>
       <title>Snapchat-App: Betatester berichten von Account-Sperren unter iOS</title>
@@ -756,13 +765,13 @@
       <description><![CDATA[SMS nur, wenn die E-Mail nicht ankommt: Apprise 2.0 lernt Eskalationsstufen, Zeitlimits und gezielte Wiederholungen. Nicht alles bleibt kompatibel.]]></description>
     </item>
     <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
+      <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469629</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
+      <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
     </item>
     <item>
       <title>Zahlen, bitte! – Saturn-Hexagon: 29.000 Kilometer breites mysteriöses Sechseck</title>
@@ -774,13 +783,13 @@
       <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
     </item>
     <item>
-      <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
-      <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469629</guid>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>Antrag auf einstweilige Verfügung: ChatGPT soll nicht menschlich wirken</title>
@@ -1332,15 +1341,6 @@
       <description><![CDATA[Der Raspi-Hersteller verdreifacht seinen Nettogewinn. Gleichzeitig sind die verkauften Stückzahlen aber nur um 17 Prozent gestiegen.]]></description>
     </item>
     <item>
-      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
-      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11468027</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
-    </item>
-    <item>
       <title>KI-Update kompakt: Kardiologie, KI-Agenten, Rechenzentren, Cyberangriffe</title>
       <link>https://www.heise.de/news/KI-Update-kompakt-Kardiologie-KI-Agenten-Rechenzentren-Cyberangriffe-11467935.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467935</guid>
@@ -1348,6 +1348,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
+      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11468027</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
     </item>
     <item>
       <title>Bundesrat fordert strengere Regeln und Direktanstellung für Lieferdienste</title>
@@ -1735,15 +1744,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Eufy Hydrojet S2 kombiniert starke Teppichreinigung, gute Hinderniserkennung und viel Automation. Beim Wischen zeigt er aber Schwächen.]]></description>
-    </item>
-    <item>
-      <title>Autonomes Fahren: Warum VW bei Moia die Reißleine ziehen könnte</title>
-      <link>https://www.heise.de/news/VW-prueft-Ausstieg-aus-Robotaxi-Dienst-Moia-Deutschland-verliert-Anschluss-11467298.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467298</guid>
-      <pubDate>Sun, 27 Sep 2026 13:58:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[VW prüft laut Insidern verschiedene Ausstiegsoptionen für Moia: Verliert die deutsche Autoindustrie bei autonomer Mobilität den Anschluss?]]></description>
     </item>
   </channel>
 </rss>

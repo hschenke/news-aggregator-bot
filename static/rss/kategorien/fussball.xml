@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Fußball' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:22:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/fussball.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Monaco will mit Brunner verlängern - Gisdol unterschreibt in Bulgarien</title>
+      <link>https://www.kicker.de/transferticker-953155/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/transferticker-953155/artikel#omrss</guid>
+      <pubDate>Wed, 30 Sep 2026 09:18:01 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Wer wechselt wohin? Wer ist wo im Gespräch? Wer verlängert? In unserem Transferticker bleibst du auf dem Laufenden.]]></description>
+    </item>
     <item>
       <title>Frauen-Bundesliga bestätigt Fünfer-Sonntagskonferenz ab 2027/28</title>
       <link>https://www.kicker.de/frauen-bundesliga-bestaetigt-fuenfer-sonntagskonferenz-ab-2027-28-1255418/artikel#omrss</link>
@@ -268,15 +277,6 @@
       <category>Fußball</category>
       <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Der 1. FC Köln will sein Trainingszentrum erweitern. Der Ausbau wurde im August vom Oberverwaltungsgericht Nordrhein-Westfalen genehmigt. Jedoch legt die Bürgerinitiative Grüngürtel nun Beschwerde ein - sie will vor das Bundesverwaltungsgericht.]]></description>
-    </item>
-    <item>
-      <title>Kapitän Moerstedt geht voran: Deutsche U 20 schlägt auch Italien</title>
-      <link>https://www.kicker.de/deutschland-gegen-italien-2026-u-nationalteams-freundschaftsspiele-5262134/spielbericht#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/deutschland-gegen-italien-2026-u-nationalteams-freundschaftsspiele-5262134/spielbericht#omrss</guid>
-      <pubDate>Tue, 29 Sep 2026 17:32:45 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[Die deutsche U-20-Nationalmannschaft startet makellos in die neue Saison. Im zweiten Spiel bezwang die Auswahl von Hannes Wolf Italien mit 3:0.]]></description>
     </item>
   </channel>
 </rss>
