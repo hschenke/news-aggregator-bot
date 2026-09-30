@@ -61,11 +61,21 @@ def get_turso_config() -> tuple[str | None, str | None]:
             import streamlit as st
             if hasattr(st, "secrets"):
                 if not url:
-                    url = st.secrets.get("TURSO_URL") or st.secrets.get("TURSO_DATABASE_URL")
+                    if "TURSO_URL" in st.secrets:
+                        url = str(st.secrets["TURSO_URL"])
+                    elif "TURSO_DATABASE_URL" in st.secrets:
+                        url = str(st.secrets["TURSO_DATABASE_URL"])
+                    elif hasattr(st.secrets, "get"):
+                        url = st.secrets.get("TURSO_URL") or st.secrets.get("TURSO_DATABASE_URL")
                 if not key:
-                    key = st.secrets.get("TURSO_KEY") or st.secrets.get("TURSO_AUTH_TOKEN")
-        except Exception:
-            pass
+                    if "TURSO_KEY" in st.secrets:
+                        key = str(st.secrets["TURSO_KEY"])
+                    elif "TURSO_AUTH_TOKEN" in st.secrets:
+                        key = str(st.secrets["TURSO_AUTH_TOKEN"])
+                    elif hasattr(st.secrets, "get"):
+                        key = st.secrets.get("TURSO_KEY") or st.secrets.get("TURSO_AUTH_TOKEN")
+        except Exception as e_sec:
+            logger.debug("Streamlit Secrets Zugriff nicht möglich: %s", e_sec)
 
     url_str = str(url).strip() if url else None
     key_str = str(key).strip() if key else None

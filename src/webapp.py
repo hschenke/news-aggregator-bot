@@ -811,6 +811,16 @@ if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Lie
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
 
+try:
+    from src.storage import get_turso_config
+    _t_url, _t_key = get_turso_config()
+    if _t_url and _t_key:
+        st.sidebar.caption("🗄️ Cloud-DB: **Turso aktiv**")
+    else:
+        st.sidebar.caption("📁 DB: **Lokaler Modus**")
+except Exception:
+    pass
+
 st.sidebar.markdown("---")
 
 qp_category = st.query_params.get("category", "").strip()
