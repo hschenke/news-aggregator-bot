@@ -90,6 +90,7 @@ except Exception:
 
 COOKIE_AUTH_NAME = "news_bot_session"
 COOKIE_EXPIRY_DAYS = 7
+COOKIE_TAB_NAME = "news_bot_active_tab"
 
 # Page Configuration
 st.set_page_config(
@@ -769,36 +770,107 @@ def tab_id_to_label(tab_id: str) -> str:
         return TAB_LABEL_FEEDLY
     return TAB_LABEL_ARTICLES
 
+VALID_TAB_IDS = {TAB_ID_ARTICLES, TAB_ID_KI, TAB_ID_MANAGE, TAB_ID_FEEDLY}
+
+def get_persisted_active_tab() -> str | None:
+    """Liest den zuletzt aktiven Nav-Tab aus den HTTP-Cookies aus."""
+    if hasattr(st, "context") and hasattr(st.context, "cookies"):
+        try:
+            val = st.context.cookies.get(COOKIE_TAB_NAME)
+            if val in VALID_TAB_IDS:
+                return val
+        except Exception:
+            pass
+    if cookie_controller:
+        try:
+            val = cookie_controller.get(COOKIE_TAB_NAME)
+            if val in VALID_TAB_IDS:
+                return val
+        except Exception:
+            pass
+    return None
+
+def persist_active_tab(active_nav_tab: str) -> None:
+    """Synchronisiert und speichert den aktiven Tab in Session, Cookie, LocalStorage und Browser-URL."""
+    st.session_state["active_nav_tab"] = active_nav_tab
+    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
+    if st.query_params.get("tab") != active_nav_tab:
+        st.query_params["tab"] = active_nav_tab
+
+    # Nur synchronisieren, wenn sich der Tab geändert hat oder beim Erstaufruf dieser Session
+    if st.session_state.get("_synced_active_tab") == active_nav_tab:
+        return
+    st.session_state["_synced_active_tab"] = active_nav_tab
+
+    if cookie_controller:
+        try:
+            cookie_controller.set(
+                COOKIE_TAB_NAME,
+                active_nav_tab,
+                max_age=31536000.0,
+                expires=datetime.now() + timedelta(days=365),
+                same_site="lax"
+            )
+        except Exception:
+            pass
+
+    embed_client_script(f"""
+    (function() {{
+        var tab = "{active_nav_tab}";
+        try {{
+            document.cookie = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tab) + "; path=/; max-age=31536000; SameSite=Lax";
+            localStorage.setItem("{COOKIE_TAB_NAME}", tab);
+            sessionStorage.setItem("{COOKIE_TAB_NAME}", tab);
+            if (window.parent && window.parent !== window) {{
+                try {{
+                    window.parent.document.cookie = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tab) + "; path=/; max-age=31536000; SameSite=Lax";
+                    window.parent.localStorage.setItem("{COOKIE_TAB_NAME}", tab);
+                    window.parent.sessionStorage.setItem("{COOKIE_TAB_NAME}", tab);
+                }} catch(e) {{}}
+            }}
+        }} catch(e) {{}}
+
+        // Browser-URL synchronisieren (iframe-resilient für Streamlit Cloud & Standalone)
+        try {{
+            var syncUrl = function(win) {{
+                if (!win || !win.location) return;
+                try {{
+                    var url = new URL(win.location.href);
+                    if (url.searchParams.get("tab") !== tab) {{
+                        url.searchParams.set("tab", tab);
+                        win.history.replaceState(null, "", url.toString());
+                    }}
+                }} catch(e) {{}}
+            }};
+            syncUrl(window);
+            if (window.parent && window.parent !== window) {{
+                syncUrl(window.parent);
+            }}
+        }} catch(e) {{}}
+    }})();
+    """)
+
 # Aktiven Nav-Tab ermitteln & synchronisieren
 if "pending_nav_tab" in st.session_state:
     target_tab_id = st.session_state.pop("pending_nav_tab")
     active_nav_tab = target_tab_id
-    st.session_state["active_nav_tab"] = active_nav_tab
-    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
-    st.query_params["tab"] = active_nav_tab
-elif qp_category:
+    persist_active_tab(active_nav_tab)
+elif qp_category or qp_feed:
     # E-Mail Deeplinks führen immer zu den Artikeln
     active_nav_tab = TAB_ID_ARTICLES
-    st.session_state["active_nav_tab"] = active_nav_tab
-    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
-    st.query_params["tab"] = active_nav_tab
+    persist_active_tab(active_nav_tab)
 elif "main_tabs_nav" in st.session_state:
+    # Der Benutzer hat direkt einen Tab in st.tabs angeklickt -> dessen Wahl respektieren!
     active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
-    # Falls die URL explizit einen Tab vorgibt (z. B. ?tab=manage), diesen respektieren
-    if qp_tab and qp_tab in ["manage", "settings", "feeds", "quellen"] and active_nav_tab != TAB_ID_MANAGE:
-        active_nav_tab = TAB_ID_MANAGE
-    elif qp_tab and qp_tab in ["ki", "briefing", "ai"] and active_nav_tab != TAB_ID_KI:
-        active_nav_tab = TAB_ID_KI
-    elif qp_tab and qp_tab in ["rss", "feeds_rss", "feedly"] and active_nav_tab != TAB_ID_FEEDLY:
-        active_nav_tab = TAB_ID_FEEDLY
-    elif qp_tab and qp_tab == TAB_ID_ARTICLES and active_nav_tab != TAB_ID_ARTICLES:
-        active_nav_tab = TAB_ID_ARTICLES
-    st.session_state["active_nav_tab"] = active_nav_tab
-    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
-    st.query_params["tab"] = active_nav_tab
+    persist_active_tab(active_nav_tab)
 else:
-    # Erstaufruf: Query-Param prüfen falls vorhanden, sonst Standard Artikel
-    if qp_tab in ["ki", "briefing", "ai"]:
+    # Erstaufruf bzw. Browser F5-Refresh (st.session_state ist neu/leer):
+    # 1. Bevorzugt den zuletzt gemerkten aktiven Tab aus dem Cookie übernehmen (bleibt beim F5-Refresh exakt am selben Tab)
+    persisted_tab = get_persisted_active_tab()
+    if persisted_tab:
+        active_nav_tab = persisted_tab
+    # 2. Fallback: Query-Param aus der URL prüfen
+    elif qp_tab in ["ki", "briefing", "ai"]:
         active_nav_tab = TAB_ID_KI
     elif qp_tab in ["rss", "feeds_rss", "feedly"]:
         active_nav_tab = TAB_ID_FEEDLY
@@ -806,9 +878,7 @@ else:
         active_nav_tab = TAB_ID_MANAGE
     else:
         active_nav_tab = TAB_ID_ARTICLES
-    st.session_state["active_nav_tab"] = active_nav_tab
-    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
-    st.query_params["tab"] = active_nav_tab
+    persist_active_tab(active_nav_tab)
 
 def navigate_to(tab_name: str):
     st.session_state["pending_nav_tab"] = tab_name
@@ -965,8 +1035,13 @@ if new_pool_articles > 0:
 is_admin = st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()
 
 # Tabs in fester Reihenfolge: Artikel, KI, Verwalten, Feedly
+default_tab_label = tab_id_to_label(active_nav_tab)
+if default_tab_label not in TAB_ORDER:
+    default_tab_label = TAB_ORDER[0]
+
 tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
     TAB_ORDER,
+    default=default_tab_label,
     key="main_tabs_nav",
     on_change="rerun"
 )
