@@ -1646,7 +1646,17 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
             export_all_rss_feeds(collected, config=config)
         except Exception as e:
             print(f"[Hinweis] RSS-Feed-Export konnte nicht ausgeführt werden: {e}")
-                
+
+    # Automatisch gefundene Artikel in Turso / SQLite persistieren
+    try:
+        from src.storage import get_storage
+        storage = get_storage()
+        flat_items = [it for items in collected.values() for it in items]
+        if flat_items:
+            storage.save_articles(flat_items)
+    except Exception as e_db:
+        logger.debug("DB-Persistierung in collect_all_news übersprungen: %s", e_db)
+
     return collected
 
 
