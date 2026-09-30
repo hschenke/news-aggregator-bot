@@ -127,6 +127,25 @@ st.markdown("""
         position: absolute !important;
         pointer-events: none !important;
     }
+    /* Header-Anchor-Links (Kettensymbol / Link-Icon bei Hover) komplett ausblenden */
+    [data-testid="stHeaderActionElements"],
+    .stMarkdown a.anchor-link,
+    a.header-anchor,
+    h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
+    /* Skeleton-Ladeplatzhalter sanft ausblenden, damit kein grauer Kasten aufblitzt */
+    [data-testid="stSkeleton"],
+    .stSkeleton {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
     @media (max-width: 768px) {
         .block-container {
             padding-top: 3.25rem !important;
@@ -388,25 +407,13 @@ except ImportError:
 
 
 def embed_client_script(js_code: str) -> None:
-    """Führt Hilfsskripte (z. B. Cookie/Storage-Sync) vollständig unsichtbar ohne sichtbare DOM-Elemente aus."""
-    html_wrapper = f"<div style='display:none !important;width:0 !important;height:0 !important;margin:0 !important;padding:0 !important;overflow:hidden !important;border:none !important;'><script>{js_code}</script></div>"
-    if hasattr(st, "html"):
-        try:
-            st.html(html_wrapper, unsafe_allow_javascript=True)
-            return
-        except Exception:
-            pass
-    if hasattr(st, "components") and hasattr(st.components, "v1"):
-        try:
-            st.components.v1.html(html_wrapper, height=0, width=0)
-            return
-        except Exception:
-            pass
-    if hasattr(st, "iframe"):
-        try:
-            st.iframe(html_wrapper, height=0, width=0)
-        except Exception:
-            pass
+    """Führt Hilfsskripte (z. B. Cookie/Storage-Sync) modern und unsichtbar via st.html aus (Chrome & Firefox)."""
+    html_wrapper = (
+        f"<div style='display:none !important;width:0 !important;height:0 !important;"
+        f"margin:0 !important;padding:0 !important;overflow:hidden !important;border:none !important;'>"
+        f"<script>{js_code}</script></div>"
+    )
+    st.html(html_wrapper, unsafe_allow_javascript=True)
 
 
 def set_admin_session_cookie(expected_password: str) -> str:
@@ -860,22 +867,66 @@ def persist_active_tab(active_nav_tab: str) -> None:
         }} catch(e) {{}}
 
         // Browser-URL synchronisieren (iframe-resilient für Streamlit Cloud & Standalone)
+        var syncUrl = function(win, targetTab) {{
+            if (!win || !win.location) return;
+            var t = targetTab || tab;
+            try {{
+                var url = new URL(win.location.href);
+                if (url.searchParams.get("tab") !== t) {{
+                    url.searchParams.set("tab", t);
+                    win.history.replaceState(null, "", url.toString());
+                }}
+            }} catch(e) {{}}
+        }};
         try {{
-            var syncUrl = function(win) {{
-                if (!win || !win.location) return;
-                try {{
-                    var url = new URL(win.location.href);
-                    if (url.searchParams.get("tab") !== tab) {{
-                        url.searchParams.set("tab", tab);
-                        win.history.replaceState(null, "", url.toString());
-                    }}
-                }} catch(e) {{}}
-            }};
             syncUrl(window);
             if (window.parent && window.parent !== window) {{
                 syncUrl(window.parent);
             }}
         }} catch(e) {{}}
+
+        // Sofortiges 0-ms-Tab-Sync bei Klick im Frontend ohne Server-Rerun
+        if (!window._newsBotTabClickListenerInstalled) {{
+            window._newsBotTabClickListenerInstalled = true;
+            document.addEventListener("click", function(evt) {{
+                var btn = evt.target && evt.target.closest ? evt.target.closest('[data-baseweb="tab"]') : null;
+                if (!btn) return;
+                var txt = btn.innerText || btn.textContent || "";
+                var clickedTabId = "articles";
+                if (txt.indexOf("KI") !== -1) {{
+                    clickedTabId = "ki";
+                }} else if (txt.indexOf("Verwalten") !== -1 || txt.indexOf("Quellen") !== -1) {{
+                    clickedTabId = "manage";
+                }} else if (txt.indexOf("Feedly") !== -1 || txt.indexOf("RSS") !== -1) {{
+                    clickedTabId = "feedly";
+                }} else if (txt.indexOf("Artikel") !== -1) {{
+                    clickedTabId = "articles";
+                }} else {{
+                    return;
+                }}
+
+                try {{
+                    var cStr = "{COOKIE_TAB_NAME}=" + encodeURIComponent(clickedTabId) + "; path=/; max-age=31536000; SameSite=Lax";
+                    document.cookie = cStr;
+                    localStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
+                    sessionStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
+                    if (window.parent && window.parent !== window) {{
+                        try {{
+                            window.parent.document.cookie = cStr;
+                            window.parent.localStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
+                            window.parent.sessionStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
+                        }} catch(pe) {{}}
+                    }}
+                }} catch(err) {{}}
+
+                try {{
+                    syncUrl(window, clickedTabId);
+                    if (window.parent && window.parent !== window) {{
+                        syncUrl(window.parent, clickedTabId);
+                    }}
+                }} catch(err) {{}}
+            }}, true);
+        }}
     }})();
     """)
 
@@ -1005,8 +1056,7 @@ if get_configured_app_password():
         st.rerun()
 
 # --- Main Layout & Data Loading ---
-with st.spinner("Lade aktuelle Nachrichten aus den RSS-Feeds..."):
-    news_data = get_news_data()
+news_data = get_news_data()
 
 # Altersfilterung gemäß globalen Einstellungen anwenden (Standard: 20 Wochen)
 current_settings = working_config.get("settings", {})
@@ -1028,7 +1078,7 @@ total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categorie
 # Neue Artikel im Pool ermitteln
 new_pool_articles = get_new_articles_count(news_data)
 
-st.title("📰 Daily News Briefing")
+st.title("📰 Daily News Briefing", anchor=False)
 st.caption(f"Aktualisiert: {get_local_now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
 # KPI Row (Kompakt & Mobile-optimiert)
@@ -1072,7 +1122,6 @@ tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
     TAB_ORDER,
     default=default_tab_label,
     key="main_tabs_nav",
-    on_change="rerun"
 )
 
 # ----------------- TAB: Artikel -----------------
