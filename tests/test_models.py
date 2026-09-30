@@ -62,6 +62,24 @@ class TestArticleModel(unittest.TestCase):
         self.assertEqual(exported["title"], "Dict Import Test")
         self.assertEqual(exported["arbitrary_meta"], "extra_value")
 
+    def test_feedback_field(self):
+        art_default = Article(title="Test", link="https://example.com/1")
+        self.assertEqual(art_default.feedback, 0)
+
+        art_liked = Article.from_dict({
+            "title": "Liked",
+            "link": "https://example.com/2",
+            "feedback": 1
+        })
+        self.assertEqual(art_liked.feedback, 1)
+
+        art_disliked = Article.from_dict({
+            "title": "Disliked",
+            "link": "https://example.com/3",
+            "feedback": "-1"
+        })
+        self.assertEqual(art_disliked.feedback, -1)
+
 
 if __name__ == "__main__":
     unittest.main()

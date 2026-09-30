@@ -11,3 +11,5 @@ data/
 .streamlit/secrets.toml
 tests/preview_*.png
 screen_*.png
+*.db
+*.sqlite3

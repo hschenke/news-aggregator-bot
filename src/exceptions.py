@@ -27,3 +27,13 @@ class NotificationError(NewsAggregatorError):
 class SummarizationError(NewsAggregatorError):
     """Fehler bei der KI-Zusammenfassung via Gemini LLM."""
     pass
+
+
+class StorageError(NewsAggregatorError):
+    """Basisklasse für Speicher- und Datenbankfehler."""
+    pass
+
+
+class StorageConnectionError(StorageError):
+    """Fehler beim Verbindungsaufbau zur Datenbank (z. B. Turso Cloud DB)."""
+    pass

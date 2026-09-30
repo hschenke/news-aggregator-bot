@@ -10,6 +10,14 @@ from src.exceptions import (
     FeedFetchError,
     NotificationError,
     SummarizationError,
+    StorageError,
+    StorageConnectionError,
+)
+from src.storage import (
+    StorageBackend,
+    SqliteStorage,
+    TursoStorage,
+    get_storage,
 )
 
 __all__ = [
@@ -21,4 +29,10 @@ __all__ = [
     "FeedFetchError",
     "NotificationError",
     "SummarizationError",
+    "StorageError",
+    "StorageConnectionError",
+    "StorageBackend",
+    "SqliteStorage",
+    "TursoStorage",
+    "get_storage",
 ]

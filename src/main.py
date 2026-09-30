@@ -1,3 +1,4 @@
+import os
 import sys
 import time
 import logging
@@ -52,6 +53,19 @@ def run_pipeline() -> None:
     print("\n[3/3] 📬 Erstelle Digest & versende...")
     dispatch_digest(summary)
     save_pool_state(news)
+
+    # 4. Schritt: Datenbank-Persistenz (Turso Cloud DB oder lokaler SQLite-Fallback)
+    try:
+        from src.storage import get_storage
+        storage = get_storage()
+        all_articles = [it for items in news.values() for it in items]
+        saved_count = storage.save_articles(all_articles)
+        briefing_date = time.strftime("%Y-%m-%d")
+        gemini_model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
+        storage.save_briefing(briefing_date, summary, gemini_model)
+        print(f"      -> 💾 {saved_count} Artikel & KI-Briefing in Datenbank archiviert.")
+    except Exception as exc:
+        logger.warning("Datenbank-Archivierung übersprungen oder fehlgeschlagen: %s", exc)
 
     print("\n" + "=" * 60)
     print("✨ Pipeline erfolgreich abgeschlossen!")

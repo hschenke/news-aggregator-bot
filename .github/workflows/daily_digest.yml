@@ -43,6 +43,8 @@ jobs:
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
           STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app' }}
+          TURSO_URL: ${{ secrets.TURSO_URL }}
+          TURSO_KEY: ${{ secrets.TURSO_KEY }}
         run: |
           python src/main.py
 

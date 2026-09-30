@@ -58,6 +58,8 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
    - `GEMINI_API_KEY`: Dein Gemini API Key ([Google AI Studio](https://aistudio.google.com/))
    - `RESEND_API_KEY`: Dein Resend API Key ([resend.com](https://resend.com))
    - `EMAIL_TO`: Deine Empfänger-Adresse
+   - `TURSO_URL`: *(Optional)* Deine Turso DB-URL (`libsql://...`) für Cloud-Persistenz
+   - `TURSO_KEY`: *(Optional)* Dein Turso Auth Token
 
 ---
 
@@ -87,11 +89,28 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 
    # Optional: Passwortschutz gegen unbefugte Fremdnutzung
    APP_PASSWORD = "mein_geheimes_passwort"
+
+   # Optional: Cloud-Datenbank (Turso LibSQL / Cloud SQLite)
+   TURSO_URL = "libsql://deine-db-name.turso.io"
+   TURSO_KEY = "ey..."
    ```
 5. Klicke auf **Deploy!**
 6. Nach ca. 1-2 Minuten ist deine Web-App live unter einer URL wie `https://dein-news-bot.streamlit.app` erreichbar.
 
 > 📱 **Smartphone-Tipp**: Öffne die generierte Streamlit-URL in Safari (iOS) oder Chrome (Android) und wähle im Teilen-Menü **"Zum Home-Bildschirm"**. Schon hast du deine eigene News-App als Icon auf deinem Smartphone!
+
+---
+
+### 🗄️ Optionale Cloud-Datenbank (Turso LibSQL / Cloud SQLite)
+
+Um Artikel, Historie, KI-Briefings und Interaktionen (Like/Dislike, Lesezeichen) dauerhaft über Plattformgrenzen hinweg zu persistieren:
+- **Kostenlos:** Bis zu 9 GB und 500 Datenbanken im Turso Free-Tier.
+- **Zero-Config Fallback:** Fehlen die Turso-Zugangsdaten, nutzt das System automatisch eine lokale SQLite-Datenbank (`data/news_bot.db`).
+- **Setup in 2 Minuten:**
+  1. Auf [turso.tech](https://turso.tech) anmelden (z. B. mit GitHub) und neue Datenbank anlegen (z. B. `news-bot`, Region Frankfurt `fra`).
+  2. URL kopieren (z. B. `libsql://news-bot-...turso.io`).
+  3. Auth Token generieren (Klick auf *"Generate Token"* oder via CLI `turso db tokens create news-bot`).
+  4. Als `TURSO_URL` und `TURSO_KEY` in GitHub Secrets, Streamlit Secrets oder `.env` hinterlegen.
 
 ---
 
