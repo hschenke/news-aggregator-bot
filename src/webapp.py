@@ -252,13 +252,56 @@ st.markdown("""
     }
     /* Bewertungs-Daumen kompakt & direkt unterm Text platzieren */
     [data-testid="stFeedback"] {
-        margin-top: 0.15rem !important;
+        margin-top: 0.25rem !important;
         margin-bottom: 0 !important;
         padding: 0 !important;
     }
     [data-testid="stFeedback"] button {
-        padding: 0.15rem 0.35rem !important;
-        min-height: 1.8rem !important;
+        padding: 0.25rem 0.45rem !important;
+        min-height: 2rem !important;
+        border-radius: 8px !important;
+        transition: all 0.15s ease-in-out !important;
+    }
+    /* Nicht ausgewählter Button: dezent & Outline */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButton"]:not([data-testid="stFeedbackButtonActive"]):not([aria-checked="true"]) {
+        color: #94a3b8 !important;
+        background-color: transparent !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButton"]:not([data-testid="stFeedbackButtonActive"]):not([aria-checked="true"]) span {
+        font-variation-settings: 'FILL' 0, 'wght' 400 !important;
+    }
+    [data-testid="stFeedback"] button:hover:not(:disabled) {
+        background-color: rgba(128, 128, 128, 0.12) !important;
+    }
+
+    /* Ausgewählter Like-Button (Daumen hoch): Komplett ausgefülltes Icon & grüner Akzent */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] {
+        color: #16a34a !important;
+        background-color: rgba(22, 163, 74, 0.18) !important;
+        border: 1px solid rgba(22, 163, 74, 0.4) !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i] span,
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] span,
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i] [data-testid="stIconMaterial"],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] [data-testid="stIconMaterial"] {
+        font-variation-settings: 'FILL' 1, 'wght' 700 !important;
+        color: #16a34a !important;
+    }
+
+    /* Ausgewählter Dislike-Button (Daumen runter): Komplett ausgefülltes Icon & roter Akzent */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] {
+        color: #dc2626 !important;
+        background-color: rgba(220, 38, 38, 0.18) !important;
+        border: 1px solid rgba(220, 38, 38, 0.4) !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i] span,
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] span,
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i] [data-testid="stIconMaterial"],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] [data-testid="stIconMaterial"] {
+        font-variation-settings: 'FILL' 1, 'wght' 700 !important;
+        color: #dc2626 !important;
     }
     /* Infobox & Zitate Styling */
     blockquote {
@@ -1260,15 +1303,16 @@ else:
 
 liked_chip_html = f'<span class="kpi-chip" style="background-color:rgba(34, 197, 94, 0.12); border-color:rgba(34, 197, 94, 0.35); color:#16a34a;" title="{liked_articles_count} Artikel geliked (werden im KI-Briefing bevorzugt)">⭐ <strong>{liked_articles_count}</strong> Favoriten</span>' if liked_articles_count > 0 else ""
 
-st.markdown(f"""
-<div class="kpi-container">
-    <span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>
-    <span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>
-    {pool_chip_html}
-    {liked_chip_html}
-    <span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>
-</div>
-""", unsafe_allow_html=True)
+chips = [
+    f'<span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>',
+    f'<span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>',
+    pool_chip_html,
+]
+if liked_chip_html:
+    chips.append(liked_chip_html)
+chips.append(f'<span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>')
+
+st.html(f'<div class="kpi-container">{"".join(chips)}</div>')
 
 if new_pool_articles > 0:
     st.sidebar.markdown("---")
@@ -1414,11 +1458,11 @@ with tab_articles:
         # st.feedback('thumbs'): 1 = Like, 0 = Dislike, None = unselected/neutral
         if widget_val == 1:
             new_fb = 1
-            toast_text = "Artikel positiv bewertet 👍 (wird im KI-Briefing bevorzugt)"
+            toast_text = "Artikel als Favorit bewertet (wird im KI-Briefing bevorzugt)"
             toast_icon = "👍"
         elif widget_val == 0:
             new_fb = -1
-            toast_text = "Artikel als irrelevant markiert 👎"
+            toast_text = "Artikel als irrelevant markiert"
             toast_icon = "👎"
         else:
             new_fb = 0
@@ -1677,26 +1721,13 @@ with tab_articles:
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
                                 fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
 
-                                col_fb_btn, col_fb_label = st.columns([1, 2], vertical_alignment="center")
-                                with col_fb_btn:
-                                    st.feedback(
-                                        "thumbs",
-                                        key=fb_key,
-                                        default=default_fb,
-                                        on_change=on_article_feedback_change,
-                                        args=(item_url, fb_key, clean_title),
-                                    )
-                                with col_fb_label:
-                                    if cur_fb == 1:
-                                        st.markdown(
-                                            "<span style='font-size:0.78rem; font-weight:600; color:#16a34a; white-space:nowrap;'>👍 Favorit (KI-Priorität)</span>",
-                                            unsafe_allow_html=True,
-                                        )
-                                    elif cur_fb == -1:
-                                        st.markdown(
-                                            "<span style='font-size:0.78rem; color:#64748b; white-space:nowrap;'>👎 Irrelevant</span>",
-                                            unsafe_allow_html=True,
-                                        )
+                                st.feedback(
+                                    "thumbs",
+                                    key=fb_key,
+                                    default=default_fb,
+                                    on_change=on_article_feedback_change,
+                                    args=(item_url, fb_key, clean_title),
+                                )
 
     with col_stat_placeholder:
         if displayed_count > 0:

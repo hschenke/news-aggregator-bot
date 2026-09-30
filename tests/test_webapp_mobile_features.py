@@ -118,11 +118,11 @@ class TestWebappMobileFeatures(unittest.TestCase):
         self.assertIn('st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)', webapp_code)
         self.assertIn('is_expanded = (st.session_state.get("last_edited_category") == cat_name)', webapp_code)
 
-        # 7. Bewertungs-Daumen (st.feedback) direkt unter dem Text
-        self.assertIn('st.feedback(\n                                        "thumbs"', webapp_code)
+        # 7. Bewertungs-Daumen (st.feedback) direkt unter dem Text (ohne störende Extra-Labels daneben)
+        self.assertIn('st.feedback(\n                                    "thumbs"', webapp_code)
         self.assertIn('on_article_feedback_change', webapp_code)
-        self.assertIn('👍 Favorit (KI-Priorität)', webapp_code)
-        self.assertIn('👎 Irrelevant', webapp_code)
+        self.assertNotIn('col_fb_label', webapp_code)
+        self.assertIn("font-variation-settings: 'FILL' 1", webapp_code)
 
     def test_feedback_widget_value_mapping(self):
         """Prüft die Abbildung von st.feedback Thumbs-Werten auf -1, 0, +1."""
