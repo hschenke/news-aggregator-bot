@@ -141,6 +141,7 @@ st.markdown("""
     }
     /* Skeleton-Ladeplatzhalter sanft ausblenden, damit kein grauer Kasten aufblitzt */
     [data-testid="stSkeleton"],
+    [data-testid="stSkeletonElement"],
     .stSkeleton {
         display: none !important;
         opacity: 0 !important;
@@ -885,21 +886,21 @@ def persist_active_tab(active_nav_tab: str) -> None:
             }}
         }} catch(e) {{}}
 
-        // Sofortiges 0-ms-Tab-Sync bei Klick im Frontend ohne Server-Rerun
+        // Sofortiges 0-ms-Tab-Sync bei Klick im Frontend (Top-Tabs sowie linke Sidebar-Buttons)
         if (!window._newsBotTabClickListenerInstalled) {{
             window._newsBotTabClickListenerInstalled = true;
             document.addEventListener("click", function(evt) {{
-                var btn = evt.target && evt.target.closest ? evt.target.closest('[data-baseweb="tab"]') : null;
+                var btn = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTab"], [data-baseweb="tab"], button[role="tab"], [data-testid="stSidebar"] button') : null;
                 if (!btn) return;
                 var txt = btn.innerText || btn.textContent || "";
-                var clickedTabId = "articles";
-                if (txt.indexOf("KI") !== -1) {{
+                var clickedTabId = null;
+                if (txt.indexOf("KI") !== -1 && txt.indexOf("API") === -1) {{
                     clickedTabId = "ki";
                 }} else if (txt.indexOf("Verwalten") !== -1 || txt.indexOf("Quellen") !== -1) {{
                     clickedTabId = "manage";
                 }} else if (txt.indexOf("Feedly") !== -1 || txt.indexOf("RSS") !== -1) {{
                     clickedTabId = "feedly";
-                }} else if (txt.indexOf("Artikel") !== -1) {{
+                }} else if (txt.indexOf("Artikel") !== -1 && txt.indexOf("gesehen") === -1) {{
                     clickedTabId = "articles";
                 }} else {{
                     return;
@@ -962,6 +963,8 @@ else:
 
 def navigate_to(tab_name: str):
     st.session_state["pending_nav_tab"] = tab_name
+    st.session_state["active_nav_tab"] = tab_name
+    st.session_state["main_tabs_nav"] = tab_id_to_label(tab_name)
     st.query_params["tab"] = tab_name
     for k in ["page", "view", "category", "feed"]:
         if k in st.query_params:
@@ -1122,6 +1125,7 @@ tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
     TAB_ORDER,
     default=default_tab_label,
     key="main_tabs_nav",
+    on_change="rerun",
 )
 
 # ----------------- TAB: Artikel -----------------
