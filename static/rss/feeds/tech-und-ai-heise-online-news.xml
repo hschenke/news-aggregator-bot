@@ -5,9 +5,63 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:22:36 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 11:14:25 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Innotrans 2026: Akku-Bahnen werden wichtiger, aber Wasserstoff bleibt</title>
+      <link>https://www.heise.de/hintergrund/Innotrans-2026-Akku-Bahnen-werden-wichtiger-aber-Wasserstoff-bleibt-11470945.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470945</guid>
+      <pubDate>Wed, 30 Sep 2026 10:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Auf der Innotrans gab es viele Züge mit Akkutechnik zu sehen, die unter der Oberleitung laden. Doch Wasserstoff ist nicht verschwunden. Vor allem in einem Land.]]></description>
+    </item>
+    <item>
+      <title>heise+ | Wie Sie KI-Agenten mit .NET orchestrieren</title>
+      <link>https://www.heise.de/ratgeber/Wie-Sie-KI-Agenten-mit-NET-orchestrieren-11464010.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11464010</guid>
+      <pubDate>Wed, 30 Sep 2026 10:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft Agent Framework verbindet LLMs, Werkzeuge und zustandsbehaftete Workflows für ein belastbares KI-System.]]></description>
+    </item>
+    <item>
+      <title>Microsoft-Office-Update: Hilfe bei Lizenzfehlern alter Versionen</title>
+      <link>https://www.heise.de/news/Microsoft-Office-Update-Hilfe-bei-Lizenzfehlern-alter-Versionen-11470851.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470851</guid>
+      <pubDate>Wed, 30 Sep 2026 09:56:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft hat die Verteilung eines Office-Updates über Windows Update gestoppt. Von Lizenzfehlern Betroffene erhalten Hilfe.]]></description>
+    </item>
+    <item>
+      <title>WSL Container sind da – Windows-Apps starten Linux-Container</title>
+      <link>https://www.heise.de/news/WSL-Container-sind-da-Linux-Container-ohne-Extra-Engine-11470785.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470785</guid>
+      <pubDate>Wed, 30 Sep 2026 09:53:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft gibt WSL Container frei: Linux-Container lassen sich damit direkt unter Windows bauen und starten – auch aus Windows-Anwendungen heraus.]]></description>
+    </item>
+    <item>
+      <title>Tapete produziert Strom mit Luftfeuchtigkeit</title>
+      <link>https://www.heise.de/news/Tapete-produziert-Strom-mit-Luftfeuchtigkeit-11470666.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470666</guid>
+      <pubDate>Wed, 30 Sep 2026 09:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Energie kann mittels Luftfeuchtigkeit mit Mini-Generatoren gewonnen werden. Forscher haben das Design solcher MEGs angepasst und auf eine Tapete aufgebracht.]]></description>
+    </item>
+    <item>
+      <title>Tankrabatt ab erstem Oktober: En2x kündigt volle Weitergabe der Steuersenkung an</title>
+      <link>https://www.heise.de/news/Tankrabatt-ab-erstem-Oktober-En2x-kuendigt-volle-Weitergabe-der-Steuersenkung-an-11470775.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470775</guid>
+      <pubDate>Wed, 30 Sep 2026 09:21:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der steuerverbilligte Sprit ersetzt den noch bei den Tankstellen gebunkerten mit Zeitverzug. Trotzdem kündigt der Verband en2x eine sofortige Verbilligung an.]]></description>
+    </item>
     <item>
       <title>LMU München: Daten von 600.000 Studierenden abgeflossen</title>
       <link>https://www.heise.de/news/LMU-Muenchen-Daten-von-600-000-Studierenden-abgeflossen-11470683.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -33,7 +87,7 @@
       <pubDate>Wed, 30 Sep 2026 09:02:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Apple-Zubehöranbieter liefert mit dem Twelve South AirFly Drive erstmals einen Adapter für die iPhone-Fahrzeugintegration aus. Android Audio klappt auch.]]></description>
+      <description><![CDATA[Der Apple-Zubehöranbieter liefert mit dem Twelve South AirFly Drive erstmals einen Adapter für die iPhone-Fahrzeugintegration aus. Android Auto klappt auch.]]></description>
     </item>
     <item>
       <title>BMW renoviert den Dreier: Der Diesel bleibt vorerst draußen</title>
@@ -45,7 +99,7 @@
       <description><![CDATA[Noch immer ist der 3er eine wichtige Säule im BMW-Sortiment. Mit einer umfassenden Modellpflege ziehen E-Auto und Verbrenner optisch gleich.]]></description>
     </item>
     <item>
-      <title>heise+ | Offene Notizensammler: Vier Alternativen zu Apples Notizen-App im Test</title>
+      <title>heise+ | Offene Notizensammler: Vier native Alternativen zu Apples Notizen-App im Test</title>
       <link>https://www.heise.de/tests/Offene-Notizensammler-Vier-Alternativen-zu-Apples-Notizen-App-im-Test-11466862.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
       <guid isPermaLink="false">http://heise.de/-11466862</guid>
       <pubDate>Wed, 30 Sep 2026 08:30:00 GMT</pubDate>
@@ -393,7 +447,7 @@
       <pubDate>Tue, 29 Sep 2026 13:30:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ab Ende Oktober fließen erste Daten aus der elektronischen Patientenakte an das Forschungsdatenzentrum. Viele Versicherte wissen davon nichts.]]></description>
+      <description><![CDATA[Bald sollen Daten aus der elektronischen Patientenakte an das Forschungsdatenzentrum fließen. Viele Versicherte wissen davon nichts.]]></description>
     </item>
     <item>
       <title>heise+ | Besser organisiert mit Datenbanken: iPad-Workshop mit Tap Forms Pro</title>
@@ -432,6 +486,15 @@
       <description><![CDATA[SMS nur, wenn die E-Mail nicht ankommt: Apprise 2.0 lernt Eskalationsstufen, Zeitlimits und gezielte Wiederholungen. Nicht alles bleibt kompatibel.]]></description>
     </item>
     <item>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
+    </item>
+    <item>
       <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
       <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11469629</guid>
@@ -448,15 +511,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
-    </item>
-    <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
-      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>Antrag auf einstweilige Verfügung: ChatGPT soll nicht menschlich wirken</title>
@@ -1240,60 +1294,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Sicherheitsproblem bei OpenAI + VW-Schraubenproblem bei Seat & Audi + Zertifikatsproblem der AusweisApp + Erpressung nach Flink-Datenleck + Ausbau von Minecraft]]></description>
-    </item>
-    <item>
-      <title>Top 10: Der beste Fensterputzroboter im Test</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-fensterputzroboter-im-test-hutt-ist-testsieger-vor-ecovacs/rwq727q?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467252</guid>
-      <pubDate>Sun, 27 Sep 2026 18:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Fensterputzroboter versprechen saubere Scheiben ohne Mühe. Wir zeigen die besten Modelle und worauf beim Kauf zu achten ist.]]></description>
-    </item>
-    <item>
-      <title>RMV baut autonomen Nahverkehr in Darmstadt und Offenbach aus</title>
-      <link>https://www.heise.de/news/Holon-Shuttles-sollen-2027-Fahrgaeste-in-Hessen-autonom-befoerdern-11467312.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467312</guid>
-      <pubDate>Sun, 27 Sep 2026 16:13:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Deutsche Bahn und RMV entwickeln ihr Projekt mit autonomen Fahrzeugen weiter: Ab 2027 sollen Holon-Shuttles in Darmstadt und Offenbach Fahrgäste befördern.]]></description>
-    </item>
-    <item>
-      <title>OpenAI pausiert KI-Training nach neuem Zwischenfall – auch UN angegriffen</title>
-      <link>https://www.heise.de/news/OpenAI-pausiert-KI-Training-nach-neuem-Zwischenfall-11467188.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467188</guid>
-      <pubDate>Sun, 27 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[OpenAI schaffte es erneut nicht, die Testumgebung eines KI-Modells abzusichern. Auch bei den Vereinten Nationen hackten die KI-Agenten.]]></description>
-    </item>
-    <item>
-      <title>VW und die Schraube: Seat betroffen, zwei Werkstattbesuche möglich</title>
-      <link>https://www.heise.de/news/VW-Rueckruf-Auch-Seat-betroffen-zwei-Werkstattbesuche-moeglich-11467330.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467330</guid>
-      <pubDate>Sun, 27 Sep 2026 15:57:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Einige Modelle von Audi, Seat und VW brauchen eine neue Schraube an der Lenkung. Die könnte aber anfangs knapp sein, was zwei Reparaturen nötig macht.]]></description>
-    </item>
-    <item>
-      <title>Citrix Netscaler: Kritische Sicherheitslücken erlauben Codeeinschleusung</title>
-      <link>https://www.heise.de/news/Sicherheitsforscher-warnen-Neue-Zero-Day-Exploits-in-Citrix-Netscaler-11467200.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467200</guid>
-      <pubDate>Sun, 27 Sep 2026 15:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sicherheitsforscher warnen: Neue Exploits würden aktiv ausgenutzt. Citrix bestätigt die Lücken; Updates werden ausgeliefert.]]></description>
-    </item>
-    <item>
-      <title>Saugroboter Anker Eufy Hydrojet S2 im Test: stark auf Teppich, gut beim Wischen</title>
-      <link>https://www.heise.de/bestenlisten/testbericht/saugroboter-anker-eufy-hydrojet-s2-im-test-saugt-stark-wischt-stark-ist-stark/km7yh79?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467256</guid>
-      <pubDate>Sun, 27 Sep 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Eufy Hydrojet S2 kombiniert starke Teppichreinigung, gute Hinderniserkennung und viel Automation. Beim Wischen zeigt er aber Schwächen.]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,81 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 09:22:36 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 11:14:25 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Innotrans 2026: Akku-Bahnen werden wichtiger, aber Wasserstoff bleibt</title>
+      <link>https://www.heise.de/hintergrund/Innotrans-2026-Akku-Bahnen-werden-wichtiger-aber-Wasserstoff-bleibt-11470945.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470945</guid>
+      <pubDate>Wed, 30 Sep 2026 10:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Auf der Innotrans gab es viele Züge mit Akkutechnik zu sehen, die unter der Oberleitung laden. Doch Wasserstoff ist nicht verschwunden. Vor allem in einem Land.]]></description>
+    </item>
+    <item>
+      <title>heise+ | Wie Sie KI-Agenten mit .NET orchestrieren</title>
+      <link>https://www.heise.de/ratgeber/Wie-Sie-KI-Agenten-mit-NET-orchestrieren-11464010.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11464010</guid>
+      <pubDate>Wed, 30 Sep 2026 10:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft Agent Framework verbindet LLMs, Werkzeuge und zustandsbehaftete Workflows für ein belastbares KI-System.]]></description>
+    </item>
+    <item>
+      <title>GPT-6.1 Sol replaces GPT-6 Sol after just 7 days, with near-Astra intelligence</title>
+      <link>https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence</link>
+      <guid isPermaLink="false">https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence</guid>
+      <pubDate>Wed, 30 Sep 2026 09:59:03 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Microsoft-Office-Update: Hilfe bei Lizenzfehlern alter Versionen</title>
+      <link>https://www.heise.de/news/Microsoft-Office-Update-Hilfe-bei-Lizenzfehlern-alter-Versionen-11470851.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470851</guid>
+      <pubDate>Wed, 30 Sep 2026 09:56:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft hat die Verteilung eines Office-Updates über Windows Update gestoppt. Von Lizenzfehlern Betroffene erhalten Hilfe.]]></description>
+    </item>
+    <item>
+      <title>Pi.dev: You Said No MCP</title>
+      <link>https://earendil.com/posts/you-said-no-mcp/</link>
+      <guid isPermaLink="false">https://earendil.com/posts/you-said-no-mcp/</guid>
+      <pubDate>Wed, 30 Sep 2026 09:55:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>WSL Container sind da – Windows-Apps starten Linux-Container</title>
+      <link>https://www.heise.de/news/WSL-Container-sind-da-Linux-Container-ohne-Extra-Engine-11470785.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470785</guid>
+      <pubDate>Wed, 30 Sep 2026 09:53:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft gibt WSL Container frei: Linux-Container lassen sich damit direkt unter Windows bauen und starten – auch aus Windows-Anwendungen heraus.]]></description>
+    </item>
+    <item>
+      <title>Tapete produziert Strom mit Luftfeuchtigkeit</title>
+      <link>https://www.heise.de/news/Tapete-produziert-Strom-mit-Luftfeuchtigkeit-11470666.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470666</guid>
+      <pubDate>Wed, 30 Sep 2026 09:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Energie kann mittels Luftfeuchtigkeit mit Mini-Generatoren gewonnen werden. Forscher haben das Design solcher MEGs angepasst und auf eine Tapete aufgebracht.]]></description>
+    </item>
+    <item>
+      <title>Tankrabatt ab erstem Oktober: En2x kündigt volle Weitergabe der Steuersenkung an</title>
+      <link>https://www.heise.de/news/Tankrabatt-ab-erstem-Oktober-En2x-kuendigt-volle-Weitergabe-der-Steuersenkung-an-11470775.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470775</guid>
+      <pubDate>Wed, 30 Sep 2026 09:21:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der steuerverbilligte Sprit ersetzt den noch bei den Tankstellen gebunkerten mit Zeitverzug. Trotzdem kündigt der Verband en2x eine sofortige Verbilligung an.]]></description>
+    </item>
     <item>
       <title>LMU München: Daten von 600.000 Studierenden abgeflossen</title>
       <link>https://www.heise.de/news/LMU-Muenchen-Daten-von-600-000-Studierenden-abgeflossen-11470683.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -33,7 +105,7 @@
       <pubDate>Wed, 30 Sep 2026 09:02:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Apple-Zubehöranbieter liefert mit dem Twelve South AirFly Drive erstmals einen Adapter für die iPhone-Fahrzeugintegration aus. Android Audio klappt auch.]]></description>
+      <description><![CDATA[Der Apple-Zubehöranbieter liefert mit dem Twelve South AirFly Drive erstmals einen Adapter für die iPhone-Fahrzeugintegration aus. Android Auto klappt auch.]]></description>
     </item>
     <item>
       <title>BMW renoviert den Dreier: Der Diesel bleibt vorerst draußen</title>
@@ -45,7 +117,7 @@
       <description><![CDATA[Noch immer ist der 3er eine wichtige Säule im BMW-Sortiment. Mit einer umfassenden Modellpflege ziehen E-Auto und Verbrenner optisch gleich.]]></description>
     </item>
     <item>
-      <title>heise+ | Offene Notizensammler: Vier Alternativen zu Apples Notizen-App im Test</title>
+      <title>heise+ | Offene Notizensammler: Vier native Alternativen zu Apples Notizen-App im Test</title>
       <link>https://www.heise.de/tests/Offene-Notizensammler-Vier-Alternativen-zu-Apples-Notizen-App-im-Test-11466862.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
       <guid isPermaLink="false">http://heise.de/-11466862</guid>
       <pubDate>Wed, 30 Sep 2026 08:30:00 GMT</pubDate>
@@ -234,15 +306,6 @@
       <description><![CDATA[Durchsuchungen elektronischer Geräte bei der Einreise in die USA bedürfen keinerlei Anlass, sagt ein US-Bundesberufungsgericht. Offen bleibt die Methodenfrage.]]></description>
     </item>
     <item>
-      <title>PSSA: A non-transformer language model written from scratch in Rust</title>
-      <link>https://github.com/Sparticle62ops/pssa</link>
-      <guid isPermaLink="false">https://github.com/Sparticle62ops/pssa</guid>
-      <pubDate>Wed, 30 Sep 2026 03:19:54 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Antriebsausfälle beim Starship könnten Mondmissionen der NASA beeinträchtigen</title>
       <link>https://www.heise.de/news/Antriebsausfaelle-beim-Starship-koennten-Mondmissionen-der-NASA-beeintraechtigen-11470395.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470395</guid>
@@ -274,15 +337,6 @@
       <link>https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</link>
       <guid isPermaLink="false">https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</guid>
       <pubDate>Tue, 29 Sep 2026 23:10:26 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>NRC issues first U.S. construction permit for a BWRX-300 small modular reactor</title>
-      <link>https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</link>
-      <guid isPermaLink="false">https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</guid>
-      <pubDate>Tue, 29 Sep 2026 23:03:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -358,15 +412,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[OpenAI isn't a public supporter of Nvidia's Open Agent Safety Platform, but it is privately working with Nvidia, TechCrunch has learned.]]></description>
-    </item>
-    <item>
-      <title>We’re forgetting what darkness feels like</title>
-      <link>https://www.theguardian.com/environment/2026/sep/29/night-sky-darkness-city-regulation</link>
-      <guid isPermaLink="false">https://www.theguardian.com/environment/2026/sep/29/night-sky-darkness-city-regulation</guid>
-      <pubDate>Tue, 29 Sep 2026 18:22:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Vermont replacing power plants with home batteries</title>
@@ -585,15 +630,6 @@
       <description><![CDATA[Die Telekom-Tochter T-Systems wird künftig Produkte des kalifornischen CDN-Riesen vertreiben. Die Zusammenarbeit könnte auch Netzprobleme lindern helfen.]]></description>
     </item>
     <item>
-      <title>Show HN: NSL – WSL for Linux</title>
-      <link>https://frostyard.github.io/nsl/</link>
-      <guid isPermaLink="false">https://frostyard.github.io/nsl/</guid>
-      <pubDate>Tue, 29 Sep 2026 14:51:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>Brightin Star Tri-Sight: 50-mm-Objektiv mit drei Bildstilen</title>
       <link>https://www.heise.de/news/Brightin-Star-Tri-Sight-50-mm-Objektiv-mit-drei-Bildstilen-11469815.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11469815</guid>
@@ -699,7 +735,7 @@
       <pubDate>Tue, 29 Sep 2026 13:30:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ab Ende Oktober fließen erste Daten aus der elektronischen Patientenakte an das Forschungsdatenzentrum. Viele Versicherte wissen davon nichts.]]></description>
+      <description><![CDATA[Bald sollen Daten aus der elektronischen Patientenakte an das Forschungsdatenzentrum fließen. Viele Versicherte wissen davon nichts.]]></description>
     </item>
     <item>
       <title>heise+ | Besser organisiert mit Datenbanken: iPad-Workshop mit Tap Forms Pro</title>
@@ -765,6 +801,15 @@
       <description><![CDATA[SMS nur, wenn die E-Mail nicht ankommt: Apprise 2.0 lernt Eskalationsstufen, Zeitlimits und gezielte Wiederholungen. Nicht alles bleibt kompatibel.]]></description>
     </item>
     <item>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
+    </item>
+    <item>
       <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
       <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11469629</guid>
@@ -781,15 +826,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
-    </item>
-    <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
-      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>Antrag auf einstweilige Verfügung: ChatGPT soll nicht menschlich wirken</title>
@@ -850,6 +886,15 @@
       <link>https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart</link>
       <guid isPermaLink="false">https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart</guid>
       <pubDate>Tue, 29 Sep 2026 10:10:20 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: JBR-001 – An open-source 3D printable desktop robot</title>
+      <link>https://projecthub.arduino.cc/syntheticaidata/jbr-001-a-desktop-companion-robot-powered-by-arduino-uno-q-b11c96</link>
+      <guid isPermaLink="false">https://projecthub.arduino.cc/syntheticaidata/jbr-001-a-desktop-companion-robot-powered-by-arduino-uno-q-b11c96</guid>
+      <pubDate>Tue, 29 Sep 2026 10:05:56 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -1132,6 +1177,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Apple hat wichtige Fehlerbehebungen für iOS 26, iPadOS 26 und mehrere ältere macOS-Versionen publiziert. Außerdem gibt es Bugfixes für die neuen Systeme.]]></description>
+    </item>
+    <item>
+      <title>Built Dental Scope</title>
+      <link>https://dental-scope.com/</link>
+      <guid isPermaLink="false">https://dental-scope.com/</guid>
+      <pubDate>Tue, 29 Sep 2026 00:47:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort</title>
@@ -1690,60 +1744,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Top 10: Der beste Fensterputzroboter im Test</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-fensterputzroboter-im-test-hutt-ist-testsieger-vor-ecovacs/rwq727q?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467252</guid>
-      <pubDate>Sun, 27 Sep 2026 18:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Fensterputzroboter versprechen saubere Scheiben ohne Mühe. Wir zeigen die besten Modelle und worauf beim Kauf zu achten ist.]]></description>
-    </item>
-    <item>
-      <title>RMV baut autonomen Nahverkehr in Darmstadt und Offenbach aus</title>
-      <link>https://www.heise.de/news/Holon-Shuttles-sollen-2027-Fahrgaeste-in-Hessen-autonom-befoerdern-11467312.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467312</guid>
-      <pubDate>Sun, 27 Sep 2026 16:13:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Deutsche Bahn und RMV entwickeln ihr Projekt mit autonomen Fahrzeugen weiter: Ab 2027 sollen Holon-Shuttles in Darmstadt und Offenbach Fahrgäste befördern.]]></description>
-    </item>
-    <item>
-      <title>OpenAI pausiert KI-Training nach neuem Zwischenfall – auch UN angegriffen</title>
-      <link>https://www.heise.de/news/OpenAI-pausiert-KI-Training-nach-neuem-Zwischenfall-11467188.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467188</guid>
-      <pubDate>Sun, 27 Sep 2026 16:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[OpenAI schaffte es erneut nicht, die Testumgebung eines KI-Modells abzusichern. Auch bei den Vereinten Nationen hackten die KI-Agenten.]]></description>
-    </item>
-    <item>
-      <title>VW und die Schraube: Seat betroffen, zwei Werkstattbesuche möglich</title>
-      <link>https://www.heise.de/news/VW-Rueckruf-Auch-Seat-betroffen-zwei-Werkstattbesuche-moeglich-11467330.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467330</guid>
-      <pubDate>Sun, 27 Sep 2026 15:57:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Einige Modelle von Audi, Seat und VW brauchen eine neue Schraube an der Lenkung. Die könnte aber anfangs knapp sein, was zwei Reparaturen nötig macht.]]></description>
-    </item>
-    <item>
-      <title>Citrix Netscaler: Kritische Sicherheitslücken erlauben Codeeinschleusung</title>
-      <link>https://www.heise.de/news/Sicherheitsforscher-warnen-Neue-Zero-Day-Exploits-in-Citrix-Netscaler-11467200.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467200</guid>
-      <pubDate>Sun, 27 Sep 2026 15:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sicherheitsforscher warnen: Neue Exploits würden aktiv ausgenutzt. Citrix bestätigt die Lücken; Updates werden ausgeliefert.]]></description>
-    </item>
-    <item>
-      <title>Saugroboter Anker Eufy Hydrojet S2 im Test: stark auf Teppich, gut beim Wischen</title>
-      <link>https://www.heise.de/bestenlisten/testbericht/saugroboter-anker-eufy-hydrojet-s2-im-test-saugt-stark-wischt-stark-ist-stark/km7yh79?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467256</guid>
-      <pubDate>Sun, 27 Sep 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Eufy Hydrojet S2 kombiniert starke Teppichreinigung, gute Hinderniserkennung und viel Automation. Beim Wischen zeigt er aber Schwächen.]]></description>
     </item>
   </channel>
 </rss>
