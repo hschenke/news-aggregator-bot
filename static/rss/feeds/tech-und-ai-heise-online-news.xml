@@ -5,11 +5,29 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 13:46:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:47:19 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Deutschlandticket wird ab Janaur 2027 erneut teurer</title>
+      <title>Gebrauchter Prozessor führt zu Spielsperre</title>
+      <link>https://www.heise.de/news/Gebrauchter-Prozessor-fuehrt-zu-Spielsperre-11471368.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11471368</guid>
+      <pubDate>Wed, 30 Sep 2026 13:38:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Jemand kauft sich einen gebrauchten Ryzen 7 5800X3D. „Valorant“ und andere Riot-Spiele starten damit nicht, weil der Vorbesitzer ein Cheater war.]]></description>
+    </item>
+    <item>
+      <title>Airbnb Herbst-Update: KI-Suche, Social-Funktionen und mehr</title>
+      <link>https://www.heise.de/news/Airbnb-Herbst-Update-KI-Suche-Social-Funktionen-und-mehr-11471283.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11471283</guid>
+      <pubDate>Wed, 30 Sep 2026 13:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Airbnb stellt sein Herbst-Update vor. Die größten Neuerungen sind eine KI-Suche, eine Vernetzungsfunktion mit Freunden und zusätzliche Angebote.]]></description>
+    </item>
+    <item>
+      <title>Deutschlandticket wird ab Januar 2027 erneut teurer</title>
       <link>https://www.heise.de/news/Deutschlandticket-wird-ab-Janaur-2027-erneut-teurer-11471438.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11471438</guid>
       <pubDate>Wed, 30 Sep 2026 13:29:00 GMT</pubDate>
@@ -459,15 +477,6 @@
       <description><![CDATA[Telelinsen, brillante Displays und flinke Chips: Wir zeigen die besten Smartphones bis 400 Euro mit Top-Ausstattung.]]></description>
     </item>
     <item>
-      <title>Buchvorstellung: The Secret Life of Circuits</title>
-      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11470135</guid>
-      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
-    </item>
-    <item>
       <title>Pentagon will 30 Millionen Dollar für KI-Lügendetektor ausgeben</title>
       <link>https://www.heise.de/news/Pentagon-will-30-Millionen-Dollar-fuer-KI-Luegendetektor-ausgeben-11470046.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470046</guid>
@@ -475,6 +484,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das US-Verteidigungsministerium will in den kommenden Jahren rund 30 Millionen Dollar für einen KI-Lügendetektor ausgeben. Forscher zweifeln an dem Konzept.]]></description>
+    </item>
+    <item>
+      <title>Buchvorstellung: The Secret Life of Circuits</title>
+      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470135</guid>
+      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
     </item>
     <item>
       <title>Snapchat-App: Betatester berichten von Account-Sperren unter iOS</title>
@@ -1116,15 +1134,6 @@
       <description><![CDATA[Der Raspi-Hersteller verdreifacht seinen Nettogewinn. Gleichzeitig sind die verkauften Stückzahlen aber nur um 17 Prozent gestiegen.]]></description>
     </item>
     <item>
-      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
-      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11468027</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
-    </item>
-    <item>
       <title>KI-Update kompakt: Kardiologie, KI-Agenten, Rechenzentren, Cyberangriffe</title>
       <link>https://www.heise.de/news/KI-Update-kompakt-Kardiologie-KI-Agenten-Rechenzentren-Cyberangriffe-11467935.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467935</guid>
@@ -1132,6 +1141,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
+      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11468027</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
     </item>
     <item>
       <title>Bundesrat fordert strengere Regeln und Direktanstellung für Lieferdienste</title>
@@ -1312,24 +1330,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Miniroboter DirectHop kann sich selbst aufrichten und genauso hoch hüpfen, wie er eingestellt wird. So funktioniert der von Tieren inspirierte Roboter.]]></description>
-    </item>
-    <item>
-      <title>Gewährleistung und Garantie: EU führt neue Verbraucher-Label ein</title>
-      <link>https://www.heise.de/news/Gewaehrleistung-und-Garantie-EU-fuehrt-neue-Verbraucher-Label-ein-11467713.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467713</guid>
-      <pubDate>Mon, 28 Sep 2026 08:34:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die neue Waschmaschine geht schon nach Wochen kaputt? Verbraucher sollen ihre Rechte noch einfacher erkennen. Dafür sind nun zwei Label Pflicht.]]></description>
-    </item>
-    <item>
-      <title>Neu in .NET 10.0 [42]: JSON Patch in ASP.NET-Core-WebAPIs</title>
-      <link>https://www.heise.de/blog/Neu-in-NET-10-0-42-JSON-Patch-in-ASP-NET-Core-WebAPIs-11467506.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467506</guid>
-      <pubDate>Mon, 28 Sep 2026 08:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die neue JSON-Patch-Implementierung in .NET 10.0 lässt sich auch in WebAPIs verwenden.]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 13:46:46 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:47:19 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gebrauchter Prozessor führt zu Spielsperre</title>
+      <link>https://www.heise.de/news/Gebrauchter-Prozessor-fuehrt-zu-Spielsperre-11471368.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11471368</guid>
+      <pubDate>Wed, 30 Sep 2026 13:38:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Jemand kauft sich einen gebrauchten Ryzen 7 5800X3D. „Valorant“ und andere Riot-Spiele starten damit nicht, weil der Vorbesitzer ein Cheater war.]]></description>
+    </item>
     <item>
       <title>Manchester City: Guardiola reagiert auf Finanzskandal</title>
       <link>https://www.transfermarkt.de/guardiola-reagiert-auf-man-citys-finanzskandal-bin-fur-euch-da-mehr-denn-je-quot-/view/news/488089</link>
@@ -18,52 +27,16 @@
       <description><![CDATA[Startrainer Pep Guardiola hat dem von einem Finanzskandal erschütterten Manchester City seine Unterstützung zugesagt. „Ich möchte, dass jeder einzelne Manchester-City-Fan auf...]]></description>
     </item>
     <item>
-      <title>Boeing-Aktie höher: Flugzeugbauer sticht Northrop bei neuem Kampfjet-Auftrag aus</title>
-      <link>https://www.finanzen.net/nachricht/aktien/durchgesetzt-boeing-aktie-hoeher-flugzeugbauer-sticht-northrop-bei-neuem-kampfjet-auftrag-aus-15959990</link>
-      <guid isPermaLink="false">https://www.finanzen.net/nachricht/aktien/durchgesetzt-boeing-aktie-hoeher-flugzeugbauer-sticht-northrop-bei-neuem-kampfjet-auftrag-aus-15959990</guid>
-      <pubDate>Wed, 30 Sep 2026 13:35:37 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
-      <description><![CDATA[Der kriselnde Flugzeugbauer Boeing hat den Zuschlag für den Bau des nächsten Kampfjet-Modells für die US-Marine bekommen. Der US-Konzern stach damit seinen Konkurrenten Northrop ...]]></description>
+      <title>Airbnb Herbst-Update: KI-Suche, Social-Funktionen und mehr</title>
+      <link>https://www.heise.de/news/Airbnb-Herbst-Update-KI-Suche-Social-Funktionen-und-mehr-11471283.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11471283</guid>
+      <pubDate>Wed, 30 Sep 2026 13:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Airbnb stellt sein Herbst-Update vor. Die größten Neuerungen sind eine KI-Suche, eine Vernetzungsfunktion mit Freunden und zusätzliche Angebote.]]></description>
     </item>
     <item>
-      <title>Musterverfahren zu VW-Übernahme: BGH weist Beschwerden ab</title>
-      <link>https://www.finanzen.net/nachricht/aktien/musterverfahren-zu-vw-uebernahme-bgh-weist-beschwerden-ab-15960489</link>
-      <guid isPermaLink="false">https://www.finanzen.net/nachricht/aktien/musterverfahren-zu-vw-uebernahme-bgh-weist-beschwerden-ab-15960489</guid>
-      <pubDate>Wed, 30 Sep 2026 13:34:39 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
-      <description><![CDATA[KARLSRUHE (dpa-AFX) - Im Musterverfahren zu der Übernahmeschlacht zwischen Volkswagen (Volkswagen (VW) vz) und der Porsche SE (Porsche Automobil) hat der Bundesgerichtshof (BGH) ...]]></description>
-    </item>
-    <item>
-      <title>S&amp;P 500: Zweite Abwärtswelle läuft – Droht die Ausweitung der Korrektur?</title>
-      <link>https://www.finanzen.net/nachricht/trading/sp-500-zweite-abwrtswelle-luft-droht-die-ausweitung-der-korrektur-15960488</link>
-      <guid isPermaLink="false">https://www.finanzen.net/nachricht/trading/sp-500-zweite-abwrtswelle-luft-droht-die-ausweitung-der-korrektur-15960488</guid>
-      <pubDate>Wed, 30 Sep 2026 13:32:32 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
-      <description><![CDATA[Der S&P 500 initiierte ausgehend vom Erholungshoch bei 7.752 Punkten eine zweite Abwärtswelle vom Verlaufshoch ...]]></description>
-    </item>
-    <item>
-      <title>ROUNDUP 2: Mehr Pflegebeitrag für Kinderlose - große Reform vertagt</title>
-      <link>https://www.finanzen.net/nachricht/aktien/roundup-2-mehr-pflegebeitrag-fuer-kinderlose-grosse-reform-vertagt-15960474</link>
-      <guid isPermaLink="false">https://www.finanzen.net/nachricht/aktien/roundup-2-mehr-pflegebeitrag-fuer-kinderlose-grosse-reform-vertagt-15960474</guid>
-      <pubDate>Wed, 30 Sep 2026 13:31:39 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
-      <description><![CDATA[(neu: mehr Details und Hintergrund)BERLIN (dpa-AFX) - Die Bundesregierung teilt ihre geplante Pflegereform wegen Meinungsverschiedenheiten zwischen den Koalitionspartnern Union und SPD in zwei Teile auf. In einem ersten Schritt geht es zunächst darum, ...]]></description>
-    </item>
-    <item>
-      <title>US-Marktupdate: Boeing steigt vorbörslich</title>
-      <link>https://www.finanzen.net/nachricht/trading/us-marktupdate-boeing-steigt-vorbrslich-15960487</link>
-      <guid isPermaLink="false">https://www.finanzen.net/nachricht/trading/us-marktupdate-boeing-steigt-vorbrslich-15960487</guid>
-      <pubDate>Wed, 30 Sep 2026 13:30:56 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://www.finanzen.net/rss/news">Finanzen - News</source>
-      <description><![CDATA[Am Dienstag hielten sich die Anleger an der Wall Street vor weiteren wichtigen Konjunkturdaten zurück. Der S&P 500 gab um 0,17 Prozent auf 7.671 nach. Die Marktbreite fiel dabei schwach aus: 197 Kursgewinnern standen 298 Verlierer gegenüber, ...]]></description>
-    </item>
-    <item>
-      <title>Deutschlandticket wird ab Janaur 2027 erneut teurer</title>
+      <title>Deutschlandticket wird ab Januar 2027 erneut teurer</title>
       <link>https://www.heise.de/news/Deutschlandticket-wird-ab-Janaur-2027-erneut-teurer-11471438.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11471438</guid>
       <pubDate>Wed, 30 Sep 2026 13:29:00 GMT</pubDate>
@@ -1233,15 +1206,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Buchvorstellung: The Secret Life of Circuits</title>
-      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11470135</guid>
-      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
-    </item>
-    <item>
       <title>Pentagon will 30 Millionen Dollar für KI-Lügendetektor ausgeben</title>
       <link>https://www.heise.de/news/Pentagon-will-30-Millionen-Dollar-fuer-KI-Luegendetektor-ausgeben-11470046.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470046</guid>
@@ -1249,6 +1213,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das US-Verteidigungsministerium will in den kommenden Jahren rund 30 Millionen Dollar für einen KI-Lügendetektor ausgeben. Forscher zweifeln an dem Konzept.]]></description>
+    </item>
+    <item>
+      <title>Buchvorstellung: The Secret Life of Circuits</title>
+      <link>https://www.heise.de/news/Buchvorstellung-The-Secret-Life-of-Circuits-11470135.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11470135</guid>
+      <pubDate>Tue, 29 Sep 2026 16:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Michal Zalewski erklärt Elektronik so, wie sie auf der Werkbank tatsächlich funktioniert – nicht so, wie sie in Lehrbüchern gerne vereinfacht wird.]]></description>
     </item>
     <item>
       <title>Aktuelles - Alles-Mahlsdorf.de</title>
@@ -2331,15 +2304,6 @@
       <description><![CDATA[Der Raspi-Hersteller verdreifacht seinen Nettogewinn. Gleichzeitig sind die verkauften Stückzahlen aber nur um 17 Prozent gestiegen.]]></description>
     </item>
     <item>
-      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
-      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11468027</guid>
-      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
-    </item>
-    <item>
       <title>KI-Update kompakt: Kardiologie, KI-Agenten, Rechenzentren, Cyberangriffe</title>
       <link>https://www.heise.de/news/KI-Update-kompakt-Kardiologie-KI-Agenten-Rechenzentren-Cyberangriffe-11467935.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11467935</guid>
@@ -2347,6 +2311,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>heise+ | „Minecraft Dungeons 2“ angespielt: „Diablo“-Light in der Klötzchenwelt</title>
+      <link>https://www.heise.de/tests/Minecraft-Dungeons-2-angespielt-Neue-Dimension-altes-Spielprinzip-11468027.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11468027</guid>
+      <pubDate>Mon, 28 Sep 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[„Minecraft Dungeons 2“ setzt auf das bewährte „Diablo“-Spielprinzip und präsentiert eine neue Dimension im Minecraft-Universum.]]></description>
     </item>
     <item>
       <title>Bundesrat fordert strengere Regeln und Direktanstellung für Lieferdienste</title>
@@ -2581,24 +2554,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Miniroboter DirectHop kann sich selbst aufrichten und genauso hoch hüpfen, wie er eingestellt wird. So funktioniert der von Tieren inspirierte Roboter.]]></description>
-    </item>
-    <item>
-      <title>Gewährleistung und Garantie: EU führt neue Verbraucher-Label ein</title>
-      <link>https://www.heise.de/news/Gewaehrleistung-und-Garantie-EU-fuehrt-neue-Verbraucher-Label-ein-11467713.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467713</guid>
-      <pubDate>Mon, 28 Sep 2026 08:34:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die neue Waschmaschine geht schon nach Wochen kaputt? Verbraucher sollen ihre Rechte noch einfacher erkennen. Dafür sind nun zwei Label Pflicht.]]></description>
-    </item>
-    <item>
-      <title>Neu in .NET 10.0 [42]: JSON Patch in ASP.NET-Core-WebAPIs</title>
-      <link>https://www.heise.de/blog/Neu-in-NET-10-0-42-JSON-Patch-in-ASP-NET-Core-WebAPIs-11467506.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467506</guid>
-      <pubDate>Mon, 28 Sep 2026 08:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die neue JSON-Patch-Implementierung in .NET 10.0 lässt sich auch in WebAPIs verwenden.]]></description>
     </item>
     <item>
       <title>Bitcoin, Ethereum, Solana: Fidelity-Stratege sieht 260%-Rallye bis 2029</title>
