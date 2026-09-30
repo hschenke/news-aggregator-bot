@@ -49,6 +49,24 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertIn("Meldung 5", res)
         self.assertNotIn("Meldung 6", res)
 
+    def test_liked_articles_prioritized_in_briefing(self):
+        # Meldung 9 ist geliked (feedback=1), Meldung 1 ist neutral, Meldung 2 ist disliked (feedback=-1)
+        news = {
+            "Berlin": [
+                {"title": "Meldung 1 Neutral", "link": "http://berlin.de/1", "summary": "Text 1", "timestamp": 100.0, "feedback": 0},
+                {"title": "Meldung 2 Disliked", "link": "http://berlin.de/2", "summary": "Text 2", "timestamp": 200.0, "feedback": -1},
+                {"title": "Meldung 9 Liked", "link": "http://berlin.de/9", "summary": "Text 9", "timestamp": 50.0, "feedback": 1},
+            ]
+        }
+        res = _generate_fallback_summary(news)
+        lines = [line for line in res.split("\n") if line.startswith("- **[")]
+        # Liked item must come FIRST even though its timestamp is older than Neutral
+        self.assertIn("Meldung 9 Liked", lines[0])
+        # Neutral comes second
+        self.assertIn("Meldung 1 Neutral", lines[1])
+        # Disliked comes last
+        self.assertIn("Meldung 2 Disliked", lines[2])
+
     def test_email_rendering_styles_infobox_distinctly(self):
         md = """## 🤖 Tech & AI
 

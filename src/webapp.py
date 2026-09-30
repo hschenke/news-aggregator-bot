@@ -187,11 +187,25 @@ st.markdown("""
             margin: 0.5rem 0 !important;
         }
         /* Mobile: Spalten in horizontalen Blöcken (z.B. Dropdowns) auf volle Breite umbrechen,
-           aber die Suchleiste (mit .st-key-input_search_query) als kompakte 1-Zeilen-Leiste nebeneinander halten */
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)) > [data-testid="stColumn"],
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)) > [data-testid="column"] {
+           aber die Suchleiste und Bewertungs-Daumen als kompakte 1-Zeilen-Leiste nebeneinander halten */
+        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not(:has([data-testid="stFeedback"])) > [data-testid="stColumn"],
+        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not(:has([data-testid="stFeedback"])) > [data-testid="column"] {
             min-width: 100% !important;
             flex: 1 1 100% !important;
+        }
+        /* Feedback-Daumen auf Mobile nebeneinander halten */
+        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            gap: 0.4rem !important;
+        }
+        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="stColumn"],
+        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="column"] {
+            min-width: auto !important;
+            flex: 0 0 auto !important;
+            width: auto !important;
         }
         /* Suchleiste auf Mobile: Eingabefeld, ✕ und Go in einer Zeile bündig halten */
         [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) {
@@ -235,6 +249,16 @@ st.markdown("""
         font-weight: 600 !important;
         padding-left: 0.4rem !important;
         padding-right: 0.4rem !important;
+    }
+    /* Bewertungs-Daumen kompakt & direkt unterm Text platzieren */
+    [data-testid="stFeedback"] {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    [data-testid="stFeedback"] button {
+        padding: 0.15rem 0.35rem !important;
+        min-height: 1.8rem !important;
     }
     /* Infobox & Zitate Styling */
     blockquote {
@@ -1195,6 +1219,25 @@ except (ValueError, TypeError):
 
 news_data = filter_news_data_by_age(news_data, max_age_weeks=active_max_age_weeks)
 
+# Nutzer-Bewertungen (Likes / Dislikes) aus der Datenbank laden & in Artikel einbetten
+if "feedback_map" not in st.session_state:
+    try:
+        from src.storage import get_storage
+        _storage = get_storage()
+        st.session_state["feedback_map"] = _storage.get_feedback_map()
+    except Exception as exc:
+        st.session_state["feedback_map"] = {}
+
+current_fb_map = st.session_state.get("feedback_map", {})
+liked_articles_count = 0
+for cat_items in news_data.values():
+    for it in cat_items:
+        it_url = it.get("link", "").strip()
+        if it_url in current_fb_map:
+            it["feedback"] = current_fb_map[it_url]
+        if it.get("feedback") == 1:
+            liked_articles_count += 1
+
 # Kennzahlen berechnen
 total_categories = len(news_data)
 total_articles = sum(len(items) for items in news_data.values())
@@ -1215,11 +1258,14 @@ if new_pool_articles > 0:
 else:
     pool_chip_html = f'<span class="kpi-chip">📄 <strong>{total_articles}</strong> Artikel im Pool</span>'
 
+liked_chip_html = f'<span class="kpi-chip" style="background-color:rgba(34, 197, 94, 0.12); border-color:rgba(34, 197, 94, 0.35); color:#16a34a;" title="{liked_articles_count} Artikel geliked (werden im KI-Briefing bevorzugt)">⭐ <strong>{liked_articles_count}</strong> Favoriten</span>' if liked_articles_count > 0 else ""
+
 st.markdown(f"""
 <div class="kpi-container">
     <span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>
     <span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>
     {pool_chip_html}
+    {liked_chip_html}
     <span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>
 </div>
 """, unsafe_allow_html=True)
@@ -1363,8 +1409,46 @@ with tab_articles:
         }})();
         """)
 
+    def on_article_feedback_change(article_url: str, widget_key: str, article_title: str = "") -> None:
+        widget_val = st.session_state.get(widget_key)
+        # st.feedback('thumbs'): 1 = Like, 0 = Dislike, None = unselected/neutral
+        if widget_val == 1:
+            new_fb = 1
+            toast_text = "Artikel positiv bewertet 👍 (wird im KI-Briefing bevorzugt)"
+            toast_icon = "👍"
+        elif widget_val == 0:
+            new_fb = -1
+            toast_text = "Artikel als irrelevant markiert 👎"
+            toast_icon = "👎"
+        else:
+            new_fb = 0
+            toast_text = "Bewertung zurückgesetzt"
+            toast_icon = "⚪"
+
+        # 1. Feedback-Map in session_state aktualisieren
+        if "feedback_map" not in st.session_state:
+            st.session_state["feedback_map"] = {}
+        st.session_state["feedback_map"][article_url] = new_fb
+
+        # 2. In news_data aktualisieren
+        for cat_items in news_data.values():
+            for it in cat_items:
+                if it.get("link", "").strip() == article_url:
+                    it["feedback"] = new_fb
+
+        # 3. In Datenbank persistieren (Turso / SQLite)
+        try:
+            from src.storage import get_storage
+            storage = get_storage()
+            storage.set_feedback(article_url, new_fb, title=article_title)
+        except Exception as exc:
+            pass
+
+        st.toast(toast_text, icon=toast_icon)
+
     def on_clear_search():
         st.session_state["input_search_query"] = ""
+        st.session_state["sel_articles_rating"] = "Alle Bewertungen"
 
     # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
     if qp_category:
@@ -1407,6 +1491,11 @@ with tab_articles:
     curr_selected_feed = st.session_state.get(feed_widget_key, "Alle Feeds")
     if curr_selected_feed != "Alle Feeds":
         filter_summary_items.append(f"📡 {curr_selected_feed}")
+    curr_rating = st.session_state.get("sel_articles_rating", "Alle Bewertungen")
+    if curr_rating == "Nur Favoriten 👍":
+        filter_summary_items.append("⭐ Nur Favoriten")
+    elif curr_rating == "Nur Irrelevante 👎":
+        filter_summary_items.append("👎 Nur Irrelevante")
     active_search_text = st.session_state.get("input_search_query", "").strip()
     if active_search_text:
         filter_summary_items.append(f"🔍 '{active_search_text}'")
@@ -1414,12 +1503,13 @@ with tab_articles:
     is_filtering = bool(
         current_cat != "Alle Kategorien"
         or curr_selected_feed != "Alle Feeds"
+        or curr_rating != "Alle Bewertungen"
         or active_search_text
     )
 
     with st.expander("🔍 Filter & Suche", expanded=is_filtering, key="expander_filter_search"):
-        # 1. Filter-Dropdowns: Kategorie & Feed
-        filter_col_cat, filter_col_feed = st.columns(2)
+        # 1. Filter-Dropdowns: Kategorie, Feed & Bewertung
+        filter_col_cat, filter_col_feed, filter_col_rating = st.columns([1.2, 1.2, 1.0])
         with filter_col_cat:
             selected_cat = st.selectbox(
                 "Kategorie:",
@@ -1439,6 +1529,13 @@ with tab_articles:
                 key=feed_widget_key
             )
             st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
+
+        with filter_col_rating:
+            selected_rating = st.selectbox(
+                "Bewertung:",
+                options=["Alle Bewertungen", "Nur Favoriten 👍", "Nur Irrelevante 👎"],
+                key="sel_articles_rating"
+            )
 
         # 2. Suchleiste: Textfeld, Reset-Button (✕) und Go-Button
         col_s_input, col_s_clear, col_s_go = st.columns([6, 0.7, 0.9], vertical_alignment="bottom")
@@ -1497,10 +1594,16 @@ with tab_articles:
 
         cat_items = news_data.get(category, [])
 
-        # Artikel filtern nach Feed und Suche
+        # Artikel filtern nach Feed, Bewertung und Suche
         cat_matching = []
         for item in cat_items:
             if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
+                continue
+            item_url = item.get("link", "").strip()
+            item_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
+            if curr_rating == "Nur Favoriten 👍" and item_fb != 1:
+                continue
+            if curr_rating == "Nur Irrelevante 👎" and item_fb != -1:
                 continue
             if search_query:
                 q = search_query.lower()
@@ -1567,6 +1670,33 @@ with tab_articles:
                                     f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
                                     unsafe_allow_html=True
                                 )
+
+                                # Bewertungs-Daumen (Like / Dislike) direkt unterm Text
+                                item_url = item.get("link", "").strip()
+                                cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
+                                default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
+                                fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
+
+                                col_fb_btn, col_fb_label = st.columns([1, 2], vertical_alignment="center")
+                                with col_fb_btn:
+                                    st.feedback(
+                                        "thumbs",
+                                        key=fb_key,
+                                        default=default_fb,
+                                        on_change=on_article_feedback_change,
+                                        args=(item_url, fb_key, clean_title),
+                                    )
+                                with col_fb_label:
+                                    if cur_fb == 1:
+                                        st.markdown(
+                                            "<span style='font-size:0.78rem; font-weight:600; color:#16a34a; white-space:nowrap;'>👍 Favorit (KI-Priorität)</span>",
+                                            unsafe_allow_html=True,
+                                        )
+                                    elif cur_fb == -1:
+                                        st.markdown(
+                                            "<span style='font-size:0.78rem; color:#64748b; white-space:nowrap;'>👎 Irrelevant</span>",
+                                            unsafe_allow_html=True,
+                                        )
 
     with col_stat_placeholder:
         if displayed_count > 0:
@@ -1650,7 +1780,7 @@ with tab_ki:
 
     with col_info:
         if is_admin:
-            st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen und formatiert ein kompaktes Briefing.")
+            st.caption("Fasst die relevantesten Artikel aus allen Feeds zusammen. ⭐ **Positiv bewertete Favoriten (Likes)** werden bevorzugt analysiert und hervorgehoben.")
         else:
             st.caption("👁️ **Lese-Modus:** Du kannst das bestehende Briefing lesen. Das Anstoßen einer neuen KI-Generierung erfordert Admin-Rechte.")
 

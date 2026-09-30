@@ -127,11 +127,16 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
-    def set_feedback(self, url: str, feedback: int) -> bool:
+    def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         """
         Setzt das Nutzer-Feedback für einen Artikel:
         1 = Like (Daumen hoch), -1 = Dislike (Daumen runter), 0 = Neutral.
         """
+        pass
+
+    @abstractmethod
+    def get_feedback_map(self) -> dict[str, int]:
+        """Gibt ein Mapping {url: feedback} für alle bewerteten Artikel zurück (feedback != 0)."""
         pass
 
     @abstractmethod
@@ -384,14 +389,31 @@ class SqliteStorage(StorageBackend):
             cursor = conn.execute("SELECT url FROM articles")
             return {row["url"] for row in cursor.fetchall()}
 
-    def set_feedback(self, url: str, feedback: int) -> bool:
+    def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_feedback = 1 if feedback > 0 else (-1 if feedback < 0 else 0)
+        clean_url = url.strip()
+        if not clean_url:
+            return False
         with self._get_connection() as conn:
             cursor = conn.execute(
                 "UPDATE articles SET feedback = ?, updated_at = CURRENT_TIMESTAMP WHERE url = ?",
-                (safe_feedback, url.strip())
+                (safe_feedback, clean_url)
             )
-            return cursor.rowcount > 0
+            if cursor.rowcount == 0:
+                conn.execute(
+                    """
+                    INSERT INTO articles (url, title, feedback, created_at, updated_at)
+                    VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                    ON CONFLICT(url) DO UPDATE SET feedback = excluded.feedback, updated_at = CURRENT_TIMESTAMP
+                    """,
+                    (clean_url, title.strip() or "Unbekannt", safe_feedback)
+                )
+            return True
+
+    def get_feedback_map(self) -> dict[str, int]:
+        with self._get_connection() as conn:
+            cursor = conn.execute("SELECT url, feedback FROM articles WHERE feedback != 0")
+            return {row["url"]: int(row["feedback"]) for row in cursor.fetchall()}
 
     def set_bookmark(self, url: str, is_bookmarked: bool) -> bool:
         with self._get_connection() as conn:
@@ -773,14 +795,33 @@ class TursoStorage(StorageBackend):
             return set()
         return {r["url"] for r in res[0]["rows"] if "url" in r}
 
-    def set_feedback(self, url: str, feedback: int) -> bool:
+    def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_val = 1 if feedback > 0 else (-1 if feedback < 0 else 0)
+        clean_url = url.strip()
+        if not clean_url:
+            return False
         res = self._execute_pipeline([
-            ("UPDATE articles SET feedback = ?, updated_at = CURRENT_TIMESTAMP WHERE url = ?", [safe_val, url.strip()])
+            ("UPDATE articles SET feedback = ?, updated_at = CURRENT_TIMESTAMP WHERE url = ?", [safe_val, clean_url])
         ])
-        if res and res[0].get("affected_rows", 0) > 0:
-            return True
-        return False
+        if not res or res[0].get("affected_rows", 0) == 0:
+            self._execute_pipeline([
+                ("""
+                INSERT INTO articles (url, title, feedback, created_at, updated_at)
+                VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+                ON CONFLICT(url) DO UPDATE SET feedback = excluded.feedback, updated_at = CURRENT_TIMESTAMP
+                """, [clean_url, title.strip() or "Unbekannt", safe_val])
+            ])
+        return True
+
+    def get_feedback_map(self) -> dict[str, int]:
+        res = self._execute_pipeline([("SELECT url, feedback FROM articles WHERE feedback != 0", [])])
+        if not res or not res[0].get("rows"):
+            return {}
+        return {
+            r["url"]: int(r["feedback"])
+            for r in res[0]["rows"]
+            if "url" in r and r.get("feedback") is not None
+        }
 
     def set_bookmark(self, url: str, is_bookmarked: bool) -> bool:
         res = self._execute_pipeline([

@@ -96,6 +96,25 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertEqual(len(liked_tech), 1)
         self.assertEqual(liked_tech[0].link, "https://ex.com/1")
 
+    def test_set_feedback_upsert_and_feedback_map(self):
+        # 1. Feedback für bereits existierenden Artikel ändern
+        self.storage.save_articles([Article(title="Existing", link="https://ex.com/exist", feedback=0)])
+        self.storage.set_feedback("https://ex.com/exist", 1)
+        self.assertEqual(self.storage.get_article("https://ex.com/exist").feedback, 1)
+
+        # 2. Feedback für neuen / noch ungespeicherten Artikel (Upsert)
+        self.storage.set_feedback("https://ex.com/brand_new", -1, title="Brand New Title")
+        brand_new = self.storage.get_article("https://ex.com/brand_new")
+        self.assertIsNotNone(brand_new)
+        self.assertEqual(brand_new.feedback, -1)
+        self.assertEqual(brand_new.title, "Brand New Title")
+
+        # 3. get_feedback_map abfragen
+        fb_map = self.storage.get_feedback_map()
+        self.assertEqual(fb_map.get("https://ex.com/exist"), 1)
+        self.assertEqual(fb_map.get("https://ex.com/brand_new"), -1)
+        self.assertNotIn("https://ex.com/unrated", fb_map)
+
     def test_known_urls_and_deduplication(self):
         self.storage.save_articles([
             Article(title="T", link="https://example.com/known")
@@ -171,6 +190,35 @@ class TestTursoStorage(unittest.TestCase):
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["rows"][0]["url"], "https://ex.com/1")
         self.assertEqual(results[0]["rows"][0]["feedback"], 1)
+
+    @patch("requests.Session.post")
+    def test_turso_get_feedback_map(self, mock_post):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [{"name": "url"}, {"name": "feedback"}],
+                            "rows": [
+                                [{"type": "text", "value": "https://ex.com/like"}, {"type": "integer", "value": "1"}],
+                                [{"type": "text", "value": "https://ex.com/dislike"}, {"type": "integer", "value": "-1"}],
+                            ],
+                            "affected_row_count": 0,
+                            "last_insert_rowid": None
+                        }
+                    }
+                }
+            ]
+        }
+        mock_post.return_value = mock_response
+
+        turso = TursoStorage("libsql://mock.turso.io", "mock-token")
+        fb_map = turso.get_feedback_map()
+        self.assertEqual(fb_map, {"https://ex.com/like": 1, "https://ex.com/dislike": -1})
 
 
 class TestStorageFactory(unittest.TestCase):

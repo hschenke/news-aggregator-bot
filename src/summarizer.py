@@ -138,6 +138,8 @@ WICHTIGE FORMATIERUNGSRICHTLINIEN:
    - Setze direkt nach der Infobox exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.
 4. DIE TOP 5 ARTIKEL PRO KATEGORIE:
    - Wähle pro Kategorie maximal die TOP 5 wichtigsten und relevantesten Artikel aus.
+   - Bevorzuge dabei unbedingt Artikel, die vom Nutzer positiv bewertet / geliked wurden (mit '⭐ [NUTZER-FAVORIT / GELIKED]' markiert).
+   - Artikel, die mit '⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]' gekennzeichnet sind, sollen nach Möglichkeit ignoriert oder nur nachrangig berücksichtigt werden.
    - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
    - Erstelle pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
    - KEINE Kernaussage und KEINE Bedeutung generieren! Das Wort "TL;DR:" NICHT verwenden!
@@ -330,9 +332,19 @@ def summarize_news_with_gemini(
             quicklink = category_links.get(cat, "")
             if quicklink:
                 context_lines.append(f"\nQuicklinks-Zeile für '{cat}':\n{quicklink}\n")
-            sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
+            def briefing_sort_key(it: dict[str, Any]) -> tuple[int, float]:
+                fb = int(it.get("feedback") or 0)
+                # Priorität: Like (1) -> 2, Neutral (0) -> 1, Dislike (-1) -> 0
+                priority = 2 if fb > 0 else (0 if fb < 0 else 1)
+                ts = float(it.get("timestamp") or 0.0)
+                return (priority, ts)
+
+            sorted_items = sorted(items, key=briefing_sort_key, reverse=True)
             for item in sorted_items:
-                context_lines.append(f"- **{item['title']}** (Quelle: {item.get('source', 'Unbekannt')})")
+                fb = int(item.get("feedback") or 0)
+                fav_tag = " ⭐ [NUTZER-FAVORIT / GELIKED - BITTE BEVORZUGT BERÜCKSICHTIGEN]" if fb > 0 else ""
+                dislike_tag = " ⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED MARKIERT]" if fb < 0 else ""
+                context_lines.append(f"- **{item['title']}**{fav_tag}{dislike_tag} (Quelle: {item.get('source', 'Unbekannt')})")
                 if item.get("summary"):
                     context_lines.append(f"  Auszug: {item['summary']}")
                 context_lines.append(f"  Link: {item['link']}")
@@ -396,7 +408,13 @@ def _generate_fallback_summary(
             continue
         lines.append(f"## {cat}")
 
-        sorted_items = sorted(items, key=lambda x: x.get("timestamp", 0.0), reverse=True)
+        def briefing_sort_key(it: dict[str, Any]) -> tuple[int, float]:
+            fb = int(it.get("feedback") or 0)
+            priority = 2 if fb > 0 else (0 if fb < 0 else 1)
+            ts = float(it.get("timestamp") or 0.0)
+            return (priority, ts)
+
+        sorted_items = sorted(items, key=briefing_sort_key, reverse=True)
         top_items = sorted_items[:5]
 
         lines.append(f"> 💡 **Kompakt:** Die wichtigsten {len(top_items)} Meldungen der Kategorie '{cat}'.\n")
