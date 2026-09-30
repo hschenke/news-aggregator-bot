@@ -286,6 +286,51 @@ st.markdown("""
         border-color: #2563EB !important;
         color: #2563EB !important;
     }
+    /* Client-seitige Sidebar-Navigation (100% 0ms Reaktionszeit ohne Server-Roundtrip) */
+    .custom-nav-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.45rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.25rem !important;
+        width: 100% !important;
+    }
+    .custom-nav-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding-top: 0.35rem !important;
+        padding-bottom: 0.35rem !important;
+        padding-left: 0.65rem !important;
+        padding-right: 0.65rem !important;
+        min-height: 2.25rem !important;
+        line-height: 1.2 !important;
+        font-size: 0.88rem !important;
+        font-weight: 500 !important;
+        border-radius: 0.45rem !important;
+        border: 1px solid rgba(128, 128, 128, 0.22) !important;
+        background-color: transparent !important;
+        color: var(--text-color) !important;
+        cursor: pointer !important;
+        transition: all 0.15s ease-in-out !important;
+        font-family: inherit !important;
+        text-align: center !important;
+        box-sizing: border-box !important;
+        user-select: none !important;
+    }
+    .custom-nav-btn:hover {
+        background-color: rgba(37, 99, 235, 0.08) !important;
+        border-color: #2563EB !important;
+        color: #2563EB !important;
+    }
+    .custom-nav-btn.active-nav-tab {
+        background-color: #2563EB !important;
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        border: 1px solid #1d4ed8 !important;
+        box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3) !important;
+    }
     /* Trennlinien über volle Breite mit angenehmem Abstand nach oben & unten */
     [data-testid="stSidebar"] hr,
     [data-testid="stSidebar"] [data-testid="stDivider"] {
@@ -886,48 +931,113 @@ def persist_active_tab(active_nav_tab: str) -> None:
             }}
         }} catch(e) {{}}
 
+        var setActiveTabClient = function(tabId, tabIdx) {{
+            if (!tabId) return;
+            // 1. Sidebar-Buttons synchronisieren (Klasse active-nav-tab umschalten)
+            var sideBtns = document.querySelectorAll('.custom-nav-btn');
+            for (var i = 0; i < sideBtns.length; i++) {{
+                if (sideBtns[i].getAttribute('data-tab-id') === tabId) {{
+                    sideBtns[i].classList.add('active-nav-tab');
+                }} else {{
+                    sideBtns[i].classList.remove('active-nav-tab');
+                }}
+            }}
+
+            // 2. Den echten Streamlit-Tab im DOM anklicken, falls noch nicht aktiv (0ms clientseitig)
+            var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
+            if (tabs && tabs[tabIdx]) {{
+                var isSelected = tabs[tabIdx].getAttribute('aria-selected') === 'true' || tabs[tabIdx].classList.contains('active');
+                if (!isSelected) {{
+                    tabs[tabIdx].click();
+                }}
+            }}
+
+            // 3. Cookie & LocalStorage & URL History sofort synchronisieren (ohne Server-Roundtrip!)
+            try {{
+                var cStr = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tabId) + "; path=/; max-age=31536000; SameSite=Lax";
+                document.cookie = cStr;
+                localStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+                sessionStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+                if (window.parent && window.parent !== window) {{
+                    try {{
+                        window.parent.document.cookie = cStr;
+                        window.parent.localStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+                        window.parent.sessionStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+                    }} catch(pe) {{}}
+                }}
+            }} catch(err) {{}}
+
+            try {{
+                syncUrl(window, tabId);
+                if (window.parent && window.parent !== window) {{
+                    syncUrl(window.parent, tabId);
+                }}
+            }} catch(err) {{}}
+        }};
+        window._newsBotSetActiveTabClient = setActiveTabClient;
+
         // Sofortiges 0-ms-Tab-Sync bei Klick im Frontend (Top-Tabs sowie linke Sidebar-Buttons)
         if (!window._newsBotTabClickListenerInstalled) {{
             window._newsBotTabClickListenerInstalled = true;
             document.addEventListener("click", function(evt) {{
-                var btn = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTab"], [data-baseweb="tab"], button[role="tab"], [data-testid="stSidebar"] button') : null;
-                if (!btn) return;
-                var txt = btn.innerText || btn.textContent || "";
-                var clickedTabId = null;
-                if (txt.indexOf("KI") !== -1 && txt.indexOf("API") === -1) {{
-                    clickedTabId = "ki";
-                }} else if (txt.indexOf("Verwalten") !== -1 || txt.indexOf("Quellen") !== -1) {{
-                    clickedTabId = "manage";
-                }} else if (txt.indexOf("Feedly") !== -1 || txt.indexOf("RSS") !== -1) {{
-                    clickedTabId = "feedly";
-                }} else if (txt.indexOf("Artikel") !== -1 && txt.indexOf("gesehen") === -1) {{
-                    clickedTabId = "articles";
-                }} else {{
+                // Klick auf linken Sidebar-Navigationsbutton
+                var sideBtn = evt.target && evt.target.closest ? evt.target.closest('.custom-nav-btn') : null;
+                if (sideBtn) {{
+                    var tabId = sideBtn.getAttribute('data-tab-id');
+                    var tabIdx = parseInt(sideBtn.getAttribute('data-tab-idx') || '0', 10);
+                    setActiveTabClient(tabId, tabIdx);
                     return;
                 }}
 
-                try {{
-                    var cStr = "{COOKIE_TAB_NAME}=" + encodeURIComponent(clickedTabId) + "; path=/; max-age=31536000; SameSite=Lax";
-                    document.cookie = cStr;
-                    localStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
-                    sessionStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
-                    if (window.parent && window.parent !== window) {{
-                        try {{
-                            window.parent.document.cookie = cStr;
-                            window.parent.localStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
-                            window.parent.sessionStorage.setItem("{COOKIE_TAB_NAME}", clickedTabId);
-                        }} catch(pe) {{}}
+                // Klick auf oberen Streamlit-Tab
+                var tabBtn = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTab"], [data-baseweb="tab"], button[role="tab"]') : null;
+                if (tabBtn && !tabBtn.classList.contains('custom-nav-btn')) {{
+                    var tabs = Array.from(document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]'));
+                    var idx = tabs.indexOf(tabBtn);
+                    var txt = tabBtn.innerText || tabBtn.textContent || "";
+                    var tabId = "articles";
+                    if (txt.indexOf("KI") !== -1 && txt.indexOf("API") === -1) {{
+                        tabId = "ki";
+                        if (idx === -1) idx = 1;
+                    }} else if (txt.indexOf("Verwalten") !== -1 || txt.indexOf("Quellen") !== -1) {{
+                        tabId = "manage";
+                        if (idx === -1) idx = 2;
+                    }} else if (txt.indexOf("Feedly") !== -1 || txt.indexOf("RSS") !== -1) {{
+                        tabId = "feedly";
+                        if (idx === -1) idx = 3;
+                    }} else if (txt.indexOf("Artikel") !== -1) {{
+                        tabId = "articles";
+                        if (idx === -1) idx = 0;
                     }}
-                }} catch(err) {{}}
-
-                try {{
-                    syncUrl(window, clickedTabId);
-                    if (window.parent && window.parent !== window) {{
-                        syncUrl(window.parent, clickedTabId);
-                    }}
-                }} catch(err) {{}}
+                    if (idx === -1) idx = 0;
+                    setActiveTabClient(tabId, idx);
+                    return;
+                }}
             }}, true);
         }}
+
+        // Sicherstellen, dass nach Reload/F5 aktiver Tab und Sidebar exakt synchron stehen
+        setTimeout(function() {{
+            var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
+            var sideBtns = document.querySelectorAll('.custom-nav-btn');
+            var tIdx = 0;
+            if (tab === "ki") tIdx = 1;
+            else if (tab === "manage") tIdx = 2;
+            else if (tab === "feedly") tIdx = 3;
+            if (tabs && tabs[tIdx]) {{
+                var isSelected = tabs[tIdx].getAttribute('aria-selected') === 'true' || tabs[tIdx].classList.contains('active');
+                if (!isSelected) {{
+                    tabs[tIdx].click();
+                }}
+            }}
+            for (var j = 0; j < sideBtns.length; j++) {{
+                if (sideBtns[j].getAttribute('data-tab-id') === tab) {{
+                    sideBtns[j].classList.add('active-nav-tab');
+                }} else {{
+                    sideBtns[j].classList.remove('active-nav-tab');
+                }}
+            }}
+        }}, 60);
     }})();
     """)
 
@@ -975,17 +1085,19 @@ def navigate_to(tab_name: str):
 
 manage_btn_label = TAB_LABEL_MANAGE
 
-if st.sidebar.button("📋 Artikel", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_ARTICLES else "secondary", key="sb_nav_articles"):
-    navigate_to(TAB_ID_ARTICLES)
+active_class_articles = "active-nav-tab" if active_nav_tab == TAB_ID_ARTICLES else ""
+active_class_ki = "active-nav-tab" if active_nav_tab == TAB_ID_KI else ""
+active_class_manage = "active-nav-tab" if active_nav_tab == TAB_ID_MANAGE else ""
+active_class_feedly = "active-nav-tab" if active_nav_tab == TAB_ID_FEEDLY else ""
 
-if st.sidebar.button("✨ KI", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_KI else "secondary", key="sb_nav_ki"):
-    navigate_to(TAB_ID_KI)
-
-if st.sidebar.button(manage_btn_label, use_container_width=True, type="primary" if active_nav_tab == TAB_ID_MANAGE else "secondary", key="sb_nav_manage"):
-    navigate_to(TAB_ID_MANAGE)
-
-if st.sidebar.button("📡 Feedly", use_container_width=True, type="primary" if active_nav_tab == TAB_ID_FEEDLY else "secondary", key="sb_nav_rss"):
-    navigate_to(TAB_ID_FEEDLY)
+st.sidebar.markdown(f"""
+<div class="custom-nav-container" data-testid="stSidebarNavCustom">
+    <button type="button" class="custom-nav-btn {active_class_articles}" data-tab-id="{TAB_ID_ARTICLES}" data-tab-idx="0">📋 Artikel</button>
+    <button type="button" class="custom-nav-btn {active_class_ki}" data-tab-id="{TAB_ID_KI}" data-tab-idx="1">✨ KI</button>
+    <button type="button" class="custom-nav-btn {active_class_manage}" data-tab-id="{TAB_ID_MANAGE}" data-tab-idx="2">{manage_btn_label}</button>
+    <button type="button" class="custom-nav-btn {active_class_feedly}" data-tab-id="{TAB_ID_FEEDLY}" data-tab-idx="3">📡 Feedly</button>
+</div>
+""", unsafe_allow_html=True)
 
 # Unsaved changes status & buttons in sidebar
 if has_unsaved_changes and (st.session_state.get("auth_role") == ROLE_ADMIN or not get_configured_app_password()):
@@ -1125,7 +1237,6 @@ tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
     TAB_ORDER,
     default=default_tab_label,
     key="main_tabs_nav",
-    on_change="rerun",
 )
 
 # ----------------- TAB: Artikel -----------------

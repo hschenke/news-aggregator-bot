@@ -121,17 +121,20 @@ def tab_id_to_label(tab_id: str) -> str:
         self.assertIn('st.title("📰 Daily News Briefing", anchor=False)', webapp_code)
         self.assertIn('[data-testid="stHeaderActionElements"]', webapp_code)
 
-        # 10. Skeleton-Ladeboxen unterdrückt und bidirektionale Navigation über on_change="rerun"
+        # 10. Skeleton-Ladeboxen unterdrückt
         self.assertIn('[data-testid="stSkeleton"]', webapp_code)
         self.assertIn('.stSkeleton', webapp_code)
-        self.assertIn('on_change="rerun"', webapp_code)
 
-        # 11. Beide Navigationsbereiche (Sidebar-Buttons und Top-Tabs) werden synchronisiert
-        self.assertIn('[data-testid="stSidebar"] button', webapp_code)
+        # 11. 0-ms-Tabwechsel ohne Server-Rerun (reine clientseitige Umschaltung)
+        self.assertNotIn('on_change="rerun"', webapp_code)
+
+        # 12. Beide Navigationsbereiche (Sidebar-Buttons und Top-Tabs) werden clientseitig 0-ms synchronisiert
+        self.assertIn('custom-nav-container', webapp_code)
+        self.assertIn('custom-nav-btn', webapp_code)
+        self.assertIn('setActiveTabClient', webapp_code)
         self.assertIn('[data-testid="stTab"]', webapp_code)
-        self.assertIn('st.session_state["main_tabs_nav"] = tab_id_to_label(tab_name)', webapp_code)
 
-        # 12. Keine Altbrowser-Fallbacks (st.components.v1.html / st.iframe) in embed_client_script
+        # 13. Keine Altbrowser-Fallbacks (st.components.v1.html / st.iframe) in embed_client_script
         self.assertNotIn('st.components.v1.html(html_wrapper', webapp_code)
         self.assertNotIn('st.iframe(html_wrapper', webapp_code)
 
