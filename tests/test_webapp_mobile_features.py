@@ -113,6 +113,11 @@ class TestWebappMobileFeatures(unittest.TestCase):
         self.assertIn('cat_select_options = all_category_names + ["➕ [Neue Kategorie erstellen...]"]', webapp_code)
         self.assertIn('new_category=target_category_val', webapp_code)
 
+        # 6. Tab-Verbleib beim Entwurf-Vormerken (kein ungewolltes Springen zu Alle Artikel)
+        self.assertIn('st.session_state["pending_nav_tab"] = "manage"', webapp_code)
+        self.assertIn('st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)', webapp_code)
+        self.assertIn('is_expanded = (st.session_state.get("last_edited_category") == cat_name)', webapp_code)
+
 
 if __name__ == "__main__":
     unittest.main()

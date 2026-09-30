@@ -653,6 +653,7 @@ def perform_discard_all():
     st.session_state["has_unsaved_changes"] = False
     st.session_state["pending_nav_tab"] = "manage"
     st.query_params["tab"] = "manage"
+    st.session_state.pop("last_edited_category", None)
     for k in list(st.session_state.keys()):
         if (
             k.startswith("edit_name_")
@@ -783,7 +784,17 @@ elif qp_category:
     st.query_params["tab"] = active_nav_tab
 elif "main_tabs_nav" in st.session_state:
     active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
+    # Falls die URL explizit einen Tab vorgibt (z. B. ?tab=manage), diesen respektieren
+    if qp_tab and qp_tab in ["manage", "settings", "feeds", "quellen"] and active_nav_tab != TAB_ID_MANAGE:
+        active_nav_tab = TAB_ID_MANAGE
+    elif qp_tab and qp_tab in ["ki", "briefing", "ai"] and active_nav_tab != TAB_ID_KI:
+        active_nav_tab = TAB_ID_KI
+    elif qp_tab and qp_tab in ["rss", "feeds_rss", "feedly"] and active_nav_tab != TAB_ID_FEEDLY:
+        active_nav_tab = TAB_ID_FEEDLY
+    elif qp_tab and qp_tab == TAB_ID_ARTICLES and active_nav_tab != TAB_ID_ARTICLES:
+        active_nav_tab = TAB_ID_ARTICLES
     st.session_state["active_nav_tab"] = active_nav_tab
+    st.session_state["main_tabs_nav"] = tab_id_to_label(active_nav_tab)
     st.query_params["tab"] = active_nav_tab
 else:
     # Erstaufruf: Query-Param prüfen falls vorhanden, sonst Standard Artikel
@@ -1742,6 +1753,9 @@ with tab_manage:
                         success = add_category(cat_clean, config=working_config, save_to_disk=False)
                         if success:
                             st.session_state["has_unsaved_changes"] = True
+                            st.session_state["pending_nav_tab"] = "manage"
+                            st.query_params["tab"] = "manage"
+                            st.session_state["last_edited_category"] = cat_clean
                             st.toast(f"Kategorie '{cat_clean}' angelegt (noch nicht gespeichert).", icon="📁")
                             st.rerun()
                         else:
@@ -1768,6 +1782,9 @@ with tab_manage:
                             try:
                                 rename_category(cat_to_rename, new_cat_name_input.strip(), config=working_config, save_to_disk=False)
                                 st.session_state["has_unsaved_changes"] = True
+                                st.session_state["pending_nav_tab"] = "manage"
+                                st.query_params["tab"] = "manage"
+                                st.session_state["last_edited_category"] = new_cat_name_input.strip()
                                 st.toast(f"Kategorie in '{new_cat_name_input.strip()}' umbenannt (noch nicht gespeichert).", icon="✏️")
                                 st.rerun()
                             except Exception as e:
@@ -1935,6 +1952,9 @@ with tab_manage:
                             save_to_disk=False,
                         )
                         st.session_state["has_unsaved_changes"] = True
+                        st.session_state["pending_nav_tab"] = "manage"
+                        st.query_params["tab"] = "manage"
+                        st.session_state["last_edited_category"] = target_cat_name
                         st.toast(f"Feed '{new_feed_name}' zu '{target_cat_name}' hinzugefügt (noch nicht gespeichert).", icon="📡")
                         st.rerun()
                     except Exception as e:
@@ -2049,6 +2069,9 @@ with tab_manage:
                                     save_to_disk=False,
                                 )
                                 st.session_state["has_unsaved_changes"] = True
+                                st.session_state["pending_nav_tab"] = "manage"
+                                st.query_params["tab"] = "manage"
+                                st.session_state["last_edited_category"] = target_top_cat
                                 if target_top_cat.lower() != curr_cname.lower():
                                     st.toast(f"Feed '{edit_fname}' in Kategorie '{target_top_cat}' verschoben (noch nicht gespeichert).", icon="📦")
                                 else:
@@ -2062,6 +2085,9 @@ with tab_manage:
                         if st.button("Bestätigen", key=f"top_del_{curr_f.get('url')}", type="primary", use_container_width=True):
                             delete_feed(curr_cname, curr_f.get("url"), config=working_config, save_to_disk=False)
                             st.session_state["has_unsaved_changes"] = True
+                            st.session_state["pending_nav_tab"] = "manage"
+                            st.query_params["tab"] = "manage"
+                            st.session_state["last_edited_category"] = curr_cname
                             st.toast(f"Feed '{curr_f.get('name')}' entfernt (noch nicht gespeichert).", icon="🗑️")
                             st.rerun()
 
@@ -2083,8 +2109,9 @@ with tab_manage:
     for cat_idx, cat in enumerate(categories):
         cat_name = cat.get("name", "Allgemein")
         feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+        is_expanded = (st.session_state.get("last_edited_category") == cat_name)
 
-        with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=False):
+        with st.expander(f"📁 {cat_name} ({len(feeds)} Feeds)", expanded=is_expanded):
             # Kategorie Header Actions
             col_cat_info, col_cat_del = st.columns([5, 1], vertical_alignment="center")
             with col_cat_info:
@@ -2095,6 +2122,9 @@ with tab_manage:
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
                         delete_category(cat_name, config=working_config, save_to_disk=False)
                         st.session_state["has_unsaved_changes"] = True
+                        st.session_state["pending_nav_tab"] = "manage"
+                        st.query_params["tab"] = "manage"
+                        st.session_state.pop("last_edited_category", None)
                         st.toast(f"Kategorie '{cat_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                         st.rerun()
 
@@ -2125,6 +2155,9 @@ with tab_manage:
                                 if st.button("Bestätigen", key=f"feed_del_conf_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                     delete_feed(cat_name, f_url, config=working_config, save_to_disk=False)
                                     st.session_state["has_unsaved_changes"] = True
+                                    st.session_state["pending_nav_tab"] = "manage"
+                                    st.query_params["tab"] = "manage"
+                                    st.session_state["last_edited_category"] = cat_name
                                     st.toast(f"Feed '{f_name}' entfernt (noch nicht gespeichert).", icon="🗑️")
                                     st.rerun()
 
@@ -2203,6 +2236,9 @@ with tab_manage:
                                                 save_to_disk=False
                                             )
                                             st.session_state["has_unsaved_changes"] = True
+                                            st.session_state["pending_nav_tab"] = "manage"
+                                            st.query_params["tab"] = "manage"
+                                            st.session_state["last_edited_category"] = target_category_val
                                             if target_category_val.lower() != cat_name.lower():
                                                 st.toast(f"Feed '{edit_name_val.strip()}' in Kategorie '{target_category_val}' verschoben (noch nicht gespeichert).", icon="📦")
                                             else:
@@ -2231,6 +2267,9 @@ with tab_manage:
                                                 config=working_config,
                                                 save_to_disk=False
                                             )
+                                            st.session_state["pending_nav_tab"] = "manage"
+                                            st.query_params["tab"] = "manage"
+                                            st.session_state["last_edited_category"] = target_category_val
                                             perform_save_all()
                                         except Exception as e:
                                             st.error(f"Fehler beim Speichern: {e}")
@@ -2325,6 +2364,8 @@ with tab_manage:
                     new_settings_dict["custom_main_prompt"] = current_settings["custom_main_prompt"]
                 update_settings(new_settings_dict, config=working_config, save_to_disk=False)
                 st.session_state["has_unsaved_changes"] = True
+                st.session_state["pending_nav_tab"] = "manage"
+                st.query_params["tab"] = "manage"
                 st.toast("Globale Einstellungen im Entwurf übernommen (noch nicht gespeichert).", icon="⚙️")
                 st.rerun()
         with col_g2:
