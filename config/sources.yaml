@@ -3,6 +3,8 @@ categories:
   feeds:
   - name: Mahlsdorf
     url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
+  - name: Polizeimeldungen Berlin
+    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
 - name: Finanzen & Coins
   feeds:
   - name: Finanzen - News
@@ -25,10 +27,6 @@ categories:
     url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
   - name: RPG-Watch
     url: https://rpgwatch.com/files/rss1.xml
-- name: Policia
-  feeds:
-  - name: Polizeimeldungen Berlin
-    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
 - name: Tech & AI
   feeds:
   - name: Hacker News (Top)

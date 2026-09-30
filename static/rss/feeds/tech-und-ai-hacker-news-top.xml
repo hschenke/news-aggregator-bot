@@ -5,14 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 05:01:31 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LinkedIn Larpmaxxing</title>
-      <link>https://hereticpleb.vercel.app/blog/linkedin-larpmaxxing/</link>
-      <guid isPermaLink="false">https://hereticpleb.vercel.app/blog/linkedin-larpmaxxing/</guid>
-      <pubDate>Wed, 30 Sep 2026 04:19:57 GMT</pubDate>
+      <title>Why Is Sam Altman a Free Man?</title>
+      <link>https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/</link>
+      <guid isPermaLink="false">https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/</guid>
+      <pubDate>Wed, 30 Sep 2026 07:32:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>September 2026: The world today, as seen by one Polish guy</title>
+      <link>https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/</link>
+      <guid isPermaLink="false">https://tomwojcik.com/posts/2026-09-21/september-2026-the-world-today/</guid>
+      <pubDate>Wed, 30 Sep 2026 07:12:31 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -36,28 +45,19 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Responsible Release of AI-Generated Mathematics</title>
-      <link>https://agmai.org/general-sep29/</link>
-      <guid isPermaLink="false">https://agmai.org/general-sep29/</guid>
-      <pubDate>Wed, 30 Sep 2026 02:36:12 GMT</pubDate>
+      <title>Floppy Emu Hardware Failure Analysis Results</title>
+      <link>https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</link>
+      <guid isPermaLink="false">https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</guid>
+      <pubDate>Tue, 29 Sep 2026 23:10:26 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Ballmer Peak</title>
-      <link>https://en.wikipedia.org/wiki/Ballmer_Peak</link>
-      <guid isPermaLink="false">https://en.wikipedia.org/wiki/Ballmer_Peak</guid>
-      <pubDate>Wed, 30 Sep 2026 02:35:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Strange Parodies of Atari 2600 Video Game Box Cover Art (2008)</title>
-      <link>https://mightygodking.com/2008/04/21/fun-from-yesterday/</link>
-      <guid isPermaLink="false">https://mightygodking.com/2008/04/21/fun-from-yesterday/</guid>
-      <pubDate>Wed, 30 Sep 2026 01:47:14 GMT</pubDate>
+      <title>NRC issues first U.S. construction permit for a BWRX-300 small modular reactor</title>
+      <link>https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</link>
+      <guid isPermaLink="false">https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</guid>
+      <pubDate>Tue, 29 Sep 2026 23:03:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -67,15 +67,6 @@
       <link>https://github.com/ninjahawk/livenerf</link>
       <guid isPermaLink="false">https://github.com/ninjahawk/livenerf</guid>
       <pubDate>Tue, 29 Sep 2026 22:36:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Deser: Rethinking Rust Serialization</title>
-      <link>https://lucumr.pocoo.org/2026/9/29/deser/</link>
-      <guid isPermaLink="false">https://lucumr.pocoo.org/2026/9/29/deser/</guid>
-      <pubDate>Tue, 29 Sep 2026 21:48:27 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -112,24 +103,6 @@
       <link>https://www.bbc.com/future/article/20260928-a-virtual-power-plant-hidden-in-vermont-homes-is-keeping-the-lights-on-during-storms</link>
       <guid isPermaLink="false">https://www.bbc.com/future/article/20260928-a-virtual-power-plant-hidden-in-vermont-homes-is-keeping-the-lights-on-during-storms</guid>
       <pubDate>Tue, 29 Sep 2026 18:19:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: A working 3D model of an Enigma machine</title>
-      <link>https://enigma.design</link>
-      <guid isPermaLink="false">https://enigma.design</guid>
-      <pubDate>Tue, 29 Sep 2026 17:15:56 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Tcl/Tk 9.1</title>
-      <link>https://www.tcl-lang.org/software/tcltk/9.1.html</link>
-      <guid isPermaLink="false">https://www.tcl-lang.org/software/tcltk/9.1.html</guid>
-      <pubDate>Tue, 29 Sep 2026 17:13:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -243,10 +216,46 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
+      <title>Solving Factorio Quality</title>
+      <link>https://exyr.org/2026/solving-factorio-quality/</link>
+      <guid isPermaLink="false">https://exyr.org/2026/solving-factorio-quality/</guid>
+      <pubDate>Tue, 29 Sep 2026 02:27:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Testing WebGPU data layouts with Facet</title>
+      <link>https://www.mattkeeter.com/blog/2026-08-23-wgpu-facet/</link>
+      <guid isPermaLink="false">https://www.mattkeeter.com/blog/2026-08-23-wgpu-facet/</guid>
+      <pubDate>Mon, 28 Sep 2026 20:28:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Raleigh Vektar Restoration (2020)</title>
+      <link>https://retromash.com/2020/06/26/raleigh-vektar-restoration-part-1-the-arrival/</link>
+      <guid isPermaLink="false">https://retromash.com/2020/06/26/raleigh-vektar-restoration-part-1-the-arrival/</guid>
+      <pubDate>Mon, 28 Sep 2026 19:37:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Phyllotaxis: An audio-reactive LED display</title>
       <link>https://jagi.studio/posts/phyllotaxis/</link>
       <guid isPermaLink="false">https://jagi.studio/posts/phyllotaxis/</guid>
       <pubDate>Mon, 28 Sep 2026 16:18:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Using 2D DFT, dithering, etc. to maximize eInk manga image quality</title>
+      <link>https://github.com/ciromattia/kcc</link>
+      <guid isPermaLink="false">https://github.com/ciromattia/kcc</guid>
+      <pubDate>Mon, 28 Sep 2026 15:39:42 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -265,15 +274,6 @@
       <link>https://somethingbig.ai/computer</link>
       <guid isPermaLink="false">https://somethingbig.ai/computer</guid>
       <pubDate>Sun, 27 Sep 2026 21:26:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Stuck in the Suez Canal – the short version (2021)</title>
-      <link>https://cathsenker.co.uk/stuck-in-the-suez-canal-the-short-version/</link>
-      <guid isPermaLink="false">https://cathsenker.co.uk/stuck-in-the-suez-canal-the-short-version/</guid>
-      <pubDate>Sun, 27 Sep 2026 12:17:39 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

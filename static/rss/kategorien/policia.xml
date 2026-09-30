@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 05:01:31 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Autofahrerin bei Verkehrsunfall lebensbedrohlich verletzt</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718519.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718519.php</guid>
+      <pubDate>Wed, 30 Sep 2026 07:53:00 GMT</pubDate>
+      <category>Policia</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Spandau** – In der vergangenen Nach wurde eine 41-jährige Autofahrerin bei einem Verkehrsunfall in Gatow erheblich verletzt. Nach den bisherigen Erkenntnissen befuhr die Frau gegen 0:30 Uhr mit einem Pkw den Groß-Glienicker Weg in Richtung Siedlung Habichtwald. Aus bislang ungeklärter Ursache kam die 41-Jähr...]]></description>
+    </item>
     <item>
       <title>Leichnam aus Tegeler See geborgen – Mordkommission und Staatsanwaltschaft ermitteln</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1719543.php</link>
@@ -151,15 +160,6 @@
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – Mit in der Spitze rund 3400 Personen fand gestern in Mitte eine Versammlung zum Thema „Krieg und Krise frisst dein Leben. Zusammen kämpfen wir dagegen! Schulstreik gegen Wehrpflicht“ statt. Im Verlauf der Versammlung wurden mehrfach polizeifeindliche Sprechchöre skandiert. Die Auftaktkundgebung a...]]></description>
-    </item>
-    <item>
-      <title>Autofahrerin bei Verkehrsunfall lebensbedrohlich verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718519.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1718519.php</guid>
-      <pubDate>Sat, 26 Sep 2026 10:41:17 GMT</pubDate>
-      <category>Policia</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Spandau** – In der vergangenen Nach wurde eine 41-jährige Autofahrerin bei einem Verkehrsunfall in Gatow erheblich verletzt. Nach den bisherigen Erkenntnissen befuhr die Frau gegen 0:30 Uhr mit einem Pkw den Groß-Glienicker Weg in Richtung Siedlung Habichtwald. Aus bislang ungeklärter Ursache kam die 41-Jähr...]]></description>
     </item>
     <item>
       <title>Späti ausgeraubt</title>
@@ -447,7 +447,7 @@
       <pubDate>Mon, 21 Sep 2026 09:59:14 GMT</pubDate>
       <category>Policia</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[📍 **Neukölln** – Einsatzkräfte des Polizeiabschnitts 55 erhielten gestern Abend Kenntnis von einem verletzten Mann in Neukölln. In der Nogatstraße angekommen, übernahmen sie gegen 21:10 Uhr die Erstversorgung eines 19-Jährigen, der mehrere Stichverletzungen aufwies. Der Verletzte gab außerdem an, um sein Handy un...]]></description>
     </item>
     <item>
       <title>Brand auf Schulgelände</title>
