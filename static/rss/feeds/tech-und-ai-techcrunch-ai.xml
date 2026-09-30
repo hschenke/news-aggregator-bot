@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 11:14:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:46:46 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Airbnb adds AI search, more social features</title>
+      <link>https://techcrunch.com/2026/09/30/airbnb-adds-ai-search-more-social-features/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3171925</guid>
+      <pubDate>Wed, 30 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Airbnb is also launching new services such as meal delivery and laundry in select locations.]]></description>
+    </item>
     <item>
       <title>America.gov gets really weird when you ask it about Minecraft, but it’s not a glitch</title>
       <link>https://techcrunch.com/2026/09/29/america-gov-gets-really-weird-when-you-ask-it-about-minecraft-but-its-not-a-glitch/</link>
@@ -178,15 +187,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Thirteen of the 18 startups in Peak XV’s latest Surge cohort are targeting global markets, while more than half are based in India.]]></description>
-    </item>
-    <item>
-      <title>OpenAI reportedly ditches model over safety concerns</title>
-      <link>https://techcrunch.com/2026/09/28/openai-reportedly-ditches-model-over-safety-concerns/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3171035</guid>
-      <pubDate>Mon, 28 Sep 2026 23:39:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[A top executive at the AI lab told the Wall Street Journal that the model in question had displayed a poor aptitude for following orders.]]></description>
     </item>
   </channel>
 </rss>

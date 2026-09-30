@@ -7,8 +7,6 @@ categories:
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
 - name: Finanzen & Coins
   feeds:
-  - name: Finanzen - News
-    url: https://www.finanzen.net/rss/news
   - name: Investing de
     url: https://de.investing.com/rss/news_301.rss
 - name: Fun

@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 11:14:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:46:46 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Genshin Impact - 6 Years old</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60268</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60268</guid>
+      <pubDate>Wed, 30 Sep 2026 10:40:16 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Genshin Impact is already 6 years old: 6th Anniversary Theme Song: "A Letter From the Wind" | Genshin Impact]]></description>
+    </item>
+    <item>
+      <title>Neverness to Everness - Version 1.4 released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60267</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60267</guid>
+      <pubDate>Wed, 30 Sep 2026 10:32:41 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Neverness to Everness version 1.4 has been released: NTE Blackbird EP | Timetrial]]></description>
+    </item>
     <item>
       <title>Agent of Strange - Announced</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60266</link>
@@ -124,24 +142,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Honkai: Star Rail Version 4.6 has been released: Pearl Character Trailer: "The Way to Paint a Form of Hope"]]></description>
-    </item>
-    <item>
-      <title>Scourge of the Reptiles - Progress Report</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60253</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60253</guid>
-      <pubDate>Sun, 27 Sep 2026 17:35:22 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Couchpotato spotted a new progess report for Scourge of the Reptiles: September 2026 Dev Progress Report Try walking 500 miles in my shoes Anyone who has seen Jason and the Argonauts, the Ray Harryhausen classic from 1963 might see a familiar scene here....]]></description>
-    </item>
-    <item>
-      <title>Band of Crusaders - About Equipment</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60252</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60252</guid>
-      <pubDate>Sun, 27 Sep 2026 17:31:16 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Learn more about the equipment of Band of Crusaders: Chronicle of the Crusade #6: Equipment In Band of Crusaders, there are no traditional classes that permanently define your characters. Instead, much of what a Crusader can do in battle comes from the equipment they carry....]]></description>
     </item>
   </channel>
 </rss>

@@ -5,14 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 30 Sep 2026 11:14:25 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 13:46:46 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>GPT-6.1 Sol replaces GPT-6 Sol after just 7 days, with near-Astra intelligence</title>
-      <link>https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence</link>
-      <guid isPermaLink="false">https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence</guid>
-      <pubDate>Wed, 30 Sep 2026 09:59:03 GMT</pubDate>
+      <title>The last time my family was replaced by technology</title>
+      <link>https://manuel.darcemont.fr/posts/the-last-time-my-family-was-replaced-by-technology/</link>
+      <guid isPermaLink="false">https://manuel.darcemont.fr/posts/the-last-time-my-family-was-replaced-by-technology/</guid>
+      <pubDate>Wed, 30 Sep 2026 13:06:11 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Most data centers refusing to say how much water, electricity they use</title>
+      <link>https://nltimes.nl/2026/09/30/data-centers-refusing-say-much-water-electricity-use</link>
+      <guid isPermaLink="false">https://nltimes.nl/2026/09/30/data-centers-refusing-say-much-water-electricity-use</guid>
+      <pubDate>Wed, 30 Sep 2026 10:49:32 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -22,15 +31,6 @@
       <link>https://earendil.com/posts/you-said-no-mcp/</link>
       <guid isPermaLink="false">https://earendil.com/posts/you-said-no-mcp/</guid>
       <pubDate>Wed, 30 Sep 2026 09:55:23 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Why Is Sam Altman a Free Man?</title>
-      <link>https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/</link>
-      <guid isPermaLink="false">https://prospect.org/2026/09/29/artificial-intelligence-agents-openai-microsoft-sam-altman-greg-brockman-ah-nice/</guid>
-      <pubDate>Wed, 30 Sep 2026 07:32:40 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -58,6 +58,15 @@
       <link>https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</link>
       <guid isPermaLink="false">https://www.bigmessowires.com/2026/09/29/floppy-emu-hardware-failure-analysis-results/</guid>
       <pubDate>Tue, 29 Sep 2026 23:10:26 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>NRC issues first U.S. construction permit for a BWRX-300 small modular reactor</title>
+      <link>https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</link>
+      <guid isPermaLink="false">https://www.gevernova.com/news/press-releases/nrc-issues-first-us-construction-permit-bwrx-300-small-modular-reactor-tva-clinch-river</guid>
+      <pubDate>Tue, 29 Sep 2026 23:03:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -126,15 +135,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>PS5 Relapse Exploit</title>
-      <link>https://github.com/ntfargo/Relapse-Exploit</link>
-      <guid isPermaLink="false">https://github.com/ntfargo/Relapse-Exploit</guid>
-      <pubDate>Tue, 29 Sep 2026 15:44:41 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
       <title>America.gov</title>
       <link>https://america.gov/</link>
       <guid isPermaLink="false">https://america.gov/</guid>
@@ -198,6 +198,15 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
+      <title>Mathematical Origami</title>
+      <link>https://mathigon.org/origami</link>
+      <guid isPermaLink="false">https://mathigon.org/origami</guid>
+      <pubDate>Tue, 29 Sep 2026 06:45:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>When oil prices spike, where does the money go?</title>
       <link>https://theconversation.com/when-oil-prices-spike-where-does-the-money-go-280763</link>
       <guid isPermaLink="false">https://theconversation.com/when-oil-prices-spike-where-does-the-money-go-280763</guid>
@@ -234,19 +243,19 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Raleigh Vektar Restoration (2020)</title>
-      <link>https://retromash.com/2020/06/26/raleigh-vektar-restoration-part-1-the-arrival/</link>
-      <guid isPermaLink="false">https://retromash.com/2020/06/26/raleigh-vektar-restoration-part-1-the-arrival/</guid>
-      <pubDate>Mon, 28 Sep 2026 19:37:50 GMT</pubDate>
+      <title>Phyllotaxis: An audio-reactive LED display</title>
+      <link>https://jagi.studio/posts/phyllotaxis/</link>
+      <guid isPermaLink="false">https://jagi.studio/posts/phyllotaxis/</guid>
+      <pubDate>Mon, 28 Sep 2026 16:18:57 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Phyllotaxis: An audio-reactive LED display</title>
-      <link>https://jagi.studio/posts/phyllotaxis/</link>
-      <guid isPermaLink="false">https://jagi.studio/posts/phyllotaxis/</guid>
-      <pubDate>Mon, 28 Sep 2026 16:18:57 GMT</pubDate>
+      <title>Wavelets in 3D Graphics</title>
+      <link>https://comonad.com/reader/1995/wavelets-in-3d-graphics/</link>
+      <guid isPermaLink="false">https://comonad.com/reader/1995/wavelets-in-3d-graphics/</guid>
+      <pubDate>Mon, 28 Sep 2026 15:40:03 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
@@ -265,15 +274,6 @@
       <link>https://sujithjay.com/inventing-work</link>
       <guid isPermaLink="false">https://sujithjay.com/inventing-work</guid>
       <pubDate>Mon, 28 Sep 2026 14:46:07 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>NAND-16: a computer built from 277,248 NAND gates</title>
-      <link>https://somethingbig.ai/computer</link>
-      <guid isPermaLink="false">https://somethingbig.ai/computer</guid>
-      <pubDate>Sun, 27 Sep 2026 21:26:06 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
