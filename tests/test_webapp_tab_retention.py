@@ -112,6 +112,11 @@ def tab_id_to_label(tab_id: str) -> str:
         # 7. Kein altes Überschreiben des Benutzer-Klicks mehr durch alte URL-Parameter
         self.assertNotIn("active_nav_tab = label_to_tab_id(st.session_state[\"main_tabs_nav\"])\n    # Falls die URL explizit einen Tab vorgibt", webapp_code)
 
+        # 8. Vollständig unsichtbare Script-Einbettung ohne sichtbare 1px-Striche oder Iframe-Borders über dem Titel
+        self.assertIn("display:none !important", webapp_code)
+        self.assertIn("unsafe_allow_javascript=True", webapp_code)
+        self.assertNotIn("st.iframe(html_wrapper, height=1, width=1)", webapp_code)
+
 
 if __name__ == "__main__":
     unittest.main()

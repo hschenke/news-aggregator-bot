@@ -111,6 +111,22 @@ st.markdown("""
         padding-right: 1.25rem !important;
         max-width: 1250px;
     }
+    /* Unsichtbare Hilfs-Iframes und Script-Container vollständig ausblenden */
+    [data-testid="stIFrame"]:has(iframe[height="0"]),
+    [data-testid="stIFrame"]:has(iframe[height="1"]),
+    [data-testid="stCustomComponentV1"]:has(iframe[height="0"]),
+    iframe[height="0"], iframe[height="1"],
+    iframe[width="0"], iframe[width="1"] {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        border: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        pointer-events: none !important;
+    }
     @media (max-width: 768px) {
         .block-container {
             padding-top: 3.25rem !important;
@@ -372,12 +388,25 @@ except ImportError:
 
 
 def embed_client_script(js_code: str) -> None:
-    """Führt Hilfsskripte (z. B. Cookie/Storage-Sync) modern über st.iframe oder Fallback aus."""
-    html_wrapper = f"<script>{js_code}</script>"
+    """Führt Hilfsskripte (z. B. Cookie/Storage-Sync) vollständig unsichtbar ohne sichtbare DOM-Elemente aus."""
+    html_wrapper = f"<div style='display:none !important;width:0 !important;height:0 !important;margin:0 !important;padding:0 !important;overflow:hidden !important;border:none !important;'><script>{js_code}</script></div>"
+    if hasattr(st, "html"):
+        try:
+            st.html(html_wrapper, unsafe_allow_javascript=True)
+            return
+        except Exception:
+            pass
+    if hasattr(st, "components") and hasattr(st.components, "v1"):
+        try:
+            st.components.v1.html(html_wrapper, height=0, width=0)
+            return
+        except Exception:
+            pass
     if hasattr(st, "iframe"):
-        st.iframe(html_wrapper, height=1, width=1)
-    elif hasattr(st, "components") and hasattr(st.components, "v1"):
-        st.components.v1.html(html_wrapper, height=0, width=0)
+        try:
+            st.iframe(html_wrapper, height=0, width=0)
+        except Exception:
+            pass
 
 
 def set_admin_session_cookie(expected_password: str) -> str:
