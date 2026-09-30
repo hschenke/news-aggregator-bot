@@ -23,5 +23,14 @@
   - **Separation of Concerns**: Strikte architektonische Trennung (Ingestion/Scraper -> Processing/Transformation -> Storage/Persistence -> Presentation/UI). Keine Business-Logik oder Scraping-Code in Streamlit-Views.
   - **Refactoring-Workflow**: 4-Stufen-Ablauf einhalten (Analyse & Smell-Audit -> Refactoring-Plan -> Durchführung -> Verifikation/Tests).
 
+## Security & Secure Coding Standard (Basis-Requirement)
+- **Verbindliche Beachtung des `security-standard` Skills**: Bei jeglicher Programmier-, Integrations- und Refactoring-Arbeit in diesem Projekt MUSS der Skill [.agents/skills/security-standard/SKILL.md](file:///c:/Users/holge/.gemini/antigravity/scratch/news-aggregator-bot/.agents/skills/security-standard/SKILL.md) als permanentes Basis-Requirement beachtet und angewendet werden:
+  - **Code Security**: Keine Secrets/Tokens/API-Keys im Quellcode; strikte Konfiguration via `.env` und Streamlit Secrets; saubere Input-Validierung; sichere Pfad-Behandlung (kein Path Traversal); sichere Subprozess-Ausführung (`shell=False`).
+  - **OWASP Compliance**: Schutz vor Injection (SQL/Command/XSS), sichere Deserialisierung (kein `pickle.loads`), sichere Fehlerbehandlung (Fail-Secure).
+  - **SSRF-Schutz für Scraper & Aggregatoren**: Validierung aller RSS/News-URLs auf zulässige Schemata (`http`/`https`); Ausschluss lokaler und privater IP-Bereiche (`127.0.0.1`, RFC 1918, Cloud-Metadaten `169.254.169.254`).
+  - **Logging & Privacy**: Keine Tokens, Passwörter oder personenbezogene Daten (PII) in Anwendungs-Logs ausgeben.
+  - **Sicherheits-Checkliste vor Commit**: Vor jedem Git-Commit die 6-Punkte-Checkliste aus dem Skill prüfen.
+
+
 
 
