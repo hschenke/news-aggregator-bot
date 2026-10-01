@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 11:42:05 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 11:56:32 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welche Daten senden Autos weiter? Forscher untersuchen 21 Pkw und ihre Apps</title>
+      <link>https://www.heise.de/news/Welche-Daten-senden-Autos-weiter-Forscher-untersuchen-21-Pkw-und-ihre-Apps-11472649.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472649</guid>
+      <pubDate>Thu, 01 Oct 2026 11:36:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Forscher untersuchten, wie Pkws Daten sammeln und weitersenden. Tesla erwies sich als datenhungrig, während Honda nach der Studie seine Praktiken veränderte.]]></description>
+    </item>
     <item>
       <title>heise+ | AGO-Filmprozessor im Test: Analoge Filme zu Hause entwickeln</title>
       <link>https://www.heise.de/ratgeber/AGO-Filmprozessor-im-Test-Analoge-Filme-zu-Hause-entwickeln-11463440.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
@@ -180,15 +189,6 @@
       <description><![CDATA[Die Preise an Ladesäulen unterscheiden sich enorm. Wer mit Gleichstrom lädt, zahlt unter Umständen 40 Cent/kWh mehr. Einige Fußnoten sollten Sie deshalb kennen.]]></description>
     </item>
     <item>
-      <title>WatchGuard schließt teils kritische Lücken in Fireware OS</title>
-      <link>https://www.heise.de/news/WatchGuard-schliesst-teils-kritische-Luecken-in-Fireware-OS-11472101.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11472101</guid>
-      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[WatchGuard schließt im Fireware OS ein gutes Dutzend Sicherheitslücken. Die sind teils kritisch und erlauben etwa Codeschmuggel.]]></description>
-    </item>
-    <item>
       <title>Figure mustert humanoide F.02-Roboter aus und lässt sie in Schmelzofen springen</title>
       <link>https://www.heise.de/news/Arnold-Schwarzenegger-humanoide-F-02-und-ein-Hochofen-Figure-entsorgt-Roboter-11472119.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11472119</guid>
@@ -196,6 +196,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Figure löst seine zweite Generation humanoider Roboter ab und lässt die alten Roboter in einen Schmelzofen springen – oder von Arnold Schwarzenegger einfahren.]]></description>
+    </item>
+    <item>
+      <title>WatchGuard schließt teils kritische Lücken in Fireware OS</title>
+      <link>https://www.heise.de/news/WatchGuard-schliesst-teils-kritische-Luecken-in-Fireware-OS-11472101.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472101</guid>
+      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[WatchGuard schließt im Fireware OS ein gutes Dutzend Sicherheitslücken. Die sind teils kritisch und erlauben etwa Codeschmuggel.]]></description>
     </item>
     <item>
       <title>Xbox: Disc-to-Digital-Lizenzen gibt es jetzt für alle Nutzer</title>
@@ -801,15 +810,6 @@
       <description><![CDATA[Im Podcasts geht es hauptsächlich um diverse Sicherheitslücken und Bugs. Die sind aus unterschiedlichen Gründen relevant – aber allesamt sehr interessant.]]></description>
     </item>
     <item>
-      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
-      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469158</guid>
-      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
-    </item>
-    <item>
       <title>Trump: KI-Firmen sollen sich selbst beaufsichtigen</title>
       <link>https://www.heise.de/news/Trump-KI-Firmen-sollen-sich-selbst-beaufsichtigen-11470445.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470445</guid>
@@ -817,6 +817,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit Wochen wird weltweit über Risiken Künstlicher Intelligenz diskutiert. US-Präsident Trump will, dass die Unternehmen sich gegenseitig kontrollieren.]]></description>
+    </item>
+    <item>
+      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469158</guid>
+      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
     </item>
     <item>
       <title>Elektroauto Ventra reduziert von Reifen- und Bremsabrieb verursachten Feinstaub</title>
@@ -1294,15 +1303,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Kokain, Fentanyl und Heroin: Über eine Darknet-Plattform wurden tonnenweise Drogen gehandelt. Nun steht der Betreiber vor Gericht – und zeigt sich geständig.]]></description>
-    </item>
-    <item>
-      <title>Groupware Zimbra: Update schließt zahlreiche Sicherheitslücken</title>
-      <link>https://www.heise.de/news/Groupware-Zimbra-Update-schliesst-zahlreiche-Sicherheitsluecken-11468996.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11468996</guid>
-      <pubDate>Tue, 29 Sep 2026 06:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Update schließt diverse Lücken in Zimbra, die etwa die Kontoübernahme oder das Unterschieben von Schadcode ermöglichen.]]></description>
     </item>
   </channel>
 </rss>

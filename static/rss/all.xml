@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 11:42:05 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 11:56:32 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Welche Daten senden Autos weiter? Forscher untersuchen 21 Pkw und ihre Apps</title>
+      <link>https://www.heise.de/news/Welche-Daten-senden-Autos-weiter-Forscher-untersuchen-21-Pkw-und-ihre-Apps-11472649.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472649</guid>
+      <pubDate>Thu, 01 Oct 2026 11:36:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Forscher untersuchten, wie Pkws Daten sammeln und weitersenden. Tesla erwies sich als datenhungrig, während Honda nach der Studie seine Praktiken veränderte.]]></description>
+    </item>
     <item>
       <title>TV oder Stream: Wer überträgt TSV 1860 München gegen die SpVgg Ansbach live?</title>
       <link>https://www.kicker.de/tv-oder-stream-wer-uebertraegt-tsv-1860-muenchen-gegen-die-spvgg-ansbach-live-1257511/artikel#omrss</link>
@@ -198,6 +207,33 @@
       <description><![CDATA[📍 **Neukölln** – Gestern Abend wurde ein Essensauslieferer in Neukölln von einer fünfköpfigen Personengruppe überfallen. Gegen 19:50 Uhr sei der 26-Jährige nach seinem Feierabend mit einem Fahrrad auf der Saalestraße in Richtung Niemetzstraße unterwegs gewesen. An der Kreuzung zur Unstrutstraße sollen ihm dann fü...]]></description>
     </item>
     <item>
+      <title>Exodus - Gameplay @ Game Informer</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60274</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60274</guid>
+      <pubDate>Thu, 01 Oct 2026 09:42:47 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Game Informer checked out Exodus: Exodus - Exclusive New TLC Mission Footage | New Gameplay Today Thanks Couchpotato!]]></description>
+    </item>
+    <item>
+      <title>Witcher 3 - Remastered Impressions</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60273</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60273</guid>
+      <pubDate>Thu, 01 Oct 2026 09:40:40 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Mortismal Gaming checked out The Witcher 3: Wild Hunt Remastered: The Witcher 3 Remastered - Thoughts After Playing It Thanks Couchpotato!]]></description>
+    </item>
+    <item>
+      <title>Valor Mortis - Gameplay Overview @ IGN</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60272</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60272</guid>
+      <pubDate>Thu, 01 Oct 2026 09:38:12 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[IGN checked out Valor Mortis: Valor Mortis - Official Gameplay Overview Trailer Thanks Couchpotato!]]></description>
+    </item>
+    <item>
       <title>Pejcinovic zu Tresoldis Entscheidung: "Will mich nicht einmischen"</title>
       <link>https://www.kicker.de/pejcinovic-zu-tresoldis-entscheidung-will-mich-nicht-einmischen-1257490/video#omrss</link>
       <guid isPermaLink="false">https://www.kicker.de/pejcinovic-zu-tresoldis-entscheidung-will-mich-nicht-einmischen-1257490/video#omrss</guid>
@@ -277,6 +313,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Zahlreiche Sicherheitslücken in GPU-Treibern von Nvidia machen Linux- und Windows-Computer angreifbar. Patches sind verfügbar.]]></description>
+    </item>
+    <item>
+      <title>Havoc Heirs - Released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60271</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60271</guid>
+      <pubDate>Thu, 01 Oct 2026 08:46:07 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The turn-based RPG Havoc Heirs has been released: Havoc Heirs Official Trailer A fantasy turn-based RPG in a massive interconnected world. Monsters are everywhere, and you may end up being one of them.]]></description>
     </item>
     <item>
       <title>AirPods 5: Batterien besser zugänglich – aber nicht in der Ladehülle</title>
@@ -441,15 +486,6 @@
       <description><![CDATA[Die SG Barockstadt hat die offene Trainerfrage nach der Trennung von Daniyel Cimen geklärt. Mit Miroslav Jagatic soll ein erfahrener Regionalliga-Trainer das Ruder beim Tabellenvorletzten der Regionalliga Südwest herumreißen.]]></description>
     </item>
     <item>
-      <title>WatchGuard schließt teils kritische Lücken in Fireware OS</title>
-      <link>https://www.heise.de/news/WatchGuard-schliesst-teils-kritische-Luecken-in-Fireware-OS-11472101.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11472101</guid>
-      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[WatchGuard schließt im Fireware OS ein gutes Dutzend Sicherheitslücken. Die sind teils kritisch und erlauben etwa Codeschmuggel.]]></description>
-    </item>
-    <item>
       <title>Figure mustert humanoide F.02-Roboter aus und lässt sie in Schmelzofen springen</title>
       <link>https://www.heise.de/news/Arnold-Schwarzenegger-humanoide-F-02-und-ein-Hochofen-Figure-entsorgt-Roboter-11472119.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11472119</guid>
@@ -457,6 +493,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Figure löst seine zweite Generation humanoider Roboter ab und lässt die alten Roboter in einen Schmelzofen springen – oder von Arnold Schwarzenegger einfahren.]]></description>
+    </item>
+    <item>
+      <title>WatchGuard schließt teils kritische Lücken in Fireware OS</title>
+      <link>https://www.heise.de/news/WatchGuard-schliesst-teils-kritische-Luecken-in-Fireware-OS-11472101.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472101</guid>
+      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[WatchGuard schließt im Fireware OS ein gutes Dutzend Sicherheitslücken. Die sind teils kritisch und erlauben etwa Codeschmuggel.]]></description>
     </item>
     <item>
       <title>"Eine Schockwelle": Pressestimmen zu Cristiano Ronaldos Abreise</title>
@@ -1035,6 +1080,15 @@
       <description><![CDATA[Three days left to exhibit at TechCrunch Disrupt 2026. Book by October 2 at 11:59 p.m. PT to showcase your startup to 10,000+ founders, investors, operators, and tech leaders.]]></description>
     </item>
     <item>
+      <title>Expeditions: Samurai - Update #1</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60270</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60270</guid>
+      <pubDate>Wed, 30 Sep 2026 14:11:11 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Redglyph spotted an update for the Early Access title Expeditions: Samurai: Early Access Update 1 It's what you've all been waiting for: the first major Early Access update to Expeditions: Samurai!Early Access Update 1 is upon us, and just in case you thought we had been slacking since release, here's 10 pages of pa...]]></description>
+    </item>
+    <item>
       <title>America.gov: KI-Chatbot für US-Bürger gestartet</title>
       <link>https://www.heise.de/news/America-gov-KI-Chatbot-fuer-US-Buerger-gestartet-11471384.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11471384</guid>
@@ -1042,6 +1096,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Die US-Regierung hat America.gov gestartet, einen KI-Chatbot, der Fragen zu Bundesbehörden beantworten soll und auf 29.000 Seiten zugreift.]]></description>
+    </item>
+    <item>
+      <title>Queen's Domain - Release Date: October 30</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60269</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60269</guid>
+      <pubDate>Wed, 30 Sep 2026 14:04:31 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The dungeon crawler Queen's Domain will be released on October 30: Queen's Domain | Release Date & Console Reveal Trailer A retro-fantasy action RPG with brutal combat and traversal-focused exploration. Embark on a quest to find your father...]]></description>
     </item>
     <item>
       <title>Laubsauger Einhell Venturro 36/240 im Test: saugt, häckselt und lärmt</title>
@@ -1638,15 +1701,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
-      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469158</guid>
-      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
-    </item>
-    <item>
       <title>Trump: KI-Firmen sollen sich selbst beaufsichtigen</title>
       <link>https://www.heise.de/news/Trump-KI-Firmen-sollen-sich-selbst-beaufsichtigen-11470445.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470445</guid>
@@ -1654,6 +1708,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Seit Wochen wird weltweit über Risiken Künstlicher Intelligenz diskutiert. US-Präsident Trump will, dass die Unternehmen sich gegenseitig kontrollieren.]]></description>
+    </item>
+    <item>
+      <title>30 Jahre „Baphomets Fluch“: Clowns und Helden</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Baphomets-Fluch-Clowns-und-Helden-11469158.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469158</guid>
+      <pubDate>Wed, 30 Sep 2026 06:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor genau 30 Jahren schickte „Baphomets Fluch“ die Spieler auf die Spur einer uralten Verschwörung. Und in eine Adventure-Welt, die bis heute legendär ist.]]></description>
     </item>
     <item>
       <title>Elektroauto Ventra reduziert von Reifen- und Bremsabrieb verursachten Feinstaub</title>
@@ -2349,15 +2412,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>Witcher 3 - Remastered Overview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60259</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60259</guid>
-      <pubDate>Tue, 29 Sep 2026 07:19:02 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Worthplaying checked out The Witcher 3: Wild Hunt - Remastered - the update will be released today: 'The Witcher 3: Wild Hunt - Remastered' Details All The Important Changes, PC System Requirements Marking the final installment in the action RPG trilogy, The Witcher 3: Wild Hunt combines decision-based storytelling ...]]></description>
-    </item>
-    <item>
       <title>Auslastung von Ladesäulen für E-Autos nimmt zu</title>
       <link>https://www.heise.de/news/Auslastung-von-Ladesaeulen-fuer-E-Autos-nimmt-zu-11469064.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11469064</guid>
@@ -2365,15 +2419,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Wer mit einem Elektroauto eine freie Ladesäule sucht, hat es in der Regel nicht schwer. Nun melden Betreiber, dass die Auslastung der Ladepunkte steigt.]]></description>
-    </item>
-    <item>
-      <title>CONTROL Resonant - Opinion @ Polygon</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60258</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60258</guid>
-      <pubDate>Tue, 29 Sep 2026 07:14:42 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Polygon thinks that everything is a live-service game nowadays: Everything is a live-service game now Even single-player games feel as malleable as multiplayer ones these days A few weeks before its official Sept. 24 launch date, I played through Control Resonant — in some form....]]></description>
     </item>
     <item>
       <title>Boeing 737 Max 10: Software-Fehler bremst Zertifizierung aus</title>
@@ -2437,15 +2482,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Kokain, Fentanyl und Heroin: Über eine Darknet-Plattform wurden tonnenweise Drogen gehandelt. Nun steht der Betreiber vor Gericht – und zeigt sich geständig.]]></description>
-    </item>
-    <item>
-      <title>Groupware Zimbra: Update schließt zahlreiche Sicherheitslücken</title>
-      <link>https://www.heise.de/news/Groupware-Zimbra-Update-schliesst-zahlreiche-Sicherheitsluecken-11468996.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11468996</guid>
-      <pubDate>Tue, 29 Sep 2026 06:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Update schließt diverse Lücken in Zimbra, die etwa die Kontoübernahme oder das Unterschieben von Schadcode ermöglichen.]]></description>
     </item>
     <item>
       <title>When oil prices spike, where does the money go?</title>
@@ -2581,42 +2617,6 @@
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Mitte** – In der vergangenen Nacht kam es in Moabit zu einer Auseinandersetzung, bei der ein Mann verletzt wurde. Nach bisherigen Erkenntnissen wurde ein 28-Jähriger gegen 22 Uhr auf dem Gehweg vor einer Bar in der Turmstraße mit einer Stichverletzung im Brustbereich festgestellt. Der bislang unbekannte Ta...]]></description>
-    </item>
-    <item>
-      <title>Witcher 3 - Remastered Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60257</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60257</guid>
-      <pubDate>Mon, 28 Sep 2026 09:42:14 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Noisy Pixel reviewed The Witcher 3: Wild Hunt Remastered: The Witcher 3: Wild Hunt Remastered - Fine, I Finally Get It]]></description>
-    </item>
-    <item>
-      <title>RPGFan - RPGs coming this Week</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60256</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60256</guid>
-      <pubDate>Mon, 28 Sep 2026 05:09:00 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPGFan presents some upcoming RPGs.]]></description>
-    </item>
-    <item>
-      <title>RPGamer - News Round-Up</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60255</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60255</guid>
-      <pubDate>Mon, 28 Sep 2026 05:07:31 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPGamer sums up last week's RPG news.]]></description>
-    </item>
-    <item>
-      <title>Honkai: Star Rail - Version 4.6 released</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60254</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60254</guid>
-      <pubDate>Mon, 28 Sep 2026 04:55:07 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Honkai: Star Rail Version 4.6 has been released: Pearl Character Trailer: "The Way to Paint a Form of Hope"]]></description>
     </item>
     <item>
       <title>NICHTLUSTIG-Cartoon: KAROLIN</title>
@@ -2778,7 +2778,7 @@
       <pubDate>Thu, 24 Sep 2026 11:14:01 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[]]></description>
+      <description><![CDATA[📍 **Neukölln** – Gestern Abend wurde eine Frau bei einem versuchten schweren Raub in Neukölln verletzt. Nach bisherigen Erkenntnissen stellte eine 43-jährige Frau gegen 20:20 Uhr ihren Motorroller in der Delbrückstraße ab, als sich ihr drei junge Männer näherten. Einer der Tatverdächtigen soll der Frau Pfefferspr...]]></description>
     </item>
     <item>
       <title>Mann kündigte Amoktat an – mehrere Waffen beschlagnahmt</title>
