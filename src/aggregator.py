@@ -213,8 +213,8 @@ def trigger_rss_update_workflow() -> dict[str, Any]:
 def reconcile_prompt_templates(config: dict[str, Any]) -> bool:
     """Gleicht gespeicherte Prompt-Vorlagen in der Konfiguration mit den kanonischen Standards ab.
 
-    Aktualisiert leere oder veraltete Prompts (z. B. ohne Like/Dislike-Direktiven)
-    automatisch 1:1 auf DEFAULT_MAIN_PROMPT_TEMPLATE bzw. DEFAULT_DIRECTIVES.
+    Stellt sicher, dass fehlende oder leere Prompts automatisch 1:1 mit den
+    kanonischen Vorlagen (DEFAULT_MAIN_PROMPT_TEMPLATE bzw. DEFAULT_DIRECTIVES) initialisiert werden.
     Gibt True zurück, wenn Änderungen vorgenommen wurden.
     """
     from src.summarizer import DEFAULT_MAIN_PROMPT_TEMPLATE, DEFAULT_DIRECTIVES
@@ -223,7 +223,7 @@ def reconcile_prompt_templates(config: dict[str, Any]) -> bool:
     changed = False
 
     current_main = settings.get("custom_main_prompt")
-    if not current_main or not str(current_main).strip() or "⭐ [NUTZER-FAVORIT / GELIKED]" not in str(current_main):
+    if not current_main or not str(current_main).strip():
         settings["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
         changed = True
 

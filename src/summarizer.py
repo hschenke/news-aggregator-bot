@@ -311,7 +311,7 @@ def summarize_news_with_gemini(
     active_main_template = (main_prompt_template or "").strip()
     if not active_main_template:
         active_main_template = (settings.get("custom_main_prompt") or "").strip()
-    if not active_main_template or "⭐ [NUTZER-FAVORIT / GELIKED]" not in active_main_template:
+    if not active_main_template:
         active_main_template = DEFAULT_MAIN_PROMPT_TEMPLATE
 
     active_key = api_key or get_configured_api_key()

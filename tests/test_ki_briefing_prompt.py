@@ -127,27 +127,25 @@ class TestKiBriefingPrompt(unittest.TestCase):
             "custom_prompt_directives in sources.yaml weicht 1:1 von DEFAULT_DIRECTIVES ab!",
         )
 
-    def test_reconcile_prompt_templates_auto_repairs_legacy_or_missing_prompts(self):
-        """Prüft, dass der Abgleich veraltete Prompts ohne Like-Direktiven oder leere Prompts automatisch 1:1 repariert."""
+    def test_reconcile_prompt_templates_initializes_missing_prompts(self):
+        """Prüft, dass der Abgleich fehlende oder leere Prompts automatisch 1:1 mit den Standards initialisiert."""
         from src.aggregator import reconcile_prompt_templates
 
-        # Fall 1: Veralteter Prompt ohne Like/Dislike-Direktiven
-        legacy_config = {"settings": {"custom_main_prompt": "Alter Prompt ohne Likes"}}
-        changed = reconcile_prompt_templates(legacy_config)
-        self.assertTrue(changed)
-        self.assertEqual(legacy_config["settings"]["custom_main_prompt"], DEFAULT_MAIN_PROMPT_TEMPLATE.strip())
-        self.assertEqual(legacy_config["settings"]["custom_prompt_directives"], DEFAULT_DIRECTIVES.strip())
-
-        # Fall 2: Bereits aktueller Prompt -> Keine Änderung nötig
-        changed_again = reconcile_prompt_templates(legacy_config)
-        self.assertFalse(changed_again)
-
-        # Fall 3: Leere Konfiguration
+        # Fall 1: Leere Konfiguration -> initialisiert 1:1 mit den Standards
         empty_config = {}
         changed_empty = reconcile_prompt_templates(empty_config)
         self.assertTrue(changed_empty)
         self.assertEqual(empty_config["settings"]["custom_main_prompt"], DEFAULT_MAIN_PROMPT_TEMPLATE.strip())
         self.assertEqual(empty_config["settings"]["custom_prompt_directives"], DEFAULT_DIRECTIVES.strip())
+
+        # Fall 2: Bereits initialisierte Konfiguration -> Keine erneute Änderung
+        changed_again = reconcile_prompt_templates(empty_config)
+        self.assertFalse(changed_again)
+
+        # Fall 3: Vom Nutzer bewusst modifizierter Prompt -> Bleibt erhalten und wird nicht überschrieben
+        custom_config = {"settings": {"custom_main_prompt": "Mein eigener benutzerdefinierter Redaktionsprompt"}}
+        changed_custom = reconcile_prompt_templates(custom_config)
+        self.assertEqual(custom_config["settings"]["custom_main_prompt"], "Mein eigener benutzerdefinierter Redaktionsprompt")
 
 
 if __name__ == "__main__":
