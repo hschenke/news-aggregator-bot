@@ -11,6 +11,8 @@ categories:
     url: https://de.investing.com/rss/news_301.rss
 - name: Fun
   feeds:
+  - name: debeste.de
+    url: https://debeste.de/rss-main
   - name: Witz des Tages
     url: https://www.hahaha.de/witze/witzdestages.xml
 - name: Fußball
