@@ -106,6 +106,18 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertEqual(set(candidates_36), set(expected_models))
         self.assertEqual(len(candidates_36), len(expected_models))
 
+    def test_prompt_template_and_sources_include_feedback_directives(self):
+        """Stellt sicher, dass sowohl DEFAULT_MAIN_PROMPT_TEMPLATE als auch sources.yaml die Like/Dislike-Regeln enthalten."""
+        from src.aggregator import load_sources
+
+        self.assertIn("⭐ [NUTZER-FAVORIT / GELIKED]", DEFAULT_MAIN_PROMPT_TEMPLATE)
+        self.assertIn("⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]", DEFAULT_MAIN_PROMPT_TEMPLATE)
+
+        sources = load_sources()
+        yaml_prompt = sources.get("settings", {}).get("custom_main_prompt", "")
+        self.assertIn("⭐ [NUTZER-FAVORIT / GELIKED]", yaml_prompt)
+        self.assertIn("⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]", yaml_prompt)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -67,12 +67,15 @@ settings:
     \ QUICKLINKS-ZEILE:\n   - Setze direkt nach der Infobox exakt die vorgegebene\
     \ Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.\n4. DIE TOP\
     \ 5 ARTIKEL PRO KATEGORIE:\n   - Wähle pro Kategorie maximal die TOP 5 wichtigsten\
-    \ und relevantesten Artikel aus.\n   - Verlinke den Artikeltitel direkt mit der\
-    \ Originalquelle als Markdown-Link.\n   - Erstelle pro Artikel NUR EINE einzige\
-    \ kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten\
-    \ Titel.\n   - KEINE Kernaussage und KEINE Bedeutung generieren! Das Wort \"TL;DR:\"\
-    \ NICHT verwenden!\n   - Format:\n     - **[Artikeltitel](Original-URL)**: <Prägnante\
-    \ Zusammenfassung in 1-2 Sätzen>\n5. Verwende sauberes Markdown mit gut strukturierten\
-    \ Zwischenüberschriften (##) und passenden Emojis.\n6. REDAKTIONELLE FILTER &\
-    \ ANWEISUNGEN:\n{active_directives}\n\nHier sind die aktuellen Roh-Nachrichten\
-    \ nach Kategorien gegliedert:\n{context_data}"
+    \ und relevantesten Artikel aus.\n   - Bevorzuge dabei unbedingt Artikel, die\
+    \ vom Nutzer positiv bewertet / geliked wurden (mit '⭐ [NUTZER-FAVORIT / GELIKED]'\
+    \ markiert).\n   - Artikel, die mit '⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]'\
+    \ gekennzeichnet sind, sollen nach Möglichkeit ignoriert oder nur nachrangig berücksichtigt\
+    \ werden.\n   - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.\n\
+    \   - Erstelle pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1\
+    \ bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.\n   - KEINE Kernaussage\
+    \ und KEINE Bedeutung generieren! Das Wort \"TL;DR:\" NICHT verwenden!\n   - Format:\n\
+    \     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>\n\
+    5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##)\
+    \ und passenden Emojis.\n6. REDAKTIONELLE FILTER & ANWEISUNGEN:\n{active_directives}\n\
+    \nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data}"
