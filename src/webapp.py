@@ -157,6 +157,14 @@ st.markdown("""
         word-break: break-word !important;
         overflow: hidden !important;
     }
+    [data-testid="stVerticalBlockBorderWrapper"] * {
+        scrollbar-width: none !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] *::-webkit-scrollbar {
+        display: none !important;
+        width: 0 !important;
+        height: 0 !important;
+    }
     [data-testid="stVerticalBlockBorderWrapper"] > div {
         width: 100% !important;
         max-width: 100% !important;
@@ -179,8 +187,9 @@ st.markdown("""
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        margin-top: 0.35rem !important;
-        gap: 0.5rem !important;
+        margin-top: 0.65rem !important;
+        overflow: hidden !important;
+        scrollbar-width: none !important;
     }
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"] {
@@ -189,46 +198,66 @@ st.markdown("""
         align-items: center !important;
         min-width: 0 !important;
         height: auto !important;
+        overflow: visible !important;
     }
+    /* Daumen ganz links */
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
         flex: 1 1 auto !important;
         width: auto !important;
         justify-content: flex-start !important;
     }
-    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
-    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
-        flex: 0 0 auto !important;
-        width: auto !important;
-        margin-left: auto !important;
-        justify-content: flex-end !important;
-    }
-    /* Inneren Streamlit-VerticalBlock in diesen Footer-Columns horizontal und vertikal bündig zentrieren */
-    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] [data-testid="stVerticalBlock"] {
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child [data-testid="stVerticalBlock"] {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
+        justify-content: flex-start !important;
         width: 100% !important;
         gap: 0 !important;
-    }
-    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] [data-testid="stColumn"]:last-child [data-testid="stVerticalBlock"] {
-        justify-content: flex-end !important;
     }
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stFeedback"] {
         display: inline-flex !important;
         align-items: center !important;
         margin: 0 !important;
+        margin-right: auto !important;
         padding: 0 !important;
     }
 
-    /* Gelesen-Symbol Styling: Randlos, transparent, dezent wie st.feedback */
+    /* Haken ganz rechts */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
+        flex: 1 1 auto !important;
+        width: auto !important;
+        margin-left: auto !important;
+        justify-content: flex-end !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child [data-testid="stVerticalBlock"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child .stButton,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child div[class*="st-key-read_"] {
+        display: inline-flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        width: auto !important;
+    }
+
+    /* Gelesen-Symbol Styling: Randlos, transparent, dezent wie st.feedback - ohne Skalierung gegen Scrollbalken */
     div[class*="st-key-read_"] {
         display: inline-flex !important;
         justify-content: flex-end !important;
         align-items: center !important;
         margin: 0 !important;
+        margin-left: auto !important;
         padding: 0 !important;
-        width: 100% !important;
+        width: auto !important;
     }
     div[class*="st-key-read_"] button {
         background-color: transparent !important;
@@ -240,18 +269,22 @@ st.markdown("""
         height: 2rem !important;
         width: 2rem !important;
         min-width: 2rem !important;
+        max-width: 2rem !important;
+        max-height: 2rem !important;
         border-radius: 50% !important;
         color: #94a3b8 !important;
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
         line-height: 1 !important;
-        transition: all 0.15s ease-in-out !important;
+        margin: 0 !important;
+        margin-left: auto !important;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out !important;
+        overflow: hidden !important;
     }
     div[class*="st-key-read_"] button:hover {
         background-color: rgba(34, 197, 94, 0.15) !important;
         color: #16a34a !important;
-        transform: scale(1.15) !important;
     }
     div[class*="st-key-read_"] button:active,
     div[class*="st-key-read_"] button:focus {
@@ -267,6 +300,8 @@ st.markdown("""
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     @media (max-width: 768px) {
         .block-container {
@@ -1931,7 +1966,7 @@ with tab_articles:
                                 clean_summary = format_summary_html(item.get("summary", ""))
                                 pdate = format_article_date(item)
                                 date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
-                                summary_str = f"<div style='font-size:0.88rem; line-height:1.45;'>{clean_summary}</div>" if clean_summary else ""
+                                summary_str = f"<div style='font-size:0.88rem; line-height:1.45; margin-bottom:0.75rem;'>{clean_summary}</div>" if clean_summary else "<div style='margin-bottom:0.5rem;'></div>"
                                 st.markdown(
                                     f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
                                     unsafe_allow_html=True
@@ -1944,7 +1979,7 @@ with tab_articles:
                                 fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
                                 read_key = f"read_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
 
-                                col_fb, col_read = st.columns([0.85, 0.15], vertical_alignment="center", wrap=False)
+                                col_fb, col_read = st.columns([1, 1], vertical_alignment="center", wrap=False)
                                 with col_fb:
                                     st.feedback(
                                     "thumbs",
