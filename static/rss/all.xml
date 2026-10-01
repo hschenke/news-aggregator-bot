@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 14:04:21 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 14:06:17 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -34,6 +34,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Wer künftig ein amtliches Führungszeugnis benötigt, kann es seit dem 1. Oktober 2026 auch digital als PDF bestellen.]]></description>
+    </item>
+    <item>
+      <title>Rassistische Beleidigung und Körperverletzung – Zeuginnen und Zeugen gesucht</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1720637.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1720637.php</guid>
+      <pubDate>Thu, 01 Oct 2026 13:55:01 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Am Dienstag, den 8. September 2026, soll es in Westend zu einer rassistischen Beleidigung, Körperverletzung und einem gefährlichen Eingriff in den Straßenverkehr gekommen sein. Nach bisherigen Erkenntnissen und Zeugenaussagen befuhr eine 24-jährige Autofahrerin gegen 9:35 Uhr mit e...]]></description>
     </item>
     <item>
       <title>Warum die Nummer 7 von Cristiano Ronaldo bei Portugal neu vergeben wurde</title>
@@ -594,15 +603,6 @@
       <description><![CDATA[Spanien führt im Sinne eines „menschen- und stadtzentrierten Mobilitätsverständnisses“ neue Überholregeln und Abstandsvorschriften zum Schutz Schwächerer ein.]]></description>
     </item>
     <item>
-      <title>Zuerst kam die „Berliner Romanze“: Annekathrin Bürger erhält Lebenswerk-Preis</title>
-      <link>https://www.berliner-zeitung.de/article/zuerst-kam-die-berliner-romanze-annekathrin-buerger-erhaelt-lebenswerk-preis-10446321</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3120419942119076152</guid>
-      <pubDate>Thu, 01 Oct 2026 07:56:41 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[... Mahlsdorf in Berlin und die barocke Fassade eines Hauses in Dresden. Annekathrin Bürger im Jahr 1964. © Imago. 1937 ...]]></description>
-    </item>
-    <item>
       <title>Bitcoin, Ethereum, Solana: 1.000%-Rallye – Experte sieht KI-Kreditkrise als Zünder</title>
       <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-1000rallye--experte-sieht-kikreditkrise-als-zunder-3685617</link>
       <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-1000rallye--experte-sieht-kikreditkrise-als-zunder-3685617</guid>
@@ -909,15 +909,6 @@
       <description><![CDATA[Stiehl mir nicht meine Zeit. Ich verbringe die Zeit lieber mit mir selbst als mit Menschen, die mich runterziehen.]]></description>
     </item>
     <item>
-      <title>Tor-Debüts - Dino Fazlic - Transfermarkt</title>
-      <link>https://www.transfermarkt.at/dino-fazlic/tordebuets/spieler/87067</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2123018267964778341</guid>
-      <pubDate>Thu, 01 Oct 2026 02:51:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Das sind die Tordebüts von Dino Fazlic vom Verein Eintracht Mahlsdorf. Diese Seite enthält eine Statistik über die Spiele, in denen ein Spieler ...]]></description>
-    </item>
-    <item>
       <title>Das Alter ist nur eine Zahl...</title>
       <link>https://debeste.de/626230/Das-Alter-ist-nur-eine-Zahl</link>
       <guid isPermaLink="false">https://debeste.de/626230/Das-Alter-ist-nur-eine-Zahl</guid>
@@ -1125,15 +1116,6 @@
       <description><![CDATA[HEROES OF MIGHT and Magic III: Cove-Erweiterung - englische Version, Archon - EUR 122,87. ZU VERKAUFEN! Mit dieser Erweiterung könnt ihr 2 gegen 2 ...]]></description>
     </item>
     <item>
-      <title>BW Mahlsdorf/Waldesruh - Leihspieler - Transfermarkt</title>
-      <link>https://www.transfermarkt.de/bw-mahlsdorf-waldesruh/leihspieler/verein/19957</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10753227461049874680</guid>
-      <pubDate>Wed, 30 Sep 2026 19:24:26 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Diese Statistik zeigt die kompakte Ansicht aller aktuell ausgeliehenen sowie verliehenen Spieler für den Verein BW Mahlsdorf/W. an.]]></description>
-    </item>
-    <item>
       <title>Die Welt war echt besser, als uns der Dentagard Biber noch..</title>
       <link>https://debeste.de/626259/Die-Welt-war-echt-besser,-als-uns-der-Dentagard-Biber-noch</link>
       <guid isPermaLink="false">https://debeste.de/626259/Die-Welt-war-echt-besser,-als-uns-der-Dentagard-Biber-noch</guid>
@@ -1141,15 +1123,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Die Welt war echt besser, als uns der Dentagard Biber noch höchstpersönlich Kräuter in die Zahnpasta geschallt hat.]]></description>
-    </item>
-    <item>
-      <title>Aktuelles - Alles-Mahlsdorf.de</title>
-      <link>https://alles-mahlsdorf.de/category/aktuelles-aus-mahlsdorf/page/23/?_=1790794800010</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:18026305098998523815</guid>
-      <pubDate>Wed, 30 Sep 2026 19:16:24 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Super-Preise winken: Wir suchen Mahlsdorfs schönsten Weihnachtsbaum! 14. Dezember 2025. Wunderschön oder Witzfigur? Wir wollen eine Mitmach-Tradition, ...]]></description>
     </item>
     <item>
       <title>„Ich dachte, ich sterbe“: Mahlsdorferin berichtet über sexuellen Missbrauch in der Bundeswehr</title>
@@ -1899,15 +1872,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>Anästhesietechnische Assistenz (Vollzeit) – OP-Anästhesie – Berlin-Mahlsdorf (m/w/d)</title>
-      <link>https://www.adzuna.de/details/5900547879</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11533020461079101723</guid>
-      <pubDate>Wed, 30 Sep 2026 10:36:02 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Anästhesietechnische Assistenz (Vollzeit) – OP-Anästhesie – Berlin-Mahlsdorf (m/w/d) Jobs in Kaulsdorf. Gib Deine E-Mail-Adresse ein, damit wir Dir ...]]></description>
-    </item>
-    <item>
       <title>Innotrans 2026: Akku-Bahnen werden wichtiger, aber Wasserstoff bleibt</title>
       <link>https://www.heise.de/hintergrund/Innotrans-2026-Akku-Bahnen-werden-wichtiger-aber-Wasserstoff-bleibt-11470945.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11470945</guid>
@@ -1924,15 +1888,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Ich habe mir ein edles Notizbuch gekauft, schreibe meine Einkaufszettel aber immer noch auf die Rückseite von Kassenbons, weil es mir einfach zu schade für so banale Notizen ist.]]></description>
-    </item>
-    <item>
-      <title>Henry Bloch - Leistungsdaten im Detail - Transfermarkt</title>
-      <link>https://www.transfermarkt.de/henry-bloch/leistungsdatenDetail/trainer/3402</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7193975767861612072</guid>
-      <pubDate>Wed, 30 Sep 2026 10:11:04 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Eintracht Mahlsdorf, 2:0 · MSV 1919 Neuruppin · NOFV-Oberliga Nord · 21/22, 16, MSV 1919 Neuruppin, 1:1 · SFC Stern 1900 · NOFV-Oberliga Nord · 21/22 ...]]></description>
     </item>
     <item>
       <title>"Wenn wir also die Regierung belügen, ist das ein.."</title>
@@ -3474,24 +3429,6 @@
       <description><![CDATA[📍 **Marzahn-Hellersdorf** – In der vergangenen Nacht wurden Polizeieinsatzkräfte aufgrund einer verdächtigen Person zu einer Bar nach Marzahn alarmiert. Nach bisherigen Ermittlungen und Zeugenaussagen habe ein 47-jähriger Mann gegen 1 Uhr nach vorangegangenen Streitigkeiten in einer Lokalität in der Max-Herrmann-Str...]]></description>
     </item>
     <item>
-      <title>Überfall auf Hotel</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717835.php</guid>
-      <pubDate>Thu, 24 Sep 2026 09:17:32 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – In der vergangenen Nacht kam es zu einem schweren Raub auf ein Hotel in Charlottenburg. Nach bisherigen Ermittlungen betrat gegen 23:25 Uhr ein junger Mann das Hotel am Kurfürstendamm und forderte unter Vorhalt von Pfefferspray die Herausgabe von Geld. Die 24-jährige Rezeptionistin...]]></description>
-    </item>
-    <item>
-      <title>Seniorin fährt Kind an</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717825.php</guid>
-      <pubDate>Thu, 24 Sep 2026 09:07:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Gestern Mittag ereignete sich ein Verkehrsunfall in Westend, bei dem ein Kind schwer verletzt wurde. Als die 13-Jährige kurz vor 14 Uhr die Fahrbahn des Spandauer Damms in Richtung Königin-Elisabeth-Straße überquerte, wurde sie von einer aus dem Fürstenbrunner Weg kommenden Seniori...]]></description>
-    </item>
-    <item>
       <title>Sonntagmorgens. Der Vater will die Mutter</title>
       <link>https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</link>
       <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</guid>
@@ -3501,60 +3438,6 @@
       <description><![CDATA[Sonntagmorgens. Der Vater will die Mutter besteigen, aber wohin mit dem fünfjährigen Sohn? Kurzerhand schickt der Vater ihn auf den Balkon: "Schau mal, was da so los ist und erzähl es uns." Der Vater ist gerade voll bei der Sache, als der Kleine ruft: "Schmidts haben sich ein neues Auto gekauft, einen Golf!" Keuchen...]]></description>
     </item>
     <item>
-      <title>BAO Ferrum und EG Telum: Stadtweite Durchsuchungsmaßnahmen zur Bekämpfung der Schusswaffenkriminalität</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717681.php</guid>
-      <pubDate>Wed, 23 Sep 2026 14:02:35 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **berlinweit** – Heute Morgen wurden im Auftrag der Ermittlungsgruppe Telum der Staatsanwaltschaft Berlin in sechs Bezirken insgesamt 14 Durchsuchungsbeschlüsse für elf Wohnanschriften, drei Gewerbeobjekte und mehrere Pkw vollstreckt. Die seit April diesen Jahres andauernden Ermittlungen wegen des Verdachts des g...]]></description>
-    </item>
-    <item>
-      <title>Distanzelektroimpulsgerät eingesetzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717600.php</guid>
-      <pubDate>Wed, 23 Sep 2026 12:19:53 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Lichtenberg** – Gestern Mittag setzten Polizeieinsatzkräfte in Lichtenberg gegen einen Mann das Distanzelektroimpulsgerät (DEIG) ein. Nach derzeitigem Kenntnisstand wurde der 20-Jährige gegen 12 Uhr wegen seines psychischen Ausnahmezustandes durch die Einsatzkräfte in ein Krankenhaus in der Herzbergstraße gebrac...]]></description>
-    </item>
-    <item>
-      <title>Festnahme nach Straßenraub</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717592.php</guid>
-      <pubDate>Wed, 23 Sep 2026 12:11:28 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Weil er auffällig in einem Rucksack wühlte und diesen anschließend in ein Gebüsch warf, wurden Einsatzkräfte der Polizei gestern Mittag auf einen Mann in Charlottenburg aufmerksam. Bei der anschließenden Personendurchsuchung sowie der Überprüfung des Rucksacks stellten die Einsatzk...]]></description>
-    </item>
-    <item>
-      <title>14-jähriger E-Scooter-Fahrer flüchtet vor Verkehrskontrolle – Beamter setzt DEIG ein</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717584.php</guid>
-      <pubDate>Wed, 23 Sep 2026 12:05:08 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Treptow-Köpenick** – Bei einer Verkehrssonderkontrolle in Köpenick hat ein Polizist gestern Nachmittag das Distanzelektroimpulsgerät gegen einen 14-jährigen E-Scooter-Fahrer eingesetzt. Den bisherigen Ermittlungen zufolge führten Einsatzkräfte der Polizeidirektion 3 (Ost) auf dem Müggelheimer Damm in Fahrtrichtu...]]></description>
-    </item>
-    <item>
-      <title>Nach Brand in Seniorenheim – Patient im Krankenhaus verstorben</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717486.php</guid>
-      <pubDate>Wed, 23 Sep 2026 09:27:54 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Nach einem Brand in einem Kreuzberger Seniorenpflegewohnheim am vergangenen Samstag ist der einst schwerverletzte 74-Jährige gestern Nachmittag in einem Krankenhaus verstorben. Kräfte von Polizei und Feuerwehr wurden am Vormittag des 19. Septembers zu einer Seniorenpflegeeinrichtung ...]]></description>
-    </item>
-    <item>
-      <title>Frau bei Sturz in Linienbus lebensgefährlich verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717481.php</guid>
-      <pubDate>Wed, 23 Sep 2026 09:19:02 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Mitte** – Gestern Nachmittag wurden Einsatzkräfte der Polizei Berlin zu einem Verkehrsunfall nach Mitte alarmiert. Nach bisherigen Erkenntnissen soll ein 31-jähriger Busfahrer eines BVG-Linienbusses gegen 13:30 Uhr an der Bushaltestelle Nikolaiviertel am Mühlendamm in Richtung Fischerinsel losgefahren sein...]]></description>
-    </item>
-    <item>
       <title>Ein junges Paar erschien im Krankenhaus,</title>
       <link>https://www.hahaha.de/witze/menschen/allgemein/14500/ein-junges-paar-erschien-im-krankenhaus.html</link>
       <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/allgemein/14500/ein-junges-paar-erschien-im-krankenhaus.html</guid>
@@ -3562,42 +3445,6 @@
       <category>Fun</category>
       <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
       <description><![CDATA[Ein junges Paar erschien im Krankenhaus, da die Geburt des ersten Kindes unmittelbar bevorstand. Der Gynäkologe hatte einige Zeit als Arzt in Afrika verbracht und dort von einem Medizinmann eine Beschwörungstechnik erlernt, bei welcher ein Teil der Wehenschmerzen auf den Vater übertragen werden konnte. Das Paar war ...]]></description>
-    </item>
-    <item>
-      <title>Unter Alkoholeinfluss – E-Scooter-Fahrerin fährt gegen wartendes Auto</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717289.php</guid>
-      <pubDate>Tue, 22 Sep 2026 14:41:15 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Treptow-Köpenick** – Heute früh ereignete sich ein Verkehrsunfall im Ortsteil Plänterwald. Gegen 5:30 Uhr soll ein Autofahrer auf der Köpenicker Landstraße in Fahrtrichtung zur Straße Am Treptower Park bei roter Ampel gewartet haben, um anschließend nach links in den Dammweg abzubiegen. In diesem Moment sei eine...]]></description>
-    </item>
-    <item>
-      <title>Tödlicher Verkehrsunfall – Zeuginnen und Zeugen gesucht</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717214.php</guid>
-      <pubDate>Tue, 22 Sep 2026 12:08:28 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Pankow** – Die Polizei Berlin sucht Zeuginnen und Zeugen zu einem tödlichen Verkehrsunfall, der sich in der Nacht von Freitag zu Sonnabend, den 19. September 2026, in Prenzlauer Berg ereignete. Nach derzeitigem Kenntnisstand befuhr gegen 2:45 Uhr ein 31-jähriger Fahrer eines BMW mit stark überhöhter Geschwi...]]></description>
-    </item>
-    <item>
-      <title>Ermittlungen nach Schussabgabe auf Wohnungsfenster</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717195.php</guid>
-      <pubDate>Tue, 22 Sep 2026 11:36:15 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Neukölln** – Gestern Morgen wurden Einsatzkräfte der Polizei Berlin wegen eines beschädigten Fensters in den Ortsteil Britz alarmiert. Nach bisherigen Erkenntnissen hatte eine 57-jährige Anwohnerin gegen 8 Uhr in der Backbergstraße ein Einschussloch in der Scheibe ihres doppelverglasten Schlafzimmerfensters b...]]></description>
-    </item>
-    <item>
-      <title>Allgemeinverfügung zum 52. Berlin-Marathon erlassen</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717143.php</guid>
-      <pubDate>Tue, 22 Sep 2026 10:17:54 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Mitte** – Aufgrund des 52. BMW Berlin-Marathons am 26. und 27. September hat die Polizei Berlin eine temporäre Allgemeinverfügung zur Erhöhung der öffentlichen Sicherheit und Ordnung erlassen.]]></description>
     </item>
     <item>
       <title>Der Medizinprofessor prüft seine Studenten.</title>
