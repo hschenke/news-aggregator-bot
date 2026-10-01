@@ -1617,6 +1617,15 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
 
     collected: dict[str, list[dict[str, Any]]] = {}
 
+    # Archivierte Artikel ermitteln, damit sie nicht erneut gesammelt/angezeigt werden
+    try:
+        from src.storage import get_storage
+        storage_inst = get_storage()
+        archived_urls = storage_inst.get_archived_urls()
+    except Exception as exc:
+        logger.debug("Archivierte URLs konnten für Feed-Filterung nicht geladen werden: %s", exc)
+        archived_urls = set()
+
     # Kategorien alphabetisch sortieren
     categories = sorted(config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
 
@@ -1647,7 +1656,13 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
                 if is_article_too_old(it, max_age_weeks=max_age_weeks):
                     continue
 
-                canon_u = get_canonical_url(it.get("link", ""))
+                raw_u = (it.get("link") or "").strip()
+                canon_u = get_canonical_url(raw_u)
+                
+                # Gelesene & archivierte Artikel niemals erneut aufnehmen
+                if (raw_u and raw_u in archived_urls) or (canon_u and canon_u in archived_urls):
+                    continue
+
                 norm_t = re.sub(r"[\W_]+", "", it.get("title", "").lower())
                 
                 # Duplikate innerhalb derselben Kategorie herausfiltern

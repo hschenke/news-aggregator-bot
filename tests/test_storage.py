@@ -135,6 +135,93 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertEqual(latest["model_used"], "gemini-3.8-flash")
         self.assertEqual(len(self.storage.get_briefings()), 1)
 
+    def test_archive_article_moves_from_active_to_archive(self):
+        art = Article(
+            title="Zu lesender Artikel",
+            link="https://example.com/read-me",
+            summary="Interessanter Inhalt",
+            source="TestQuelle",
+            category="Tech",
+            timestamp=1700000000.0,
+            feedback=1,
+        )
+        self.storage.save_articles([art])
+        self.assertIsNotNone(self.storage.get_article("https://example.com/read-me"))
+        self.assertFalse(self.storage.is_article_archived("https://example.com/read-me"))
+
+        # Als gelesen archivieren
+        res = self.storage.archive_article(art)
+        self.assertTrue(res)
+
+        # Aus aktiven Artikeln gelöscht
+        self.assertIsNone(self.storage.get_article("https://example.com/read-me"))
+
+        # Im Archiv vorhanden
+        self.assertTrue(self.storage.is_article_archived("https://example.com/read-me"))
+        self.assertIn("https://example.com/read-me", self.storage.get_archived_urls())
+        archived_list = self.storage.get_archived_articles()
+        self.assertEqual(len(archived_list), 1)
+        self.assertEqual(archived_list[0].title, "Zu lesender Artikel")
+        self.assertEqual(archived_list[0].feedback, 1)
+
+    def test_save_articles_does_not_resurrect_archived(self):
+        art = Article(
+            title="Archivierter Artikel",
+            link="https://example.com/archived",
+            source="Quelle",
+            category="News",
+        )
+        self.storage.archive_article(art)
+        self.assertTrue(self.storage.is_article_archived("https://example.com/archived"))
+
+        # Erneuter Feed-Import des Artikels
+        saved_count = self.storage.save_articles([art])
+        self.assertEqual(saved_count, 0)
+        self.assertIsNone(self.storage.get_article("https://example.com/archived"))
+
+    def test_is_url_known_and_get_known_urls_with_archive(self):
+        self.storage.save_articles([Article(title="Aktiv", link="https://example.com/active")])
+        self.storage.archive_article(Article(title="Archiviert", link="https://example.com/archived"))
+
+        self.assertTrue(self.storage.is_url_known("https://example.com/active"))
+        self.assertTrue(self.storage.is_url_known("https://example.com/archived"))
+        self.assertFalse(self.storage.is_url_known("https://example.com/unknown"))
+
+        known = self.storage.get_known_urls()
+        self.assertIn("https://example.com/active", known)
+        self.assertIn("https://example.com/archived", known)
+
+    def test_cleanup_archive_respects_max_age_weeks(self):
+        import time
+        now = time.time()
+        SECONDS_PER_WEEK = 7 * 24 * 3600
+
+        # Älter als 20 Wochen (z.B. 25 Wochen alt)
+        old_art = Article(
+            title="Alt",
+            link="https://example.com/old",
+            timestamp=now - (25 * SECONDS_PER_WEEK),
+        )
+        # Frisch archiviert (z.B. 2 Wochen alt)
+        recent_art = Article(
+            title="Frisch",
+            link="https://example.com/recent",
+            timestamp=now - (2 * SECONDS_PER_WEEK),
+        )
+
+        self.storage.archive_article(old_art)
+        self.storage.archive_article(recent_art)
+
+        self.assertEqual(len(self.storage.get_archived_articles()), 2)
+
+        # Bereinigung mit max_age_weeks=20
+        cleaned = self.storage.cleanup_archive(max_age_weeks=20)
+        self.assertEqual(cleaned, 1)
+
+        remaining = self.storage.get_archived_articles()
+        self.assertEqual(len(remaining), 1)
+        self.assertEqual(remaining[0].link, "https://example.com/recent")
+
 
 class TestTursoStorage(unittest.TestCase):
     def test_url_normalization(self):
@@ -219,6 +306,77 @@ class TestTursoStorage(unittest.TestCase):
         turso = TursoStorage("libsql://mock.turso.io", "mock-token")
         fb_map = turso.get_feedback_map()
         self.assertEqual(fb_map, {"https://ex.com/like": 1, "https://ex.com/dislike": -1})
+
+    @patch("requests.Session.post")
+    def test_turso_archive_article(self, mock_post):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [],
+                            "rows": [],
+                            "affected_row_count": 1,
+                            "last_insert_rowid": 1,
+                        }
+                    }
+                },
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [],
+                            "rows": [],
+                            "affected_row_count": 1,
+                            "last_insert_rowid": None,
+                        }
+                    }
+                }
+            ]
+        }
+        mock_post.return_value = mock_response
+
+        turso = TursoStorage("libsql://mock.turso.io", "mock-token")
+        art = Article(title="Test", link="https://ex.com/archive-turso")
+        res = turso.archive_article(art)
+        self.assertTrue(res)
+        self.assertTrue(mock_post.called)
+        payload = mock_post.call_args[1]["json"]
+        self.assertIn("archived_articles", payload["requests"][0]["stmt"]["sql"])
+        self.assertIn("DELETE FROM articles", payload["requests"][1]["stmt"]["sql"])
+
+    @patch("requests.Session.post")
+    def test_turso_cleanup_archive(self, mock_post):
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [],
+                            "rows": [],
+                            "affected_row_count": 3,
+                            "last_insert_rowid": None,
+                        }
+                    }
+                }
+            ]
+        }
+        mock_post.return_value = mock_response
+
+        turso = TursoStorage("libsql://mock.turso.io", "mock-token")
+        cleaned = turso.cleanup_archive(max_age_weeks=20)
+        self.assertEqual(cleaned, 3)
+        payload = mock_post.call_args[1]["json"]
+        self.assertIn("DELETE FROM archived_articles", payload["requests"][0]["stmt"]["sql"])
 
 
 class TestStorageFactory(unittest.TestCase):

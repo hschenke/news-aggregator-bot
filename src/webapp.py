@@ -5,6 +5,7 @@ import hmac
 import hashlib
 import time
 import copy
+import threading
 from pathlib import Path
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional
@@ -147,6 +148,23 @@ st.markdown("""
         opacity: 0 !important;
         visibility: hidden !important;
     }
+    /* Gelesen-Button Styling */
+    div[class*="st-key-read_"] button {
+        border-radius: 8px !important;
+        padding: 0.2rem 0.55rem !important;
+        font-size: 0.95rem !important;
+        min-height: 2.1rem !important;
+        height: 2.1rem !important;
+        background-color: transparent !important;
+        border: 1px solid rgba(100, 116, 139, 0.25) !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    div[class*="st-key-read_"] button:hover {
+        background-color: rgba(34, 197, 94, 0.12) !important;
+        border-color: #22c55e !important;
+        color: #16a34a !important;
+        transform: scale(1.05);
+    }
     @media (max-width: 768px) {
         .block-container {
             padding-top: 3.25rem !important;
@@ -193,12 +211,13 @@ st.markdown("""
             min-width: 100% !important;
             flex: 1 1 100% !important;
         }
-        /* Feedback-Daumen auf Mobile nebeneinander halten */
+        /* Feedback-Daumen & Gelesen-Symbol auf Mobile nebeneinander halten */
         [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) {
             display: flex !important;
             flex-direction: row !important;
             flex-wrap: nowrap !important;
             align-items: center !important;
+            justify-content: space-between !important;
             gap: 0.4rem !important;
         }
         [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="stColumn"],
@@ -206,6 +225,10 @@ st.markdown("""
             min-width: auto !important;
             flex: 0 0 auto !important;
             width: auto !important;
+        }
+        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="stColumn"]:has(div[class*="st-key-read_"]),
+        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="column"]:has(div[class*="st-key-read_"]) {
+            margin-left: auto !important;
         }
         /* Suchleiste auf Mobile: Eingabefeld, ✕ und Go in einer Zeile bündig halten */
         [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) {
@@ -1250,6 +1273,23 @@ if get_configured_app_password():
 # --- Main Layout & Data Loading ---
 news_data = get_news_data()
 
+# Ausfiltern aller gelesenen/archivierten Artikel
+if "archived_urls" not in st.session_state:
+    try:
+        from src.storage import get_storage
+        _storage = get_storage()
+        st.session_state["archived_urls"] = _storage.get_archived_urls()
+    except Exception as exc:
+        logger.debug("Archivierte URLs konnten nicht geladen werden: %s", exc)
+        st.session_state["archived_urls"] = set()
+
+archived_urls_set = st.session_state.get("archived_urls", set())
+if archived_urls_set:
+    news_data = {
+        cat: [it for it in items if (it.get("link") or "").strip() not in archived_urls_set]
+        for cat, items in news_data.items()
+    }
+
 # Altersfilterung gemäß globalen Einstellungen anwenden (Standard: 20 Wochen)
 current_settings = working_config.get("settings", {})
 max_age_weeks_setting = current_settings.get("max_article_age_weeks")
@@ -1303,6 +1343,9 @@ else:
 
 liked_chip_html = f'<span class="kpi-chip" style="background-color:rgba(34, 197, 94, 0.12); border-color:rgba(34, 197, 94, 0.35); color:#16a34a;" title="{liked_articles_count} Artikel geliked (werden im KI-Briefing bevorzugt)">⭐ <strong>{liked_articles_count}</strong> Favoriten</span>' if liked_articles_count > 0 else ""
 
+archived_count = len(archived_urls_set)
+archived_chip_html = f'<span class="kpi-chip" style="background-color:rgba(100, 116, 139, 0.12); border-color:rgba(100, 116, 139, 0.35); color:#64748b;" title="{archived_count} Artikel als gelesen archiviert">📦 <strong>{archived_count}</strong> Gelesen</span>' if archived_count > 0 else ""
+
 chips = [
     f'<span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>',
     f'<span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>',
@@ -1310,6 +1353,8 @@ chips = [
 ]
 if liked_chip_html:
     chips.append(liked_chip_html)
+if archived_chip_html:
+    chips.append(archived_chip_html)
 chips.append(f'<span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>')
 
 st.html(f'<div class="kpi-container">{"".join(chips)}</div>')
@@ -1489,6 +1534,39 @@ with tab_articles:
             pass
 
         st.toast(toast_text, icon=toast_icon)
+
+    def on_article_read_and_archive(article_item: dict[str, Any]) -> None:
+        """
+        Markiert einen Artikel als gelesen, entfernt ihn sofort aus der aktiven Ansicht
+        und archiviert ihn in einem parallelen Hintergrund-Thread in der Datenbank.
+        """
+        item_url = (article_item.get("link") or "").strip()
+        if not item_url:
+            return
+
+        # 1. Sofort in session_state aufnehmen
+        if "archived_urls" not in st.session_state:
+            st.session_state["archived_urls"] = set()
+        st.session_state["archived_urls"].add(item_url)
+
+        # 2. Aus news_data im Memory entfernen
+        for cat_name, cat_items in list(news_data.items()):
+            news_data[cat_name] = [it for it in cat_items if (it.get("link") or "").strip() != item_url]
+
+        # 3. Parallel Thread: Insert in Archiv-Tabelle & Delete aus aktiven Artikeln
+        def _async_archive_worker(data_to_archive: dict[str, Any]) -> None:
+            try:
+                from src.storage import get_storage
+                bg_storage = get_storage()
+                bg_storage.archive_article(data_to_archive)
+            except Exception as exc:
+                logger.warning("Hintergrund-Archivierung fehlgeschlagen für %s: %s", item_url, exc)
+
+        item_copy = dict(article_item)
+        threading.Thread(target=_async_archive_worker, args=(item_copy,), daemon=True).start()
+
+        st.toast("Artikel als gelesen archiviert", icon="✔️")
+        st.rerun()
 
     def on_clear_search():
         st.session_state["input_search_query"] = ""
@@ -1715,19 +1793,25 @@ with tab_articles:
                                     unsafe_allow_html=True
                                 )
 
-                                # Bewertungs-Daumen (Like / Dislike) direkt unterm Text
+                                # Bewertungs-Daumen (Like / Dislike) links & Gelesen-Symbol rechts
                                 item_url = item.get("link", "").strip()
                                 cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
                                 fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
+                                read_key = f"read_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
 
-                                st.feedback(
+                                col_fb, col_read = st.columns([0.78, 0.22], vertical_alignment="center")
+                                with col_fb:
+                                    st.feedback(
                                     "thumbs",
-                                    key=fb_key,
-                                    default=default_fb,
-                                    on_change=on_article_feedback_change,
-                                    args=(item_url, fb_key, clean_title),
-                                )
+                                        key=fb_key,
+                                        default=default_fb,
+                                        on_change=on_article_feedback_change,
+                                        args=(item_url, fb_key, clean_title),
+                                    )
+                                with col_read:
+                                    if st.button("✔️", key=read_key, help="Artikel als gelesen markieren & archivieren", use_container_width=True):
+                                        on_article_read_and_archive(item)
 
     with col_stat_placeholder:
         if displayed_count > 0:
@@ -1835,6 +1919,14 @@ with tab_ki:
                     export_briefing_rss(ai_summary)
                 except Exception:
                     pass
+                try:
+                    from src.storage import get_storage
+                    storage_gen = get_storage()
+                    briefing_date = get_local_now().strftime("%Y-%m-%d")
+                    storage_gen.save_briefing(briefing_date, ai_summary, selected_model)
+                    storage_gen.cleanup_archive(max_age_weeks=active_max_age_weeks)
+                except Exception as exc_sg:
+                    logger.debug("Briefing-Speicherung oder Cleanup in Webapp übersprungen: %s", exc_sg)
 
     if "cached_summary" in st.session_state:
         st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")

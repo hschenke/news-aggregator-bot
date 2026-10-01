@@ -219,6 +219,38 @@ class TestFilteringAndScraping(unittest.TestCase):
         self.assertIn("max_article_age_weeks", settings)
         self.assertEqual(settings["max_article_age_weeks"], 20)
 
+    def test_collect_all_news_skips_archived_articles(self):
+        from unittest.mock import patch, MagicMock
+        from src.aggregator import collect_all_news
+        from src.storage import SqliteStorage
+        from src.models import Article
+
+        mock_storage = SqliteStorage(":memory:")
+        mock_storage.init_db()
+        mock_storage.archive_article(Article(title="Schon gelesen", link="https://example.com/archived-item"))
+
+        import time
+        now_ts = time.time()
+        with patch("src.storage.get_storage", return_value=mock_storage):
+            with patch("src.aggregator.load_sources", return_value={
+                "categories": [
+                    {
+                        "name": "TestCat",
+                        "feeds": [{"name": "TestFeed", "url": "https://example.com/feed.xml"}]
+                    }
+                ],
+                "settings": {"max_article_age_weeks": 20}
+            }):
+                with patch("src.aggregator.fetch_feed_items", return_value=[
+                    {"title": "Schon gelesen", "link": "https://example.com/archived-item", "timestamp": now_ts},
+                    {"title": "Noch neu", "link": "https://example.com/brand-new", "timestamp": now_ts},
+                ]):
+                    collected = collect_all_news(export_rss=False)
+                    self.assertIn("TestCat", collected)
+                    cat_links = [it["link"] for it in collected["TestCat"]]
+                    self.assertNotIn("https://example.com/archived-item", cat_links)
+                    self.assertIn("https://example.com/brand-new", cat_links)
+
 
 if __name__ == "__main__":
     unittest.main()

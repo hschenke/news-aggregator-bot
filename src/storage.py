@@ -10,6 +10,7 @@ Inklusive automatischer Erkennung und unterbrechungsfreiem Failover (Fallback) b
 from __future__ import annotations
 
 import os
+import time
 import sqlite3
 import logging
 from abc import ABC, abstractmethod
@@ -165,6 +166,37 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
+    def archive_article(self, article: Article | dict[str, Any] | str) -> bool:
+        """
+        Verschiebt einen gelesenen Artikel ins Archiv (archived_articles) und löscht ihn
+        aus der aktiven Artikel-Tabelle (articles).
+        """
+        pass
+
+    @abstractmethod
+    def get_archived_urls(self) -> set[str]:
+        """Gibt alle URLs der bisher archivierten Artikel zurück."""
+        pass
+
+    @abstractmethod
+    def is_article_archived(self, url: str) -> bool:
+        """Prüft, ob eine URL bereits im Archiv vorhanden ist."""
+        pass
+
+    @abstractmethod
+    def get_archived_articles(self, limit: int = 100) -> list[Article]:
+        """Gibt archivierte Artikel sortiert nach Datum zurück."""
+        pass
+
+    @abstractmethod
+    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+        """
+        Bereinigt die Archiv-Tabelle und löscht Artikel, die älter als max_age_weeks Wochen sind.
+        Gibt die Anzahl der gelöschten Datensätze zurück.
+        """
+        pass
+
+    @abstractmethod
     def close(self) -> None:
         """Schließt alle Verbindungen und gibt Ressourcen frei."""
         pass
@@ -179,7 +211,9 @@ class SqliteStorage(StorageBackend):
     def __init__(self, db_path: str | Path | None = None) -> None:
         if db_path == ":memory:":
             self._db_path = ":memory:"
-            self._shared_conn: sqlite3.Connection | None = sqlite3.connect(":memory:", timeout=DEFAULT_TIMEOUT_SECONDS)
+            self._shared_conn: sqlite3.Connection | None = sqlite3.connect(
+                ":memory:", timeout=DEFAULT_TIMEOUT_SECONDS, check_same_thread=False
+            )
             self._shared_conn.row_factory = sqlite3.Row
         else:
             self._db_path = str(get_safe_db_path(db_path))
@@ -212,6 +246,20 @@ class SqliteStorage(StorageBackend):
                     updated_at TEXT DEFAULT CURRENT_TIMESTAMP
                 );
 
+                CREATE TABLE IF NOT EXISTS archived_articles (
+                    url TEXT PRIMARY KEY,
+                    title TEXT NOT NULL,
+                    summary TEXT DEFAULT '',
+                    source TEXT DEFAULT '',
+                    category TEXT DEFAULT '',
+                    timestamp REAL DEFAULT 0.0,
+                    guid TEXT,
+                    published TEXT,
+                    source_url TEXT,
+                    feedback INTEGER DEFAULT 0,
+                    archived_at TEXT DEFAULT CURRENT_TIMESTAMP
+                );
+
                 CREATE TABLE IF NOT EXISTS briefings (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     briefing_date TEXT NOT NULL,
@@ -230,6 +278,8 @@ class SqliteStorage(StorageBackend):
                 CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);
                 CREATE INDEX IF NOT EXISTS idx_articles_feedback ON articles(feedback);
                 CREATE INDEX IF NOT EXISTS idx_articles_bookmark ON articles(is_bookmarked);
+                CREATE INDEX IF NOT EXISTS idx_archived_articles_timestamp ON archived_articles(timestamp DESC);
+                CREATE INDEX IF NOT EXISTS idx_archived_articles_archived_at ON archived_articles(archived_at DESC);
             """)
 
     def save_articles(self, articles: list[Article | dict[str, Any]]) -> int:
@@ -258,10 +308,11 @@ class SqliteStorage(StorageBackend):
         """
 
         params_list = []
+        archived_urls = self.get_archived_urls()
         for item in articles:
             art = Article.from_dict(item) if not isinstance(item, Article) else item
             url = art.link.strip()
-            if not url or url == "#":
+            if not url or url == "#" or url in archived_urls:
                 continue
 
             params_list.append((
@@ -381,13 +432,135 @@ class SqliteStorage(StorageBackend):
         if not clean_url:
             return False
         with self._get_connection() as conn:
-            cursor = conn.execute("SELECT 1 FROM articles WHERE url = ? LIMIT 1", (clean_url,))
+            cursor = conn.execute(
+                "SELECT 1 FROM articles WHERE url = ? UNION SELECT 1 FROM archived_articles WHERE url = ? LIMIT 1",
+                (clean_url, clean_url)
+            )
             return cursor.fetchone() is not None
 
     def get_known_urls(self) -> set[str]:
         with self._get_connection() as conn:
-            cursor = conn.execute("SELECT url FROM articles")
+            cursor = conn.execute("SELECT url FROM articles UNION SELECT url FROM archived_articles")
             return {row["url"] for row in cursor.fetchall()}
+
+    def archive_article(self, article: Article | dict[str, Any] | str) -> bool:
+        """
+        Verschiebt einen Artikel ins Archiv (archived_articles) und löscht ihn aus articles.
+        """
+        if isinstance(article, str):
+            clean_url = article.strip()
+            if not clean_url:
+                return False
+            existing = self.get_article(clean_url)
+            if existing:
+                art = existing
+            else:
+                art = Article(title="Archivierter Artikel", link=clean_url)
+        elif isinstance(article, Article):
+            art = article
+        elif isinstance(article, dict):
+            art = Article.from_dict(article)
+        else:
+            return False
+
+        clean_url = art.link.strip()
+        if not clean_url or clean_url == "#":
+            return False
+
+        now_iso = datetime.now(timezone.utc).isoformat()
+        insert_sql = """
+            INSERT INTO archived_articles (
+                url, title, summary, source, category, timestamp,
+                guid, published, source_url, feedback, archived_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                summary = excluded.summary,
+                source = excluded.source,
+                category = excluded.category,
+                timestamp = excluded.timestamp,
+                guid = COALESCE(excluded.guid, archived_articles.guid),
+                published = COALESCE(excluded.published, archived_articles.published),
+                source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                feedback = excluded.feedback,
+                archived_at = excluded.archived_at
+        """
+        with self._get_connection() as conn:
+            conn.execute(insert_sql, (
+                clean_url,
+                art.title,
+                art.summary,
+                art.source,
+                art.category,
+                art.timestamp,
+                art.guid,
+                art.published,
+                art.source_url,
+                art.feedback,
+                now_iso,
+            ))
+            conn.execute("DELETE FROM articles WHERE url = ?", (clean_url,))
+        return True
+
+    def get_archived_urls(self) -> set[str]:
+        """Gibt die Menge aller archivierten Artikel-URLs zurück."""
+        with self._get_connection() as conn:
+            cursor = conn.execute("SELECT url FROM archived_articles")
+            return {row["url"] for row in cursor.fetchall()}
+
+    def is_article_archived(self, url: str) -> bool:
+        """Prüft, ob eine URL bereits in archived_articles existiert."""
+        clean_url = url.strip()
+        if not clean_url:
+            return False
+        with self._get_connection() as conn:
+            cursor = conn.execute("SELECT 1 FROM archived_articles WHERE url = ? LIMIT 1", (clean_url,))
+            return cursor.fetchone() is not None
+
+    def get_archived_articles(self, limit: int = 100) -> list[Article]:
+        """Gibt die zuletzt archivierten Artikel zurück."""
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                "SELECT * FROM archived_articles ORDER BY timestamp DESC, archived_at DESC LIMIT ?",
+                (max(1, limit),)
+            )
+            rows = cursor.fetchall()
+
+        articles: list[Article] = []
+        for r in rows:
+            articles.append(Article.from_dict({
+                "link": r["url"],
+                "title": r["title"],
+                "summary": r["summary"] or "",
+                "source": r["source"] or "",
+                "category": r["category"] or "",
+                "timestamp": float(r["timestamp"] or 0.0),
+                "guid": r["guid"],
+                "published": r["published"],
+                "source_url": r["source_url"],
+                "feedback": int(r["feedback"] or 0),
+                "archived_at": r["archived_at"],
+            }))
+        return articles
+
+    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+        """
+        Löscht archivierte Artikel, die älter als max_age_weeks Wochen sind.
+        """
+        if max_age_weeks is None or float(max_age_weeks) <= 0:
+            return 0
+        SECONDS_PER_WEEK = 7.0 * 24 * 3600
+        cutoff_ts = time.time() - (float(max_age_weeks) * SECONDS_PER_WEEK)
+        cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
+
+        sql = """
+            DELETE FROM archived_articles
+            WHERE (timestamp > 0.0 AND timestamp < ?)
+               OR ((timestamp IS NULL OR timestamp <= 0.0) AND archived_at < ?)
+        """
+        with self._get_connection() as conn:
+            cursor = conn.execute(sql, (cutoff_ts, cutoff_iso))
+            return cursor.rowcount if cursor.rowcount >= 0 else 0
 
     def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_feedback = 1 if feedback > 0 else (-1 if feedback < 0 else 0)
@@ -607,6 +780,21 @@ class TursoStorage(StorageBackend):
             );
             """, []),
             ("""
+            CREATE TABLE IF NOT EXISTS archived_articles (
+                url TEXT PRIMARY KEY,
+                title TEXT NOT NULL,
+                summary TEXT DEFAULT '',
+                source TEXT DEFAULT '',
+                category TEXT DEFAULT '',
+                timestamp REAL DEFAULT 0.0,
+                guid TEXT,
+                published TEXT,
+                source_url TEXT,
+                feedback INTEGER DEFAULT 0,
+                archived_at TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+            """, []),
+            ("""
             CREATE TABLE IF NOT EXISTS briefings (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 briefing_date TEXT NOT NULL,
@@ -626,6 +814,8 @@ class TursoStorage(StorageBackend):
             ("CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);", []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_feedback ON articles(feedback);", []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_bookmark ON articles(is_bookmarked);", []),
+            ("CREATE INDEX IF NOT EXISTS idx_archived_articles_timestamp ON archived_articles(timestamp DESC);", []),
+            ("CREATE INDEX IF NOT EXISTS idx_archived_articles_archived_at ON archived_articles(archived_at DESC);", []),
         ]
         self._execute_pipeline(stmts)
 
@@ -653,10 +843,11 @@ class TursoStorage(StorageBackend):
         """
 
         stmts: list[tuple[str, list[Any]]] = []
+        archived_urls = self.get_archived_urls()
         for item in articles:
             art = Article.from_dict(item) if not isinstance(item, Article) else item
             url = art.link.strip()
-            if not url or url == "#":
+            if not url or url == "#" or url in archived_urls:
                 continue
 
             stmts.append((upsert_sql, [
@@ -783,17 +974,147 @@ class TursoStorage(StorageBackend):
         if not clean:
             return False
         res = self._execute_pipeline([
-            ("SELECT 1 FROM articles WHERE url = ? LIMIT 1", [clean])
+            (
+                "SELECT 1 FROM articles WHERE url = ? UNION SELECT 1 FROM archived_articles WHERE url = ? LIMIT 1",
+                [clean, clean]
+            )
         ])
         if not res or not res[0].get("rows"):
             return False
         return len(res[0]["rows"]) > 0
 
     def get_known_urls(self) -> set[str]:
-        res = self._execute_pipeline([("SELECT url FROM articles", [])])
+        res = self._execute_pipeline([
+            ("SELECT url FROM articles UNION SELECT url FROM archived_articles", [])
+        ])
         if not res or not res[0].get("rows"):
             return set()
         return {r["url"] for r in res[0]["rows"] if "url" in r}
+
+    def archive_article(self, article: Article | dict[str, Any] | str) -> bool:
+        """
+        Verschiebt einen Artikel ins Archiv (archived_articles) und löscht ihn aus articles.
+        """
+        if isinstance(article, str):
+            clean_url = article.strip()
+            if not clean_url:
+                return False
+            existing = self.get_article(clean_url)
+            if existing:
+                art = existing
+            else:
+                art = Article(title="Archivierter Artikel", link=clean_url)
+        elif isinstance(article, Article):
+            art = article
+        elif isinstance(article, dict):
+            art = Article.from_dict(article)
+        else:
+            return False
+
+        clean_url = art.link.strip()
+        if not clean_url or clean_url == "#":
+            return False
+
+        now_iso = datetime.now(timezone.utc).isoformat()
+        upsert_sql = """
+            INSERT INTO archived_articles (
+                url, title, summary, source, category, timestamp,
+                guid, published, source_url, feedback, archived_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                summary = excluded.summary,
+                source = excluded.source,
+                category = excluded.category,
+                timestamp = excluded.timestamp,
+                guid = COALESCE(excluded.guid, archived_articles.guid),
+                published = COALESCE(excluded.published, archived_articles.published),
+                source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                feedback = excluded.feedback,
+                archived_at = excluded.archived_at
+        """
+        stmts = [
+            (upsert_sql, [
+                clean_url,
+                art.title,
+                art.summary,
+                art.source,
+                art.category,
+                art.timestamp,
+                art.guid,
+                art.published,
+                art.source_url,
+                art.feedback,
+                now_iso,
+            ]),
+            ("DELETE FROM articles WHERE url = ?", [clean_url]),
+        ]
+        self._execute_pipeline(stmts)
+        return True
+
+    def get_archived_urls(self) -> set[str]:
+        """Gibt die Menge aller archivierten Artikel-URLs zurück."""
+        res = self._execute_pipeline([("SELECT url FROM archived_articles", [])])
+        if not res or not res[0].get("rows"):
+            return set()
+        return {r["url"] for r in res[0]["rows"] if "url" in r}
+
+    def is_article_archived(self, url: str) -> bool:
+        """Prüft, ob eine URL bereits in archived_articles existiert."""
+        clean = url.strip()
+        if not clean:
+            return False
+        res = self._execute_pipeline([
+            ("SELECT 1 FROM archived_articles WHERE url = ? LIMIT 1", [clean])
+        ])
+        if not res or not res[0].get("rows"):
+            return False
+        return len(res[0]["rows"]) > 0
+
+    def get_archived_articles(self, limit: int = 100) -> list[Article]:
+        """Gibt die zuletzt archivierten Artikel zurück."""
+        res = self._execute_pipeline([
+            ("SELECT * FROM archived_articles ORDER BY timestamp DESC, archived_at DESC LIMIT ?", [max(1, limit)])
+        ])
+        if not res or not res[0].get("rows"):
+            return []
+
+        articles: list[Article] = []
+        for r in res[0].get("rows", []):
+            articles.append(Article.from_dict({
+                "link": r["url"],
+                "title": r["title"],
+                "summary": r["summary"] or "",
+                "source": r["source"] or "",
+                "category": r["category"] or "",
+                "timestamp": float(r["timestamp"] or 0.0),
+                "guid": r["guid"],
+                "published": r["published"],
+                "source_url": r["source_url"],
+                "feedback": int(r["feedback"] or 0),
+                "archived_at": r.get("archived_at"),
+            }))
+        return articles
+
+    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+        """
+        Löscht archivierte Artikel, die älter als max_age_weeks Wochen sind.
+        """
+        if max_age_weeks is None or float(max_age_weeks) <= 0:
+            return 0
+        SECONDS_PER_WEEK = 7.0 * 24 * 3600
+        cutoff_ts = time.time() - (float(max_age_weeks) * SECONDS_PER_WEEK)
+        cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
+
+        sql = """
+            DELETE FROM archived_articles
+            WHERE (timestamp > 0.0 AND timestamp < ?)
+               OR ((timestamp IS NULL OR timestamp <= 0.0) AND archived_at < ?)
+        """
+        res = self._execute_pipeline([(sql, [cutoff_ts, cutoff_iso])])
+        if not res:
+            return 0
+        return int(res[0].get("affected_rows", 0))
 
     def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_val = 1 if feedback > 0 else (-1 if feedback < 0 else 0)

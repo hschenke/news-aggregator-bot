@@ -64,8 +64,26 @@ def run_pipeline() -> None:
         gemini_model = os.getenv("GEMINI_MODEL", "gemini-3.8-flash")
         storage.save_briefing(briefing_date, summary, gemini_model)
         print(f"      -> 💾 {saved_count} Artikel & KI-Briefing in Datenbank archiviert.")
+
+        # 5. Schritt: Archiv-Bereinigung (Morgendlicher Cleanup beim KI Briefing Schedule)
+        from src.aggregator import load_sources, DEFAULT_MAX_ARTICLE_AGE_WEEKS
+        sources_cfg = load_sources()
+        settings = sources_cfg.get("settings", {})
+        max_age_weeks_raw = settings.get("max_article_age_weeks")
+        if max_age_weeks_raw is None:
+            max_age_weeks_raw = settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
+        try:
+            max_age_weeks = int(max_age_weeks_raw) if max_age_weeks_raw is not None else DEFAULT_MAX_ARTICLE_AGE_WEEKS
+        except (ValueError, TypeError):
+            max_age_weeks = DEFAULT_MAX_ARTICLE_AGE_WEEKS
+
+        cleaned_count = storage.cleanup_archive(max_age_weeks=max_age_weeks)
+        if cleaned_count > 0:
+            print(f"      -> 🧹 Archiv-Bereinigung: {cleaned_count} veraltete Artikel (> {max_age_weeks} Wochen) bereinigt.")
+        else:
+            print(f"      -> 🧹 Archiv-Bereinigung: Keine veralteten Artikel im Archiv (> {max_age_weeks} Wochen).")
     except Exception as exc:
-        logger.warning("Datenbank-Archivierung übersprungen oder fehlgeschlagen: %s", exc)
+        logger.warning("Datenbank-Archivierung oder Archiv-Bereinigung fehlgeschlagen: %s", exc)
 
     print("\n" + "=" * 60)
     print("✨ Pipeline erfolgreich abgeschlossen!")

@@ -26,6 +26,7 @@ class Article:
     published_parsed: Any = None
     source_url: str | None = None
     feedback: int = 0  # -1 = dislike, 0 = neutral, 1 = like
+    archived_at: str | None = None
     extra: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
@@ -44,7 +45,7 @@ class Article:
         known_fields = {
             "title", "link", "summary", "source", "category",
             "timestamp", "guid", "published", "published_parsed", "source_url",
-            "feedback"
+            "feedback", "archived_at"
         }
         known_kwargs: dict[str, Any] = {}
         extra: dict[str, Any] = {}
@@ -70,6 +71,9 @@ class Article:
         except (ValueError, TypeError):
             feedback_int = 0
 
+        archived_at_val = known_kwargs.get("archived_at")
+        archived_at_str = str(archived_at_val).strip() if archived_at_val else None
+
         return cls(
             title=title,
             link=link,
@@ -82,6 +86,7 @@ class Article:
             published_parsed=known_kwargs.get("published_parsed"),
             source_url=known_kwargs.get("source_url"),
             feedback=feedback_int,
+            archived_at=archived_at_str,
             extra=extra,
         )
 
