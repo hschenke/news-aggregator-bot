@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Kicker</link>
     <description>RSS-Feed für die Quelle 'Kicker' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 11:30:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 11:42:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-kicker.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TV oder Stream: Wer überträgt TSV 1860 München gegen die SpVgg Ansbach live?</title>
+      <link>https://www.kicker.de/tv-oder-stream-wer-uebertraegt-tsv-1860-muenchen-gegen-die-spvgg-ansbach-live-1257511/artikel#omrss</link>
+      <guid isPermaLink="false">https://www.kicker.de/tv-oder-stream-wer-uebertraegt-tsv-1860-muenchen-gegen-die-spvgg-ansbach-live-1257511/artikel#omrss</guid>
+      <pubDate>Thu, 01 Oct 2026 11:35:53 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
+      <description><![CDATA[Nach der ersten Saisonniederlage trifft der TSV 1860 München am Samstagnachmittag auf die formstarke SpVgg Ansbach. Wo ihr die Partie live verfolgen könnt, erfahrt ihr hier.]]></description>
+    </item>
     <item>
       <title>Nächste Stufe im Wettbetrug? 448 türkische Funktionäre vor Disziplinarkommission</title>
       <link>https://www.kicker.de/naechste-stufe-im-wettbetrug-448-tuerkische-funktionaere-vor-disziplinarkommission-1257513/artikel#omrss</link>
@@ -178,15 +187,6 @@
       <category>Fußball</category>
       <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
       <description><![CDATA[Veljko Paunovic erwartet nach der jüngsten Niederlage eine entschlossene Reaktion der DFB-Elf. Der serbische Nationaltrainer sieht Deutschland unter Jürgen Klopp als enorm starken Gegner.]]></description>
-    </item>
-    <item>
-      <title>"Selbst wenn es Pelé oder Maradona wären": Portugal-Coach über CR7</title>
-      <link>https://www.kicker.de/selbst-wenn-es-pel-oder-maradona-waeren-portugal-coach-ueber-cr7-1257424/video#omrss</link>
-      <guid isPermaLink="false">https://www.kicker.de/selbst-wenn-es-pel-oder-maradona-waeren-portugal-coach-ueber-cr7-1257424/video#omrss</guid>
-      <pubDate>Thu, 01 Oct 2026 06:59:06 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://newsfeed.kicker.de/news/fussball">Kicker</source>
-      <description><![CDATA[Stunden vor dem Abschied von Cristiano Ronaldo aus dem Teamcamp der Portugiesen zeigte sein Coach Jorge Jesus noch Verständnis für den Frust des 41-Jährigen.]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 11:30:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 11:42:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>heise+ | AGO-Filmprozessor im Test: Analoge Filme zu Hause entwickeln</title>
+      <link>https://www.heise.de/ratgeber/AGO-Filmprozessor-im-Test-Analoge-Filme-zu-Hause-entwickeln-11463440.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11463440</guid>
+      <pubDate>Thu, 01 Oct 2026 11:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Filme selbst entwickeln, aber ohne ewiges Tankschütteln: Der AGO-Filmprozessor verspricht mehr Komfort – wir zeigen, für wen er sich wirklich lohnt.]]></description>
+    </item>
+    <item>
+      <title>WhatsApp: Neue Jugendschutztools für Eltern von Teenagern</title>
+      <link>https://www.heise.de/news/WhatsApp-Neue-Jugendschutztools-fuer-Eltern-von-Teenagern-11472569.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472569</guid>
+      <pubDate>Thu, 01 Oct 2026 11:26:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[WhatsApp führt neue Funktionen ein, mit denen Eltern ihre Teenager bei der Einrichtung des Messengers unterstützen und die Nutzung besser kontrollieren können.]]></description>
+    </item>
     <item>
       <title>Reverse-Proxy fürs Homelab: Pangolin 1.24 bringt Selbstbau-VPN</title>
       <link>https://www.heise.de/news/Reverse-Proxy-fuers-Homelab-Pangolin-1-24-bringt-Selbstbau-VPN-11472441.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -1386,15 +1404,6 @@
       <description><![CDATA[SMS nur, wenn die E-Mail nicht ankommt: Apprise 2.0 lernt Eskalationsstufen, Zeitlimits und gezielte Wiederholungen. Nicht alles bleibt kompatibel.]]></description>
     </item>
     <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
-      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
-    </item>
-    <item>
       <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
       <link>https://www.heise.de/news/Cyberangriff-auf-Datenaustauschdienst-FTAPI-11469629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11469629</guid>
@@ -1402,6 +1411,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
+    </item>
+    <item>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>Zahlen, bitte! – Saturn-Hexagon: 29.000 Kilometer breites mysteriöses Sechseck</title>
@@ -1654,15 +1672,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein Update schließt diverse Lücken in Zimbra, die etwa die Kontoübernahme oder das Unterschieben von Schadcode ermöglichen.]]></description>
-    </item>
-    <item>
-      <title>Nach sechs Jahrzehnten: Sony stellt 2027 nicht auf der CES aus</title>
-      <link>https://www.heise.de/news/CES-2027-Sony-verzichtet-erstmals-seit-1967-komplett-auf-die-Technikmesse-11468978.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11468978</guid>
-      <pubDate>Tue, 29 Sep 2026 06:09:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sony wird im Januar 2027 nicht auf der CES ausstellen. Damit fehlt von Sony-Unternehmen erstmals seit 1967 auf der Technikmesse in Las Vegas jede Spur.]]></description>
     </item>
     <item>
       <title>When oil prices spike, where does the money go?</title>
