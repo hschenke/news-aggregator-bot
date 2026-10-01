@@ -210,8 +210,34 @@ def trigger_rss_update_workflow() -> dict[str, Any]:
 
 
 
-def load_sources(config_path: str = "config/sources.yaml") -> dict[str, Any]:
-    """Lädt die Konfiguration aus sources.yaml und garantiert alphabetische Kategoriensortierung."""
+def reconcile_prompt_templates(config: dict[str, Any]) -> bool:
+    """Gleicht gespeicherte Prompt-Vorlagen in der Konfiguration mit den kanonischen Standards ab.
+
+    Aktualisiert leere oder veraltete Prompts (z. B. ohne Like/Dislike-Direktiven)
+    automatisch 1:1 auf DEFAULT_MAIN_PROMPT_TEMPLATE bzw. DEFAULT_DIRECTIVES.
+    Gibt True zurück, wenn Änderungen vorgenommen wurden.
+    """
+    from src.summarizer import DEFAULT_MAIN_PROMPT_TEMPLATE, DEFAULT_DIRECTIVES
+
+    settings = config.setdefault("settings", {})
+    changed = False
+
+    current_main = settings.get("custom_main_prompt")
+    if not current_main or not str(current_main).strip() or "⭐ [NUTZER-FAVORIT / GELIKED]" not in str(current_main):
+        settings["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+        changed = True
+
+    current_directives = settings.get("custom_prompt_directives")
+    if not current_directives or not str(current_directives).strip():
+        settings["custom_prompt_directives"] = DEFAULT_DIRECTIVES.strip()
+        changed = True
+
+    return changed
+
+
+def load_sources(config_path: str = "config/sources.yaml", auto_reconcile: bool = True) -> dict[str, Any]:
+    """Lädt die Konfiguration aus sources.yaml, garantiert alphabetische Kategoriensortierung
+    und gleicht Prompt-Vorlagen bei Bedarf 1:1 mit den Code-Standards ab."""
     path = get_sources_path(config_path)
     if not path.exists():
         raise FileNotFoundError(f"Konfigurationsdatei {path} nicht gefunden.")
@@ -227,6 +253,9 @@ def load_sources(config_path: str = "config/sources.yaml") -> dict[str, Any]:
     for cat in data["categories"]:
         for f in cat.get("feeds", []):
             f.pop("max_items", None)
+
+    if auto_reconcile:
+        reconcile_prompt_templates(data)
 
     return data
 

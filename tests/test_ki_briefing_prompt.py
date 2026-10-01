@@ -106,17 +106,48 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertEqual(set(candidates_36), set(expected_models))
         self.assertEqual(len(candidates_36), len(expected_models))
 
-    def test_prompt_template_and_sources_include_feedback_directives(self):
-        """Stellt sicher, dass sowohl DEFAULT_MAIN_PROMPT_TEMPLATE als auch sources.yaml die Like/Dislike-Regeln enthalten."""
+    def test_sources_yaml_and_canonical_prompt_match_strictly(self):
+        """Prüft strikte 1:1 Übereinstimmung zwischen sources.yaml und kanonischem DEFAULT_MAIN_PROMPT_TEMPLATE / DIRECTIVES."""
         from src.aggregator import load_sources
 
-        self.assertIn("⭐ [NUTZER-FAVORIT / GELIKED]", DEFAULT_MAIN_PROMPT_TEMPLATE)
-        self.assertIn("⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]", DEFAULT_MAIN_PROMPT_TEMPLATE)
+        sources = load_sources(auto_reconcile=False)
+        yaml_prompt = sources.get("settings", {}).get("custom_main_prompt", "").strip()
+        canonical_prompt = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+        self.assertEqual(
+            yaml_prompt,
+            canonical_prompt,
+            "custom_main_prompt in sources.yaml weicht 1:1 von DEFAULT_MAIN_PROMPT_TEMPLATE ab!",
+        )
 
-        sources = load_sources()
-        yaml_prompt = sources.get("settings", {}).get("custom_main_prompt", "")
-        self.assertIn("⭐ [NUTZER-FAVORIT / GELIKED]", yaml_prompt)
-        self.assertIn("⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]", yaml_prompt)
+        yaml_directives = sources.get("settings", {}).get("custom_prompt_directives", "").strip()
+        canonical_directives = DEFAULT_DIRECTIVES.strip()
+        self.assertEqual(
+            yaml_directives,
+            canonical_directives,
+            "custom_prompt_directives in sources.yaml weicht 1:1 von DEFAULT_DIRECTIVES ab!",
+        )
+
+    def test_reconcile_prompt_templates_auto_repairs_legacy_or_missing_prompts(self):
+        """Prüft, dass der Abgleich veraltete Prompts ohne Like-Direktiven oder leere Prompts automatisch 1:1 repariert."""
+        from src.aggregator import reconcile_prompt_templates
+
+        # Fall 1: Veralteter Prompt ohne Like/Dislike-Direktiven
+        legacy_config = {"settings": {"custom_main_prompt": "Alter Prompt ohne Likes"}}
+        changed = reconcile_prompt_templates(legacy_config)
+        self.assertTrue(changed)
+        self.assertEqual(legacy_config["settings"]["custom_main_prompt"], DEFAULT_MAIN_PROMPT_TEMPLATE.strip())
+        self.assertEqual(legacy_config["settings"]["custom_prompt_directives"], DEFAULT_DIRECTIVES.strip())
+
+        # Fall 2: Bereits aktueller Prompt -> Keine Änderung nötig
+        changed_again = reconcile_prompt_templates(legacy_config)
+        self.assertFalse(changed_again)
+
+        # Fall 3: Leere Konfiguration
+        empty_config = {}
+        changed_empty = reconcile_prompt_templates(empty_config)
+        self.assertTrue(changed_empty)
+        self.assertEqual(empty_config["settings"]["custom_main_prompt"], DEFAULT_MAIN_PROMPT_TEMPLATE.strip())
+        self.assertEqual(empty_config["settings"]["custom_prompt_directives"], DEFAULT_DIRECTIVES.strip())
 
 
 if __name__ == "__main__":
