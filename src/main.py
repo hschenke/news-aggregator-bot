@@ -45,7 +45,7 @@ def run_pipeline() -> None:
         return
 
     # 2. Schritt: KI-Zusammenfassung generieren
-    gemini_model = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
+    gemini_model = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
     print(f"\n[2/3] 🧠 Generiere kuratierte Zusammenfassung mit LLM (bevorzugt: {gemini_model})...", flush=True)
     summary = summarize_news_with_gemini(news, model=gemini_model)
     print("      -> Zusammenfassung erfolgreich generiert.", flush=True)

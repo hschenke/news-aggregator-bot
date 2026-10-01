@@ -1,6 +1,7 @@
 import streamlit as st
 import sys
 import os
+import logging
 import hmac
 import hashlib
 import time
@@ -14,6 +15,15 @@ from typing import Any, Dict, List, Optional
 project_root = Path(__file__).resolve().parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
+
+# Streamlit Konsole Logging (INFO auf sys.stdout für Streamlit Cloud "Manage app")
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    datefmt="%H:%M:%S",
+    stream=sys.stdout,
+)
+logger = logging.getLogger("news_bot.webapp")
 
 from src.aggregator import (
     collect_all_news,
@@ -922,7 +932,13 @@ if not check_password():
 # --- Caching Data Loading ---
 @st.cache_data(ttl=1800, show_spinner=False)  # 30 Minuten Cache für News
 def get_news_data():
-    return collect_all_news()
+    logger.info("📡 [Streamlit] Lade konfigurierte RSS-Feeds...")
+    t0 = time.time()
+    data = collect_all_news()
+    duration = time.time() - t0
+    total_articles = sum(len(items) for items in data.values())
+    logger.info("✅ [Streamlit] %d Artikel über %d Kategorien in %.2fs geladen.", total_articles, len(data), duration)
+    return data
 
 def get_sources_config():
     """Liest die Konfiguration direkt und unzensiert/ungecacht von der Festplatte."""
@@ -1088,6 +1104,7 @@ st.sidebar.markdown("---")
 
 # Refresh Button
 if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Liest alle RSS-Feeds frisch ein"):
+    logger.info("🔄 [Streamlit] Nutzer klickte 'Feeds neu laden'. Cache wird geleert.")
     st.cache_data.clear()
     st.toast("Feeds wurden aktualisiert!", icon="📰")
     st.rerun()
@@ -2126,7 +2143,10 @@ with tab_ki:
         if not is_admin:
             st.warning("Keine Berechtigung zur Generierung. Bitte als Admin anmelden.")
         else:
+            total_items = sum(len(items) for items in news_data.values())
+            logger.info("🧠 [Streamlit] Starte KI-Briefing-Generierung mit Modell '%s' für %d Artikel...", selected_model, total_items)
             with st.spinner(f"Gemini ({selected_model}) analysiert die Artikel und erstellt das Briefing..."):
+                t0_gen = time.time()
                 ai_summary = summarize_news_with_gemini(
                     news_data,
                     api_key=user_api_key,
@@ -2134,22 +2154,26 @@ with tab_ki:
                     main_prompt_template=ki_main_prompt,
                     custom_directives=ki_prompt_directives,
                 )
+                dur_gen = time.time() - t0_gen
+                logger.info("✨ [Streamlit] KI-Briefing erfolgreich generiert (%d Zeichen in %.2fs).", len(ai_summary), dur_gen)
                 st.session_state["cached_summary"] = ai_summary
                 st.session_state["summary_timestamp"] = get_local_now().strftime("%d.%m.%Y, %H:%M Uhr")
                 save_pool_state(news_data)
                 try:
                     from src.rss_generator import export_briefing_rss
                     export_briefing_rss(ai_summary)
-                except Exception:
-                    pass
+                    logger.info("📡 [Streamlit] briefing.xml erfolgreich aktualisiert.")
+                except Exception as exc_rss:
+                    logger.warning("Briefing-RSS konnte nicht exportiert werden: %s", exc_rss)
                 try:
                     from src.storage import get_storage
                     storage_gen = get_storage()
                     briefing_date = get_local_now().strftime("%Y-%m-%d")
-                    storage_gen.save_briefing(briefing_date, ai_summary, selected_model)
-                    storage_gen.cleanup_archive(max_age_weeks=active_max_age_weeks)
+                    saved_id = storage_gen.save_briefing(briefing_date, ai_summary, selected_model)
+                    cleaned_count = storage_gen.cleanup_archive(max_age_weeks=active_max_age_weeks)
+                    logger.info("💾 [Streamlit] Briefing in DB archiviert (ID: %s, Modell: %s), %d alte Artikel bereinigt.", saved_id, selected_model, cleaned_count)
                 except Exception as exc_sg:
-                    logger.debug("Briefing-Speicherung oder Cleanup in Webapp übersprungen: %s", exc_sg)
+                    logger.warning("Briefing-Speicherung oder Cleanup in Webapp fehlgeschlagen: %s", exc_sg)
 
     if "cached_summary" in st.session_state:
         st.markdown(f"*(Erstellt am: {st.session_state.get('summary_timestamp', '')})*")

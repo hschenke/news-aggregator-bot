@@ -94,6 +94,14 @@ class TestPipelinePerformance(unittest.TestCase):
         self.assertIn("GEMINI_MODEL", workflow_text)
         self.assertIn("TURSO_TIMEOUT: \"30.0\"", workflow_text)
 
+    def test_streamlit_logging_configured_in_entrypoints(self):
+        """Stellt sicher, dass streamlit_app.py, app.py und src/webapp.py Logging für die Streamlit Konsole konfigurieren."""
+        for path_str in ["streamlit_app.py", "app.py"]:
+            content = Path(path_str).read_text(encoding="utf-8")
+            self.assertIn("logging.basicConfig", content)
+        webapp_content = Path("src/webapp.py").read_text(encoding="utf-8")
+        self.assertIn("logger = logging.getLogger", webapp_content)
+
 
 if __name__ == "__main__":
     unittest.main()

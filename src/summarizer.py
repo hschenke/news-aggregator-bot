@@ -384,6 +384,8 @@ def summarize_news_with_gemini(
                         contents=prompt,
                     )
                 if response and response.text:
+                    logger.info("✅ Modell %s hat erfolgreich geantwortet (%d Zeichen).", model_name, len(response.text))
+                    print(f"      -> Modell {model_name} erfolgreich: {len(response.text)} Zeichen generiert.", flush=True)
                     cleaned_result = _clean_and_enhance_briefing(response.text, category_links)
                     return cleaned_result
             except Exception as model_err:
