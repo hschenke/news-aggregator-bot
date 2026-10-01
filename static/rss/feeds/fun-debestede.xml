@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>News Bot — Fun</title>
-    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun</link>
-    <description>Aggregierte Nachrichten für die Kategorie 'Fun' aus dem News Aggregator Bot.</description>
+    <title>News Bot — debeste.de (Fun)</title>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=debeste.de</link>
+    <description>RSS-Feed für die Quelle 'debeste.de' (Kategorie: Fun).</description>
     <language>de</language>
     <lastBuildDate>Thu, 01 Oct 2026 12:10:04 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/fun.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-debestede.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TÜV-Schreck..</title>
       <link>https://debeste.de/626271/T-V-Schreck</link>
@@ -241,15 +241,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Erste Regel des Programmierens: Wenn es funktioniert, bloß nicht anfassen!]]></description>
-    </item>
-    <item>
-      <title>Mann rempelt Frau an der Hotelrezeption an.</title>
-      <link>https://www.hahaha.de/witze/menschen/frauen/469/mann-rempelt-frau-an-der-hotelrezeption-an.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/frauen/469/mann-rempelt-frau-an-der-hotelrezeption-an.html</guid>
-      <pubDate>Wed, 30 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Mann rempelt Frau an der Hotelrezeption an. Beide gucken etwas verstört. Mann: "Wenn Ihr Herz so weich ist wie Ihr Busen, werden Sie mir verzeihen." Frau: "Wenn Ihr Ding so hart ist wie Ihr Ellenbogen, bin ich in Zimmer 246."]]></description>
     </item>
     <item>
       <title>Das kann man nur einmal sehen und nie wieder.</title>
@@ -675,15 +666,6 @@
       <description><![CDATA[Dieser Traktor hat ewigen TÜV.]]></description>
     </item>
     <item>
-      <title>Moses kam vom Berg herab, um den Wartenden</title>
-      <link>https://www.hahaha.de/witze/politik-gesellschaft/kirche/11661/moses-kam-vom-berg-herab-um-den-wartenden.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/politik-gesellschaft/kirche/11661/moses-kam-vom-berg-herab-um-den-wartenden.html</guid>
-      <pubDate>Tue, 29 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Moses kam vom Berg herab, um den Wartenden Gottes Botschaft zu verkünden: "Also Leute, es gibt eine gute und eine schlechte Nachricht. Die Gute ist: Ich hab ihn runter auf zehn. Die Schlechte ist: Ehebruch ist immer noch dabei!"]]></description>
-    </item>
-    <item>
       <title>Paris, 1884. Die fertiggestellte Freiheitsstatue, bereit..</title>
       <link>https://debeste.de/626031/Paris,-1884-Die-fertiggestellte-Freiheitsstatue,-bereit</link>
       <guid isPermaLink="false">https://debeste.de/626031/Paris,-1884-Die-fertiggestellte-Freiheitsstatue,-bereit</guid>
@@ -817,87 +799,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Frauen in den 70ern. Keine Tattoos, keine Nasenpiercings, keine lila Haare - Und keine Eier.]]></description>
-    </item>
-    <item>
-      <title>Ostfriesland sendet ein Fernschreiben an</title>
-      <link>https://www.hahaha.de/witze/laender/ostfriesen/7082/ostfriesland-sendet-ein-fernschreiben-an.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/laender/ostfriesen/7082/ostfriesland-sendet-ein-fernschreiben-an.html</guid>
-      <pubDate>Mon, 28 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Ostfriesland sendet ein Fernschreiben an die Volksrepublik China: "Erklären den Krieg, haben 5 Panzer und 221 Soldaten." Antwort der Chinesen: "Erklärung angenommen, haben 18000 Panzer und 5 Millionen Soldaten." Darauf Ostfriesland: "Nehmen Kriegserklärung zurück, haben nicht genug Betten für die Kriegsgefangenen..."]]></description>
-    </item>
-    <item>
-      <title>Wie setzt sich die ideale Fußballmannschaft</title>
-      <link>https://www.hahaha.de/witze/sport/fussball/13472/wie-setzt-sich-die-ideale-fussballmannschaft.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/sport/fussball/13472/wie-setzt-sich-die-ideale-fussballmannschaft.html</guid>
-      <pubDate>Sun, 27 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Wie setzt sich die ideale Fußballmannschaft zusammen? - In den Sturm kommen Juden, denn die dürfen nicht verfolgt werden. - Ins Mittelfeld kommen Schwarze, Chinesen und Araber, denn die machen das Spiel bunt. - In die Verteidigung kommen Schwule, denn die sorgen für Druck von hinten. - Und ins Tor kommt eine 50-jähr...]]></description>
-    </item>
-    <item>
-      <title>Kommt ein junger Mann zum Apotheker und sagt:</title>
-      <link>https://www.hahaha.de/witze/berufe/aerzte/10943/kommt-ein-junger-mann-zum-apotheker-und-sagt.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/10943/kommt-ein-junger-mann-zum-apotheker-und-sagt.html</guid>
-      <pubDate>Sat, 26 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Kommt ein junger Mann zum Apotheker und sagt: "Heute Abend bin ich bei den Eltern meiner neuen Freundin zum Essen eingeladen. Hinterher läuft bestimmt noch was. Haben Sie vielleicht ein besonders gutes Kondom?" - "Oh ja. Kostet aber fünf Euro das Stück." - "Okay. Den nehme ich." Bezahlt und geht. Zehn Minuten später...]]></description>
-    </item>
-    <item>
-      <title>Verlegen kommt Jochen in die Sprechstunde:</title>
-      <link>https://www.hahaha.de/witze/berufe/aerzte/10935/verlegen-kommt-jochen-in-die-sprechstunde.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/10935/verlegen-kommt-jochen-in-die-sprechstunde.html</guid>
-      <pubDate>Fri, 25 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Verlegen kommt Jochen in die Sprechstunde: "Herr Doktor, mein Freund war neulich in einem Bordell, und jetzt hat er Angst, dass er sich was eingefangen hat. Was können Sie empfehlen?" - "Hm, am besten ziehen Sie mal die Hose aus und zeigen mir Ihren Freund."]]></description>
-    </item>
-    <item>
-      <title>Helmut Kohl und Franz Josef Strauß kommen</title>
-      <link>https://www.hahaha.de/witze/politik-gesellschaft/politiker/7002/helmut-kohl-und-franz-josef-strauss-kommen.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/politik-gesellschaft/politiker/7002/helmut-kohl-und-franz-josef-strauss-kommen.html</guid>
-      <pubDate>Thu, 24 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Helmut Kohl und Franz Josef Strauß kommen in den Himmel. Gott, der auf einem goldenen Thron sitzt, lässt zuerst Helmut zu sich kommen. Als dieser vor ihm steht, fragt er ihn: "Nun mein Sohn! Was hast du Gutes in deinem irdischen Leben getan?" - "Ich war Bundeskanzler in einer christlichen Partei." - "Gut! Du darfst ...]]></description>
-    </item>
-    <item>
-      <title>Sonntagmorgens. Der Vater will die Mutter</title>
-      <link>https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</guid>
-      <pubDate>Wed, 23 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Sonntagmorgens. Der Vater will die Mutter besteigen, aber wohin mit dem fünfjährigen Sohn? Kurzerhand schickt der Vater ihn auf den Balkon: "Schau mal, was da so los ist und erzähl es uns." Der Vater ist gerade voll bei der Sache, als der Kleine ruft: "Schmidts haben sich ein neues Auto gekauft, einen Golf!" Keuchen...]]></description>
-    </item>
-    <item>
-      <title>Ein junges Paar erschien im Krankenhaus,</title>
-      <link>https://www.hahaha.de/witze/menschen/allgemein/14500/ein-junges-paar-erschien-im-krankenhaus.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/allgemein/14500/ein-junges-paar-erschien-im-krankenhaus.html</guid>
-      <pubDate>Tue, 22 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Ein junges Paar erschien im Krankenhaus, da die Geburt des ersten Kindes unmittelbar bevorstand. Der Gynäkologe hatte einige Zeit als Arzt in Afrika verbracht und dort von einem Medizinmann eine Beschwörungstechnik erlernt, bei welcher ein Teil der Wehenschmerzen auf den Vater übertragen werden konnte. Das Paar war ...]]></description>
-    </item>
-    <item>
-      <title>Der Medizinprofessor prüft seine Studenten.</title>
-      <link>https://www.hahaha.de/witze/berufe/aerzte/153/der-medizinprofessor-prueft-seine-studenten.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/153/der-medizinprofessor-prueft-seine-studenten.html</guid>
-      <pubDate>Mon, 21 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Der Medizinprofessor prüft seine Studenten. Als erstes ruft er eine junge Studentin auf: "Sagen Sie mir mal, welcher menschliche Körperteil sich im Zustande der Erregung bis zum sechsfachen vergrößern kann." Die Studentin errötet: "Aber Herr Professor, sollten Sie das nicht lieber einen männlichen Studenten fragen?"...]]></description>
-    </item>
-    <item>
-      <title>Der Ehemann findet seine Frau mit dem Arzt</title>
-      <link>https://www.hahaha.de/witze/berufe/aerzte/13239/der-ehemann-findet-seine-frau-mit-dem-arzt.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/13239/der-ehemann-findet-seine-frau-mit-dem-arzt.html</guid>
-      <pubDate>Sun, 20 Sep 2026 23:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Der Ehemann findet seine Frau mit dem Arzt im Bett. Der Arzt versucht zu erklären: "Ich wollte nur das Fieber messen!" Der Mann holt seelenruhig sein Gewehr aus dem Schrank und meint: "Jetzt ziehen Sie ihn ganz langsam raus und wenn keine Zahlen draufstehen, dann gnade Ihnen Gott!"]]></description>
     </item>
   </channel>
 </rss>
