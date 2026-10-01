@@ -4,14 +4,16 @@ import re
 import urllib.parse
 import logging
 from typing import Any
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 logger = logging.getLogger(__name__)
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
-
-load_dotenv()
 
 AVAILABLE_GEMINI_MODELS: list[str] = [
     "gemini-3.8-flash",

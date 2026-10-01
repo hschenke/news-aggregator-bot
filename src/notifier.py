@@ -8,7 +8,11 @@ from email.mime.text import MIMEText
 from pathlib import Path
 from datetime import datetime
 import requests
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 logger = logging.getLogger(__name__)
 
@@ -16,8 +20,6 @@ DEFAULT_HTTP_TIMEOUT: int = 15
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
-
-load_dotenv()
 
 
 def _simple_markdown_fallback(md_text: str) -> str:
