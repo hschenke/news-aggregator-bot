@@ -5,11 +5,74 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 01 Oct 2026 14:06:17 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 01 Oct 2026 14:54:20 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents</title>
+      <title>Wenn man nur auf das Problem schaut, übersieht man oft die..</title>
+      <link>https://debeste.de/626484/Wenn-man-nur-auf-das-Problem-schaut,-bersieht-man-oft-die</link>
+      <guid isPermaLink="false">https://debeste.de/626484/Wenn-man-nur-auf-das-Problem-schaut,-bersieht-man-oft-die</guid>
+      <pubDate>Thu, 01 Oct 2026 14:40:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Wenn man nur auf das Problem schaut, übersieht man oft die einfache Lösung.]]></description>
+    </item>
+    <item>
+      <title>Micron: Speicher wird 2027 noch knapper als 2026</title>
+      <link>https://www.heise.de/news/Micron-Speicher-wird-2027-noch-knapper-als-2026-11473175.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11473175</guid>
+      <pubDate>Thu, 01 Oct 2026 14:40:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microns Umsatzwachstum in nur drei Monaten übersteigt den gesamten Quartalsumsatz von vor einem Jahr. Die Marge steigt noch weiter.]]></description>
+    </item>
+    <item>
+      <title>Amazon: Neue Kindle-Generation wird dünner, leichter und bündiger</title>
+      <link>https://www.heise.de/news/Amazon-Neue-Kindle-Generation-wird-duenner-leichter-und-buendiger-11473165.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11473165</guid>
+      <pubDate>Thu, 01 Oct 2026 14:39:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Amazon legt Kindle, Kindle Paperwhite und Kindle Colorsoft neu auf. Die E-Book-Reader bekommen ein bündiges Display und werden leichter.]]></description>
+    </item>
+    <item>
+      <title>Der Affe erkennt den Menschen wieder, der ihn vor zwei Jahren aus einem Wildtiermarkt befreit hat.</title>
+      <link>https://debeste.de/626488/Der-Affe-erkennt-den-Menschen-wieder,-der-ihn-vor-zwei-Jahren-aus-einem</link>
+      <guid isPermaLink="false">https://debeste.de/626488/Der-Affe-erkennt-den-Menschen-wieder,-der-ihn-vor-zwei-Jahren-aus-einem</guid>
+      <pubDate>Thu, 01 Oct 2026 14:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>heise+ | PV-Anlage vs. ETF: Der Investitionsvergleichsrechner</title>
+      <link>https://www.heise.de/ratgeber/PV-Anlage-vs-ETF-Der-Investitionsvergleichsrechner-11470117.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
+      <guid isPermaLink="false">http://heise.de/-11470117</guid>
+      <pubDate>Thu, 01 Oct 2026 14:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Lohnt sich eine Solaranlage mehr als ein ETF? Unser Investitionsrechner vergleicht Rendite, Steuern und Inflation über die gesamte Laufzeit.]]></description>
+    </item>
+    <item>
+      <title>Lamtto RC32 im Test: Carplay, Android Auto und Streaming-Apps nachrüsten</title>
+      <link>https://www.heise.de/bestenlisten/testbericht/lamtto-rc32-im-test-carplay-android-auto-und-streaming-apps-nachruesten/f9t7wn4?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472769</guid>
+      <pubDate>Thu, 01 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Carplay und Android Auto einfach nachrüsten: Das Lamtto RC32 hat einen großen 11-Zoll-Bildschirm und sogar den Google Play Store an Bord.]]></description>
+    </item>
+    <item>
+      <title>WTF: KI-Regeln: Trump und Tech-Riesen unterschreiben gemeinsame Erklärung</title>
+      <link>https://www.heise.de/news/Gemeinsame-Erklaerung-Trump-und-Tech-Riesen-definieren-KI-Regeln-11472591.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472591</guid>
+      <pubDate>Thu, 01 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[US-Präsident Trump und führende Tech-Konzerne unterzeichnen eine Erklärung zu KI-Kontrollen. Besonders spannend war dabei die Sitzordnung.]]></description>
+    </item>
+    <item>
+      <title>Photon held a funeral for mobile apps. Now it has $4.5M to help replace them with agents.</title>
       <link>https://techcrunch.com/2026/10/01/photon-held-a-funeral-for-mobile-apps-now-it-has-4-5m-to-help-replace-them-with-agents/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3169890</guid>
       <pubDate>Thu, 01 Oct 2026 14:00:00 GMT</pubDate>
@@ -25,6 +88,15 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Heute ist es genau ein halbes Jahr her, seit... ...„morgen früh gehe ich joggen“]]></description>
+    </item>
+    <item>
+      <title>Historische Daten in S3? AWS Aurora holt sie jetzt direkt</title>
+      <link>https://www.heise.de/news/Historische-Daten-in-S3-AWS-Aurora-holt-sie-jetzt-direkt-11472901.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472901</guid>
+      <pubDate>Thu, 01 Oct 2026 13:58:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Amazon Aurora PostgreSQL kann nun Daten aus einem Data Lake gemeinsam mit Inhalten aus der Datenbank abfragen, ohne die Data-Lake-Daten zuvor zu kopieren.]]></description>
     </item>
     <item>
       <title>Führungszeugnis seit 1. Oktober auch digital bestellbar</title>
@@ -639,15 +711,6 @@
       <description><![CDATA[Die gesamte Pflege in Deutschland wird zusammengehalten von Menschen, die bereit sind anzupacken, unbezahlten Überstunden und Crocs.]]></description>
     </item>
     <item>
-      <title>Figure mustert humanoide F.02-Roboter aus und lässt sie in Schmelzofen springen</title>
-      <link>https://www.heise.de/news/Arnold-Schwarzenegger-humanoide-F-02-und-ein-Hochofen-Figure-entsorgt-Roboter-11472119.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11472119</guid>
-      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Figure löst seine zweite Generation humanoider Roboter ab und lässt die alten Roboter in einen Schmelzofen springen – oder von Arnold Schwarzenegger einfahren.]]></description>
-    </item>
-    <item>
       <title>WatchGuard schließt teils kritische Lücken in Fireware OS</title>
       <link>https://www.heise.de/news/WatchGuard-schliesst-teils-kritische-Luecken-in-Fireware-OS-11472101.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11472101</guid>
@@ -655,6 +718,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[WatchGuard schließt im Fireware OS ein gutes Dutzend Sicherheitslücken. Die sind teils kritisch und erlauben etwa Codeschmuggel.]]></description>
+    </item>
+    <item>
+      <title>Figure mustert humanoide F.02-Roboter aus und lässt sie in Schmelzofen springen</title>
+      <link>https://www.heise.de/news/Arnold-Schwarzenegger-humanoide-F-02-und-ein-Hochofen-Figure-entsorgt-Roboter-11472119.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11472119</guid>
+      <pubDate>Thu, 01 Oct 2026 07:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Figure löst seine zweite Generation humanoider Roboter ab und lässt die alten Roboter in einen Schmelzofen springen – oder von Arnold Schwarzenegger einfahren.]]></description>
     </item>
     <item>
       <title>Ungenuss..</title>
@@ -1512,15 +1584,6 @@
       <description><![CDATA[Zwei 18-V-Akkus, hohe Saugleistung, großer Fangsack: So schlägt sich der Akku-Laubsauger Einhell Venturro 36/240 im Praxistest.]]></description>
     </item>
     <item>
-      <title>Mein Taschentuch ist größer als ihr Kleid.</title>
-      <link>https://debeste.de/626016/Mein-Taschentuch-ist-gr-er-als-ihr-Kleid</link>
-      <guid isPermaLink="false">https://debeste.de/626016/Mein-Taschentuch-ist-gr-er-als-ihr-Kleid</guid>
-      <pubDate>Wed, 30 Sep 2026 13:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Persönliche KI-Agenten: Manus fordert Meta und OpenAI heraus</title>
       <link>https://www.heise.de/news/Persoenliche-KI-Agenten-Manus-fordert-Meta-und-OpenAI-heraus-11471477.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11471477</guid>
@@ -1744,15 +1807,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Eine Reihe lange erwarteter Zubehörprodukte fürs smarte Heim erscheint in den kommenden Wochen. Das behaupten Insider. Es gibt mindestens eine neue Kategorie.]]></description>
-    </item>
-    <item>
-      <title>heise+ | Deutschlandticket: So bekommen Sie bei Verspätungen Geld zurück</title>
-      <link>https://www.heise.de/ratgeber/Deutschlandticket-So-bekommen-Sie-bei-Verspaetungen-Geld-zurueck-11200564.html?wt_mc=rss.red.ho.ho.atom.beitrag_plus.beitrag_plus</link>
-      <guid isPermaLink="false">http://heise.de/-11200564</guid>
-      <pubDate>Wed, 30 Sep 2026 12:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Schon gewusst? Auch wenn Sie mit dem Deutschlandticket unterwegs sind, gibt es bei Unpünktlichkeit Geld zurück. Wir erklären, wie das geht.]]></description>
     </item>
     <item>
       <title>Europäische Fahrradbranche will E-Bike-Tuning erschweren</title>
@@ -2358,15 +2412,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>Keine Sorge, das ist pflanzlich und zu 100% natürlich.</title>
-      <link>https://debeste.de/626015/Keine-Sorge,-das-ist-pflanzlich-und-zu-100-nat-rlich</link>
-      <guid isPermaLink="false">https://debeste.de/626015/Keine-Sorge,-das-ist-pflanzlich-und-zu-100-nat-rlich</guid>
-      <pubDate>Wed, 30 Sep 2026 01:29:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
       <title>Return to sender.</title>
       <link>https://debeste.de/626050/Return-to-sender</link>
       <guid isPermaLink="false">https://debeste.de/626050/Return-to-sender</guid>
@@ -2853,13 +2898,13 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Zahlen, bitte! – Saturn-Hexagon: 29.000 Kilometer breites mysteriöses Sechseck</title>
-      <link>https://www.heise.de/hintergrund/Zahlen-bitte-Saturn-Hexagon-29-000-Kilometer-breites-mysterioeses-Sechseck-11469373.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469373</guid>
+      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
+      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469641</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
+      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
     </item>
     <item>
       <title>Cyberangriff auf Datenaustauschdienst FTAPI</title>
@@ -2871,13 +2916,13 @@
       <description><![CDATA[Die Cybergang The Gentlemen ist bei der Datenaustauschplattform FTAPI eingebrochen. Das hat FTAPI gegenüber heise online bestätigt.]]></description>
     </item>
     <item>
-      <title>One UI 9 für Galaxy S26 in Deutschland: Samsung verteilt Update</title>
-      <link>https://www.heise.de/news/One-UI-9-fuer-Galaxy-S26-in-Deutschland-Samsung-verteilt-Update-11469641.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469641</guid>
+      <title>Zahlen, bitte! – Saturn-Hexagon: 29.000 Kilometer breites mysteriöses Sechseck</title>
+      <link>https://www.heise.de/hintergrund/Zahlen-bitte-Saturn-Hexagon-29-000-Kilometer-breites-mysterioeses-Sechseck-11469373.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11469373</guid>
       <pubDate>Tue, 29 Sep 2026 11:37:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Samsung verteilt das Update auf One UI 9 ab sofort in Deutschland. Zuerst ist die Galaxy-S26-Serie dran.]]></description>
+      <description><![CDATA[Seit den Voyager-Missionen fasziniert ein riesiger, hexagonförmiger Wirbelsturm auf Saturn die Forscher. Doch was ist die Ursache?]]></description>
     </item>
     <item>
       <title>Antrag auf einstweilige Verfügung: ChatGPT soll nicht menschlich wirken</title>
@@ -2970,24 +3015,6 @@
       <description><![CDATA[Hyundai beabsichtigt, seine Automobilproduktion mit humanoiden Robotern weiter zu automatisieren. 25.000 Atlas-Roboter sollen bis 2030 konzernweit arbeiten.]]></description>
     </item>
     <item>
-      <title>Google: Alphabet klagt gegen EU-Anordnungen zu Android und Suche</title>
-      <link>https://www.heise.de/news/Google-Alphabet-klagt-gegen-EU-Anordnungen-zu-Android-und-Suche-11469377.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469377</guid>
-      <pubDate>Tue, 29 Sep 2026 09:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Google-Mutter Alphabet ficht zwei Anordnungen der EU an, nach denen das Unternehmen KI- und Suchkonkurrenten Zugang zu Android und Suchdaten gewähren muss.]]></description>
-    </item>
-    <item>
-      <title>Digital-Health-Podcast: Hat das Stethoskop bald ausgedient?</title>
-      <link>https://www.heise.de/news/Digital-Health-Podcast-Hat-das-Stethoskop-bald-ausgedient-11468882.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11468882</guid>
-      <pubDate>Tue, 29 Sep 2026 09:13:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Digitale Herzmedizin: Wie KI, Smartphone-Apps und Herz-CT die Kardiologie verändern und was Kardiologen dazu sagen.]]></description>
-    </item>
-    <item>
       <title>NASA asked several former SR-71A staffers to help secret restart</title>
       <link>https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart</link>
       <guid isPermaLink="false">https://aviationweek.com/defense/aircraft-propulsion/nasa-asked-several-former-sr-71a-staffers-help-secret-restart</guid>
@@ -2997,24 +3024,6 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Digitale Gesundheitsanwendungen: HelloBetter meldet Datenpanne nach Cyberangriff</title>
-      <link>https://www.heise.de/news/Digitale-Gesundheitsanwendungen-HelloBetter-meldet-Datenpanne-nach-Cyberangriff-11469296.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469296</guid>
-      <pubDate>Tue, 29 Sep 2026 09:10:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Aufgrund einer Schwachstelle konnten Unbekannte auf sensible Nutzerdaten eines Anbieters digitaler Therapieprogramme zugreifen.]]></description>
-    </item>
-    <item>
-      <title>Mistral eröffnet KI-Standort in München</title>
-      <link>https://www.heise.de/news/Mistral-eroeffnet-KI-Standort-in-Muenchen-11469166.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469166</guid>
-      <pubDate>Tue, 29 Sep 2026 09:06:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mistral baut in München Teams für Industrie-KI und physikalische Simulationen auf. Zu den ersten Partnern gehören BMW, Siemens Energy und die TUM.]]></description>
-    </item>
-    <item>
       <title>Show HN: JBR-001 – An open-source 3D printable desktop robot</title>
       <link>https://projecthub.arduino.cc/syntheticaidata/jbr-001-a-desktop-companion-robot-powered-by-arduino-uno-q-b11c96</link>
       <guid isPermaLink="false">https://projecthub.arduino.cc/syntheticaidata/jbr-001-a-desktop-companion-robot-powered-by-arduino-uno-q-b11c96</guid>
@@ -3022,15 +3031,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Feature gekillt: Die Apple Watch ist kein Walkie-Talkie mehr</title>
-      <link>https://www.heise.de/news/Feature-gekillt-Die-Apple-Watch-ist-kein-Walkie-Talkie-mehr-11467861.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11467861</guid>
-      <pubDate>Tue, 29 Sep 2026 09:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit watchOS 27 kommen einige Änderungen auf die Computeruhren. Eine offenbar eher selten genutzte Funktion wurde nun gänzlich gestrichen. Sie war praktisch.]]></description>
     </item>
     <item>
       <title>Regenbogenbank erneut beschädigt</title>
@@ -3391,24 +3391,6 @@
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Bei einem mehrstündigen Polizeieinsatz in Friedrichshain wurden gestern Nachmittag zwei Bauarbeiter durch Angriffe aus einem Gebäude heraus verletzt. Gegen 14 Uhr wurden Einsatzkräfte des Polizeiabschnitts 51 zu einem Baustellengelände an einem Mehrfamilienhaus in der Gürtelstraße al...]]></description>
-    </item>
-    <item>
-      <title>Berlin startet mit KI-gestütztem Videoschutz</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1718008.php</guid>
-      <pubDate>Thu, 24 Sep 2026 12:30:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Tempelhof-Schöneberg** – An den kriminalitätsbelasteten Orten (kbO) ist eine hohe Anzahl von Straftaten feststellbar, die das Sicherheitsgefühl beeinträchtigen. Dies gilt insbesondere für Gewaltvorfälle. Verglichen zur Gesamtfläche Berlins ist ein sehr kleiner Teil der Stadt als kbO eingestuft. Die Polizei Berli...]]></description>
-    </item>
-    <item>
-      <title>Sachbeschädigung durch Feuer und Farbschmiererei</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1717930.php</guid>
-      <pubDate>Thu, 24 Sep 2026 11:29:41 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Lichtenberg** – In der vergangenen Nacht kam es zu einer Sachbeschädigung durch Feuer und einer Farbschmiererei in Rummelsburg. Nach bisherigen Erkenntnissen stellte ein Mitarbeiter eines Sicherheitsdienstes gegen 3:40 Uhr einen etwa 5 × 5 Meter großen Schriftzug an einer Hausfassade und Fensterfront in der Mark...]]></description>
     </item>
     <item>
       <title>Versuchter Raub auf Motorrollerfahrerin – Tatverdächtige festgenommen</title>
