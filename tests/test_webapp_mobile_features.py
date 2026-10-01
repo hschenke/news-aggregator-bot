@@ -142,10 +142,11 @@ class TestWebappMobileFeatures(unittest.TestCase):
         from pathlib import Path
         webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
 
-        # Randloses Material Icon statt roher Emoji-Button
+        # Randloses Material Icon statt roher Emoji-Button & feste 1-Zeilen-Verankerung
         self.assertIn('icon=":material/check:"', webapp_code)
         self.assertIn('type="tertiary"', webapp_code)
         self.assertIn('on_click=on_article_read_and_archive', webapp_code)
+        self.assertIn('wrap=False', webapp_code)
 
         # CSS-Definition für randloses Icon mit transparenter Basis und rundem Hover
         self.assertIn('div[class*="st-key-read_"] button {', webapp_code)

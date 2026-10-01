@@ -179,27 +179,55 @@ st.markdown("""
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
-        margin-top: 0.25rem !important;
+        margin-top: 0.35rem !important;
+        gap: 0.5rem !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        min-width: 0 !important;
+        height: auto !important;
     }
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
-        min-width: auto !important;
-        width: auto !important;
         flex: 1 1 auto !important;
+        width: auto !important;
+        justify-content: flex-start !important;
     }
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
     [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
-        min-width: auto !important;
-        width: auto !important;
         flex: 0 0 auto !important;
+        width: auto !important;
         margin-left: auto !important;
+        justify-content: flex-end !important;
+    }
+    /* Inneren Streamlit-VerticalBlock in diesen Footer-Columns horizontal und vertikal bündig zentrieren */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] [data-testid="stVerticalBlock"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] [data-testid="stColumn"]:last-child [data-testid="stVerticalBlock"] {
+        justify-content: flex-end !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stFeedback"] {
+        display: inline-flex !important;
+        align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     /* Gelesen-Symbol Styling: Randlos, transparent, dezent wie st.feedback */
     div[class*="st-key-read_"] {
-        display: flex !important;
+        display: inline-flex !important;
         justify-content: flex-end !important;
         align-items: center !important;
+        margin: 0 !important;
+        padding: 0 !important;
         width: 100% !important;
     }
     div[class*="st-key-read_"] button {
@@ -207,17 +235,18 @@ st.markdown("""
         border: none !important;
         box-shadow: none !important;
         outline: none !important;
-        padding: 0.2rem !important;
-        min-height: unset !important;
-        height: 2.1rem !important;
-        width: 2.1rem !important;
-        min-width: 2.1rem !important;
+        padding: 0 !important;
+        min-height: 2rem !important;
+        height: 2rem !important;
+        width: 2rem !important;
+        min-width: 2rem !important;
         border-radius: 50% !important;
         color: #94a3b8 !important;
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
-        transition: all 0.2s ease-in-out !important;
+        line-height: 1 !important;
+        transition: all 0.15s ease-in-out !important;
     }
     div[class*="st-key-read_"] button:hover {
         background-color: rgba(34, 197, 94, 0.15) !important;
@@ -235,6 +264,9 @@ st.markdown("""
     div[class*="st-key-read_"] button [data-testid="stIconMaterial"] {
         font-size: 1.25rem !important;
         line-height: 1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     @media (max-width: 768px) {
         .block-container {
@@ -275,9 +307,9 @@ st.markdown("""
         hr {
             margin: 0.5rem 0 !important;
         }
-        /* Mobile: Spalten in horizontalen Blöcken (z.B. Dropdowns) auf volle Breite umbrechen */
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not([data-testid="stVerticalBlockBorderWrapper"] *) > [data-testid="stColumn"],
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not([data-testid="stVerticalBlockBorderWrapper"] *) > [data-testid="column"] {
+        /* Mobile: Spalten in horizontalen Dropdown-Blöcken auf volle Breite umbrechen */
+        [data-testid="stExpander"]:has(.st-key-sel_articles_category) [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)) > [data-testid="stColumn"],
+        [data-testid="stExpander"]:has(.st-key-sel_articles_category) [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)) > [data-testid="column"] {
             min-width: 100% !important;
             flex: 1 1 100% !important;
             width: 100% !important;
@@ -285,12 +317,6 @@ st.markdown("""
             box-sizing: border-box !important;
         }
         /* Card-Columns innerhalb von Expandern auf Mobile auf 100% Breite stacken */
-        [data-testid="stExpander"] [data-testid="stHorizontalBlock"]:not([data-testid="stVerticalBlockBorderWrapper"] *) {
-            flex-wrap: wrap !important;
-            width: 100% !important;
-            max-width: 100% !important;
-            gap: 0.5rem !important;
-        }
         [data-testid="stExpander"] [data-testid="stColumn"]:has([data-testid="stVerticalBlockBorderWrapper"]),
         [data-testid="stExpander"] [data-testid="column"]:has([data-testid="stVerticalBlockBorderWrapper"]) {
             min-width: 100% !important;
@@ -299,7 +325,7 @@ st.markdown("""
             max-width: 100% !important;
             box-sizing: border-box !important;
         }
-        /* Feedback-Daumen & Gelesen-Symbol innerhalb der Card nebeneinander halten */
+        /* Feedback-Daumen & Gelesen-Symbol innerhalb der Card AUF MOBILE IMMER in 1 Zeile bündig halten */
         [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] {
             display: flex !important;
             flex-direction: row !important;
@@ -311,13 +337,24 @@ st.markdown("""
         }
         [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
         [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"] {
-            min-width: auto !important;
-            flex: 0 0 auto !important;
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            min-width: 0 !important;
+            max-width: none !important;
             width: auto !important;
+            flex: 0 0 auto !important;
         }
-        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:has(div[class*="st-key-read_"]),
-        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:has(div[class*="st-key-read_"]) {
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
+            flex: 1 1 auto !important;
+            justify-content: flex-start !important;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
+            flex: 0 0 auto !important;
             margin-left: auto !important;
+            justify-content: flex-end !important;
         }
         /* Suchleiste auf Mobile: Eingabefeld, ✕ und Go in einer Zeile bündig halten */
         [data-testid="stHorizontalBlock"]:has(.st-key-input_search_query) {
@@ -1907,7 +1944,7 @@ with tab_articles:
                                 fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
                                 read_key = f"read_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
 
-                                col_fb, col_read = st.columns([0.80, 0.20], vertical_alignment="center")
+                                col_fb, col_read = st.columns([0.85, 0.15], vertical_alignment="center", wrap=False)
                                 with col_fb:
                                     st.feedback(
                                     "thumbs",
