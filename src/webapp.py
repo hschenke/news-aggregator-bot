@@ -148,6 +148,36 @@ st.markdown("""
         opacity: 0 !important;
         visibility: hidden !important;
     }
+    /* Verhindert das 1-3 sekündige Ergrauen / Verblassen der UI bei Interaktionen und Reruns */
+    [data-stale="true"],
+    [data-testid="stElementContainer"][data-stale="true"],
+    [data-testid="stVerticalBlockBorderWrapper"][data-stale="true"],
+    [data-testid="stVerticalBlock"][data-stale="true"],
+    [data-testid="stHorizontalBlock"][data-stale="true"],
+    .stApp [data-stale="true"],
+    .stApp div[data-stale="true"] {
+        opacity: 1 !important;
+        transition: none !important;
+        filter: none !important;
+    }
+    /* Buttons und Feedback-Daumen während Reruns nicht ausgrauen oder abschwächen */
+    [data-testid="stFeedback"] button:disabled,
+    [data-testid="stFeedback"] button[data-disabled="true"],
+    [data-testid="stFeedback"] button[disabled],
+    div[class*="st-key-read_"] button:disabled,
+    div[class*="st-key-read_"] button[data-disabled="true"],
+    div[class*="st-key-read_"] button[disabled] {
+        opacity: 1 !important;
+        cursor: pointer !important;
+    }
+    /* Verhindert Ergrauen der gesamten App bei Script-Ausführung */
+    .stApp[data-test-script-state="running"] [data-testid="stVerticalBlockBorderWrapper"],
+    .stApp[data-test-script-state="running"] [data-testid="stElementContainer"],
+    .stApp[data-test-script-state="running"] [data-testid="stFeedback"],
+    .stApp[data-test-script-state="running"] div[class*="st-key-read_"] {
+        opacity: 1 !important;
+        filter: none !important;
+    }
     /* Card Container & Text-Wrapping: verhindert Überlauf auf Mobile & Desktop */
     [data-testid="stVerticalBlockBorderWrapper"] {
         width: 100% !important;
@@ -1666,16 +1696,10 @@ with tab_articles:
         # st.feedback('thumbs'): 1 = Like, 0 = Dislike, None = unselected/neutral
         if widget_val == 1:
             new_fb = 1
-            toast_text = "Artikel als Favorit bewertet (wird im KI-Briefing bevorzugt)"
-            toast_icon = "👍"
         elif widget_val == 0:
             new_fb = -1
-            toast_text = "Artikel als irrelevant markiert"
-            toast_icon = "👎"
         else:
             new_fb = 0
-            toast_text = "Bewertung zurückgesetzt"
-            toast_icon = "⚪"
 
         # 1. Feedback-Map in session_state aktualisieren
         if "feedback_map" not in st.session_state:
@@ -1688,15 +1712,16 @@ with tab_articles:
                 if it.get("link", "").strip() == article_url:
                     it["feedback"] = new_fb
 
-        # 3. In Datenbank persistieren (Turso / SQLite)
-        try:
-            from src.storage import get_storage
-            storage = get_storage()
-            storage.set_feedback(article_url, new_fb, title=article_title)
-        except Exception as exc:
-            pass
+        # 3. Asynchron in Hintergrund-Thread persistieren (Turso / SQLite), damit der UI-Rerun nicht blockiert
+        def _async_feedback_worker(url: str, fb_val: int, title: str) -> None:
+            try:
+                from src.storage import get_storage
+                bg_storage = get_storage()
+                bg_storage.set_feedback(url, fb_val, title=title)
+            except Exception as exc:
+                logger.warning("Hintergrund-Feedback-Speicherung fehlgeschlagen für %s: %s", url, exc)
 
-        st.toast(toast_text, icon=toast_icon)
+        threading.Thread(target=_async_feedback_worker, args=(article_url, new_fb, article_title), daemon=True).start()
 
     def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """
@@ -1741,8 +1766,6 @@ with tab_articles:
 
         item_copy = dict(article_item)
         threading.Thread(target=_async_archive_worker, args=(item_copy,), daemon=True).start()
-
-        st.toast("Artikel als gelesen archiviert", icon="✅")
 
     def on_clear_search():
         st.session_state["input_search_query"] = ""
@@ -1976,8 +1999,9 @@ with tab_articles:
                                 item_url = item.get("link", "").strip()
                                 cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
-                                fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
-                                read_key = f"read_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
+                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12]
+                                fb_key = f"fb_{item_url_hash}"
+                                read_key = f"read_{item_url_hash}"
 
                                 col_fb, col_read = st.columns([1, 1], vertical_alignment="center", wrap=False)
                                 with col_fb:

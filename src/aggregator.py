@@ -3,6 +3,7 @@ import json
 import base64
 import re
 import html
+import functools
 import urllib.parse
 import logging
 import requests
@@ -1080,6 +1081,7 @@ def test_feed_connection(feed_url: str, timeout: int = 10) -> dict[str, Any]:
 
 
 
+@functools.lru_cache(maxsize=2048)
 def clean_html_text(text: str) -> str:
     """Bereinigt HTML-Tags (z. B. <b>, <i>, <a>), unescaped Entities (&amp;, &quot;) und normalisiert Whitespace."""
     if not text:
@@ -1096,6 +1098,7 @@ def clean_html_text(text: str) -> str:
     return cleaned
 
 
+@functools.lru_cache(maxsize=2048)
 def format_summary_html(text: str) -> str:
     """
     Bereitet eine Zusammenfassung für HTML-Container auf:
