@@ -137,6 +137,51 @@ class TestWebappMobileFeatures(unittest.TestCase):
         self.assertEqual(map_feedback(0), -1)    # Daumen runter
         self.assertEqual(map_feedback(None), 0)  # Deselektiert / Neutral
 
+    def test_read_action_icon_and_styling(self):
+        """Prüft, dass die Gelesen-Aktion als randloses Icon statt klobigem Button gerendert wird."""
+        from pathlib import Path
+        webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
+
+        # Randloses Material Icon statt roher Emoji-Button
+        self.assertIn('icon=":material/check:"', webapp_code)
+        self.assertIn('type="tertiary"', webapp_code)
+        self.assertIn('on_click=on_article_read_and_archive', webapp_code)
+
+        # CSS-Definition für randloses Icon mit transparenter Basis und rundem Hover
+        self.assertIn('div[class*="st-key-read_"] button {', webapp_code)
+        self.assertIn('background-color: transparent !important;', webapp_code)
+        self.assertIn('border: none !important;', webapp_code)
+        self.assertIn('border-radius: 50% !important;', webapp_code)
+
+    def test_card_overflow_protection_css(self):
+        """Prüft, dass Cards und Texte nicht über den Containerrand hinausragen."""
+        from pathlib import Path
+        webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
+
+        # Card-Container Begrenzung & Umbruch
+        self.assertIn('[data-testid="stVerticalBlockBorderWrapper"] {', webapp_code)
+        self.assertIn('overflow-wrap: anywhere !important;', webapp_code)
+        self.assertIn('word-break: break-word !important;', webapp_code)
+
+        # Mobile Spaltenstacking für Cards
+        self.assertIn('[data-testid="stExpander"] [data-testid="stColumn"]:has([data-testid="stVerticalBlockBorderWrapper"])', webapp_code)
+        self.assertIn('min-width: 100% !important;', webapp_code)
+
+        # Spezifische Eingrenzung der Feedback-/Read-Zeile auf den Card-Container
+        self.assertIn('[data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"]', webapp_code)
+
+    def test_expander_retention_on_read(self):
+        """Prüft, dass gelesene Artikel die Kategorie und den Feed offen halten."""
+        from pathlib import Path
+        webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
+
+        self.assertIn('st.session_state["persisted_open_categories"].add(category)', webapp_code)
+        self.assertIn('st.session_state["persisted_open_feeds"].add(feed_name)', webapp_code)
+        self.assertIn('or category in st.session_state.get("persisted_open_categories", set())', webapp_code)
+        self.assertIn('or feed_name in st.session_state.get("persisted_open_feeds", set())', webapp_code)
+        self.assertIn('anchor-feed-', webapp_code)
+
 
 if __name__ == "__main__":
     unittest.main()
+

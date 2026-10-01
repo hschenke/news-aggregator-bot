@@ -148,22 +148,93 @@ st.markdown("""
         opacity: 0 !important;
         visibility: hidden !important;
     }
-    /* Gelesen-Button Styling */
+    /* Card Container & Text-Wrapping: verhindert Überlauf auf Mobile & Desktop */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+        overflow: hidden !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] > div {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] a,
+    [data-testid="stVerticalBlockBorderWrapper"] p,
+    [data-testid="stVerticalBlockBorderWrapper"] div {
+        overflow-wrap: anywhere !important;
+        word-break: break-word !important;
+    }
+
+    /* Feedback- & Read-Zeile innerhalb der Card */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        margin-top: 0.25rem !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
+        min-width: auto !important;
+        width: auto !important;
+        flex: 1 1 auto !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
+        min-width: auto !important;
+        width: auto !important;
+        flex: 0 0 auto !important;
+        margin-left: auto !important;
+    }
+
+    /* Gelesen-Symbol Styling: Randlos, transparent, dezent wie st.feedback */
+    div[class*="st-key-read_"] {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
     div[class*="st-key-read_"] button {
-        border-radius: 8px !important;
-        padding: 0.2rem 0.55rem !important;
-        font-size: 0.95rem !important;
-        min-height: 2.1rem !important;
-        height: 2.1rem !important;
         background-color: transparent !important;
-        border: 1px solid rgba(100, 116, 139, 0.25) !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        padding: 0.2rem !important;
+        min-height: unset !important;
+        height: 2.1rem !important;
+        width: 2.1rem !important;
+        min-width: 2.1rem !important;
+        border-radius: 50% !important;
+        color: #94a3b8 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
         transition: all 0.2s ease-in-out !important;
     }
     div[class*="st-key-read_"] button:hover {
-        background-color: rgba(34, 197, 94, 0.12) !important;
-        border-color: #22c55e !important;
+        background-color: rgba(34, 197, 94, 0.15) !important;
         color: #16a34a !important;
-        transform: scale(1.05);
+        transform: scale(1.15) !important;
+    }
+    div[class*="st-key-read_"] button:active,
+    div[class*="st-key-read_"] button:focus {
+        background-color: rgba(34, 197, 94, 0.22) !important;
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+        color: #16a34a !important;
+    }
+    div[class*="st-key-read_"] button [data-testid="stIconMaterial"] {
+        font-size: 1.25rem !important;
+        line-height: 1 !important;
     }
     @media (max-width: 768px) {
         .block-container {
@@ -204,30 +275,48 @@ st.markdown("""
         hr {
             margin: 0.5rem 0 !important;
         }
-        /* Mobile: Spalten in horizontalen Blöcken (z.B. Dropdowns) auf volle Breite umbrechen,
-           aber die Suchleiste und Bewertungs-Daumen als kompakte 1-Zeilen-Leiste nebeneinander halten */
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not(:has([data-testid="stFeedback"])) > [data-testid="stColumn"],
-        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not(:has([data-testid="stFeedback"])) > [data-testid="column"] {
+        /* Mobile: Spalten in horizontalen Blöcken (z.B. Dropdowns) auf volle Breite umbrechen */
+        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not([data-testid="stVerticalBlockBorderWrapper"] *) > [data-testid="stColumn"],
+        [data-testid="stHorizontalBlock"]:not(:has(.st-key-input_search_query)):not([data-testid="stVerticalBlockBorderWrapper"] *) > [data-testid="column"] {
             min-width: 100% !important;
             flex: 1 1 100% !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
         }
-        /* Feedback-Daumen & Gelesen-Symbol auf Mobile nebeneinander halten */
-        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) {
+        /* Card-Columns innerhalb von Expandern auf Mobile auf 100% Breite stacken */
+        [data-testid="stExpander"] [data-testid="stHorizontalBlock"]:not([data-testid="stVerticalBlockBorderWrapper"] *) {
+            flex-wrap: wrap !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            gap: 0.5rem !important;
+        }
+        [data-testid="stExpander"] [data-testid="stColumn"]:has([data-testid="stVerticalBlockBorderWrapper"]),
+        [data-testid="stExpander"] [data-testid="column"]:has([data-testid="stVerticalBlockBorderWrapper"]) {
+            min-width: 100% !important;
+            width: 100% !important;
+            flex: 1 1 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        /* Feedback-Daumen & Gelesen-Symbol innerhalb der Card nebeneinander halten */
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] {
             display: flex !important;
             flex-direction: row !important;
             flex-wrap: nowrap !important;
             align-items: center !important;
             justify-content: space-between !important;
+            width: 100% !important;
             gap: 0.4rem !important;
         }
-        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="stColumn"],
-        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="column"] {
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"] {
             min-width: auto !important;
             flex: 0 0 auto !important;
             width: auto !important;
         }
-        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="stColumn"]:has(div[class*="st-key-read_"]),
-        [data-testid="stHorizontalBlock"]:has([data-testid="stFeedback"]) > [data-testid="column"]:has(div[class*="st-key-read_"]) {
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:has(div[class*="st-key-read_"]),
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:has(div[class*="st-key-read_"]) {
             margin-left: auto !important;
         }
         /* Suchleiste auf Mobile: Eingabefeld, ✕ und Go in einer Zeile bündig halten */
@@ -1472,6 +1561,7 @@ with tab_articles:
         else:
             if "exp_cats" in st.query_params:
                 del st.query_params["exp_cats"]
+            st.session_state["persisted_open_categories"] = set()
 
     def on_toggle_expand_feeds():
         val = bool(st.session_state.get("chk_expand_feeds", False))
@@ -1480,6 +1570,7 @@ with tab_articles:
         else:
             if "exp_feeds" in st.query_params:
                 del st.query_params["exp_feeds"]
+            st.session_state["persisted_open_feeds"] = set()
 
     def on_toggle_sort():
         val = bool(st.session_state.get("chk_sort_oldest", True))
@@ -1535,10 +1626,12 @@ with tab_articles:
 
         st.toast(toast_text, icon=toast_icon)
 
-    def on_article_read_and_archive(article_item: dict[str, Any]) -> None:
+    def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """
         Markiert einen Artikel als gelesen, entfernt ihn sofort aus der aktiven Ansicht
         und archiviert ihn in einem parallelen Hintergrund-Thread in der Datenbank.
+        Hält die betreffende Kategorie und den betreffenden Feed offen, damit die
+        verbleibenden Cards nahtlos an Ort und Stelle nachrücken.
         """
         item_url = (article_item.get("link") or "").strip()
         if not item_url:
@@ -1549,11 +1642,23 @@ with tab_articles:
             st.session_state["archived_urls"] = set()
         st.session_state["archived_urls"].add(item_url)
 
-        # 2. Aus news_data im Memory entfernen
+        # 2. Aus news_data im Memory entfernen (sofortiges Nachrücken der Cards)
         for cat_name, cat_items in list(news_data.items()):
             news_data[cat_name] = [it for it in cat_items if (it.get("link") or "").strip() != item_url]
 
-        # 3. Parallel Thread: Insert in Archiv-Tabelle & Delete aus aktiven Artikeln
+        # 3. Kategorie & Feed im Session-Zustand offen halten & Scroll-Position vormerken
+        if category:
+            if "persisted_open_categories" not in st.session_state:
+                st.session_state["persisted_open_categories"] = set()
+            st.session_state["persisted_open_categories"].add(category)
+        if feed_name:
+            if "persisted_open_feeds" not in st.session_state:
+                st.session_state["persisted_open_feeds"] = set()
+            st.session_state["persisted_open_feeds"].add(feed_name)
+            feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
+            st.session_state["last_read_feed_slug"] = feed_slug
+
+        # 4. Parallel Thread: Insert in Archiv-Tabelle & Delete aus aktiven Artikeln
         def _async_archive_worker(data_to_archive: dict[str, Any]) -> None:
             try:
                 from src.storage import get_storage
@@ -1565,8 +1670,7 @@ with tab_articles:
         item_copy = dict(article_item)
         threading.Thread(target=_async_archive_worker, args=(item_copy,), daemon=True).start()
 
-        st.toast("Artikel als gelesen archiviert", icon="✔️")
-        st.rerun()
+        st.toast("Artikel als gelesen archiviert", icon="✅")
 
     def on_clear_search():
         st.session_state["input_search_query"] = ""
@@ -1748,6 +1852,7 @@ with tab_articles:
             is_filtering
             or (qp_category and category.strip().lower() == qp_category.lower())
             or bool(st.session_state.get("chk_expand_cats", False))
+            or category in st.session_state.get("persisted_open_categories", set())
         ) else False
 
         feeds_in_cat = {item.get("source") for item in cat_matching if item.get("source")}
@@ -1775,9 +1880,11 @@ with tab_articles:
                     is_filtering
                     or (qp_feed and feed_name.strip().lower() == qp_feed.lower())
                     or bool(st.session_state.get("chk_expand_feeds", False))
+                    or feed_name in st.session_state.get("persisted_open_feeds", set())
                 ) else False
 
                 with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
+                    st.html(f'<div id="anchor-feed-{feed_slug}" style="height:0; margin:0; padding:0;"></div>')
                     cols = st.columns(2)
                     for idx, item in enumerate(f_items):
                         displayed_count += 1
@@ -1800,7 +1907,7 @@ with tab_articles:
                                 fb_key = f"fb_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
                                 read_key = f"read_{hashlib.md5(item_url.encode('utf-8')).hexdigest()[:12]}"
 
-                                col_fb, col_read = st.columns([0.78, 0.22], vertical_alignment="center")
+                                col_fb, col_read = st.columns([0.80, 0.20], vertical_alignment="center")
                                 with col_fb:
                                     st.feedback(
                                     "thumbs",
@@ -1810,8 +1917,28 @@ with tab_articles:
                                         args=(item_url, fb_key, clean_title),
                                     )
                                 with col_read:
-                                    if st.button("✔️", key=read_key, help="Artikel als gelesen markieren & archivieren", use_container_width=True):
-                                        on_article_read_and_archive(item)
+                                    st.button(
+                                        "",
+                                        icon=":material/check:",
+                                        key=read_key,
+                                        type="tertiary",
+                                        help="Artikel als gelesen markieren & archivieren",
+                                        on_click=on_article_read_and_archive,
+                                        args=(item, category, feed_name),
+                                    )
+
+    if "last_read_feed_slug" in st.session_state:
+        target_slug = st.session_state.pop("last_read_feed_slug")
+        embed_client_script(f"""
+        (function() {{
+            setTimeout(function() {{
+                var el = document.getElementById("anchor-feed-{target_slug}");
+                if (el) {{
+                    el.scrollIntoView({{ behavior: 'instant', block: 'nearest' }});
+                }}
+            }}, 30);
+        }})();
+        """)
 
     with col_stat_placeholder:
         if displayed_count > 0:
