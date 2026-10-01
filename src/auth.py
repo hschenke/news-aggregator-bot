@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import hmac
 import hashlib
@@ -27,14 +28,15 @@ def get_configured_app_password(config_path: str = "config/sources.yaml") -> str
     if env_pw and env_pw.strip():
         return env_pw.strip()
 
-    try:
-        import streamlit as st
-        if hasattr(st, "secrets") and "APP_PASSWORD" in st.secrets:
-            pw = str(st.secrets["APP_PASSWORD"]).strip()
-            if pw:
-                return pw
-    except Exception:
-        pass
+    if "STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules:
+        try:
+            import streamlit as st
+            if hasattr(st, "secrets") and "APP_PASSWORD" in st.secrets:
+                pw = str(st.secrets["APP_PASSWORD"]).strip()
+                if pw:
+                    return pw
+        except Exception:
+            pass
 
     return ""
 

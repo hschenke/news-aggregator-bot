@@ -39,7 +39,7 @@ def get_github_sync_config() -> dict[str, str]:
     repo = os.getenv("GITHUB_REPO", "hschenke/news-aggregator-bot")
     branch = os.getenv("GITHUB_BRANCH", "main")
 
-    if not token:
+    if not token and ("STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules):
         try:
             import streamlit as st
             if hasattr(st, "secrets"):
@@ -1604,7 +1604,11 @@ def fetch_feed_items(
         return []
 
 
-def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool = True) -> dict[str, list[dict[str, Any]]]:
+def collect_all_news(
+    config_path: str = "config/sources.yaml",
+    export_rss: bool = True,
+    save_to_db: bool = True,
+) -> dict[str, list[dict[str, Any]]]:
     """Sammelt alle News aus allen konfigurierten Kategorien, bereinigt Duplikate und aktualisiert optional die RSS-Feeds."""
     config = load_sources(config_path)
     settings = config.get("settings", {})
@@ -1632,28 +1636,58 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
     # Kategorien alphabetisch sortieren
     categories = sorted(config.get("categories", []), key=lambda c: c.get("name", "").strip().lower())
 
+    # Alle Feed-Aufgaben für paralleles Einlesen vorbereiten
+    feed_tasks: list[tuple[str, str, str, list[str], list[str]]] = []
     for cat in categories:
         cat_name = cat.get("name", "Allgemein")
-        collected[cat_name] = []
-        cat_seen_urls = set()
-        cat_seen_titles = set()
-
-        # Feeds alphabetisch sortieren
         feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
         for feed in feeds:
             url = feed.get("url")
             feed_name = feed.get("name", url)
             inc_kw = feed.get("include_keywords", [])
             exc_kw = feed.get("exclude_keywords", [])
+            feed_tasks.append((cat_name, feed_name, url, inc_kw, exc_kw))
 
+    def _fetch_worker(task: tuple[str, str, str, list[str], list[str]]) -> tuple[str, str, str, list[dict[str, Any]]]:
+        c_name, f_name, f_url, inc, exc = task
+        try:
             items = fetch_feed_items(
-                url,
-                include_keywords=inc_kw,
-                exclude_keywords=exc_kw,
+                f_url,
+                include_keywords=inc,
+                exclude_keywords=exc,
                 filter_ads=filter_ads,
                 custom_ad_keywords=custom_ad_keywords,
                 max_age_weeks=max_age_weeks,
             )
+        except Exception as e_fetch:
+            logger.warning("Fehler beim Einlesen von Feed '%s' (%s): %s", f_name, f_url, e_fetch)
+            items = []
+        return c_name, f_name, f_url, items
+
+    # Paralleles Einlesen aller Feeds für maximale Performance
+    fetched_map: dict[tuple[str, str], tuple[str, list[dict[str, Any]]]] = {}
+    if feed_tasks:
+        max_workers = min(8, len(feed_tasks))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
+            for c_name, f_name, f_url, items in executor.map(_fetch_worker, feed_tasks):
+                fetched_map[(c_name, f_name)] = (f_url, items)
+
+    for cat in categories:
+        cat_name = cat.get("name", "Allgemein")
+        collected[cat_name] = []
+        cat_seen_urls = set()
+        cat_seen_titles = set()
+
+        feeds = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+        for feed in feeds:
+            feed_name = feed.get("name", feed.get("url"))
+            f_data = fetched_map.get((cat_name, feed_name))
+            if f_data:
+                url, items = f_data
+            else:
+                url = feed.get("url")
+                items = []
+
             for it in items:
                 # Zusätzliche Absicherung gegen veraltete Artikel
                 if is_article_too_old(it, max_age_weeks=max_age_weeks):
@@ -1661,19 +1695,19 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
 
                 raw_u = (it.get("link") or "").strip()
                 canon_u = get_canonical_url(raw_u)
-                
+
                 # Gelesene & archivierte Artikel niemals erneut aufnehmen
                 if (raw_u and raw_u in archived_urls) or (canon_u and canon_u in archived_urls):
                     continue
 
                 norm_t = re.sub(r"[\W_]+", "", it.get("title", "").lower())
-                
+
                 # Duplikate innerhalb derselben Kategorie herausfiltern
                 if canon_u and canon_u in cat_seen_urls:
                     continue
                 if norm_t and len(norm_t) > 12 and norm_t in cat_seen_titles:
                     continue
-                    
+
                 if canon_u:
                     cat_seen_urls.add(canon_u)
                 if norm_t and len(norm_t) > 12:
@@ -1694,15 +1728,16 @@ def collect_all_news(config_path: str = "config/sources.yaml", export_rss: bool 
         except Exception as e:
             print(f"[Hinweis] RSS-Feed-Export konnte nicht ausgeführt werden: {e}")
 
-    # Automatisch gefundene Artikel in Turso / SQLite persistieren
-    try:
-        from src.storage import get_storage
-        storage = get_storage()
-        flat_items = [it for items in collected.values() for it in items]
-        if flat_items:
-            storage.save_articles(flat_items)
-    except Exception as e_db:
-        logger.debug("DB-Persistierung in collect_all_news übersprungen: %s", e_db)
+    # Automatisch gefundene Artikel in Turso / SQLite persistieren (sofern aktiviert)
+    if save_to_db:
+        try:
+            from src.storage import get_storage
+            storage = get_storage()
+            flat_items = [it for items in collected.values() for it in items]
+            if flat_items:
+                storage.save_articles(flat_items)
+        except Exception as e_db:
+            logger.debug("DB-Persistierung in collect_all_news übersprungen: %s", e_db)
 
     return collected
 

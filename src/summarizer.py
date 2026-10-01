@@ -43,12 +43,13 @@ def get_configured_api_key() -> str:
     """Ermittelt den Gemini API-Key aus Umgebungsvariablen oder Streamlit Secrets."""
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        try:
-            import streamlit as st
-            if hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
-                api_key = str(st.secrets["GEMINI_API_KEY"])
-        except Exception:
-            pass
+        if "STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules:
+            try:
+                import streamlit as st
+                if hasattr(st, "secrets") and "GEMINI_API_KEY" in st.secrets:
+                    api_key = str(st.secrets["GEMINI_API_KEY"])
+            except Exception:
+                pass
     return api_key or ""
 
 
@@ -67,12 +68,13 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     if env_url and env_url.strip():
         return env_url.strip().rstrip("/")
 
-    try:
-        import streamlit as st
-        if hasattr(st, "secrets") and "STREAMLIT_APP_URL" in st.secrets:
-            return str(st.secrets["STREAMLIT_APP_URL"]).strip().rstrip("/")
-    except Exception:
-        pass
+    if "STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules:
+        try:
+            import streamlit as st
+            if hasattr(st, "secrets") and "STREAMLIT_APP_URL" in st.secrets:
+                return str(st.secrets["STREAMLIT_APP_URL"]).strip().rstrip("/")
+        except Exception:
+            pass
 
     return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
 
@@ -365,13 +367,14 @@ def summarize_news_with_gemini(
         else:
             prompt += f"\n\nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data_str}\n"
 
-        candidate_models = get_candidate_models(model)
+        preferred_model = model or os.getenv("GEMINI_MODEL") or settings.get("gemini_model")
+        candidate_models = get_candidate_models(preferred_model)
 
         last_error = None
         for model_name in candidate_models:
             try:
                 logger.info("Generiere mit KI-Modell: %s", model_name)
-                print(f"      -> Generiere mit Modell: {model_name}...")
+                print(f"      -> Generiere mit Modell: {model_name}...", flush=True)
                 try:
                     chat = client.chats.create(model=model_name)
                     response = chat.send_message(prompt)
@@ -385,7 +388,7 @@ def summarize_news_with_gemini(
                     return cleaned_result
             except Exception as model_err:
                 logger.warning("Modell %s temporär nicht erreichbar (%s). Versuche Alternative...", model_name, model_err)
-                print(f"      [Warnung] Modell {model_name} temporär nicht erreichbar ({model_err}). Versuche Alternative...")
+                print(f"      [Warnung] Modell {model_name} temporär nicht erreichbar ({model_err}). Versuche Alternative...", flush=True)
                 last_error = model_err
 
         logger.error("Alle KI-Modelle schlugen fehl: %s", last_error)

@@ -10,6 +10,7 @@ Inklusive automatischer Erkennung und unterbrechungsfreiem Failover (Fallback) b
 from __future__ import annotations
 
 import os
+import sys
 import time
 import sqlite3
 import logging
@@ -26,7 +27,7 @@ from src.exceptions import StorageError, StorageConnectionError
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_TIMEOUT_SECONDS: float = 10.0
+DEFAULT_TIMEOUT_SECONDS: float = float(os.getenv("TURSO_TIMEOUT", "30.0"))
 DEFAULT_SQLITE_PATH: str = "data/news_bot.db"
 
 
@@ -58,25 +59,26 @@ def get_turso_config() -> tuple[str | None, str | None]:
     key = os.getenv("TURSO_KEY") or os.getenv("TURSO_AUTH_TOKEN")
 
     if not url or not key:
-        try:
-            import streamlit as st
-            if hasattr(st, "secrets"):
-                if not url:
-                    if "TURSO_URL" in st.secrets:
-                        url = str(st.secrets["TURSO_URL"])
-                    elif "TURSO_DATABASE_URL" in st.secrets:
-                        url = str(st.secrets["TURSO_DATABASE_URL"])
-                    elif hasattr(st.secrets, "get"):
-                        url = st.secrets.get("TURSO_URL") or st.secrets.get("TURSO_DATABASE_URL")
-                if not key:
-                    if "TURSO_KEY" in st.secrets:
-                        key = str(st.secrets["TURSO_KEY"])
-                    elif "TURSO_AUTH_TOKEN" in st.secrets:
-                        key = str(st.secrets["TURSO_AUTH_TOKEN"])
-                    elif hasattr(st.secrets, "get"):
-                        key = st.secrets.get("TURSO_KEY") or st.secrets.get("TURSO_AUTH_TOKEN")
-        except Exception as e_sec:
-            logger.debug("Streamlit Secrets Zugriff nicht möglich: %s", e_sec)
+        if "STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules:
+            try:
+                import streamlit as st
+                if hasattr(st, "secrets"):
+                    if not url:
+                        if "TURSO_URL" in st.secrets:
+                            url = str(st.secrets["TURSO_URL"])
+                        elif "TURSO_DATABASE_URL" in st.secrets:
+                            url = str(st.secrets["TURSO_DATABASE_URL"])
+                        elif hasattr(st.secrets, "get"):
+                            url = st.secrets.get("TURSO_URL") or st.secrets.get("TURSO_DATABASE_URL")
+                    if not key:
+                        if "TURSO_KEY" in st.secrets:
+                            key = str(st.secrets["TURSO_KEY"])
+                        elif "TURSO_AUTH_TOKEN" in st.secrets:
+                            key = str(st.secrets["TURSO_AUTH_TOKEN"])
+                        elif hasattr(st.secrets, "get"):
+                            key = st.secrets.get("TURSO_KEY") or st.secrets.get("TURSO_AUTH_TOKEN")
+            except Exception as e_sec:
+                logger.debug("Streamlit Secrets Zugriff nicht möglich: %s", e_sec)
 
     url_str = str(url).strip() if url else None
     key_str = str(key).strip() if key else None
@@ -716,14 +718,28 @@ class TursoStorage(StorageBackend):
 
         requests_payload.append({"type": "close"})
 
-        try:
-            response = self._session.post(
-                self._pipeline_url,
-                json={"requests": requests_payload},
-                timeout=DEFAULT_TIMEOUT_SECONDS,
-            )
-        except requests.RequestException as exc:
-            raise StorageConnectionError(f"HTTP-Verbindungsfehler zu Turso: {exc}") from exc
+        max_retries = 2
+        response = None
+        for attempt in range(max_retries + 1):
+            try:
+                response = self._session.post(
+                    self._pipeline_url,
+                    json={"requests": requests_payload},
+                    timeout=DEFAULT_TIMEOUT_SECONDS,
+                )
+                if (response.status_code == 429 or response.status_code >= 500) and attempt < max_retries:
+                    time.sleep(1.0 * (attempt + 1))
+                    continue
+                break
+            except requests.RequestException as exc:
+                if attempt < max_retries:
+                    logger.warning(
+                        "Turso HTTP-Verbindungsfehler (Versuch %d/%d): %s. Wiederhole in %.1fs...",
+                        attempt + 1, max_retries + 1, exc, (attempt + 1) * 1.5
+                    )
+                    time.sleep((attempt + 1) * 1.5)
+                else:
+                    raise StorageConnectionError(f"HTTP-Verbindungsfehler zu Turso: {exc}") from exc
 
         if response.status_code != 200:
             raise StorageConnectionError(
@@ -870,8 +886,8 @@ class TursoStorage(StorageBackend):
         if not stmts:
             return 0
 
-        # In Batches à maximal 100 Statements aufteilen für optimale Netzwerklaufzeiten
-        BATCH_SIZE = 100
+        # In Batches à maximal 50 Statements aufteilen für optimale Netzwerklaufzeiten
+        BATCH_SIZE = 50
         saved_count = 0
         for i in range(0, len(stmts), BATCH_SIZE):
             batch = stmts[i:i + BATCH_SIZE]

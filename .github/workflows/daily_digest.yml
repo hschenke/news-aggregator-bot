@@ -28,11 +28,13 @@ jobs:
       - name: 📦 Abhängigkeiten installieren
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements-bot.txt
 
       - name: 🚀 News Aggregator ausführen
         env:
+          PYTHONUNBUFFERED: "1"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ secrets.GEMINI_MODEL || 'gemini-3.5-flash' }}
           EMAIL_PROVIDER: ${{ secrets.EMAIL_PROVIDER || 'resend' }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
@@ -45,6 +47,7 @@ jobs:
           STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app' }}
           TURSO_URL: ${{ secrets.TURSO_URL }}
           TURSO_KEY: ${{ secrets.TURSO_KEY }}
+          TURSO_TIMEOUT: "30.0"
         run: |
           python src/main.py
 
