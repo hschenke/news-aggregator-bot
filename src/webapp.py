@@ -1889,9 +1889,20 @@ with tab_articles:
         # 3. Im Aktions-Puffer sammeln (Bulk-Persistenz nach Intervall oder Klick)
         persisted_fb = st.session_state.get("persisted_feedback_map", {}).get(article_url, 0)
         if new_fb == persisted_fb:
-            action_buffer.unqueue_feedback(article_url)
+            if hasattr(action_buffer, "unqueue_feedback"):
+                action_buffer.unqueue_feedback(article_url)
+            else:
+                try:
+                    with getattr(action_buffer, "_lock"):
+                        getattr(action_buffer, "_pending_feedback", {}).pop(article_url.strip(), None)
+                except Exception:
+                    pass
         else:
-            action_buffer.queue_feedback(article_url, new_fb, article_title, persisted_feedback=persisted_fb)
+            try:
+                action_buffer.queue_feedback(article_url, new_fb, article_title, persisted_feedback=persisted_fb)
+            except TypeError:
+                # Defensiver Fallback falls eine veraltete Puffer-Instanz ohne Keyword-Arg im Speicher lief
+                action_buffer.queue_feedback(article_url, new_fb, article_title)
 
     def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """

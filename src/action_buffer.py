@@ -28,6 +28,7 @@ logger = logging.getLogger(__name__)
 
 DEFAULT_BUFFER_INTERVAL_MINUTES: int = 5
 DEFAULT_BUFFER_INTERVAL_SECONDS: int = DEFAULT_BUFFER_INTERVAL_MINUTES * 60
+ACTION_BUFFER_VERSION: int = 2
 
 
 class ActionBuffer:
@@ -36,6 +37,7 @@ class ActionBuffer:
     """
 
     def __init__(self, interval_seconds: int = DEFAULT_BUFFER_INTERVAL_SECONDS) -> None:
+        self.version: int = ACTION_BUFFER_VERSION
         self._lock = threading.Lock()
         self._pending_reads: dict[str, dict[str, Any]] = {}
         self._pending_feedback: dict[str, dict[str, Any]] = {}
@@ -88,6 +90,7 @@ class ActionBuffer:
         feedback: int,
         title: str = "",
         persisted_feedback: int | None = None,
+        **kwargs: Any,
     ) -> None:
         """
         Reiht ein Like/Dislike/Neutral-Feedback in den Puffer ein.
@@ -292,20 +295,52 @@ def get_action_buffer() -> ActionBuffer:
     """
     Gibt die globale Singleton-Instanz des Aktions-Puffers zurück.
     Initialisiert den Puffer beim ersten Aufruf thread-sicher und
-    persistiert die Instanz in builtins über beliebige Modul-Reloads hinweg.
+    persistiert die Instanz in builtins über Streamlit-Reruns hinweg.
+    Migriert bei Code-Reloads / Hot-Reloads automatisch den Zustand aus Alt-Instanzen.
     """
     global _GLOBAL_ACTION_BUFFER
+
+    def _is_compatible(buf: Any) -> bool:
+        return (
+            buf is not None
+            and type(buf) is ActionBuffer
+            and getattr(buf, "version", 0) >= ACTION_BUFFER_VERSION
+            and hasattr(buf, "unqueue_feedback")
+        )
+
     existing = getattr(builtins, "_GLOBAL_ACTION_BUFFER", None)
-    if existing is not None:
+    if _is_compatible(existing):
         _GLOBAL_ACTION_BUFFER = existing
         return existing
 
     with _BUFFER_LOCK:
         existing = getattr(builtins, "_GLOBAL_ACTION_BUFFER", None)
-        if existing is not None:
+        if _is_compatible(existing):
             _GLOBAL_ACTION_BUFFER = existing
             return existing
-        _GLOBAL_ACTION_BUFFER = ActionBuffer()
-        _GLOBAL_ACTION_BUFFER.start_periodic_timer()
-        builtins._GLOBAL_ACTION_BUFFER = _GLOBAL_ACTION_BUFFER
-        return _GLOBAL_ACTION_BUFFER
+
+        new_buffer = ActionBuffer()
+
+        # Nahtlose Datenübernahme aus veralteten Instanzen im laufenden Prozess
+        if existing is not None:
+            try:
+                old_reads = dict(getattr(existing, "_pending_reads", {}))
+                old_fb = dict(getattr(existing, "_pending_feedback", {}))
+                with new_buffer._lock:
+                    new_buffer._pending_reads.update(old_reads)
+                    new_buffer._pending_feedback.update(old_fb)
+                if hasattr(existing, "stop_periodic_timer"):
+                    existing.stop_periodic_timer()
+                logger.info(
+                    "Aktions-Puffer von Alt-Instanz auf Version %d migriert (%d Reads, %d Feedback übernommen).",
+                    ACTION_BUFFER_VERSION,
+                    len(old_reads),
+                    len(old_fb),
+                )
+            except Exception as mig_err:
+                logger.warning("Warnung bei Migration des Aktions-Puffers: %s", mig_err)
+
+        new_buffer.start_periodic_timer()
+        builtins._GLOBAL_ACTION_BUFFER = new_buffer
+        _GLOBAL_ACTION_BUFFER = new_buffer
+        return new_buffer

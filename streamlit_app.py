@@ -27,6 +27,10 @@ root_dir = Path(__file__).resolve().parent
 if str(root_dir) not in sys.path:
     sys.path.insert(0, str(root_dir))
 
+# Sicherstellen, dass geänderte src-Module bei Rerun / Hot-Reload sofort neu importiert werden
+for mod_name in [m for m in list(sys.modules.keys()) if m == "src" or m.startswith("src.")]:
+    sys.modules.pop(mod_name, None)
+
 webapp_path = root_dir / "src" / "webapp.py"
 runpy.run_path(str(webapp_path), run_name="__main__")
 
