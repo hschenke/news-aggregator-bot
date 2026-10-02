@@ -27,6 +27,8 @@ categories:
     url: https://rpgwatch.com/files/rss1.xml
 - name: Tech & AI
   feeds:
+  - name: AI News
+    url: https://www.all-ai.de/component/jmap/sitemap/rss?format=rss
   - name: Hacker News (Top)
     url: https://news.ycombinator.com/rss
   - name: Heise Online News
