@@ -1752,16 +1752,25 @@ with tab_articles:
 
     def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """
-        Reiht einen Artikel in den Aktions-Puffer ein (oder entfernt ihn wieder per Undo),
-        ohne die Ansicht abrupt zu verändern. Der Artikel wird im Puffer gesammelt
-        und nach Ablauf des eingestellten Intervalls (z. B. 5 oder 10 Min.) oder
-        per Klick auf 'Jetzt synchronisieren' gesammelt archiviert.
+        Markiert einen Artikel als gelesen, entfernt ihn sofort aus der aktiven Ansicht
+        und reiht ihn in den Aktions-Puffer ein (Bulk-Persistenz im Hintergrund nach Intervall oder Klick).
+        Hält die betreffende Kategorie und den betreffenden Feed offen, damit die
+        verbleibenden Cards nahtlos an Ort und Stelle nachrücken.
         """
         item_url = (article_item.get("link") or "").strip()
         if not item_url:
             return
 
-        # 1. Kategorie & Feed im Session-Zustand merken & Scroll-Position vormerken
+        # 1. Sofort in session_state aufnehmen
+        if "archived_urls" not in st.session_state:
+            st.session_state["archived_urls"] = set()
+        st.session_state["archived_urls"].add(item_url)
+
+        # 2. Aus news_data im Memory entfernen (sofortiges Nachrücken der Cards)
+        for cat_name, cat_items in list(news_data.items()):
+            news_data[cat_name] = [it for it in cat_items if (it.get("link") or "").strip() != item_url]
+
+        # 3. Kategorie & Feed im Session-Zustand merken & Scroll-Position vormerken
         if category:
             if "persisted_open_categories" not in st.session_state:
                 st.session_state["persisted_open_categories"] = set()
@@ -1773,11 +1782,8 @@ with tab_articles:
             feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
             st.session_state["last_read_feed_slug"] = feed_slug
 
-        # 2. Toggle im Aktions-Puffer: falls bereits vorgemerkt -> Undo! Falls nicht -> einreihen!
-        if action_buffer.is_read_queued(item_url):
-            action_buffer.unqueue_read(item_url)
-        else:
-            action_buffer.queue_read(article_item)
+        # 4. In Aktions-Puffer einreihen
+        action_buffer.queue_read(article_item)
 
     def on_clear_search():
         st.session_state["input_search_query"] = ""
@@ -1956,14 +1962,11 @@ with tab_articles:
                     parts.append(f"**{pending_fb}** Bewertungen")
                 summary_str = " • ".join(parts)
                 st.markdown(f"📦 **Aktions-Puffer:** {summary_str}")
-                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv. Neu markierte Artikel bleiben bis zum Sync stabil sichtbar.")
+                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
             with col_buf_btn:
                 if st.button("💾 Jetzt synchronisieren", key="btn_sync_buffer_now", type="primary", use_container_width=True, help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank"):
                     with st.spinner("Synchronisiere Puffer mit Datenbank..."):
-                        queued_urls = action_buffer.get_queued_read_urls()
                         arch_n, fb_n = action_buffer.flush()
-                        for c_key, c_items in list(news_data.items()):
-                            news_data[c_key] = [it for it in c_items if (it.get("link") or "").strip() not in queued_urls]
                         st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
                         st.rerun()
 
@@ -2062,10 +2065,8 @@ with tab_articles:
                                 pdate = format_article_date(item)
                                 date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
                                 summary_str = f"<div style='font-size:0.88rem; line-height:1.45; margin-bottom:0.75rem;'>{clean_summary}</div>" if clean_summary else "<div style='margin-bottom:0.5rem;'></div>"
-                                is_queued_read = action_buffer.is_read_queued(item_url)
-                                queued_badge = "<div style='display:inline-block; background-color:#ecfdf5; color:#065f46; font-size:0.75rem; font-weight:600; padding:0.12rem 0.4rem; border-radius:4px; margin-bottom:0.35rem; border:1px solid #a7f3d0;'>✓ Gelesen (im Puffer)</div><br/>" if is_queued_read else ""
                                 st.markdown(
-                                    f"{queued_badge}**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
+                                    f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
                                     unsafe_allow_html=True
                                 )
 
@@ -2086,26 +2087,15 @@ with tab_articles:
                                     args=(item_url, fb_key, clean_title),
                                 )
                                 with col_read:
-                                    if is_queued_read:
-                                        st.button(
-                                            "",
-                                            icon=":material/check_circle:",
-                                            key=read_key,
-                                            type="primary",
-                                            help="✓ Als gelesen im Puffer — Klicke erneut zum Rückgängigmachen",
-                                            on_click=on_article_read_and_archive,
-                                            args=(item, category, feed_name),
-                                        )
-                                    else:
-                                        st.button(
-                                            "",
-                                            icon=":material/check:",
-                                            key=read_key,
-                                            type="tertiary",
-                                            help="Als gelesen markieren (wandert in Puffer)",
-                                            on_click=on_article_read_and_archive,
-                                            args=(item, category, feed_name),
-                                        )
+                                    st.button(
+                                        "",
+                                        icon=":material/check:",
+                                        key=read_key,
+                                        type="tertiary",
+                                        help="Artikel als gelesen markieren & archivieren",
+                                        on_click=on_article_read_and_archive,
+                                        args=(item, category, feed_name),
+                                    )
 
     if "last_read_feed_slug" in st.session_state:
         target_slug = st.session_state.pop("last_read_feed_slug")
