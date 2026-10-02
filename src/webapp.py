@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit import runtime
 import sys
 import os
 import logging
@@ -815,93 +816,141 @@ def check_password() -> bool:
         st.session_state["auth_role"] = ROLE_ADMIN
         return True  # Kein Passwort konfiguriert -> freier Admin-Zugang
 
-    # 1. Bereits in dieser Sitzung authentifiziert?
-    if st.session_state.get("authenticated", False):
-        return True
-
-    # 2. Prüfen auf 24h-Admin-Cookie im Request Header (st.context.cookies)
-    if hasattr(st, "context") and hasattr(st.context, "cookies"):
-        admin_cookie = st.context.cookies.get(COOKIE_ADMIN_NAME)
-        if admin_cookie and verify_admin_token(admin_cookie, expected_password):
-            st.session_state["authenticated"] = True
-            st.session_state["auth_role"] = ROLE_ADMIN
+    # Falls der Benutzer sich explizit abgemeldet hat:
+    # Sämtliche automatischen Cookie/Storage/URL-Logins ignorieren und Tokens clientseitig bereinigen
+    if st.session_state.get("logged_out", False):
+        embed_client_script(f"""
+        (function() {{
+            try {{
+                localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                localStorage.removeItem("{COOKIE_ADMIN_NAME}");
+                var delCookies = function(doc) {{
+                    var names = ["{COOKIE_AUTH_NAME}", "{COOKIE_ADMIN_NAME}"];
+                    names.forEach(function(name) {{
+                        doc.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                        doc.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
+                        doc.cookie = name + "=; max-age=0; path=/;";
+                        doc.cookie = name + "=; max-age=0; path=/; SameSite=Lax; Secure";
+                        if (window.location.hostname) {{
+                            doc.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname + ";";
+                            doc.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + window.location.hostname + "; SameSite=Lax; Secure";
+                        }}
+                    }});
+                }};
+                delCookies(document);
+                if (window.parent && window.parent !== window) {{
+                    try {{
+                        window.parent.localStorage.removeItem("{COOKIE_AUTH_NAME}");
+                        window.parent.localStorage.removeItem("{COOKIE_ADMIN_NAME}");
+                        delCookies(window.parent.document);
+                    }} catch(pe) {{}}
+                }}
+                var url = new URL(window.location.href);
+                if (url.searchParams.has("auth") || url.searchParams.has("token")) {{
+                    url.searchParams.delete("auth");
+                    url.searchParams.delete("token");
+                    window.history.replaceState({{}}, document.title, url.pathname + url.search);
+                }}
+            }} catch(e) {{}}
+        }})();
+        """)
+        if cookie_controller:
+            try:
+                cookie_controller.remove(COOKIE_AUTH_NAME)
+                cookie_controller.remove(COOKIE_ADMIN_NAME)
+            except Exception:
+                pass
+    else:
+        # 1. Bereits in dieser Sitzung authentifiziert?
+        if st.session_state.get("authenticated", False):
             return True
 
-    # 3. Fallback über cookie_controller für Admin-Cookie
-    if cookie_controller:
-        try:
-            admin_ctrl = cookie_controller.get(COOKIE_ADMIN_NAME)
-            if admin_ctrl and verify_admin_token(admin_ctrl, expected_password):
+        # 2. Prüfen auf 24h-Admin-Cookie im Request Header (st.context.cookies)
+        if hasattr(st, "context") and hasattr(st.context, "cookies"):
+            admin_cookie = st.context.cookies.get(COOKIE_ADMIN_NAME)
+            if admin_cookie and verify_admin_token(admin_cookie, expected_password):
                 st.session_state["authenticated"] = True
                 st.session_state["auth_role"] = ROLE_ADMIN
                 return True
-        except Exception:
-            pass
 
-    # 4. URL Query Parameter prüfen (?auth=... oder ?token=...)
-    url_auth = st.query_params.get("auth") or st.query_params.get("token")
-    if url_auth:
-        role = get_auth_role(url_auth, expected_password)
-        if role:
-            st.session_state["authenticated"] = True
-            st.session_state["auth_role"] = role
-            return True
+        # 3. Fallback über cookie_controller für Admin-Cookie
+        if cookie_controller:
+            try:
+                admin_ctrl = cookie_controller.get(COOKIE_ADMIN_NAME)
+                if admin_ctrl and verify_admin_token(admin_ctrl, expected_password):
+                    st.session_state["authenticated"] = True
+                    st.session_state["auth_role"] = ROLE_ADMIN
+                    return True
+            except Exception:
+                pass
 
-    # 5. Read-Only HTTP Cookie im Request Header prüfen (st.context.cookies)
-    if hasattr(st, "context") and hasattr(st.context, "cookies"):
-        token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
-        if token_from_cookie:
-            role = get_auth_role(token_from_cookie, expected_password)
+        # 4. URL Query Parameter prüfen (?auth=... oder ?token=...)
+        url_auth = st.query_params.get("auth") or st.query_params.get("token")
+        if url_auth:
+            role = get_auth_role(url_auth, expected_password)
             if role:
                 st.session_state["authenticated"] = True
                 st.session_state["auth_role"] = role
                 return True
 
-    # 6. Fallback über cookie_controller für Read-Only Cookie
-    if cookie_controller:
-        try:
-            token_from_ctrl = cookie_controller.get(COOKIE_AUTH_NAME)
-            if token_from_ctrl:
-                role = get_auth_role(token_from_ctrl, expected_password)
+        # 5. Read-Only HTTP Cookie im Request Header prüfen (st.context.cookies)
+        if hasattr(st, "context") and hasattr(st.context, "cookies"):
+            token_from_cookie = st.context.cookies.get(COOKIE_AUTH_NAME)
+            if token_from_cookie:
+                role = get_auth_role(token_from_cookie, expected_password)
                 if role:
                     st.session_state["authenticated"] = True
                     st.session_state["auth_role"] = role
                     return True
-        except Exception:
-            pass
 
-    # 7. Client-seitiges Auto-Login: Falls im localStorage ein Admin- oder Read-Token liegt,
-    # wird die Seite sofort automatisch mit ?auth=TOKEN neu geladen!
-    embed_client_script(f"""
-    (function() {{
-        try {{
-            var adminStored = localStorage.getItem("{COOKIE_ADMIN_NAME}");
-            if (!adminStored) {{
-                var matchAdmin = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_ADMIN_NAME}' + '=([^;]*)'));
-                if (matchAdmin) adminStored = decodeURIComponent(matchAdmin[2]);
-            }}
-            if (adminStored && !window.location.search.includes("auth=")) {{
-                var url = new URL(window.location.href);
-                url.searchParams.set("auth", adminStored);
-                window.location.replace(url.href);
-                return;
-            }}
+        # 6. Fallback über cookie_controller für Read-Only Cookie
+        if cookie_controller:
+            try:
+                token_from_ctrl = cookie_controller.get(COOKIE_AUTH_NAME)
+                if token_from_ctrl:
+                    role = get_auth_role(token_from_ctrl, expected_password)
+                    if role:
+                        st.session_state["authenticated"] = True
+                        st.session_state["auth_role"] = role
+                        return True
+            except Exception:
+                pass
 
-            var stored = localStorage.getItem("{COOKIE_AUTH_NAME}");
-            if (!stored) {{
-                var match = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_AUTH_NAME}' + '=([^;]*)'));
-                if (match) stored = decodeURIComponent(match[2]);
-            }}
-            if (stored && !window.location.search.includes("auth=")) {{
-                var url = new URL(window.location.href);
-                url.searchParams.set("auth", stored);
-                window.location.replace(url.href);
-            }}
-        }} catch(e) {{}}
-    }})();
-    """)
+        # 7. Client-seitiges Auto-Login: Falls im localStorage ein Admin- oder Read-Token liegt,
+        # wird die Seite sofort automatisch mit ?auth=TOKEN neu geladen!
+        embed_client_script(f"""
+        (function() {{
+            try {{
+                var adminStored = localStorage.getItem("{COOKIE_ADMIN_NAME}");
+                if (!adminStored) {{
+                    var matchAdmin = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_ADMIN_NAME}' + '=([^;]*)'));
+                    if (matchAdmin) adminStored = decodeURIComponent(matchAdmin[2]);
+                }}
+                if (adminStored && !window.location.search.includes("auth=")) {{
+                    var url = new URL(window.location.href);
+                    url.searchParams.set("auth", adminStored);
+                    window.location.replace(url.href);
+                    return;
+                }}
+
+                var stored = localStorage.getItem("{COOKIE_AUTH_NAME}");
+                if (!stored) {{
+                    var match = document.cookie.match(new RegExp('(^|;\\\\s*)' + '{COOKIE_AUTH_NAME}' + '=([^;]*)'));
+                    if (match) stored = decodeURIComponent(match[2]);
+                }}
+                if (stored && !window.location.search.includes("auth=")) {{
+                    var url = new URL(window.location.href);
+                    url.searchParams.set("auth", stored);
+                    window.location.replace(url.href);
+                }}
+            }} catch(e) {{}}
+        }})();
+        """)
 
     # 8. Nicht angemeldet: Login-Formular anzeigen
+    if st.session_state.pop("just_logged_out", False):
+        st.toast("Erfolgreich abgemeldet.", icon="🔒")
+
     login_area = st.empty()
     with login_area.container():
         st.markdown("""
@@ -910,6 +959,9 @@ def check_password() -> bool:
                 <p style='color: gray;'>Diese App ist privat. Bitte gib das Passwort ein, um fortzufahren.</p>
             </div>
         """, unsafe_allow_html=True)
+
+        if st.session_state.get("logged_out", False):
+            st.info("ℹ️ Du wurdest erfolgreich abgemeldet.")
 
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
@@ -920,6 +972,7 @@ def check_password() -> bool:
                 if submit:
                     if password_input == expected_password:
                         # Erfolgreiche Admin-Anmeldung -> 24h Admin-Cookie & Token hinterlegen!
+                        st.session_state["logged_out"] = False
                         set_admin_session_cookie(expected_password)
                         st.session_state["just_logged_in"] = True
                         login_area.empty()
@@ -935,6 +988,7 @@ def check_password() -> bool:
                     else:
                         role = get_auth_role(password_input, expected_password)
                         if role == ROLE_READONLY:
+                            st.session_state["logged_out"] = False
                             st.session_state["authenticated"] = True
                             st.session_state["auth_role"] = ROLE_READONLY
                             st.session_state["just_logged_in"] = True
@@ -954,12 +1008,13 @@ def check_password() -> bool:
     return False
 
 
-if not check_password():
-    st.stop()
+if runtime.exists():
+    if not check_password():
+        st.stop()
 
 # Visueller Lade-Übergang nach Login
 init_loader_placeholder = st.empty()
-if st.session_state.pop("just_logged_in", False):
+if runtime.exists() and st.session_state.pop("just_logged_in", False):
     with init_loader_placeholder.container():
         st.markdown("""
             <div style='text-align: center; margin-top: 3.5rem; padding: 2rem;'>
@@ -1546,35 +1601,20 @@ if get_configured_app_password():
                     st.error("Falsches Passwort.")
 
     if st.sidebar.button("🚪 Abmelden", use_container_width=True):
+        st.session_state["logged_out"] = True
         st.session_state["authenticated"] = False
         st.session_state["auth_role"] = None
+        st.session_state["just_logged_out"] = True
         if "auth" in st.query_params:
             del st.query_params["auth"]
         if "token" in st.query_params:
             del st.query_params["token"]
-        embed_client_script(f"""
-        (function() {{
-            try {{
-                localStorage.removeItem("{COOKIE_AUTH_NAME}");
-                localStorage.removeItem("{COOKIE_ADMIN_NAME}");
-                document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
-                document.cookie = "{COOKIE_ADMIN_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
-                if (window.parent && window.parent !== window) {{
-                    window.parent.localStorage.removeItem("{COOKIE_AUTH_NAME}");
-                    window.parent.localStorage.removeItem("{COOKIE_ADMIN_NAME}");
-                    window.parent.document.cookie = "{COOKIE_AUTH_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
-                    window.parent.document.cookie = "{COOKIE_ADMIN_NAME}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Lax; Secure";
-                }}
-            }} catch(e) {{}}
-        }})();
-        """)
         if cookie_controller:
             try:
                 cookie_controller.remove(COOKIE_AUTH_NAME)
                 cookie_controller.remove(COOKIE_ADMIN_NAME)
             except Exception:
                 pass
-        st.toast("Erfolgreich abgemeldet.", icon="🔒")
         st.rerun()
 
 # --- Main Layout & Data Loading ---
@@ -1590,7 +1630,7 @@ if "archived_urls" not in st.session_state:
         logger.debug("Archivierte URLs konnten nicht geladen werden: %s", exc)
         st.session_state["archived_urls"] = set()
 
-archived_urls_set = st.session_state.get("archived_urls", set())
+archived_urls_set = st.session_state.get("archived_urls", set()) | action_buffer.get_queued_read_urls()
 if archived_urls_set:
     news_data = {
         cat: [it for it in items if (it.get("link") or "").strip() not in archived_urls_set]
@@ -1658,10 +1698,6 @@ archived_chip_html = f'<span class="kpi-chip" style="background-color:rgba(100, 
 buf_interval_mins = action_buffer.get_interval_minutes()
 p_reads, p_fb = action_buffer.get_pending_counts()
 tot_pending_actions = p_reads + p_fb
-if tot_pending_actions > 0:
-    buffer_chip_html = f'<span class="kpi-chip" style="background-color:rgba(234, 179, 8, 0.15); border-color:rgba(234, 179, 8, 0.4); color:#b45309;" title="{tot_pending_actions} Aktionen im Puffer (Auto-Sync alle {buf_interval_mins} Min.)">📥 <strong>{tot_pending_actions}</strong> im Puffer</span>'
-else:
-    buffer_chip_html = f'<span class="kpi-chip" style="background-color:rgba(241, 245, 249, 0.8); border-color:rgba(203, 213, 225, 0.6); color:#64748b;" title="Aktions-Puffer aktiv (Auto-Sync alle {buf_interval_mins} Min.)">📥 <strong>Puffer synchron</strong></span>'
 
 chips = [
     f'<span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>',
@@ -1672,7 +1708,10 @@ if liked_chip_html:
     chips.append(liked_chip_html)
 if archived_chip_html:
     chips.append(archived_chip_html)
-chips.append(buffer_chip_html)
+if tot_pending_actions > 0:
+    chips.append(
+        f'<span class="kpi-chip" style="background-color:rgba(234, 179, 8, 0.15); border-color:rgba(234, 179, 8, 0.4); color:#b45309;" title="{tot_pending_actions} Aktionen im Puffer (Auto-Sync alle {buf_interval_mins} Min.)">📥 <strong>{tot_pending_actions}</strong> im Puffer</span>'
+    )
 chips.append(f'<span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>')
 
 st.html(f'<div class="kpi-container">{"".join(chips)}</div>')
@@ -2053,41 +2092,6 @@ with tab_articles:
     if filter_summary_items:
         st.caption(f"⚡ Aktive Filter: **{' • '.join(filter_summary_items)}**")
 
-    # Aktions-Puffer Status & Manuelle Synchronisierung
-    pending_reads, pending_fb = action_buffer.get_pending_counts()
-    total_pending = pending_reads + pending_fb
-    buf_interval = action_buffer.get_interval_minutes()
-
-    with st.container(border=True):
-        col_buf_txt, col_buf_btn = st.columns([3.5, 1.5], vertical_alignment="center")
-        with col_buf_txt:
-            if total_pending > 0:
-                parts = []
-                if pending_reads > 0:
-                    parts.append(f"**{pending_reads}** als gelesen vorgemerkt")
-                if pending_fb > 0:
-                    parts.append(f"**{pending_fb}** Bewertungen")
-                summary_str = " • ".join(parts)
-                st.markdown(f"📥 **Aktions-Puffer aktiv:** {summary_str}")
-                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
-            else:
-                st.markdown("📥 **Aktions-Puffer:** Alle Aktionen mit Datenbank synchronisiert (0 vorgemerkt)")
-                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
-        with col_buf_btn:
-            sync_btn_disabled = (total_pending == 0)
-            if st.button(
-                "💾 Jetzt synchronisieren",
-                key="btn_sync_buffer_now",
-                type="primary" if total_pending > 0 else "secondary",
-                use_container_width=True,
-                disabled=sync_btn_disabled,
-                help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank" if total_pending > 0 else "Keine ausstehenden Aktionen im Puffer",
-            ):
-                with st.spinner("Synchronisiere Puffer mit Datenbank..."):
-                    arch_n, fb_n = action_buffer.flush()
-                    st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
-                    st.rerun()
-
     col_stat_placeholder = st.empty()
 
     descending_sort = not bool(st.session_state.get("chk_sort_oldest", True))
@@ -2290,6 +2294,42 @@ with tab_articles:
                 st.warning(f"Keine Artikel für die Kategorie '{selected_cat}' gefunden (0 Treffer).")
             else:
                 st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen (0 Treffer).")
+
+    # Aktions-Puffer Status & Manuelle Synchronisierung (unterhalb der letzten Kategorie platziert)
+    pending_reads, pending_fb = action_buffer.get_pending_counts()
+    total_pending = pending_reads + pending_fb
+    buf_interval = action_buffer.get_interval_minutes()
+
+    st.markdown("<div style='margin-top: 1.5rem;'></div>", unsafe_allow_html=True)
+    with st.container(border=True):
+        col_buf_txt, col_buf_btn = st.columns([3.5, 1.5], vertical_alignment="center")
+        with col_buf_txt:
+            if total_pending > 0:
+                parts = []
+                if pending_reads > 0:
+                    parts.append(f"**{pending_reads}** als gelesen vorgemerkt")
+                if pending_fb > 0:
+                    parts.append(f"**{pending_fb}** Bewertungen")
+                summary_str = " • ".join(parts)
+                st.markdown(f"📥 **Aktions-Puffer aktiv:** {summary_str}")
+                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
+            else:
+                st.markdown("📥 **Aktions-Puffer:** Alle Aktionen mit Datenbank synchronisiert (0 vorgemerkt)")
+                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
+        with col_buf_btn:
+            sync_btn_disabled = (total_pending == 0)
+            if st.button(
+                "💾 Jetzt synchronisieren",
+                key="btn_sync_buffer_now",
+                type="primary" if total_pending > 0 else "secondary",
+                use_container_width=True,
+                disabled=sync_btn_disabled,
+                help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank" if total_pending > 0 else "Keine ausstehenden Aktionen im Puffer",
+            ):
+                with st.spinner("Synchronisiere Puffer mit Datenbank..."):
+                    arch_n, fb_n = action_buffer.flush()
+                    st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
+                    st.rerun()
 
 # ----------------- TAB: KI -----------------
 with tab_ki:

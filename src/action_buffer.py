@@ -14,6 +14,7 @@ Besonderheiten:
 
 from __future__ import annotations
 
+import builtins
 import logging
 import threading
 import time
@@ -258,12 +259,21 @@ _BUFFER_LOCK = threading.Lock()
 def get_action_buffer() -> ActionBuffer:
     """
     Gibt die globale Singleton-Instanz des Aktions-Puffers zurück.
-    Initialisiert den Puffer beim ersten Aufruf thread-sicher.
+    Initialisiert den Puffer beim ersten Aufruf thread-sicher und
+    persistiert die Instanz in builtins über beliebige Modul-Reloads hinweg.
     """
     global _GLOBAL_ACTION_BUFFER
-    if _GLOBAL_ACTION_BUFFER is None:
-        with _BUFFER_LOCK:
-            if _GLOBAL_ACTION_BUFFER is None:
-                _GLOBAL_ACTION_BUFFER = ActionBuffer()
-                _GLOBAL_ACTION_BUFFER.start_periodic_timer()
-    return _GLOBAL_ACTION_BUFFER
+    existing = getattr(builtins, "_GLOBAL_ACTION_BUFFER", None)
+    if existing is not None:
+        _GLOBAL_ACTION_BUFFER = existing
+        return existing
+
+    with _BUFFER_LOCK:
+        existing = getattr(builtins, "_GLOBAL_ACTION_BUFFER", None)
+        if existing is not None:
+            _GLOBAL_ACTION_BUFFER = existing
+            return existing
+        _GLOBAL_ACTION_BUFFER = ActionBuffer()
+        _GLOBAL_ACTION_BUFFER.start_periodic_timer()
+        builtins._GLOBAL_ACTION_BUFFER = _GLOBAL_ACTION_BUFFER
+        return _GLOBAL_ACTION_BUFFER

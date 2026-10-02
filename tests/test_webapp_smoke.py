@@ -97,6 +97,42 @@ class TestWebappSmoke(unittest.TestCase):
         sync_btns = [b for b in at.button if b.key == "btn_sync_buffer_now"]
         self.assertTrue(len(sync_btns) > 0, "Button btn_sync_buffer_now sollte im Artikel-Tab gerendert werden")
 
+    def test_logged_out_state_shows_login_form(self):
+        """Prüft, dass bei logged_out=True das Login-Formular gerendert und Auto-Logins ignoriert werden."""
+        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at.session_state["logged_out"] = True
+        at.session_state["authenticated"] = False
+        at.run()
+        if at.exception:
+            error_msgs = [f"{exc.type}: {exc.value}" for exc in at.exception]
+            self.fail(f"Logout-Zustand warf Exceptions: {error_msgs}")
+        # Prüfen, dass das Passwort-Feld gerendert wird
+        password_inputs = [inp for inp in at.text_input if "Passwort" in (inp.label or "")]
+        self.assertTrue(len(password_inputs) > 0, "Login-Formular sollte nach Logout angezeigt werden")
+
+    def test_action_buffer_singleton_persistence(self):
+        """Prüft, dass der Aktions-Puffer thread-sicher und persistent in builtins erhalten bleibt."""
+        from src.action_buffer import get_action_buffer
+        buf = get_action_buffer()
+        buf.clear()
+        self.assertEqual(buf.get_pending_counts(), (0, 0))
+
+        test_item = {
+            "title": "Buffer Test Artikel",
+            "link": "https://example.com/buffer-test-1",
+            "category": "Tech & AI",
+        }
+        buf.queue_read(test_item)
+        buf.queue_feedback("https://example.com/buffer-test-1", 1, "Buffer Test Artikel")
+
+        # Zweiter Abruf der Singleton-Instanz
+        buf2 = get_action_buffer()
+        self.assertIs(buf, buf2, "get_action_buffer muss die identische Singleton-Instanz zurückgeben")
+        reads_cnt, fb_cnt = buf2.get_pending_counts()
+        self.assertEqual(reads_cnt, 1)
+        self.assertEqual(fb_cnt, 1)
+        buf.clear()
+
 
 if __name__ == "__main__":
     unittest.main()
