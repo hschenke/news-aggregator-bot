@@ -933,11 +933,35 @@ if not check_password():
 
 
 # --- Caching Data Loading ---
-@st.cache_data(ttl=1800, show_spinner=False)  # 30 Minuten Cache für News
-def get_news_data():
-    logger.info("📡 [Streamlit] Lade konfigurierte RSS-Feeds...")
+@st.cache_data(ttl=86400, show_spinner=False)  # 24h Cache; Aktualisierung via 'Feeds neu laden' oder morgendlichen GitHub Run
+def get_news_data(force_live_fetch: bool = False):
+    """
+    Lädt News-Artikel schnell aus der Datenbank (Turso Cloud DB / lokales SQLite-Archiv).
+    Verhindert langwieriges RSS-Scraping beim Starten oder Einloggen der App.
+    Nur bei komplett leerer Datenbank oder wenn explizit 'force_live_fetch=True'
+    übergeben wird (z. B. bei Klick auf 'Feeds neu laden'), werden RSS-Feeds live aus dem Web geladen.
+    """
     t0 = time.time()
-    data = collect_all_news()
+    if not force_live_fetch:
+        try:
+            from src.storage import get_storage
+            storage = get_storage()
+            db_articles = storage.get_articles(limit=5000)
+            if db_articles:
+                data: dict[str, list[dict[str, Any]]] = {}
+                for art in db_articles:
+                    c = art.category or "Allgemein"
+                    data.setdefault(c, []).append(art.to_dict())
+                duration = time.time() - t0
+                total_articles = sum(len(items) for items in data.values())
+                logger.info("⚡ [Streamlit] %d Artikel über %d Kategorien blitzschnell aus Datenbank in %.2fs geladen.", total_articles, len(data), duration)
+                return data
+        except Exception as exc:
+            logger.warning("Laden aus Datenbank fehlgeschlagen (%s). Fallback auf RSS-Einlesen...", exc)
+
+    logger.info("📡 [Streamlit] Lese alle RSS-Feeds frisch aus dem Internet ein...")
+    t0 = time.time()
+    data = collect_all_news(save_to_db=True)
     duration = time.time() - t0
     total_articles = sum(len(items) for items in data.values())
     logger.info("✅ [Streamlit] %d Artikel über %d Kategorien in %.2fs geladen.", total_articles, len(data), duration)
@@ -1122,9 +1146,11 @@ st.sidebar.markdown("---")
 
 # Refresh Button
 if st.sidebar.button("🔄 Feeds neu laden", use_container_width=True, help="Liest alle RSS-Feeds frisch ein"):
-    logger.info("🔄 [Streamlit] Nutzer klickte 'Feeds neu laden'. Cache wird geleert.")
+    logger.info("🔄 [Streamlit] Nutzer klickte 'Feeds neu laden'. Lese alle RSS-Feeds frisch ein...")
     st.cache_data.clear()
-    st.toast("Feeds wurden aktualisiert!", icon="📰")
+    with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
+        get_news_data(force_live_fetch=True)
+    st.toast("Feeds wurden frisch eingelesen & in Datenbank gesichert!", icon="📰")
     st.rerun()
 
 try:
@@ -1997,6 +2023,7 @@ with tab_articles:
 
     displayed_count = 0
     categories_rendered = 0
+    rendered_element_keys: set[str] = set()
 
     for category in sorted_all_categories:
         if selected_cat != "Alle Kategorien" and category != selected_cat:
@@ -2054,7 +2081,16 @@ with tab_articles:
             sorted_feed_names = sorted(feeds_dict.keys(), key=lambda x: x.strip().lower())
 
             for feed_name in sorted_feed_names:
-                f_items = feeds_dict[feed_name]
+                f_items_raw = feeds_dict[feed_name]
+                seen_f_urls = set()
+                f_items = []
+                for it in f_items_raw:
+                    u = (it.get("link") or "").strip()
+                    if u and u in seen_f_urls:
+                        continue
+                    if u:
+                        seen_f_urls.add(u)
+                    f_items.append(it)
                 # Artikel innerhalb des Feeds nach Datum sortieren
                 f_items.sort(key=get_sort_key, reverse=descending_sort)
 
@@ -2074,6 +2110,7 @@ with tab_articles:
                         displayed_count += 1
                         with cols[idx % 2]:
                             with st.container(border=True):
+                                item_url = (item.get("link") or "").strip()
                                 clean_title = clean_html_text(item.get("title", "Kein Titel"))
                                 clean_summary = format_summary_html(item.get("summary", ""))
                                 pdate = format_article_date(item)
@@ -2087,9 +2124,21 @@ with tab_articles:
                                 # Bewertungs-Daumen (Like / Dislike) links & Gelesen-Symbol rechts
                                 cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
-                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12]
+                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{displayed_count}"
                                 fb_key = f"fb_{item_url_hash}"
                                 read_key = f"read_{item_url_hash}"
+                                if fb_key in rendered_element_keys:
+                                    dup_cnt = 1
+                                    while f"{fb_key}_{dup_cnt}" in rendered_element_keys:
+                                        dup_cnt += 1
+                                    fb_key = f"{fb_key}_{dup_cnt}"
+                                rendered_element_keys.add(fb_key)
+                                if read_key in rendered_element_keys:
+                                    dup_cnt = 1
+                                    while f"{read_key}_{dup_cnt}" in rendered_element_keys:
+                                        dup_cnt += 1
+                                    read_key = f"{read_key}_{dup_cnt}"
+                                rendered_element_keys.add(read_key)
 
                                 col_fb, col_read = st.columns([1, 1], vertical_alignment="center", wrap=False)
                                 with col_fb:
