@@ -56,6 +56,47 @@ class TestWebappSmoke(unittest.TestCase):
             self.assertEqual(data["Tech & AI"][0]["title"], "Fast DB Article")
             mock_collect.assert_not_called()
 
+    def test_unconfigured_categories_and_test_articles_ignored(self):
+        """Prüft, dass unkonfigurierte Kategorien (z. B. Allgemein) und Test-Dummies herausgefiltert werden."""
+        from unittest.mock import patch, MagicMock
+        from src.models import Article
+        import streamlit as st
+
+        articles = [
+            Article(title="Title 1", link="https://example.com/test-1", category="", source=""),
+            Article(title="Dummy Allgemein", link="https://example.com/dummy", category="Allgemein", source=""),
+            Article(title="Echter Tech Artikel", link="https://heise.de/news-123", category="Tech & AI", source="Heise Online News"),
+        ]
+
+        with patch("src.storage.get_storage") as mock_get_storage, \
+             patch("src.aggregator.collect_all_news") as mock_collect:
+            mock_storage = MagicMock()
+            mock_storage.get_articles.return_value = articles
+            mock_get_storage.return_value = mock_storage
+
+            st.cache_data.clear()
+            import src.webapp as webapp
+            data = webapp.get_news_data(force_live_fetch=False)
+
+            self.assertNotIn("Allgemein", data)
+            self.assertNotIn("", data)
+            self.assertIn("Tech & AI", data)
+            self.assertEqual(len(data["Tech & AI"]), 1)
+            mock_collect.assert_not_called()
+
+    def test_authenticated_app_renders(self):
+        """Prüft das fehlerfreie Rendern des Dashboards im authentifizierten Zustand inklusive Aktions-Puffer."""
+        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at.session_state["authenticated"] = True
+        at.session_state["auth_role"] = "admin"
+        at.run()
+        if at.exception:
+            error_msgs = [f"{exc.type}: {exc.value}" for exc in at.exception]
+            self.fail(f"Authentifizierte App warf Exceptions: {error_msgs}")
+        # Prüfen, dass der Synchronisieren-Button vorhanden ist
+        sync_btns = [b for b in at.button if b.key == "btn_sync_buffer_now"]
+        self.assertTrue(len(sync_btns) > 0, "Button btn_sync_buffer_now sollte im Artikel-Tab gerendert werden")
+
 
 if __name__ == "__main__":
     unittest.main()

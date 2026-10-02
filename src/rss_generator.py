@@ -245,9 +245,10 @@ def _export_category_feeds(
     all_articles: list[dict[str, Any]] = []
     category_registry: list[dict[str, Any]] = []
 
-    known_cat_names = set(news_data.keys())
-    for c in categories_cfg:
-        known_cat_names.add(c.get("name", "").strip())
+    if categories_cfg:
+        known_cat_names = {c.get("name", "").strip() for c in categories_cfg if c.get("name", "").strip()}
+    else:
+        known_cat_names = {k.strip() for k in news_data.keys() if k.strip()}
 
     for cat_name in sorted(list(known_cat_names), key=lambda x: x.strip().lower()):
         if not cat_name:

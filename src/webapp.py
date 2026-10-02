@@ -191,6 +191,12 @@ st.markdown("""
         opacity: 1 !important;
         filter: none !important;
     }
+    /* Sperrt Buttons während laufender Ausführung (z. B. Speichern / Sync), um Mehrfach-Klicks zu verhindern */
+    .stApp[data-test-script-state="running"] button,
+    .stApp[data-test-script-state="running"] .stButton > button {
+        pointer-events: none !important;
+        cursor: wait !important;
+    }
     /* Card Container & Text-Wrapping: verhindert Überlauf auf Mobile & Desktop */
     [data-testid="stVerticalBlockBorderWrapper"] {
         width: 100% !important;
@@ -896,40 +902,72 @@ def check_password() -> bool:
     """)
 
     # 8. Nicht angemeldet: Login-Formular anzeigen
-    st.markdown("""
-        <div style='text-align: center; margin-top: 2rem;'>
-            <h2>🔒 Zugriff geschützt</h2>
-            <p style='color: gray;'>Diese App ist privat. Bitte gib das Passwort ein, um fortzufahren.</p>
-        </div>
-    """, unsafe_allow_html=True)
+    login_area = st.empty()
+    with login_area.container():
+        st.markdown("""
+            <div style='text-align: center; margin-top: 2rem;'>
+                <h2>🔒 Zugriff geschützt</h2>
+                <p style='color: gray;'>Diese App ist privat. Bitte gib das Passwort ein, um fortzufahren.</p>
+            </div>
+        """, unsafe_allow_html=True)
 
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        with st.form("login_form"):
-            password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
-            submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            with st.form("login_form"):
+                password_input = st.text_input("Passwort / PIN", type="password", placeholder="••••••••")
+                submit = st.form_submit_button("Anmelden", use_container_width=True, type="primary")
 
-            if submit:
-                if password_input == expected_password:
-                    # Erfolgreiche Admin-Anmeldung -> 24h Admin-Cookie & Token hinterlegen!
-                    set_admin_session_cookie(expected_password)
-                    st.toast("Erfolgreich als Admin angemeldet!", icon="🔓")
-                    st.rerun()
-                else:
-                    role = get_auth_role(password_input, expected_password)
-                    if role == ROLE_READONLY:
-                        st.session_state["authenticated"] = True
-                        st.session_state["auth_role"] = ROLE_READONLY
-                        st.toast("Erfolgreich im Lese-Modus angemeldet!", icon="👁️")
+                if submit:
+                    if password_input == expected_password:
+                        # Erfolgreiche Admin-Anmeldung -> 24h Admin-Cookie & Token hinterlegen!
+                        set_admin_session_cookie(expected_password)
+                        st.session_state["just_logged_in"] = True
+                        login_area.empty()
+                        with login_area.container():
+                            st.markdown("""
+                                <div style='text-align: center; margin-top: 3.5rem; padding: 2rem;'>
+                                    <div style='font-size: 2.5rem; margin-bottom: 0.8rem;'>⏳</div>
+                                    <h3 style='color: #1e293b; margin-bottom: 0.5rem;'>Anmeldung erfolgreich!</h3>
+                                    <p style='color: #64748b; font-size: 0.95rem;'>Lade Dashboard und aktuelle Nachrichten...</p>
+                                </div>
+                            """, unsafe_allow_html=True)
                         st.rerun()
                     else:
-                        st.error("Falsches Passwort. Bitte erneut versuchen.")
+                        role = get_auth_role(password_input, expected_password)
+                        if role == ROLE_READONLY:
+                            st.session_state["authenticated"] = True
+                            st.session_state["auth_role"] = ROLE_READONLY
+                            st.session_state["just_logged_in"] = True
+                            login_area.empty()
+                            with login_area.container():
+                                st.markdown("""
+                                    <div style='text-align: center; margin-top: 3.5rem; padding: 2rem;'>
+                                        <div style='font-size: 2.5rem; margin-bottom: 0.8rem;'>⏳</div>
+                                        <h3 style='color: #1e293b; margin-bottom: 0.5rem;'>Anmeldung erfolgreich!</h3>
+                                        <p style='color: #64748b; font-size: 0.95rem;'>Lade Dashboard und aktuelle Nachrichten...</p>
+                                    </div>
+                                """, unsafe_allow_html=True)
+                            st.rerun()
+                        else:
+                            st.error("Falsches Passwort. Bitte erneut versuchen.")
 
     return False
 
 
 if not check_password():
     st.stop()
+
+# Visueller Lade-Übergang nach Login
+init_loader_placeholder = st.empty()
+if st.session_state.pop("just_logged_in", False):
+    with init_loader_placeholder.container():
+        st.markdown("""
+            <div style='text-align: center; margin-top: 3.5rem; padding: 2rem;'>
+                <div style='font-size: 2.5rem; margin-bottom: 0.8rem;'>⏳</div>
+                <h3 style='color: #1e293b; margin-bottom: 0.5rem;'>Seite lädt...</h3>
+                <p style='color: #64748b; font-size: 0.95rem;'>Dashboard und aktuelle Nachrichten werden aufbereitet...</p>
+            </div>
+        """, unsafe_allow_html=True)
 
 
 # --- Caching Data Loading ---
@@ -949,9 +987,25 @@ def get_news_data(force_live_fetch: bool = False):
             db_articles = storage.get_articles(limit=5000)
             if db_articles:
                 data: dict[str, list[dict[str, Any]]] = {}
+                sources_cfg = get_sources_config()
+                valid_cat_names = {
+                    c.get("name", "").strip()
+                    for c in sources_cfg.get("categories", [])
+                    if c.get("name", "").strip()
+                }
                 for art in db_articles:
-                    c = art.category or "Allgemein"
-                    data.setdefault(c, []).append(art.to_dict())
+                    title = (art.title or "").strip()
+                    url = (art.link or "").strip()
+                    # Test- und Dummy-Artikel ausschließen (z. B. Title 1 / test-1)
+                    if not title or (title.startswith("Title ") and "example.com" in url) or "example.com/test-" in url:
+                        continue
+                    cat = (art.category or "").strip()
+                    # Nur konfigurierte Kategorien übernehmen
+                    if valid_cat_names and cat not in valid_cat_names:
+                        continue
+                    if not cat:
+                        continue
+                    data.setdefault(cat, []).append(art.to_dict())
                 duration = time.time() - t0
                 total_articles = sum(len(items) for items in data.values())
                 logger.info("⚡ [Streamlit] %d Artikel über %d Kategorien blitzschnell aus Datenbank in %.2fs geladen.", total_articles, len(data), duration)
@@ -1037,34 +1091,35 @@ def perform_save_all():
     # Immer im Tab Verwalten bleiben
     st.session_state["pending_nav_tab"] = "manage"
     st.query_params["tab"] = "manage"
-    try:
-        # RSS-Feeds vor dem Push frisch aufbereiten, damit sie sofort aktuell auf GitHub/CDN landen
+    with st.spinner("💾 Speichere Konfiguration & synchronisiere mit GitHub / CDN... Bitte kurz warten."):
         try:
-            cached_news = get_news_data()
-            app_base = cfg_to_save.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
-            export_all_rss_feeds(cached_news, config=cfg_to_save, base_url=app_base)
-        except Exception as e_rss:
-            print(f"[Hinweis] Lokaler RSS-Feed Export vor Save übersprungen: {e_rss}")
+            # RSS-Feeds vor dem Push frisch aufbereiten, damit sie sofort aktuell auf GitHub/CDN landen
+            try:
+                cached_news = get_news_data()
+                app_base = cfg_to_save.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
+                export_all_rss_feeds(cached_news, config=cfg_to_save, base_url=app_base)
+            except Exception as e_rss:
+                logger.warning("Lokaler RSS-Feed Export vor Save übersprungen: %s", e_rss)
 
-        gh_res = save_sources(cfg_to_save, sync_github=True)
-        st.cache_data.clear()
-        fresh_cfg = load_sources()
-        st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
-        st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
-        st.session_state["has_unsaved_changes"] = False
-        if gh_res.get("success"):
-            st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
-            st.toast("Gespeichert & mit GitHub / CDN synchronisiert!", icon="🚀")
-        else:
-            err = gh_res.get("error")
-            if err and "Kein GITHUB_TOKEN" not in err:
-                st.session_state["save_feedback"] = ("warning", f"In `sources.yaml` gespeichert, aber GitHub-Sync fehlgeschlagen: {err}")
+            gh_res = save_sources(cfg_to_save, sync_github=True)
+            st.cache_data.clear()
+            fresh_cfg = load_sources()
+            st.session_state["working_sources_config"] = copy.deepcopy(fresh_cfg)
+            st.session_state["last_loaded_saved_config"] = copy.deepcopy(fresh_cfg)
+            st.session_state["has_unsaved_changes"] = False
+            if gh_res.get("success"):
+                st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` und auf dem RSS-CDN gespeichert!")
+                st.toast("Gespeichert & mit GitHub / CDN synchronisiert!", icon="🚀")
             else:
-                st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert!")
-                st.toast("In sources.yaml gespeichert!", icon="💾")
-        st.rerun()
-    except Exception as e:
-        st.error(f"Fehler beim Speichern: {e}")
+                err = gh_res.get("error")
+                if err and "Kein GITHUB_TOKEN" not in err:
+                    st.session_state["save_feedback"] = ("warning", f"In `sources.yaml` gespeichert, aber GitHub-Sync fehlgeschlagen: {err}")
+                else:
+                    st.session_state["save_feedback"] = ("success", "Alle Änderungen erfolgreich in `config/sources.yaml` gespeichert!")
+                    st.toast("In sources.yaml gespeichert!", icon="💾")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Fehler beim Speichern: {e}")
 
 def perform_discard_all():
     """Verwirft alle ungespeicherten Änderungen und setzt auf den Stand der sources.yaml zurück."""
@@ -1581,6 +1636,8 @@ total_feeds = sum(len(c.get("feeds", [])) for c in working_config.get("categorie
 # Neue Artikel im Pool ermitteln
 new_pool_articles = get_new_articles_count(news_data)
 
+init_loader_placeholder.empty()
+
 st.title("📰 Daily News Briefing", anchor=False)
 st.caption(f"Aktualisiert: {get_local_now().strftime('%d.%m.%Y, %H:%M Uhr')}")
 
@@ -1598,6 +1655,14 @@ liked_chip_html = f'<span class="kpi-chip" style="background-color:rgba(34, 197,
 archived_count = len(archived_urls_set)
 archived_chip_html = f'<span class="kpi-chip" style="background-color:rgba(100, 116, 139, 0.12); border-color:rgba(100, 116, 139, 0.35); color:#64748b;" title="{archived_count} Artikel als gelesen archiviert">📦 <strong>{archived_count}</strong> Gelesen</span>' if archived_count > 0 else ""
 
+buf_interval_mins = action_buffer.get_interval_minutes()
+p_reads, p_fb = action_buffer.get_pending_counts()
+tot_pending_actions = p_reads + p_fb
+if tot_pending_actions > 0:
+    buffer_chip_html = f'<span class="kpi-chip" style="background-color:rgba(234, 179, 8, 0.15); border-color:rgba(234, 179, 8, 0.4); color:#b45309;" title="{tot_pending_actions} Aktionen im Puffer (Auto-Sync alle {buf_interval_mins} Min.)">📥 <strong>{tot_pending_actions}</strong> im Puffer</span>'
+else:
+    buffer_chip_html = f'<span class="kpi-chip" style="background-color:rgba(241, 245, 249, 0.8); border-color:rgba(203, 213, 225, 0.6); color:#64748b;" title="Aktions-Puffer aktiv (Auto-Sync alle {buf_interval_mins} Min.)">📥 <strong>Puffer synchron</strong></span>'
+
 chips = [
     f'<span class="kpi-chip">📌 <strong>{total_categories}</strong> Kategorien</span>',
     f'<span class="kpi-chip">📡 <strong>{total_feeds}</strong> Feeds</span>',
@@ -1607,6 +1672,7 @@ if liked_chip_html:
     chips.append(liked_chip_html)
 if archived_chip_html:
     chips.append(archived_chip_html)
+chips.append(buffer_chip_html)
 chips.append(f'<span class="kpi-chip">🤖 <strong>{engine_short}</strong></span>')
 
 st.html(f'<div class="kpi-container">{"".join(chips)}</div>')
@@ -1815,12 +1881,13 @@ with tab_articles:
         st.session_state["input_search_query"] = ""
         st.session_state["sel_articles_rating"] = "Alle Bewertungen"
 
-    # 1. Alle bekannten Kategorien (aus news_data und Konfiguration) ermitteln
-    known_cats_set = set(news_data.keys())
-    for c in working_config.get("categories", []):
-        cname = c.get("name", "").strip()
-        if cname:
-            known_cats_set.add(cname)
+    # 1. Alle bekannten Kategorien (aus Konfiguration) ermitteln
+    configured_cats = [
+        c.get("name", "").strip()
+        for c in working_config.get("categories", [])
+        if c.get("name", "").strip()
+    ]
+    known_cats_set = set(configured_cats) if configured_cats else {k.strip() for k in news_data.keys() if k.strip()}
     sorted_all_categories = sorted(list(known_cats_set), key=lambda x: x.strip().lower())
     category_options = ["Alle Kategorien"] + sorted_all_categories
 
@@ -1989,26 +2056,37 @@ with tab_articles:
     # Aktions-Puffer Status & Manuelle Synchronisierung
     pending_reads, pending_fb = action_buffer.get_pending_counts()
     total_pending = pending_reads + pending_fb
+    buf_interval = action_buffer.get_interval_minutes()
 
-    if total_pending > 0:
-        with st.container(border=True):
-            col_buf_txt, col_buf_btn = st.columns([3.5, 1.5], vertical_alignment="center")
-            with col_buf_txt:
-                buf_interval = action_buffer.get_interval_minutes()
+    with st.container(border=True):
+        col_buf_txt, col_buf_btn = st.columns([3.5, 1.5], vertical_alignment="center")
+        with col_buf_txt:
+            if total_pending > 0:
                 parts = []
                 if pending_reads > 0:
                     parts.append(f"**{pending_reads}** als gelesen vorgemerkt")
                 if pending_fb > 0:
                     parts.append(f"**{pending_fb}** Bewertungen")
                 summary_str = " • ".join(parts)
-                st.markdown(f"📦 **Aktions-Puffer:** {summary_str}")
+                st.markdown(f"📥 **Aktions-Puffer aktiv:** {summary_str}")
                 st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
-            with col_buf_btn:
-                if st.button("💾 Jetzt synchronisieren", key="btn_sync_buffer_now", type="primary", use_container_width=True, help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank"):
-                    with st.spinner("Synchronisiere Puffer mit Datenbank..."):
-                        arch_n, fb_n = action_buffer.flush()
-                        st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
-                        st.rerun()
+            else:
+                st.markdown("📥 **Aktions-Puffer:** Alle Aktionen mit Datenbank synchronisiert (0 vorgemerkt)")
+                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv.")
+        with col_buf_btn:
+            sync_btn_disabled = (total_pending == 0)
+            if st.button(
+                "💾 Jetzt synchronisieren",
+                key="btn_sync_buffer_now",
+                type="primary" if total_pending > 0 else "secondary",
+                use_container_width=True,
+                disabled=sync_btn_disabled,
+                help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank" if total_pending > 0 else "Keine ausstehenden Aktionen im Puffer",
+            ):
+                with st.spinner("Synchronisiere Puffer mit Datenbank..."):
+                    arch_n, fb_n = action_buffer.flush()
+                    st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
+                    st.rerun()
 
     col_stat_placeholder = st.empty()
 
@@ -2095,6 +2173,16 @@ with tab_articles:
                 f_items.sort(key=get_sort_key, reverse=descending_sort)
 
                 feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
+                feed_limit_key = f"feed_limit_{feed_slug}"
+                DEFAULT_FEED_PAGE_SIZE = 20
+                current_feed_limit = st.session_state.get(feed_limit_key, DEFAULT_FEED_PAGE_SIZE)
+
+                # Bei aktiver Suche oder Bewertungsfilter alle Treffer anzeigen, sonst paginiert
+                if search_query or (curr_rating and curr_rating != "Alle Bewertungen"):
+                    visible_items = f_items
+                else:
+                    visible_items = f_items[:current_feed_limit]
+
                 # Deeplink aus E-Mail klappt diesen Feed immer auf, sonst Filter-Checkbox oder aktive Suche/Auswahl
                 feed_is_open = True if (
                     is_filtering
@@ -2106,7 +2194,7 @@ with tab_articles:
                 with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
                     st.html(f'<div id="anchor-feed-{feed_slug}" style="height:0; margin:0; padding:0;"></div>')
                     cols = st.columns(2)
-                    for idx, item in enumerate(f_items):
+                    for idx, item in enumerate(visible_items):
                         displayed_count += 1
                         with cols[idx % 2]:
                             with st.container(border=True):
@@ -2159,6 +2247,23 @@ with tab_articles:
                                         on_click=on_article_read_and_archive,
                                         args=(item, category, feed_name),
                                     )
+
+                    if len(f_items) > len(visible_items):
+                        remaining_count = len(f_items) - len(visible_items)
+                        batch_count = min(DEFAULT_FEED_PAGE_SIZE, remaining_count)
+                        c_m1, c_m2, c_m3 = st.columns([1, 2, 1])
+                        with c_m2:
+                            if st.button(
+                                f"▼ Weitere {batch_count} von {remaining_count} Artikeln laden",
+                                key=f"btn_more_{feed_slug}",
+                                use_container_width=True,
+                                help="Lädt weitere Artikel dieser Quelle in die Ansicht",
+                            ):
+                                st.session_state[feed_limit_key] = current_feed_limit + DEFAULT_FEED_PAGE_SIZE
+                                if "persisted_open_feeds" not in st.session_state:
+                                    st.session_state["persisted_open_feeds"] = set()
+                                st.session_state["persisted_open_feeds"].add(feed_name)
+                                st.rerun()
 
     if "last_read_feed_slug" in st.session_state:
         target_slug = st.session_state.pop("last_read_feed_slug")
