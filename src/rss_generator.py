@@ -12,12 +12,16 @@ abonniert werden.
 import os
 import re
 import time
+import html
+import logging
 import email.utils
 import urllib.parse
 from xml.sax.saxutils import escape as xml_escape
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 
 def slugify(text: str) -> str:
@@ -410,6 +414,18 @@ def _get_briefing_registry(
     if not briefing_file.exists():
         return None
     try:
+        xml_content = briefing_file.read_text(encoding="utf-8")
+        item_count = xml_content.count("<item>")
+
+        # Automatische Migration für Altdaten: Falls noch das alte 1-Item-Email-Format vorliegt
+        if item_count == 1 and ("<h2>" in xml_content or "<li" in xml_content):
+            try:
+                migrated = export_briefing_rss(xml_content, base_url=base_url)
+                if migrated and migrated.get("item_count", 0) > 1:
+                    return migrated
+            except Exception as e_mig:
+                logger.debug("Alte briefing.xml konnte nicht automatisch migriert werden: %s", e_mig)
+
         return {
             "title": "Tägliches KI-Briefing",
             "slug": "briefing",
@@ -418,9 +434,9 @@ def _get_briefing_registry(
             "url": f"{cdn_prefix}/briefing.xml",
             "cdn_url": f"{cdn_prefix}/briefing.xml",
             "raw_url": f"{raw_prefix}/briefing.xml",
-            "app_url": f"{base_url}/?tab=briefing",
-            "item_count": 1,
-            "xml_preview": briefing_file.read_text(encoding="utf-8"),
+            "app_url": f"{base_url}/?tab=ki",
+            "item_count": item_count,
+            "xml_preview": xml_content,
         }
     except Exception:
         return None
@@ -474,14 +490,144 @@ def export_all_rss_feeds(
     }
 
 
+def extract_briefing_articles(
+    briefing_content: str,
+    known_categories: list[str] | None = None,
+) -> list[dict[str, Any]]:
+    """
+    Extrahiert alle von der KI kuratierten Artikel-Links (Top 5 pro Kategorie)
+    samt Titel, Kategorie und prägnanter KI-Zusammenfassung aus dem Briefing-Text
+    (unterstützt Markdown und HTML).
+    """
+    if not briefing_content or not str(briefing_content).strip():
+        return []
+
+    from src.summarizer import _strip_executive_summaries
+    clean_text = _strip_executive_summaries(briefing_content)
+
+    articles: list[dict[str, Any]] = []
+    current_cat: str = "Allgemein"
+    current_article: dict[str, Any] | None = None
+    seen_links: set[str] = set()
+
+    def _normalize_category_header(header_line: str) -> str:
+        raw = re.sub(r"^[#\s]+", "", header_line).strip()
+        cleaned = re.sub(r"^[^\w\s&]+", "", raw).strip()
+        cleaned = html.unescape(cleaned)
+        if known_categories:
+            for kc in known_categories:
+                if kc.lower() == cleaned.lower() or kc.lower() in cleaned.lower() or cleaned.lower() in kc.lower():
+                    return kc
+        return cleaned or "Allgemein"
+
+    def _is_internal_or_app_link(url: str, title: str) -> bool:
+        lower_u = url.lower()
+        lower_t = title.lower()
+        if "streamlit.app" in lower_u or "localhost" in lower_u or "127.0.0.1" in lower_u:
+            return True
+        if lower_t in ("streamlit app", "app", "feed", "feeds", "weiterlesen", "link"):
+            return True
+        if lower_u.startswith("feed://") or lower_u.endswith(".xml"):
+            return True
+        return False
+
+    for line in clean_text.splitlines():
+        line_str = line.strip()
+        if not line_str:
+            continue
+
+        # Kategorie-Überschrift (## oder ###)
+        if line_str.startswith("##"):
+            current_cat = _normalize_category_header(line_str)
+            current_article = None
+            continue
+
+        # Infoboxen oder Quicklinks (> ...)
+        if line_str.startswith(">"):
+            current_article = None
+            continue
+
+        # Artikel-Zeile mit Markdown-Link: [Titel](URL)
+        link_match = re.search(
+            r"\[([^\]]+)\]\((https?://.*?)\)(?=\*{0,2}(?:\s*[:–—\-\(]|\s*$))(.*)",
+            line_str,
+        )
+        if link_match:
+            raw_title, raw_url, rest = link_match.groups()
+            clean_title = html.unescape(raw_title.strip().strip("*").strip("_").strip())
+            clean_url = raw_url.strip()
+
+            if _is_internal_or_app_link(clean_url, clean_title):
+                current_article = None
+                continue
+
+            rest_cleaned = re.sub(r"^\*+", "", rest).strip()
+            article_summary = html.unescape(re.sub(r"^[:–—\-]\s*", "", rest_cleaned).strip())
+
+            if clean_url not in seen_links:
+                seen_links.add(clean_url)
+                current_article = {
+                    "category": current_cat,
+                    "title": clean_title,
+                    "link": clean_url,
+                    "summary": article_summary,
+                }
+                articles.append(current_article)
+            else:
+                current_article = None
+            continue
+
+        # Mehrzeilige Zusammenfassungen (Fortsetzungszeilen)
+        if current_article and not line_str.startswith(("-", "*", "#", ">")):
+            if not re.match(r"^\d+\.\s+", line_str):
+                current_article["summary"] = (current_article["summary"] + " " + html.unescape(line_str)).strip()
+
+    # Fallback für reines HTML (falls briefing_markdown z. B. aus XML CDATA oder HTML-Export stammt)
+    if not articles and ("<li" in briefing_content or "<h2" in briefing_content):
+        sections = re.split(r"<h[23][^>]*>(.*?)</h[23]>", briefing_content, flags=re.IGNORECASE)
+        if len(sections) > 1:
+            for i in range(1, len(sections), 2):
+                cat_raw = html.unescape(re.sub(r"<[^>]+>", "", sections[i]).strip())
+                cat_name = _normalize_category_header(cat_raw)
+                sec_html = sections[i + 1]
+                li_matches = re.findall(r"<li[^>]*>(.*?)</li>", sec_html, flags=re.DOTALL | re.IGNORECASE)
+                for li in li_matches:
+                    a_match = re.search(
+                        r"<a\s+[^>]*href=[\"'](https?://[^\"']+)[\"'][^>]*>(.*?)</a>(.*)",
+                        li,
+                        flags=re.DOTALL | re.IGNORECASE,
+                    )
+                    if a_match:
+                        url, title_html, rest_html = a_match.groups()
+                        title_clean = html.unescape(re.sub(r"<[^>]+>", "", title_html).strip())
+                        summary_clean = html.unescape(re.sub(r"<[^>]+>", "", rest_html).strip())
+                        summary_clean = re.sub(r"^[:–—\-]\s*", "", summary_clean).strip()
+
+                        if _is_internal_or_app_link(url, title_clean):
+                            continue
+
+                        if url not in seen_links:
+                            seen_links.add(url)
+                            articles.append({
+                                "category": cat_name,
+                                "title": title_clean,
+                                "link": url,
+                                "summary": summary_clean,
+                            })
+
+    return articles
+
+
 def export_briefing_rss(
     briefing_markdown: str,
     base_url: str | None = None,
     briefing_date_str: str | None = None,
+    news_data: dict[str, list[dict[str, Any]]] | None = None,
 ) -> dict[str, Any]:
     """
     Erstellt oder aktualisiert den KI-Briefing RSS-Feed (static/rss/briefing.xml).
-    Enthält das synthetisierte Tages-Briefing als lesbaren RSS-Eintrag für RSS-Reader.
+    Enthält alle von der KI kuratierten Top-Artikel (Top 5 Links pro Kategorie)
+    als separate RSS-Einträge mit Original-Link und KI-Zusammenfassung.
     """
     rss_root = get_static_rss_dir()
     briefing_file_path = rss_root / "briefing.xml"
@@ -509,29 +655,118 @@ def export_briefing_rss(
     today_str = briefing_date_str or datetime.now().strftime("%d.%m.%Y")
     today_iso = datetime.now().strftime("%Y-%m-%d")
 
-    # In HTML umwandeln für optimale RSS-Reader-Darstellung
-    try:
-        import markdown
-        briefing_html = markdown.markdown(briefing_markdown)
-    except Exception:
-        briefing_html = briefing_markdown.replace("\n", "<br/>")
+    # Extrahiere alle von der KI ausgewählten Artikel-Links
+    extracted_articles = extract_briefing_articles(briefing_markdown)
 
-    item = {
-        "title": f"News Bot — KI-Briefing ({today_str})",
-        "link": f"{base_url}/?tab=ki",
-        "guid": f"briefing-{today_iso}",
-        "published": format_rfc822(datetime.now(timezone.utc)),
-        "summary": briefing_html,
-        "category": "KI-Briefing",
-        "source": "News Aggregator Bot AI",
-        "source_url": base_url,
-    }
+    # Metadaten-Lookup aufbauen (Quelle, Veröffentlichungsdatum, Feed-URL)
+    metadata_lookup: dict[str, dict[str, Any]] = {}
+    if news_data:
+        for items_list in news_data.values():
+            for it in items_list:
+                l = (it.get("link") or "").strip()
+                if l:
+                    metadata_lookup[l] = it
+                    metadata_lookup[l.rstrip("/")] = it
+
+    storage_inst = None
+    try:
+        from src.storage import get_storage
+        storage_inst = get_storage()
+    except Exception:
+        pass
+
+    def _find_article_meta(url: str) -> dict[str, Any] | None:
+        meta = metadata_lookup.get(url) or metadata_lookup.get(url.rstrip("/"))
+        if meta:
+            return meta
+        if storage_inst:
+            try:
+                db_art = storage_inst.get_article(url) or storage_inst.get_article(url.rstrip("/"))
+                if db_art:
+                    return {
+                        "source": db_art.source,
+                        "source_url": db_art.source_url,
+                        "published_parsed": getattr(db_art, "published_parsed", None),
+                        "timestamp": db_art.timestamp,
+                        "guid": getattr(db_art, "guid", None),
+                    }
+            except Exception:
+                pass
+        return None
+
+    feed_items: list[dict[str, Any]] = []
+
+    if extracted_articles:
+        for art in extracted_articles:
+            link = art["link"]
+            category = art.get("category") or "Allgemein"
+            art_title = art.get("title") or "Kein Titel"
+            ai_summary = art.get("summary") or ""
+
+            # Präfix [Kategorie] im Titel für sofortigen Kontext im RSS-Reader
+            if category and category != "Allgemein" and not art_title.startswith(f"[{category}]"):
+                display_title = f"[{category}] {art_title}"
+            else:
+                display_title = art_title
+
+            meta = _find_article_meta(link)
+            pub_date = format_rfc822(datetime.now(timezone.utc))
+            source_name = "KI-Briefing"
+            source_url = base_url
+            guid = link
+
+            if meta:
+                if meta.get("published_parsed") or meta.get("published"):
+                    pub_date = format_rfc822(meta.get("published_parsed") or meta.get("published"))
+                elif meta.get("timestamp"):
+                    pub_date = format_rfc822(meta.get("timestamp"))
+                if meta.get("source"):
+                    source_name = meta["source"]
+                if meta.get("source_url"):
+                    source_url = meta["source_url"]
+                if meta.get("guid"):
+                    guid = meta["guid"]
+
+            # Prägnante Zusammenfassung als HTML-Absatz
+            if ai_summary:
+                desc_html = f"<p>{ai_summary}</p>"
+            else:
+                desc_html = f"<p>Kuratiert im KI-Briefing ({today_str}).</p>"
+
+            feed_items.append({
+                "title": display_title,
+                "link": link,
+                "guid": guid,
+                "published": pub_date,
+                "summary": desc_html,
+                "category": category,
+                "source": source_name,
+                "source_url": source_url,
+            })
+    else:
+        # Fallback: Falls keine einzelnen Links extrahierbar waren, vollständigen Text abbilden
+        try:
+            import markdown
+            briefing_html = markdown.markdown(briefing_markdown)
+        except Exception:
+            briefing_html = briefing_markdown.replace("\n", "<br/>")
+
+        feed_items.append({
+            "title": f"News Bot — KI-Briefing ({today_str})",
+            "link": f"{base_url}/?tab=ki",
+            "guid": f"briefing-{today_iso}",
+            "published": format_rfc822(datetime.now(timezone.utc)),
+            "summary": briefing_html,
+            "category": "KI-Briefing",
+            "source": "News Aggregator Bot AI",
+            "source_url": base_url,
+        })
 
     briefing_xml = generate_rss_xml(
         title="News Bot — Tägliches KI-Briefing",
         link=f"{base_url}/?tab=ki",
-        description="Das tägliche, von Gemini KI synthetisierte und kuratierte News-Briefing.",
-        items=[item],
+        description="Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.",
+        items=feed_items,
         self_url=cdn_url,
         category_name="KI-Briefing",
     )
@@ -546,5 +781,6 @@ def export_briefing_rss(
         "cdn_url": cdn_url,
         "raw_url": raw_url,
         "app_url": f"{base_url}/?tab=ki",
+        "item_count": len(feed_items),
         "xml_preview": briefing_xml,
     }

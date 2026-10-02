@@ -71,6 +71,106 @@ class TestRssGenerator(unittest.TestCase):
         self.assertIn("<link>https://example.com/test</link>", xml)
         self.assertIn("version=\"2.0\"", xml)
 
+    def test_extract_briefing_articles_from_markdown(self):
+        from src.rss_generator import extract_briefing_articles
+
+        md = """## 🤖 Tech & AI
+> 💡 **Kompakt:** Wichtige Neuerungen im Bereich Künstliche Intelligenz.
+> 🔗 [Streamlit App](https://app/?category=Tech) · Feeds: [Heise](https://app/?feed=Heise)
+
+- **[Gemini 4 Argon vorgestellt](https://techcrunch.com/2026/09/30/gemini-4/)**: Google bringt neues Modell heraus.
+- **[OpenAI startet Dots](https://heise.de/news/dots.html)**: Dauerhaft aktive KI-Agenten für komplexe Workflows.
+
+## ⚽ Fußball
+> 💡 **Kompakt:** Aktuelles aus der Bundesliga.
+
+- **[Musiala Marktwerte Update](https://transfermarkt.de/musiala/123)**: Anpassung nach den letzten Spielen.
+"""
+        articles = extract_briefing_articles(md, known_categories=["Tech & AI", "Fußball"])
+        self.assertEqual(len(articles), 3)
+
+        self.assertEqual(articles[0]["category"], "Tech & AI")
+        self.assertEqual(articles[0]["title"], "Gemini 4 Argon vorgestellt")
+        self.assertEqual(articles[0]["link"], "https://techcrunch.com/2026/09/30/gemini-4/")
+        self.assertEqual(articles[0]["summary"], "Google bringt neues Modell heraus.")
+
+        self.assertEqual(articles[1]["title"], "OpenAI startet Dots")
+        self.assertEqual(articles[2]["category"], "Fußball")
+        self.assertEqual(articles[2]["title"], "Musiala Marktwerte Update")
+
+    def test_extract_briefing_articles_from_html(self):
+        from src.rss_generator import extract_briefing_articles
+
+        html = """
+        <h2>Berlin</h2>
+        <blockquote><p>💡 <strong>Kompakt:</strong> Zusammenfassung.</p></blockquote>
+        <ul>
+            <li><strong><a href="https://berlin.de/presse1">Meldung 1</a></strong>: Unfall im Zentrum.</li>
+            <li><strong><a href="https://berlin.de/presse2">Meldung 2</a></strong>: Festnahme gelungen.</li>
+        </ul>
+        """
+        articles = extract_briefing_articles(html, known_categories=["Berlin"])
+        self.assertEqual(len(articles), 2)
+        self.assertEqual(articles[0]["category"], "Berlin")
+        self.assertEqual(articles[0]["title"], "Meldung 1")
+        self.assertEqual(articles[0]["link"], "https://berlin.de/presse1")
+        self.assertEqual(articles[0]["summary"], "Unfall im Zentrum.")
+
+    def test_export_briefing_rss_multi_item_and_metadata_enrichment(self):
+        from src.rss_generator import export_briefing_rss
+        import xml.etree.ElementTree as ET
+
+        md = """## Tech & AI
+- **[Neues KI-Modell](https://example.com/ai)**: Revolutionäre Architektur veröffentlicht.
+- **[Hardware Innovation](https://example.com/hardware)**: Neue Chipgeneration für Datencenter.
+"""
+        news_data = {
+            "Tech & AI": [
+                {
+                    "title": "Neues KI-Modell",
+                    "link": "https://example.com/ai",
+                    "source": "Tech News Daily",
+                    "source_url": "https://example.com/rss",
+                    "published": "Fri, 02 Oct 2026 12:00:00 +0000",
+                }
+            ]
+        }
+
+        res = export_briefing_rss(md, base_url="https://test-app.com", news_data=news_data)
+        self.assertEqual(res["item_count"], 2)
+
+        root = ET.fromstring(res["xml_preview"])
+        channel = root.find("channel")
+        self.assertIsNotNone(channel)
+        items = channel.findall("item")
+        self.assertEqual(len(items), 2)
+
+        item1 = items[0]
+        self.assertEqual(item1.find("title").text, "[Tech & AI] Neues KI-Modell")
+        self.assertEqual(item1.find("link").text, "https://example.com/ai")
+        self.assertEqual(item1.find("category").text, "Tech & AI")
+        self.assertEqual(item1.find("source").text, "Tech News Daily")
+        self.assertEqual(item1.find("source").get("url"), "https://example.com/rss")
+        self.assertIn("Revolutionäre Architektur veröffentlicht.", item1.find("description").text)
+
+        item2 = items[1]
+        self.assertEqual(item2.find("title").text, "[Tech & AI] Hardware Innovation")
+        self.assertEqual(item2.find("link").text, "https://example.com/hardware")
+        self.assertEqual(item2.find("source").text, "KI-Briefing")
+
+    def test_export_briefing_rss_fallback_when_no_links(self):
+        from src.rss_generator import export_briefing_rss
+        import xml.etree.ElementTree as ET
+
+        empty_md = "Aktuell liegen keine Meldungen vor."
+        res = export_briefing_rss(empty_md, base_url="https://test-app.com")
+        self.assertEqual(res["item_count"], 1)
+
+        root = ET.fromstring(res["xml_preview"])
+        items = root.find("channel").findall("item")
+        self.assertEqual(len(items), 1)
+        self.assertIn("KI-Briefing", items[0].find("title").text)
+
 
 if __name__ == "__main__":
     unittest.main()

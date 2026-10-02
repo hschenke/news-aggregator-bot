@@ -50,7 +50,7 @@ def run_pipeline() -> None:
     summary = summarize_news_with_gemini(news, model=gemini_model)
     print("      -> Zusammenfassung erfolgreich generiert.", flush=True)
     try:
-        export_briefing_rss(summary)
+        export_briefing_rss(summary, news_data=news)
         print("      -> KI-Briefing RSS-Feed (briefing.xml) erfolgreich bereitgestellt.", flush=True)
     except Exception as e:
         print(f"      [Hinweis] Briefing-RSS konnte nicht exportiert werden: {e}", flush=True)

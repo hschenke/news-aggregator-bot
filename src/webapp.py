@@ -2455,7 +2455,7 @@ with tab_ki:
                 save_pool_state(news_data)
                 try:
                     from src.rss_generator import export_briefing_rss
-                    export_briefing_rss(ai_summary)
+                    export_briefing_rss(ai_summary, base_url=app_base_url, news_data=news_data)
                     logger.info("📡 [Streamlit] briefing.xml erfolgreich aktualisiert.")
                 except Exception as exc_rss:
                     logger.warning("Briefing-RSS konnte nicht exportiert werden: %s", exc_rss)
@@ -2580,8 +2580,10 @@ with tab_feedly:
 
         briefing_info = rss_registry.get("briefing")
         if briefing_info:
-            with st.expander("✨ **KI-Briefing Feed**", expanded=False):
-                st.write("Abonniere das tägliche, von Gemini KI synthetisierte und kuratierte Briefing direkt in deinem RSS-Reader.")
+            b_count = briefing_info.get("item_count", 0)
+            count_label = f" ({b_count} Artikel)" if b_count > 0 else ""
+            with st.expander(f"✨ **KI-Briefing Feed (Top-News)**{count_label}", expanded=False):
+                st.write("Abonniere alle von der KI kuratierten Top-Artikel (Top 5 pro Kategorie) mit prägnanten KI-Zusammenfassungen direkt in deinem RSS-Reader (z. B. Feedly, NetNewsWire).")
 
                 br_url = briefing_info.get("url") or briefing_info.get("cdn_url", "")
                 br_proto_url = br_url.replace("https://", "feed://").replace("http://", "feed://")

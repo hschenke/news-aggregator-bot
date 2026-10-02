@@ -5,17 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=Witz+des+Tages</link>
     <description>RSS-Feed für die Quelle 'Witz des Tages' (Kategorie: Fun).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 02 Oct 2026 15:46:32 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 16:13:47 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-witz-des-tages.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Treffen sich ein Elefant und eine Schlange.</title>
-      <link>https://www.hahaha.de/witze/menschen/tiere/5871/treffen-sich-ein-elefant-und-eine-schlange.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/tiere/5871/treffen-sich-ein-elefant-und-eine-schlange.html</guid>
-      <pubDate>Fri, 02 Oct 2026 00:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Treffen sich ein Elefant und eine Schlange. Sagt der Elefant: "Weißt du, wer ich bin?" - "Ja", sagt die Schlange, "der Elefant! Aber weißt du auch, wer ich bin?" Überlegt der Elefant: "Keine Haare, keine Ohren - du könntest Niki Lauda sein!"]]></description>
-    </item>
+
   </channel>
 </rss>
