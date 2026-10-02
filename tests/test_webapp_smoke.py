@@ -131,6 +131,17 @@ class TestWebappSmoke(unittest.TestCase):
         reads_cnt, fb_cnt = buf2.get_pending_counts()
         self.assertEqual(reads_cnt, 1)
         self.assertEqual(fb_cnt, 1)
+
+        # Test: Feedback zurück auf neutral (0) setzen -> muss aus dem Puffer verschwinden
+        buf.queue_feedback("https://example.com/buffer-test-1", 0, "Buffer Test Artikel", persisted_feedback=0)
+        reads_cnt, fb_cnt = buf.get_pending_counts()
+        self.assertEqual(fb_cnt, 0, "Feedback auf neutral (0) muss Eintrag aus Puffer entfernen")
+
+        # Test: Explizites unqueue_feedback
+        buf.queue_feedback("https://example.com/buffer-test-2", 1, "Artikel 2")
+        self.assertEqual(buf.get_pending_counts()[1], 1)
+        self.assertTrue(buf.unqueue_feedback("https://example.com/buffer-test-2"))
+        self.assertEqual(buf.get_pending_counts()[1], 0)
         buf.clear()
 
 

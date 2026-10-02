@@ -82,16 +82,32 @@ class ActionBuffer:
         with self._lock:
             return set(self._pending_reads.keys())
 
-    def queue_feedback(self, url: str, feedback: int, title: str = "") -> None:
+    def queue_feedback(
+        self,
+        url: str,
+        feedback: int,
+        title: str = "",
+        persisted_feedback: int | None = None,
+    ) -> None:
         """
         Reiht ein Like/Dislike/Neutral-Feedback in den Puffer ein.
         Aktualisiert ggf. auch das Feedback in einem bereits im Lesepuffer liegenden Artikel.
+        Falls das Feedback wieder dem in der DB gespeicherten Zustand entspricht (z. B. neutral 0),
+        wird der Eintrag atomar aus dem Puffer entfernt.
         """
         clean_url = url.strip()
         if not clean_url:
             return
         safe_fb = 1 if feedback > 0 else (-1 if feedback < 0 else 0)
         with self._lock:
+            # Wenn der Zustand wieder identisch mit dem Datenbank-Bestand ist, wird keine DB-Aktion benötigt:
+            if persisted_feedback is not None and safe_fb == persisted_feedback:
+                self._pending_feedback.pop(clean_url, None)
+                if clean_url in self._pending_reads:
+                    self._pending_reads[clean_url]["feedback"] = safe_fb
+                logger.debug("Feedback für %s entspricht DB-Stand (%d) -> aus Puffer entfernt", clean_url, safe_fb)
+                return
+
             self._pending_feedback[clean_url] = {
                 "feedback": safe_fb,
                 "title": title.strip() or "Unbekannt",
@@ -99,6 +115,22 @@ class ActionBuffer:
             if clean_url in self._pending_reads:
                 self._pending_reads[clean_url]["feedback"] = safe_fb
         logger.debug("Feedback für %s in Puffer aufgenommen: %d", clean_url, safe_fb)
+
+    def unqueue_feedback(self, url: str) -> bool:
+        """
+        Entfernt eine Feedback-Aktion wieder aus dem Puffer (z. B. wenn der Nutzer
+        die Bewertung auf den ursprünglichen Zustand zurücksetzt).
+        Gibt True zurück, falls ein Eintrag im Puffer vorhanden war.
+        """
+        clean_url = url.strip()
+        with self._lock:
+            removed = self._pending_feedback.pop(clean_url, None)
+            if clean_url in self._pending_reads:
+                self._pending_reads[clean_url]["feedback"] = 0
+        if removed is not None:
+            logger.debug("Feedback für %s aus Puffer entfernt: %s", clean_url, removed)
+            return True
+        return False
 
     def get_pending_counts(self) -> tuple[int, int]:
         """Gibt ein Tupel (anzahl_reads, anzahl_feedback) zurück."""

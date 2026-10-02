@@ -1655,8 +1655,16 @@ if "feedback_map" not in st.session_state:
         from src.storage import get_storage
         _storage = get_storage()
         st.session_state["feedback_map"] = _storage.get_feedback_map()
+        st.session_state["persisted_feedback_map"] = dict(st.session_state["feedback_map"])
     except Exception as exc:
         st.session_state["feedback_map"] = {}
+        st.session_state["persisted_feedback_map"] = {}
+elif "persisted_feedback_map" not in st.session_state:
+    st.session_state["persisted_feedback_map"] = dict(st.session_state.get("feedback_map", {}))
+
+# Falls der Puffer keine ausstehenden Feedbacks hat (z. B. nach Timer-Flush), gespeicherten Stand abgleichen
+if action_buffer.get_pending_counts()[1] == 0:
+    st.session_state["persisted_feedback_map"] = dict(st.session_state.get("feedback_map", {}))
 
 current_fb_map = st.session_state.get("feedback_map", {})
 liked_articles_count = 0
@@ -1879,7 +1887,11 @@ with tab_articles:
                     it["feedback"] = new_fb
 
         # 3. Im Aktions-Puffer sammeln (Bulk-Persistenz nach Intervall oder Klick)
-        action_buffer.queue_feedback(article_url, new_fb, article_title)
+        persisted_fb = st.session_state.get("persisted_feedback_map", {}).get(article_url, 0)
+        if new_fb == persisted_fb:
+            action_buffer.unqueue_feedback(article_url)
+        else:
+            action_buffer.queue_feedback(article_url, new_fb, article_title, persisted_feedback=persisted_fb)
 
     def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """
@@ -2328,6 +2340,7 @@ with tab_articles:
             ):
                 with st.spinner("Synchronisiere Puffer mit Datenbank..."):
                     arch_n, fb_n = action_buffer.flush()
+                    st.session_state["persisted_feedback_map"] = dict(st.session_state.get("feedback_map", {}))
                     st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
                     st.rerun()
 
