@@ -408,21 +408,44 @@ def _get_briefing_registry(
     cdn_prefix: str,
     raw_prefix: str,
     base_url: str,
+    news_data: dict[str, list[dict[str, Any]]] | None = None,
 ) -> dict[str, Any] | None:
     """Liest die Metadaten des briefing.xml Feeds aus, falls vorhanden."""
     briefing_file = rss_root / "briefing.xml"
+
+    # Falls briefing.xml noch gar nicht existiert: Versuch, aus DB zu regenerieren
     if not briefing_file.exists():
-        return None
+        try:
+            from src.storage import get_storage
+            st = get_storage()
+            latest = st.get_latest_briefing()
+            if latest and latest.get("content"):
+                return export_briefing_rss(latest["content"], base_url=base_url, news_data=news_data)
+        except Exception:
+            return None
+
     try:
         xml_content = briefing_file.read_text(encoding="utf-8")
         item_count = xml_content.count("<item>")
 
-        # Automatische Migration für Altdaten: Falls noch das alte 1-Item-Email-Format vorliegt
-        if item_count == 1 and ("<h2>" in xml_content or "<li" in xml_content):
+        # Automatische Bereinigung: Falls versehentlich Testdaten ("test-app.com") oder das alte Email-HTML vorliegt
+        if "test-app.com" in xml_content or (item_count == 1 and ("<h2>" in xml_content or "<li" in xml_content)):
             try:
-                migrated = export_briefing_rss(xml_content, base_url=base_url)
-                if migrated and migrated.get("item_count", 0) > 1:
-                    return migrated
+                from src.storage import get_storage
+                st = get_storage()
+                latest = st.get_latest_briefing()
+                if (
+                    isinstance(latest, dict)
+                    and isinstance(latest.get("content"), str)
+                    and "MagicMock" not in str(latest.get("content"))
+                ):
+                    migrated = export_briefing_rss(latest["content"], base_url=base_url, news_data=news_data)
+                    if migrated and migrated.get("item_count", 0) > 0:
+                        return migrated
+                elif ("<h2>" in xml_content or "<li" in xml_content) and "MagicMock" not in xml_content:
+                    migrated = export_briefing_rss(xml_content, base_url=base_url, news_data=news_data)
+                    if migrated and migrated.get("item_count", 0) > 0:
+                        return migrated
             except Exception as e_mig:
                 logger.debug("Alte briefing.xml konnte nicht automatisch migriert werden: %s", e_mig)
 
@@ -446,6 +469,7 @@ def export_all_rss_feeds(
     news_data: dict[str, list[dict[str, Any]]],
     config: dict[str, Any] | None = None,
     base_url: str | None = None,
+    briefing_markdown: str | None = None,
 ) -> dict[str, Any]:
     """
     Erzeugt alle RSS-Dateien im Verzeichnis static/rss/ und liefert ein Verzeichnis (Registry) zurück.
@@ -453,6 +477,7 @@ def export_all_rss_feeds(
     1. Gesamt-Feed: static/rss/all.xml
     2. Kategorie-Feeds: static/rss/kategorien/<cat_slug>.xml
     3. Einzel-Feeds: static/rss/feeds/<feed_slug>.xml
+    4. KI-Briefing Feed: static/rss/briefing.xml (sofern briefing_markdown vorliegt oder bereits vorhanden)
     """
     rss_root = get_static_rss_dir()
     cat_dir = rss_root / "kategorien"
@@ -475,8 +500,21 @@ def export_all_rss_feeds(
     all_registry = _export_global_feed(
         all_articles, rss_root, cdn_prefix, raw_prefix, base_url
     )
+
+    # Falls frisches Briefing-Markdown übergeben wurde, briefing.xml direkt aktualisieren
+    if (
+        briefing_markdown
+        and isinstance(briefing_markdown, str)
+        and briefing_markdown.strip()
+        and "MagicMock" not in briefing_markdown
+    ):
+        try:
+            export_briefing_rss(briefing_markdown, base_url=base_url, news_data=exposure_news)
+        except Exception as e_br:
+            logger.warning("Briefing-Export in export_all_rss_feeds fehlgeschlagen: %s", e_br)
+
     briefing_registry = _get_briefing_registry(
-        rss_root, cdn_prefix, raw_prefix, base_url
+        rss_root, cdn_prefix, raw_prefix, base_url, news_data=exposure_news
     )
 
     return {
@@ -623,6 +661,7 @@ def export_briefing_rss(
     base_url: str | None = None,
     briefing_date_str: str | None = None,
     news_data: dict[str, list[dict[str, Any]]] | None = None,
+    target_file: Path | None = None,
 ) -> dict[str, Any]:
     """
     Erstellt oder aktualisiert den KI-Briefing RSS-Feed (static/rss/briefing.xml).
@@ -630,7 +669,7 @@ def export_briefing_rss(
     als separate RSS-Einträge mit Original-Link und KI-Zusammenfassung.
     """
     rss_root = get_static_rss_dir()
-    briefing_file_path = rss_root / "briefing.xml"
+    briefing_file_path = target_file if target_file is not None else (rss_root / "briefing.xml")
 
     repo = "hschenke/news-aggregator-bot"
     branch = "main"
@@ -654,6 +693,11 @@ def export_briefing_rss(
 
     today_str = briefing_date_str or datetime.now().strftime("%d.%m.%Y")
     today_iso = datetime.now().strftime("%Y-%m-%d")
+
+    # Validierung: Ungültige oder gemockte Eingaben strikt abweisen
+    if not isinstance(briefing_markdown, str) or not briefing_markdown.strip() or "MagicMock" in briefing_markdown:
+        logger.warning("Ungültiges Briefing-Markdown übergeben, RSS-Export übersprungen.")
+        return None
 
     # Extrahiere alle von der KI ausgewählten Artikel-Links
     extracted_articles = extract_briefing_articles(briefing_markdown)
@@ -744,7 +788,31 @@ def export_briefing_rss(
                 "source_url": source_url,
             })
     else:
-        # Fallback: Falls keine einzelnen Links extrahierbar waren, vollständigen Text abbilden
+        # Fallback: Falls keine einzelnen Links extrahierbar waren
+        # Schutz: Wenn bereits ein valider Multi-Item Feed auf der Festplatte liegt, diesen NIEMALS überschreiben!
+        if target_file is None and briefing_file_path.exists():
+            try:
+                existing_xml = briefing_file_path.read_text(encoding="utf-8")
+                if existing_xml.count("<item>") > 1:
+                    logger.warning(
+                        "Keine Artikel im Briefing-Markdown gefunden. Bestehende briefing.xml mit %d Einträgen bleibt erhalten.",
+                        existing_xml.count("<item>"),
+                    )
+                    return {
+                        "title": "Tägliches KI-Briefing",
+                        "slug": "briefing",
+                        "filename": "briefing.xml",
+                        "file_path": str(briefing_file_path),
+                        "url": cdn_url,
+                        "cdn_url": cdn_url,
+                        "raw_url": raw_url,
+                        "app_url": f"{base_url}/?tab=ki",
+                        "item_count": existing_xml.count("<item>"),
+                        "xml_preview": existing_xml,
+                    }
+            except Exception:
+                pass
+
         try:
             import markdown
             briefing_html = markdown.markdown(briefing_markdown)

@@ -60,7 +60,7 @@ from src.summarizer import (
     DEFAULT_DIRECTIVES,
     AVAILABLE_GEMINI_MODELS,
 )
-from src.rss_generator import export_all_rss_feeds
+from src.rss_generator import export_all_rss_feeds, export_briefing_rss
 from src.action_buffer import get_action_buffer, DEFAULT_BUFFER_INTERVAL_MINUTES
 from src.__version__ import get_app_version
 
@@ -1098,6 +1098,9 @@ else:
             st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
 
 working_config = st.session_state["working_sources_config"]
+
+# Globale Basis-URL für RSS-Feeds und Web-Links definieren
+app_base_url = (working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url() or "").rstrip("/")
 
 # Aktions-Puffer Intervall aus Konfiguration synchronisieren und Timer sicherstellen
 sync_interval_cfg = working_config.get("settings", {}).get("batch_sync_interval_minutes", DEFAULT_BUFFER_INTERVAL_MINUTES)
@@ -2495,6 +2498,22 @@ with tab_feedly:
     app_base_url = working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
     app_base_url = (app_base_url or "").rstrip("/")
 
+    # Aktuelles Briefing (aus Session-State oder SQLite-Archiv) für RSS Exposure ermitteln
+    current_briefing_md: str | None = st.session_state.get("cached_summary")
+    if not current_briefing_md:
+        try:
+            from src.storage import get_storage
+            st_inst = get_storage()
+            latest_b = st_inst.get_latest_briefing()
+            if (
+                isinstance(latest_b, dict)
+                and isinstance(latest_b.get("content"), str)
+                and "MagicMock" not in str(latest_b.get("content"))
+            ):
+                current_briefing_md = str(latest_b["content"])
+        except Exception as exc_lb:
+            logger.debug("Konnte letztes Briefing aus Storage nicht laden: %s", exc_lb)
+
     # Oberer Info- und Aktionsbalken
     st.caption("🚀 **24/7 High-Speed GitHub CDN** • 0s Ladezeit • Standard RSS 2.0 XML • Letzte 24 Stunden")
 
@@ -2515,7 +2534,12 @@ with tab_feedly:
         with col_rss_act3:
             if st.button("🚀 Zu CDN pushen", key="btn_push_rss_cdn", use_container_width=True, help="Pusht die aktuellen XML-Feeds sofort als Commit zu GitHub & CDN"):
                 with st.spinner("Pushe RSS-Feeds zu GitHub & CDN..."):
-                    export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
+                    export_all_rss_feeds(
+                        news_data,
+                        config=working_config,
+                        base_url=app_base_url,
+                        briefing_markdown=current_briefing_md,
+                    )
                     push_res = sync_sources_to_github(
                         config_dict=working_config,
                         commit_message="chore(rss): update RSS feeds via web dashboard",
@@ -2547,7 +2571,12 @@ with tab_feedly:
                 st.rerun()
 
     # Feeds exportieren und Registry laden
-    rss_registry = export_all_rss_feeds(news_data, config=working_config, base_url=app_base_url)
+    rss_registry = export_all_rss_feeds(
+        news_data,
+        config=working_config,
+        base_url=app_base_url,
+        briefing_markdown=current_briefing_md,
+    )
 
     # 1. Gesamt-Feed (Alle Nachrichten) & KI-Briefing Feed
     if rss_feed_view_mode in ["Alle Feeds", "Nur Kategorien"]:

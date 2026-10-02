@@ -117,6 +117,8 @@ class TestRssGenerator(unittest.TestCase):
         self.assertEqual(articles[0]["summary"], "Unfall im Zentrum.")
 
     def test_export_briefing_rss_multi_item_and_metadata_enrichment(self):
+        import tempfile
+        from pathlib import Path
         from src.rss_generator import export_briefing_rss
         import xml.etree.ElementTree as ET
 
@@ -136,40 +138,57 @@ class TestRssGenerator(unittest.TestCase):
             ]
         }
 
-        res = export_briefing_rss(md, base_url="https://test-app.com", news_data=news_data)
-        self.assertEqual(res["item_count"], 2)
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            test_target = Path(tmp_dir) / "briefing.xml"
+            res = export_briefing_rss(
+                md,
+                base_url="https://test-app.com",
+                news_data=news_data,
+                target_file=test_target,
+            )
+            self.assertEqual(res["item_count"], 2)
+            self.assertTrue(test_target.exists())
 
-        root = ET.fromstring(res["xml_preview"])
-        channel = root.find("channel")
-        self.assertIsNotNone(channel)
-        items = channel.findall("item")
-        self.assertEqual(len(items), 2)
+            root = ET.fromstring(res["xml_preview"])
+            channel = root.find("channel")
+            self.assertIsNotNone(channel)
+            items = channel.findall("item")
+            self.assertEqual(len(items), 2)
 
-        item1 = items[0]
-        self.assertEqual(item1.find("title").text, "[Tech & AI] Neues KI-Modell")
-        self.assertEqual(item1.find("link").text, "https://example.com/ai")
-        self.assertEqual(item1.find("category").text, "Tech & AI")
-        self.assertEqual(item1.find("source").text, "Tech News Daily")
-        self.assertEqual(item1.find("source").get("url"), "https://example.com/rss")
-        self.assertIn("Revolutionäre Architektur veröffentlicht.", item1.find("description").text)
+            item1 = items[0]
+            self.assertEqual(item1.find("title").text, "[Tech & AI] Neues KI-Modell")
+            self.assertEqual(item1.find("link").text, "https://example.com/ai")
+            self.assertEqual(item1.find("category").text, "Tech & AI")
+            self.assertEqual(item1.find("source").text, "Tech News Daily")
+            self.assertEqual(item1.find("source").get("url"), "https://example.com/rss")
+            self.assertIn("Revolutionäre Architektur veröffentlicht.", item1.find("description").text)
 
-        item2 = items[1]
-        self.assertEqual(item2.find("title").text, "[Tech & AI] Hardware Innovation")
-        self.assertEqual(item2.find("link").text, "https://example.com/hardware")
-        self.assertEqual(item2.find("source").text, "KI-Briefing")
+            item2 = items[1]
+            self.assertEqual(item2.find("title").text, "[Tech & AI] Hardware Innovation")
+            self.assertEqual(item2.find("link").text, "https://example.com/hardware")
+            self.assertEqual(item2.find("source").text, "KI-Briefing")
 
     def test_export_briefing_rss_fallback_when_no_links(self):
+        import tempfile
+        from pathlib import Path
         from src.rss_generator import export_briefing_rss
         import xml.etree.ElementTree as ET
 
         empty_md = "Aktuell liegen keine Meldungen vor."
-        res = export_briefing_rss(empty_md, base_url="https://test-app.com")
-        self.assertEqual(res["item_count"], 1)
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            test_target = Path(tmp_dir) / "briefing.xml"
+            res = export_briefing_rss(
+                empty_md,
+                base_url="https://test-app.com",
+                target_file=test_target,
+            )
+            self.assertEqual(res["item_count"], 1)
+            self.assertTrue(test_target.exists())
 
-        root = ET.fromstring(res["xml_preview"])
-        items = root.find("channel").findall("item")
-        self.assertEqual(len(items), 1)
-        self.assertIn("KI-Briefing", items[0].find("title").text)
+            root = ET.fromstring(res["xml_preview"])
+            items = root.find("channel").findall("item")
+            self.assertEqual(len(items), 1)
+            self.assertIn("KI-Briefing", items[0].find("title").text)
 
 
 if __name__ == "__main__":

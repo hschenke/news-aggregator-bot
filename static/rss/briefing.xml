@@ -2,29 +2,272 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Tägliches KI-Briefing</title>
-    <link>https://test-app.com/?tab=ki</link>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 02 Oct 2026 16:13:39 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 02 Oct 2026 16:33:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Tech &amp; AI] Neues KI-Modell</title>
-      <link>https://example.com/ai</link>
-      <guid isPermaLink="false">https://example.com/ai</guid>
-      <pubDate>Fri, 02 Oct 2026 12:00:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://example.com/rss">Tech News Daily</source>
-      <description><![CDATA[<p>Revolutionäre Architektur veröffentlicht.</p>]]></description>
+      <title>[Berlin] Verkehrsunfall mit lebensbedrohlich verletztem E-Scooter-Fahrer</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1720912.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1720912.php</guid>
+      <pubDate>Fri, 02 Oct 2026 09:48:40 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>Ein 18-jähriger E-Scooter-Fahrer wurde in Marzahn-Hellersdorf bei der Überquerung von Tramgleisen schwer verletzt.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Hardware Innovation</title>
-      <link>https://example.com/hardware</link>
-      <guid isPermaLink="false">https://example.com/hardware</guid>
-      <pubDate>Fri, 02 Oct 2026 16:13:39 +0000</pubDate>
+      <title>[Berlin] Unbekannte Person flüchtet nach Unfall mit vierjährigem Kind</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1720907.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1720907.php</guid>
+      <pubDate>Fri, 02 Oct 2026 09:43:53 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>Nach einem Unfall mit einem vierjährigen Jungen in Hellersdorf sucht die Polizei nach einer flüchtigen Person.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] 20-Jährige bei E-Scooter-Unfall verletzt</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1720894.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1720894.php</guid>
+      <pubDate>Fri, 02 Oct 2026 09:26:35 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>In Tiergarten kollidierte eine 20-jährige E-Scooter-Fahrerin mit einem Auto und erlitt erhebliche Verletzungen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Duo nach Diebstahl festgenommen</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1720997.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1720997.php</guid>
+      <pubDate>Fri, 02 Oct 2026 10:55:09 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>Die Berliner Polizei hat zwei Tatverdächtige nach einem Diebstahl festgenommen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Bitcoin steigt auf 86.500 $: „Uptober“-Hoffnung trifft auf US-Arbeitsmarktdaten</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-steigt-auf-86500--uptoberhoffnung-trifft-auf-usarbeitsmarktdaten-3687488</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-steigt-auf-86500--uptoberhoffnung-trifft-auf-usarbeitsmarktdaten-3687488</guid>
+      <pubDate>Fri, 02 Oct 2026 05:40:48 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Der Bitcoin-Kurs klettert im Zuge von Saisonalität und Konjunkturdaten weiter nach oben.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Citi nennt neue Kursziele: Bitcoin bei 181.000 Dollar, Ether bei 5.400 Dollar erwartet</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/citi-nennt-neue-kursziele-bitcoin-bei-181000-dollar-ether-bei-5400-dollar-erwartet-3686874</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/citi-nennt-neue-kursziele-bitcoin-bei-181000-dollar-ether-bei-5400-dollar-erwartet-3686874</guid>
+      <pubDate>Thu, 01 Oct 2026 14:44:06 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Die US-Großbank Citi veröffentlicht deutlich angehobene Kursziele für die führenden Kryptowährungen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Open Standard: Visa, Stripe und Mastercard lancieren neuen Dollar-Stablecoin</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/open-standard-visa-stripe-und-mastercard-lancieren-neuen-dollarstablecoin-3684968</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/open-standard-visa-stripe-und-mastercard-lancieren-neuen-dollarstablecoin-3684968</guid>
+      <pubDate>Wed, 30 Sep 2026 16:24:42 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Große Zahlungsdienstleister bündeln ihre Kräfte zur Einführung eines gemeinsamen Stablecoins.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: 1.000%-Rallye – Experte sieht KI-Kreditkrise als Zünder</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-1000rallye--experte-sieht-kikreditkrise-als-zunder-3685617</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-1000rallye--experte-sieht-kikreditkrise-als-zunder-3685617</guid>
+      <pubDate>Thu, 01 Oct 2026 07:56:41 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Analysten diskutieren mögliche makroökonomische Auslöser für eine extreme Krypto-Rallye.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] XRP: 4-Billionen-Dollar-Riese steigt beim XRP Ledger ein</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/xrp-4billionendollarriese-steigt-beim-xrp-ledger-ein-3683521</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-4billionendollarriese-steigt-beim-xrp-ledger-ein-3683521</guid>
+      <pubDate>Wed, 30 Sep 2026 06:51:59 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Ein institutioneller Gigant integriert den XRP Ledger in seine Infrastruktur.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Heute bekam ich einen Anruf von einem sehr höflichen jungen..</title>
+      <link>https://debeste.de/626615/Heute-bekam-ich-einen-Anruf-von-einem-sehr-h-flichen-jungen-</link>
+      <guid isPermaLink="false">https://debeste.de/626615/Heute-bekam-ich-einen-Anruf-von-einem-sehr-h-flichen-jungen-</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:33 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Ein angeblicher Microsoft-Mitarbeiter versucht vergeblich, seine Masche bei einem misstrauischen Angerufenen abzuziehen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Japan testet ein Medikament, das Zähne nachwachsen lässt..</title>
+      <link>https://debeste.de/626540/Japan-testet-ein-Medikament-das-Z-hne-nachwachsen-l-sst-</link>
+      <guid isPermaLink="false">https://debeste.de/626540/Japan-testet-ein-Medikament-das-Z-hne-nachwachsen-l-sst-</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:33 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Erste klinische Studien zu einem Proteinblocker, der menschliche Zähne nachwachsen lassen soll, schreiten voran.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Kellnerin: "Darf ich dem hübschen Paar noch was.."</title>
+      <link>https://debeste.de/626409/Kellnerin-Darf-ich-dem-h-bschen-Paar-noch-was-</link>
+      <guid isPermaLink="false">https://debeste.de/626409/Kellnerin-Darf-ich-dem-h-bschen-Paar-noch-was-</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:33 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Eine humorvolle Situation im Restaurant über die Tücken der Friendzone.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Treffen sich ein Elefant und eine Schlange.</title>
+      <link>https://www.hahaha.de/witze/menschen/tiere/5871/treffen-sich-ein-elefant-und-eine-schlange.html</link>
+      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/tiere/5871/treffen-sich-ein-elefant-und-eine-schlange.html</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
+      <description><![CDATA[<p>Ein klassischer Tierwitz mit einer unerwarteten Pointe.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Ich habe meine Stieftochter heute gebeten, ob sie mir..</title>
+      <link>https://debeste.de/626432/Ich-habe-meine-Stieftochter-heute-gebeten,-ob-sie-mir-</link>
+      <guid isPermaLink="false">https://debeste.de/626432/Ich-habe-meine-Stieftochter-heute-gebeten,-ob-sie-mir-</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:34 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Eine humorvolle Erzählung über familiäre Verhandlungen und logistische Konsequenzen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Marktwerte Bundesliga: Musiala größter Verlierer – DFB-Neulinge im Aufwind</title>
+      <link>https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</guid>
+      <pubDate>Fri, 02 Oct 2026 11:00:00 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Im neuesten Bundesliga-Update verliert Jamal Musiala an Marktwert, während Michael Olise seine Spitzenposition ausbaut.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Klopp erklärt Kimmich-Verzicht – DFB-Kapitän wollte dabeibleiben</title>
+      <link>https://www.transfermarkt.de/klopp-erklart-kimmich-verzicht-dfb-kapitan-wollte-unbedingt-dabeibleiben/view/news/488202</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/klopp-erklart-kimmich-verzicht-dfb-kapitan-wollte-unbedingt-dabeibleiben/view/news/488202</guid>
+      <pubDate>Fri, 02 Oct 2026 07:14:44 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Bundestrainer Jürgen Klopp begründet den Verzicht auf seinen Kapitän trotz dessen Einsatzwillen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 1000. DFB-Spieler: Klopp lobt Mika Baur – „Wahnsinnig schlauer Spieler“</title>
+      <link>https://www.transfermarkt.de/1000-dfb-spieler-baurs-glucksgefuhle-fur-die-ewigkeit-wahnsinnig-schlauer-spieler-quot-/view/news/488196</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/1000-dfb-spieler-baurs-glucksgefuhle-fur-die-ewigkeit-wahnsinnig-schlauer-spieler-quot-/view/news/488196</guid>
+      <pubDate>Fri, 02 Oct 2026 04:58:42 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Mika Baur wird als tausendster Spieler in der Geschichte der DFB-Auswahl geehrt.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Bei Länderspiel verletzt: HSV muss mehrere Wochen auf Daka verzichten</title>
+      <link>https://www.transfermarkt.de/bei-landerspielreise-verletzt-hsv-muss-mehrere-wochen-auf-daka-verzichten/view/news/488209</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/bei-landerspielreise-verletzt-hsv-muss-mehrere-wochen-auf-daka-verzichten/view/news/488209</guid>
+      <pubDate>Fri, 02 Oct 2026 09:46:26 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Der Hamburger SV verliert seinen Angreifer Patson Daka nach einer Länderspielverletzung für einige Wochen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] FC Bayern: Darum sagt Dani Olmo ab und wechselte zu RB Leipzig</title>
+      <link>https://www.transfermarkt.de/darum-sagte-olmo-bayern-2020-ab-zweiter-korb-2024-erwies-sich-als-munchner-glucksfall/view/news/488208</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/darum-sagte-olmo-bayern-2020-ab-zweiter-korb-2024-erwies-sich-als-munchner-glucksfall/view/news/488208</guid>
+      <pubDate>Fri, 02 Oct 2026 09:32:15 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Beraterdetails enthüllen die Hintergründe von Dani Olmos Absagen gegenüber dem FC Bayern in der Vergangenheit.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Massive Entertainment: Ubisoft baut sich im Zuge der Umstrukturierung weiter auf</title>
+      <link>https://www.playcentral.de/massive-entertainment-ubisoft-baut-sich-im-zuge-der-umstrukturierung-weiter-auf/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1684040274533510755</guid>
+      <pubDate>Thu, 01 Oct 2026 14:52:37 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[<p>Ubisoft ordnet seine internen Creative Houses für Marken wie „Anno“ und „Prince of Persia“ neu.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Witcher 3 - Remastered Impressions</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60273</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60273</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:34 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Kritiker und Spieler analysieren die grafischen und technischen Neuerungen des Remasters.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Havoc Heirs - Released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60271</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60271</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Ein neues rundenbasiertes Fantasy-Rollenspiel in einer offenen Spielwelt ist ab sofort erhältlich.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Agent of Strange - Announced</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60266</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;amp;newsbit=60266</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Mit „Agent of Strange“ wurde ein neues, düsteres Rollenspiel angekündigt, in dem Infiltration und moralische Entscheidungen im Vordergrund stehen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Expeditions: Samurai - Update #1</title>
+      <link>https://rpgwatch.com/side/newsbit?rwsiteid=1&amp;amp;newsbit=60270</link>
+      <guid isPermaLink="false">https://rpgwatch.com/side/newsbit?rwsiteid=1&amp;amp;newsbit=60270</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Das Early-Access-Rollenspiel erhält sein erstes großes Inhaltsupdate.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Google releases Gemini 4 Argon, called its most powerful model yet</title>
+      <link>https://techcrunch.com/2026/09/30/google-releases-gemini-4-argon-called-its-most-powerful-model-yet/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3172532</guid>
+      <pubDate>Wed, 30 Sep 2026 23:43:07 +0000</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://test-app.com">KI-Briefing</source>
-      <description><![CDATA[<p>Neue Chipgeneration für Datencenter.</p>]]></description>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[<p>Google stellt sein bislang leistungsstärkstes KI-Modell vor, das speziell auf Programmierung und Cybersicherheit ausgerichtet ist.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] OpenAI startet Dots: Dauerhaft aktive KI-Agenten mit eigenem Cloud-Computer</title>
+      <link>https://www.heise.de/news/OpenAI-startet-Dots-Dauerhaft-aktive-KI-Agenten-mit-eigenem-Cloud-Computer-11470469.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/OpenAI-startet-Dots-Dauerhaft-aktive-KI-Agenten-mit-eigenem-Cloud-Computer-11470469.html</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>OpenAI bringt autonome KI-Agenten auf den Markt, die proaktiv Aufgaben im Hintergrund übernehmen sollen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Windows 11 26H2 ist da</title>
+      <link>https://www.heise.de/news/Windows-11-26H2-ist-da-11470483.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Windows-11-26H2-ist-da-11470483.html</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Microsoft rollt das neue Funktionsupdate für Windows 11 aus, welches unter anderem verbesserte Backups mitbringt.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Samsung erhöht Preise der Galaxy-S26-Serie um mindestens 100 Euro</title>
+      <link>https://www.heise.de/news/Samsung-erhoeht-Preise-der-Galaxy-S26-Serie-um-mindestens-100-Euro-11473773.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Samsung-erhoeht-Preise-der-Galaxy-S26-Serie-um-mindestens-100-Euro-11473773.html</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:35 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Wegen anhaltender Speicherkrise und gestiegener Komponenten-Kosten hebt Samsung die Preise seiner kommenden Flaggschiffe an.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Ransomwaregruppe Killsec ausgehoben: Teenager als Hauptverdächtiger</title>
+      <link>https://www.heise.de/news/Ransomwaregruppe-Killsec-ausgehoben-Teenager-als-Hauptverdaechtiger-11473281.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Ransomwaregruppe-Killsec-ausgehoben-Teenager-als-Hauptverdaechtiger-11473281.html</guid>
+      <pubDate>Fri, 02 Oct 2026 16:33:36 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Deutsche Ermittler landen einen Schlag gegen Cyberkriminelle und nehmen Verdächtige fest.</p>]]></description>
     </item>
   </channel>
 </rss>
