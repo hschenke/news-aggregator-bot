@@ -2546,8 +2546,8 @@ with tab_feedly:
                         include_rss_feeds=True
                     )
                     if push_res.get("success"):
-                        st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
-                        st.toast("Feeds zu CDN gepusht!", icon="🚀")
+                        st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert! (jsDelivr Edge-Cache geleert)")
+                        st.toast("Feeds zu CDN gepusht & Cache geleert!", icon="🚀")
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):

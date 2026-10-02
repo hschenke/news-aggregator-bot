@@ -48,3 +48,8 @@ jobs:
             git push origin main
             echo "RSS-Feeds erfolgreich zu GitHub und CDN gepusht!"
           fi
+
+      - name: ⚡ jsDelivr CDN-Cache leeren
+        if: success()
+        run: |
+          python -c "from src.aggregator import purge_jsdelivr_cache; purge_jsdelivr_cache()"

@@ -64,6 +64,11 @@ jobs:
             git push origin main
           fi
 
+      - name: ⚡ jsDelivr CDN-Cache leeren
+        if: success()
+        run: |
+          python -c "from src.aggregator import purge_jsdelivr_cache; purge_jsdelivr_cache()"
+
       - name: 📦 HTML-Vorschau als Artefakt archivieren
         # Archiviert das generierte HTML-Briefing als herunterladbares Workflow-Artefakt
         if: always()

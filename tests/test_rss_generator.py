@@ -190,6 +190,43 @@ class TestRssGenerator(unittest.TestCase):
             self.assertEqual(len(items), 1)
             self.assertIn("KI-Briefing", items[0].find("title").text)
 
+    def test_purge_jsdelivr_cache_success(self):
+        from unittest.mock import patch, MagicMock
+        from src.aggregator import purge_jsdelivr_cache
+
+        with patch("requests.post") as mock_post, patch("requests.get") as mock_get:
+            mock_post.return_value = MagicMock(status_code=202, text='{"status":"pending"}')
+            mock_get.return_value = MagicMock(status_code=200, text='{"status":"finished"}')
+
+            res = purge_jsdelivr_cache(
+                paths=["static/rss/briefing.xml", "static/rss/all.xml"],
+                repo="test/repo",
+                branch="main",
+            )
+            self.assertTrue(res["success"])
+            self.assertEqual(res["purged_count"], 2)
+            mock_post.assert_called_once()
+            call_json = mock_post.call_args[1]["json"]
+            self.assertIn("/gh/test/repo@main/static/rss/briefing.xml", call_json["path"])
+            self.assertIn("/gh/test/repo@main/static/rss/all.xml", call_json["path"])
+            self.assertEqual(mock_get.call_count, 2)
+
+    def test_purge_jsdelivr_cache_handles_failure(self):
+        from unittest.mock import patch
+        import requests
+        from src.aggregator import purge_jsdelivr_cache
+
+        with patch("requests.post", side_effect=requests.RequestException("Network error")), \
+             patch("requests.get", side_effect=requests.RequestException("Timeout")):
+
+            res = purge_jsdelivr_cache(
+                paths=["static/rss/briefing.xml"],
+                repo="test/repo",
+                branch="main",
+            )
+            self.assertFalse(res["success"])
+            self.assertTrue(len(res["errors"]) > 0)
+
 
 if __name__ == "__main__":
     unittest.main()

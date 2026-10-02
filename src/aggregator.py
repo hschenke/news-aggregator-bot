@@ -153,7 +153,18 @@ def sync_sources_to_github(
                                 timeout=10
                             )
                             if update_ref_res.status_code == 200:
-                                return {"success": True, "commit_url": html_url, "error": None}
+                                purge_info = None
+                                if include_rss_feeds:
+                                    try:
+                                        purge_info = purge_jsdelivr_cache(repo=repo, branch=branch)
+                                    except Exception as e_purge:
+                                        logger.warning("jsDelivr CDN Cache-Purge fehlgeschlagen: %s", e_purge)
+                                return {
+                                    "success": True,
+                                    "commit_url": html_url,
+                                    "error": None,
+                                    "cdn_purged": bool(purge_info and purge_info.get("success")),
+                                }
             except Exception as e_tree:
                 print(f"[Hinweis] Git Trees API fehlgeschlagen, weiche auf Contents API aus: {e_tree}")
 
@@ -179,6 +190,11 @@ def sync_sources_to_github(
             commit_data = put_res.json().get("commit", {})
             html_url = commit_data.get("html_url", "")
             trigger_rss_update_workflow()
+            if include_rss_feeds:
+                try:
+                    purge_jsdelivr_cache(repo=repo, branch=branch)
+                except Exception:
+                    pass
             return {"success": True, "commit_url": html_url, "error": None}
         else:
             return {"success": False, "commit_url": None, "error": f"Status {put_res.status_code}: {put_res.text}"}
@@ -208,6 +224,85 @@ def trigger_rss_update_workflow() -> dict[str, Any]:
         return {"success": False, "error": f"Status {res.status_code}: {res.text}"}
     except Exception as e:
         return {"success": False, "error": str(e)}
+
+
+def purge_jsdelivr_cache(
+    paths: list[str] | None = None,
+    repo: str | None = None,
+    branch: str | None = None,
+    timeout: int = 8,
+) -> dict[str, Any]:
+    """Leert den weltweiten Edge-Cache des jsDelivr CDNs für geänderte RSS-Dateien.
+
+    Unterstützt sowohl gezielte Pfade als auch alle Dateien im static/rss/ Verzeichnis.
+    Führt einen Batch-Purge via POST https://purge.jsdelivr.net/ durch sowie eine synchrone
+    Invalidierung für die primären Feeds (briefing.xml, all.xml).
+    """
+    gh_cfg = get_github_sync_config()
+    target_repo = repo or gh_cfg.get("repo") or "hschenke/news-aggregator-bot"
+    target_branch = branch or gh_cfg.get("branch") or "main"
+
+    formatted_paths: list[str] = []
+    if paths:
+        for p in paths:
+            clean = p.lstrip("/").replace("\\", "/")
+            if not clean.startswith("gh/"):
+                formatted_paths.append(f"/gh/{target_repo}@{target_branch}/{clean}")
+            else:
+                formatted_paths.append(f"/{clean}")
+    else:
+        try:
+            from src.rss_generator import get_static_rss_dir
+            rss_dir = get_static_rss_dir()
+            root_dir = rss_dir.parent.parent
+            for xml_file in rss_dir.rglob("*.xml"):
+                try:
+                    rel = xml_file.relative_to(root_dir).as_posix()
+                    formatted_paths.append(f"/gh/{target_repo}@{target_branch}/{rel}")
+                except Exception:
+                    pass
+        except Exception as e_find:
+            logger.debug("Konnte lokale RSS-Pfade für Purge nicht automatisch ermitteln: %s", e_find)
+
+    if not formatted_paths:
+        formatted_paths = [
+            f"/gh/{target_repo}@{target_branch}/static/rss/briefing.xml",
+            f"/gh/{target_repo}@{target_branch}/static/rss/all.xml",
+        ]
+
+    results: dict[str, Any] = {"success": True, "purged_count": len(formatted_paths), "errors": []}
+
+    # 1. Batch-Purge via POST https://purge.jsdelivr.net/
+    try:
+        post_resp = requests.post(
+            "https://purge.jsdelivr.net/",
+            json={"path": formatted_paths},
+            headers={"Content-Type": "application/json", "User-Agent": "NewsBot-CDN-Purge/1.0"},
+            timeout=timeout,
+        )
+        if post_resp.status_code in [200, 201, 202]:
+            logger.info("⚡ [CDN] jsDelivr Batch-Purge erfolgreich angestoßen (%d Pfade, Status %d).", len(formatted_paths), post_resp.status_code)
+        else:
+            logger.warning("jsDelivr Batch-Purge antwortete mit Status %d: %s", post_resp.status_code, post_resp.text)
+            results["errors"].append(f"Status {post_resp.status_code}")
+    except Exception as e_post:
+        logger.warning("jsDelivr Batch-Purge fehlgeschlagen: %s", e_post)
+        results["errors"].append(str(e_post))
+
+    # 2. Sofortige synchrone Edge-Invalidierung für briefing.xml & all.xml
+    for key_file in ["briefing.xml", "all.xml"]:
+        key_url = f"https://purge.jsdelivr.net/gh/{target_repo}@{target_branch}/static/rss/{key_file}"
+        try:
+            get_resp = requests.get(key_url, headers={"User-Agent": "NewsBot-CDN-Purge/1.0"}, timeout=timeout)
+            if get_resp.status_code in [200, 201, 202]:
+                logger.info("⚡ [CDN] jsDelivr Edge-Cache für %s synchron geleert.", key_file)
+            else:
+                logger.debug("jsDelivr Synchron-Purge für %s: Status %d", key_file, get_resp.status_code)
+        except Exception as e_get:
+            logger.debug("jsDelivr Synchron-Purge für %s nicht möglich: %s", key_file, e_get)
+
+    results["success"] = len(results["errors"]) == 0
+    return results
 
 
 
