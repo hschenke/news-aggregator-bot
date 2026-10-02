@@ -1874,6 +1874,13 @@ with tab_articles:
     if active_search_text:
         filter_summary_items.append(f"🔍 '{active_search_text}'")
 
+    is_filtering = bool(
+        current_cat != "Alle Kategorien"
+        or curr_selected_feed != "Alle Feeds"
+        or curr_rating != "Alle Bewertungen"
+        or active_search_text
+    )
+
     # Filterbox: Beim Aufruf über E-Mail Deeplinks und standardmäßig immer zugeklappt lassen!
     # Die aktiven Filter sieht der Nutzer direkt in der Zeile darunter.
     with st.expander("🔍 Filter & Suche", expanded=False, key="expander_filter_search"):
@@ -1942,6 +1949,13 @@ with tab_articles:
             expand_feeds = st.checkbox("📡 Feeds auf", key="chk_expand_feeds", on_change=on_toggle_expand_feeds, help="Alle Feeds innerhalb der Kategorien aufklappen")
         with c_tog3:
             sort_oldest = st.checkbox("⏳ Älteste zuerst", key="chk_sort_oldest", on_change=on_toggle_sort, help="Standard: Älteste Artikel zuerst (chronologisch). Deaktivieren, um die neuesten Artikel zuerst anzuzeigen.")
+
+    is_filtering = bool(
+        (selected_cat and selected_cat != "Alle Kategorien")
+        or (selected_feed and selected_feed != "Alle Feeds")
+        or (selected_rating and selected_rating != "Alle Bewertungen")
+        or (search_query and search_query.strip())
+    )
 
     if filter_summary_items:
         st.caption(f"⚡ Aktive Filter: **{' • '.join(filter_summary_items)}**")

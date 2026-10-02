@@ -77,6 +77,16 @@ class TestWebappMobileFeatures(unittest.TestCase):
         # Kombination
         self.assertTrue(check_is_filtering("Policia", "Polizeimeldungen Berlin", "Amoktat"))
 
+    def test_is_filtering_defined_in_webapp(self):
+        """Stellt sicher, dass 'is_filtering' im Code definiert ist, bevor cat_is_open ausgewertet wird."""
+        from pathlib import Path
+        code = Path("src/webapp.py").read_text(encoding="utf-8")
+        pos_def = code.find("is_filtering = bool(")
+        pos_use = code.find("cat_is_open = True if (")
+        self.assertNotEqual(pos_def, -1, "'is_filtering = bool(' muss in webapp.py definiert sein!")
+        self.assertNotEqual(pos_use, -1, "'cat_is_open = True if (' muss in webapp.py vorkommen!")
+        self.assertLess(pos_def, pos_use, "is_filtering muss VOR cat_is_open definiert sein!")
+
     def test_search_reset_callback_behavior(self):
         """Prüft, dass der Reset-Mechanismus den Suchbegriff zuverlässig auf leeren String zurücksetzt."""
         mock_session_state = {"input_search_query": "Hellersdorf"}
