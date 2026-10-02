@@ -5,9 +5,105 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Transfermarkt</link>
     <description>RSS-Feed für die Quelle 'Transfermarkt' (Kategorie: Fußball).</description>
     <language>de</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 02 Oct 2026 15:18:39 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
 
+=======
+    <lastBuildDate>Fri, 02 Oct 2026 15:11:26 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ex-BVB-Profi ausgezeichnet: Was Groß in Brighton so stark macht</title>
+      <link>https://www.transfermarkt.de/gross-als-spieler-des-monats-ausgezeichnet-was-den-ex-dortmunder-in-brighton-so-stark-macht/view/news/488240</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/gross-als-spieler-des-monats-ausgezeichnet-was-den-ex-dortmunder-in-brighton-so-stark-macht/view/news/488240</guid>
+      <pubDate>Fri, 02 Oct 2026 15:05:38 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Pascal Groß ist einer der Profis der Stunde in der Premier League. Zwei Tore und drei Vorlagen in drei Partien verbuchte der Mittelfeldspieler von Brighton & Hove Albion im September vor...]]></description>
+    </item>
+    <item>
+      <title>Bayer Leverkusen: Hofmann liebäugelt mit Wechsel ins Ausland</title>
+      <link>https://www.transfermarkt.de/hofmann-liebaugelt-mit-wechsel-ins-ausland-faktor-geniessen-ist-ein-bisschen-angesagt-quot-/view/news/488229</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/hofmann-liebaugelt-mit-wechsel-ins-ausland-faktor-geniessen-ist-ein-bisschen-angesagt-quot-/view/news/488229</guid>
+      <pubDate>Fri, 02 Oct 2026 13:36:02 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Im Sommer warb Al-Shabab aus der Saudi Pro League um Jonas Hofmann, doch der offensive Mittelfeldspieler blieb schlussendlich bei Bayer Leverkusen. „Das hatte eher weniger mit privaten Dingen...]]></description>
+    </item>
+    <item>
+      <title>FC Bayern: Olise verbessert eigenen Bundesliga-Marktwertrekord</title>
+      <link>https://www.transfermarkt.de/olise-verbessert-eigenen-bundesliga-marktwertrekord-zieht-mit-messi-gleich/view/news/488135</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/olise-verbessert-eigenen-bundesliga-marktwertrekord-zieht-mit-messi-gleich/view/news/488135</guid>
+      <pubDate>Fri, 02 Oct 2026 12:45:27 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Michael Olise zieht in der Bundesliga weiter einsam seine Kreise. Nachdem der Flügelstürmer vom FC Bayern beim Marktwert-Update nach der WM im Juli bereits für einen neuen Rekord in...]]></description>
+    </item>
+    <item>
+      <title>Flashback Friday: Man Citys Skandal, Klopps Sieg und Ronaldos Eklat</title>
+      <link>https://www.transfermarkt.de/neue-folge-flashback-friday-quot-man-citys-skandal-klopps-debutsieg-und-ronaldos-eklat/view/news/488221</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/neue-folge-flashback-friday-quot-man-citys-skandal-klopps-debutsieg-und-ronaldos-eklat/view/news/488221</guid>
+      <pubDate>Fri, 02 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[[SocialEmbed=1] Die Fußballwoche hatte wieder einige Schlagzeilen zu bieten: In der neuen Folge von „Flashback Friday“ blicken Timo Hense und Fabian Knottnerus auf die...]]></description>
+    </item>
+    <item>
+      <title>Premier League: Manchester City legt Berufung gegen Urteil ein</title>
+      <link>https://www.transfermarkt.de/manchester-city-legt-berufung-gegen-premier-league-urteil-ein-der-verein-ist-unschuldig-quot-/view/news/488218</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/manchester-city-legt-berufung-gegen-premier-league-urteil-ein-der-verein-ist-unschuldig-quot-/view/news/488218</guid>
+      <pubDate>Fri, 02 Oct 2026 11:12:39 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Nachdem die Premier League Manchester City am Dienstag wegen mutmaßlicher Verstöße gegen die Finanzregularien schuldig gesprochen hat, legte der Klub Berufung gegen das Urteil ein....]]></description>
+    </item>
+    <item>
+      <title>Marktwerte Bundesliga: Musiala größter Verlierer – DFB-Neulinge im Aufwind</title>
+      <link>https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</guid>
+      <pubDate>Fri, 02 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Während Michael Olise sich weiter als Unterschiedsspieler präsentiert und den Marktwert-Rekord der Bundesliga ausbaut, kommt mit Jamal Musiala der größte Verlierer des...]]></description>
+    </item>
+    <item>
+      <title>22 Verbände unterstützen kritisierten FIFA-Chef Infantino</title>
+      <link>https://www.transfermarkt.de/22-verbande-unterstutzen-infantino-einheit-der-weltweiten-fussball-gemeinschaft-gestarkt-quot-/view/news/488213</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/22-verbande-unterstutzen-infantino-einheit-der-weltweiten-fussball-gemeinschaft-gestarkt-quot-/view/news/488213</guid>
+      <pubDate>Fri, 02 Oct 2026 10:13:34 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der umstrittene FIFA-Präsident Gianni Infantino hat nach viel Gegenwind aus Europa im Machtkampf um die Zukunft des Fußball-Weltverbands die Unterstützung von arabischen...]]></description>
+    </item>
+    <item>
+      <title>Bei Länderspiel verletzt: HSV muss mehrere Wochen auf Daka verzichten</title>
+      <link>https://www.transfermarkt.de/bei-landerspielreise-verletzt-hsv-muss-mehrere-wochen-auf-daka-verzichten/view/news/488209</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/bei-landerspielreise-verletzt-hsv-muss-mehrere-wochen-auf-daka-verzichten/view/news/488209</guid>
+      <pubDate>Fri, 02 Oct 2026 09:46:26 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der Hamburger SV muss in den kommenden Wochen auf Patson Daka verzichten. Der 27 Jahre alte Angreifer hat sich im Länderspiel Sambias gegen Algerien (3:1) einen Faserriss im linken...]]></description>
+    </item>
+    <item>
+      <title>FC Bayern: Darum sagt Dani Olmo ab und wechselte zu RB Leipzig</title>
+      <link>https://www.transfermarkt.de/darum-sagte-olmo-bayern-2020-ab-zweiter-korb-2024-erwies-sich-als-munchner-glucksfall/view/news/488208</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/darum-sagte-olmo-bayern-2020-ab-zweiter-korb-2024-erwies-sich-als-munchner-glucksfall/view/news/488208</guid>
+      <pubDate>Fri, 02 Oct 2026 09:32:15 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der spanische Welt- und Europameister Dani Olmo hat dem FC Bayern zweimal abgesagt, wie sein Berater Andy Bara im Podcast „Incubator“ erklärte. Im Januar 2020 entschied sich der...]]></description>
+    </item>
+    <item>
+      <title>Marktwerte Dänemark: Ex-Frankfurter Kristensen abgelöst – Minus für Ramaj</title>
+      <link>https://www.transfermarkt.de/marktwerte-danemark-ex-frankfurter-kristensen-an-spitze-abgelost-minus-fur-ramaj/view/news/488153</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/marktwerte-danemark-ex-frankfurter-kristensen-an-spitze-abgelost-minus-fur-ramaj/view/news/488153</guid>
+      <pubDate>Fri, 02 Oct 2026 09:00:00 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Im Zuge des Marktwert-Updates der dänischen Superliga verliert Ex-Frankfurter Rasmus Nissen Kristensen seinen Status als wertvollster Spieler. Der Verteidiger, der im Sommer zurück in...]]></description>
+    </item>
+>>>>>>> df062c22aad1c5609e83b167a5f26f3e7ecd9f5f
   </channel>
 </rss>

@@ -5,9 +5,33 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen+%26+Coins&amp;feed=Investing+de</link>
     <description>RSS-Feed für die Quelle 'Investing de' (Kategorie: Finanzen &amp; Coins).</description>
     <language>de</language>
+<<<<<<< HEAD
     <lastBuildDate>Fri, 02 Oct 2026 15:18:39 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-und-coins-investing-de.xml" rel="self" type="application/rss+xml" />
 
+=======
+    <lastBuildDate>Fri, 02 Oct 2026 15:11:26 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-und-coins-investing-de.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stablecoin-Anbieter Fasset plant Transformation zur Bank für Menschen und KI-Agenten</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/stablecoinanbieter-fasset-plant-transformation-zur-bank-fur-menschen-und-kiagenten-3688727</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/stablecoinanbieter-fasset-plant-transformation-zur-bank-fur-menschen-und-kiagenten-3688727</guid>
+      <pubDate>Fri, 02 Oct 2026 14:28:26 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Bitcoin steigt auf 86.500 $: „Uptober“-Hoffnung trifft auf US-Arbeitsmarktdaten</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-steigt-auf-86500--uptoberhoffnung-trifft-auf-usarbeitsmarktdaten-3687488</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-steigt-auf-86500--uptoberhoffnung-trifft-auf-usarbeitsmarktdaten-3687488</guid>
+      <pubDate>Fri, 02 Oct 2026 05:40:48 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+>>>>>>> df062c22aad1c5609e83b167a5f26f3e7ecd9f5f
   </channel>
 </rss>
