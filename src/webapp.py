@@ -60,7 +60,10 @@ from src.summarizer import (
     AVAILABLE_GEMINI_MODELS,
 )
 from src.rss_generator import export_all_rss_feeds
+from src.action_buffer import get_action_buffer, DEFAULT_BUFFER_INTERVAL_MINUTES
 from src.__version__ import get_app_version
+
+action_buffer = get_action_buffer()
 
 try:
     import zoneinfo
@@ -963,6 +966,14 @@ else:
 
 working_config = st.session_state["working_sources_config"]
 
+# Aktions-Puffer Intervall aus Konfiguration synchronisieren und Timer sicherstellen
+sync_interval_cfg = working_config.get("settings", {}).get("batch_sync_interval_minutes", DEFAULT_BUFFER_INTERVAL_MINUTES)
+try:
+    action_buffer.set_interval_minutes(int(sync_interval_cfg))
+except Exception:
+    action_buffer.set_interval_minutes(DEFAULT_BUFFER_INTERVAL_MINUTES)
+action_buffer.start_periodic_timer()
+
 def harvest_global_settings():
     """Übernimmt ggf. im Formular eingetragene globale Einstellungen in den Arbeitsentwurf."""
     settings = st.session_state["working_sources_config"].setdefault("settings", {})
@@ -971,6 +982,13 @@ def harvest_global_settings():
         settings["language"] = str(st.session_state["input_setting_lang"])
     if "input_setting_style" in st.session_state:
         settings["summary_style"] = str(st.session_state["input_setting_style"])
+    if "input_setting_sync_interval" in st.session_state:
+        try:
+            val_mins = int(st.session_state["input_setting_sync_interval"])
+            settings["batch_sync_interval_minutes"] = val_mins
+            action_buffer.set_interval_minutes(val_mins)
+        except (ValueError, TypeError):
+            settings["batch_sync_interval_minutes"] = DEFAULT_BUFFER_INTERVAL_MINUTES
     if "input_setting_app_url" in st.session_state:
         settings["streamlit_app_url"] = str(st.session_state["input_setting_app_url"]).strip()
     if "input_setting_max_age_weeks" in st.session_state:
@@ -1729,38 +1747,21 @@ with tab_articles:
                 if it.get("link", "").strip() == article_url:
                     it["feedback"] = new_fb
 
-        # 3. Asynchron in Hintergrund-Thread persistieren (Turso / SQLite), damit der UI-Rerun nicht blockiert
-        def _async_feedback_worker(url: str, fb_val: int, title: str) -> None:
-            try:
-                from src.storage import get_storage
-                bg_storage = get_storage()
-                bg_storage.set_feedback(url, fb_val, title=title)
-            except Exception as exc:
-                logger.warning("Hintergrund-Feedback-Speicherung fehlgeschlagen für %s: %s", url, exc)
-
-        threading.Thread(target=_async_feedback_worker, args=(article_url, new_fb, article_title), daemon=True).start()
+        # 3. Im Aktions-Puffer sammeln (Bulk-Persistenz nach Intervall oder Klick)
+        action_buffer.queue_feedback(article_url, new_fb, article_title)
 
     def on_article_read_and_archive(article_item: dict[str, Any], category: str = "", feed_name: str = "") -> None:
         """
-        Markiert einen Artikel als gelesen, entfernt ihn sofort aus der aktiven Ansicht
-        und archiviert ihn in einem parallelen Hintergrund-Thread in der Datenbank.
-        Hält die betreffende Kategorie und den betreffenden Feed offen, damit die
-        verbleibenden Cards nahtlos an Ort und Stelle nachrücken.
+        Reiht einen Artikel in den Aktions-Puffer ein (oder entfernt ihn wieder per Undo),
+        ohne die Ansicht abrupt zu verändern. Der Artikel wird im Puffer gesammelt
+        und nach Ablauf des eingestellten Intervalls (z. B. 5 oder 10 Min.) oder
+        per Klick auf 'Jetzt synchronisieren' gesammelt archiviert.
         """
         item_url = (article_item.get("link") or "").strip()
         if not item_url:
             return
 
-        # 1. Sofort in session_state aufnehmen
-        if "archived_urls" not in st.session_state:
-            st.session_state["archived_urls"] = set()
-        st.session_state["archived_urls"].add(item_url)
-
-        # 2. Aus news_data im Memory entfernen (sofortiges Nachrücken der Cards)
-        for cat_name, cat_items in list(news_data.items()):
-            news_data[cat_name] = [it for it in cat_items if (it.get("link") or "").strip() != item_url]
-
-        # 3. Kategorie & Feed im Session-Zustand offen halten & Scroll-Position vormerken
+        # 1. Kategorie & Feed im Session-Zustand merken & Scroll-Position vormerken
         if category:
             if "persisted_open_categories" not in st.session_state:
                 st.session_state["persisted_open_categories"] = set()
@@ -1772,25 +1773,28 @@ with tab_articles:
             feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
             st.session_state["last_read_feed_slug"] = feed_slug
 
-        # 4. Parallel Thread: Insert in Archiv-Tabelle & Delete aus aktiven Artikeln
-        def _async_archive_worker(data_to_archive: dict[str, Any]) -> None:
-            try:
-                from src.storage import get_storage
-                bg_storage = get_storage()
-                bg_storage.archive_article(data_to_archive)
-            except Exception as exc:
-                logger.warning("Hintergrund-Archivierung fehlgeschlagen für %s: %s", item_url, exc)
-
-        item_copy = dict(article_item)
-        threading.Thread(target=_async_archive_worker, args=(item_copy,), daemon=True).start()
+        # 2. Toggle im Aktions-Puffer: falls bereits vorgemerkt -> Undo! Falls nicht -> einreihen!
+        if action_buffer.is_read_queued(item_url):
+            action_buffer.unqueue_read(item_url)
+        else:
+            action_buffer.queue_read(article_item)
 
     def on_clear_search():
         st.session_state["input_search_query"] = ""
         st.session_state["sel_articles_rating"] = "Alle Bewertungen"
 
+    # 1. Alle bekannten Kategorien (aus news_data und Konfiguration) ermitteln
+    known_cats_set = set(news_data.keys())
+    for c in working_config.get("categories", []):
+        cname = c.get("name", "").strip()
+        if cname:
+            known_cats_set.add(cname)
+    sorted_all_categories = sorted(list(known_cats_set), key=lambda x: x.strip().lower())
+    category_options = ["Alle Kategorien"] + sorted_all_categories
+
     # Wenn Deeplink-Parameter vorhanden sind, diese in die Session übernehmen
     if qp_category:
-        for c in news_data.keys():
+        for c in sorted_all_categories:
             if c.strip().lower() == qp_category.lower():
                 st.session_state["sel_articles_category"] = c
                 if qp_feed:
@@ -1798,28 +1802,54 @@ with tab_articles:
                     st.session_state[f"sel_feed_for_{c}"] = qp_feed
                 break
 
-    sorted_all_categories = sorted(list(news_data.keys()), key=lambda x: x.strip().lower())
-    category_options = ["Alle Kategorien"] + sorted_all_categories
-
     if st.session_state["sel_articles_category"] not in category_options:
         st.session_state["sel_articles_category"] = "Alle Kategorien"
 
     current_cat = st.session_state.get("sel_articles_category", "Alle Kategorien")
 
+    # 2. Alle Feeds für die aktuelle Kategorie ermitteln (Konfiguration + geladene Artikel)
+    feed_sources_set = set()
     if current_cat != "Alle Kategorien":
+        for c in working_config.get("categories", []):
+            if c.get("name", "").strip().lower() == current_cat.strip().lower():
+                for f in c.get("feeds", []):
+                    fname = f.get("name", "").strip()
+                    if fname:
+                        feed_sources_set.add(fname)
+                break
         cat_items_pre = news_data.get(current_cat, [])
-        available_feeds_pre = sorted(list({item.get("source") for item in cat_items_pre if item.get("source")}), key=lambda x: x.strip().lower())
-        feed_options = ["Alle Feeds"] + available_feeds_pre
+        feed_sources_set.update({item.get("source") for item in cat_items_pre if item.get("source")})
     else:
-        all_feeds_pre = sorted(list({item.get("source") for items in news_data.values() for item in items if item.get("source")}), key=lambda x: x.strip().lower())
-        feed_options = ["Alle Feeds"] + all_feeds_pre
+        for items in news_data.values():
+            feed_sources_set.update({item.get("source") for item in items if item.get("source")})
+        for c in working_config.get("categories", []):
+            for f in c.get("feeds", []):
+                fname = f.get("name", "").strip()
+                if fname:
+                    feed_sources_set.add(fname)
+
+    # Falls Deeplink qp_feed angegeben ist: case-insensitives Matching auf bekannten Feed
+    qp_feed_canonical = None
+    if qp_feed:
+        for f in feed_sources_set:
+            if f.strip().lower() == qp_feed.lower():
+                qp_feed_canonical = f
+                break
+        if not qp_feed_canonical:
+            qp_feed_canonical = qp_feed
+            feed_sources_set.add(qp_feed_canonical)
+
+    feed_options = ["Alle Feeds"] + sorted(list(feed_sources_set), key=lambda x: x.strip().lower())
 
     feed_widget_key = f"sel_feed_for_{current_cat}"
     remembered_feed = st.session_state["articles_cat_feed_memory"].get(current_cat, "Alle Feeds")
+    if qp_feed_canonical and current_cat != "Alle Kategorien":
+        remembered_feed = qp_feed_canonical
+
     if remembered_feed not in feed_options:
         remembered_feed = "Alle Feeds"
 
-    if feed_widget_key not in st.session_state or st.session_state[feed_widget_key] not in feed_options:
+    if feed_widget_key not in st.session_state or (qp_feed_canonical and st.session_state.get(feed_widget_key) != qp_feed_canonical):
         st.session_state[feed_widget_key] = remembered_feed
 
     # Zusammenklappbarer Filter- & Suchbereich (Mobile-optimiert)
@@ -1838,14 +1868,9 @@ with tab_articles:
     if active_search_text:
         filter_summary_items.append(f"🔍 '{active_search_text}'")
 
-    is_filtering = bool(
-        current_cat != "Alle Kategorien"
-        or curr_selected_feed != "Alle Feeds"
-        or curr_rating != "Alle Bewertungen"
-        or active_search_text
-    )
-
-    with st.expander("🔍 Filter & Suche", expanded=is_filtering, key="expander_filter_search"):
+    # Filterbox: Beim Aufruf über E-Mail Deeplinks und standardmäßig immer zugeklappt lassen!
+    # Die aktiven Filter sieht der Nutzer direkt in der Zeile darunter.
+    with st.expander("🔍 Filter & Suche", expanded=False, key="expander_filter_search"):
         # 1. Filter-Dropdowns: Kategorie, Feed & Bewertung
         filter_col_cat, filter_col_feed, filter_col_rating = st.columns([1.2, 1.2, 1.0])
         with filter_col_cat:
@@ -1867,6 +1892,9 @@ with tab_articles:
                 key=feed_widget_key
             )
             st.session_state["articles_cat_feed_memory"][selected_cat] = selected_feed
+            if qp_feed and selected_feed.strip().lower() != qp_feed.lower():
+                if "feed" in st.query_params:
+                    del st.query_params["feed"]
 
         with filter_col_rating:
             selected_rating = st.selectbox(
@@ -1912,6 +1940,33 @@ with tab_articles:
     if filter_summary_items:
         st.caption(f"⚡ Aktive Filter: **{' • '.join(filter_summary_items)}**")
 
+    # Aktions-Puffer Status & Manuelle Synchronisierung
+    pending_reads, pending_fb = action_buffer.get_pending_counts()
+    total_pending = pending_reads + pending_fb
+
+    if total_pending > 0:
+        with st.container(border=True):
+            col_buf_txt, col_buf_btn = st.columns([3.5, 1.5], vertical_alignment="center")
+            with col_buf_txt:
+                buf_interval = action_buffer.get_interval_minutes()
+                parts = []
+                if pending_reads > 0:
+                    parts.append(f"**{pending_reads}** als gelesen vorgemerkt")
+                if pending_fb > 0:
+                    parts.append(f"**{pending_fb}** Bewertungen")
+                summary_str = " • ".join(parts)
+                st.markdown(f"📦 **Aktions-Puffer:** {summary_str}")
+                st.caption(f"Automatischer Bulk-Sync alle {buf_interval} Minuten aktiv. Neu markierte Artikel bleiben bis zum Sync stabil sichtbar.")
+            with col_buf_btn:
+                if st.button("💾 Jetzt synchronisieren", key="btn_sync_buffer_now", type="primary", use_container_width=True, help="Schreibt alle gepufferten Aktionen sofort dauerhaft in die Datenbank"):
+                    with st.spinner("Synchronisiere Puffer mit Datenbank..."):
+                        queued_urls = action_buffer.get_queued_read_urls()
+                        arch_n, fb_n = action_buffer.flush()
+                        for c_key, c_items in list(news_data.items()):
+                            news_data[c_key] = [it for it in c_items if (it.get("link") or "").strip() not in queued_urls]
+                        st.toast(f"Puffer synchronisiert: {arch_n} archiviert, {fb_n} Feedback gespeichert!", icon="💾")
+                        st.rerun()
+
     col_stat_placeholder = st.empty()
 
     descending_sort = not bool(st.session_state.get("chk_sort_oldest", True))
@@ -1935,7 +1990,7 @@ with tab_articles:
         # Artikel filtern nach Feed, Bewertung und Suche
         cat_matching = []
         for item in cat_items:
-            if selected_feed != "Alle Feeds" and item.get("source") != selected_feed:
+            if selected_feed != "Alle Feeds" and (item.get("source") or "").strip().lower() != selected_feed.strip().lower():
                 continue
             item_url = item.get("link", "").strip()
             item_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
@@ -2007,13 +2062,14 @@ with tab_articles:
                                 pdate = format_article_date(item)
                                 date_str = f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>" if pdate else ""
                                 summary_str = f"<div style='font-size:0.88rem; line-height:1.45; margin-bottom:0.75rem;'>{clean_summary}</div>" if clean_summary else "<div style='margin-bottom:0.5rem;'></div>"
+                                is_queued_read = action_buffer.is_read_queued(item_url)
+                                queued_badge = "<div style='display:inline-block; background-color:#ecfdf5; color:#065f46; font-size:0.75rem; font-weight:600; padding:0.12rem 0.4rem; border-radius:4px; margin-bottom:0.35rem; border:1px solid #a7f3d0;'>✓ Gelesen (im Puffer)</div><br/>" if is_queued_read else ""
                                 st.markdown(
-                                    f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
+                                    f"{queued_badge}**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
                                     unsafe_allow_html=True
                                 )
 
                                 # Bewertungs-Daumen (Like / Dislike) links & Gelesen-Symbol rechts
-                                item_url = item.get("link", "").strip()
                                 cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
                                 item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12]
@@ -2024,21 +2080,32 @@ with tab_articles:
                                 with col_fb:
                                     st.feedback(
                                     "thumbs",
-                                        key=fb_key,
-                                        default=default_fb,
-                                        on_change=on_article_feedback_change,
-                                        args=(item_url, fb_key, clean_title),
-                                    )
+                                    key=fb_key,
+                                    default=default_fb,
+                                    on_change=on_article_feedback_change,
+                                    args=(item_url, fb_key, clean_title),
+                                )
                                 with col_read:
-                                    st.button(
-                                        "",
-                                        icon=":material/check:",
-                                        key=read_key,
-                                        type="tertiary",
-                                        help="Artikel als gelesen markieren & archivieren",
-                                        on_click=on_article_read_and_archive,
-                                        args=(item, category, feed_name),
-                                    )
+                                    if is_queued_read:
+                                        st.button(
+                                            "",
+                                            icon=":material/check_circle:",
+                                            key=read_key,
+                                            type="primary",
+                                            help="✓ Als gelesen im Puffer — Klicke erneut zum Rückgängigmachen",
+                                            on_click=on_article_read_and_archive,
+                                            args=(item, category, feed_name),
+                                        )
+                                    else:
+                                        st.button(
+                                            "",
+                                            icon=":material/check:",
+                                            key=read_key,
+                                            type="tertiary",
+                                            help="Als gelesen markieren (wandert in Puffer)",
+                                            on_click=on_article_read_and_archive,
+                                            args=(item, category, feed_name),
+                                        )
 
     if "last_read_feed_slug" in st.session_state:
         target_slug = st.session_state.pop("last_read_feed_slug")
@@ -2059,7 +2126,12 @@ with tab_articles:
             age_filter_note = f" • Max. Alter: {active_max_age_weeks} Wochen" if active_max_age_weeks > 0 else ""
             st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien ({sort_label}{age_filter_note})")
         else:
-            st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen.")
+            if selected_feed != "Alle Feeds":
+                st.warning(f"Keine Artikel für den Feed '{selected_feed}' gefunden (0 Treffer).")
+            elif selected_cat != "Alle Kategorien":
+                st.warning(f"Keine Artikel für die Kategorie '{selected_cat}' gefunden (0 Treffer).")
+            else:
+                st.warning("Keine Artikel gefunden, die den Suchkriterien entsprechen (0 Treffer).")
 
 # ----------------- TAB: KI -----------------
 with tab_ki:
@@ -2196,13 +2268,13 @@ with tab_ki:
 # ----------------- TAB: Feedly -----------------
 with tab_feedly:
     st.subheader("📡 RSS Exposure")
-    st.caption("Verwandle deinen News Aggregator Bot in deinen persönlichen RSS-Server! Alle gesammelten Artikel stehen als standardkonforme RSS 2.0 Feeds zur Verfügung.")
+    st.caption("Verwandle deinen News Aggregator Bot in deinen persönlichen RSS-Server! Alle Feeds enthalten stets die aggregierten Artikel der letzten 24 Stunden.")
 
     app_base_url = working_config.get("settings", {}).get("streamlit_app_url") or get_streamlit_app_url()
     app_base_url = (app_base_url or "").rstrip("/")
 
     # Oberer Info- und Aktionsbalken
-    st.caption("🚀 **24/7 High-Speed GitHub CDN** • 0s Ladezeit • Standard RSS 2.0 XML")
+    st.caption("🚀 **24/7 High-Speed GitHub CDN** • 0s Ladezeit • Standard RSS 2.0 XML • Letzte 24 Stunden")
 
     if is_admin:
         col_rss_act1, col_rss_act2, col_rss_act3 = st.columns([1, 1, 1])
@@ -3086,13 +3158,40 @@ with tab_manage:
                 help="Artikel, die älter als diese Anzahl an Wochen sind, werden automatisch herausgefiltert und nicht angezeigt (Standard: 20 Wochen). 0 = Keine Altersbegrenzung."
             )
 
-        default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
-        setting_app_url = st.text_input(
-            "Streamlit App URL:",
-            value=default_app_url,
-            key="input_setting_app_url",
-            help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
-        )
+        col_url, col_sync = st.columns([1.5, 1])
+        with col_url:
+            default_app_url = current_settings.get("streamlit_app_url", os.getenv("STREAMLIT_APP_URL", "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"))
+            setting_app_url = st.text_input(
+                "Streamlit App URL:",
+                value=default_app_url,
+                key="input_setting_app_url",
+                help="Basis-URL dieser Streamlit-App (wird in den E-Mail-Briefings für jede Kategorie verlinkt)."
+            )
+        with col_sync:
+            raw_sync_interval = current_settings.get("batch_sync_interval_minutes", DEFAULT_BUFFER_INTERVAL_MINUTES)
+            try:
+                curr_sync_interval = int(raw_sync_interval)
+            except (ValueError, TypeError):
+                curr_sync_interval = DEFAULT_BUFFER_INTERVAL_MINUTES
+            sync_interval_options = [1, 3, 5, 10, 15, 30]
+            if curr_sync_interval not in sync_interval_options:
+                curr_sync_interval = 5
+            sync_interval_labels = {
+                1: "1 Minute",
+                3: "3 Minuten",
+                5: "5 Minuten (Empfohlen)",
+                10: "10 Minuten",
+                15: "15 Minuten",
+                30: "30 Minuten",
+            }
+            setting_sync_interval = st.selectbox(
+                "Puffer-Sync (Gelesen/Likes):",
+                options=sync_interval_options,
+                index=sync_interval_options.index(curr_sync_interval),
+                format_func=lambda x: sync_interval_labels.get(x, f"{x} Minuten"),
+                key="input_setting_sync_interval",
+                help="Legt fest, nach wie vielen Minuten als gelesen markierte Artikel und Bewertungen gesammelt in die Datenbank geschrieben werden (Bulk-Sync)."
+            )
 
         st.markdown("---")
 
@@ -3132,10 +3231,12 @@ with tab_manage:
                     "language": setting_lang,
                     "summary_style": setting_style,
                     "streamlit_app_url": setting_app_url.strip(),
+                    "batch_sync_interval_minutes": int(setting_sync_interval),
                     "max_article_age_weeks": int(setting_max_age),
                     "filter_ads": setting_filter_ads,
                     "ad_keywords": parsed_ad_kws,
                 }
+                action_buffer.set_interval_minutes(int(setting_sync_interval))
                 if "custom_prompt_directives" in current_settings:
                     new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
                 if "custom_main_prompt" in current_settings:
@@ -3153,10 +3254,12 @@ with tab_manage:
                     "language": setting_lang,
                     "summary_style": setting_style,
                     "streamlit_app_url": setting_app_url.strip(),
+                    "batch_sync_interval_minutes": int(setting_sync_interval),
                     "max_article_age_weeks": int(setting_max_age),
                     "filter_ads": setting_filter_ads,
                     "ad_keywords": parsed_ad_kws,
                 }
+                action_buffer.set_interval_minutes(int(setting_sync_interval))
                 if "custom_prompt_directives" in current_settings:
                     new_settings_dict["custom_prompt_directives"] = current_settings["custom_prompt_directives"]
                 if "custom_main_prompt" in current_settings:

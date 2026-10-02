@@ -169,6 +169,39 @@ def _sort_article_key(item: dict[str, Any]) -> float:
     return 0.0
 
 
+EXPOSURE_MAX_AGE_SECONDS: int = 24 * 60 * 60  # 24 Stunden
+
+
+def filter_articles_last_24h(
+    news_data: dict[str, list[dict[str, Any]]],
+    reference_time: float | None = None,
+    max_age_seconds: int = EXPOSURE_MAX_AGE_SECONDS,
+) -> dict[str, list[dict[str, Any]]]:
+    """
+    Filtert Artikel für das RSS-Exposure (Feedly / RSS-Reader) so,
+    dass ausschließlich Artikel aus den letzten 24 Stunden enthalten sind.
+    """
+    now_ts = time.time() if reference_time is None else reference_time
+    cutoff_ts = now_ts - max_age_seconds
+
+    filtered_news: dict[str, list[dict[str, Any]]] = {}
+    for cat_name, items in news_data.items():
+        recent_items = []
+        for it in items:
+            ts = _sort_article_key(it)
+            if ts <= 0:
+                try:
+                    from src.aggregator import get_article_timestamp
+                    ts = get_article_timestamp(it)
+                except Exception:
+                    pass
+            # Nur Artikel aufnehmen, deren Veröffentlichungsdatum innerhalb des Zeitfensters liegt
+            if ts >= cutoff_ts:
+                recent_items.append(it)
+        filtered_news[cat_name] = recent_items
+    return filtered_news
+
+
 def _resolve_feed_urls(
     config: dict[str, Any] | None,
     base_url: str | None,
@@ -413,11 +446,14 @@ def export_all_rss_feeds(
     base_url, cdn_prefix, raw_prefix, static_http_prefix = _resolve_feed_urls(config, base_url)
     categories_cfg = config.get("categories", []) if config else []
 
+    # RSS Exposure (Feedly): Nur Artikel der letzten 24 Stunden in die Feeds aufnehmen
+    exposure_news = filter_articles_last_24h(news_data)
+
     all_articles, category_registry = _export_category_feeds(
-        news_data, categories_cfg, cat_dir, cdn_prefix, raw_prefix, base_url
+        exposure_news, categories_cfg, cat_dir, cdn_prefix, raw_prefix, base_url
     )
     feed_registry = _export_source_feeds(
-        news_data, categories_cfg, feed_dir, cdn_prefix, raw_prefix, base_url
+        exposure_news, categories_cfg, feed_dir, cdn_prefix, raw_prefix, base_url
     )
     all_registry = _export_global_feed(
         all_articles, rss_root, cdn_prefix, raw_prefix, base_url

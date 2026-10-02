@@ -138,6 +138,15 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
+    def set_feedback_bulk(self, feedback_items: list[tuple[str, int, str]]) -> int:
+        """
+        Aktualisiert Bewertungen für mehrere Artikel gesammelt (Bulk-Operation).
+        Nimmt eine Liste von (url, feedback, title) Tuples entgegen.
+        Gibt die Anzahl der verarbeiteten Einträge zurück.
+        """
+        pass
+
+    @abstractmethod
     def get_feedback_map(self) -> dict[str, int]:
         """Gibt ein Mapping {url: feedback} für alle bewerteten Artikel zurück (feedback != 0)."""
         pass
@@ -172,6 +181,15 @@ class StorageBackend(ABC):
         """
         Verschiebt einen gelesenen Artikel ins Archiv (archived_articles) und löscht ihn
         aus der aktiven Artikel-Tabelle (articles).
+        """
+        pass
+
+    @abstractmethod
+    def archive_articles_bulk(self, articles: list[Article | dict[str, Any] | str]) -> int:
+        """
+        Verschiebt mehrere Artikel gesammelt ins Archiv (archived_articles) und löscht
+        sie aus der aktiven Artikel-Tabelle (articles) in einer Bulk-Transaktion.
+        Gibt die Anzahl der archivierten Artikel zurück.
         """
         pass
 
@@ -504,6 +522,75 @@ class SqliteStorage(StorageBackend):
             conn.execute("DELETE FROM articles WHERE url = ?", (clean_url,))
         return True
 
+    def archive_articles_bulk(self, articles: list[Article | dict[str, Any] | str]) -> int:
+        """
+        Verschiebt mehrere Artikel gesammelt ins Archiv (archived_articles) und löscht sie aus articles.
+        """
+        if not articles:
+            return 0
+        now_iso = datetime.now(timezone.utc).isoformat()
+        insert_rows: list[tuple[Any, ...]] = []
+        delete_urls: list[tuple[str]] = []
+
+        for article in articles:
+            if isinstance(article, str):
+                clean_url = article.strip()
+                if not clean_url:
+                    continue
+                existing = self.get_article(clean_url)
+                art = existing if existing else Article(title="Archivierter Artikel", link=clean_url)
+            elif isinstance(article, Article):
+                art = article
+            elif isinstance(article, dict):
+                art = Article.from_dict(article)
+            else:
+                continue
+
+            clean_url = art.link.strip()
+            if not clean_url or clean_url == "#":
+                continue
+
+            insert_rows.append((
+                clean_url,
+                art.title,
+                art.summary,
+                art.source,
+                art.category,
+                art.timestamp,
+                art.guid,
+                art.published,
+                art.source_url,
+                art.feedback,
+                now_iso,
+            ))
+            delete_urls.append((clean_url,))
+
+        if not insert_rows:
+            return 0
+
+        insert_sql = """
+            INSERT INTO archived_articles (
+                url, title, summary, source, category, timestamp,
+                guid, published, source_url, feedback, archived_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                summary = excluded.summary,
+                source = excluded.source,
+                category = excluded.category,
+                timestamp = excluded.timestamp,
+                guid = COALESCE(excluded.guid, archived_articles.guid),
+                published = COALESCE(excluded.published, archived_articles.published),
+                source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                feedback = excluded.feedback,
+                archived_at = excluded.archived_at
+        """
+        with self._get_connection() as conn:
+            conn.executemany(insert_sql, insert_rows)
+            conn.executemany("DELETE FROM articles WHERE url = ?", delete_urls)
+
+        return len(insert_rows)
+
     def get_archived_urls(self) -> set[str]:
         """Gibt die Menge aller archivierten Artikel-URLs zurück."""
         with self._get_connection() as conn:
@@ -584,6 +671,34 @@ class SqliteStorage(StorageBackend):
                     (clean_url, title.strip() or "Unbekannt", safe_feedback)
                 )
             return True
+
+    def set_feedback_bulk(self, feedback_items: list[tuple[str, int, str]]) -> int:
+        """
+        Aktualisiert Feedback für mehrere Artikel gesammelt in einer Transaktion.
+        """
+        if not feedback_items:
+            return 0
+        insert_rows = []
+        for item in feedback_items:
+            url, fb = item[0], item[1]
+            title = item[2] if len(item) > 2 else ""
+            clean_url = url.strip()
+            if not clean_url:
+                continue
+            safe_fb = 1 if fb > 0 else (-1 if fb < 0 else 0)
+            insert_rows.append((clean_url, (title or "Unbekannt").strip(), safe_fb))
+
+        if not insert_rows:
+            return 0
+
+        sql = """
+            INSERT INTO articles (url, title, feedback, created_at, updated_at)
+            VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            ON CONFLICT(url) DO UPDATE SET feedback = excluded.feedback, updated_at = CURRENT_TIMESTAMP
+        """
+        with self._get_connection() as conn:
+            conn.executemany(sql, insert_rows)
+        return len(insert_rows)
 
     def get_feedback_map(self) -> dict[str, int]:
         with self._get_connection() as conn:
@@ -1068,6 +1183,73 @@ class TursoStorage(StorageBackend):
         self._execute_pipeline(stmts)
         return True
 
+    def archive_articles_bulk(self, articles: list[Article | dict[str, Any] | str]) -> int:
+        """
+        Verschiebt mehrere Artikel gesammelt ins Archiv (archived_articles) und löscht sie aus articles via Turso HTTP-Pipeline.
+        """
+        if not articles:
+            return 0
+        now_iso = datetime.now(timezone.utc).isoformat()
+        stmts: list[tuple[str, list[Any]]] = []
+        upsert_sql = """
+            INSERT INTO archived_articles (
+                url, title, summary, source, category, timestamp,
+                guid, published, source_url, feedback, archived_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                summary = excluded.summary,
+                source = excluded.source,
+                category = excluded.category,
+                timestamp = excluded.timestamp,
+                guid = COALESCE(excluded.guid, archived_articles.guid),
+                published = COALESCE(excluded.published, archived_articles.published),
+                source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                feedback = excluded.feedback,
+                archived_at = excluded.archived_at
+        """
+        for article in articles:
+            if isinstance(article, str):
+                clean_url = article.strip()
+                if not clean_url:
+                    continue
+                existing = self.get_article(clean_url)
+                art = existing if existing else Article(title="Archivierter Artikel", link=clean_url)
+            elif isinstance(article, Article):
+                art = article
+            elif isinstance(article, dict):
+                art = Article.from_dict(article)
+            else:
+                continue
+
+            clean_url = art.link.strip()
+            if not clean_url or clean_url == "#":
+                continue
+
+            stmts.append((upsert_sql, [
+                clean_url,
+                art.title,
+                art.summary,
+                art.source,
+                art.category,
+                art.timestamp,
+                art.guid,
+                art.published,
+                art.source_url,
+                art.feedback,
+                now_iso,
+            ]))
+            stmts.append(("DELETE FROM articles WHERE url = ?", [clean_url]))
+
+        if not stmts:
+            return 0
+
+        BATCH_SIZE = 50
+        for i in range(0, len(stmts), BATCH_SIZE):
+            self._execute_pipeline(stmts[i:i + BATCH_SIZE])
+
+        return len(stmts) // 2
+
     def get_archived_urls(self) -> set[str]:
         """Gibt die Menge aller archivierten Artikel-URLs zurück."""
         res = self._execute_pipeline([("SELECT url FROM archived_articles", [])])
@@ -1149,6 +1331,36 @@ class TursoStorage(StorageBackend):
                 """, [clean_url, title.strip() or "Unbekannt", safe_val])
             ])
         return True
+
+    def set_feedback_bulk(self, feedback_items: list[tuple[str, int, str]]) -> int:
+        """
+        Aktualisiert Feedback für mehrere Artikel gesammelt via Turso HTTP-Pipeline.
+        """
+        if not feedback_items:
+            return 0
+        stmts: list[tuple[str, list[Any]]] = []
+        sql = """
+            INSERT INTO articles (url, title, feedback, created_at, updated_at)
+            VALUES (?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            ON CONFLICT(url) DO UPDATE SET feedback = excluded.feedback, updated_at = CURRENT_TIMESTAMP
+        """
+        for item in feedback_items:
+            url, fb = item[0], item[1]
+            title = item[2] if len(item) > 2 else ""
+            clean_url = url.strip()
+            if not clean_url:
+                continue
+            safe_fb = 1 if fb > 0 else (-1 if fb < 0 else 0)
+            stmts.append((sql, [clean_url, (title or "Unbekannt").strip(), safe_fb]))
+
+        if not stmts:
+            return 0
+
+        BATCH_SIZE = 50
+        for i in range(0, len(stmts), BATCH_SIZE):
+            self._execute_pipeline(stmts[i:i + BATCH_SIZE])
+
+        return len(stmts)
 
     def get_feedback_map(self) -> dict[str, int]:
         res = self._execute_pipeline([("SELECT url, feedback FROM articles WHERE feedback != 0", [])])

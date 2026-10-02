@@ -35,14 +35,12 @@ class TestPerformanceFeedbackOptimizations(unittest.TestCase):
         self.assertNotIn("st.toast", read_code, "In on_article_read_and_archive darf kein st.toast vorkommen!")
 
     def test_async_feedback_persistence(self):
-        """Stellt sicher, dass das Speichern von Like/Dislike in einem separaten Thread läuft."""
+        """Stellt sicher, dass das Speichern von Like/Dislike nicht-blockierend über den Aktions-Puffer läuft."""
         feedback_func_start = self.webapp_code.find("def on_article_feedback_change(")
         read_func_start = self.webapp_code.find("def on_article_read_and_archive(")
         feedback_code = self.webapp_code[feedback_func_start:read_func_start]
 
-        self.assertIn("threading.Thread", feedback_code)
-        self.assertIn("_async_feedback_worker", feedback_code)
-        self.assertIn("bg_storage.set_feedback", feedback_code)
+        self.assertIn("action_buffer.queue_feedback", feedback_code)
 
     def test_anti_stale_greying_css_rules(self):
         """Stellt sicher, dass CSS-Regeln gegen das Ergrauen bei Reruns aktiv sind."""

@@ -38,6 +38,7 @@ settings:
   summary_style: tldr
   streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app
   max_article_age_weeks: 20
+  batch_sync_interval_minutes: 5
   filter_ads: true
   ad_keywords:
   - heise-angebot
