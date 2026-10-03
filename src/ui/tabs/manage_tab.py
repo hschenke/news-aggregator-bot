@@ -29,6 +29,7 @@ from src.aggregator import (
     DEFAULT_ARCHIVE_RETENTION_DAYS,
 )
 from src.storage import get_storage
+from src.ui.styles import render_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -91,13 +92,7 @@ def render_manage_tab(
 
     # Prominenter Erfolgs- / Status-Hinweis nach Aktionen
     if st.session_state.get("manage_notice"):
-        col_mn_t, col_mn_b = st.columns([12, 1], vertical_alignment="center")
-        with col_mn_t:
-            st.success(f"✅ {st.session_state['manage_notice']}")
-        with col_mn_b:
-            if st.button("✖", key="btn_dismiss_manage_notice", help="Hinweis schließen"):
-                st.session_state.pop("manage_notice", None)
-                st.rerun()
+        render_dismissible_notice(st.session_state["manage_notice"], notice_key="manage_notice", icon="✅")
 
     has_unsaved_changes = bool(st.session_state.get("has_unsaved_changes", False))
 
@@ -163,7 +158,7 @@ def render_manage_tab(
     # --- Sektion 1: Kategorien verwalten (standardmäßig zugeklappt) ---
     with st.expander("📁 Kategorien verwalten", expanded=False):
         if st.session_state.get("manage_cat_notice"):
-            st.success(f"✅ {st.session_state['manage_cat_notice']}")
+            render_dismissible_notice(st.session_state["manage_cat_notice"], notice_key="manage_cat_notice", icon="📁")
         col_c1, col_c2 = st.columns(2)
         with col_c1:
             new_cat_name = st.text_input("Neue Kategorie anlegen:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
@@ -198,7 +193,7 @@ def render_manage_tab(
     # --- Sektion 2: Neuen RSS-Feed hinzufügen (standardmäßig zugeklappt) ---
     with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=False):
         if st.session_state.get("manage_new_feed_notice"):
-            st.success(f"✅ {st.session_state['manage_new_feed_notice']}")
+            render_dismissible_notice(st.session_state["manage_new_feed_notice"], notice_key="manage_new_feed_notice", icon="➕")
         col_f1, col_f2 = st.columns([1, 1])
         with col_f1:
             feed_url_input = st.text_input("Feed-URL:", placeholder="https://example.com/feed.xml", key="inp_new_feed_url")
@@ -365,7 +360,7 @@ def render_manage_tab(
     st.markdown("### ⚙️ Globale Einstellungen")
     with st.container(border=True):
         if st.session_state.get("manage_settings_notice"):
-            st.success(f"✅ {st.session_state['manage_settings_notice']}")
+            render_dismissible_notice(st.session_state["manage_settings_notice"], notice_key="manage_settings_notice", icon="⚙️")
         settings = working_config.get("settings", {})
 
         col_s1, col_s2 = st.columns(2)

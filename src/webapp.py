@@ -192,9 +192,6 @@ if "working_sources_config" not in st.session_state:
 
 working_config = st.session_state["working_sources_config"]
 
-# Daten laden (fest 24 Stunden)
-news_data = get_news_data(force_live_fetch=False)
-
 # Berechtigungsstatus ermitteln
 is_admin = is_admin_user()
 
@@ -231,6 +228,15 @@ else:
         else:
             active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
+
+# Daten laden (fest 24 Stunden)
+# Performance-Optimierung: Wenn der Verwalten-Tab aktiv ist, werden keine Artikeldaten benötigt -> 0 DB-Calls!
+if active_nav_tab in (TAB_ID_ARTICLES, TAB_ID_KI, TAB_ID_FEEDLY):
+    if "cached_news_data" not in st.session_state:
+        st.session_state["cached_news_data"] = get_news_data(force_live_fetch=False)
+    news_data = st.session_state["cached_news_data"]
+else:
+    news_data = {}
 
 # ----------------- SIDEBAR -----------------
 app_version = get_app_version()
@@ -317,8 +323,9 @@ if is_admin:
     ):
         logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
         st.cache_data.clear()
+        st.session_state.pop("cached_news_data", None)
         with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
-            get_news_data(force_live_fetch=True)
+            st.session_state["cached_news_data"] = get_news_data(force_live_fetch=True)
         st.session_state["sidebar_refresh_notice"] = "Feeds wurden frisch eingelesen & in Datenbank gesichert!"
         st.rerun()
 

@@ -25,6 +25,7 @@ from src.aggregator import (
 )
 from src.rss_generator import export_briefing_rss
 from src.storage import get_storage
+from src.ui.styles import render_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -38,13 +39,7 @@ def render_ki_tab(
     st.caption("Tagesaktuelle, kuratierte Zusammenfassung der relevantesten Meldungen.")
 
     if st.session_state.get("ki_notice"):
-        col_kn_t, col_kn_b = st.columns([12, 1], vertical_alignment="center")
-        with col_kn_t:
-            st.success(f"✨ {st.session_state['ki_notice']}")
-        with col_kn_b:
-            if st.button("✖", key="btn_dismiss_ki_notice", help="Hinweis schließen"):
-                st.session_state.pop("ki_notice", None)
-                st.rerun()
+        render_dismissible_notice(st.session_state["ki_notice"], notice_key="ki_notice", icon="✨")
 
     # Load latest briefing from session state or storage
     current_briefing: str | None = st.session_state.get("cached_summary")

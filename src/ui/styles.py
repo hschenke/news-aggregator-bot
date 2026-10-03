@@ -21,8 +21,29 @@ def embed_client_script(js_code: str) -> None:
     st.html(html_wrapper, unsafe_allow_javascript=True)
 
 
+def render_dismissible_notice(notice_text: str, notice_key: str, icon: str = "✅") -> None:
+    """Renders a prominent, dismissible notice banner with an instant client-side close button."""
+    if not notice_text or not str(notice_text).strip():
+        return
+    import html
+    escaped_text = html.escape(str(notice_text).strip())
+    banner_id = f"notice-banner-{notice_key}"
+    st.markdown(
+        f"""
+        <div id="{banner_id}" class="persistent-dismissible-notice">
+            <div class="notice-content">
+                <span class="notice-icon">{icon}</span>
+                <span class="notice-message">{escaped_text}</span>
+            </div>
+            <button class="notice-close-btn" type="button" onclick="var el=document.getElementById('{banner_id}');if(el)el.remove();" title="Hinweis schließen">✖</button>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def release_action_overlay() -> None:
-    """Ensure that the loading overlay and disabled buttons are released once the page render completes."""
+    """Ensure that the loading overlay is released once the page render completes."""
     nonce = time.time()
     embed_client_script(f"""
         (function() {{
@@ -38,20 +59,6 @@ def release_action_overlay() -> None:
                 el.style.visibility = 'hidden';
                 el.style.pointerEvents = 'none';
             }}
-            try {{
-                var targetDocs = [document];
-                if (window.parent && window.parent.document && window.parent.document !== document) {{
-                    targetDocs.push(window.parent.document);
-                }}
-                for (var d = 0; d < targetDocs.length; d++) {{
-                    var buttons = targetDocs[d].querySelectorAll('button');
-                    for (var i = 0; i < buttons.length; i++) {{
-                        buttons[i].removeAttribute('disabled');
-                        buttons[i].style.pointerEvents = '';
-                        buttons[i].style.opacity = '';
-                    }}
-                }}
-            }} catch(e) {{}}
         }})();
     """)
 
@@ -601,6 +608,62 @@ def apply_custom_styles() -> None:
         width: 0 !important;
         overflow: hidden !important;
     }
+
+    /* Strikte Formatierung für deaktivierte Buttons (z. B. 💾 Gespeichert) */
+    button:disabled,
+    button[disabled],
+    [data-testid="stBaseButton-secondary"]:disabled,
+    [data-testid="stBaseButton-primary"]:disabled {
+        opacity: 0.45 !important;
+        cursor: not-allowed !important;
+        pointer-events: none !important;
+        filter: grayscale(0.6) !important;
+    }
+
+    /* Persistentes Hinweisfeld mit sofort schließendem X-Button ohne Server-Roundtrip */
+    .persistent-dismissible-notice {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        background-color: rgba(34, 197, 94, 0.12) !important;
+        border: 1px solid rgba(34, 197, 94, 0.35) !important;
+        border-left: 4px solid #22c55e !important;
+        border-radius: 8px !important;
+        padding: 0.75rem 1rem !important;
+        margin-bottom: 1rem !important;
+        color: #f8fafc !important;
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+    }
+    .persistent-dismissible-notice .notice-content {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.6rem !important;
+        flex: 1 1 auto !important;
+        font-weight: 500 !important;
+    }
+    .persistent-dismissible-notice .notice-icon {
+        font-size: 1.15rem !important;
+        line-height: 1 !important;
+    }
+    .persistent-dismissible-notice .notice-close-btn {
+        background: transparent !important;
+        border: none !important;
+        color: #94a3b8 !important;
+        font-size: 1.1rem !important;
+        line-height: 1 !important;
+        padding: 0.2rem 0.5rem !important;
+        margin-left: 0.75rem !important;
+        cursor: pointer !important;
+        border-radius: 4px !important;
+        transition: color 0.15s ease, background-color 0.15s ease !important;
+    }
+    .persistent-dismissible-notice .notice-close-btn:hover {
+        color: #f8fafc !important;
+        background-color: rgba(255, 255, 255, 0.12) !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -630,20 +693,6 @@ def apply_custom_styles() -> None:
                 overlay.style.visibility = "hidden";
                 overlay.style.pointerEvents = "none";
             }
-            try {
-                var targetDocs = [document];
-                if (window.parent && window.parent.document && window.parent.document !== document) {
-                    targetDocs.push(window.parent.document);
-                }
-                for (var d = 0; d < targetDocs.length; d++) {
-                    var buttons = targetDocs[d].querySelectorAll("button");
-                    for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].removeAttribute("disabled");
-                        buttons[i].style.pointerEvents = "";
-                        buttons[i].style.opacity = "";
-                    }
-                }
-            } catch(e) {}
         }
         window._newsBotHideActionOverlay = hideActionOverlay;
 
@@ -664,20 +713,6 @@ def apply_custom_styles() -> None:
                     hideActionOverlay();
                 };
             }
-            try {
-                var targetDocs = [document];
-                if (window.parent && window.parent.document && window.parent.document !== document) {
-                    targetDocs.push(window.parent.document);
-                }
-                for (var d = 0; d < targetDocs.length; d++) {
-                    var buttons = targetDocs[d].querySelectorAll("button");
-                    for (var i = 0; i < buttons.length; i++) {
-                        buttons[i].setAttribute("disabled", "true");
-                        buttons[i].style.pointerEvents = "none";
-                        buttons[i].style.opacity = "0.6";
-                    }
-                }
-            } catch(e) {}
 
             // Watch for Streamlit execution finish and release overlay
             var startTime = Date.now();

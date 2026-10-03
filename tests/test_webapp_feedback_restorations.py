@@ -94,7 +94,9 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn(".action-spinner-circle", self.styles_py)
         self.assertIn(".action-spinner-title", self.styles_py)
         self.assertIn("function showActionOverlay(title, subtitle)", self.styles_py)
-        self.assertIn('buttons[i].setAttribute("disabled", "true")', self.styles_py)
+        # Full-screen backdrop intercepts pointer events
+        self.assertIn("pointer-events: all !important", self.styles_py)
+        self.assertIn("button:disabled", self.styles_py)
 
     def test_manage_tab_collapsible_sections_and_no_unnecessary_toast_text(self) -> None:
         """Categories and Add Feed must be collapsible and collapsed by default; toast must omit redundant sentence."""
@@ -106,9 +108,13 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("window.location.reload()", self.manage_tab_py)
 
     def test_prominent_notices_in_tabs(self) -> None:
-        """KI and Feedly tabs must display prominent notice banners when actions complete."""
-        self.assertIn("ki_notice", self.ki_tab_py)
-        self.assertIn("feedly_notice", self.feedly_tab_py)
+        """KI, Feedly, and Manage tabs must use client-side instant dismissible notice banners."""
+        self.assertIn("render_dismissible_notice", self.manage_tab_py)
+        self.assertIn("render_dismissible_notice", self.ki_tab_py)
+        self.assertIn("render_dismissible_notice", self.feedly_tab_py)
+        self.assertIn("render_dismissible_notice", self.styles_py)
+        self.assertIn(".persistent-dismissible-notice", self.styles_py)
+        self.assertIn(".notice-close-btn", self.styles_py)
 
     def test_toast_removal_and_overlay_release(self) -> None:
         """st.toast must be completely eliminated across all UI modules and overlay auto-released."""

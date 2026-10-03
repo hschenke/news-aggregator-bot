@@ -1590,14 +1590,32 @@ class TursoStorage(StorageBackend):
             pass
 
 
+_STORAGE_INSTANCE: StorageBackend | None = None
+
+
+def reset_storage_singleton() -> None:
+    """Setzt die Singleton-Instanz zurück (z. B. für Tests)."""
+    global _STORAGE_INSTANCE
+    _STORAGE_INSTANCE = None
+
+
 def get_storage(prefer_turso: bool = True, db_path: str | Path | None = None) -> StorageBackend:
     """
-    Factory-Funktion mit automatischem Fallback:
-    1. Wenn prefer_turso=True und TURSO_URL + TURSO_KEY vorhanden sind:
-       Versucht Verbindung zu Turso. Bei Erfolg wird TursoStorage zurückgegeben.
-    2. Wenn keine Credentials da sind oder Turso nicht erreichbar ist:
-       Automatischer, transparenter Fallback auf lokales SqliteStorage.
+    Factory-Funktion mit automatischem Fallback und Singleton-Wiederverwendung:
+    1. Wenn db_path angegeben ist (z. B. in Tests für :memory:), wird stets eine isolierte Instanz erzeugt.
+    2. Wenn prefer_turso=True und TURSO_URL + TURSO_KEY vorhanden sind:
+       Versucht Verbindung zu Turso. Bei Erfolg wird TursoStorage wiederverwendet.
+    3. Automatischer Fallback auf lokales SqliteStorage.
     """
+    global _STORAGE_INSTANCE
+    if db_path is not None:
+        sqlite_storage = SqliteStorage(db_path=db_path)
+        sqlite_storage.init_db()
+        return sqlite_storage
+
+    if _STORAGE_INSTANCE is not None:
+        return _STORAGE_INSTANCE
+
     turso_url, turso_key = get_turso_config()
 
     if prefer_turso and turso_url and turso_key:
@@ -1606,7 +1624,8 @@ def get_storage(prefer_turso: bool = True, db_path: str | Path | None = None) ->
             turso_storage = TursoStorage(database_url=turso_url, auth_token=turso_key)
             turso_storage.init_db()
             logger.info("Erfolgreich mit Turso Cloud-Datenbank verbunden.")
-            return turso_storage
+            _STORAGE_INSTANCE = turso_storage
+            return _STORAGE_INSTANCE
         except Exception as exc:
             logger.warning(
                 "Turso-Verbindung konnte nicht initialisiert werden (%s). "
@@ -1617,4 +1636,5 @@ def get_storage(prefer_turso: bool = True, db_path: str | Path | None = None) ->
     logger.debug("Nutze lokale SQLite-Speicherung.")
     sqlite_storage = SqliteStorage(db_path=db_path)
     sqlite_storage.init_db()
-    return sqlite_storage
+    _STORAGE_INSTANCE = sqlite_storage
+    return _STORAGE_INSTANCE

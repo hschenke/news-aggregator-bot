@@ -18,6 +18,7 @@ from src.aggregator import (
     trigger_rss_update_workflow,
 )
 from src.rss_generator import export_all_rss_feeds
+from src.ui.styles import render_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -34,13 +35,7 @@ def render_feedly_tab(
     )
 
     if st.session_state.get("feedly_notice"):
-        col_fn_t, col_fn_b = st.columns([12, 1], vertical_alignment="center")
-        with col_fn_t:
-            st.success(f"📡 {st.session_state['feedly_notice']}")
-        with col_fn_b:
-            if st.button("✖", key="btn_dismiss_feedly_notice", help="Hinweis schließen"):
-                st.session_state.pop("feedly_notice", None)
-                st.rerun()
+        render_dismissible_notice(st.session_state["feedly_notice"], notice_key="feedly_notice", icon="📡")
 
     app_base_url = (
         working_config.get("settings", {}).get("streamlit_app_url")
@@ -69,6 +64,7 @@ def render_feedly_tab(
                 st.session_state["is_refreshing_rss"] = True
                 with st.spinner("Generiere alle RSS-Feeds neu..."):
                     st.cache_data.clear()
+                    st.session_state.pop("cached_news_data", None)
                     st.session_state["is_refreshing_rss"] = False
                     st.session_state["feedly_notice"] = "Feeds wurden erfolgreich generiert & aktualisiert!"
                     st.rerun()
