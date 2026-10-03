@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 16:37:27 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 16:42:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Werd schnell wieder gesund, Kleiner.</title>
+      <link>https://debeste.de/627061/Werd-schnell-wieder-gesund,-Kleiner</link>
+      <guid isPermaLink="false">https://debeste.de/627061/Werd-schnell-wieder-gesund,-Kleiner</guid>
+      <pubDate>Sat, 03 Oct 2026 16:40:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[]]></description>
+    </item>
     <item>
       <title>OpenAI safety employee resigns, claiming the company’s ‘culture is broken’</title>
       <link>https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/</link>
@@ -756,15 +765,6 @@
       <description><![CDATA[Makellos und mit sechs Siegen am Stück startete Hertha BSC in die neue Zweitliga-Saison. Die Berliner träumen vom Aufstieg – und nehmen sich ...]]></description>
     </item>
     <item>
-      <title>Herr Bundeskanzler, ein Herr Dunning und ein Herr Kruger..</title>
-      <link>https://debeste.de/626670/Herr-Bundeskanzler,-ein-Herr-Dunning-und-ein-Herr-Kruger</link>
-      <guid isPermaLink="false">https://debeste.de/626670/Herr-Bundeskanzler,-ein-Herr-Dunning-und-ein-Herr-Kruger</guid>
-      <pubDate>Sat, 03 Oct 2026 04:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Herr Bundeskanzler, ein Herr Dunning und ein Herr Kruger möchten Sie sprechen.]]></description>
-    </item>
-    <item>
       <title>An Update on Orion for Linux and Windows</title>
       <link>https://blog.kagi.com/update-orion-linux-windows</link>
       <guid isPermaLink="false">https://blog.kagi.com/update-orion-linux-windows</guid>
@@ -952,15 +952,6 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Das sind die Tordebüts von Pascal Obst vom Verein Eintracht Mahlsdorf. Diese Seite enthält eine Statistik über die Spiele, in denen ein Spieler ...]]></description>
-    </item>
-    <item>
-      <title>Eine Blondine watschelt aufs Eis hinaus und</title>
-      <link>https://www.hahaha.de/witze/menschen/blondinen/13242/eine-blondine-watschelt-aufs-eis-hinaus-und.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/blondinen/13242/eine-blondine-watschelt-aufs-eis-hinaus-und.html</guid>
-      <pubDate>Sat, 03 Oct 2026 00:00:00 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[Eine Blondine watschelt aufs Eis hinaus und macht ein Loch, um zu fischen. Wie sie gerade so angelt, hört sie eine Stimme von oben: "Hier gibt es keine Fische!" Sie geht nicht darauf ein, plötzlich hört sie wieder die Stimme: "Hier gibt es keine Fische!" Sie schaut sich um, aber sieht niemanden. Dann fischt sie weit...]]></description>
     </item>
     <item>
       <title>Schlauer arbeiten, nicht härter...</title>
@@ -1233,15 +1224,6 @@
       <description><![CDATA[Apple says it will add new controls around macOS’s Full Disk Access permission, warning that increasingly capable AI agents make broad access to users’ files, messages, mail, and browsing history riskier.]]></description>
     </item>
     <item>
-      <title>Skoda ruft 1,7 Millionen Fahrzeuge zurück</title>
-      <link>https://www.heise.de/news/Skoda-ruft-1-7-Millionen-Fahrzeuge-zurueck-11474865.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474865</guid>
-      <pubDate>Fri, 02 Oct 2026 18:10:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Nach VW, Audi und Seat ruft auch Skoda rund 1,7 Millionen Fahrzeuge wegen eines möglichen Schraubenabrisses an der Lenkung zurück.]]></description>
-    </item>
-    <item>
       <title>From the creator of Redis; run LLM locally with ds4</title>
       <link>https://dwarfstar.sh/</link>
       <guid isPermaLink="false">https://dwarfstar.sh/</guid>
@@ -1249,15 +1231,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Top 10: Der beste Saugroboter mit Wischfunktion</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-saugroboter-mit-wischfunktion-zum-prime-day-sehr-guenstig/2dxtvlp?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474647</guid>
-      <pubDate>Fri, 02 Oct 2026 18:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Saugroboter mit Wischfunktion erleichtern den Alltag. Wir zeigen die besten Modelle mit Absaug- oder Reinigungsstation.]]></description>
     </item>
     <item>
       <title>POV: Du erzählst Michael, dass KI jetzt auch Autos reparieren kann..</title>
@@ -1305,15 +1278,6 @@
       <description><![CDATA[]]></description>
     </item>
     <item>
-      <title>iPhone Duo: Austausch der Nanotextur-Deckschicht kostet mindestens 19 US-Dollar</title>
-      <link>https://www.heise.de/news/iPhone-Duo-Austausch-der-Nanotextur-Deckschicht-kostet-mindestens-19-US-Dollar-11474693.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474693</guid>
-      <pubDate>Fri, 02 Oct 2026 17:13:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die matte Deckschicht über dem Faltdisplay des iPhone Duo lässt sich bei Verschleiß austauschen – mit AppleCare+ für 19 US-Dollar.]]></description>
-    </item>
-    <item>
       <title>Circuit Breaker Labs hopes to make AI safer for your kids (and you)</title>
       <link>https://techcrunch.com/2026/10/02/circuit-breaker-labs-hopes-to-make-ai-safer-for-your-kids-and-you/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3172764</guid>
@@ -1330,105 +1294,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>„Dimensional Drawings“: Apple veröffentlicht Baupläne der neuen Hardware</title>
-      <link>https://www.heise.de/news/Dimensional-Drawings-Apple-veroeffentlicht-Bauplaene-der-neuen-Hardware-11469723.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11469723</guid>
-      <pubDate>Fri, 02 Oct 2026 16:47:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Apple hat eine eigene Website, auf der viele detaillierte Zeichnungen seiner Produkte verfügbar sind. Diese helfen nicht nur Herstellern von Zubehörprodukten.]]></description>
-    </item>
-    <item>
-      <title>Jeder hat seine eigene Geduldsgrenze.</title>
-      <link>https://debeste.de/626762/Jeder-hat-seine-eigene-Geduldsgrenze</link>
-      <guid isPermaLink="false">https://debeste.de/626762/Jeder-hat-seine-eigene-Geduldsgrenze</guid>
-      <pubDate>Fri, 02 Oct 2026 16:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>The Sundered Anvil - Steam Page open</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60279</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60279</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Basilisk Games opened a Steam page for The Sundered Anvil: The Sundered Anvil Teaser A party of greenhorn adventurers acquires a contract to retrieve an anvil stolen from a remote village, only to discover the job is more than they bargained for....]]></description>
-    </item>
-    <item>
-      <title>The Scarlet Bureau - New Studio</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60278</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60278</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Couchpotato spotted a new studio called The Scarlet Bureau: The Scarlet Bureau The Scarlet Bureau is a CRPG and Narrative Design Specialist studio founded By Brian Mitsoda and Cara Ellison, Based in dundee, Scotland. We are currently developing our first CRPG....]]></description>
-    </item>
-    <item>
-      <title>Olympus 2249 - Spiritual Successor of Fallout @ TBL</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60277</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60277</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Turn Based Lovers checked out Olympus 2249: Olympus 2249 Might Be the Fallout Spiritual Successor We’ve Been Waiting For I honestly don’t know how I managed to miss the game I’m introducing today, especially since its release is just around the corner....]]></description>
-    </item>
-    <item>
-      <title>Warlock - Preview @ Eurogamer</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60276</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60276</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Eurogamer checked out Warlock: Dungeons & Dragons: Warlock: Dungeons & Dragons developers hope to set aside the Baldur's Gate 3 comparisons and build their own kind of open world "We want the player to truly go out there ... be curious." This probably feels like a bit of an odd place to start, but Warlock: Dungeons ...]]></description>
-    </item>
-    <item>
-      <title>Crimson Desert - Charting the Unknown DLC on October 29</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60275</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60275</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Wccftech reports that the DLC Crimson Desert - Charting the Unknown has been delayed to October 29. Thanks Couchpotato!]]></description>
-    </item>
-    <item>
-      <title>Allfather - Announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60283</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60283</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The indie dungeon crawler Allfather has been announced: ALLFATHER - Official Announcement Trailer A brutal, first-person roguelike with precise, stamina-driven combat. Play as a fallen shieldmaiden who rejects the judgement of the Valkyries....]]></description>
-    </item>
-    <item>
-      <title>Veritas Tales - Review @ Cubed3</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60282</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60282</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Cubed3 reviewed Veritas Tales: Witch of the Dark Castle: Veritas Tales: Witch of the Dark Castle Review From supporting Vanillaware to creating their own games, Digitalis Publishing has a vast and coloured history of art, tech and music under their belt....]]></description>
-    </item>
-    <item>
-      <title>Witcher 3 - Remastered - 120,000 concurrent Steam Players</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60281</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60281</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Gadget Review reports that the Witcher 3 Remastered beats its all-time record and tops 120,000 concurrent Steam players.]]></description>
-    </item>
-    <item>
-      <title>RPG Site - RPGs of 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60280</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60280</guid>
-      <pubDate>Fri, 02 Oct 2026 16:38:47 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPG Site is already looking at 2027: The RPGs of 2027: Every RPG and their release dates Here we list the upcoming RPGs we expect to see in 2027. This listing will often be updated throughout the year. Now - we know - defining what exactly is an 'RPG' can be a little tricky....]]></description>
     </item>
   </channel>
 </rss>
