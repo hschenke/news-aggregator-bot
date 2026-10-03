@@ -105,7 +105,6 @@ def render_ki_tab(
                             commit_message="chore(prompt): update custom AI prompts via dashboard",
                         )
                         st.session_state["ki_notice"] = "Haupt-Prompt & Direktiven erfolgreich gespeichert!"
-                        st.toast("Haupt-Prompt & Direktiven erfolgreich gespeichert!", icon="💾")
                         st.rerun()
             with col_reset_p:
                 if st.button("↩️ Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
@@ -114,7 +113,6 @@ def render_ki_tab(
                         st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
                         save_sources(sources_config)
                         st.session_state["ki_notice"] = "Standard-Hauptprompt wiederhergestellt!"
-                        st.toast("Standard-Hauptprompt wiederhergestellt!", icon="↩️")
                         st.rerun()
 
     # Admin Generation Bar
@@ -184,7 +182,6 @@ def render_ki_tab(
 
                             st.session_state["is_generating_briefing"] = False
                             st.session_state["ki_notice"] = f"KI-Briefing erfolgreich mit {selected_model} generiert!"
-                            st.toast("KI-Briefing erfolgreich generiert!", icon="✨")
                             st.rerun()
                         except Exception as exc:
                             st.session_state["is_generating_briefing"] = False

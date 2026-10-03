@@ -5,6 +5,7 @@ Encapsulates all layout, responsive design, anti-stale optimizations, and typogr
 
 from __future__ import annotations
 
+import time
 import streamlit as st
 
 
@@ -18,6 +19,41 @@ def embed_client_script(js_code: str) -> None:
         f"<script>{js_code}</script></div>"
     )
     st.html(html_wrapper, unsafe_allow_javascript=True)
+
+
+def release_action_overlay() -> None:
+    """Ensure that the loading overlay and disabled buttons are released once the page render completes."""
+    nonce = time.time()
+    embed_client_script(f"""
+        (function() {{
+            var _t = '{nonce}';
+            if (window._newsBotHideActionOverlay) {{
+                window._newsBotHideActionOverlay();
+            }}
+            var el = document.getElementById('news-bot-loading-overlay');
+            if (el) {{
+                el.classList.remove('active');
+                el.style.display = 'none';
+                el.style.opacity = '0';
+                el.style.visibility = 'hidden';
+                el.style.pointerEvents = 'none';
+            }}
+            try {{
+                var targetDocs = [document];
+                if (window.parent && window.parent.document && window.parent.document !== document) {{
+                    targetDocs.push(window.parent.document);
+                }}
+                for (var d = 0; d < targetDocs.length; d++) {{
+                    var buttons = targetDocs[d].querySelectorAll('button');
+                    for (var i = 0; i < buttons.length; i++) {{
+                        buttons[i].removeAttribute('disabled');
+                        buttons[i].style.pointerEvents = '';
+                        buttons[i].style.opacity = '';
+                    }}
+                }}
+            }} catch(e) {{}}
+        }})();
+    """)
 
 
 
@@ -554,6 +590,17 @@ def apply_custom_styles() -> None:
         max-width: 80% !important;
         line-height: 1.4 !important;
     }
+    /* Hide all Streamlit toasts globally */
+    [data-testid="stToast"],
+    .stToast {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -574,6 +621,32 @@ def apply_custom_styles() -> None:
             return el;
         }
 
+        function hideActionOverlay() {
+            var overlay = getOverlay(document);
+            if (overlay) {
+                overlay.classList.remove("active");
+                overlay.style.display = "none";
+                overlay.style.opacity = "0";
+                overlay.style.visibility = "hidden";
+                overlay.style.pointerEvents = "none";
+            }
+            try {
+                var targetDocs = [document];
+                if (window.parent && window.parent.document && window.parent.document !== document) {
+                    targetDocs.push(window.parent.document);
+                }
+                for (var d = 0; d < targetDocs.length; d++) {
+                    var buttons = targetDocs[d].querySelectorAll("button");
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].removeAttribute("disabled");
+                        buttons[i].style.pointerEvents = "";
+                        buttons[i].style.opacity = "";
+                    }
+                }
+            } catch(e) {}
+        }
+        window._newsBotHideActionOverlay = hideActionOverlay;
+
         function showActionOverlay(title, subtitle) {
             var overlay = getOverlay(document);
             if (overlay) {
@@ -586,6 +659,10 @@ def apply_custom_styles() -> None:
                 overlay.style.opacity = "1";
                 overlay.style.visibility = "visible";
                 overlay.style.pointerEvents = "all";
+
+                overlay.onclick = function() {
+                    hideActionOverlay();
+                };
             }
             try {
                 var targetDocs = [document];
@@ -601,8 +678,52 @@ def apply_custom_styles() -> None:
                     }
                 }
             } catch(e) {}
+
+            // Watch for Streamlit execution finish and release overlay
+            var startTime = Date.now();
+            var wasRunning = false;
+            var checkIdleInterval = setInterval(function() {
+                var doc = (overlay && overlay.ownerDocument) ? overlay.ownerDocument : document;
+                var rootApp = doc.querySelector('.stApp') || (window.parent && window.parent.document ? window.parent.document.querySelector('.stApp') : null);
+                var runningIcon = doc.querySelector('[data-testid="stStatusWidgetRunningIcon"]') || (window.parent && window.parent.document ? window.parent.document.querySelector('[data-testid="stStatusWidgetRunningIcon"]') : null);
+                
+                var isRunning = false;
+                if (runningIcon) {
+                    isRunning = true;
+                } else if (rootApp && rootApp.getAttribute('data-test-script-state') === 'running') {
+                    isRunning = true;
+                }
+
+                if (isRunning) {
+                    wasRunning = true;
+                }
+
+                var elapsed = Date.now() - startTime;
+                if ((wasRunning && !isRunning && elapsed > 400) || (!isRunning && elapsed > 2500)) {
+                    clearInterval(checkIdleInterval);
+                    hideActionOverlay();
+                }
+            }, 200);
+
+            setTimeout(function() {
+                clearInterval(checkIdleInterval);
+                hideActionOverlay();
+            }, 12000);
         }
         window._newsBotShowActionOverlay = showActionOverlay;
+
+        // Auto-hide immediately upon any script execution / re-render
+        hideActionOverlay();
+        setTimeout(hideActionOverlay, 80);
+        setTimeout(hideActionOverlay, 300);
+        setTimeout(hideActionOverlay, 800);
+
+        // Escape key fallback
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape" || e.keyCode === 27) {
+                hideActionOverlay();
+            }
+        });
 
         function handleClick(e) {
             var btn = e.target && e.target.closest ? e.target.closest("button") : null;

@@ -132,10 +132,8 @@ def render_manage_tab(
                     st.session_state["is_saving_sources"] = False
                     if sync_res.get("success"):
                         st.session_state["manage_notice"] = "Änderungen erfolgreich in sources.yaml gespeichert & zu GitHub synchronisiert!"
-                        st.toast("Änderungen gespeichert & zu GitHub synchronisiert!", icon="✅")
                     else:
                         st.session_state["manage_notice"] = "Änderungen lokal in sources.yaml gespeichert!"
-                        st.toast("Änderungen lokal gespeichert!", icon="💾")
                     st.rerun()
         with col_st3:
             if has_unsaved_changes:
@@ -176,7 +174,6 @@ def render_manage_tab(
                         st.session_state["has_unsaved_changes"] = True
                         st.session_state["manage_cat_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
                         st.session_state["manage_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
-                        st.toast(f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="📁")
                         st.rerun()
                 else:
                     st.error("Bitte einen Kategorienamen angeben.")
@@ -196,7 +193,6 @@ def render_manage_tab(
                             st.session_state["has_unsaved_changes"] = True
                             st.session_state["manage_cat_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
                             st.session_state["manage_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
-                            st.toast(f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="✏️")
                             st.rerun()
 
     # --- Sektion 2: Neuen RSS-Feed hinzufügen (standardmäßig zugeklappt) ---
@@ -239,7 +235,6 @@ def render_manage_tab(
                         )
                         st.session_state["has_unsaved_changes"] = True
                         st.session_state["manage_notice"] = f"Feed '{feed_name_input.strip()}' hinzugefügt!"
-                        st.toast(f"Feed '{feed_name_input.strip()}' hinzugefügt!", icon="➕")
                         st.rerun()
                 else:
                     st.error("Bitte Feed-URL und Feed-Name ausfüllen.")
@@ -269,7 +264,7 @@ def render_manage_tab(
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
                         delete_category(cat_name, config=working_config, save_to_disk=False)
                         st.session_state["has_unsaved_changes"] = True
-                        st.toast(f"Kategorie '{cat_name}' gelöscht.", icon="🗑️")
+                        st.session_state["manage_notice"] = f"Kategorie '{cat_name}' gelöscht."
                         st.rerun()
 
             for feed_idx, feed in enumerate(feeds):
@@ -290,7 +285,7 @@ def render_manage_tab(
                             if st.button("Löschen bestätigen", key=f"del_feed_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                 delete_feed(cat_name, f_url, config=working_config, save_to_disk=False)
                                 st.session_state["has_unsaved_changes"] = True
-                                st.toast(f"Feed '{f_name}' entfernt.", icon="🗑️")
+                                st.session_state["manage_notice"] = f"Feed '{f_name}' entfernt."
                                 st.rerun()
 
                     # Der Bearbeiten-Block: Bleibt bei Änderungen explizit OFFEN!
@@ -360,7 +355,6 @@ def render_manage_tab(
                                         st.session_state["last_edited_category"] = edit_cat_val.strip()
                                         st.session_state["has_unsaved_changes"] = True
                                         st.session_state["manage_notice"] = f"Feed-Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!"
-                                        st.toast("Feed-Änderungen im Entwurf gemerkt!", icon="✏️")
                                         st.rerun()
                                 else:
                                     st.error("Name und URL dürfen nicht leer sein.")
@@ -410,7 +404,6 @@ def render_manage_tab(
                 st.session_state["has_unsaved_changes"] = True
                 st.session_state["manage_settings_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
                 st.session_state["manage_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
-                st.toast("Einstellungen im Entwurf übernommen!", icon="⚙️")
                 st.rerun()
 
     st.markdown("---")

@@ -71,7 +71,6 @@ def render_feedly_tab(
                     st.cache_data.clear()
                     st.session_state["is_refreshing_rss"] = False
                     st.session_state["feedly_notice"] = "Feeds wurden erfolgreich generiert & aktualisiert!"
-                    st.toast("Feeds wurden erfolgreich generiert & aktualisiert!", icon="📡")
                     st.rerun()
         with col_act2:
             if st.button("🚀 Zu GitHub & CDN pushen", key="btn_push_rss_cdn", use_container_width=True, disabled=any_busy):
@@ -86,13 +85,11 @@ def render_feedly_tab(
                     if push_res.get("success"):
                         st.session_state["feedly_notice"] = "RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!"
                         st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
-                        st.toast("Feeds zu CDN gepusht!", icon="🚀")
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):
                             st.session_state["feedly_notice"] = "GitHub Action 'Update RSS Feeds' wurde angestoßen!"
                             st.info("GitHub Action 'Update RSS Feeds' wurde angestoßen!")
-                            st.toast("GitHub Action gestartet!", icon="⚡")
                         else:
                             st.error(f"Fehler: {push_res.get('error')}")
 

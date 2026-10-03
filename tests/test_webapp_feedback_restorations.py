@@ -37,7 +37,9 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn(".sidebar-version-badge", self.styles_py)
         self.assertIn("margin-left: 10px !important", self.styles_py)
         # Reload feeds button must only be available in admin mode
-        self.assertIn("if is_admin:\n    st.sidebar.markdown(\"---\")\n    if st.sidebar.button(", self.webapp_py)
+        self.assertIn("if is_admin:", self.webapp_py)
+        self.assertIn("key=\"sb_btn_refresh_feeds\"", self.webapp_py)
+        self.assertTrue(self.webapp_py.find("if is_admin:") < self.webapp_py.find("key=\"sb_btn_refresh_feeds\""))
 
     def test_styles_read_button_right_alignment_and_thumbs_colors(self) -> None:
         """CSS must ensure last-child column alignment and green/red thumbs colors."""
@@ -107,6 +109,24 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         """KI and Feedly tabs must display prominent notice banners when actions complete."""
         self.assertIn("ki_notice", self.ki_tab_py)
         self.assertIn("feedly_notice", self.feedly_tab_py)
+
+    def test_toast_removal_and_overlay_release(self) -> None:
+        """st.toast must be completely eliminated across all UI modules and overlay auto-released."""
+        auth_py = (self.root / "src" / "ui" / "auth.py").read_text(encoding="utf-8")
+        self.assertNotIn("st.toast", self.manage_tab_py, "manage_tab.py must not contain any st.toast calls")
+        self.assertNotIn("st.toast", self.ki_tab_py, "ki_tab.py must not contain any st.toast calls")
+        self.assertNotIn("st.toast", self.feedly_tab_py, "feedly_tab.py must not contain any st.toast calls")
+        self.assertNotIn("st.toast", self.webapp_py, "webapp.py must not contain any st.toast calls")
+        self.assertNotIn("st.toast", auth_py, "auth.py must not contain any st.toast calls")
+
+        # Global toast CSS suppression
+        self.assertIn('[data-testid="stToast"]', self.styles_py)
+        self.assertIn("display: none !important", self.styles_py)
+
+        # Overlay release mechanics
+        self.assertIn("hideActionOverlay", self.styles_py)
+        self.assertIn("release_action_overlay", self.styles_py)
+        self.assertIn("release_action_overlay()", self.webapp_py)
 
 
 if __name__ == "__main__":

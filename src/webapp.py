@@ -40,7 +40,7 @@ from src.aggregator import (
     DEFAULT_MAX_ARTICLE_AGE_HOURS,
     DEFAULT_MAX_ARTICLE_AGE_WEEKS,
 )
-from src.ui.styles import apply_custom_styles, embed_client_script
+from src.ui.styles import apply_custom_styles, embed_client_script, release_action_overlay
 from src.__version__ import get_app_version
 from src.ui.auth import (
     is_admin_user,
@@ -307,6 +307,8 @@ embed_client_script(f"""
 # Button: Feeds neu laden (nur im Administrator-Modus verfügbar)
 if is_admin:
     st.sidebar.markdown("---")
+    if "sidebar_refresh_notice" in st.session_state:
+        st.sidebar.success(st.session_state.pop("sidebar_refresh_notice"))
     if st.sidebar.button(
         "🔄 Feeds neu laden",
         key="sb_btn_refresh_feeds",
@@ -317,7 +319,7 @@ if is_admin:
         st.cache_data.clear()
         with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
             get_news_data(force_live_fetch=True)
-        st.toast("Feeds wurden frisch eingelesen & in Datenbank gesichert!", icon="📰")
+        st.session_state["sidebar_refresh_notice"] = "Feeds wurden frisch eingelesen & in Datenbank gesichert!"
         st.rerun()
 
 # Sidebar Auth Bereich (Login / Logout)
@@ -366,3 +368,6 @@ with tab_feedly:
     else:
         st.subheader("📡 RSS Exposure")
         st.info("🔒 Die RSS-Feeds und Feedly-Integration sind im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
+
+# Release loading overlay and re-enable action buttons on render completion
+release_action_overlay()

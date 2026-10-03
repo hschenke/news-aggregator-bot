@@ -175,7 +175,6 @@ def render_sidebar_auth(is_admin: bool) -> None:
             )
             if st.button("Anmelden", key="btn_sidebar_login", type="primary", use_container_width=True):
                 if login_admin(pwd_input):
-                    st.toast("Erfolgreich als Administrator angemeldet!", icon="🔓")
                     st.rerun()
                 else:
                     st.error("Ungültiges Passwort.")
