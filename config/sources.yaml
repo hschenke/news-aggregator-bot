@@ -37,7 +37,7 @@ categories:
     url: https://www.heise.de/rss/heise-atom.xml
     exclude_keywords:
     - heise+
-  - name: https://huggingface.co/blog/feed.xml
+  - name: Huggingface
     url: https://huggingface.co/blog/feed.xml
   - name: TechCrunch AI
     url: https://techcrunch.com/category/artificial-intelligence/feed/

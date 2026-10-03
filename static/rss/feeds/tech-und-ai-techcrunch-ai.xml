@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 11:26:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 16:36:40 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -79,33 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[With all the talk about how AI might one day kill us all, it's easy to forget that AI has already harmed some people psychologically. Circuit Breaker Labs has created "crash-test dummies" to solve that.]]></description>
-    </item>
-    <item>
-      <title>Pope Leo XIV is not a fan of AI-generated art</title>
-      <link>https://techcrunch.com/2026/10/02/pope-leo-xiv-is-not-a-fan-of-ai-generated-art/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173199</guid>
-      <pubDate>Fri, 02 Oct 2026 15:39:41 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA["There is an ontological difference, even before an aesthetic one, between art and what a machine can generate through statistical calculation based on millions of images created by others," the pope wrote. "Algorithms lack the spark of humanity."]]></description>
-    </item>
-    <item>
-      <title>TechCrunch Disrupt 2026: Clay’s Kareem Amin on the rise of the GTM engineer</title>
-      <link>https://techcrunch.com/2026/10/02/techcrunch-disrupt-2026-clays-kareem-amin-on-the-rise-of-the-gtm-engineer/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173061</guid>
-      <pubDate>Fri, 02 Oct 2026 14:30:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Clay Co-founder and CEO Kareem Amin joins the AI Stage to discuss the rise of GTM engineer at TechCrunch Disrupt 2026. Register for your ticket and get a second pass at 50% off.]]></description>
-    </item>
-    <item>
-      <title>Last 24 hours: Exhibit at TechCrunch Disrupt 2026 and reach 10,000+ tech leaders</title>
-      <link>https://techcrunch.com/2026/10/02/last-24-hours-exhibit-at-techcrunch-disrupt-2026-and-reach-10000-tech-leaders/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173088</guid>
-      <pubDate>Fri, 02 Oct 2026 14:00:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Today is the last day to book your exhibit table at TechCrunch Disrupt 2026. From October 13–15, 10,000+ founders, investors, operators, and tech leaders will arrive at San Francisco’s Moscone West looking for companies, products, ideas, and people worth knowing. The question is: Will they find your startup?]]></description>
     </item>
   </channel>
 </rss>
