@@ -28,6 +28,9 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("🔄 Feeds neu laden", self.webapp_py)
         # Mark seen button must be gone
         self.assertNotIn("sb_btn_mark_seen", self.webapp_py)
+        # Version badge behind News Bot must be present
+        self.assertIn("app_version = get_app_version()", self.webapp_py)
+        self.assertIn("{app_version}", self.webapp_py)
 
     def test_styles_read_button_right_alignment_and_thumbs_colors(self) -> None:
         """CSS must ensure last-child column alignment and green/red thumbs colors."""
