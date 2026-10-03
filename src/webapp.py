@@ -235,10 +235,12 @@ else:
 # ----------------- SIDEBAR -----------------
 app_version = get_app_version()
 st.sidebar.markdown(
-    f"<h2 style='margin-top:0.2rem; margin-bottom:0.25rem; font-size:1.35rem; display:flex; align-items:center; gap:8px;'>"
-    f"<span>🤖 News Bot</span>"
-    f"<span style='font-size:0.75rem; font-weight:600; padding:2px 7px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; vertical-align:middle;'>{app_version}</span>"
-    f"</h2>",
+    f"""
+    <div class="sidebar-header-container" style="display:flex; align-items:center; gap:12px; margin-top:0.2rem; margin-bottom:0.25rem;">
+        <h2 class="sidebar-header-title" style="margin:0; font-size:1.35rem; font-weight:700; display:inline-flex; align-items:center;">🤖&nbsp;News Bot</h2>
+        <span class="sidebar-version-badge" style="display:inline-flex; align-items:center; margin-left:10px; font-size:0.75rem; font-weight:600; padding:2px 8px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; white-space:nowrap;">{app_version}</span>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
 st.sidebar.caption("24h Newsfeed")

@@ -207,13 +207,45 @@ def apply_custom_styles() -> None:
         color: #64748B;
     }
 
+    /* Sidebar Header & Version Badge Spacing */
+    .sidebar-header-container {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    .sidebar-header-title {
+        font-size: 1.35rem !important;
+        font-weight: 700 !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+    .sidebar-version-badge {
+        display: inline-flex !important;
+        align-items: center !important;
+        margin-left: 10px !important;
+        font-size: 0.75rem !important;
+        font-weight: 600 !important;
+        padding: 2px 8px !important;
+        border-radius: 6px !important;
+        background: rgba(37, 99, 235, 0.1) !important;
+        border: 1px solid rgba(37, 99, 235, 0.25) !important;
+        color: #2563eb !important;
+        letter-spacing: 0.02em !important;
+        vertical-align: middle !important;
+        white-space: nowrap !important;
+    }
+
     /* Sidebar Navigation */
     .custom-nav-container {
         display: flex !important;
         flex-direction: column !important;
         gap: 0.45rem !important;
-        margin-top: 0 !important;
-        margin-bottom: 0.5rem !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.65rem !important;
         width: 100% !important;
     }
     .custom-nav-btn {
