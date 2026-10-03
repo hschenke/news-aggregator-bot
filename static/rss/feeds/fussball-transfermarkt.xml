@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Transfermarkt</link>
     <description>RSS-Feed für die Quelle 'Transfermarkt' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 10:50:34 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 11:12:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Türkei: Montella will „Kritik nicht zu viel Gehör schenken“</title>
+      <link>https://www.transfermarkt.de/montella-kritik-nicht-zu-viel-gehor-schenken-quot-liga-a-fur-turkei-ein-paar-nummern-zu-gross-quot-/view/news/488285</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/montella-kritik-nicht-zu-viel-gehor-schenken-quot-liga-a-fur-turkei-ein-paar-nummern-zu-gross-quot-/view/news/488285</guid>
+      <pubDate>Sat, 03 Oct 2026 12:25:19 +0200</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Bei der türkischen Nationalmannschaft verschärft sich nach dem Fehlstart in die Nations League der Druck auf Trainer Vincenzo Montella. Das 0:3 am Freitagabend in Belgien war bereits die...]]></description>
+    </item>
     <item>
       <title>Grashopper Zürich: Olaf Janßen folgt auf Peter Zeidler</title>
       <link>https://www.transfermarkt.de/janssen-folgt-bei-gc-zurich-auf-zeidler-passt-zur-sportlichen-ausrichtung-und-methodik-quot-/view/news/488286</link>
@@ -160,15 +169,6 @@
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
       <description><![CDATA[Nachdem die Premier League Manchester City am Dienstag wegen mutmaßlicher Verstöße gegen die Finanzregularien schuldig gesprochen hat, legte der Klub Berufung gegen das Urteil ein....]]></description>
-    </item>
-    <item>
-      <title>Marktwerte Bundesliga: Musiala größter Verlierer – DFB-Neulinge im Aufwind</title>
-      <link>https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/marktwerte-bundesliga-musiala-fallt-auf-niveau-von-2022-acht-dfb-neulinge-im-aufwind/view/news/488019</guid>
-      <pubDate>Fri, 02 Oct 2026 13:00:00 +0200</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Während Michael Olise sich weiter als Unterschiedsspieler präsentiert und den Marktwert-Rekord der Bundesliga ausbaut, kommt mit Jamal Musiala der größte Verlierer des...]]></description>
     </item>
   </channel>
 </rss>
