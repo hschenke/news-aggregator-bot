@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Fun' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 11:12:21 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 03 Oct 2026 11:25:17 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/fun.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -484,15 +484,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Herr und Herrscher auf dem Gipfel der Welt.]]></description>
-    </item>
-    <item>
-      <title>Schei*ße, ich habe die Fernbedienung vergessen!..</title>
-      <link>https://debeste.de/626486/Schei-e,-ich-habe-die-Fernbedienung-vergessen</link>
-      <guid isPermaLink="false">https://debeste.de/626486/Schei-e,-ich-habe-die-Fernbedienung-vergessen</guid>
-      <pubDate>Fri, 02 Oct 2026 13:19:01 +0200</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Schei*ße, ich habe die Fernbedienung vergessen!]]></description>
     </item>
   </channel>
 </rss>
