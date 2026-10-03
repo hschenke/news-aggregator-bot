@@ -209,10 +209,26 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
-    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+    def archive_old_articles(self, max_age_seconds: float = 86400.0) -> int:
         """
-        Bereinigt die Archiv-Tabelle und löscht Artikel, die älter als max_age_weeks Wochen sind.
+        Verschiebt Artikel, die älter als max_age_seconds (Standard 24h) sind, ins Archiv
+        und entfernt sie aus der aktiven Artikel-Tabelle.
+        """
+        pass
+
+    @abstractmethod
+    def cleanup_archive(self, max_age_days: int | float = 7, max_age_weeks: int | float | None = None) -> int:
+        """
+        Bereinigt die Archiv-Tabelle und löscht archivierte Artikel, die älter als max_age_days Tage sind.
         Gibt die Anzahl der gelöschten Datensätze zurück.
+        """
+        pass
+
+    @abstractmethod
+    def purge_tables(self) -> dict[str, int]:
+        """
+        Leert alle Tabellen (articles, archived_articles, briefings) für einen sauberen Neustart.
+        Gibt die Anzahl der gelöschten Zeilen je Tabelle zurück.
         """
         pass
 
@@ -329,10 +345,16 @@ class SqliteStorage(StorageBackend):
 
         params_list = []
         archived_urls = self.get_archived_urls()
+        now_ts = time.time()
+        cutoff_24h = now_ts - 86400.0
         for item in articles:
             art = Article.from_dict(item) if not isinstance(item, Article) else item
             url = art.link.strip()
             if not url or url == "#" or url in archived_urls:
+                continue
+
+            # Fest 24h-Grenze: Veraltete Artikel (> 24 Stunden) nicht aufnehmen
+            if art.timestamp > 0.0 and art.timestamp < cutoff_24h:
                 continue
 
             params_list.append((
@@ -632,14 +654,65 @@ class SqliteStorage(StorageBackend):
             }))
         return articles
 
-    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+    def archive_old_articles(self, max_age_seconds: float = 86400.0) -> int:
         """
-        Löscht archivierte Artikel, die älter als max_age_weeks Wochen sind.
+        Verschiebt Artikel, die älter als max_age_seconds (Standard 24h) sind, ins Archiv
+        und entfernt sie aus der aktiven Artikel-Tabelle.
         """
-        if max_age_weeks is None or float(max_age_weeks) <= 0:
+        if max_age_seconds <= 0:
             return 0
-        SECONDS_PER_WEEK = 7.0 * 24 * 3600
-        cutoff_ts = time.time() - (float(max_age_weeks) * SECONDS_PER_WEEK)
+        cutoff_ts = time.time() - float(max_age_seconds)
+        now_iso = datetime.now(timezone.utc).isoformat()
+
+        with self._get_connection() as conn:
+            rows = conn.execute(
+                "SELECT url, title, summary, source, category, timestamp, guid, published, source_url, feedback "
+                "FROM articles WHERE timestamp > 0.0 AND timestamp < ?",
+                (cutoff_ts,)
+            ).fetchall()
+            if not rows:
+                return 0
+
+            insert_sql = """
+                INSERT INTO archived_articles (
+                    url, title, summary, source, category, timestamp,
+                    guid, published, source_url, feedback, archived_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(url) DO UPDATE SET
+                    title = excluded.title,
+                    summary = excluded.summary,
+                    source = excluded.source,
+                    category = excluded.category,
+                    timestamp = excluded.timestamp,
+                    guid = COALESCE(excluded.guid, archived_articles.guid),
+                    published = COALESCE(excluded.published, archived_articles.published),
+                    source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                    feedback = excluded.feedback,
+                    archived_at = excluded.archived_at
+            """
+            for r in rows:
+                conn.execute(insert_sql, (
+                    r["url"], r["title"], r["summary"], r["source"], r["category"],
+                    r["timestamp"], r["guid"], r["published"], r["source_url"],
+                    r["feedback"], now_iso
+                ))
+            conn.execute("DELETE FROM articles WHERE timestamp > 0.0 AND timestamp < ?", (cutoff_ts,))
+            return len(rows)
+
+    def cleanup_archive(self, max_age_days: int | float = 7, max_age_weeks: int | float | None = None) -> int:
+        """
+        Löscht archivierte Artikel, die älter als max_age_days Tage sind (Standard: 7 Tage).
+        Unterstützt max_age_weeks zur Abwärtskompatibilität.
+        """
+        if max_age_weeks is not None and max_age_weeks > 0:
+            days = float(max_age_weeks) * 7.0
+        else:
+            days = float(max_age_days)
+
+        if days <= 0:
+            return 0
+
+        cutoff_ts = time.time() - (days * 86400.0)
         cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
 
         sql = """
@@ -650,6 +723,21 @@ class SqliteStorage(StorageBackend):
         with self._get_connection() as conn:
             cursor = conn.execute(sql, (cutoff_ts, cutoff_iso))
             return cursor.rowcount if cursor.rowcount >= 0 else 0
+
+    def purge_tables(self) -> dict[str, int]:
+        """
+        Leert alle Tabellen (articles, archived_articles, briefings) für einen sauberen Neustart.
+        """
+        with self._get_connection() as conn:
+            c1 = conn.execute("DELETE FROM articles;").rowcount
+            c2 = conn.execute("DELETE FROM archived_articles;").rowcount
+            c3 = conn.execute("DELETE FROM briefings;").rowcount
+            conn.commit()
+        return {
+            "articles": max(0, c1),
+            "archived_articles": max(0, c2),
+            "briefings": max(0, c3),
+        }
 
     def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_feedback = 1 if feedback > 0 else (-1 if feedback < 0 else 0)
@@ -975,10 +1063,16 @@ class TursoStorage(StorageBackend):
 
         stmts: list[tuple[str, list[Any]]] = []
         archived_urls = self.get_archived_urls()
+        now_ts = time.time()
+        cutoff_24h = now_ts - 86400.0
         for item in articles:
             art = Article.from_dict(item) if not isinstance(item, Article) else item
             url = art.link.strip()
             if not url or url == "#" or url in archived_urls:
+                continue
+
+            # Fest 24h-Grenze: Veraltete Artikel (> 24 Stunden) nicht aufnehmen
+            if art.timestamp > 0.0 and art.timestamp < cutoff_24h:
                 continue
 
             stmts.append((upsert_sql, [
@@ -1294,14 +1388,68 @@ class TursoStorage(StorageBackend):
             }))
         return articles
 
-    def cleanup_archive(self, max_age_weeks: int | float = 20) -> int:
+    def archive_old_articles(self, max_age_seconds: float = 86400.0) -> int:
         """
-        Löscht archivierte Artikel, die älter als max_age_weeks Wochen sind.
+        Verschiebt Artikel, die älter als max_age_seconds (Standard 24h) sind, ins Archiv
+        und entfernt sie aus der aktiven Artikel-Tabelle.
         """
-        if max_age_weeks is None or float(max_age_weeks) <= 0:
+        if max_age_seconds <= 0:
             return 0
-        SECONDS_PER_WEEK = 7.0 * 24 * 3600
-        cutoff_ts = time.time() - (float(max_age_weeks) * SECONDS_PER_WEEK)
+        cutoff_ts = time.time() - float(max_age_seconds)
+        now_iso = datetime.now(timezone.utc).isoformat()
+
+        # Ältere Artikel ermitteln
+        select_sql = (
+            "SELECT url, title, summary, source, category, timestamp, guid, published, source_url, feedback "
+            "FROM articles WHERE timestamp > 0.0 AND timestamp < ?;"
+        )
+        res = self._execute_pipeline([(select_sql, [cutoff_ts])])
+        if not res or not res[0].get("rows"):
+            return 0
+
+        rows = res[0]["rows"]
+        stmts: list[tuple[str, list[Any]]] = []
+        insert_sql = """
+            INSERT INTO archived_articles (
+                url, title, summary, source, category, timestamp,
+                guid, published, source_url, feedback, archived_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                summary = excluded.summary,
+                source = excluded.source,
+                category = excluded.category,
+                timestamp = excluded.timestamp,
+                guid = COALESCE(excluded.guid, archived_articles.guid),
+                published = COALESCE(excluded.published, archived_articles.published),
+                source_url = COALESCE(excluded.source_url, archived_articles.source_url),
+                feedback = excluded.feedback,
+                archived_at = excluded.archived_at
+        """
+        for r in rows:
+            stmts.append((insert_sql, [
+                r["url"], r["title"], r["summary"], r["source"], r["category"],
+                r["timestamp"], r["guid"], r["published"], r["source_url"],
+                r["feedback"], now_iso
+            ]))
+        stmts.append(("DELETE FROM articles WHERE timestamp > 0.0 AND timestamp < ?;", [cutoff_ts]))
+        self._execute_pipeline(stmts)
+        return len(rows)
+
+    def cleanup_archive(self, max_age_days: int | float = 7, max_age_weeks: int | float | None = None) -> int:
+        """
+        Löscht archivierte Artikel, die älter als max_age_days Tage sind (Standard: 7 Tage).
+        Unterstützt max_age_weeks zur Abwärtskompatibilität.
+        """
+        if max_age_weeks is not None and max_age_weeks > 0:
+            days = float(max_age_weeks) * 7.0
+        else:
+            days = float(max_age_days)
+
+        if days <= 0:
+            return 0
+
+        cutoff_ts = time.time() - (days * 86400.0)
         cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
 
         sql = """
@@ -1313,6 +1461,25 @@ class TursoStorage(StorageBackend):
         if not res:
             return 0
         return int(res[0].get("affected_rows", 0))
+
+    def purge_tables(self) -> dict[str, int]:
+        """
+        Leert alle Tabellen (articles, archived_articles, briefings) für einen sauberen Neustart.
+        """
+        stmts = [
+            ("DELETE FROM articles;", []),
+            ("DELETE FROM archived_articles;", []),
+            ("DELETE FROM briefings;", []),
+        ]
+        res = self._execute_pipeline(stmts)
+        c1 = int(res[0].get("affected_rows", 0)) if len(res) > 0 else 0
+        c2 = int(res[1].get("affected_rows", 0)) if len(res) > 1 else 0
+        c3 = int(res[2].get("affected_rows", 0)) if len(res) > 2 else 0
+        return {
+            "articles": c1,
+            "archived_articles": c2,
+            "briefings": c3,
+        }
 
     def set_feedback(self, url: str, feedback: int, title: str = "") -> bool:
         safe_val = 1 if feedback > 0 else (-1 if feedback < 0 else 0)

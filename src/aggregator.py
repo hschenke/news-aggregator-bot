@@ -24,6 +24,12 @@ from src.exceptions import NewsAggregatorError, ConfigurationError, FeedFetchErr
 logger = logging.getLogger(__name__)
 
 
+def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
+    """Helper delegating to summarizer.get_streamlit_app_url."""
+    from src.summarizer import get_streamlit_app_url as _get_url
+    return _get_url(config_path)
+
+
 def get_sources_path(config_path: str = "config/sources.yaml") -> Path:
     """Ermittelt den absoluten Pfad zur sources.yaml-Datei."""
     path = Path(config_path)
@@ -1176,6 +1182,10 @@ def test_feed_connection(feed_url: str, timeout: int = 10) -> dict[str, Any]:
     }
 
 
+# Pytest daran hindern, diese Hilfsfunktion als Test-Fixture zu behandeln
+test_feed_connection.__test__ = False
+
+
 
 @functools.lru_cache(maxsize=2048)
 def clean_html_text(text: str) -> str:
@@ -1298,7 +1308,12 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: list[str] | No
     return False
 
 
-DEFAULT_MAX_ARTICLE_AGE_WEEKS: int = 20
+DEFAULT_MAX_ARTICLE_AGE_HOURS: float = 24.0
+DEFAULT_MAX_ARTICLE_AGE_SECONDS: float = 24.0 * 3600.0
+DEFAULT_ARCHIVE_RETENTION_DAYS: int = 7
+DEFAULT_MAX_ARTICLE_AGE_WEEKS: int = 20  # Veralteter Kompatibilitätsalias
+SECONDS_PER_HOUR: int = 3600
+SECONDS_PER_DAY: int = 86400
 SECONDS_PER_WEEK: int = 7 * 24 * 60 * 60  # 604_800 Sekunden pro Woche
 
 
@@ -1378,16 +1393,21 @@ def get_article_timestamp(item: Any) -> float:
 
 def is_article_too_old(
     article_or_dict: Any,
-    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
+    max_age_weeks: int | float | None = None,
     now_ts: float | None = None,
 ) -> bool:
     """
-    Prüft, ob ein Artikel älter als max_age_weeks Wochen ist.
+    Prüft, ob ein Artikel älter als max_age_hours (Standard: 24 Stunden) ist.
     Gibt True zurück, wenn der Artikel älter als der Stichtag ist und herausgefiltert werden soll.
-    Falls max_age_weeks None oder <= 0 ist, wird keine Altersbegrenzung angewendet (gibt False zurück).
+    Falls max_age_weeks übergeben wird, wird es zur Abwärtskompatibilität in Stunden umgerechnet.
     Artikel ohne ermittelbares Datum (timestamp <= 0.0) werden nicht als zu alt gewertet.
     """
-    if max_age_weeks is None or max_age_weeks <= 0:
+    if max_age_weeks is not None and float(max_age_weeks) > 0:
+        hours = float(max_age_weeks) * 7.0 * 24.0
+    elif max_age_hours is not None and float(max_age_hours) > 0:
+        hours = float(max_age_hours)
+    else:
         return False
 
     ts = get_article_timestamp(article_or_dict)
@@ -1397,17 +1417,18 @@ def is_article_too_old(
     if now_ts is None:
         now_ts = time.time()
 
-    cutoff_ts = now_ts - (float(max_age_weeks) * SECONDS_PER_WEEK)
+    cutoff_ts = now_ts - (hours * 3600.0)
     return ts < cutoff_ts
 
 
 def filter_articles_by_age(
     articles: list[dict[str, Any]],
-    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
+    max_age_weeks: int | float | None = None,
     now_ts: float | None = None,
 ) -> list[dict[str, Any]]:
-    """Filtert eine Artikelliste und schließt alle Artikel aus, die älter als max_age_weeks Wochen sind."""
-    if max_age_weeks is None or max_age_weeks <= 0:
+    """Filtert eine Artikelliste und schließt alle Artikel aus, die älter als max_age_hours (Standard: 24h) sind."""
+    if (max_age_hours is None or max_age_hours <= 0) and (max_age_weeks is None or max_age_weeks <= 0):
         return articles
 
     if now_ts is None:
@@ -1415,17 +1436,18 @@ def filter_articles_by_age(
 
     return [
         article for article in articles
-        if not is_article_too_old(article, max_age_weeks=max_age_weeks, now_ts=now_ts)
+        if not is_article_too_old(article, max_age_hours=max_age_hours, max_age_weeks=max_age_weeks, now_ts=now_ts)
     ]
 
 
 def filter_news_data_by_age(
     news_data: dict[str, list[dict[str, Any]]],
-    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
+    max_age_weeks: int | float | None = None,
     now_ts: float | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
-    """Filtert ein nach Kategorien gruppiertes News-Dictionary nach maximalem Artikel-Alter."""
-    if max_age_weeks is None or max_age_weeks <= 0:
+    """Filtert ein nach Kategorien gruppiertes News-Dictionary nach maximalem Artikel-Alter (Standard: 24h)."""
+    if (max_age_hours is None or max_age_hours <= 0) and (max_age_weeks is None or max_age_weeks <= 0):
         return news_data
 
     if now_ts is None:
@@ -1435,6 +1457,7 @@ def filter_news_data_by_age(
     for category_name, items in news_data.items():
         filtered[category_name] = filter_articles_by_age(
             items,
+            max_age_hours=max_age_hours,
             max_age_weeks=max_age_weeks,
             now_ts=now_ts,
         )
@@ -1532,7 +1555,8 @@ def fetch_feed_items(
     exclude_keywords: list[str] | None = None,
     filter_ads: bool = True,
     custom_ad_keywords: list[str] | None = None,
-    max_age_weeks: int | float | None = DEFAULT_MAX_ARTICLE_AGE_WEEKS,
+    max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
+    max_age_weeks: int | float | None = None,
 ) -> list[dict[str, Any]]:
     """Liest einen RSS- oder Atom-Feed ein, bereinigt HTML-Tags, filtert Werbung & Keywords, dedupliziert und sortiert nach Datum."""
     try:
@@ -1663,10 +1687,9 @@ def fetch_feed_items(
                     except Exception:
                         pass
 
-            # 3. Stufe: Altersprüfung (Artikel älter als max_age_weeks Wochen herausfiltern)
-            if max_age_weeks is not None and max_age_weeks > 0 and timestamp > 0.0:
-                if is_article_too_old({"timestamp": timestamp}, max_age_weeks=max_age_weeks):
-                    continue
+            # 3. Stufe: Altersprüfung (Artikel älter als 24 Stunden herausfiltern)
+            if timestamp > 0.0 and is_article_too_old({"timestamp": timestamp}, max_age_hours=max_age_hours, max_age_weeks=max_age_weeks):
+                continue
 
             # Duplikatsprüfung innerhalb des Feeds (über Canonical URL & normalisierten Titel)
             norm_title = re.sub(r"[\W_]+", "", title.lower())
@@ -1710,13 +1733,7 @@ def collect_all_news(
     settings = config.get("settings", {})
     filter_ads = settings.get("filter_ads", True)
     custom_ad_keywords = settings.get("ad_keywords", [])
-    max_age_weeks_raw = settings.get("max_article_age_weeks")
-    if max_age_weeks_raw is None:
-        max_age_weeks_raw = settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
-    try:
-        max_age_weeks = int(max_age_weeks_raw) if max_age_weeks_raw is not None else DEFAULT_MAX_ARTICLE_AGE_WEEKS
-    except (ValueError, TypeError):
-        max_age_weeks = DEFAULT_MAX_ARTICLE_AGE_WEEKS
+    max_age_hours = DEFAULT_MAX_ARTICLE_AGE_HOURS
 
     collected: dict[str, list[dict[str, Any]]] = {}
 
@@ -1753,7 +1770,7 @@ def collect_all_news(
                 exclude_keywords=exc,
                 filter_ads=filter_ads,
                 custom_ad_keywords=custom_ad_keywords,
-                max_age_weeks=max_age_weeks,
+                max_age_hours=max_age_hours,
             )
         except Exception as e_fetch:
             logger.warning("Fehler beim Einlesen von Feed '%s' (%s): %s", f_name, f_url, e_fetch)
@@ -1785,8 +1802,8 @@ def collect_all_news(
                 items = []
 
             for it in items:
-                # Zusätzliche Absicherung gegen veraltete Artikel
-                if is_article_too_old(it, max_age_weeks=max_age_weeks):
+                # Zusätzliche Absicherung gegen veraltete Artikel (strikt 24 Stunden)
+                if is_article_too_old(it, max_age_hours=max_age_hours):
                     continue
 
                 raw_u = (it.get("link") or "").strip()

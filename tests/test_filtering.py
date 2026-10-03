@@ -125,99 +125,99 @@ class TestFilteringAndScraping(unittest.TestCase):
         self.assertEqual(get_article_timestamp(None), 0.0)
 
     def test_is_article_too_old(self):
-        from src.aggregator import is_article_too_old, DEFAULT_MAX_ARTICLE_AGE_WEEKS
+        from src.aggregator import is_article_too_old, DEFAULT_MAX_ARTICLE_AGE_HOURS
 
         now_ts = 1790000000.0  # Fester Bezugspunkt
-        one_week_sec = 7 * 24 * 3600
+        one_hour_sec = 3600
 
-        # 2 Wochen alt -> nicht zu alt (< 20 Wochen)
-        recent_item = {"timestamp": now_ts - (2 * one_week_sec)}
-        self.assertFalse(is_article_too_old(recent_item, max_age_weeks=20, now_ts=now_ts))
+        # 2 Stunden alt -> nicht zu alt (< 24 Stunden)
+        recent_item = {"timestamp": now_ts - (2 * one_hour_sec)}
+        self.assertFalse(is_article_too_old(recent_item, max_age_hours=24.0, now_ts=now_ts))
 
-        # 19 Wochen alt -> nicht zu alt
-        nineteen_weeks_item = {"timestamp": now_ts - (19 * one_week_sec)}
-        self.assertFalse(is_article_too_old(nineteen_weeks_item, max_age_weeks=20, now_ts=now_ts))
+        # 23 Stunden alt -> nicht zu alt
+        twenty_three_item = {"timestamp": now_ts - (23 * one_hour_sec)}
+        self.assertFalse(is_article_too_old(twenty_three_item, max_age_hours=24.0, now_ts=now_ts))
 
-        # 20.5 Wochen alt -> zu alt (> 20 Wochen)
-        twenty_and_half_item = {"timestamp": now_ts - (20.5 * one_week_sec)}
-        self.assertTrue(is_article_too_old(twenty_and_half_item, max_age_weeks=20, now_ts=now_ts))
+        # 25 Stunden alt -> zu alt (> 24 Stunden)
+        twenty_five_item = {"timestamp": now_ts - (25 * one_hour_sec)}
+        self.assertTrue(is_article_too_old(twenty_five_item, max_age_hours=24.0, now_ts=now_ts))
 
-        # 40 Wochen alt (wie alter Joscha Cartoon) -> zu alt
-        old_item = {"timestamp": now_ts - (40 * one_week_sec)}
-        self.assertTrue(is_article_too_old(old_item, max_age_weeks=20, now_ts=now_ts))
+        # 48 Stunden alt -> zu alt
+        old_item = {"timestamp": now_ts - (48 * one_hour_sec)}
+        self.assertTrue(is_article_too_old(old_item, max_age_hours=24.0, now_ts=now_ts))
 
         # Artikel ohne Timestamp (0.0) -> wird nicht als zu alt gewertet
         no_ts_item = {"timestamp": 0.0}
-        self.assertFalse(is_article_too_old(no_ts_item, max_age_weeks=20, now_ts=now_ts))
+        self.assertFalse(is_article_too_old(no_ts_item, max_age_hours=24.0, now_ts=now_ts))
 
-        # Deaktivierte Filterung (max_age_weeks = 0 oder None)
-        self.assertFalse(is_article_too_old(old_item, max_age_weeks=0, now_ts=now_ts))
-        self.assertFalse(is_article_too_old(old_item, max_age_weeks=None, now_ts=now_ts))
+        # Deaktivierte Filterung (max_age_hours = 0 oder None)
+        self.assertFalse(is_article_too_old(old_item, max_age_hours=0, now_ts=now_ts))
+        self.assertFalse(is_article_too_old(old_item, max_age_hours=None, now_ts=now_ts))
 
-        # Benutzerdefiniertes Alter (z. B. 4 Wochen)
-        four_week_limit = 4
-        item_3_weeks = {"timestamp": now_ts - (3 * one_week_sec)}
-        item_5_weeks = {"timestamp": now_ts - (5 * one_week_sec)}
-        self.assertFalse(is_article_too_old(item_3_weeks, max_age_weeks=four_week_limit, now_ts=now_ts))
-        self.assertTrue(is_article_too_old(item_5_weeks, max_age_weeks=four_week_limit, now_ts=now_ts))
+        # Benutzerdefiniertes Alter (z. B. 12 Stunden)
+        twelve_hour_limit = 12.0
+        item_10_hours = {"timestamp": now_ts - (10 * one_hour_sec)}
+        item_14_hours = {"timestamp": now_ts - (14 * one_hour_sec)}
+        self.assertFalse(is_article_too_old(item_10_hours, max_age_hours=twelve_hour_limit, now_ts=now_ts))
+        self.assertTrue(is_article_too_old(item_14_hours, max_age_hours=twelve_hour_limit, now_ts=now_ts))
 
     def test_filter_articles_by_age(self):
         from src.aggregator import filter_articles_by_age
 
         now_ts = 1790000000.0
-        one_week_sec = 7 * 24 * 3600
+        one_hour_sec = 3600
 
         articles = [
-            {"title": "Ganz neu", "timestamp": now_ts - (1 * one_week_sec)},
-            {"title": "15 Wochen alt", "timestamp": now_ts - (15 * one_week_sec)},
-            {"title": "25 Wochen alt", "timestamp": now_ts - (25 * one_week_sec)},
-            {"title": "50 Wochen alt", "timestamp": now_ts - (50 * one_week_sec)},
+            {"title": "Ganz neu (1h)", "timestamp": now_ts - (1 * one_hour_sec)},
+            {"title": "15 Stunden alt", "timestamp": now_ts - (15 * one_hour_sec)},
+            {"title": "25 Stunden alt", "timestamp": now_ts - (25 * one_hour_sec)},
+            {"title": "50 Stunden alt", "timestamp": now_ts - (50 * one_hour_sec)},
             {"title": "Ohne Datum", "timestamp": 0.0},
         ]
 
-        filtered = filter_articles_by_age(articles, max_age_weeks=20, now_ts=now_ts)
+        filtered = filter_articles_by_age(articles, max_age_hours=24.0, now_ts=now_ts)
         filtered_titles = [a["title"] for a in filtered]
 
         self.assertEqual(len(filtered), 3)
-        self.assertIn("Ganz neu", filtered_titles)
-        self.assertIn("15 Wochen alt", filtered_titles)
+        self.assertIn("Ganz neu (1h)", filtered_titles)
+        self.assertIn("15 Stunden alt", filtered_titles)
         self.assertIn("Ohne Datum", filtered_titles)
-        self.assertNotIn("25 Wochen alt", filtered_titles)
-        self.assertNotIn("50 Wochen alt", filtered_titles)
+        self.assertNotIn("25 Stunden alt", filtered_titles)
+        self.assertNotIn("50 Stunden alt", filtered_titles)
 
-        # Wenn Altersfilterung deaktiviert ist (0 Wochen)
-        all_kept = filter_articles_by_age(articles, max_age_weeks=0, now_ts=now_ts)
+        # Wenn Altersfilterung deaktiviert ist (0 Stunden)
+        all_kept = filter_articles_by_age(articles, max_age_hours=0, now_ts=now_ts)
         self.assertEqual(len(all_kept), 5)
 
     def test_filter_news_data_by_age(self):
         from src.aggregator import filter_news_data_by_age
 
         now_ts = 1790000000.0
-        one_week_sec = 7 * 24 * 3600
+        one_hour_sec = 3600
 
         news_data = {
             "Tech": [
-                {"title": "AI News", "timestamp": now_ts - (2 * one_week_sec)},
-                {"title": "Alter AI Post", "timestamp": now_ts - (25 * one_week_sec)},
+                {"title": "AI News", "timestamp": now_ts - (2 * one_hour_sec)},
+                {"title": "Alter AI Post", "timestamp": now_ts - (25 * one_hour_sec)},
             ],
             "Fun": [
-                {"title": "Aktueller Witz", "timestamp": now_ts - (1 * one_week_sec)},
-                {"title": "Uralter Witz", "timestamp": now_ts - (40 * one_week_sec)},
+                {"title": "Aktueller Witz", "timestamp": now_ts - (1 * one_hour_sec)},
+                {"title": "Uralter Witz", "timestamp": now_ts - (40 * one_hour_sec)},
             ]
         }
 
-        filtered = filter_news_data_by_age(news_data, max_age_weeks=20, now_ts=now_ts)
+        filtered = filter_news_data_by_age(news_data, max_age_hours=24.0, now_ts=now_ts)
         self.assertEqual(len(filtered["Tech"]), 1)
         self.assertEqual(filtered["Tech"][0]["title"], "AI News")
         self.assertEqual(len(filtered["Fun"]), 1)
         self.assertEqual(filtered["Fun"][0]["title"], "Aktueller Witz")
 
-    def test_sources_yaml_settings_contain_max_age_weeks(self):
+    def test_sources_yaml_settings_contain_archive_retention_days(self):
         from src.aggregator import load_sources
         config = load_sources("config/sources.yaml")
         settings = config.get("settings", {})
-        self.assertIn("max_article_age_weeks", settings)
-        self.assertEqual(settings["max_article_age_weeks"], 20)
+        self.assertIn("archive_retention_days", settings)
+        self.assertEqual(settings["archive_retention_days"], 7)
 
     def test_collect_all_news_skips_archived_articles(self):
         from unittest.mock import patch, MagicMock
@@ -239,7 +239,7 @@ class TestFilteringAndScraping(unittest.TestCase):
                         "feeds": [{"name": "TestFeed", "url": "https://example.com/feed.xml"}]
                     }
                 ],
-                "settings": {"max_article_age_weeks": 20}
+                "settings": {"archive_retention_days": 7}
             }):
                 with patch("src.aggregator.fetch_feed_items", return_value=[
                     {"title": "Schon gelesen", "link": "https://example.com/archived-item", "timestamp": now_ts},

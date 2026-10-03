@@ -20,6 +20,8 @@ class TestSqliteStorage(unittest.TestCase):
         self.storage.init_db()
 
     def test_save_and_retrieve_articles(self):
+        import time
+        now_ts = time.time()
         articles = [
             Article(
                 title="Artikel 1",
@@ -27,7 +29,7 @@ class TestSqliteStorage(unittest.TestCase):
                 summary="Zusammenfassung 1",
                 source="Source A",
                 category="Tech",
-                timestamp=1700000000.0,
+                timestamp=now_ts - 100.0,
                 feedback=1,
             ),
             Article(
@@ -36,7 +38,7 @@ class TestSqliteStorage(unittest.TestCase):
                 summary="Zusammenfassung 2",
                 source="Source B",
                 category="Wirtschaft",
-                timestamp=1700001000.0,
+                timestamp=now_ts,
                 feedback=0,
             ),
         ]
@@ -136,13 +138,15 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertEqual(len(self.storage.get_briefings()), 1)
 
     def test_archive_article_moves_from_active_to_archive(self):
+        import time
+        now_ts = time.time()
         art = Article(
             title="Zu lesender Artikel",
             link="https://example.com/read-me",
             summary="Interessanter Inhalt",
             source="TestQuelle",
             category="Tech",
-            timestamp=1700000000.0,
+            timestamp=now_ts,
             feedback=1,
         )
         self.storage.save_articles([art])
@@ -180,7 +184,9 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertIsNone(self.storage.get_article("https://example.com/archived"))
 
     def test_is_url_known_and_get_known_urls_with_archive(self):
-        self.storage.save_articles([Article(title="Aktiv", link="https://example.com/active")])
+        import time
+        now_ts = time.time()
+        self.storage.save_articles([Article(title="Aktiv", link="https://example.com/active", timestamp=now_ts)])
         self.storage.archive_article(Article(title="Archiviert", link="https://example.com/archived"))
 
         self.assertTrue(self.storage.is_url_known("https://example.com/active"))
@@ -191,22 +197,22 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertIn("https://example.com/active", known)
         self.assertIn("https://example.com/archived", known)
 
-    def test_cleanup_archive_respects_max_age_weeks(self):
+    def test_cleanup_archive_respects_max_age_days(self):
         import time
         now = time.time()
-        SECONDS_PER_WEEK = 7 * 24 * 3600
+        SECONDS_PER_DAY = 24 * 3600
 
-        # Älter als 20 Wochen (z.B. 25 Wochen alt)
+        # Älter als 7 Tage (z.B. 10 Tage alt)
         old_art = Article(
             title="Alt",
             link="https://example.com/old",
-            timestamp=now - (25 * SECONDS_PER_WEEK),
+            timestamp=now - (10 * SECONDS_PER_DAY),
         )
-        # Frisch archiviert (z.B. 2 Wochen alt)
+        # Frisch archiviert (z.B. 2 Tage alt)
         recent_art = Article(
             title="Frisch",
             link="https://example.com/recent",
-            timestamp=now - (2 * SECONDS_PER_WEEK),
+            timestamp=now - (2 * SECONDS_PER_DAY),
         )
 
         self.storage.archive_article(old_art)
@@ -214,13 +220,48 @@ class TestSqliteStorage(unittest.TestCase):
 
         self.assertEqual(len(self.storage.get_archived_articles()), 2)
 
-        # Bereinigung mit max_age_weeks=20
-        cleaned = self.storage.cleanup_archive(max_age_weeks=20)
+        # Bereinigung mit max_age_days=7
+        cleaned = self.storage.cleanup_archive(max_age_days=7)
         self.assertEqual(cleaned, 1)
 
         remaining = self.storage.get_archived_articles()
         self.assertEqual(len(remaining), 1)
         self.assertEqual(remaining[0].link, "https://example.com/recent")
+
+    def test_archive_old_articles_and_purge_tables(self):
+        import time
+        now = time.time()
+
+        # Artikel anlegen: einer frisch (2h alt), einer älter als 24h (26h alt)
+        # Da save_articles >24h abweist, fügen wir direkt ein oder nutzen DB-Verbindung
+        with self.storage._get_connection() as conn:
+            conn.execute(
+                "INSERT INTO articles (url, title, summary, source, category, timestamp, created_at, updated_at) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                ("https://example.com/old-active", "Old Active", "", "S", "Tech", now - (26 * 3600), "2026-10-01", "2026-10-01")
+            )
+            conn.execute(
+                "INSERT INTO articles (url, title, summary, source, category, timestamp, created_at, updated_at) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                ("https://example.com/fresh-active", "Fresh Active", "", "S", "Tech", now - (2 * 3600), "2026-10-03", "2026-10-03")
+            )
+
+        self.assertEqual(len(self.storage.get_articles()), 2)
+        # archive_old_articles aufrufen: verschiebt >24h ins Archiv
+        archived_count = self.storage.archive_old_articles(max_age_seconds=86400.0)
+        self.assertEqual(archived_count, 1)
+
+        remaining_active = self.storage.get_articles()
+        self.assertEqual(len(remaining_active), 1)
+        self.assertEqual(remaining_active[0].link, "https://example.com/fresh-active")
+        self.assertTrue(self.storage.is_article_archived("https://example.com/old-active"))
+
+        # purge_tables testen: leert alle Tabellen
+        purged = self.storage.purge_tables()
+        self.assertGreaterEqual(purged.get("articles", 0), 1)
+        self.assertEqual(len(self.storage.get_articles()), 0)
+        self.assertEqual(len(self.storage.get_archived_articles()), 0)
+
 
 
 class TestTursoStorage(unittest.TestCase):

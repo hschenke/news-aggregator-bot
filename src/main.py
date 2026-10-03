@@ -82,23 +82,27 @@ def run_pipeline() -> None:
             print(f"      -> 💾 {saved_count} Artikel & KI-Briefing im lokalen SQLite-Archiv gesichert.", flush=True)
             storage = fallback_storage
 
-        # 5. Schritt: Archiv-Bereinigung (Morgendlicher Cleanup beim KI Briefing Schedule)
-        from src.aggregator import load_sources, DEFAULT_MAX_ARTICLE_AGE_WEEKS
+        # 5. Schritt: Ältere Artikel (> 24h) archivieren und Archiv-Bereinigung (> archive_retention_days)
+        from src.aggregator import load_sources, DEFAULT_ARCHIVE_RETENTION_DAYS
         sources_cfg = load_sources()
         settings = sources_cfg.get("settings", {})
-        max_age_weeks_raw = settings.get("max_article_age_weeks")
-        if max_age_weeks_raw is None:
-            max_age_weeks_raw = settings.get("max_age_weeks", DEFAULT_MAX_ARTICLE_AGE_WEEKS)
+        retention_days_raw = settings.get("archive_retention_days", DEFAULT_ARCHIVE_RETENTION_DAYS)
         try:
-            max_age_weeks = int(max_age_weeks_raw) if max_age_weeks_raw is not None else DEFAULT_MAX_ARTICLE_AGE_WEEKS
+            retention_days = int(retention_days_raw) if retention_days_raw is not None else DEFAULT_ARCHIVE_RETENTION_DAYS
         except (ValueError, TypeError):
-            max_age_weeks = DEFAULT_MAX_ARTICLE_AGE_WEEKS
+            retention_days = DEFAULT_ARCHIVE_RETENTION_DAYS
 
-        cleaned_count = storage.cleanup_archive(max_age_weeks=max_age_weeks)
+        # 5a. Artikel älter als 24 Stunden ins Archiv verschieben
+        archived_count = storage.archive_old_articles(max_age_seconds=86400.0)
+        if archived_count > 0:
+            print(f"      -> 📦 Archivierung: {archived_count} Artikel (> 24h) ins Archiv verschoben.", flush=True)
+
+        # 5b. Archiv-Einträge älter als retention_days (Standard: 7 Tage) löschen
+        cleaned_count = storage.cleanup_archive(max_age_days=retention_days)
         if cleaned_count > 0:
-            print(f"      -> 🧹 Archiv-Bereinigung: {cleaned_count} veraltete Artikel (> {max_age_weeks} Wochen) bereinigt.", flush=True)
+            print(f"      -> 🧹 Archiv-Bereinigung: {cleaned_count} alte Artikel (> {retention_days} Tage) gelöscht.", flush=True)
         else:
-            print(f"      -> 🧹 Archiv-Bereinigung: Keine veralteten Artikel im Archiv (> {max_age_weeks} Wochen).", flush=True)
+            print(f"      -> 🧹 Archiv-Bereinigung: Keine veralteten Artikel im Archiv (> {retention_days} Tage).", flush=True)
     except Exception as exc:
         logger.warning("Datenbank-Archivierung oder Archiv-Bereinigung fehlgeschlagen: %s", exc)
 

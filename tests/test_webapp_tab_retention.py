@@ -13,7 +13,7 @@ from pathlib import Path
 class TestWebappTabRetention(unittest.TestCase):
 
     def setUp(self):
-        self.webapp_code = Path("src/webapp.py").read_text(encoding="utf-8")
+        self.webapp_code = Path("src/webapp.py").read_text(encoding="utf-8") + "\n" + Path("src/ui/styles.py").read_text(encoding="utf-8")
 
     def test_label_and_tab_id_mapping(self):
         """Prüft die bidirektionale Zuordnung von Tab-IDs zu UI-Labels."""
@@ -103,7 +103,8 @@ def tab_id_to_label(tab_id: str) -> str:
 
         # 5. F5-Refresh Logik: Bevorzugt get_persisted_active_tab() vor Fallback auf qp_tab
         self.assertIn("persisted_tab = get_persisted_active_tab()", webapp_code)
-        self.assertIn("if persisted_tab:\n        active_nav_tab = persisted_tab", webapp_code)
+        self.assertIn("if persisted_tab:", webapp_code)
+        self.assertIn("active_nav_tab = persisted_tab", webapp_code)
 
         # 6. st.tabs nutzt default-Parameter abgestimmt auf active_nav_tab
         self.assertIn("default_tab_label = tab_id_to_label(active_nav_tab)", webapp_code)

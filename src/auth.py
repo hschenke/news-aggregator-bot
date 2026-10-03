@@ -75,6 +75,10 @@ def generate_admin_auth_token(password: str) -> str:
     return f"adm:{ts}:{sig}"
 
 
+# Alias for concise import
+generate_admin_token = generate_admin_auth_token
+
+
 def verify_admin_token(token: str, password: str, max_age_seconds: int = ADMIN_EXPIRY_SECONDS) -> bool:
     """
     Prüft, ob ein Admin-Token gültig und noch nicht älter als 24 Stunden ist.
