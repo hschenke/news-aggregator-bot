@@ -1,6 +1,6 @@
 """
 KI Briefing tab module for News Aggregator Bot UI.
-Renders AI-curated daily briefings and provides generation triggers for administrators.
+Renders AI-curated daily briefings and provides generation triggers and prompt configuration for administrators.
 """
 
 from __future__ import annotations
@@ -12,7 +12,17 @@ from typing import Any
 
 import streamlit as st
 
-from src.summarizer import summarize_news_with_gemini
+from src.summarizer import (
+    summarize_news_with_gemini,
+    AVAILABLE_GEMINI_MODELS,
+    DEFAULT_MAIN_PROMPT_TEMPLATE,
+    DEFAULT_DIRECTIVES,
+)
+from src.aggregator import (
+    load_sources,
+    save_sources,
+    sync_sources_to_github,
+)
 from src.rss_generator import export_briefing_rss
 from src.storage import get_storage
 
@@ -42,35 +52,86 @@ def render_ki_tab(
         except Exception as exc:
             logger.debug("Failed to load latest briefing from storage: %s", exc)
 
+    # Prompt Configuration (for Admin and read-only for others)
+    try:
+        sources_config = load_sources()
+    except Exception:
+        sources_config = {}
+    settings = sources_config.get("settings", {})
+
+    current_main_prompt = (settings.get("custom_main_prompt") or "").strip() or DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+    current_directives = (settings.get("custom_prompt_directives") or "").strip() or DEFAULT_DIRECTIVES.strip()
+
+    with st.expander("🛠️ KI-Prompt-Konfiguration (Hauptprompt & Direktiven)", expanded=False):
+        st.caption("Hier kannst du den vollständigen Haupt-/Systemprompt sowie redaktionelle Richtlinien für Gemini steuern.")
+
+        ki_main_prompt = st.text_area(
+            "Haupt-Prompt für Gemini (Rolle, Struktur & Format):",
+            value=current_main_prompt,
+            key="input_ki_main_prompt",
+            help="Definiert die Rollen- und Strukturvorgaben für Gemini (Infobox, Top 5 Links). Die Platzhalter {lang_name}, {active_directives} und {context_data} werden automatisch eingesetzt.",
+            height=200,
+            disabled=not is_admin,
+        )
+
+        ki_prompt_directives = st.text_area(
+            "Redaktionelle Filter & Direktiven (Erweiterte Regeln):",
+            value=current_directives,
+            key="input_ki_prompt_directives",
+            help="Hier kannst du z. B. vorgeben: 'Filtere reine Werbung und Sonderangebote heraus. Ignoriere Krypto. Fokussiere auf Berliner Lokalthemen.'",
+            height=100,
+            disabled=not is_admin,
+        )
+
+        if is_admin:
+            col_save_p, col_reset_p = st.columns([1, 1])
+            with col_save_p:
+                if st.button("💾 Prompts in sources.yaml speichern", key="btn_save_ki_prompts", use_container_width=True):
+                    with st.spinner("Speichere Prompts in sources.yaml..."):
+                        sources_config.setdefault("settings", {})["custom_main_prompt"] = ki_main_prompt.strip()
+                        sources_config.setdefault("settings", {})["custom_prompt_directives"] = ki_prompt_directives.strip()
+                        save_sources(sources_config)
+                        sync_sources_to_github(
+                            config_dict=sources_config,
+                            commit_message="chore(prompt): update custom AI prompts via dashboard",
+                        )
+                        st.toast("Haupt-Prompt & Direktiven erfolgreich gespeichert!", icon="💾")
+                        st.rerun()
+            with col_reset_p:
+                if st.button("↩️ Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
+                    with st.spinner("Setze Hauptprompt auf Standard zurück..."):
+                        sources_config.setdefault("settings", {})["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+                        st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+                        save_sources(sources_config)
+                        st.toast("Standard-Hauptprompt wiederhergestellt!", icon="↩️")
+                        st.rerun()
+
     # Admin Generation Bar
     if is_admin:
         with st.expander("⚙️ Briefing-Generierung & Modellsteuerung", expanded=not bool(current_briefing)):
             col_m1, col_m2 = st.columns([3, 2], vertical_alignment="bottom")
             with col_m1:
-                available_models = [
-                    "gemini-3.5-flash-lite",
-                    "gemini-2.5-flash",
-                    "gemini-2.5-pro",
-                ]
-                default_model = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
+                default_model = "gemini-3.5-flash-lite"
                 default_idx = (
-                    available_models.index(default_model)
-                    if default_model in available_models
-                    else 0
+                    AVAILABLE_GEMINI_MODELS.index(default_model)
+                    if default_model in AVAILABLE_GEMINI_MODELS
+                    else len(AVAILABLE_GEMINI_MODELS) - 1
                 )
                 selected_model = st.selectbox(
                     "LLM-Modell:",
-                    options=available_models,
+                    options=AVAILABLE_GEMINI_MODELS,
                     index=default_idx,
                     key="sel_ki_model",
                 )
 
             with col_m2:
+                is_generating = bool(st.session_state.get("is_generating_briefing", False))
                 btn_generate = st.button(
                     "✨ Neues Briefing generieren",
                     type="primary",
                     use_container_width=True,
                     key="btn_generate_briefing",
+                    disabled=is_generating,
                 )
 
             if btn_generate:
@@ -78,10 +139,16 @@ def render_ki_tab(
                 if total_items == 0:
                     st.warning("Keine aktuellen Artikel für das Briefing vorhanden.")
                 else:
+                    st.session_state["is_generating_briefing"] = True
                     with st.spinner(f"Generiere KI-Briefing mit {selected_model}..."):
                         t_start = time.perf_counter()
                         try:
-                            summary = summarize_news_with_gemini(news_data, model=selected_model)
+                            summary = summarize_news_with_gemini(
+                                news_data,
+                                model=selected_model,
+                                main_prompt_template=ki_main_prompt,
+                                custom_directives=ki_prompt_directives,
+                            )
                             duration = time.perf_counter() - t_start
                             logger.info(
                                 "Generated AI briefing (%d chars in %.2fs) using %s.",
@@ -104,9 +171,11 @@ def render_ki_tab(
                             except Exception as e_rss:
                                 logger.warning("Could not export briefing RSS: %s", e_rss)
 
+                            st.session_state["is_generating_briefing"] = False
                             st.toast("KI-Briefing erfolgreich generiert!", icon="✨")
                             st.rerun()
                         except Exception as exc:
+                            st.session_state["is_generating_briefing"] = False
                             logger.error("AI briefing generation failed: %s", exc)
                             st.error(f"Fehler bei der Generierung: {exc}")
 
@@ -115,7 +184,13 @@ def render_ki_tab(
         st.markdown("---")
         st.markdown(current_briefing, unsafe_allow_html=True)
     else:
-        st.info(
-            "Aktuell liegt noch kein generiertes Briefing vor. "
-            "Melde dich als Administrator an, um ein Briefing mit Gemini zu generieren."
-        )
+        if is_admin:
+            st.info(
+                "Aktuell liegt noch kein generiertes Briefing vor. "
+                "Klicke oben auf 'Neues Briefing generieren', um ein Briefing mit Gemini zu erstellen."
+            )
+        else:
+            st.info(
+                "Aktuell liegt noch kein generiertes Briefing vor. "
+                "Melde dich als Administrator an, um ein Briefing mit Gemini zu generieren."
+            )

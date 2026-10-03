@@ -237,13 +237,13 @@ def render_articles_tab(
     # Status summary
     col_stat_placeholder = st.empty()
     search_query = active_search_text.lower()
-    descending_sort = not bool(st.session_state.get("chk_sort_oldest", False))
 
     displayed_count = 0
     categories_rendered = 0
     rendered_element_keys: set[str] = set()
 
-    for category, items in news_data.items():
+    for category in sorted(news_data.keys(), key=lambda x: x.strip().lower()):
+        items = news_data[category]
         if selected_cat != "Alle Kategorien" and category != selected_cat:
             continue
 
@@ -307,7 +307,8 @@ def render_articles_tab(
                         seen_f_urls.add(u)
                     f_items.append(it)
 
-                f_items.sort(key=lambda x: get_article_timestamp(x), reverse=descending_sort)
+                # Artikel immer chronologisch nach älteste zuerst sortieren
+                f_items.sort(key=lambda x: get_article_timestamp(x) if get_article_timestamp(x) > 0 else float('inf'), reverse=False)
 
                 feed_slug = "".join(c if c.isalnum() else "_" for c in feed_name)
                 feed_limit_key = f"feed_limit_{feed_slug}"
@@ -422,7 +423,7 @@ def render_articles_tab(
 
     with col_stat_placeholder:
         if displayed_count > 0:
-            st.caption(f"Zeige **{displayed_count}** Artikel der letzten 24 Stunden in **{categories_rendered}** Kategorien")
+            st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien")
         else:
             if selected_feed != "Alle Feeds":
                 st.warning(f"Keine Artikel für den Feed '{selected_feed}' gefunden (0 Treffer).")

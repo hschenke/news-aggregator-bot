@@ -50,20 +50,29 @@ def render_feedly_tab(
 
     # Admin controls
     if is_admin:
+        is_refreshing_rss = bool(st.session_state.get("is_refreshing_rss", False))
+        is_pushing_rss = bool(st.session_state.get("is_pushing_rss", False))
+        any_busy = is_refreshing_rss or is_pushing_rss
+
         col_act1, col_act2 = st.columns([1, 1])
         with col_act1:
-            if st.button("🔄 Feeds neu generieren", key="btn_refresh_rss", use_container_width=True):
-                st.cache_data.clear()
-                st.toast("Feeds wurden frisch generiert!", icon="📡")
-                st.rerun()
+            if st.button("🔄 Feeds neu generieren", key="btn_refresh_rss", use_container_width=True, disabled=any_busy):
+                st.session_state["is_refreshing_rss"] = True
+                with st.spinner("Generiere alle RSS-Feeds neu..."):
+                    st.cache_data.clear()
+                    st.session_state["is_refreshing_rss"] = False
+                    st.toast("Feeds wurden erfolgreich generiert & aktualisiert!", icon="📡")
+                    st.rerun()
         with col_act2:
-            if st.button("🚀 Zu GitHub & CDN pushen", key="btn_push_rss_cdn", use_container_width=True):
+            if st.button("🚀 Zu GitHub & CDN pushen", key="btn_push_rss_cdn", use_container_width=True, disabled=any_busy):
+                st.session_state["is_pushing_rss"] = True
                 with st.spinner("Pushe RSS-Feeds zu GitHub & jsDelivr CDN..."):
                     push_res = sync_sources_to_github(
                         config_dict=working_config,
                         commit_message="chore(rss): update RSS feeds via web dashboard",
                         include_rss_feeds=True,
                     )
+                    st.session_state["is_pushing_rss"] = False
                     if push_res.get("success"):
                         st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
                         st.toast("Feeds zu CDN gepusht!", icon="🚀")
@@ -83,24 +92,11 @@ def render_feedly_tab(
     all_count = all_info.get("item_count", sum(len(v) for v in news_data.values()))
 
     with st.container(border=True):
-        st.markdown(f"#### 🌟 Gesamt-Feed (Alle Nachrichten) — `{all_count}` Artikel")
+        st.markdown(f"#### 🌟 Gesamt-Feed (Alle Nachrichten) — **{all_count}** Artikel")
         st.caption("Enthält alle aggregierten Nachrichten der letzten 24 Stunden chronologisch sortiert.")
         if all_url:
             st.code(all_url, language="text")
-            col_b1, col_b2, col_b3 = st.columns(3)
-            with col_b1:
-                st.link_button("↗️ Im Browser öffnen", all_url, use_container_width=True)
-            with col_b2:
-                st.download_button(
-                    "📥 XML herunterladen",
-                    data=all_info.get("xml_preview", ""),
-                    file_name="news_all.xml",
-                    mime="application/rss+xml",
-                    use_container_width=True,
-                )
-            with col_b3:
-                feedly_sub_url = f"https://feedly.com/i/subscription/feed/{all_url}"
-                st.link_button("➕ Zu Feedly hinzufügen", feedly_sub_url, use_container_width=True)
+            st.link_button("↗️ Im Browser öffnen", all_url, use_container_width=True)
 
     # 2. KI-Briefing Feed
     briefing_info = rss_registry.get("briefing", {})
@@ -108,21 +104,8 @@ def render_feedly_tab(
     briefing_count = briefing_info.get("item_count", 1)
 
     with st.container(border=True):
-        st.markdown(f"#### 🧠 KI-Briefing Feed — `{briefing_count}` Eintrag / Top-Meldungen")
+        st.markdown(f"#### 🧠 KI-Briefing Feed — **{briefing_count}** Eintrag / Top-Meldungen")
         st.caption("Das kuratierte Tages-Briefing und die Top-Empfehlungen als eigenständiger Feed.")
         if briefing_url:
             st.code(briefing_url, language="text")
-            col_k1, col_k2, col_k3 = st.columns(3)
-            with col_k1:
-                st.link_button("↗️ Im Browser öffnen", briefing_url, use_container_width=True)
-            with col_k2:
-                st.download_button(
-                    "📥 XML herunterladen",
-                    data=briefing_info.get("xml_preview", ""),
-                    file_name="briefing.xml",
-                    mime="application/rss+xml",
-                    use_container_width=True,
-                )
-            with col_k3:
-                feedly_sub_url = f"https://feedly.com/i/subscription/feed/{briefing_url}"
-                st.link_button("➕ Zu Feedly hinzufügen", feedly_sub_url, use_container_width=True)
+            st.link_button("↗️ Im Browser öffnen", briefing_url, use_container_width=True)

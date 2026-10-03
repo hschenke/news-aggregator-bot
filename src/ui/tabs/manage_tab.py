@@ -100,30 +100,40 @@ def render_manage_tab(
             else:
                 st.success("✅ **Alle Feeds & Einstellungen sind auf dem aktuellen Stand (gespeichert).**")
         with col_st2:
-            btn_save_label = "💾 Speichern" if has_unsaved_changes else "💾 Jetzt sichern"
-            if st.button(btn_save_label, type="primary" if has_unsaved_changes else "secondary", use_container_width=True, key="top_save_sources_btn"):
-                # Save to disk
-                save_sources(working_config)
-                # Attempt github sync
-                sync_res = sync_sources_to_github(
-                    config_dict=working_config,
-                    commit_message="chore(config): update sources.yaml and RSS feeds via web dashboard",
-                    include_rss_feeds=True,
-                )
-                st.session_state["has_unsaved_changes"] = False
-                if sync_res.get("success"):
-                    st.toast("Änderungen gespeichert & zu GitHub synchronisiert!", icon="✅")
-                else:
-                    st.toast("Änderungen lokal gespeichert!", icon="💾")
-                st.rerun()
+            btn_save_label = "💾 Jetzt sichern" if has_unsaved_changes else "💾 Gespeichert"
+            btn_save_disabled = not has_unsaved_changes or bool(st.session_state.get("is_saving_sources", False))
+            if st.button(
+                btn_save_label,
+                type="primary" if has_unsaved_changes else "secondary",
+                use_container_width=True,
+                key="top_save_sources_btn",
+                disabled=btn_save_disabled,
+                help="Sichert alle Änderungen dauerhaft in sources.yaml" if has_unsaved_changes else "Alle Feeds & Einstellungen sind aktuell gespeichert.",
+            ):
+                st.session_state["is_saving_sources"] = True
+                with st.spinner("Sichere Feeds & Einstellungen nach sources.yaml..."):
+                    save_sources(working_config)
+                    sync_res = sync_sources_to_github(
+                        config_dict=working_config,
+                        commit_message="chore(config): update sources.yaml and RSS feeds via web dashboard",
+                        include_rss_feeds=True,
+                    )
+                    st.session_state["has_unsaved_changes"] = False
+                    st.session_state["is_saving_sources"] = False
+                    if sync_res.get("success"):
+                        st.toast("Änderungen gespeichert & zu GitHub synchronisiert!", icon="✅")
+                    else:
+                        st.toast("Änderungen lokal gespeichert!", icon="💾")
+                    st.rerun()
         with col_st3:
             if has_unsaved_changes:
                 if st.button("↩️ Verwerfen", use_container_width=True, key="top_discard_sources_btn"):
-                    from src.aggregator import load_sources
-                    st.session_state["working_config"] = load_sources()
-                    st.session_state["has_unsaved_changes"] = False
-                    st.toast("Änderungen verworfen.", icon="↩️")
-                    st.rerun()
+                    with st.spinner("Verwerfe ungespeicherte Änderungen..."):
+                        from src.aggregator import load_sources
+                        st.session_state["working_sources_config"] = load_sources()
+                        st.session_state["has_unsaved_changes"] = False
+                        st.toast("Änderungen verworfen.", icon="↩️")
+                        st.rerun()
 
     st.markdown("---")
 
@@ -250,7 +260,11 @@ def render_manage_tab(
                                 st.rerun()
 
                     # Der Bearbeiten-Block: Bleibt bei Änderungen explizit OFFEN!
-                    is_feed_expanded = (st.session_state.get("editing_feed_key") == key_hash)
+                    is_feed_expanded = (
+                        st.session_state.get("editing_feed_key") == key_hash
+                        or st.session_state.get("editing_feed_url") == f_url
+                        or st.session_state.get("editing_feed_name") == f_name
+                    )
                     with st.expander("🛠️ Details & URL bearbeiten / Feed testen", expanded=is_feed_expanded):
                         col_ed1, col_ed2 = st.columns(2)
                         with col_ed1:
@@ -278,6 +292,8 @@ def render_manage_tab(
                         with col_eb1:
                             if st.button("🔍 Feed testen", key=f"btn_tst_{key_hash}", use_container_width=True):
                                 st.session_state["editing_feed_key"] = key_hash
+                                st.session_state["editing_feed_url"] = f_url
+                                st.session_state["editing_feed_name"] = f_name
                                 st.session_state["editing_feed_category"] = cat_name
                                 st.session_state["last_edited_category"] = cat_name
                                 with st.spinner("Teste Feed..."):
@@ -286,25 +302,28 @@ def render_manage_tab(
                         with col_eb2:
                             if st.button("✔️ Im Entwurf merken", key=f"btn_save_feed_{key_hash}", type="primary", use_container_width=True):
                                 if edit_name_val.strip() and edit_url_val.strip():
-                                    update_feed(
-                                        cat_name,
-                                        f_url,
-                                        new_name=edit_name_val.strip(),
-                                        new_url=edit_url_val.strip(),
-                                        new_category=edit_cat_val.strip(),
-                                        include_keywords=edit_inc_val.strip(),
-                                        exclude_keywords=edit_exc_val.strip(),
-                                        config=working_config,
-                                        save_to_disk=False,
-                                    )
-                                    new_hash = hashlib.md5(edit_url_val.strip().encode("utf-8")).hexdigest()[:8]
-                                    # State merken, damit der Expander OFFEN bleibt!
-                                    st.session_state["editing_feed_key"] = new_hash
-                                    st.session_state["editing_feed_category"] = edit_cat_val.strip()
-                                    st.session_state["last_edited_category"] = edit_cat_val.strip()
-                                    st.session_state["has_unsaved_changes"] = True
-                                    st.toast("Feed-Änderungen im Entwurf gemerkt!", icon="✏️")
-                                    st.rerun()
+                                    with st.spinner("Merke Feed-Änderungen im Arbeitsentwurf..."):
+                                        update_feed(
+                                            cat_name,
+                                            f_url,
+                                            new_name=edit_name_val.strip(),
+                                            new_url=edit_url_val.strip(),
+                                            new_category=edit_cat_val.strip(),
+                                            include_keywords=edit_inc_val.strip(),
+                                            exclude_keywords=edit_exc_val.strip(),
+                                            config=working_config,
+                                            save_to_disk=False,
+                                        )
+                                        new_hash = hashlib.md5(edit_url_val.strip().encode("utf-8")).hexdigest()[:8]
+                                        # State merken, damit der Expander OFFEN bleibt!
+                                        st.session_state["editing_feed_key"] = new_hash
+                                        st.session_state["editing_feed_url"] = edit_url_val.strip()
+                                        st.session_state["editing_feed_name"] = edit_name_val.strip()
+                                        st.session_state["editing_feed_category"] = edit_cat_val.strip()
+                                        st.session_state["last_edited_category"] = edit_cat_val.strip()
+                                        st.session_state["has_unsaved_changes"] = True
+                                        st.toast("Feed-Änderungen im Entwurf gemerkt! Der Bearbeiten-Block bleibt geöffnet.", icon="✏️")
+                                        st.rerun()
                                 else:
                                     st.error("Name und URL dürfen nicht leer sein.")
 
@@ -338,34 +357,19 @@ def render_manage_tab(
             style_val = st.text_input("Zusammenfassungs-Stil:", value=settings.get("summary_style", "tldr"), key="inp_set_style")
 
         if st.button("✔️ Einstellungen im Entwurf übernehmen", key="btn_apply_settings", use_container_width=True):
-            settings["streamlit_app_url"] = app_url_val.strip()
-            settings["language"] = lang_val.strip()
-            settings["archive_retention_days"] = int(retention_val)
-            settings["summary_style"] = style_val.strip()
-            # Wochenschema sicherstellen, dass es weg ist
-            settings.pop("max_article_age_weeks", None)
-            settings.pop("max_age_weeks", None)
-            settings.pop("batch_sync_interval_minutes", None)
-            working_config["settings"] = settings
-            st.session_state["has_unsaved_changes"] = True
-            st.toast("Einstellungen im Entwurf übernommen!", icon="⚙️")
-            st.rerun()
-
-    # --- Sektion 4b: Datenbank Purge ---
-    with st.container(border=True):
-        col_p1, col_p2 = st.columns([3, 1], vertical_alignment="center")
-        with col_p1:
-            st.markdown("⚠️ **Datenbank vollständig leeren (Purge)**")
-            st.caption("Löscht sämtliche Artikel, archivierten Einträge und Briefings aus der Datenbank für einen vollständigen Neustart.")
-        with col_p2:
-            with st.popover("🗑️ Purge durchführen", use_container_width=True):
-                st.markdown("Möchtest du wirklich **alle Datenbanktabellen vollständig leeren**?")
-                if st.button("Ja, Datenbank jetzt purgen", type="primary", key="btn_confirm_db_purge", use_container_width=True):
-                    storage = get_storage()
-                    purged_counts = storage.purge_tables()
-                    st.cache_data.clear()
-                    st.toast(f"Datenbank erfolgreich geleert! ({purged_counts})", icon="🧹")
-                    st.rerun()
+            with st.spinner("Übernehme Einstellungen im Arbeitsentwurf..."):
+                settings["streamlit_app_url"] = app_url_val.strip()
+                settings["language"] = lang_val.strip()
+                settings["archive_retention_days"] = int(retention_val)
+                settings["summary_style"] = style_val.strip()
+                # Wochenschema sicherstellen, dass es weg ist
+                settings.pop("max_article_age_weeks", None)
+                settings.pop("max_age_weeks", None)
+                settings.pop("batch_sync_interval_minutes", None)
+                working_config["settings"] = settings
+                st.session_state["has_unsaved_changes"] = True
+                st.toast("Einstellungen im Entwurf übernommen!", icon="⚙️")
+                st.rerun()
 
     st.markdown("---")
 

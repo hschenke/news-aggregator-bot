@@ -130,6 +130,58 @@ def apply_custom_styles() -> None:
         margin-top: 0.4rem !important;
     }
 
+    /* Links: Bewertungs-Daumen */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child [data-testid="stVerticalBlock"],
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child [data-testid="stVerticalBlock"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+
+    /* Rechts: Gelesen-Button bündig am rechten Rand */
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        flex: 1 1 auto !important;
+        width: auto !important;
+        margin-left: auto !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child [data-testid="stVerticalBlock"],
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child [data-testid="stVerticalBlock"] {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        width: 100% !important;
+        gap: 0 !important;
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child .stButton,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child .stButton,
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child div[class*="st-key-read_"],
+    [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child div[class*="st-key-read_"] {
+        display: inline-flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: 0 !important;
+        width: auto !important;
+    }
+
     /* Badges */
     .news-badge {
         display: inline-block;
@@ -231,9 +283,62 @@ def apply_custom_styles() -> None:
         font-size: 0.8rem;
         font-weight: 600;
         background-color: rgba(128, 128, 128, 0.1);
-    /* Thumbs feedback icon fill */
-    [data-testid="stFeedback"] button [data-testid="stIconMaterial"] {
-        font-variation-settings: 'FILL' 1;
+    }
+
+    /* Bewertungs-Daumen kompakt & direkt unterm Text platzieren */
+    [data-testid="stFeedback"] {
+        margin-top: 0.25rem !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
+    [data-testid="stFeedback"] button {
+        padding: 0.25rem 0.45rem !important;
+        min-height: 2rem !important;
+        border-radius: 8px !important;
+        transition: all 0.15s ease-in-out !important;
+    }
+    /* Nicht ausgewählter Button: dezent & Outline */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButton"]:not([data-testid="stFeedbackButtonActive"]):not([aria-checked="true"]) {
+        color: #94a3b8 !important;
+        background-color: transparent !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButton"]:not([data-testid="stFeedbackButtonActive"]):not([aria-checked="true"]) span {
+        font-variation-settings: 'FILL' 0, 'wght' 400 !important;
+    }
+    [data-testid="stFeedback"] button:hover:not(:disabled) {
+        background-color: rgba(128, 128, 128, 0.12) !important;
+    }
+
+    /* Ausgewählter Like-Button (Daumen hoch): Komplett ausgefülltes Icon & grüner Akzent */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] {
+        color: #16a34a !important;
+        background-color: rgba(22, 163, 74, 0.18) !important;
+        border: 1px solid rgba(22, 163, 74, 0.4) !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i] span,
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] span,
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="up" i] [data-testid="stIconMaterial"],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="up" i] [data-testid="stIconMaterial"] {
+        font-variation-settings: 'FILL' 1, 'wght' 700 !important;
+        color: #16a34a !important;
+    }
+
+    /* Ausgewählter Dislike-Button (Daumen runter): Komplett ausgefülltes Icon & roter Akzent */
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] {
+        color: #dc2626 !important;
+        background-color: rgba(220, 38, 38, 0.18) !important;
+        border: 1px solid rgba(220, 38, 38, 0.4) !important;
+    }
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i] span,
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] span,
+    [data-testid="stFeedback"] button[data-testid="stFeedbackButtonActive"][aria-label*="down" i] [data-testid="stIconMaterial"],
+    [data-testid="stFeedback"] button[aria-checked="true"][aria-label*="down" i] [data-testid="stIconMaterial"] {
+        font-variation-settings: 'FILL' 1, 'wght' 700 !important;
+        color: #dc2626 !important;
     }
 
     /* Gelesen-Symbol Styling: Randlos, transparent, dezent wie st.feedback */
@@ -281,6 +386,11 @@ def apply_custom_styles() -> None:
         outline: none !important;
         color: #16a34a !important;
     }
+    div[class*="st-key-read_"] button [data-testid="stIconMaterial"],
+    div[class*="st-key-read_"] button span {
+        color: #16a34a !important;
+        font-variation-settings: 'FILL' 1, 'wght' 600 !important;
+    }
 
     /* Mobile Responsive Rules */
     @media (max-width: 768px) {
@@ -322,6 +432,37 @@ def apply_custom_styles() -> None:
             flex: 1 1 100% !important;
             max-width: 100% !important;
             box-sizing: border-box !important;
+        }
+
+        /* Feedback-Daumen & Gelesen-Symbol innerhalb der Card AUF MOBILE IMMER in 1 Zeile bündig halten */
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            gap: 0.4rem !important;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"],
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"] {
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            width: auto !important;
+            flex: 0 0 auto !important;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:first-child,
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:first-child {
+            justify-content: flex-start !important;
+            flex: 1 1 auto !important;
+        }
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="stColumn"]:last-child,
+        [data-testid="stVerticalBlockBorderWrapper"] [data-testid="stHorizontalBlock"] > [data-testid="column"]:last-child {
+            justify-content: flex-end !important;
+            margin-left: auto !important;
         }
     }
 </style>

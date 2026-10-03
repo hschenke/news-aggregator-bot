@@ -1,0 +1,82 @@
+"""
+Unit tests verifying the UI restorations, alignments, and cleanup requested for v0.10.1.
+"""
+
+from __future__ import annotations
+
+import unittest
+from pathlib import Path
+
+from src.summarizer import AVAILABLE_GEMINI_MODELS
+
+
+class TestWebappFeedbackRestorations(unittest.TestCase):
+    def setUp(self) -> None:
+        self.root = Path(__file__).resolve().parent.parent
+        self.webapp_py = (self.root / "src" / "webapp.py").read_text(encoding="utf-8")
+        self.styles_py = (self.root / "src" / "ui" / "styles.py").read_text(encoding="utf-8")
+        self.articles_tab_py = (self.root / "src" / "ui" / "tabs" / "articles_tab.py").read_text(encoding="utf-8")
+        self.ki_tab_py = (self.root / "src" / "ui" / "tabs" / "ki_tab.py").read_text(encoding="utf-8")
+        self.manage_tab_py = (self.root / "src" / "ui" / "tabs" / "manage_tab.py").read_text(encoding="utf-8")
+        self.feedly_tab_py = (self.root / "src" / "ui" / "tabs" / "feedly_tab.py").read_text(encoding="utf-8")
+
+    def test_sidebar_caption_and_reload_button(self) -> None:
+        """Sidebar caption must be shortened to '24h Newsfeed', and reload feeds button restored."""
+        self.assertIn('st.sidebar.caption("24h Newsfeed")', self.webapp_py)
+        self.assertNotIn("Kompakter News-Aggregator & 24h Newsfeed", self.webapp_py)
+        self.assertIn("sb_btn_refresh_feeds", self.webapp_py)
+        self.assertIn("🔄 Feeds neu laden", self.webapp_py)
+        # Mark seen button must be gone
+        self.assertNotIn("sb_btn_mark_seen", self.webapp_py)
+
+    def test_styles_read_button_right_alignment_and_thumbs_colors(self) -> None:
+        """CSS must ensure last-child column alignment and green/red thumbs colors."""
+        self.assertIn("#16a34a", self.styles_py)
+        self.assertIn("#dc2626", self.styles_py)
+        self.assertIn("justify-content: flex-end !important", self.styles_py)
+        self.assertIn("margin-left: auto !important", self.styles_py)
+        # Ensure kpi-chip has proper closing brace
+        self.assertIn(".kpi-chip {", self.styles_py)
+        self.assertIn("background-color: rgba(128, 128, 128, 0.1);", self.styles_py)
+
+    def test_articles_tab_alphabetical_and_oldest_first(self) -> None:
+        """Articles tab must sort categories alphabetically and articles oldest first, with clean caption."""
+        self.assertIn("sorted(news_data.keys(), key=lambda x: x.strip().lower())", self.articles_tab_py)
+        self.assertIn("reverse=False", self.articles_tab_py)
+        self.assertIn('st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien")', self.articles_tab_py)
+        self.assertNotIn("der letzten 24 Stunden", self.articles_tab_py)
+
+    def test_ki_tab_models_prompts_and_state(self) -> None:
+        """KI tab must support Gemini 3.8-3.5 models with 3.5-flash-lite default, prompt editing, and disabled button."""
+        self.assertIn("gemini-3.5-flash-lite", AVAILABLE_GEMINI_MODELS)
+        self.assertIn("gemini-3.8-flash", AVAILABLE_GEMINI_MODELS)
+        self.assertIn("AVAILABLE_GEMINI_MODELS", self.ki_tab_py)
+        self.assertIn("default_model = \"gemini-3.5-flash-lite\"", self.ki_tab_py)
+        self.assertIn("input_ki_main_prompt", self.ki_tab_py)
+        self.assertIn("input_ki_prompt_directives", self.ki_tab_py)
+        self.assertIn("disabled=is_generating", self.ki_tab_py)
+        # Tailored admin message
+        self.assertIn("Klicke oben auf 'Neues Briefing generieren'", self.ki_tab_py)
+
+    def test_manage_tab_no_purge_and_disabled_save_when_no_changes(self) -> None:
+        """Manage tab must not have purge block, and save button must be disabled when no changes."""
+        self.assertNotIn("purge_tables", self.manage_tab_py)
+        self.assertNotIn("btn_confirm_db_purge", self.manage_tab_py)
+        self.assertIn("disabled=btn_save_disabled", self.manage_tab_py)
+        self.assertIn("btn_save_label = \"💾 Jetzt sichern\" if has_unsaved_changes else \"💾 Gespeichert\"", self.manage_tab_py)
+        # Feed edit block retains state
+        self.assertIn("editing_feed_key", self.manage_tab_py)
+
+    def test_feedly_tab_only_browser_button_and_font_size(self) -> None:
+        """Feedly tab must only provide 'Im Browser öffnen', disable during actions, and format count in bold."""
+        self.assertIn("st.link_button(\"↗️ Im Browser öffnen\"", self.feedly_tab_py)
+        self.assertNotIn("📥 XML herunterladen", self.feedly_tab_py)
+        self.assertNotIn("➕ Zu Feedly hinzufügen", self.feedly_tab_py)
+        self.assertNotIn("frisch", self.feedly_tab_py)
+        # Bold numbers instead of code backticks (Bild 5 fix)
+        self.assertIn("— **{all_count}** Artikel", self.feedly_tab_py)
+        self.assertIn("— **{briefing_count}** Eintrag / Top-Meldungen", self.feedly_tab_py)
+
+
+if __name__ == "__main__":
+    unittest.main()

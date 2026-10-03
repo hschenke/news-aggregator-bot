@@ -233,7 +233,7 @@ else:
 
 # ----------------- SIDEBAR -----------------
 st.sidebar.markdown("## 🤖 News Bot")
-st.sidebar.caption("Kompakter News-Aggregator & 24h Newsfeed")
+st.sidebar.caption("24h Newsfeed")
 
 # Navigation in Sidebar
 active_cls_art = "active-nav-tab" if active_nav_tab == TAB_ID_ARTICLES else ""
@@ -294,16 +294,19 @@ embed_client_script(f"""
 }})();
 """)
 
-# Button: Alle als gesehen markieren
+# Button: Feeds neu laden
 st.sidebar.markdown("---")
 if st.sidebar.button(
-    "👁️ Alle als gesehen markieren",
-    key="sb_btn_mark_seen",
-    help="Setzt den Zähler für neue Artikel zurück.",
+    "🔄 Feeds neu laden",
+    key="sb_btn_refresh_feeds",
+    help="Liest alle RSS-Feeds frisch ein und aktualisiert die Datenbank.",
     use_container_width=True,
 ):
-    save_pool_state(news_data)
-    st.toast("Pool-Status aktualisiert!", icon="✅")
+    logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
+    st.cache_data.clear()
+    with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
+        get_news_data(force_live_fetch=True)
+    st.toast("Feeds wurden frisch eingelesen & in Datenbank gesichert!", icon="📰")
     st.rerun()
 
 # Sidebar Auth Bereich (Login / Logout)
