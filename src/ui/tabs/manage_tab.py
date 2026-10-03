@@ -29,7 +29,7 @@ from src.aggregator import (
     DEFAULT_ARCHIVE_RETENTION_DAYS,
 )
 from src.storage import get_storage
-from src.ui.styles import render_dismissible_notice
+from src.ui.styles import embed_client_script, render_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -151,7 +151,6 @@ def render_manage_tab(
                         st.session_state.pop("last_edited_category", None)
                         st.session_state["manage_notice"] = "Alle ungespeicherten Änderungen wurden verworfen."
                         embed_client_script("setTimeout(function(){ window.location.reload(); }, 60);")
-                        st.rerun()
 
     st.markdown("---")
 

@@ -26,20 +26,68 @@ def render_dismissible_notice(notice_text: str, notice_key: str, icon: str = "�
     if not notice_text or not str(notice_text).strip():
         return
     import html
+    import hashlib
     escaped_text = html.escape(str(notice_text).strip())
-    banner_id = f"notice-banner-{notice_key}"
-    st.markdown(
-        f"""
-        <div id="{banner_id}" class="persistent-dismissible-notice">
-            <div class="notice-content">
-                <span class="notice-icon">{icon}</span>
-                <span class="notice-message">{escaped_text}</span>
-            </div>
-            <button class="notice-close-btn" type="button" onclick="var el=document.getElementById('{banner_id}');if(el)el.remove();" title="Hinweis schließen">✖</button>
+    content_hash = hashlib.md5(escaped_text.encode("utf-8")).hexdigest()[:8]
+    banner_id = f"notice-banner-{notice_key}-{content_hash}"
+    btn_id = f"notice-close-btn-{notice_key}-{content_hash}"
+    html_markup = f"""
+    <div id="{banner_id}" class="persistent-dismissible-notice" data-banner-id="{banner_id}">
+        <div class="notice-content">
+            <span class="notice-icon">{icon}</span>
+            <span class="notice-message" style="color: #065f46; font-weight: 600;">{escaped_text}</span>
         </div>
-        """,
-        unsafe_allow_html=True,
-    )
+        <button id="{btn_id}" class="notice-close-btn" type="button" onclick="var el=document.getElementById('{banner_id}');if(el){{el.style.display='none';el.remove();}}" title="Hinweis schließen">✖</button>
+    </div>
+    <script>
+    (function() {{
+        var bId = "{banner_id}";
+        var btnId = "{btn_id}";
+        try {{
+            if (sessionStorage.getItem(bId) === "dismissed") {{
+                var el = document.getElementById(bId);
+                if (el) {{
+                    el.style.display = "none";
+                    el.remove();
+                }}
+                return;
+            }}
+        }} catch(e) {{}}
+        var btn = document.getElementById(btnId);
+        if (btn) {{
+            btn.onclick = function() {{
+                try {{ sessionStorage.setItem(bId, "dismissed"); }} catch(e) {{}}
+                var el = document.getElementById(bId);
+                if (el) {{
+                    el.style.display = "none";
+                    el.remove();
+                }}
+            }};
+        }}
+
+        // Auto-dismiss after 10 seconds with smooth fade-out
+        setTimeout(function() {{
+            var el = document.getElementById(bId);
+            if (el) {{
+                el.style.transition = "opacity 0.6s ease, max-height 0.6s ease, margin 0.6s ease, padding 0.6s ease";
+                el.style.opacity = "0";
+                el.style.maxHeight = "0";
+                el.style.paddingTop = "0";
+                el.style.paddingBottom = "0";
+                el.style.marginTop = "0";
+                el.style.marginBottom = "0";
+                setTimeout(function() {{
+                    try {{ sessionStorage.setItem(bId, "dismissed"); }} catch(e) {{}}
+                    if (el && el.parentNode) {{
+                        el.remove();
+                    }}
+                }}, 600);
+            }}
+        }}, 10000);
+    }})();
+    </script>
+    """
+    st.html(html_markup, unsafe_allow_javascript=True)
 
 
 def release_action_overlay() -> None:
@@ -625,13 +673,13 @@ def apply_custom_styles() -> None:
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        background-color: rgba(34, 197, 94, 0.12) !important;
-        border: 1px solid rgba(34, 197, 94, 0.35) !important;
-        border-left: 4px solid #22c55e !important;
+        background-color: #ecfdf5 !important;
+        border: 1px solid #6ee7b7 !important;
+        border-left: 4px solid #059669 !important;
         border-radius: 8px !important;
         padding: 0.75rem 1rem !important;
         margin-bottom: 1rem !important;
-        color: #f8fafc !important;
+        color: #065f46 !important;
         font-size: 0.95rem !important;
         line-height: 1.4 !important;
         box-sizing: border-box !important;
@@ -642,27 +690,55 @@ def apply_custom_styles() -> None:
         align-items: center !important;
         gap: 0.6rem !important;
         flex: 1 1 auto !important;
-        font-weight: 500 !important;
+        font-weight: 600 !important;
+        color: #065f46 !important;
     }
     .persistent-dismissible-notice .notice-icon {
         font-size: 1.15rem !important;
         line-height: 1 !important;
+        flex-shrink: 0 !important;
+    }
+    .persistent-dismissible-notice .notice-message {
+        color: #065f46 !important;
+        font-weight: 600 !important;
     }
     .persistent-dismissible-notice .notice-close-btn {
         background: transparent !important;
         border: none !important;
-        color: #94a3b8 !important;
-        font-size: 1.1rem !important;
+        color: #047857 !important;
+        font-size: 1.25rem !important;
+        font-weight: 700 !important;
         line-height: 1 !important;
-        padding: 0.2rem 0.5rem !important;
+        padding: 0.2rem 0.6rem !important;
         margin-left: 0.75rem !important;
         cursor: pointer !important;
         border-radius: 4px !important;
         transition: color 0.15s ease, background-color 0.15s ease !important;
+        flex-shrink: 0 !important;
     }
     .persistent-dismissible-notice .notice-close-btn:hover {
-        color: #f8fafc !important;
-        background-color: rgba(255, 255, 255, 0.12) !important;
+        color: #064e3b !important;
+        background-color: rgba(5, 150, 105, 0.15) !important;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .persistent-dismissible-notice {
+            background-color: rgba(6, 78, 59, 0.35) !important;
+            border-color: rgba(52, 211, 153, 0.35) !important;
+            border-left-color: #34d399 !important;
+            color: #ecfdf5 !important;
+        }
+        .persistent-dismissible-notice .notice-content,
+        .persistent-dismissible-notice .notice-message {
+            color: #ecfdf5 !important;
+        }
+        .persistent-dismissible-notice .notice-close-btn {
+            color: #86efac !important;
+        }
+        .persistent-dismissible-notice .notice-close-btn:hover {
+            color: #ffffff !important;
+            background-color: rgba(255, 255, 255, 0.15) !important;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -798,9 +874,34 @@ def apply_custom_styles() -> None:
             }
         }
 
+        function handleNoticeClose(e) {
+            var target = e.target;
+            if (!target) return;
+            var closeBtn = target.closest ? target.closest(".notice-close-btn") : null;
+            if (!closeBtn && target.classList && target.classList.contains("notice-close-btn")) {
+                closeBtn = target;
+            }
+            if (closeBtn) {
+                var notice = closeBtn.closest ? closeBtn.closest(".persistent-dismissible-notice") : null;
+                if (!notice && closeBtn.parentElement) {
+                    notice = closeBtn.parentElement.closest(".persistent-dismissible-notice");
+                }
+                if (notice) {
+                    var bannerId = notice.getAttribute("id") || notice.getAttribute("data-banner-id");
+                    if (bannerId) {
+                        try { sessionStorage.setItem(bannerId, "dismissed"); } catch(err) {}
+                    }
+                    notice.style.setProperty("display", "none", "important");
+                    notice.remove();
+                }
+            }
+        }
+
+        document.addEventListener("click", handleNoticeClose, true);
         document.addEventListener("click", handleClick, true);
         try {
             if (window.parent && window.parent.document && window.parent.document !== document) {
+                window.parent.document.addEventListener("click", handleNoticeClose, true);
                 window.parent.document.addEventListener("click", handleClick, true);
             }
         } catch(e) {}

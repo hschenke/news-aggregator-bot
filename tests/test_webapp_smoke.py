@@ -132,6 +132,23 @@ class TestWebappSmoke(unittest.TestCase):
             read_thread.join(timeout=2.0)
             self.assertTrue(mock_storage.archive_article.called)
 
+    def test_discard_changes_button_execution(self):
+        """Verifies that clicking '↩️ Verwerfen' in manage tab executes without NameError or exceptions."""
+        from src.aggregator import load_sources
+        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at.session_state["authenticated"] = True
+        at.session_state["auth_role"] = "admin"
+        at.session_state["active_nav_tab"] = "manage"
+        at.session_state["has_unsaved_changes"] = True
+        at.session_state["working_sources_config"] = load_sources()
+        at.run()
+        self.assertFalse(at.exception)
+        discard_btns = [b for b in at.button if b.key == "top_discard_sources_btn"]
+        self.assertEqual(len(discard_btns), 1)
+        discard_btns[0].click().run()
+        self.assertFalse(at.exception, f"Discard button threw exceptions: {at.exception}")
+        self.assertFalse(at.session_state["has_unsaved_changes"])
+        self.assertIn("manage_notice", at.session_state)
 
 
 if __name__ == "__main__":

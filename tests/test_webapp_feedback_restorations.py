@@ -110,11 +110,17 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
     def test_prominent_notices_in_tabs(self) -> None:
         """KI, Feedly, and Manage tabs must use client-side instant dismissible notice banners."""
         self.assertIn("render_dismissible_notice", self.manage_tab_py)
+        self.assertIn("embed_client_script", self.manage_tab_py)
         self.assertIn("render_dismissible_notice", self.ki_tab_py)
         self.assertIn("render_dismissible_notice", self.feedly_tab_py)
+        self.assertNotIn('st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")', self.feedly_tab_py)
         self.assertIn("render_dismissible_notice", self.styles_py)
         self.assertIn(".persistent-dismissible-notice", self.styles_py)
         self.assertIn(".notice-close-btn", self.styles_py)
+        # High contrast readable color for light mode and auto-dismiss timer
+        self.assertIn("#065f46", self.styles_py)
+        self.assertIn("handleNoticeClose", self.styles_py)
+        self.assertIn("10000", self.styles_py)
 
     def test_toast_removal_and_overlay_release(self) -> None:
         """st.toast must be completely eliminated across all UI modules and overlay auto-released."""

@@ -80,14 +80,13 @@ def render_feedly_tab(
                     st.session_state["is_pushing_rss"] = False
                     if push_res.get("success"):
                         st.session_state["feedly_notice"] = "RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!"
-                        st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):
                             st.session_state["feedly_notice"] = "GitHub Action 'Update RSS Feeds' wurde angestoßen!"
-                            st.info("GitHub Action 'Update RSS Feeds' wurde angestoßen!")
                         else:
-                            st.error(f"Fehler: {push_res.get('error')}")
+                            st.session_state["feedly_notice"] = f"Fehler beim Synchronisieren: {push_res.get('error')}"
+                    st.rerun()
 
     st.markdown("---")
 
