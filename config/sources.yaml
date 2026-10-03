@@ -17,6 +17,8 @@ categories:
     url: https://www.hahaha.de/witze/witzdestages.xml
 - name: Fußball
   feeds:
+  - name: Hertha Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655
   - name: Transfermarkt
     url: https://www.transfermarkt.de/rss/news
 - name: Games
