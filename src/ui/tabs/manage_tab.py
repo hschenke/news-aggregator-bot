@@ -89,6 +89,10 @@ def render_manage_tab(
         st.info("🔒 Dieser Bereich erfordert eine Administrator-Anmeldung. Bitte melde dich links in der Leiste an.")
         return
 
+    # Prominenter Erfolgs- / Status-Hinweis nach Aktionen
+    if "manage_notice" in st.session_state:
+        st.success(f"✅ {st.session_state.pop('manage_notice')}")
+
     has_unsaved_changes = bool(st.session_state.get("has_unsaved_changes", False))
 
     # Top Status & Save Bar
@@ -121,8 +125,10 @@ def render_manage_tab(
                     st.session_state["has_unsaved_changes"] = False
                     st.session_state["is_saving_sources"] = False
                     if sync_res.get("success"):
+                        st.session_state["manage_notice"] = "Änderungen erfolgreich in sources.yaml gespeichert & zu GitHub synchronisiert!"
                         st.toast("Änderungen gespeichert & zu GitHub synchronisiert!", icon="✅")
                     else:
+                        st.session_state["manage_notice"] = "Änderungen lokal in sources.yaml gespeichert!"
                         st.toast("Änderungen lokal gespeichert!", icon="💾")
                     st.rerun()
         with col_st3:
@@ -132,45 +138,59 @@ def render_manage_tab(
                         from src.aggregator import load_sources
                         st.session_state["working_sources_config"] = load_sources()
                         st.session_state["has_unsaved_changes"] = False
-                        st.toast("Änderungen verworfen.", icon="↩️")
+                        # Lösche alle Formular-Keys im Session State, damit alle Textfelder sofort zurückgesetzt werden
+                        keys_to_clear = [
+                            k for k in list(st.session_state.keys())
+                            if k.startswith(("ed_", "inp_set_", "inp_new_", "sel_ren_cat", "sel_new_feed_cat"))
+                        ]
+                        for k in keys_to_clear:
+                            del st.session_state[k]
+                        st.session_state.pop("editing_feed_key", None)
+                        st.session_state.pop("editing_feed_url", None)
+                        st.session_state.pop("editing_feed_name", None)
+                        st.session_state.pop("editing_feed_category", None)
+                        st.session_state.pop("last_edited_category", None)
+                        st.session_state["manage_notice"] = "Alle ungespeicherten Änderungen wurden verworfen."
+                        embed_client_script("setTimeout(function(){ window.location.reload(); }, 60);")
                         st.rerun()
 
     st.markdown("---")
 
-    # --- Sektion 1: Kategorien verwalten ---
-    st.markdown("### 📁 Kategorien verwalten")
-    col_c1, col_c2 = st.columns(2)
-    with col_c1:
-        new_cat_name = st.text_input("Neue Kategorie anlegen:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
-        if st.button("➕ Kategorie hinzufügen", key="btn_add_cat", use_container_width=True):
-            if new_cat_name.strip():
-                add_category(new_cat_name.strip(), config=working_config, save_to_disk=False)
-                st.session_state["has_unsaved_changes"] = True
-                st.toast(f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="📁")
-                st.rerun()
-            else:
-                st.error("Bitte einen Kategorienamen angeben.")
+    # --- Sektion 1: Kategorien verwalten (standardmäßig zugeklappt) ---
+    with st.expander("📁 Kategorien verwalten", expanded=False):
+        col_c1, col_c2 = st.columns(2)
+        with col_c1:
+            new_cat_name = st.text_input("Neue Kategorie anlegen:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
+            if st.button("➕ Kategorie hinzufügen", key="btn_add_cat", use_container_width=True):
+                if new_cat_name.strip():
+                    with st.spinner("Füge Kategorie hinzu..."):
+                        add_category(new_cat_name.strip(), config=working_config, save_to_disk=False)
+                        st.session_state["has_unsaved_changes"] = True
+                        st.session_state["manage_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
+                        st.toast(f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="📁")
+                        st.rerun()
+                else:
+                    st.error("Bitte einen Kategorienamen angeben.")
 
-    with col_c2:
-        cat_names = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
-        if cat_names:
-            col_ren1, col_ren2 = st.columns([1, 1])
-            with col_ren1:
-                cat_to_rename = st.selectbox("Kategorie umbenennen:", options=cat_names, key="sel_ren_cat")
-            with col_ren2:
-                cat_new_name = st.text_input("Neuer Name:", placeholder="Neuer Name...", key="inp_ren_cat_name")
-            if st.button("✏️ Umbenennen", key="btn_ren_cat", use_container_width=True):
-                if cat_new_name.strip() and cat_to_rename:
-                    rename_category(cat_to_rename, cat_new_name.strip(), config=working_config, save_to_disk=False)
-                    st.session_state["has_unsaved_changes"] = True
-                    st.toast(f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="✏️")
-                    st.rerun()
+        with col_c2:
+            cat_names = [c.get("name", "").strip() for c in working_config.get("categories", []) if c.get("name")]
+            if cat_names:
+                col_ren1, col_ren2 = st.columns([1, 1])
+                with col_ren1:
+                    cat_to_rename = st.selectbox("Kategorie umbenennen:", options=cat_names, key="sel_ren_cat")
+                with col_ren2:
+                    cat_new_name = st.text_input("Neuer Name:", placeholder="Neuer Name...", key="inp_ren_cat_name")
+                if st.button("✏️ Umbenennen", key="btn_ren_cat", use_container_width=True):
+                    if cat_new_name.strip() and cat_to_rename:
+                        with st.spinner("Benenne Kategorie um..."):
+                            rename_category(cat_to_rename, cat_new_name.strip(), config=working_config, save_to_disk=False)
+                            st.session_state["has_unsaved_changes"] = True
+                            st.session_state["manage_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
+                            st.toast(f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="✏️")
+                            st.rerun()
 
-    st.markdown("---")
-
-    # --- Sektion 2: Neuen RSS-Feed hinzufügen ---
-    st.markdown("### ➕ Neuen RSS-Feed hinzufügen")
-    with st.container(border=True):
+    # --- Sektion 2: Neuen RSS-Feed hinzufügen (standardmäßig zugeklappt) ---
+    with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=False):
         col_f1, col_f2 = st.columns([1, 1])
         with col_f1:
             feed_url_input = st.text_input("Feed-URL:", placeholder="https://example.com/feed.xml", key="inp_new_feed_url")
@@ -195,18 +215,20 @@ def render_manage_tab(
         with col_add:
             if st.button("➕ Feed hinzufügen", type="primary", key="btn_submit_new_feed", use_container_width=True):
                 if feed_url_input.strip() and feed_name_input.strip():
-                    add_feed(
-                        category_name=target_cat,
-                        feed_name=feed_name_input.strip(),
-                        feed_url=feed_url_input.strip(),
-                        include_keywords=inc_kw_input.strip(),
-                        exclude_keywords=exc_kw_input.strip(),
-                        config=working_config,
-                        save_to_disk=False,
-                    )
-                    st.session_state["has_unsaved_changes"] = True
-                    st.toast(f"Feed '{feed_name_input.strip()}' hinzugefügt!", icon="➕")
-                    st.rerun()
+                    with st.spinner("Füge Feed hinzu..."):
+                        add_feed(
+                            category_name=target_cat,
+                            feed_name=feed_name_input.strip(),
+                            feed_url=feed_url_input.strip(),
+                            include_keywords=inc_kw_input.strip(),
+                            exclude_keywords=exc_kw_input.strip(),
+                            config=working_config,
+                            save_to_disk=False,
+                        )
+                        st.session_state["has_unsaved_changes"] = True
+                        st.session_state["manage_notice"] = f"Feed '{feed_name_input.strip()}' hinzugefügt!"
+                        st.toast(f"Feed '{feed_name_input.strip()}' hinzugefügt!", icon="➕")
+                        st.rerun()
                 else:
                     st.error("Bitte Feed-URL und Feed-Name ausfüllen.")
 
@@ -322,7 +344,8 @@ def render_manage_tab(
                                         st.session_state["editing_feed_category"] = edit_cat_val.strip()
                                         st.session_state["last_edited_category"] = edit_cat_val.strip()
                                         st.session_state["has_unsaved_changes"] = True
-                                        st.toast("Feed-Änderungen im Entwurf gemerkt! Der Bearbeiten-Block bleibt geöffnet.", icon="✏️")
+                                        st.session_state["manage_notice"] = f"Feed-Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!"
+                                        st.toast("Feed-Änderungen im Entwurf gemerkt!", icon="✏️")
                                         st.rerun()
                                 else:
                                     st.error("Name und URL dürfen nicht leer sein.")
@@ -368,6 +391,7 @@ def render_manage_tab(
                 settings.pop("batch_sync_interval_minutes", None)
                 working_config["settings"] = settings
                 st.session_state["has_unsaved_changes"] = True
+                st.session_state["manage_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
                 st.toast("Einstellungen im Entwurf übernommen!", icon="⚙️")
                 st.rerun()
 

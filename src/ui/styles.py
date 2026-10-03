@@ -465,5 +465,130 @@ def apply_custom_styles() -> None:
             margin-left: auto !important;
         }
     }
+
+    /* Centered Action Loading Overlay: Greys out entire page, disables interaction, shows central spinner */
+    #news-bot-loading-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: rgba(15, 23, 42, 0.72) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        z-index: 9999999 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #ffffff !important;
+        pointer-events: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: opacity 0.15s ease-in-out, visibility 0.15s ease-in-out !important;
+    }
+    #news-bot-loading-overlay.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: all !important;
+    }
+    .action-spinner-circle {
+        width: 58px !important;
+        height: 58px !important;
+        border: 5px solid rgba(255, 255, 255, 0.22) !important;
+        border-top-color: #38bdf8 !important;
+        border-radius: 50% !important;
+        animation: spin-action-overlay 0.85s linear infinite !important;
+        margin-bottom: 1.25rem !important;
+    }
+    @keyframes spin-action-overlay {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    .action-spinner-title {
+        font-size: 1.35rem !important;
+        font-weight: 700 !important;
+        color: #f8fafc !important;
+        text-align: center !important;
+        max-width: 85% !important;
+        line-height: 1.4 !important;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6) !important;
+    }
+    .action-spinner-subtitle {
+        font-size: 0.95rem !important;
+        color: #cbd5e1 !important;
+        margin-top: 0.5rem !important;
+        text-align: center !important;
+        max-width: 80% !important;
+        line-height: 1.4 !important;
+    }
 </style>
 """, unsafe_allow_html=True)
+
+    # Centered Action Overlay DOM & Client Interceptor
+    st.html("""
+    <div id="news-bot-loading-overlay">
+        <div class="action-spinner-circle"></div>
+        <div id="news-bot-loading-title" class="action-spinner-title">Aktion wird ausgeführt...</div>
+        <div id="news-bot-loading-subtitle" class="action-spinner-subtitle">Bitte einen Moment Geduld</div>
+    </div>
+    <script>
+    (function() {
+        function showActionOverlay(title, subtitle) {
+            var overlay = document.getElementById("news-bot-loading-overlay");
+            var titleEl = document.getElementById("news-bot-loading-title");
+            var subEl = document.getElementById("news-bot-loading-subtitle");
+            if (overlay) {
+                if (titleEl && title) titleEl.innerText = title;
+                if (subEl && subtitle) subEl.innerText = subtitle;
+                overlay.classList.add("active");
+                try {
+                    var buttons = document.querySelectorAll("button");
+                    for (var i = 0; i < buttons.length; i++) {
+                        buttons[i].setAttribute("disabled", "true");
+                    }
+                } catch(e) {}
+            }
+        }
+        window._newsBotShowActionOverlay = showActionOverlay;
+
+        document.addEventListener("click", function(e) {
+            var btn = e.target && e.target.closest ? e.target.closest("button") : null;
+            if (!btn) return;
+            if (btn.classList.contains("disabled-nav-btn")) return;
+
+            var keyHolder = btn.closest("[class*='st-key-']");
+            var keyClass = keyHolder ? keyHolder.className : "";
+            var btnText = (btn.innerText || "").trim();
+
+            if (keyClass.indexOf("top_save_sources_btn") !== -1 || btnText.indexOf("Jetzt sichern") !== -1 || btnText.indexOf("Speichern") !== -1) {
+                showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Schreibe Änderungen nach sources.yaml und synchronisiere mit GitHub...");
+            } else if (keyClass.indexOf("top_discard_sources_btn") !== -1 || btnText.indexOf("Verwerfen") !== -1) {
+                showActionOverlay("↩️ Verwerfe ungespeicherte Änderungen...", "Setze alle Formulare und Entwürfe auf den gespeicherten Stand zurück...");
+            } else if (keyClass.indexOf("btn_save_feed_") !== -1 || btnText.indexOf("Im Entwurf merken") !== -1) {
+                showActionOverlay("✏️ Merke Feed-Änderungen...", "Übernehme Feed-Konfiguration in den Arbeitsentwurf...");
+            } else if (keyClass.indexOf("btn_apply_settings") !== -1 || btnText.indexOf("Einstellungen im Entwurf übernehmen") !== -1) {
+                showActionOverlay("⚙️ Übernehme globale Einstellungen...", "Aktualisiere Einstellungen im Arbeitsentwurf...");
+            } else if (keyClass.indexOf("btn_generate_briefing") !== -1 || btnText.indexOf("Neues Briefing generieren") !== -1) {
+                showActionOverlay("🧠 Generiere KI-Briefing mit Gemini...", "Die aktuellen Artikel werden analysiert und zusammengefasst. Dies kann einige Sekunden dauern...");
+            } else if (keyClass.indexOf("sb_btn_refresh_feeds") !== -1 || btnText.indexOf("Feeds neu laden") !== -1) {
+                showActionOverlay("🔄 Lese RSS-Feeds frisch ein...", "Lade alle Feeds live aus dem Web und aktualisiere die Datenbank...");
+            } else if (keyClass.indexOf("btn_refresh_rss") !== -1 || btnText.indexOf("Feeds neu generieren") !== -1) {
+                showActionOverlay("📡 Generiere RSS-Feeds neu...", "Erstelle standardkonforme XML-Dateien für Feedly & Reader...");
+            } else if (keyClass.indexOf("btn_push_rss_cdn") !== -1 || btnText.indexOf("Zu GitHub & CDN pushen") !== -1) {
+                showActionOverlay("🚀 Pushe RSS-Feeds zu GitHub & CDN...", "Synchronisiere Feeds mit GitHub Actions & jsDelivr...");
+            } else if (keyClass.indexOf("btn_add_cat") !== -1 || btnText.indexOf("Kategorie hinzufügen") !== -1) {
+                showActionOverlay("📁 Füge Kategorie hinzu...", "Kategorie wird im Arbeitsentwurf angelegt...");
+            } else if (keyClass.indexOf("btn_ren_cat") !== -1 || btnText.indexOf("Umbenennen") !== -1) {
+                showActionOverlay("✏️ Benenne Kategorie um...", "Kategorie wird im Arbeitsentwurf umbenannt...");
+            } else if (keyClass.indexOf("btn_submit_new_feed") !== -1 || btnText.indexOf("Feed hinzufügen") !== -1) {
+                showActionOverlay("➕ Füge neuen Feed hinzu...", "Feed wird im Arbeitsentwurf registriert...");
+            } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("Prompts in sources.yaml speichern") !== -1) {
+                showActionOverlay("💾 Speichere KI-Prompts...", "Hauptprompt und Direktiven werden gesichert...");
+            } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("Standard-Hauptprompt laden") !== -1) {
+                showActionOverlay("↩️ Lade Standard-Hauptprompt...", "Setze Prompt auf Werkseinstellung zurück...");
+            }
+        }, true);
+    })();
+    </script>
+    """)

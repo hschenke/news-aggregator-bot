@@ -37,6 +37,9 @@ def render_ki_tab(
     st.subheader("🧠 KI-Briefing")
     st.caption("Tagesaktuelle, kuratierte Zusammenfassung der relevantesten Meldungen.")
 
+    if "ki_notice" in st.session_state:
+        st.success(f"✨ {st.session_state.pop('ki_notice')}")
+
     # Load latest briefing from session state or storage
     current_briefing: str | None = st.session_state.get("cached_summary")
     briefing_meta: dict[str, Any] | None = None
@@ -95,6 +98,7 @@ def render_ki_tab(
                             config_dict=sources_config,
                             commit_message="chore(prompt): update custom AI prompts via dashboard",
                         )
+                        st.session_state["ki_notice"] = "Haupt-Prompt & Direktiven erfolgreich gespeichert!"
                         st.toast("Haupt-Prompt & Direktiven erfolgreich gespeichert!", icon="💾")
                         st.rerun()
             with col_reset_p:
@@ -103,6 +107,7 @@ def render_ki_tab(
                         sources_config.setdefault("settings", {})["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
                         st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
                         save_sources(sources_config)
+                        st.session_state["ki_notice"] = "Standard-Hauptprompt wiederhergestellt!"
                         st.toast("Standard-Hauptprompt wiederhergestellt!", icon="↩️")
                         st.rerun()
 
@@ -172,6 +177,7 @@ def render_ki_tab(
                                 logger.warning("Could not export briefing RSS: %s", e_rss)
 
                             st.session_state["is_generating_briefing"] = False
+                            st.session_state["ki_notice"] = f"KI-Briefing erfolgreich mit {selected_model} generiert!"
                             st.toast("KI-Briefing erfolgreich generiert!", icon="✨")
                             st.rerun()
                         except Exception as exc:

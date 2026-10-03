@@ -33,6 +33,9 @@ def render_feedly_tab(
         "Standardkonforme RSS 2.0 XML-Feeds für Feedly, Inoreader, NetNewsWire oder jeden beliebigen RSS-Reader."
     )
 
+    if "feedly_notice" in st.session_state:
+        st.success(f"📡 {st.session_state.pop('feedly_notice')}")
+
     app_base_url = (
         working_config.get("settings", {}).get("streamlit_app_url")
         or get_streamlit_app_url()
@@ -61,6 +64,7 @@ def render_feedly_tab(
                 with st.spinner("Generiere alle RSS-Feeds neu..."):
                     st.cache_data.clear()
                     st.session_state["is_refreshing_rss"] = False
+                    st.session_state["feedly_notice"] = "Feeds wurden erfolgreich generiert & aktualisiert!"
                     st.toast("Feeds wurden erfolgreich generiert & aktualisiert!", icon="📡")
                     st.rerun()
         with col_act2:
@@ -74,11 +78,13 @@ def render_feedly_tab(
                     )
                     st.session_state["is_pushing_rss"] = False
                     if push_res.get("success"):
+                        st.session_state["feedly_notice"] = "RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!"
                         st.success("RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!")
                         st.toast("Feeds zu CDN gepusht!", icon="🚀")
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):
+                            st.session_state["feedly_notice"] = "GitHub Action 'Update RSS Feeds' wurde angestoßen!"
                             st.info("GitHub Action 'Update RSS Feeds' wurde angestoßen!")
                             st.toast("GitHub Action gestartet!", icon="⚡")
                         else:
