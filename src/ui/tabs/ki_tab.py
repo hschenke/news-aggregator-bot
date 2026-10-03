@@ -37,8 +37,14 @@ def render_ki_tab(
     st.subheader("🧠 KI-Briefing")
     st.caption("Tagesaktuelle, kuratierte Zusammenfassung der relevantesten Meldungen.")
 
-    if "ki_notice" in st.session_state:
-        st.success(f"✨ {st.session_state.pop('ki_notice')}")
+    if st.session_state.get("ki_notice"):
+        col_kn_t, col_kn_b = st.columns([12, 1], vertical_alignment="center")
+        with col_kn_t:
+            st.success(f"✨ {st.session_state['ki_notice']}")
+        with col_kn_b:
+            if st.button("✖", key="btn_dismiss_ki_notice", help="Hinweis schließen"):
+                st.session_state.pop("ki_notice", None)
+                st.rerun()
 
     # Load latest briefing from session state or storage
     current_briefing: str | None = st.session_state.get("cached_summary")

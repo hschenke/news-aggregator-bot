@@ -90,8 +90,14 @@ def render_manage_tab(
         return
 
     # Prominenter Erfolgs- / Status-Hinweis nach Aktionen
-    if "manage_notice" in st.session_state:
-        st.success(f"✅ {st.session_state.pop('manage_notice')}")
+    if st.session_state.get("manage_notice"):
+        col_mn_t, col_mn_b = st.columns([12, 1], vertical_alignment="center")
+        with col_mn_t:
+            st.success(f"✅ {st.session_state['manage_notice']}")
+        with col_mn_b:
+            if st.button("✖", key="btn_dismiss_manage_notice", help="Hinweis schließen"):
+                st.session_state.pop("manage_notice", None)
+                st.rerun()
 
     has_unsaved_changes = bool(st.session_state.get("has_unsaved_changes", False))
 
@@ -158,6 +164,8 @@ def render_manage_tab(
 
     # --- Sektion 1: Kategorien verwalten (standardmäßig zugeklappt) ---
     with st.expander("📁 Kategorien verwalten", expanded=False):
+        if st.session_state.get("manage_cat_notice"):
+            st.success(f"✅ {st.session_state['manage_cat_notice']}")
         col_c1, col_c2 = st.columns(2)
         with col_c1:
             new_cat_name = st.text_input("Neue Kategorie anlegen:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
@@ -166,6 +174,7 @@ def render_manage_tab(
                     with st.spinner("Füge Kategorie hinzu..."):
                         add_category(new_cat_name.strip(), config=working_config, save_to_disk=False)
                         st.session_state["has_unsaved_changes"] = True
+                        st.session_state["manage_cat_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
                         st.session_state["manage_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
                         st.toast(f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="📁")
                         st.rerun()
@@ -185,12 +194,15 @@ def render_manage_tab(
                         with st.spinner("Benenne Kategorie um..."):
                             rename_category(cat_to_rename, cat_new_name.strip(), config=working_config, save_to_disk=False)
                             st.session_state["has_unsaved_changes"] = True
+                            st.session_state["manage_cat_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
                             st.session_state["manage_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
                             st.toast(f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="✏️")
                             st.rerun()
 
     # --- Sektion 2: Neuen RSS-Feed hinzufügen (standardmäßig zugeklappt) ---
     with st.expander("➕ Neuen RSS-Feed hinzufügen", expanded=False):
+        if st.session_state.get("manage_new_feed_notice"):
+            st.success(f"✅ {st.session_state['manage_new_feed_notice']}")
         col_f1, col_f2 = st.columns([1, 1])
         with col_f1:
             feed_url_input = st.text_input("Feed-URL:", placeholder="https://example.com/feed.xml", key="inp_new_feed_url")
@@ -322,6 +334,8 @@ def render_manage_tab(
                                     res = test_feed_connection(edit_url_val.strip())
                                     render_feed_test_result(res)
                         with col_eb2:
+                            if st.session_state.get("last_saved_feed_key") == key_hash:
+                                st.success("✅ Feed-Änderungen im Entwurf gemerkt!")
                             if st.button("✔️ Im Entwurf merken", key=f"btn_save_feed_{key_hash}", type="primary", use_container_width=True):
                                 if edit_name_val.strip() and edit_url_val.strip():
                                     with st.spinner("Merke Feed-Änderungen im Arbeitsentwurf..."):
@@ -339,6 +353,7 @@ def render_manage_tab(
                                         new_hash = hashlib.md5(edit_url_val.strip().encode("utf-8")).hexdigest()[:8]
                                         # State merken, damit der Expander OFFEN bleibt!
                                         st.session_state["editing_feed_key"] = new_hash
+                                        st.session_state["last_saved_feed_key"] = new_hash
                                         st.session_state["editing_feed_url"] = edit_url_val.strip()
                                         st.session_state["editing_feed_name"] = edit_name_val.strip()
                                         st.session_state["editing_feed_category"] = edit_cat_val.strip()
@@ -355,6 +370,8 @@ def render_manage_tab(
     # --- Sektion 4: Globale Einstellungen ---
     st.markdown("### ⚙️ Globale Einstellungen")
     with st.container(border=True):
+        if st.session_state.get("manage_settings_notice"):
+            st.success(f"✅ {st.session_state['manage_settings_notice']}")
         settings = working_config.get("settings", {})
 
         col_s1, col_s2 = st.columns(2)
@@ -391,6 +408,7 @@ def render_manage_tab(
                 settings.pop("batch_sync_interval_minutes", None)
                 working_config["settings"] = settings
                 st.session_state["has_unsaved_changes"] = True
+                st.session_state["manage_settings_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
                 st.session_state["manage_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
                 st.toast("Einstellungen im Entwurf übernommen!", icon="⚙️")
                 st.rerun()

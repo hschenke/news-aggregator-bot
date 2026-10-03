@@ -33,8 +33,14 @@ def render_feedly_tab(
         "Standardkonforme RSS 2.0 XML-Feeds für Feedly, Inoreader, NetNewsWire oder jeden beliebigen RSS-Reader."
     )
 
-    if "feedly_notice" in st.session_state:
-        st.success(f"📡 {st.session_state.pop('feedly_notice')}")
+    if st.session_state.get("feedly_notice"):
+        col_fn_t, col_fn_b = st.columns([12, 1], vertical_alignment="center")
+        with col_fn_t:
+            st.success(f"📡 {st.session_state['feedly_notice']}")
+        with col_fn_b:
+            if st.button("✖", key="btn_dismiss_feedly_notice", help="Hinweis schließen"):
+                st.session_state.pop("feedly_notice", None)
+                st.rerun()
 
     app_base_url = (
         working_config.get("settings", {}).get("streamlit_app_url")

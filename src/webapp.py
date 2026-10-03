@@ -236,9 +236,9 @@ else:
 app_version = get_app_version()
 st.sidebar.markdown(
     f"""
-    <div class="sidebar-header-container" style="display:flex; align-items:center; gap:12px; margin-top:0.2rem; margin-bottom:0.25rem;">
-        <h2 class="sidebar-header-title" style="margin:0; font-size:1.35rem; font-weight:700; display:inline-flex; align-items:center;">🤖&nbsp;News Bot</h2>
-        <span class="sidebar-version-badge" style="display:inline-flex; align-items:center; margin-left:10px; font-size:0.75rem; font-weight:600; padding:2px 8px; border-radius:6px; background:rgba(37, 99, 235, 0.1); border:1px solid rgba(37, 99, 235, 0.25); color:#2563eb; letter-spacing:0.02em; white-space:nowrap;">{app_version}</span>
+    <div class="sidebar-header-container">
+        <h2 class="sidebar-header-title">🤖&nbsp;News Bot</h2>
+        <span class="sidebar-version-badge">{app_version}</span>
     </div>
     """,
     unsafe_allow_html=True,
@@ -304,20 +304,21 @@ embed_client_script(f"""
 }})();
 """)
 
-# Button: Feeds neu laden
-st.sidebar.markdown("---")
-if st.sidebar.button(
-    "🔄 Feeds neu laden",
-    key="sb_btn_refresh_feeds",
-    help="Liest alle RSS-Feeds frisch ein und aktualisiert die Datenbank.",
-    use_container_width=True,
-):
-    logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
-    st.cache_data.clear()
-    with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
-        get_news_data(force_live_fetch=True)
-    st.toast("Feeds wurden frisch eingelesen & in Datenbank gesichert!", icon="📰")
-    st.rerun()
+# Button: Feeds neu laden (nur im Administrator-Modus verfügbar)
+if is_admin:
+    st.sidebar.markdown("---")
+    if st.sidebar.button(
+        "🔄 Feeds neu laden",
+        key="sb_btn_refresh_feeds",
+        help="Liest alle RSS-Feeds frisch ein und aktualisiert die Datenbank.",
+        use_container_width=True,
+    ):
+        logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
+        st.cache_data.clear()
+        with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
+            get_news_data(force_live_fetch=True)
+        st.toast("Feeds wurden frisch eingelesen & in Datenbank gesichert!", icon="📰")
+        st.rerun()
 
 # Sidebar Auth Bereich (Login / Logout)
 render_sidebar_auth(is_admin)

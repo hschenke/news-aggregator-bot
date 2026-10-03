@@ -557,7 +557,7 @@ def apply_custom_styles() -> None:
 </style>
 """, unsafe_allow_html=True)
 
-    # Centered Action Overlay DOM & Client Interceptor
+    # Centered Action Loading Overlay DOM & Client Interceptor
     st.html("""
     <div id="news-bot-loading-overlay">
         <div class="action-spinner-circle"></div>
@@ -566,61 +566,88 @@ def apply_custom_styles() -> None:
     </div>
     <script>
     (function() {
+        function getOverlay(doc) {
+            var el = doc.getElementById("news-bot-loading-overlay");
+            if (!el && window.parent && window.parent.document) {
+                try { el = window.parent.document.getElementById("news-bot-loading-overlay"); } catch(e) {}
+            }
+            return el;
+        }
+
         function showActionOverlay(title, subtitle) {
-            var overlay = document.getElementById("news-bot-loading-overlay");
-            var titleEl = document.getElementById("news-bot-loading-title");
-            var subEl = document.getElementById("news-bot-loading-subtitle");
+            var overlay = getOverlay(document);
             if (overlay) {
+                var titleEl = overlay.querySelector(".action-spinner-title") || document.getElementById("news-bot-loading-title");
+                var subEl = overlay.querySelector(".action-spinner-subtitle") || document.getElementById("news-bot-loading-subtitle");
                 if (titleEl && title) titleEl.innerText = title;
                 if (subEl && subtitle) subEl.innerText = subtitle;
                 overlay.classList.add("active");
-                try {
-                    var buttons = document.querySelectorAll("button");
+                overlay.style.display = "flex";
+                overlay.style.opacity = "1";
+                overlay.style.visibility = "visible";
+                overlay.style.pointerEvents = "all";
+            }
+            try {
+                var targetDocs = [document];
+                if (window.parent && window.parent.document && window.parent.document !== document) {
+                    targetDocs.push(window.parent.document);
+                }
+                for (var d = 0; d < targetDocs.length; d++) {
+                    var buttons = targetDocs[d].querySelectorAll("button");
                     for (var i = 0; i < buttons.length; i++) {
                         buttons[i].setAttribute("disabled", "true");
+                        buttons[i].style.pointerEvents = "none";
+                        buttons[i].style.opacity = "0.6";
                     }
-                } catch(e) {}
-            }
+                }
+            } catch(e) {}
         }
         window._newsBotShowActionOverlay = showActionOverlay;
 
-        document.addEventListener("click", function(e) {
+        function handleClick(e) {
             var btn = e.target && e.target.closest ? e.target.closest("button") : null;
             if (!btn) return;
             if (btn.classList.contains("disabled-nav-btn")) return;
 
             var keyHolder = btn.closest("[class*='st-key-']");
             var keyClass = keyHolder ? keyHolder.className : "";
-            var btnText = (btn.innerText || "").trim();
+            var btnText = (btn.innerText || "").trim().toLowerCase();
 
-            if (keyClass.indexOf("top_save_sources_btn") !== -1 || btnText.indexOf("Jetzt sichern") !== -1 || btnText.indexOf("Speichern") !== -1) {
+            if (keyClass.indexOf("top_save_sources_btn") !== -1 || btnText.indexOf("jetzt sichern") !== -1 || btnText.indexOf("speichern") !== -1) {
                 showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Schreibe Änderungen nach sources.yaml und synchronisiere mit GitHub...");
-            } else if (keyClass.indexOf("top_discard_sources_btn") !== -1 || btnText.indexOf("Verwerfen") !== -1) {
+            } else if (keyClass.indexOf("top_discard_sources_btn") !== -1 || btnText.indexOf("verwerfen") !== -1) {
                 showActionOverlay("↩️ Verwerfe ungespeicherte Änderungen...", "Setze alle Formulare und Entwürfe auf den gespeicherten Stand zurück...");
-            } else if (keyClass.indexOf("btn_save_feed_") !== -1 || btnText.indexOf("Im Entwurf merken") !== -1) {
+            } else if (keyClass.indexOf("btn_save_feed_") !== -1 || btnText.indexOf("im entwurf merken") !== -1 || btnText.indexOf("entwurf merken") !== -1) {
                 showActionOverlay("✏️ Merke Feed-Änderungen...", "Übernehme Feed-Konfiguration in den Arbeitsentwurf...");
-            } else if (keyClass.indexOf("btn_apply_settings") !== -1 || btnText.indexOf("Einstellungen im Entwurf übernehmen") !== -1) {
+            } else if (keyClass.indexOf("btn_apply_settings") !== -1 || btnText.indexOf("einstellungen im entwurf übernehmen") !== -1) {
                 showActionOverlay("⚙️ Übernehme globale Einstellungen...", "Aktualisiere Einstellungen im Arbeitsentwurf...");
-            } else if (keyClass.indexOf("btn_generate_briefing") !== -1 || btnText.indexOf("Neues Briefing generieren") !== -1) {
+            } else if (keyClass.indexOf("btn_generate_briefing") !== -1 || btnText.indexOf("neues briefing generieren") !== -1) {
                 showActionOverlay("🧠 Generiere KI-Briefing mit Gemini...", "Die aktuellen Artikel werden analysiert und zusammengefasst. Dies kann einige Sekunden dauern...");
-            } else if (keyClass.indexOf("sb_btn_refresh_feeds") !== -1 || btnText.indexOf("Feeds neu laden") !== -1) {
+            } else if (keyClass.indexOf("sb_btn_refresh_feeds") !== -1 || btnText.indexOf("feeds neu laden") !== -1) {
                 showActionOverlay("🔄 Lese RSS-Feeds frisch ein...", "Lade alle Feeds live aus dem Web und aktualisiere die Datenbank...");
-            } else if (keyClass.indexOf("btn_refresh_rss") !== -1 || btnText.indexOf("Feeds neu generieren") !== -1) {
+            } else if (keyClass.indexOf("btn_refresh_rss") !== -1 || btnText.indexOf("feeds neu generieren") !== -1) {
                 showActionOverlay("📡 Generiere RSS-Feeds neu...", "Erstelle standardkonforme XML-Dateien für Feedly & Reader...");
-            } else if (keyClass.indexOf("btn_push_rss_cdn") !== -1 || btnText.indexOf("Zu GitHub & CDN pushen") !== -1) {
+            } else if (keyClass.indexOf("btn_push_rss_cdn") !== -1 || btnText.indexOf("zu github & cdn pushen") !== -1) {
                 showActionOverlay("🚀 Pushe RSS-Feeds zu GitHub & CDN...", "Synchronisiere Feeds mit GitHub Actions & jsDelivr...");
-            } else if (keyClass.indexOf("btn_add_cat") !== -1 || btnText.indexOf("Kategorie hinzufügen") !== -1) {
+            } else if (keyClass.indexOf("btn_add_cat") !== -1 || btnText.indexOf("kategorie hinzufügen") !== -1) {
                 showActionOverlay("📁 Füge Kategorie hinzu...", "Kategorie wird im Arbeitsentwurf angelegt...");
-            } else if (keyClass.indexOf("btn_ren_cat") !== -1 || btnText.indexOf("Umbenennen") !== -1) {
+            } else if (keyClass.indexOf("btn_ren_cat") !== -1 || btnText.indexOf("umbenennen") !== -1) {
                 showActionOverlay("✏️ Benenne Kategorie um...", "Kategorie wird im Arbeitsentwurf umbenannt...");
-            } else if (keyClass.indexOf("btn_submit_new_feed") !== -1 || btnText.indexOf("Feed hinzufügen") !== -1) {
+            } else if (keyClass.indexOf("btn_submit_new_feed") !== -1 || btnText.indexOf("feed hinzufügen") !== -1) {
                 showActionOverlay("➕ Füge neuen Feed hinzu...", "Feed wird im Arbeitsentwurf registriert...");
-            } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("Prompts in sources.yaml speichern") !== -1) {
+            } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("prompts in sources.yaml speichern") !== -1) {
                 showActionOverlay("💾 Speichere KI-Prompts...", "Hauptprompt und Direktiven werden gesichert...");
-            } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("Standard-Hauptprompt laden") !== -1) {
+            } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("standard-hauptprompt laden") !== -1) {
                 showActionOverlay("↩️ Lade Standard-Hauptprompt...", "Setze Prompt auf Werkseinstellung zurück...");
             }
-        }, true);
+        }
+
+        document.addEventListener("click", handleClick, true);
+        try {
+            if (window.parent && window.parent.document && window.parent.document !== document) {
+                window.parent.document.addEventListener("click", handleClick, true);
+            }
+        } catch(e) {}
     })();
     </script>
-    """)
+    """, unsafe_allow_javascript=True)
