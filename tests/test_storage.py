@@ -262,6 +262,18 @@ class TestSqliteStorage(unittest.TestCase):
         self.assertEqual(len(self.storage.get_articles()), 0)
         self.assertEqual(len(self.storage.get_archived_articles()), 0)
 
+    def test_metadata_get_set(self):
+        """Prüft das Schreiben und Auslesen von Schlüsselwerten in der metadata-Tabelle."""
+        self.assertIsNone(self.storage.get_metadata("non_existent_key"))
+        self.assertEqual(self.storage.get_metadata("non_existent_key", default="default_val"), "default_val")
+
+        self.storage.set_metadata("last_feed_refresh_time", "1727950000.5")
+        self.assertEqual(self.storage.get_metadata("last_feed_refresh_time"), "1727950000.5")
+
+        # Überschreiben
+        self.storage.set_metadata("last_feed_refresh_time", "1727960000.0")
+        self.assertEqual(self.storage.get_metadata("last_feed_refresh_time"), "1727960000.0")
+
 
 
 class TestTursoStorage(unittest.TestCase):
@@ -418,6 +430,56 @@ class TestTursoStorage(unittest.TestCase):
         self.assertEqual(cleaned, 3)
         payload = mock_post.call_args[1]["json"]
         self.assertIn("DELETE FROM archived_articles", payload["requests"][0]["stmt"]["sql"])
+
+    @patch("src.storage.requests.Session.post")
+    def test_turso_metadata(self, mock_post):
+        """Prüft get_metadata und set_metadata über Hrana v2 Pipeline."""
+        turso = TursoStorage("libsql://mock.turso.io", "mock-token")
+
+        # Mock SELECT
+        mock_response = MagicMock()
+        mock_response.status_code = 200
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [{"name": "value"}],
+                            "rows": [[{"type": "text", "value": "1727950000.5"}]],
+                            "affected_row_count": 0,
+                            "last_insert_rowid": None,
+                        }
+                    }
+                }
+            ]
+        }
+        mock_post.return_value = mock_response
+
+        val = turso.get_metadata("last_feed_refresh_time")
+        self.assertEqual(val, "1727950000.5")
+
+        # Mock set_metadata
+        mock_response.json.return_value = {
+            "results": [
+                {
+                    "type": "ok",
+                    "response": {
+                        "type": "execute",
+                        "result": {
+                            "cols": [],
+                            "rows": [],
+                            "affected_row_count": 1,
+                            "last_insert_rowid": None,
+                        }
+                    }
+                }
+            ]
+        }
+        turso.set_metadata("last_feed_refresh_time", "1727960000.0")
+        payload = mock_post.call_args[1]["json"]
+        self.assertIn("INSERT INTO metadata", payload["requests"][0]["stmt"]["sql"])
 
 
 class TestStorageFactory(unittest.TestCase):

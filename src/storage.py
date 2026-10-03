@@ -233,6 +233,16 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
+    def get_metadata(self, key: str, default: str | None = None) -> str | None:
+        """Liest einen Schlüsselwert aus der Metadaten-Tabelle."""
+        pass
+
+    @abstractmethod
+    def set_metadata(self, key: str, value: str) -> None:
+        """Schreibt oder aktualisiert einen Schlüsselwert in der Metadaten-Tabelle."""
+        pass
+
+    @abstractmethod
     def close(self) -> None:
         """Schließt alle Verbindungen und gibt Ressourcen frei."""
         pass
@@ -833,6 +843,29 @@ class SqliteStorage(StorageBackend):
         with self._get_connection() as conn:
             cursor = conn.execute("SELECT * FROM briefings ORDER BY id DESC LIMIT ?", (max(1, limit),))
             return [dict(row) for row in cursor.fetchall()]
+
+    def get_metadata(self, key: str, default: str | None = None) -> str | None:
+        try:
+            with self._get_connection() as conn:
+                cur = conn.execute("SELECT value FROM metadata WHERE key = ?", (key,))
+                row = cur.fetchone()
+                return str(row["value"]) if row and row["value"] is not None else default
+        except Exception as exc:
+            logger.warning("Fehler beim Lesen von SQLite-Metadata '%s': %s", key, exc)
+            return default
+
+    def set_metadata(self, key: str, value: str) -> None:
+        try:
+            with self._get_connection() as conn:
+                conn.execute(
+                    """
+                    INSERT INTO metadata (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP)
+                    ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at
+                    """,
+                    (key, str(value)),
+                )
+        except Exception as exc:
+            logger.warning("Fehler beim Schreiben von SQLite-Metadata '%s': %s", key, exc)
 
     def close(self) -> None:
         if self._shared_conn is not None:
@@ -1582,6 +1615,30 @@ class TursoStorage(StorageBackend):
         if not res or not res[0].get("rows"):
             return []
         return res[0]["rows"]
+
+    def get_metadata(self, key: str, default: str | None = None) -> str | None:
+        try:
+            res = self._execute_pipeline([
+                ("SELECT value FROM metadata WHERE key = ? LIMIT 1", [key])
+            ])
+            if not res or not res[0].get("rows"):
+                return default
+            row = res[0]["rows"][0]
+            val = row.get("value")
+            return str(val) if val is not None else default
+        except Exception as exc:
+            logger.warning("Fehler beim Lesen von Turso-Metadata '%s': %s", key, exc)
+            return default
+
+    def set_metadata(self, key: str, value: str) -> None:
+        try:
+            sql = """
+                INSERT INTO metadata (key, value, updated_at) VALUES (?, ?, CURRENT_TIMESTAMP)
+                ON CONFLICT(key) DO UPDATE SET value = excluded.value, updated_at = excluded.updated_at
+            """
+            self._execute_pipeline([(sql, [key, str(value)])])
+        except Exception as exc:
+            logger.warning("Fehler beim Schreiben von Turso-Metadata '%s': %s", key, exc)
 
     def close(self) -> None:
         try:

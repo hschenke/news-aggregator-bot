@@ -1849,6 +1849,7 @@ def collect_all_news(
             flat_items = [it for items in collected.values() for it in items]
             if flat_items:
                 storage.save_articles(flat_items)
+                storage.set_metadata("last_feed_refresh_time", str(time.time()))
         except Exception as e_db:
             logger.debug("DB-Persistierung in collect_all_news übersprungen: %s", e_db)
 

@@ -810,16 +810,17 @@ def apply_custom_styles() -> None:
                 }
 
                 var elapsed = Date.now() - startTime;
-                if ((wasRunning && !isRunning && elapsed > 400) || (!isRunning && elapsed > 2500)) {
+                if (wasRunning && !isRunning && elapsed > 400) {
                     clearInterval(checkIdleInterval);
                     hideActionOverlay();
                 }
             }, 200);
 
+            // Sicherheits-Timeout (Fallback): Mindestens 35 Sekunden für längere KI-Generierungen und Feed-Aktualisierungen
             setTimeout(function() {
                 clearInterval(checkIdleInterval);
                 hideActionOverlay();
-            }, 12000);
+            }, 35000);
         }
         window._newsBotShowActionOverlay = showActionOverlay;
 
@@ -856,7 +857,7 @@ def apply_custom_styles() -> None:
             } else if (keyClass.indexOf("btn_generate_briefing") !== -1 || btnText.indexOf("neues briefing generieren") !== -1) {
                 showActionOverlay("🧠 Generiere KI-Briefing mit Gemini...", "Die aktuellen Artikel werden analysiert und zusammengefasst. Dies kann einige Sekunden dauern...");
             } else if (keyClass.indexOf("sb_btn_refresh_feeds") !== -1 || btnText.indexOf("feeds neu laden") !== -1) {
-                showActionOverlay("🔄 Lese RSS-Feeds frisch ein...", "Lade alle Feeds live aus dem Web und aktualisiere die Datenbank...");
+                showActionOverlay("🔄 Lese RSS-Feeds ein...", "Lade alle Feeds live aus dem Web und aktualisiere die Datenbank...");
             } else if (keyClass.indexOf("btn_refresh_rss") !== -1 || btnText.indexOf("feeds neu generieren") !== -1) {
                 showActionOverlay("📡 Generiere RSS-Feeds neu...", "Erstelle standardkonforme XML-Dateien für Feedly & Reader...");
             } else if (keyClass.indexOf("btn_push_rss_cdn") !== -1 || btnText.indexOf("zu github & cdn pushen") !== -1) {

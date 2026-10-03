@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import sys
 import os
+import time
 import copy
 import logging
 from pathlib import Path
@@ -40,6 +41,7 @@ from src.aggregator import (
     DEFAULT_MAX_ARTICLE_AGE_HOURS,
     DEFAULT_MAX_ARTICLE_AGE_WEEKS,
 )
+from src.storage import get_storage
 from src.ui.styles import apply_custom_styles, embed_client_script, release_action_overlay
 from src.__version__ import get_app_version
 from src.ui.auth import (
@@ -53,6 +55,7 @@ from src.ui.auth import (
 from src.ui.state import (
     init_session_state,
     get_news_data,
+    format_local_dt,
     TAB_ARTICLES,
     TAB_KI,
     TAB_MANAGE,
@@ -179,9 +182,6 @@ def get_sources_config() -> dict[str, Any]:
     except Exception:
         return {}
 
-
-# Haupttitel
-st.title("📰 Daily News Briefing", anchor=False)
 
 # Gespeicherten Stand laden und Arbeitsentwurf im session_state verwalten
 saved_sources_config = get_sources_config()
@@ -315,24 +315,75 @@ if is_admin:
     st.sidebar.markdown("---")
     if "sidebar_refresh_notice" in st.session_state:
         st.sidebar.success(st.session_state.pop("sidebar_refresh_notice"))
+
     if st.sidebar.button(
         "🔄 Feeds neu laden",
         key="sb_btn_refresh_feeds",
-        help="Liest alle RSS-Feeds frisch ein und aktualisiert die Datenbank.",
+        help="Liest alle RSS-Feeds ein und aktualisiert die Datenbank.",
         use_container_width=True,
     ):
         logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
         st.cache_data.clear()
         st.session_state.pop("cached_news_data", None)
-        with st.spinner("Lese alle RSS-Feeds frisch aus dem Internet ein..."):
-            st.session_state["cached_news_data"] = get_news_data(force_live_fetch=True)
-        st.session_state["sidebar_refresh_notice"] = "Feeds wurden frisch eingelesen & in Datenbank gesichert!"
+        with st.spinner("Lese alle RSS-Feeds aus dem Internet ein..."):
+            fresh_news = get_news_data(force_live_fetch=True)
+            st.session_state["cached_news_data"] = fresh_news
+            now_ts = time.time()
+            st.session_state["last_refresh_timestamp"] = now_ts
+            try:
+                get_storage().set_metadata("last_feed_refresh_time", str(now_ts))
+            except Exception:
+                pass
+        st.session_state["sidebar_refresh_notice"] = "Feeds wurden erfolgreich aktualisiert & in Datenbank gesichert!"
         st.rerun()
+
+    # Zuletzt aktualisiert Info in der Sidebar (Bild 1)
+    sidebar_sync_ts = st.session_state.get("last_refresh_timestamp")
+    if not sidebar_sync_ts:
+        try:
+            val = get_storage().get_metadata("last_feed_refresh_time")
+            if val:
+                sidebar_sync_ts = float(val)
+        except Exception:
+            pass
+    if not sidebar_sync_ts:
+        pool_for_sb = news_data or st.session_state.get("cached_news_data", {})
+        if pool_for_sb:
+            sidebar_sync_ts = max((art.get("timestamp", 0.0) for arts in pool_for_sb.values() for art in arts), default=0.0)
+
+    formatted_sidebar_sync = format_local_dt(sidebar_sync_ts) if sidebar_sync_ts else ""
+    if formatted_sidebar_sync:
+        st.sidebar.caption(f"🕒 Letzte Aktualisierung: {formatted_sidebar_sync}")
 
 # Sidebar Auth Bereich (Login / Logout)
 render_sidebar_auth(is_admin)
 
-# ----------------- MAIN TABS -----------------
+# ----------------- HAUPTBEREICH & TABS -----------------
+# Haupttitel & Subheader-Statuszeile (Bild 2: unter Daily News Briefing)
+st.title("📰 Daily News Briefing", anchor=False)
+
+last_update_ts: float | None = st.session_state.get("last_refresh_timestamp")
+if not last_update_ts:
+    try:
+        val = get_storage().get_metadata("last_feed_refresh_time")
+        if val:
+            last_update_ts = float(val)
+    except Exception:
+        pass
+
+if not last_update_ts:
+    pool_for_ts = news_data or st.session_state.get("cached_news_data", {})
+    if pool_for_ts:
+        last_update_ts = max((art.get("timestamp", 0.0) for arts in pool_for_ts.values() for art in arts), default=0.0)
+
+date_str = format_local_dt(last_update_ts) if last_update_ts else format_local_dt(time.time())
+total_count = sum(len(v) for v in news_data.values()) if news_data else 0
+if total_count == 0 and "cached_news_data" in st.session_state:
+    total_count = sum(len(v) for v in st.session_state["cached_news_data"].values())
+
+item_label = "1 Artikel verfügbar" if total_count == 1 else f"{total_count} Artikel verfügbar"
+st.caption(f"🕒 Stand: {date_str} · {item_label}")
+
 default_tab_label = tab_id_to_label(active_nav_tab)
 if default_tab_label not in TAB_ORDER:
     default_tab_label = TAB_ORDER[0]

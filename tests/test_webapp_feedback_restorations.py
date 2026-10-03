@@ -140,6 +140,19 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("release_action_overlay", self.styles_py)
         self.assertIn("release_action_overlay()", self.webapp_py)
 
+    def test_overlay_safety_timeout_at_least_30s(self) -> None:
+        """Action overlay fallback timeout must be >= 30000ms (35s)."""
+        self.assertIn("35000", self.styles_py)
+
+    def test_header_status_and_no_slang(self) -> None:
+        """Header status line under Daily News Briefing must show Stand and Artikel verfügbar; no slang 'frisch' in webapp."""
+        self.assertIn('st.title("📰 Daily News Briefing", anchor=False)', self.webapp_py)
+        self.assertIn("🕒 Stand:", self.webapp_py)
+        self.assertIn("Artikel verfügbar", self.webapp_py)
+        self.assertIn("🕒 Letzte Aktualisierung:", self.webapp_py)
+        self.assertNotIn("frisch", self.webapp_py)
+        self.assertNotIn("frisch", self.styles_py)
+
 
 if __name__ == "__main__":
     unittest.main()
