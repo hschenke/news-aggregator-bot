@@ -5,6 +5,8 @@ categories:
     url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+  - name: Rbb Sport
+    url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
 - name: Finanzen & Coins
   feeds:
   - name: Investing de

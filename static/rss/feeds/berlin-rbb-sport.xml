@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>News Bot — Rbb Sport (Berlin)</title>
+    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
+    <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
+    <language>de</language>
+    <lastBuildDate>Sun, 04 Oct 2026 20:10:57 GMT</lastBuildDate>
+    <generator>News Aggregator Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
+
+  </channel>
+</rss>
