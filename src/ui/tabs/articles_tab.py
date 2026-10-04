@@ -248,8 +248,11 @@ def render_articles_tab(
             continue
 
         cat_matching = []
+        seen_cat_urls = set()
         for it in items:
             item_url = (it.get("link") or "").strip()
+            if not item_url or item_url in seen_cat_urls:
+                continue
             if item_url in archived_urls_set or get_canonical_url(item_url) in archived_urls_set:
                 continue
 
@@ -269,12 +272,14 @@ def render_articles_tab(
                 if search_query not in t and search_query not in s:
                     continue
 
+            seen_cat_urls.add(item_url)
             cat_matching.append(it)
 
         if not cat_matching:
             continue
 
         categories_rendered += 1
+        displayed_count += len(cat_matching)
 
         cat_is_open = True if (
             is_filtering
@@ -331,7 +336,6 @@ def render_articles_tab(
                     st.html(f'<div id="anchor-feed-{feed_slug}" style="height:0; margin:0; padding:0;"></div>')
                     cols = st.columns(2)
                     for idx, item in enumerate(visible_items):
-                        displayed_count += 1
                         with cols[idx % 2]:
                             with st.container(border=True):
                                 item_url = (item.get("link") or "").strip()
@@ -355,7 +359,7 @@ def render_articles_tab(
 
                                 cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                 default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
-                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{displayed_count}"
+                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{feed_slug}_{idx}"
                                 fb_key = f"fb_{item_url_hash}"
                                 read_key = f"read_{item_url_hash}"
                                 if fb_key in rendered_element_keys:

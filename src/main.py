@@ -70,6 +70,7 @@ def run_pipeline() -> None:
             saved_count = storage.save_articles(all_articles)
             briefing_date = time.strftime("%Y-%m-%d")
             storage.save_briefing(briefing_date, summary, gemini_model)
+            storage.set_metadata("last_feed_refresh_time", str(time.time()))
             print(f"      -> 💾 {saved_count} Artikel & KI-Briefing in Datenbank archiviert.", flush=True)
         except Exception as db_err:
             logger.warning("Speichern in primärer DB fehlgeschlagen (%s). Nutze lokalen SQLite-Fallback...", db_err)
@@ -79,6 +80,7 @@ def run_pipeline() -> None:
             saved_count = fallback_storage.save_articles(all_articles)
             briefing_date = time.strftime("%Y-%m-%d")
             fallback_storage.save_briefing(briefing_date, summary, gemini_model)
+            fallback_storage.set_metadata("last_feed_refresh_time", str(time.time()))
             print(f"      -> 💾 {saved_count} Artikel & KI-Briefing im lokalen SQLite-Archiv gesichert.", flush=True)
             storage = fallback_storage
 

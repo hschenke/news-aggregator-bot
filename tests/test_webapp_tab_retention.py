@@ -119,7 +119,7 @@ def tab_id_to_label(tab_id: str) -> str:
         self.assertNotIn("st.iframe(html_wrapper, height=1, width=1)", webapp_code)
 
         # 9. Header-Anchor-Links und Kettensymbol auf Titeln unterdrückt
-        self.assertIn('st.title("📰 Daily News Briefing", anchor=False)', webapp_code)
+        self.assertIn('st.title("📰 Daily News", anchor=False)', webapp_code)
         self.assertIn('[data-testid="stHeaderActionElements"]', webapp_code)
 
         # 10. Skeleton-Ladeboxen unterdrückt

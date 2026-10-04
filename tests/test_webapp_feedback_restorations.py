@@ -146,12 +146,19 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
 
     def test_header_status_and_no_slang(self) -> None:
         """Header status line under Daily News Briefing must show Stand and Artikel verfügbar; no slang 'frisch' in webapp."""
-        self.assertIn('st.title("📰 Daily News Briefing", anchor=False)', self.webapp_py)
+        self.assertIn('st.title("📰 Daily News", anchor=False)', self.webapp_py)
         self.assertIn("🕒 Stand:", self.webapp_py)
         self.assertIn("Artikel verfügbar", self.webapp_py)
         self.assertIn("🕒 Letzte Aktualisierung:", self.webapp_py)
         self.assertNotIn("frisch", self.webapp_py)
         self.assertNotIn("frisch", self.styles_py)
+
+    def test_displayed_count_matches_categories_and_last_update_ts(self) -> None:
+        """Displayed count must match category totals, and timestamp must be resolved effectively."""
+        self.assertIn("displayed_count += len(cat_matching)", self.articles_tab_py)
+        self.assertIn("get_effective_last_update_ts", self.webapp_py)
+        main_py = (self.root / "src" / "main.py").read_text(encoding="utf-8")
+        self.assertIn('storage.set_metadata("last_feed_refresh_time", str(time.time()))', main_py)
 
 
 if __name__ == "__main__":

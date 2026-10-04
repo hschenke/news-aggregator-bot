@@ -310,6 +310,49 @@ embed_client_script(f"""
 }})();
 """)
 
+def get_effective_last_update_ts(pool_data: dict[str, list[dict[str, Any]]]) -> float | None:
+    """
+    Ermittelt den verbindlichen, aktuellsten Zeitstempel des Datenbestands.
+    Berücksichtigt manuellen Refresh, Metadaten in der Datenbank, den morgendlichen
+    GitHub-Actions-Digest-Run (neuestes Briefing) sowie die neuesten Artikel-Timestamps.
+    """
+    manual_ts = st.session_state.get("last_refresh_timestamp")
+    if manual_ts:
+        return float(manual_ts)
+
+    best_ts: float | None = None
+    try:
+        storage = get_storage()
+        val = storage.get_metadata("last_feed_refresh_time")
+        if val:
+            best_ts = float(val)
+
+        # Prüfen, ob das neueste KI-Briefing (z. B. morgendlicher GitHub Actions Run) neuer ist
+        latest_briefing = storage.get_latest_briefing()
+        if latest_briefing and latest_briefing.get("created_at"):
+            b_iso = str(latest_briefing["created_at"])
+            b_dt = datetime.fromisoformat(b_iso.replace("Z", "+00:00"))
+            b_ts = b_dt.timestamp()
+            if best_ts is None or b_ts > best_ts:
+                best_ts = b_ts
+                # Einmalig in Metadaten sichern für schnelle Folgezugriffe
+                try:
+                    storage.set_metadata("last_feed_refresh_time", str(b_ts))
+                except Exception:
+                    pass
+    except Exception as exc:
+        logger.debug("Fehler beim Ermitteln des Speicher-Timestamps: %s", exc)
+
+    # Vergleich mit dem neuesten Artikel-Timestamp im Pool
+    pool = pool_data or st.session_state.get("cached_news_data", {})
+    if pool:
+        max_art_ts = max((art.get("timestamp", 0.0) for arts in pool.values() for art in arts), default=0.0)
+        if max_art_ts > 0.0 and (best_ts is None or max_art_ts > best_ts):
+            best_ts = max_art_ts
+
+    return best_ts
+
+
 # Button: Feeds neu laden (nur im Administrator-Modus verfügbar)
 if is_admin:
     st.sidebar.markdown("---")
@@ -338,19 +381,7 @@ if is_admin:
         st.rerun()
 
     # Zuletzt aktualisiert Info in der Sidebar (Bild 1)
-    sidebar_sync_ts = st.session_state.get("last_refresh_timestamp")
-    if not sidebar_sync_ts:
-        try:
-            val = get_storage().get_metadata("last_feed_refresh_time")
-            if val:
-                sidebar_sync_ts = float(val)
-        except Exception:
-            pass
-    if not sidebar_sync_ts:
-        pool_for_sb = news_data or st.session_state.get("cached_news_data", {})
-        if pool_for_sb:
-            sidebar_sync_ts = max((art.get("timestamp", 0.0) for arts in pool_for_sb.values() for art in arts), default=0.0)
-
+    sidebar_sync_ts = get_effective_last_update_ts(news_data)
     formatted_sidebar_sync = format_local_dt(sidebar_sync_ts) if sidebar_sync_ts else ""
     if formatted_sidebar_sync:
         st.sidebar.caption(f"🕒 Letzte Aktualisierung: {formatted_sidebar_sync}")
@@ -359,23 +390,10 @@ if is_admin:
 render_sidebar_auth(is_admin)
 
 # ----------------- HAUPTBEREICH & TABS -----------------
-# Haupttitel & Subheader-Statuszeile (Bild 2: unter Daily News Briefing)
-st.title("📰 Daily News Briefing", anchor=False)
+# Haupttitel & Subheader-Statuszeile (Bild 2: unter Daily News)
+st.title("📰 Daily News", anchor=False)
 
-last_update_ts: float | None = st.session_state.get("last_refresh_timestamp")
-if not last_update_ts:
-    try:
-        val = get_storage().get_metadata("last_feed_refresh_time")
-        if val:
-            last_update_ts = float(val)
-    except Exception:
-        pass
-
-if not last_update_ts:
-    pool_for_ts = news_data or st.session_state.get("cached_news_data", {})
-    if pool_for_ts:
-        last_update_ts = max((art.get("timestamp", 0.0) for arts in pool_for_ts.values() for art in arts), default=0.0)
-
+last_update_ts = get_effective_last_update_ts(news_data)
 date_str = format_local_dt(last_update_ts) if last_update_ts else format_local_dt(time.time())
 total_count = sum(len(v) for v in news_data.values()) if news_data else 0
 if total_count == 0 and "cached_news_data" in st.session_state:
