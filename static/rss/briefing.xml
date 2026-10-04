@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 16:42:35 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 05:01:19 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -15,7 +15,7 @@
       <pubDate>Sat, 03 Oct 2026 12:14:34 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>Eine Anwohnerin beobachtete in Lichterfelde zwei Unbekannte auf einem Grundstück, woraufhin die Polizei einen Tatverdächtigen festnehmen konnte.</p>]]></description>
+      <description><![CDATA[<p>Eine Anwohnerin beobachtete verdächtige Männer auf einem Grundstück in Lichterfelde, woraufhin ein Tatverdächtiger festgenommen wurde.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] Zwei fremdenfeindliche Angriffe</title>
@@ -24,7 +24,7 @@
       <pubDate>Sat, 03 Oct 2026 12:08:46 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>Eine mit einem Kopftuch bekleidete Frau wurde bezirksübergreifend von einer Person auf dem Gehweg angegangen.</p>]]></description>
+      <description><![CDATA[<p>Eine mit einem Kopftuch bekleidete Frau wurde bezirksübergreifend Zeugin eines mutmaßlich fremdenfeindlichen Übergriffs auf offener Straße.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] Auseinandersetzung zwischen zwei Personengruppen – drei Männer mit Schnitt- und Stichverletzungen im Krankenhaus</title>
@@ -33,7 +33,7 @@
       <pubDate>Sat, 03 Oct 2026 10:57:00 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>In einer Parkanlage in Moabit eskalierte ein Streit zwischen mehreren Personen, bei dem drei Beteiligte schwere Verletzungen erlitten.</p>]]></description>
+      <description><![CDATA[<p>In einer Parkanlage in Moabit eskalierte ein Streit, bei dem drei Beteiligte schwere Verletzungen davontrugen.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] DEIG-Einsatz – Festnahme nach Hausfriedensbruch, Sachbeschädigung und Widerstand gegen Vollstreckungsbeamte</title>
@@ -42,7 +42,7 @@
       <pubDate>Sat, 03 Oct 2026 10:43:50 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>Einsatzkräfte stoppten einen verhaltensauffälligen Mann, der sich schwankend auf dem Dach eines Wohnhauses in der Zionskirchstraße aufgehalten hatte.</p>]]></description>
+      <description><![CDATA[<p>Einsatzkräfte nahmen einen verhaltensauffälligen Mann fest, der sich in Mitte schwankend auf einem Dach aufgehalten hatte.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] Gedenksteine mit Farbe besprüht – Tatverdächtiger festgenommen</title>
@@ -51,61 +51,88 @@
       <pubDate>Sat, 03 Oct 2026 08:32:47 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>Im Prenzlauer Berg konnte ein 46-jähriger Mann festgenommen werden, nachdem er Gedenksteine auf einem Gehweg mit Farbe beschmiert hatte.</p>]]></description>
+      <description><![CDATA[<p>Im Prenzlauer Berg wurde ein 46-jähriger Mann festgenommen, nachdem er Gedenksteine auf dem Gehweg beschmiert hatte.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Offenbar schlafen sie so bequem.</title>
-      <link>https://debeste.de/627072/Offenbar-schlafen-sie-so-bequem</link>
-      <guid isPermaLink="false">https://debeste.de/627072/Offenbar-schlafen-sie-so-bequem</guid>
-      <pubDate>Sat, 03 Oct 2026 16:19:01 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Ein amüsantes Bild zeigt die skurrilen Schlafpositionen von Tieren oder Menschen im Alltag.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Jeder Autofahrer kennt diesen Schmerz.</title>
-      <link>https://debeste.de/627019/Jeder-Autofahrer-kennt-diesen-Schmerz</link>
-      <guid isPermaLink="false">https://debeste.de/627019/Jeder-Autofahrer-kennt-diesen-Schmerz</guid>
-      <pubDate>Sat, 03 Oct 2026 14:59:01 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Eine typische Alltagssituation beim Autofahren sorgt bei vielen Fahrern für schmerzhaftes Wiedererkennen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Ein Meisterwerk der Ingenieurskunst...</title>
-      <link>https://debeste.de/627082/Ein-Meisterwerk-der-Ingenieurskunst-</link>
-      <guid isPermaLink="false">https://debeste.de/627082/Ein-Meisterwerk-der-Ingenieurskunst-</guid>
-      <pubDate>Sat, 03 Oct 2026 16:42:34 +0000</pubDate>
+      <title>[Fun] Wenn du für 5 Minuten im falschen Kindergarten-Viertel..</title>
+      <link>https://debeste.de/627043/Wenn-du-f-r-5-Minuten-im-falschen-Kindergarten-Viertel-</link>
+      <guid isPermaLink="false">https://debeste.de/627043/Wenn-du-f-r-5-Minuten-im-falschen-Kindergarten-Viertel-</guid>
+      <pubDate>Sun, 04 Oct 2026 05:01:18 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein humorvoller Blick auf eine sehr unorthodoxe Straßenausbesserung nach dem Winter.</p>]]></description>
+      <description><![CDATA[<p>Ein humorvoller Blick auf den alltäglichen Stress beim Parken in sensiblen Wohngegenden.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Chef, ich komme heute nicht zur Arbeit... Ich bin im..</title>
-      <link>https://debeste.de/627008/Chef,-ich-komme-heute-nicht-zur-Arbeit-Ich-bin-im-</link>
-      <guid isPermaLink="false">https://debeste.de/627008/Chef,-ich-komme-heute-nicht-zur-Arbeit-Ich-bin-im-</guid>
-      <pubDate>Sat, 03 Oct 2026 16:42:35 +0000</pubDate>
+      <title>[Fun] Hat nicht mehr reingepasst...</title>
+      <link>https://debeste.de/627018/Hat-nicht-mehr-reingepasst-</link>
+      <guid isPermaLink="false">https://debeste.de/627018/Hat-nicht-mehr-reingepasst-</guid>
+      <pubDate>Sun, 04 Oct 2026 05:01:19 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein klassischer Dialog über kreative Krankmeldungen und die Forderung nach Fotobeweisen.</p>]]></description>
+      <description><![CDATA[<p>Ein bildhafter Scherz über kreative aber aussichtslose Transportversuche.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Habe gerade hinten im Keller meine verstaubten Nordic..</title>
-      <link>https://debeste.de/626752/Habe-gerade-hinten-im-Keller-meine-verstaubten-Nordic-</link>
-      <guid isPermaLink="false">https://debeste.de/626752/Habe-gerade-hinten-im-Keller-meine-verstaubten-Nordic-</guid>
-      <pubDate>Sat, 03 Oct 2026 16:42:35 +0000</pubDate>
+      <title>[Fun] Die Faulheit der Amerikaner hat ein neues Level erreicht.</title>
+      <link>https://debeste.de/627078/Die-Faulheit-der-Amerikaner-hat-ein-neues-Level-erreicht-</link>
+      <guid isPermaLink="false">https://debeste.de/627078/Die-Faulheit-der-Amerikaner-hat-ein-neues-Level-erreicht-</guid>
+      <pubDate>Sun, 04 Oct 2026 05:01:19 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Das Aufeinandertreffen mit längst vergessenen Sportgeräten im eigenen Keller führt zu peinlichen Momenten.</p>]]></description>
+      <description><![CDATA[<p>Eine amüsante Beobachtung über bequeme Lebensweisen im Alltag.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Schock vor Derby: Dallinga &amp; Ache bei Köln-Test verletzt ausgewechselt</title>
-      <link>https://www.transfermarkt.de/schock-vor-derby-dallinga-amp-ache-bei-koln-test-verletzt-ausgewechselt-honorat-fehlt-gladbach/view/news/488291</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/schock-vor-derby-dallinga-amp-ache-bei-koln-test-verletzt-ausgewechselt-honorat-fehlt-gladbach/view/news/488291</guid>
-      <pubDate>Sat, 03 Oct 2026 15:06:32 +0000</pubDate>
+      <title>[Fun] Ich bin gerade zum ersten Mal unterwegs in den Schwarzwald..</title>
+      <link>https://debeste.de/627034/Ich-bin-gerade-zum-ersten-Mal-unterwegs-in-den-Schwarzwald-</link>
+      <guid isPermaLink="false">https://debeste.de/627034/Ich-bin-gerade-zum-ersten-Mal-unterwegs-in-den-Schwarzwald-</guid>
+      <pubDate>Sun, 04 Oct 2026 05:01:19 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Die überraschende Entdeckung skurriler Ortsnamen bereitet Reisenden ein Schmunzeln.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Drei Pfarrer am Himmelstor. Sagt Petrus:</title>
+      <link>https://www.hahaha.de/witze/politik-gesellschaft/kirche/8279/drei-pfarrer-am-himmelstor-sagt-petrus.html</link>
+      <guid isPermaLink="false">https://www.hahaha.de/witze/politik-gesellschaft/kirche/8279/drei-pfarrer-am-himmelstor-sagt-petrus.html</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
+      <description><![CDATA[<p>Ein klassischer Witz über Einlassverhandlungen am Himmelstor und menschliche Schwächen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Trotz Länderspielpause: Hertha hält Rhythmus - WELT</title>
+      <link>https://www.welt.de/regionales/berlin/article6ac1ce3ed993ea3f355f5481/trotz-laenderspielpause-hertha-haelt-rhythmus.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13617036420438475502</guid>
+      <pubDate>Sun, 04 Oct 2026 04:05:00 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[<p>Hertha BSC bleibt durch Testspiele im Schwung und bestätigt die positive Form der letzten Wochen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Portugal beschwört Einheit nach Ronaldo-eklat</title>
+      <link>https://www.transfermarkt.de/portugal-beschwort-einheit-nach-ronaldo-eklat-treffen-zwischen-cr7-und-coach-jesus-geplant/view/news/488294</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/portugal-beschwort-einheit-nach-ronaldo-eklat-treffen-zwischen-cr7-und-coach-jesus-geplant/view/news/488294</guid>
+      <pubDate>Sat, 03 Oct 2026 18:26:03 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Der 1. FC Köln verzeichnete im Testspiel gegen Viktoria Köln schwere personelle Rückschläge durch Verletzungen zweier Stürmer.</p>]]></description>
+      <description><![CDATA[<p>Nach internen Unstimmigkeiten betont die portugiesische Nationalmannschaft ihren Zusammenhalt für die kommenden Aufgaben.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Nations League: England deklassiert Kroatien, Kane trifft doppelt</title>
+      <link>https://www.transfermarkt.de/doppelpacker-kane-und-saka-furiose-three-lions-deklassieren-kroatien-hochste-niederlage/view/news/488293</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/doppelpacker-kane-und-saka-furiose-three-lions-deklassieren-kroatien-hochste-niederlage/view/news/488293</guid>
+      <pubDate>Sat, 03 Oct 2026 17:58:00 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Die englische Auswahl zeigte eine überragende Leistung und schob sich in der Gruppe an die Spitze.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Urbig steht gegen Griechenland im DFB-Tor – Klopp gibt Kimmich-Debatte auf</title>
+      <link>https://www.transfermarkt.de/urbig-steht-gegen-griechenland-im-dfb-tor-klopp-gibt-kimmich-debatte-auf/view/news/488292</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/urbig-steht-gegen-griechenland-im-dfb-tor-klopp-gibt-kimmich-debatte-auf/view/news/488292</guid>
+      <pubDate>Sat, 03 Oct 2026 16:57:37 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Bundestrainer Jürgen Klopp hat vor dem Rückspiel die Besetzung im Tor geklärt und offene Diskussionen beendet.</p>]]></description>
     </item>
     <item>
       <title>[Fußball] Starkes 2:2 beim FC Augsburg: Ist Hertha reif für die Bundesliga? - Berliner Kurier</title>
@@ -114,52 +141,52 @@
       <pubDate>Sat, 03 Oct 2026 14:44:24 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Nach einem überzeugenden Testspiel-Remis gegen den Bundesligisten stellt sich für den Zweitliga-Spitzenreiter Hertha BSC die Frage nach der Erstliga-Reife.</p>]]></description>
+      <description><![CDATA[<p>Nach dem starken Auftritt gegen den Bundesligisten wird an der Spree intensiv über die Erstliga-Reife diskutiert.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Obwohl Personalkosten sinken: BVB verzeichnet hohen Verlust im Geschäftsjahr 2025/26</title>
-      <link>https://www.transfermarkt.de/obwohl-personalkosten-sinken-bvb-verzeichnet-hohen-verlust-im-geschaftsjahr-2025-26/view/news/488290</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/obwohl-personalkosten-sinken-bvb-verzeichnet-hohen-verlust-im-geschaftsjahr-2025-26/view/news/488290</guid>
-      <pubDate>Sat, 03 Oct 2026 14:43:25 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Borussia Dortmund hat das vergangene Geschäftsjahr trotz gesunkener Ausgaben mit einem deutlichen Minus und Umsatzrückgang abgeschlossen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Grashopper Zürich: Olaf Janßen folgt auf Peter Zeidler</title>
-      <link>https://www.transfermarkt.de/janssen-folgt-bei-gc-zurich-auf-zeidler-passt-zur-sportlichen-ausrichtung-und-methodik-quot-/view/news/488286</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/janssen-folgt-bei-gc-zurich-auf-zeidler-passt-zur-sportlichen-ausrichtung-und-methodik-quot-/view/news/488286</guid>
-      <pubDate>Sat, 03 Oct 2026 10:02:44 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Beim Schweizer Erstligisten übernimmt der deutsche Trainer Olaf Janßen den Cheftrainerposten von seinem Vorgänger.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Vestergaard macht Schluss: „Motivation ist gar nicht mehr da“ – Meiste Spiele in der Bundesliga</title>
-      <link>https://www.transfermarkt.de/vestergaard-macht-schluss-motivation-ist-gar-nicht-mehr-da-quot-meiste-spiele-in-der-bundesliga/view/news/488280</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/vestergaard-macht-schluss-motivation-ist-gar-nicht-mehr-da-quot-meiste-spiele-in-der-bundesliga/view/news/488280</guid>
-      <pubDate>Sat, 03 Oct 2026 07:12:37 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Der langjährige Bundesliga-Profi hat im Alter von 34 Jahren offiziell seine aktive Karriere beendet.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] Crowdfunding-Übersicht KW 40: 229 Brettspiel-Kampagnen im Check</title>
-      <link>https://www.brettspiel-news.de/index.php/de/nachrichten-uebersicht/crowdfunding/16148-crowdfunding-bersicht-kw-40-229-brettspiel-kampagnen-im-check</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13415488988275397420</guid>
-      <pubDate>Sat, 03 Oct 2026 12:03:17 +0000</pubDate>
+      <title>[Games] Heroes III: Die Forge kommt nach 27 Jahren doch noch - im Brettspiel und mit ihrem Erfinder</title>
+      <link>https://www.brettspiel-news.de/index.php/de/nachrichten-uebersicht/crowdfunding/16151-heroes-iii-die-forge-kommt-nach-27-jahren-doch-noch-im-brettspiel-und-mit-ihrem-erfinder-</link>
+      <guid isPermaLink="false">https://www.brettspiel-news.de/index.php/de/nachrichten-uebersicht/crowdfunding/16151-heroes-iii-die-forge-kommt-nach-27-jahren-doch-noch-im-brettspiel-und-mit-ihrem-erfinder-</guid>
+      <pubDate>Sun, 04 Oct 2026 05:01:19 +0000</pubDate>
       <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Die aktuelle Übersicht zeigt zahlreiche Brettspiel-Kampagnen, darunter prominente Videospiel-Umsetzungen wie Heroes of Might and Magic III.</p>]]></description>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Archon Studio bringt die einst gestrichene Fraktion mit Originaldesigner Gregory Fulton in die Brettspiel-Umsetzung.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Age of Wonders 4: Piraten, Haiverwandte und gefrorene Meere – Expansion Pass 4 wird gewaltig</title>
-      <link>https://www.xboxdynasty.de/news/age-of-wonders-4/piraten-haiverwandte-und-gefrorene-meere-expansion-pass-4-wird-gewaltig/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1741111236519088685</guid>
-      <pubDate>Sat, 03 Oct 2026 04:04:08 +0000</pubDate>
+      <title>[Games] Nostra - Announced for 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60291</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60291</guid>
+      <pubDate>Sat, 03 Oct 2026 14:01:05 +0000</pubDate>
       <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Der kommende Erweiterungspass für das Strategiespiel bringt umfangreiche maritime Inhalte und neue Fraktionen ins Spiel.</p>]]></description>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Ein solo entwickelter, storygetriebener J-RPG-Titel mit taktischem Kampfsystem wurde für das Jahr 2027 angekündigt.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Age of Wonders 4 - Expansion Pass 4</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60289</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60289</guid>
+      <pubDate>Sat, 03 Oct 2026 13:43:31 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Paradox hat den neuen Erweiterungspass vorgestellt, dessen nächstes Add-on im November erscheint.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Stolen Realm 2 - Announced</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60287</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60287</guid>
+      <pubDate>Sat, 03 Oct 2026 13:36:44 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Der Nachfolger des beliebten rundenbasierten Rollenspiels verspricht erneut einen Genremix aus Fantasy, Sci-Fi und Postapokalypse.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Zero Parades - Director's Cut released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60286</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60286</guid>
+      <pubDate>Sat, 03 Oct 2026 13:27:02 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Die definitive Edition des Spionage-Rollenspiels ist ab sofort mit zusätzlichen Inhalten auf dem PC erhältlich.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] OpenAI safety employee resigns, claiming the company’s ‘culture is broken’</title>
@@ -168,7 +195,7 @@
       <pubDate>Sat, 03 Oct 2026 16:30:01 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[<p>Ein Sicherheitsmitarbeiter von OpenAI hat aus Protest seinen Posten niedergelegt und der Führung schwere Vorwürfe bezüglich der Unternehmenskultur gemacht.</p>]]></description>
+      <description><![CDATA[<p>Ein weiterer Sicherheitsmitarbeiter hat OpenAI unter Kritik an der internen Firmenkultur verlassen.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Nvidias DGX Spark wird trotz halbiertem RAM teurer</title>
@@ -177,7 +204,7 @@
       <pubDate>Sat, 03 Oct 2026 16:02:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Die neue Version der lokalen KI-Workstation bietet deutlich weniger Arbeitsspeicher, kostet aber dennoch mehr Geld.</p>]]></description>
+      <description><![CDATA[<p>Das neue Modell der lokalen KI-Workstation bringt weniger Arbeitsspeicher mit, schlägt preislich aber dennoch höher zu Buche.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Apple härtet „Full Disk Access“ gegen KI-Agenten</title>
@@ -186,7 +213,7 @@
       <pubDate>Sat, 03 Oct 2026 13:52:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Wegen potenzieller Risiken durch immer mächtigere KI-Agenten führt Apple strengere Freigabepflichten für den systemweiten Dateizugriff auf dem Mac ein.</p>]]></description>
+      <description><![CDATA[<p>Umfassende Dateizugriffe auf dem Mac erfordern künftig zwingend eine explizite Nutzerfreigabe zum Schutz vor autonomen Agenten.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Netscaler-Admins aufgepasst: Zero-Day verursacht Crashes und Codeausführung</title>
@@ -195,16 +222,16 @@
       <pubDate>Sat, 03 Oct 2026 08:23:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Eine kritische Sicherheitslücke sorgt auf betroffenen Geräten für massenhafte Spontanreboots und führt zu dringendem Handlungsbedarf bei Administratoren.</p>]]></description>
+      <description><![CDATA[<p>Eine kritische Sicherheitslücke führt trotz aktueller Patches zu massenhaften Spontanreboots bei betroffenen Geräten.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Der Bürger muss begründen, der Staat darf schweigen: IFG-Reform droht</title>
-      <link>https://www.heise.de/news/Glaeserner-Buerger-geheimer-Staat-Informationsfreiheitgesetz-in-Gefahr-11474799.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474799</guid>
-      <pubDate>Fri, 02 Oct 2026 18:39:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Weniger Prompt, mehr Platz für Code: Pi 1.0.0 ist da</title>
+      <link>https://www.heise.de/news/Coding-Agent-Pi-Mehr-Platz-im-Prompt-weniger-Ballast-11474629.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11474629</guid>
+      <pubDate>Sat, 03 Oct 2026 06:20:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Datenschützer und Experten kritisieren scharf die geplanten Gesetzesänderungen der Bundesregierung zur Einschränkung der Informationsfreiheit.</p>]]></description>
+      <description><![CDATA[<p>Der erweiterbare KI-Coding-Agent für das Terminal startet in Version 1.0.0 mit gestrafftem Codemode und Vollbildansicht.</p>]]></description>
     </item>
   </channel>
 </rss>

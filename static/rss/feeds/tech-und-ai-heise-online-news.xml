@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 03 Oct 2026 16:42:21 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 05:01:06 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top 10: Das beste Gaming-Headset im Test – Razer Testsieger vor Audeze &amp; Hyperx</title>
+      <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-gaming-headset-im-test-razer-testsieger-vor-audeze-und-hyperx/fxcd43c?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag#id-12-11-akko-verge-s-9-ultra</link>
+      <guid isPermaLink="false">http://heise.de/-11475015</guid>
+      <pubDate>Sat, 03 Oct 2026 18:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ein gutes Gaming-Headset sollte die Spielsession bereichern, egal ob bei kompetitiven Shootern oder immersiven Rollenspielen. Wir zeigen die besten Modelle.]]></description>
+    </item>
     <item>
       <title>Nvidias DGX Spark wird trotz halbiertem RAM teurer</title>
       <link>https://www.heise.de/news/Nvidias-DGX-Spark-wird-trotz-halbiertem-RAM-teurer-11475117.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -79,33 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu GNU Debugger (GDB), Crystal, Git, Kong AI, Qt, Python, Rust, BoxLang und Visual Studio Code.]]></description>
-    </item>
-    <item>
-      <title>Mini-PCs im Test: stark wie nie, aber viele sind teuer | c’t uplink</title>
-      <link>https://www.heise.de/news/Mini-PCs-im-Test-stark-wie-nie-aber-viele-sind-teuer-c-t-uplink-11473733.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11473733</guid>
-      <pubDate>Sat, 03 Oct 2026 04:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mini-PCs: klein, kräftig, kostengünstig, und der Mac Mini M6 ist auch dabei. Nein, halt, billig sind sie nicht, im Podcast müssen wir auch über Preise reden.]]></description>
-    </item>
-    <item>
-      <title>Trickreicher Angriff knackt RSA-Signaturen – ein bisschen</title>
-      <link>https://www.heise.de/news/Kryptografie-Forscher-demonstrieren-neuartigen-Angriff-auf-RSA-11474271.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474271</guid>
-      <pubDate>Fri, 02 Oct 2026 19:22:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein neues Paper reduziert die angenommene Sicherheit von 1024-Bit-RSA, indem es Signaturen fälscht. Doch die Methode ist in der Praxis kaum relevant.]]></description>
-    </item>
-    <item>
-      <title>Der Bürger muss begründen, der Staat darf schweigen: IFG-Reform droht</title>
-      <link>https://www.heise.de/news/Glaeserner-Buerger-geheimer-Staat-Informationsfreiheitgesetz-in-Gefahr-11474799.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11474799</guid>
-      <pubDate>Fri, 02 Oct 2026 18:39:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Weniger Rechte für Bürger, hohe Gebühren, Schwärzungen und mehr: Datenschützer zerlegen Pläne der Bundesregierung zur „Abschaffung der Informationsfreiheit“.]]></description>
     </item>
   </channel>
 </rss>
