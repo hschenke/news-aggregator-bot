@@ -39,6 +39,18 @@ def slugify(text: str) -> str:
     return text or "feed"
 
 
+def format_feed_item_title(title: str, category: str | None = None) -> str:
+    """Formatiert einen Artikel-Titel mit vorangestelltem Kategorie-Präfix in eckigen Klammern [Kategorie].
+
+    Verhindert doppelte Präfixe und ignoriert leere Kategorien sowie 'Allgemein'.
+    """
+    clean_title = (title or "Kein Titel").strip()
+    clean_cat = (category or "").strip()
+    if clean_cat and clean_cat != "Allgemein" and not clean_title.startswith(f"[{clean_cat}]"):
+        return f"[{clean_cat}] {clean_title}"
+    return clean_title
+
+
 def format_rfc822(date_input: Any = None) -> str:
     """Formatiert verschiedene Datums-Eingaben (struct_time, float, datetime, str) in valides RFC-822."""
     if date_input is None:
@@ -258,6 +270,9 @@ def _export_category_feeds(
         if not cat_name:
             continue
         cat_items = sorted(news_data.get(cat_name, []), key=_sort_article_key, reverse=True)
+        for it in cat_items:
+            if not it.get("category"):
+                it["category"] = cat_name
         all_articles.extend(cat_items)
 
         cat_slug = slugify(cat_name)
@@ -380,11 +395,23 @@ def _export_global_feed(
     all_cdn_url = f"{cdn_prefix}/{all_filename}"
     all_raw_url = f"{raw_prefix}/{all_filename}"
 
+    # Artikel für den Gesamt-Feed mit Kategorie-Präfix [Kategorie] im Titel versehen (wie bei KI-Briefing Feed)
+    global_items: list[dict[str, Any]] = []
+    for art in sorted_all_articles:
+        category = (art.get("category") or "").strip()
+        display_title = format_feed_item_title(art.get("title", ""), category)
+
+        global_item = dict(art)
+        global_item["title"] = display_title
+        if category and not global_item.get("category"):
+            global_item["category"] = category
+        global_items.append(global_item)
+
     all_xml = generate_rss_xml(
         title="News Bot — Alle Nachrichten (Gesamt-Feed)",
         link=base_url,
         description="Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.",
-        items=sorted_all_articles,
+        items=global_items,
         self_url=all_cdn_url,
     )
     all_file_path.write_text(all_xml, encoding="utf-8")
@@ -748,10 +775,7 @@ def export_briefing_rss(
             ai_summary = art.get("summary") or ""
 
             # Präfix [Kategorie] im Titel für sofortigen Kontext im RSS-Reader
-            if category and category != "Allgemein" and not art_title.startswith(f"[{category}]"):
-                display_title = f"[{category}] {art_title}"
-            else:
-                display_title = art_title
+            display_title = format_feed_item_title(art_title, category)
 
             meta = _find_article_meta(link)
             pub_date = format_rfc822(datetime.now(timezone.utc))

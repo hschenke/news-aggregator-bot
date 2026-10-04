@@ -227,6 +227,79 @@ class TestRssGenerator(unittest.TestCase):
             self.assertFalse(res["success"])
             self.assertTrue(len(res["errors"]) > 0)
 
+    def test_format_feed_item_title(self):
+        from src.rss_generator import format_feed_item_title
+
+        # Reguläre Kategorie
+        self.assertEqual(format_feed_item_title("Brand in Mitte", "Berlin"), "[Berlin] Brand in Mitte")
+        # Kategorie mit Sonderzeichen (&)
+        self.assertEqual(format_feed_item_title("Bitcoin steigt", "Finanzen & Coins"), "[Finanzen & Coins] Bitcoin steigt")
+        # Bereits mit gleicher Kategorie geklammert -> keine Duplikate
+        self.assertEqual(format_feed_item_title("[Berlin] Brand in Mitte", "Berlin"), "[Berlin] Brand in Mitte")
+        # Anderes Präfix vorhanden -> Kategorie wird dennoch vorangestellt
+        self.assertEqual(format_feed_item_title("[Eilmeldung] Brand in Mitte", "Berlin"), "[Berlin] [Eilmeldung] Brand in Mitte")
+        # Kategorie 'Allgemein' oder leer -> kein Präfix
+        self.assertEqual(format_feed_item_title("Nachricht", "Allgemein"), "Nachricht")
+        self.assertEqual(format_feed_item_title("Nachricht", ""), "Nachricht")
+        self.assertEqual(format_feed_item_title("Nachricht", None), "Nachricht")
+        # Leerer Titel Fallback
+        self.assertEqual(format_feed_item_title("", "Berlin"), "[Berlin] Kein Titel")
+
+    def test_export_global_feed_with_category_brackets(self):
+        import tempfile
+        from pathlib import Path
+        import xml.etree.ElementTree as ET
+        from src.rss_generator import _export_global_feed
+
+        articles = [
+            {
+                "title": "Großbrand unter Kontrolle",
+                "link": "https://example.com/berlin/1",
+                "category": "Berlin",
+                "timestamp": 1000.0,
+            },
+            {
+                "title": "[Finanzen & Coins] Neuer ETF zugelassen",
+                "link": "https://example.com/finanzen/1",
+                "category": "Finanzen & Coins",
+                "timestamp": 2000.0,
+            },
+            {
+                "title": "Wichtige Systemmeldung",
+                "link": "https://example.com/allg/1",
+                "category": "Allgemein",
+                "timestamp": 500.0,
+            },
+        ]
+
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            rss_dir = Path(tmp_dir)
+            result = _export_global_feed(
+                all_articles=articles,
+                rss_root=rss_dir,
+                cdn_prefix="https://cdn.example.com",
+                raw_prefix="https://raw.example.com",
+                base_url="https://app.example.com",
+            )
+
+            # Prüfe, dass ursprüngliche Artikel-Objekte unverändert geblieben sind (keine Seiteneffekte)
+            self.assertEqual(articles[0]["title"], "Großbrand unter Kontrolle")
+
+            # Parse generiertes XML
+            xml_path = rss_dir / "all.xml"
+            self.assertTrue(xml_path.exists())
+            root = ET.fromstring(xml_path.read_text(encoding="utf-8"))
+            items = root.find("channel").findall("item")
+            self.assertEqual(len(items), 3)
+
+            # Items sind sortiert nach timestamp absteigend:
+            # 1. Finanzen (ts=2000)
+            self.assertEqual(items[0].find("title").text, "[Finanzen & Coins] Neuer ETF zugelassen")
+            # 2. Berlin (ts=1000)
+            self.assertEqual(items[1].find("title").text, "[Berlin] Großbrand unter Kontrolle")
+            # 3. Allgemein (ts=500)
+            self.assertEqual(items[2].find("title").text, "Wichtige Systemmeldung")
+
 
 if __name__ == "__main__":
     unittest.main()
