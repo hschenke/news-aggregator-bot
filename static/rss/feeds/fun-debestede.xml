@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=debeste.de</link>
     <description>RSS-Feed für die Quelle 'debeste.de' (Kategorie: Fun).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 04 Oct 2026 10:29:07 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 10:57:26 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-debestede.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -421,15 +421,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Ich habe schon BSE, Tschernobyl, das Ozonloch, den sauren Regen, das große Waldsterben, Schweine- und Hühnergrippe, Corona und noch so einiges mehr überlebt. Was mir aber wirklich Angst macht, ist die jetzige Regierung.]]></description>
-    </item>
-    <item>
-      <title>Habe gerade hinten im Keller meine verstaubten Nordic..</title>
-      <link>https://debeste.de/626752/Habe-gerade-hinten-im-Keller-meine-verstaubten-Nordic</link>
-      <guid isPermaLink="false">https://debeste.de/626752/Habe-gerade-hinten-im-Keller-meine-verstaubten-Nordic</guid>
-      <pubDate>Sat, 03 Oct 2026 12:40:01 +0200</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Habe gerade hinten im Keller meine verstaubten Nordic Walking Stöcke gesehen. Wir haben uns peinlich verlegen gegrüßt.]]></description>
     </item>
   </channel>
 </rss>
