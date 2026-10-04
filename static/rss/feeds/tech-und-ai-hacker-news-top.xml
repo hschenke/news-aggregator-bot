@@ -5,32 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 04 Oct 2026 05:01:06 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 09:44:32 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GitHub's new dashboard experience now the default</title>
       <link>https://github.blog/changelog/2026-10-01-new-dashboard-experience-now-the-default/</link>
       <guid isPermaLink="false">https://github.blog/changelog/2026-10-01-new-dashboard-experience-now-the-default/</guid>
-      <pubDate>Sat, 03 Oct 2026 09:59:01 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Gemini ending free use of Flash and Pro models</title>
-      <link>https://www.reddit.com/r/GeminiAI/comments/1wwalmc/wtf_google_getting_rid_of_free_gemini_flash_and/</link>
-      <guid isPermaLink="false">https://www.reddit.com/r/GeminiAI/comments/1wwalmc/wtf_google_getting_rid_of_free_gemini_flash_and/</guid>
-      <pubDate>Sat, 03 Oct 2026 09:13:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: Offrun – manage every coding agent from one workspace</title>
-      <link>https://offrun.dev/</link>
-      <guid isPermaLink="false">https://offrun.dev/</guid>
-      <pubDate>Sat, 03 Oct 2026 08:40:17 GMT</pubDate>
+      <pubDate>Sat, 03 Oct 2026 09:59:01 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

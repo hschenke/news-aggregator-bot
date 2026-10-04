@@ -19,11 +19,17 @@ class TestFilteringAndScraping(unittest.TestCase):
         self.assertTrue(is_ad_item("heise-Angebot: 20% Rabatt auf Monitore", "Jetzt zugreifen."))
         # Anzeige / Sponsored
         self.assertTrue(is_ad_item("Anzeige: Die besten Versicherungen", "Vergleichsportal."))
+        self.assertTrue(is_ad_item("Anzeige - Top Rabatte", "Jetzt zuschlagen."))
+        self.assertTrue(is_ad_item("[Anzeige] Neues Gerät im Handel", "Günstig kaufen."))
         self.assertTrue(is_ad_item("Neues Smartphone im Test", "Sponsored Post: Erfahre mehr."))
         self.assertTrue(is_ad_item("Rabatt-Aktion im Online-Shop", "Spare jetzt viel Geld."))
         # Normaler Artikel darf NICHT als Werbung erkannt werden
         self.assertFalse(is_ad_item("Python 3.14 veröffentlicht", "Neue Features und Performance-Optimierungen."))
         self.assertFalse(is_ad_item("Späti ausgeraubt", "In Wilmersdorf kam es zu einem Überfall."))
+        # Keine False-Positives bei echten Artikeln mit 'Anzeige' im Fließtext oder Polizeimeldungen
+        self.assertFalse(is_ad_item("Strafanzeige gegen Unbekannt gestellt", "Die Ermittlungen dauern an."))
+        self.assertFalse(is_ad_item("Polizei nimmt Anzeige nach Diebstahl auf", "Zeugen gesucht."))
+        self.assertFalse(is_ad_item("Google Gemini: Nur noch ein Modell für Gratis-Nutzer", "Text mit Quelle: Google Anzeige am Ende."))
 
     def test_ad_detection_custom_keywords(self):
         custom_kws = ["krypto-scam", "gewinnspiel", "black friday"]
@@ -251,6 +257,37 @@ class TestFilteringAndScraping(unittest.TestCase):
                     self.assertNotIn("https://example.com/archived-item", cat_links)
                     self.assertIn("https://example.com/brand-new", cat_links)
 
+    def test_all_ai_teaser_cleanup_and_ingestion(self):
+        from unittest.mock import patch
+        from src.aggregator import fetch_feed_items
+
+        mock_xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0">
+          <channel>
+            <title>all-ai.de - KI-News</title>
+            <item>
+              <title>Google Gemini: Nur noch ein Modell f&#252;r Gratis-Nutzer</title>
+              <link>https://www.all-ai.de/news/gemini-gratis</link>
+              <pubDate>Sun, 04 Oct 2026 10:15:18 +0200</pubDate>
+              <description><![CDATA[<p><img src="img.webp"/></p> GPT-Images-2.0 Kurzfassung &#9662; Quellen &#9662; Ohne Abo bleibt ab Oktober nur noch Flash verf&#252;gbar. Weitere Details im Test. + Quelle: Google Anzeige]]></description>
+            </item>
+          </channel>
+        </rss>
+        """
+
+        with patch("src.aggregator.fetch_feed_raw", return_value={"success": True, "content": mock_xml}):
+            items = fetch_feed_items("https://www.all-ai.de/rss", max_age_hours=24.0)
+            self.assertEqual(len(items), 1)
+            item = items[0]
+            self.assertEqual(item["title"], "Google Gemini: Nur noch ein Modell für Gratis-Nutzer")
+            # Prüfen, dass GPT-Images / Kurzfassung Artefakte entfernt wurden
+            self.assertFalse(item["summary"].startswith("GPT-Images"))
+            self.assertFalse(item["summary"].startswith("Kurzfassung"))
+            self.assertTrue(item["summary"].startswith("Ohne Abo bleibt ab Oktober nur noch Flash verfügbar."))
+            # Prüfen, dass der Artikel NICHT fälschlicherweise als Anzeige verworfen wurde
+            self.assertGreater(item["timestamp"], 0.0)
+
 
 if __name__ == "__main__":
     unittest.main()
+

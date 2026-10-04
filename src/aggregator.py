@@ -1281,9 +1281,10 @@ def normalize_keywords(kw: Any) -> list[str]:
 
 DEFAULT_AD_PATTERNS = [
     r"^heise-angebot:",
-    r"\b(?:anzeige|advertorial|partnerangebot|sonderveröffentlichung)\b",
-    r"^(?:anzeige|werbung|sponsored|gesponsert|partnerangebot):",
-    r"\[(?:anzeige|werbung|sponsored)\]",
+    r"^(?:anzeige|werbung|gesponsert|partnerangebot)\s*[:\-\|•]",
+    r"\[(?:anzeige|werbung|sponsored|gesponsert|partnerangebot|advertorial)\]",
+    r"\((?:anzeige|werbung|sponsored|gesponsert|partnerangebot|advertorial)\)",
+    r"\b(?:advertorial|partnerangebot|sonderveröffentlichung)\b",
     r"\b(?:sponsored post|sponsored content)\b",
     r"\bdeal(?:s)? des tages\b",
     r"^rabatt-aktion\b",
@@ -1302,8 +1303,19 @@ def is_ad_item(title: str, summary: str = "", custom_ad_keywords: list[str] | No
     if custom_ad_keywords:
         for kw in custom_ad_keywords:
             k = kw.strip().lower()
-            if k and (k in t_clean or k in s_clean):
-                return True
+            if not k:
+                continue
+            # Allgemeine Kennzeichnungen wie 'anzeige' oder 'werbung' dürfen nicht als einfache Substring-Suche
+            # im Fließtext (summary) matchen, da sie dort häufig in legitimem Kontext
+            # (z. B. 'Strafanzeige', redaktionelle Banner-Hinweise 'Quelle: Google Anzeige') vorkommen.
+            if k in ("anzeige", "werbung", "sponsored", "gesponsert"):
+                label_pat = rf"(?:^|\[|\()\s*{re.escape(k)}\s*(?:[:\-\|•\]\)]|$)"
+                if re.search(label_pat, t_clean, re.IGNORECASE) or re.search(rf"^{re.escape(k)}\s*[:\-\|•]", s_clean, re.IGNORECASE):
+                    return True
+            else:
+                pat = rf"\b{re.escape(k)}\b"
+                if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
+                    return True
 
     return False
 
@@ -1642,6 +1654,15 @@ def fetch_feed_items(
                     p_val = extract_police_teaser(link)
                 if p_val:
                     summary = p_val
+
+            # Bereinigung störender Navigations- und Header-Artefakte in Teasern (z. B. all-ai.de)
+            if summary and ("kurzfassung" in summary.lower() or summary.startswith("GPT-Images")):
+                summary = re.sub(
+                    r"^(?:GPT-Images-[\d\.]+\s*)?(?:Kurzfassung\s*[▾▿▸]\s*Quellen\s*[▾▿▸]\s*)?",
+                    "",
+                    summary,
+                    flags=re.IGNORECASE,
+                ).strip()
 
             # 1. Stufe: Werbe- und Anzeigen-Filter (Global & quellenspezifisch)
             if filter_ads and is_ad_item(title, summary, custom_ad_keywords):
