@@ -74,9 +74,24 @@ def on_article_read_and_archive(article_item: dict[str, Any], category: str = ""
 
 
 def on_clear_search() -> None:
-    """Resets the search term and rating filter."""
+    """Resets the search term."""
     st.session_state["input_search_query"] = ""
-    st.session_state["sel_articles_rating"] = "Alle Bewertungen"
+
+
+def on_reset_category_and_feed() -> None:
+    """Setzt Kategorie- und Feed-Auswahl vollständig zurück und bereinigt URL-Parameter."""
+    st.session_state["sel_articles_category"] = "Alle Kategorien"
+    st.session_state["_qp_category_applied"] = True
+    st.session_state["_qp_feed_applied"] = True
+    st.session_state["articles_cat_feed_memory"] = {}
+    for k in list(st.session_state.keys()):
+        if k.startswith("sel_articles_feed_"):
+            st.session_state[k] = "Alle Feeds"
+
+    for qp_key in ("category", "feed"):
+        if qp_key in st.query_params:
+            del st.query_params[qp_key]
+    st.session_state["_clear_filter_url_client"] = True
 
 
 def format_article_date(item: dict[str, Any]) -> str:
@@ -95,6 +110,27 @@ def render_articles_tab(
         st.session_state.get("read_urls", set())
     )
 
+    if st.session_state.pop("_clear_filter_url_client", False):
+        embed_client_script("""
+        (function() {
+            try {
+                var cleanUrl = function(win) {
+                    if (!win || !win.location) return;
+                    var u = new URL(win.location.href);
+                    if (u.searchParams.has('category') || u.searchParams.has('feed')) {
+                        u.searchParams.delete('category');
+                        u.searchParams.delete('feed');
+                        win.history.replaceState(null, '', u.toString());
+                    }
+                };
+                cleanUrl(window);
+                if (window.parent && window.parent !== window) {
+                    cleanUrl(window.parent);
+                }
+            } catch(e) {}
+        })();
+        """)
+
     qp_category = st.query_params.get("category", "").strip()
     qp_feed = st.query_params.get("feed", "").strip()
 
@@ -108,11 +144,13 @@ def render_articles_tab(
     sorted_all_categories = sorted(list(known_cats_set), key=lambda x: x.strip().lower())
     category_options = ["Alle Kategorien"] + sorted_all_categories
 
-    if qp_category:
+    # URL Query-Parameter für Kategorie nur beim initialen Aufruf anwenden
+    if qp_category and not st.session_state.get("_qp_category_applied"):
         for opt in category_options:
             if opt.strip().lower() == qp_category.lower():
                 st.session_state["sel_articles_category"] = opt
                 break
+        st.session_state["_qp_category_applied"] = True
 
     current_cat = st.session_state.get("sel_articles_category", "Alle Kategorien")
     if current_cat not in category_options:
@@ -154,11 +192,13 @@ def render_articles_tab(
     remembered_feed = st.session_state["articles_cat_feed_memory"].get(current_cat, "Alle Feeds")
 
     qp_feed_canonical = None
-    if qp_feed:
+    if qp_feed and not st.session_state.get("_qp_feed_applied"):
         for fo in feed_options:
             if fo.strip().lower() == qp_feed.lower():
                 qp_feed_canonical = fo
                 break
+        st.session_state["_qp_feed_applied"] = True
+
     if qp_feed_canonical and current_cat != "Alle Kategorien":
         remembered_feed = qp_feed_canonical
 
@@ -175,11 +215,6 @@ def render_articles_tab(
     curr_selected_feed = st.session_state.get(feed_widget_key, "Alle Feeds")
     if curr_selected_feed != "Alle Feeds":
         filter_summary_items.append(f"📡 {curr_selected_feed}")
-    curr_rating = st.session_state.get("sel_articles_rating", "Alle Bewertungen")
-    if curr_rating == "Nur Favoriten 👍":
-        filter_summary_items.append("⭐ Nur Favoriten")
-    elif curr_rating == "Nur Irrelevante 👎":
-        filter_summary_items.append("👎 Nur Irrelevante")
     active_search_text = st.session_state.get("input_search_query", "").strip()
     if active_search_text:
         filter_summary_items.append(f"🔍 '{active_search_text}'")
@@ -187,12 +222,11 @@ def render_articles_tab(
     is_filtering = bool(
         current_cat != "Alle Kategorien"
         or curr_selected_feed != "Alle Feeds"
-        or curr_rating != "Alle Bewertungen"
         or active_search_text
     )
 
     with st.expander("🔍 Filter & Suche", expanded=False, key="expander_filter_search"):
-        filter_col_cat, filter_col_feed, filter_col_rating = st.columns([1.2, 1.2, 1.0])
+        filter_col_cat, filter_col_feed, filter_col_reset = st.columns([1.3, 1.3, 1.0], vertical_alignment="bottom")
         with filter_col_cat:
             selected_cat = st.selectbox(
                 "Kategorie:",
@@ -204,6 +238,7 @@ def render_articles_tab(
                     del st.query_params["category"]
                 if "feed" in st.query_params:
                     del st.query_params["feed"]
+                st.session_state["_clear_filter_url_client"] = True
 
         with filter_col_feed:
             selected_feed = st.selectbox(
@@ -215,13 +250,17 @@ def render_articles_tab(
             if qp_feed and selected_feed.strip().lower() != qp_feed.lower():
                 if "feed" in st.query_params:
                     del st.query_params["feed"]
+                st.session_state["_clear_filter_url_client"] = True
 
-        with filter_col_rating:
-            st.selectbox(
-                "Bewertung:",
-                options=["Alle Bewertungen", "Nur Favoriten 👍", "Nur Irrelevante 👎"],
-                key="sel_articles_rating",
-            )
+        with filter_col_reset:
+            if st.button(
+                "Zurücksetzen",
+                key="btn_reset_cat_feed",
+                use_container_width=True,
+                help="Kategorie- und Feed-Auswahl zurücksetzen (alle anzeigen)",
+                on_click=on_reset_category_and_feed,
+            ):
+                st.rerun()
 
         col_search_inp, col_search_btn = st.columns([5, 1], vertical_alignment="bottom")
         with col_search_inp:
@@ -231,7 +270,7 @@ def render_articles_tab(
                 key="input_search_query",
             )
         with col_search_btn:
-            if st.button("Zurücksetzen", key="btn_search_clear", use_container_width=True, on_click=on_clear_search):
+            if st.button("X", key="btn_search_clear", use_container_width=True, on_click=on_clear_search, help="Suchbegriff zurücksetzen"):
                 st.rerun()
 
     # Status summary
@@ -258,12 +297,6 @@ def render_articles_tab(
 
             feed_name = it.get("source", "Unbekannt")
             if selected_feed != "Alle Feeds" and feed_name != selected_feed:
-                continue
-
-            fb_val = st.session_state.get("feedback_map", {}).get(item_url, it.get("feedback", 0))
-            if curr_rating == "Nur Favoriten 👍" and fb_val != 1:
-                continue
-            if curr_rating == "Nur Irrelevante 👎" and fb_val != -1:
                 continue
 
             if search_query:
@@ -320,7 +353,7 @@ def render_articles_tab(
                 DEFAULT_FEED_PAGE_SIZE = 20
                 current_feed_limit = st.session_state.get(feed_limit_key, DEFAULT_FEED_PAGE_SIZE)
 
-                if search_query or (curr_rating and curr_rating != "Alle Bewertungen"):
+                if search_query:
                     visible_items = f_items
                 else:
                     visible_items = f_items[:current_feed_limit]

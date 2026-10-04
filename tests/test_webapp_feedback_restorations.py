@@ -160,6 +160,13 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         main_py = (self.root / "src" / "main.py").read_text(encoding="utf-8")
         self.assertIn('storage.set_metadata("last_feed_refresh_time", str(time.time()))', main_py)
 
+    def test_filter_search_rating_removed_and_reset_buttons(self) -> None:
+        """Rating dropdown must be removed, search clear button must be 'X', and category/feed reset button must exist."""
+        self.assertNotIn("sel_articles_rating", self.articles_tab_py)
+        self.assertIn('st.button("X", key="btn_search_clear"', self.articles_tab_py)
+        self.assertIn('key="btn_reset_cat_feed"', self.articles_tab_py)
+        self.assertIn("def on_reset_category_and_feed()", self.articles_tab_py)
+
 
 if __name__ == "__main__":
     unittest.main()
