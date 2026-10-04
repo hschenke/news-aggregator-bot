@@ -5,9 +5,35 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 04 Oct 2026 10:57:26 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 11:10:30 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Google Gemini: Nur noch ein Modell für Gratis-Nutzer</title>
+      <link>https://www.all-ai.de/news/news26/google-gemini-modelle-gratis</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-gemini-modelle-gratis</guid>
+      <pubDate>Sun, 04 Oct 2026 08:15:18 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ohne Abo bleibt ab dem 9. Oktober 2026 nur noch Flash-Lite verfügbar. AI Plus bietet zusätzlich Flash, während Pro mindestens AI Pro voraussetzt. Thinking-Stufen erhöhen den Verbrauch des rechenbasierten Nutzungslimits. Google: Changes to Gemini model access and limits Google schränkt die Modellauswahl in den Gemini...]]></description>
+    </item>
+    <item>
+      <title>ChatGPT &amp; Co: 98 Prozent bezahlen nicht für KI</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-ki-studie-bezahlung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-ki-studie-bezahlung</guid>
+      <pubDate>Sun, 04 Oct 2026 07:44:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nur rund 2 Prozent der US-Haushalte bezahlten im Mai 2026 für einen KI-Dienst. Zahlende Haushalte gaben durchschnittlich 31 Dollar pro Monat aus. Auch Unternehmen nutzen KI bislang meist nur in begrenztem Umfang. Gleichzeitig sorgt KI für eine hohe Nachfrage nach Chips und prägt das Gewinnwachstum der Tech-Branche. ...]]></description>
+    </item>
+    <item>
+      <title>Aleph Alpha veröffentlicht ein Sprachmodell mit Deutsch-Fokus</title>
+      <link>https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</guid>
+      <pubDate>Sat, 03 Oct 2026 22:10:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Aleph Alpha veröffentlicht Kolibri als Open-Weights-Modell für Deutsch und Englisch unter Apache 2.0. Deutsche Trainingsdaten und ein eigener Tokenizer berücksichtigen Verwaltungssprache und zusammengesetzte Wörter. Das Modell bietet vier Reasoning-Stufen, Tool Calling und bis zu eine Million Token Kontext. Für den ...]]></description>
+    </item>
   </channel>
 </rss>

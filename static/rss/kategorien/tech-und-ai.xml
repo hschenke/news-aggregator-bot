@@ -5,41 +5,293 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 04 Oct 2026 10:57:26 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2026 11:10:30 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bericht: FBI-Angreifer von „ShinyHunters“ gefasst und kooperativ</title>
+      <link>https://www.heise.de/news/Bericht-FBI-Angreifer-von-ShinyHunters-gefasst-und-kooperativ-11475303.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11475303</guid>
+      <pubDate>Sun, 04 Oct 2026 11:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Einem Bericht zufolge wurde ein weiteres Mitglied der Cyberbande „ShinyHunters“ in Jordanien festgesetzt. Er soll mit dem FBI kooperieren.]]></description>
+    </item>
+    <item>
+      <title>Smart-Meter-Ausbau in Deutschland kommt weiter nur schleppend voran</title>
+      <link>https://www.heise.de/news/Smart-Meter-Ausbau-in-Deutschland-kommt-weiter-nur-schleppend-voran-11475273.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11475273</guid>
+      <pubDate>Sun, 04 Oct 2026 11:01:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nur 5,9 Prozent aller Messstellen in Deutschland sind digitalisiert. Die Bundesnetzagentur leitet Aufsichtsverfahren gegen säumige Betreiber ein.]]></description>
+    </item>
+    <item>
+      <title>Citrix Netscaler aktualisieren! Zero-Day verursacht Crashes und Codeausführung</title>
+      <link>https://www.heise.de/news/Netscaler-Admins-aufgepasst-Zero-Day-verursacht-Crashes-und-Codeausfuehrung-11474971.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11474971</guid>
+      <pubDate>Sun, 04 Oct 2026 10:58:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Sicherheitsforscher und Administratoren melden massenhafte Spontanreboots betroffener Geräte. Updates sind nun verfügbar und sollten schnell aufgespielt werden.]]></description>
+    </item>
+    <item>
+      <title>Tickets für die Bahn – DB Navigator oder DB Info?</title>
+      <link>https://www.heise.de/news/Mogelpackung-bei-der-Bahn-Wie-der-Digitalvertrieb-den-Wettbewerb-blockiert-11475265.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11475265</guid>
+      <pubDate>Sun, 04 Oct 2026 09:26:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Verkehrsministerium knickt gegenüber der Deutschen Bahn ein. DB Navigator und bahn.de bleiben bei DB Fernverkehr – zum Nachteil von Kunden und Konkurrenten.]]></description>
+    </item>
+    <item>
+      <title>VGHF Digital Archive passes 5000 magazines. Here's what's next</title>
+      <link>https://gamehistory.org/5k-magazines/</link>
+      <guid isPermaLink="false">https://gamehistory.org/5k-magazines/</guid>
+      <pubDate>Sun, 04 Oct 2026 09:07:11 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>In Ukraine, distributed renewables foil Russia's assaults</title>
+      <link>https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/</link>
+      <guid isPermaLink="false">https://energytransition.org/2026/09/in-ukraine-distributed-renewables-foil-russias-assaults/</guid>
+      <pubDate>Sun, 04 Oct 2026 08:39:58 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Google Gemini: Nur noch ein Modell für Gratis-Nutzer</title>
+      <link>https://www.all-ai.de/news/news26/google-gemini-modelle-gratis</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-gemini-modelle-gratis</guid>
+      <pubDate>Sun, 04 Oct 2026 08:15:18 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ohne Abo bleibt ab dem 9. Oktober 2026 nur noch Flash-Lite verfügbar. AI Plus bietet zusätzlich Flash, während Pro mindestens AI Pro voraussetzt. Thinking-Stufen erhöhen den Verbrauch des rechenbasierten Nutzungslimits. Google: Changes to Gemini model access and limits Google schränkt die Modellauswahl in den Gemini...]]></description>
+    </item>
+    <item>
+      <title>Video: USB-Soundkarte selber bauen mit Raspberry Pico 2</title>
+      <link>https://www.heise.de/news/Video-USB-Soundkarte-selber-bauen-mit-Raspberry-Pico-2-11473861.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11473861</guid>
+      <pubDate>Sun, 04 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einem Raspberry Pi könnt ihr eine Soundkarte basteln, die einen super flexiblen Soundprozessor gleich mit drin hat. Wie das geht, zeigen wir im Video.]]></description>
+    </item>
+    <item>
+      <title>ChatGPT &amp; Co: 98 Prozent bezahlen nicht für KI</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-ki-studie-bezahlung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-ki-studie-bezahlung</guid>
+      <pubDate>Sun, 04 Oct 2026 07:44:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nur rund 2 Prozent der US-Haushalte bezahlten im Mai 2026 für einen KI-Dienst. Zahlende Haushalte gaben durchschnittlich 31 Dollar pro Monat aus. Auch Unternehmen nutzen KI bislang meist nur in begrenztem Umfang. Gleichzeitig sorgt KI für eine hohe Nachfrage nach Chips und prägt das Gewinnwachstum der Tech-Branche. ...]]></description>
+    </item>
+    <item>
+      <title>Vorsorgeregister: Ärzte können hinterlegte Vorsorgedokumente einsehen</title>
+      <link>https://www.heise.de/news/Vorsorgeregister-Aerzte-koennen-hinterlegte-Vorsorgedokumente-einsehen-11475163.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11475163</guid>
+      <pubDate>Sun, 04 Oct 2026 07:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ärzte können Abschriften von Patientenverfügungen nun digital im Vorsorgeregister abrufen. Ein Allgemeinmediziner sieht einen ersten Schritt – mit Grenzen.]]></description>
+    </item>
+    <item>
+      <title>Emitting metadata early makes building/checking Rust up to twice as fast</title>
+      <link>https://github.com/PowderworksCode/headstart</link>
+      <guid isPermaLink="false">https://github.com/PowderworksCode/headstart</guid>
+      <pubDate>Sun, 04 Oct 2026 06:26:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Missing Link: Our Best Machines – Was bin ich ohne meinen KI-Assistenten?</title>
+      <link>https://www.heise.de/news/Missing-Link-Our-Best-Machines-Was-bin-ich-ohne-meinen-KI-Assistenten-11467180.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11467180</guid>
+      <pubDate>Sun, 04 Oct 2026 05:31:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[KI-Assistenten ziehen in immer mehr Lebensbereiche ein. Medizininformatikerin und Sci-Fi-Autorin über die Frage wer wir ohne]]></description>
+    </item>
+    <item>
+      <title>Why don't more developers “use the platform”?</title>
+      <link>https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/</link>
+      <guid isPermaLink="false">https://nolanlawson.com/2026/10/03/why-dont-more-developers-use-the-platform/</guid>
+      <pubDate>Sun, 04 Oct 2026 04:10:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Religious scholars met with Anthropic</title>
+      <link>https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html</link>
+      <guid isPermaLink="false">https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html</guid>
+      <pubDate>Sun, 04 Oct 2026 02:34:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>We're working on a new RuneScape MMO</title>
+      <link>https://play.runescape.com/4</link>
+      <guid isPermaLink="false">https://play.runescape.com/4</guid>
+      <pubDate>Sun, 04 Oct 2026 01:12:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Tell HN: Bob Cringely has died</title>
+      <link>https://news.ycombinator.com/item?id=49949438</link>
+      <guid isPermaLink="false">https://news.ycombinator.com/item?id=49949438</guid>
+      <pubDate>Sun, 04 Oct 2026 00:50:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>We're going to need default hard budget caps on pretty much everything</title>
+      <link>https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/</link>
+      <guid isPermaLink="false">https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/</guid>
+      <pubDate>Sun, 04 Oct 2026 00:20:16 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
     <item>
       <title>The Agent Said It Was Done. The Database Disagreed.</title>
       <link>https://huggingface.co/blog/microsoft/thinkingbox</link>
       <guid isPermaLink="false">https://huggingface.co/blog/microsoft/thinkingbox</guid>
-      <pubDate>Sat, 03 Oct 2026 22:56:48 +0000</pubDate>
+      <pubDate>Sat, 03 Oct 2026 22:56:48 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
     </item>
     <item>
+      <title>Aleph Alpha veröffentlicht ein Sprachmodell mit Deutsch-Fokus</title>
+      <link>https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</guid>
+      <pubDate>Sat, 03 Oct 2026 22:10:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Aleph Alpha veröffentlicht Kolibri als Open-Weights-Modell für Deutsch und Englisch unter Apache 2.0. Deutsche Trainingsdaten und ein eigener Tokenizer berücksichtigen Verwaltungssprache und zusammengesetzte Wörter. Das Modell bietet vier Reasoning-Stufen, Tool Calling und bis zu eine Million Token Kontext. Für den ...]]></description>
+    </item>
+    <item>
+      <title>Reasons I didn't become an EMT, ranked</title>
+      <link>https://ben.stolovitz.com/posts/reasons-not-emt-ranked/</link>
+      <guid isPermaLink="false">https://ben.stolovitz.com/posts/reasons-not-emt-ranked/</guid>
+      <pubDate>Sat, 03 Oct 2026 20:49:15 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Surely you have ultra-wideband radios on your bins too?</title>
+      <link>https://sjg.io/writing/binrange-have-you-actually-put-the-bins-out/</link>
+      <guid isPermaLink="false">https://sjg.io/writing/binrange-have-you-actually-put-the-bins-out/</guid>
+      <pubDate>Sat, 03 Oct 2026 20:27:44 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>We want you to build the next Git platform on Cloudflare</title>
+      <link>https://blog.cloudflare.com/next-git-platform-on-cloudflare/</link>
+      <guid isPermaLink="false">https://blog.cloudflare.com/next-git-platform-on-cloudflare/</guid>
+      <pubDate>Sat, 03 Oct 2026 19:33:16 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The work by Valve's Timur Kristóf on improving old AMD GPUs on Linux</title>
+      <link>https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU</link>
+      <guid isPermaLink="false">https://www.phoronix.com/news/XDC-2026-Valve-Timur-AMDGPU</guid>
+      <pubDate>Sat, 03 Oct 2026 19:14:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>How to hack time, with C2PA</title>
+      <link>https://www.da.vidbuchanan.co.uk/blog/hacking-time.html</link>
+      <guid isPermaLink="false">https://www.da.vidbuchanan.co.uk/blog/hacking-time.html</guid>
+      <pubDate>Sat, 03 Oct 2026 18:52:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Amazon responds to data center backlash, says it no longer uses NDAs</title>
       <link>https://techcrunch.com/2026/10/03/amazon-responds-to-data-center-backlash-says-it-no-longer-uses-ndas/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3173505</guid>
-      <pubDate>Sat, 03 Oct 2026 18:43:57 +0000</pubDate>
+      <pubDate>Sat, 03 Oct 2026 18:43:57 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The CEO of Amazon Web Services tried to push back against widespread suspicion of data centers.]]></description>
     </item>
     <item>
+      <title>What Meta got right with Muse</title>
+      <link>https://metedata.substack.com/p/what-meta-got-right-with-muse</link>
+      <guid isPermaLink="false">https://metedata.substack.com/p/what-meta-got-right-with-muse</guid>
+      <pubDate>Sat, 03 Oct 2026 18:23:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Hole Punch: Sling your spaceship around gravitational fields</title>
+      <link>https://notoriousbfg.com/hole-punch/</link>
+      <guid isPermaLink="false">https://notoriousbfg.com/hole-punch/</guid>
+      <pubDate>Sat, 03 Oct 2026 18:06:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Treachery in the Rodin Museum 3D scan verdict</title>
+      <link>https://cosmowenman.substack.com/p/rodin-museum-3d-scan-verdict</link>
+      <guid isPermaLink="false">https://cosmowenman.substack.com/p/rodin-museum-3d-scan-verdict</guid>
+      <pubDate>Sat, 03 Oct 2026 18:01:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Top 10: Das beste Gaming-Headset im Test – Razer Testsieger vor Audeze &amp; Hyperx</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-gaming-headset-im-test-razer-testsieger-vor-audeze-und-hyperx/fxcd43c?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag#id-12-11-akko-verge-s-9-ultra</link>
       <guid isPermaLink="false">http://heise.de/-11475015</guid>
-      <pubDate>Sun, 04 Oct 2026 10:57:26 GMT</pubDate>
+      <pubDate>Sat, 03 Oct 2026 18:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein gutes Gaming-Headset sollte die Spielsession bereichern, egal ob bei kompetitiven Shootern oder immersiven Rollenspielen. Wir zeigen die besten Modelle.]]></description>
     </item>
     <item>
+      <title>LeCun has "zero concerns" about AI wiping out humanity, recent "rogue" incidents</title>
+      <link>https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/</link>
+      <guid isPermaLink="false">https://fortune.com/2026/10/01/ai-godfather-yann-lecun-has-zero-concerns-about-human-extinction-says-anthropic-ceo-dario-amodei-is-deuded/</guid>
+      <pubDate>Sat, 03 Oct 2026 17:44:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Agents don't need memory, they need documentation</title>
+      <link>https://liao.gg/blog/agents-dont-need-memory</link>
+      <guid isPermaLink="false">https://liao.gg/blog/agents-dont-need-memory</guid>
+      <pubDate>Sat, 03 Oct 2026 17:03:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>OpenAI safety employee resigns, claiming the company’s ‘culture is broken’</title>
       <link>https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3173499</guid>
-      <pubDate>Sat, 03 Oct 2026 16:30:01 +0000</pubDate>
+      <pubDate>Sat, 03 Oct 2026 16:30:01 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[By his own admission, David Robinson is “something of a cliché”: an employee at a leading AI company who issues a dire warning while resigning from their job.]]></description>
@@ -48,16 +300,34 @@
       <title>Nvidias DGX Spark wird trotz halbiertem RAM teurer</title>
       <link>https://www.heise.de/news/Nvidias-DGX-Spark-wird-trotz-halbiertem-RAM-teurer-11475117.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11475117</guid>
-      <pubDate>Sun, 04 Oct 2026 10:57:26 GMT</pubDate>
+      <pubDate>Sat, 03 Oct 2026 16:02:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein neues Modell der KI-Workstation für lokale KI bringt nur noch 64 GByte RAM mit. Teurer wird es trotzdem.]]></description>
     </item>
     <item>
+      <title>City building games have a Soul Problem pt.2</title>
+      <link>https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2</link>
+      <guid isPermaLink="false">https://www.radical-elements.com/minor-epiphanies/city-building-games-have-a-soul-problem-pt2</guid>
+      <pubDate>Sat, 03 Oct 2026 15:52:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>FTL: A new operating system for clouds</title>
+      <link>https://ftl-os.org/</link>
+      <guid isPermaLink="false">https://ftl-os.org/</guid>
+      <pubDate>Sat, 03 Oct 2026 15:02:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Mähroboter Mammotion Yuka Mini 2 1000 im Test: wendig und präzise mit LiDAR</title>
       <link>https://www.heise.de/bestenlisten/testbericht/maehroboter-mammotion-yuka-mini-2-1000-im-test-wendig-und-praezise-mit-lidar/0lkw2bs?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11474959</guid>
-      <pubDate>Sun, 04 Oct 2026 10:57:26 GMT</pubDate>
+      <pubDate>Sat, 03 Oct 2026 14:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[360-Grad-LiDAR, gute Hinderniserkennung und hohe Wendigkeit: Der Yuka Mini 2 1000 überzeugt im Alltag. An Kanten und bei der Ausdauer zeigt er aber Schwächen.]]></description>
@@ -66,7 +336,7 @@
       <title>All the AI agents that can live in your text messages</title>
       <link>https://techcrunch.com/2026/10/03/all-the-ai-agents-that-can-live-in-your-text-messages/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3173132</guid>
-      <pubDate>Sat, 03 Oct 2026 14:00:00 +0000</pubDate>
+      <pubDate>Sat, 03 Oct 2026 14:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.]]></description>
@@ -75,10 +345,19 @@
       <title>Apple härtet „Full Disk Access“ gegen KI-Agenten</title>
       <link>https://www.heise.de/news/Apple-haertet-Full-Disk-Access-gegen-KI-Agenten-11475083.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11475083</guid>
-      <pubDate>Sun, 04 Oct 2026 10:57:26 GMT</pubDate>
+      <pubDate>Sat, 03 Oct 2026 13:52:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Bevor eine App auf einem Mac künftig alle Dateien einsehen kann, muss der Nutzer das ausdrücklich erlauben. Grund sind KI-Agenten.]]></description>
+    </item>
+    <item>
+      <title>I quit OpenAI because its culture is broken</title>
+      <link>https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA</link>
+      <guid isPermaLink="false">https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/?gift=v5U_UzUTothfWXsPxtvNVAh7esWToMRD6XnbXmc5WgA</guid>
+      <pubDate>Sat, 03 Oct 2026 13:46:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
   </channel>
 </rss>
