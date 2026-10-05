@@ -160,12 +160,22 @@ def apply_custom_styles() -> None:
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(hr) {
         min-height: 1.5px !important;
         overflow: visible !important;
+        margin-bottom: 0.65rem !important;
     }
 
     /* Snug divider directly below sidebar captions (fixes Gap 1: 24h Newsfeed and Last timestamp) */
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.stCaption) + [data-testid="stElementContainer"]:has(hr) hr,
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has([data-testid="stCaptionContainer"]) + [data-testid="stElementContainer"]:has(hr) hr {
         margin-top: 0.15rem !important;
+    }
+
+    /* Sidebar action buttons (e.g. Feeds neu laden, Abmelden): comfortable spacing from dividers */
+    section[data-testid="stSidebar"] .stButton {
+        margin-top: 0.45rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(hr) + [data-testid="stElementContainer"]:has(.stButton) {
+        margin-top: 0.45rem !important;
     }
 
     /* Headings & Section Typography: uniform vertical rhythm */
