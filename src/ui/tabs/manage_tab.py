@@ -14,6 +14,8 @@ import yaml
 import streamlit as st
 
 from src.aggregator import (
+    PROMPT_KEYS,
+    load_sources,
     save_sources,
     add_feed,
     delete_feed,
@@ -21,11 +23,8 @@ from src.aggregator import (
     add_category,
     rename_category,
     delete_category,
-    update_settings,
     test_feed_connection,
-    get_sources_path,
     sync_sources_to_github,
-    get_streamlit_app_url,
     DEFAULT_ARCHIVE_RETENTION_DAYS,
 )
 from src.storage import get_storage
@@ -134,7 +133,6 @@ def render_manage_tab(
             if has_unsaved_changes:
                 if st.button("↩️ Verwerfen", use_container_width=True, key="top_discard_sources_btn"):
                     with st.spinner("Verwerfe ungespeicherte Änderungen..."):
-                        from src.aggregator import load_sources
                         st.session_state["working_sources_config"] = load_sources()
                         st.session_state["has_unsaved_changes"] = False
                         # Lösche alle Formular-Keys im Session State, damit alle Textfelder sofort zurückgesetzt werden
@@ -409,10 +407,8 @@ def render_manage_tab(
             sources_preview = {"categories": working_config.get("categories", [])}
             st.code(yaml.dump(sources_preview, allow_unicode=True, sort_keys=False), language="yaml")
         with tab_set:
-            from src.sources_manager import PROMPT_KEYS
             settings_preview = {k: v for k, v in working_config.get("settings", {}).items() if k not in PROMPT_KEYS}
             st.code(yaml.dump(settings_preview, allow_unicode=True, sort_keys=False), language="yaml")
         with tab_prm:
-            from src.sources_manager import PROMPT_KEYS
             prompts_preview = {k: v for k, v in working_config.get("settings", {}).items() if k in PROMPT_KEYS}
             st.code(yaml.dump(prompts_preview, allow_unicode=True, sort_keys=False), language="yaml")

@@ -85,9 +85,8 @@ def run_pipeline() -> None:
             storage = fallback_storage
 
         # 5. Schritt: Ältere Artikel (> 24h) archivieren und Archiv-Bereinigung (> archive_retention_days)
-        from src.aggregator import load_sources, DEFAULT_ARCHIVE_RETENTION_DAYS
-        sources_cfg = load_sources()
-        settings = sources_cfg.get("settings", {})
+        from src.aggregator import load_settings, DEFAULT_ARCHIVE_RETENTION_DAYS
+        settings = load_settings()
         retention_days_raw = settings.get("archive_retention_days", DEFAULT_ARCHIVE_RETENTION_DAYS)
         try:
             retention_days = int(retention_days_raw) if retention_days_raw is not None else DEFAULT_ARCHIVE_RETENTION_DAYS

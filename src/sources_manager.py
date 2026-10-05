@@ -1,5 +1,5 @@
 """
-Verwaltung von Quellen, Kategorien und Einstellungen (sources.yaml) sowie GitHub- und CDN-Synchronisation.
+Verwaltung von Quellen, Kategorien und Einstellungen (sources.yaml, settings.yaml, prompts.yaml) sowie GitHub- und CDN-Synchronisation.
 """
 
 from __future__ import annotations
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 PROMPT_KEYS: set[str] = {"custom_main_prompt", "custom_prompt_directives"}
 
 
-def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
+def get_streamlit_app_url(config_path: str = "config/settings.yaml") -> str:
     """Helper delegating to summarizer.get_streamlit_app_url."""
     from src.summarizer import get_streamlit_app_url as _get_url
     return _get_url(config_path)
@@ -88,11 +88,11 @@ def get_github_sync_config() -> dict[str, str]:
 def sync_sources_to_github(
     config_dict: dict[str, Any] | None = None,
     config_path: str = "config/sources.yaml",
-    commit_message: str = "chore(config): update sources.yaml and RSS feeds via web dashboard",
+    commit_message: str = "chore(config): update configuration and RSS feeds via web dashboard",
     include_rss_feeds: bool = True
 ) -> dict[str, Any]:
     """
-    Pusht die aktuelle sources.yaml und alle generierten static/rss/*.xml Feeds
+    Pusht die aktuellen Konfigurationsdateien (sources.yaml, settings.yaml, prompts.yaml) und alle generierten static/rss/*.xml Feeds
     direkt per GitHub Git Data API (Trees & Commits) in einem einzigen atomaren Commit.
     Falls die Git Data API fehlschlägt, erfolgt ein Fallback über die Contents API.
     """
@@ -806,14 +806,32 @@ def delete_category(
 
 def update_settings(
     new_settings: dict[str, Any],
-    config_path: str = "config/sources.yaml",
+    config_path: str = "config/settings.yaml",
     config: dict[str, Any] | None = None,
     save_to_disk: bool = True,
 ) -> None:
-    """Aktualisiert den settings-Abschnitt in sources.yaml oder im config-Objekt."""
-    if config is None:
-        config = load_sources(config_path)
-    settings = config.setdefault("settings", {})
-    settings.update(new_settings)
+    """Aktualisiert den settings-Abschnitt in settings.yaml oder im übergebenen config-Objekt."""
+    if config is not None:
+        settings = config.setdefault("settings", {})
+        settings.update(new_settings)
+        if save_to_disk:
+            save_sources(config, config_path)
+        return
+
+    # Wenn kein config-Objekt übergeben wurde: direkt settings.yaml & prompts.yaml aktualisieren
+    settings_data = load_settings(config_path)
+    prompts_path = Path(config_path).parent / "prompts.yaml"
+    prompts_config_arg = str(prompts_path) if prompts_path.exists() else "config/prompts.yaml"
+    prompts_data = load_prompts(prompts_config_arg)
+
+    clean_settings = {k: v for k, v in new_settings.items() if k not in PROMPT_KEYS}
+    prompt_updates = {k: v for k, v in new_settings.items() if k in PROMPT_KEYS}
+
+    settings_data.update(clean_settings)
+    prompts_data.update(prompt_updates)
+
     if save_to_disk:
-        save_sources(config, config_path)
+        save_settings(settings_data, config_path)
+        if prompt_updates:
+            save_prompts(prompts_data, prompts_config_arg)
+

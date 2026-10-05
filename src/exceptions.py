@@ -10,7 +10,7 @@ class NewsAggregatorError(Exception):
 
 
 class ConfigurationError(NewsAggregatorError):
-    """Fehler in der Konfiguration (z. B. ungültige sources.yaml oder fehlende Secrets)."""
+    """Fehler in der Konfiguration (z. B. ungültige YAML-Konfiguration oder fehlende Secrets)."""
     pass
 
 

@@ -6,7 +6,7 @@ orchestriert Filterung, Deduplizierung, paralleles Parsing und Static Feed Expor
 Dieses Modul dient zugleich als abwärtskompatible Fassade für:
 - src.filters: Text-Bereinigung, URL-Kanonisierung, Werbe- und Altersfilter
 - src.feed_fetcher: Raw HTTP-Feed-Download, Typ-Erkennung und Verbindungstests
-- src.sources_manager: sources.yaml Konfiguration, CRUD und GitHub-Synchronisation
+- src.sources_manager: Quellen-, Settings- und Prompts-Konfiguration, CRUD und GitHub-Synchronisation
 - src.police_scraper: Ereignisort- und Teaser-Extraktion für Berliner Polizeimeldungen
 """
 

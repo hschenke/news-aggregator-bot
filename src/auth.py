@@ -3,7 +3,7 @@ import sys
 import time
 import hmac
 import hashlib
-from pathlib import Path
+from typing import Any
 
 AUTH_SALT_READONLY = b"news_bot_readonly_salt_v1"
 AUTH_SALT_ADMIN = b"news_bot_admin_salt_v1"
@@ -17,12 +17,12 @@ ROLE_ADMIN = "admin"
 ROLE_READONLY = "readonly"
 
 
-def get_configured_app_password(config_path: str = "config/sources.yaml") -> str:
+def get_configured_app_password(*_args: Any, **_kwargs: Any) -> str:
     """
     Ermittelt das App-Passwort ausschließlich aus sicheren Secrets:
     1. Umgebungsvariable APP_PASSWORD (.env lokal oder GitHub Actions Secrets)
     2. Streamlit Secrets (st.secrets["APP_PASSWORD"])
-    (Wird niemals im Quelltext oder in sources.yaml gespeichert!)
+    (Wird niemals im Quelltext oder in Konfigurationsdateien gespeichert!)
     """
     env_pw = os.getenv("APP_PASSWORD")
     if env_pw and env_pw.strip():
