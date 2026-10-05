@@ -461,6 +461,7 @@ def render_articles_tab(
     with col_stat_placeholder:
         if displayed_count > 0:
             st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien")
+        else:
             if selected_feed != "Alle Feeds":
                 st.warning(f"Keine Artikel für den Feed '{selected_feed}' gefunden.")
             elif selected_cat != "Alle Kategorien":

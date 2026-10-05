@@ -83,7 +83,7 @@ def render_manage_tab(
 ) -> None:
     """Renders the settings and feed management tab."""
     st.subheader("⚙️ Quellen & Feeds verwalten")
-    st.caption("Kategorien, Feeds und Einstellungen im Arbeitsentwurf verwalten.")
+    st.caption("Kategorien, Feeds und Einstellungen verwalten.")
 
     if not is_admin:
         st.info("🔒 Dieser Bereich erfordert eine Administrator-Anmeldung. Bitte melde dich links in der Leiste an.")
@@ -100,9 +100,9 @@ def render_manage_tab(
         col_st1, col_st2, col_st3 = st.columns([3, 1, 1], vertical_alignment="center")
         with col_st1:
             if has_unsaved_changes:
-                st.warning("⚠️ **Ungespeicherte Änderungen im Entwurf.**")
+                st.warning("⚠️ **Ungespeicherte Änderungen.**")
             else:
-                st.success("✅ **Alle Feeds & Einstellungen sind auf aktuellem Stand.**")
+                st.success("✅ **Alle Feeds & Einstellungen sind aktuell.**")
         with col_st2:
             btn_save_label = "💾 Jetzt sichern" if has_unsaved_changes else "💾 Gespeichert"
             btn_save_disabled = not has_unsaved_changes or bool(st.session_state.get("is_saving_sources", False))
@@ -112,7 +112,7 @@ def render_manage_tab(
                 use_container_width=True,
                 key="top_save_sources_btn",
                 disabled=btn_save_disabled,
-                help="Änderungen in Konfiguration sichern" if has_unsaved_changes else "Alles auf aktuellem Stand.",
+                help="Änderungen sichern" if has_unsaved_changes else "Alles aktuell.",
             ):
                 st.session_state["is_saving_sources"] = True
                 with st.spinner("Sichere Feeds & Einstellungen..."):

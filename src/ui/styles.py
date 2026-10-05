@@ -125,63 +125,71 @@ def apply_custom_styles() -> None:
         max-width: 1250px;
     }
 
-    /* Vertical block flow: balanced gaps */
+    /* Vertical block flow: uniform harmonious gap */
     [data-testid="stVerticalBlock"] {
         gap: 0.55rem !important;
     }
 
-    /* Sidebar vertical flow: balanced spacing without crowding */
+    /* Sidebar vertical flow */
     section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
-        gap: 0.45rem !important;
+        gap: 0.5rem !important;
     }
 
     /* Divider rules: visible, balanced dividers */
     hr, [data-testid="stDivider"], .stMarkdown hr {
-        margin-top: 0.55rem !important;
-        margin-bottom: 0.55rem !important;
+        margin-top: 0.65rem !important;
+        margin-bottom: 0.65rem !important;
         border: none !important;
-        border-top: 1px solid rgba(128, 128, 128, 0.3) !important;
+        border-top: 1px solid rgba(100, 116, 139, 0.35) !important;
     }
 
+    /* Sidebar dividers: crisp, unmistakably visible with balanced breathing room */
     section[data-testid="stSidebar"] hr,
     section[data-testid="stSidebar"] [data-testid="stDivider"],
+    section[data-testid="stSidebar"] [data-testid="stDivider"] hr,
     section[data-testid="stSidebar"] .stMarkdown hr {
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
+        margin-top: 0.85rem !important;
+        margin-bottom: 0.85rem !important;
         border: none !important;
-        border-top: 1px solid rgba(128, 128, 128, 0.35) !important;
+        border-top: 1.5px solid rgba(100, 116, 139, 0.55) !important;
         display: block !important;
         width: 100% !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(hr) {
+        min-height: 1.5px !important;
+        overflow: visible !important;
     }
 
-    /* Headings & Section Typography */
+    /* Headings & Section Typography: uniform vertical rhythm */
     h1 {
         margin-top: 0 !important;
-        margin-bottom: 0.15rem !important;
+        margin-bottom: 0.2rem !important;
         line-height: 1.2 !important;
         padding: 0 !important;
     }
     h2, .stSubheader {
-        margin-top: 0.4rem !important;
+        margin-top: 0.35rem !important;
         margin-bottom: 0.25rem !important;
         padding: 0 !important;
     }
     h3, .stMarkdown h3 {
-        margin-top: 1.1rem !important;
-        margin-bottom: 0.45rem !important;
+        margin-top: 1.0rem !important;
+        margin-bottom: 0.4rem !important;
         padding: 0 !important;
     }
     h4, h5, h6 {
-        margin-top: 0.4rem !important;
+        margin-top: 0.35rem !important;
         margin-bottom: 0.25rem !important;
         padding: 0 !important;
     }
 
-    /* Captions: tight paragraph margins to prevent vertical drifting */
+    /* Captions: consistent, uniform margins */
     .stCaption, [data-testid="stCaptionContainer"] {
-        margin-top: 0.1rem !important;
-        margin-bottom: 0.2rem !important;
-        line-height: 1.3 !important;
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.25rem !important;
+        line-height: 1.35 !important;
     }
     .stCaption p, [data-testid="stCaptionContainer"] p {
         margin-top: 0 !important;
@@ -190,35 +198,23 @@ def apply_custom_styles() -> None:
 
     section[data-testid="stSidebar"] .stCaption,
     section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
-        margin-top: 0.1rem !important;
-        margin-bottom: 0.1rem !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
     }
     section[data-testid="stSidebar"] .stCaption p {
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* Main header: close gap between title, caption and tabs */
-    .block-container [data-testid="stElementContainer"]:has(h1) {
-        margin-bottom: 0 !important;
-    }
-    .block-container [data-testid="stElementContainer"]:has(.stCaption) {
-        margin-top: 0 !important;
-        margin-bottom: 0 !important;
-    }
-    .block-container [data-testid="stElementContainer"]:has(.stTabs) {
-        margin-top: 0.1rem !important;
-    }
-
-    /* Streamlit tabs */
+    /* Streamlit tabs & panels: uniform spacing above and below tab bar */
     .stTabs {
-        margin-top: 0.15rem !important;
+        margin-top: 0.45rem !important;
     }
     .stTabs [data-baseweb="tab-list"] {
-        gap: 0.4rem !important;
+        gap: 0.45rem !important;
         margin-top: 0 !important;
-        margin-bottom: 0.65rem !important;
-        padding-top: 0 !important;
+        margin-bottom: 0.45rem !important;
+        padding: 0 !important;
     }
     .stTabs [data-baseweb="tab"] {
         font-size: 0.95rem;
@@ -226,22 +222,34 @@ def apply_custom_styles() -> None:
         padding: 0.45rem 0.9rem;
         border-radius: 0.375rem;
     }
+    [data-baseweb="tab-panel"],
+    [data-testid="stTabContent"] {
+        padding-top: 0.35rem !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    [data-baseweb="tab-panel"] h2,
+    [data-baseweb="tab-panel"] .stSubheader {
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.25rem !important;
+    }
 
     /* Compact alerts */
     [data-testid="stAlert"] {
         padding: 0.5rem 0.8rem !important;
-        margin-top: 0.15rem !important;
-        margin-bottom: 0.15rem !important;
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.2rem !important;
     }
     [data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
         margin: 0 !important;
         line-height: 1.35 !important;
     }
 
-    /* Expander spacing: comfortable separation so cards don't look glued together */
+    /* Expander spacing: uniform comfortable separation */
     [data-testid="stExpander"] {
         margin-top: 0.35rem !important;
-        margin-bottom: 0.65rem !important;
+        margin-bottom: 0.6rem !important;
         border-radius: 0.5rem !important;
     }
     [data-testid="stExpander"] details summary {
@@ -250,10 +258,8 @@ def apply_custom_styles() -> None:
     [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
         padding: 0.65rem 0.85rem !important;
     }
-
-    /* Expander inner caption & label tightening (fixes gap in KI Prompt configuration) */
     [data-testid="stExpanderDetails"] [data-testid="stVerticalBlock"] {
-        gap: 0.35rem !important;
+        gap: 0.4rem !important;
     }
     [data-testid="stExpanderDetails"] .stCaption {
         margin-top: 0 !important;
@@ -277,7 +283,7 @@ def apply_custom_styles() -> None:
     /* Bordered containers (Status box, Feed cards) */
     [data-testid="stVerticalBlockBorderWrapper"] {
         margin-top: 0.35rem !important;
-        margin-bottom: 0.75rem !important;
+        margin-bottom: 0.65rem !important;
         padding: 0.65rem 0.85rem !important;
     }
 
@@ -497,8 +503,8 @@ def apply_custom_styles() -> None:
         display: flex !important;
         flex-direction: column !important;
         gap: 0.45rem !important;
-        margin-top: 0.25rem !important;
-        margin-bottom: 0.25rem !important;
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
         width: 100% !important;
     }
     .custom-nav-btn {
@@ -544,16 +550,6 @@ def apply_custom_styles() -> None:
         background-color: transparent !important;
     }
 
-    /* Streamlit tabs */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 0.5rem;
-    }
-    .stTabs [data-baseweb="tab"] {
-        font-size: 0.95rem;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-    }
 
     /* KPI chips */
     .kpi-container {

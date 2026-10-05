@@ -52,11 +52,13 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("background-color: rgba(128, 128, 128, 0.1);", self.styles_py)
 
     def test_articles_tab_alphabetical_and_oldest_first(self) -> None:
-        """Articles tab must sort categories alphabetically and articles oldest first, with clean caption."""
+        """Articles tab must sort categories alphabetically and articles oldest first, with clean caption and no spurious warning."""
         self.assertIn("sorted(news_data.keys(), key=lambda x: x.strip().lower())", self.articles_tab_py)
         self.assertIn("reverse=False", self.articles_tab_py)
         self.assertIn('st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien")', self.articles_tab_py)
         self.assertNotIn("der letzten 24 Stunden", self.articles_tab_py)
+        # Ensure warnings are strictly rendered in an else-branch when displayed_count is 0
+        self.assertIn("if displayed_count > 0:\n            st.caption(f\"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien\")\n        else:", self.articles_tab_py)
 
     def test_ki_tab_models_prompts_and_state(self) -> None:
         """KI tab must support Gemini 3.8-3.5 models with 3.5-flash-lite default, prompt editing, and disabled button."""
@@ -67,8 +69,8 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("input_ki_main_prompt", self.ki_tab_py)
         self.assertIn("input_ki_prompt_directives", self.ki_tab_py)
         self.assertIn("disabled=is_generating", self.ki_tab_py)
-        # Tailored admin message
-        self.assertIn("Klicke oben auf 'Neues Briefing generieren'", self.ki_tab_py)
+        # Concise briefing message
+        self.assertIn("Aktuell nichts neues generiert.", self.ki_tab_py)
 
     def test_manage_tab_no_purge_and_disabled_save_when_no_changes(self) -> None:
         """Manage tab must not have purge block, and save button must be disabled when no changes."""
@@ -149,7 +151,7 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn('st.title("📰 Daily News", anchor=False)', self.webapp_py)
         self.assertIn("🕒 Stand:", self.webapp_py)
         self.assertIn("Artikel verfügbar", self.webapp_py)
-        self.assertIn("🕒 Letzte Aktualisierung:", self.webapp_py)
+        self.assertIn("🕒 Last:", self.webapp_py)
         self.assertNotIn("frisch", self.webapp_py)
         self.assertNotIn("frisch", self.styles_py)
 
@@ -171,10 +173,10 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         """Verifies balanced CSS rules, divider spacing, and concise status texts without '(gespeichert)'."""
         # CSS rules for balanced spacing
         self.assertIn('hr, [data-testid="stDivider"], .stMarkdown hr', self.styles_py)
-        self.assertIn('margin-top: 0.55rem !important;', self.styles_py)
-        self.assertIn('margin-bottom: 0.55rem !important;', self.styles_py)
+        self.assertIn('margin-top: 0.65rem !important;', self.styles_py)
+        self.assertIn('margin-bottom: 0.65rem !important;', self.styles_py)
         self.assertIn('section[data-testid="stSidebar"] [data-testid="stVerticalBlock"]', self.styles_py)
-        self.assertIn('gap: 0.45rem !important;', self.styles_py)
+        self.assertIn('gap: 0.5rem !important;', self.styles_py)
         self.assertIn('[data-testid="stAlert"]', self.styles_py)
         self.assertIn('padding: 0.5rem 0.8rem !important;', self.styles_py)
 
@@ -183,10 +185,10 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn('st.sidebar.markdown("---")', self.webapp_py)
 
         # Concise text in manage_tab
-        self.assertIn("Alle Feeds & Einstellungen sind auf aktuellem Stand.", self.manage_tab_py)
+        self.assertIn("Alle Feeds & Einstellungen sind aktuell.", self.manage_tab_py)
         self.assertNotIn("(gespeichert)", self.manage_tab_py)
-        self.assertIn("Ungespeicherte Änderungen im Entwurf.", self.manage_tab_py)
-        self.assertIn("Kategorien, Feeds und Einstellungen im Arbeitsentwurf verwalten.", self.manage_tab_py)
+        self.assertIn("Ungespeicherte Änderungen.", self.manage_tab_py)
+        self.assertIn("Kategorien, Feeds und Einstellungen verwalten.", self.manage_tab_py)
 
         # Concise text in feedly_tab
         self.assertIn("RSS 2.0 XML-Feeds für Feedly, Inoreader und alle Newsreader.", self.feedly_tab_py)

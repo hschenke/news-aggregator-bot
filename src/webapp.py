@@ -385,7 +385,7 @@ if is_admin:
     sidebar_sync_ts = get_effective_last_update_ts(news_data)
     formatted_sidebar_sync = format_local_dt(sidebar_sync_ts) if sidebar_sync_ts else ""
     if formatted_sidebar_sync:
-        st.sidebar.caption(f"🕒 Letzte Aktualisierung: {formatted_sidebar_sync}")
+        st.sidebar.caption(f"🕒 Last: {formatted_sidebar_sync}")
 
 # Sidebar Auth Bereich (Login / Logout)
 render_sidebar_auth(is_admin)

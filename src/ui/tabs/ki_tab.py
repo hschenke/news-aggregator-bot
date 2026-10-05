@@ -189,13 +189,4 @@ def render_ki_tab(
         st.markdown("---")
         st.markdown(current_briefing, unsafe_allow_html=True)
     else:
-        if is_admin:
-            st.info(
-                "Aktuell liegt noch kein generiertes Briefing vor. "
-                "Klicke oben auf 'Neues Briefing generieren', um ein Briefing mit Gemini zu erstellen."
-            )
-        else:
-            st.info(
-                "Aktuell liegt noch kein generiertes Briefing vor. "
-                "Melde dich als Administrator an, um ein Briefing mit Gemini zu generieren."
-            )
+        st.info("Aktuell nichts neues generiert.")
