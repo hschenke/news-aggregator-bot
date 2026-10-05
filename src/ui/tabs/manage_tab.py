@@ -382,7 +382,6 @@ def render_manage_tab(
             )
             style_val = st.text_input("Zusammenfassungs-Stil:", value=settings.get("summary_style", "tldr"), key="inp_set_style")
 
-        st.markdown("##### 🛡️ Werbe- und Spamfilter")
         filter_ads_val = st.checkbox(
             "Werbefilter aktiv (Werbung, Advertorials und Deals automatisch ausfiltern)",
             value=bool(settings.get("filter_ads", True)),

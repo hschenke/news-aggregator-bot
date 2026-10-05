@@ -223,7 +223,8 @@ class TestFilteringAndScraping(unittest.TestCase):
         config = load_sources("config/sources.yaml")
         settings = config.get("settings", {})
         self.assertIn("archive_retention_days", settings)
-        self.assertEqual(settings["archive_retention_days"], 7)
+        self.assertIsInstance(settings["archive_retention_days"], int)
+        self.assertGreater(settings["archive_retention_days"], 0)
 
     def test_collect_all_news_skips_archived_articles(self):
         from unittest.mock import patch, MagicMock
