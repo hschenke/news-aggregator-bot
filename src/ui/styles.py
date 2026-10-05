@@ -132,7 +132,7 @@ def apply_custom_styles() -> None:
 
     /* Sidebar vertical flow */
     section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
-        gap: 0.5rem !important;
+        gap: 0.45rem !important;
     }
 
     /* Divider rules: visible, balanced dividers */
@@ -148,8 +148,8 @@ def apply_custom_styles() -> None:
     section[data-testid="stSidebar"] [data-testid="stDivider"],
     section[data-testid="stSidebar"] [data-testid="stDivider"] hr,
     section[data-testid="stSidebar"] .stMarkdown hr {
-        margin-top: 0.85rem !important;
-        margin-bottom: 0.85rem !important;
+        margin-top: 0.45rem !important;
+        margin-bottom: 0.65rem !important;
         border: none !important;
         border-top: 1.5px solid rgba(100, 116, 139, 0.55) !important;
         display: block !important;
@@ -162,10 +162,16 @@ def apply_custom_styles() -> None:
         overflow: visible !important;
     }
 
+    /* Snug divider directly below sidebar captions (fixes Gap 1: 24h Newsfeed and Last timestamp) */
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.stCaption) + [data-testid="stElementContainer"]:has(hr) hr,
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has([data-testid="stCaptionContainer"]) + [data-testid="stElementContainer"]:has(hr) hr {
+        margin-top: 0.15rem !important;
+    }
+
     /* Headings & Section Typography: uniform vertical rhythm */
     h1 {
         margin-top: 0 !important;
-        margin-bottom: 0.2rem !important;
+        margin-bottom: 0.15rem !important;
         line-height: 1.2 !important;
         padding: 0 !important;
     }
@@ -187,8 +193,8 @@ def apply_custom_styles() -> None:
 
     /* Captions: consistent, uniform margins */
     .stCaption, [data-testid="stCaptionContainer"] {
-        margin-top: 0.15rem !important;
-        margin-bottom: 0.25rem !important;
+        margin-top: 0.1rem !important;
+        margin-bottom: 0.05rem !important;
         line-height: 1.35 !important;
     }
     .stCaption p, [data-testid="stCaptionContainer"] p {
@@ -198,40 +204,71 @@ def apply_custom_styles() -> None:
 
     section[data-testid="stSidebar"] .stCaption,
     section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
-        margin-top: 0.25rem !important;
-        margin-bottom: 0.25rem !important;
+        margin-top: 0.1rem !important;
+        margin-bottom: 0 !important;
     }
     section[data-testid="stSidebar"] .stCaption p {
         margin: 0 !important;
         padding: 0 !important;
     }
 
-    /* Streamlit tabs & panels: uniform spacing above and below tab bar */
-    .stTabs {
-        margin-top: 0.45rem !important;
+    /* Gap 2: close excessive whitespace between Stand caption and tabs nav */
+    .block-container [data-testid="stElementContainer"]:has(.stCaption) {
+        margin-bottom: 0 !important;
     }
-    .stTabs [data-baseweb="tab-list"] {
+    .block-container [data-testid="stElementContainer"]:has(.stTabs) {
+        margin-top: -0.15rem !important;
+    }
+
+    /* Streamlit tabs & panels: tight, uniform spacing above and below tab bar */
+    .stTabs, [data-testid="stTabs"] {
+        margin-top: 0 !important;
+    }
+    .stTabs [role="tablist"],
+    .stTabs [data-baseweb="tab-list"],
+    [data-testid="stTabs"] [role="tablist"],
+    [data-testid="stTabs"] [data-baseweb="tab-list"] {
         gap: 0.45rem !important;
         margin-top: 0 !important;
-        margin-bottom: 0.45rem !important;
-        padding: 0 !important;
+        margin-bottom: 0.15rem !important;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
     }
-    .stTabs [data-baseweb="tab"] {
+    .stTabs [data-baseweb="tab"],
+    [data-testid="stTab"] {
         font-size: 0.95rem;
         font-weight: 500;
         padding: 0.45rem 0.9rem;
         border-radius: 0.375rem;
     }
+
+    /* Gap 3: Eliminate Streamlit 24px paddingTop on tab panels below the nav divider */
+    [data-testid="stTabPanel"],
+    .react-aria-TabPanel,
+    [role="tabpanel"],
     [data-baseweb="tab-panel"],
     [data-testid="stTabContent"] {
-        padding-top: 0.35rem !important;
+        padding-top: 0.15rem !important;
         padding-bottom: 0 !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
+        margin-top: 0 !important;
     }
-    [data-baseweb="tab-panel"] h2,
-    [data-baseweb="tab-panel"] .stSubheader {
-        margin-top: 0.2rem !important;
+    [data-testid="stTabPanel"] > div > [data-testid="stVerticalBlock"],
+    [role="tabpanel"] > div > [data-testid="stVerticalBlock"] {
+        gap: 0.45rem !important;
+    }
+    [data-testid="stTabPanel"] h2,
+    [data-testid="stTabPanel"] .stSubheader,
+    [role="tabpanel"] h2,
+    [role="tabpanel"] .stSubheader {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.2rem !important;
+        padding-top: 0 !important;
+    }
+    [data-testid="stTabPanel"] .stCaption,
+    [role="tabpanel"] .stCaption {
+        margin-top: 0 !important;
         margin-bottom: 0.25rem !important;
     }
 

@@ -176,7 +176,7 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn('margin-top: 0.65rem !important;', self.styles_py)
         self.assertIn('margin-bottom: 0.65rem !important;', self.styles_py)
         self.assertIn('section[data-testid="stSidebar"] [data-testid="stVerticalBlock"]', self.styles_py)
-        self.assertIn('gap: 0.5rem !important;', self.styles_py)
+        self.assertIn('gap: 0.45rem !important;', self.styles_py)
         self.assertIn('[data-testid="stAlert"]', self.styles_py)
         self.assertIn('padding: 0.5rem 0.8rem !important;', self.styles_py)
 
