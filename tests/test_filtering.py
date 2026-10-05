@@ -258,22 +258,24 @@ class TestFilteringAndScraping(unittest.TestCase):
                     self.assertIn("https://example.com/brand-new", cat_links)
 
     def test_all_ai_teaser_cleanup_and_ingestion(self):
+        from datetime import datetime, timezone
         from unittest.mock import patch
         from src.aggregator import fetch_feed_items
 
-        mock_xml = b"""<?xml version="1.0" encoding="UTF-8"?>
+        now_str = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S +0000")
+        mock_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
         <rss version="2.0">
           <channel>
             <title>all-ai.de - KI-News</title>
             <item>
               <title>Google Gemini: Nur noch ein Modell f&#252;r Gratis-Nutzer</title>
               <link>https://www.all-ai.de/news/gemini-gratis</link>
-              <pubDate>Sun, 04 Oct 2026 10:15:18 +0200</pubDate>
+              <pubDate>{now_str}</pubDate>
               <description><![CDATA[<p><img src="img.webp"/></p> GPT-Images-2.0 Kurzfassung &#9662; Quellen &#9662; Ohne Abo bleibt ab Oktober nur noch Flash verf&#252;gbar. Weitere Details im Test. + Quelle: Google Anzeige]]></description>
             </item>
           </channel>
         </rss>
-        """
+        """.encode("utf-8")
 
         with patch("src.aggregator.fetch_feed_raw", return_value={"success": True, "content": mock_xml}):
             items = fetch_feed_items("https://www.all-ai.de/rss", max_age_hours=24.0)
