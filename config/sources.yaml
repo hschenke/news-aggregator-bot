@@ -1,45 +1,45 @@
 categories:
-  - name: Berlin
-    feeds:
-      - name: Mahlsdorf
-        url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
-      - name: Polizeimeldungen Berlin
-        url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
-      - name: Rbb Sport
-        url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
-  - name: Finanzen & Coins
-    feeds:
-      - name: Investing de
-        url: https://de.investing.com/rss/news_301.rss
-  - name: Fun
-    feeds:
-      - name: debeste.de
-        url: https://debeste.de/rss-main
-      - name: Witz des Tages
-        url: https://www.hahaha.de/witze/witzdestages.xml
-  - name: Fußball
-    feeds:
-      - name: Hertha Alert
-        url: https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655
-      - name: Transfermarkt
-        url: https://www.transfermarkt.de/rss/news
-  - name: Games
-    feeds:
-      - name: Might & Magic Alert
-        url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
-      - name: RPG-Watch
-        url: https://rpgwatch.com/files/rss1.xml
-  - name: Tech & AI
-    feeds:
-      - name: AI News
-        url: https://www.all-ai.de/component/jmap/sitemap/rss?format=rss
-      - name: Hacker News (Top)
-        url: https://news.ycombinator.com/rss
-      - name: Heise Online News
-        url: https://www.heise.de/rss/heise-atom.xml
-        exclude_keywords:
-          - heise+
-      - name: Huggingface
-        url: https://huggingface.co/blog/feed.xml
-      - name: TechCrunch AI
-        url: https://techcrunch.com/category/artificial-intelligence/feed/
+- name: Berlin
+  feeds:
+  - name: Mahlsdorf
+    url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
+  - name: Polizeimeldungen Berlin
+    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+  - name: Rbb Sport
+    url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
+- name: Finanzen & Coins
+  feeds:
+  - name: Investing de
+    url: https://de.investing.com/rss/news_301.rss
+- name: Fun
+  feeds:
+  - name: debeste.de
+    url: https://debeste.de/rss-main
+  - name: Witz des Tages
+    url: https://www.hahaha.de/witze/witzdestages.xml
+- name: Fußball
+  feeds:
+  - name: Hertha Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655
+  - name: Transfermarkt
+    url: https://www.transfermarkt.de/rss/news
+- name: Games
+  feeds:
+  - name: Might & Magic Alert
+    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
+  - name: RPG-Watch
+    url: https://rpgwatch.com/files/rss1.xml
+- name: Tech & AI
+  feeds:
+  - name: AI News
+    url: https://www.all-ai.de/component/jmap/sitemap/rss?format=rss
+  - name: Hacker News (Top)
+    url: https://news.ycombinator.com/rss
+  - name: Heise Online News
+    url: https://www.heise.de/rss/heise-atom.xml
+    exclude_keywords:
+    - heise+
+  - name: Huggingface
+    url: https://huggingface.co/blog/feed.xml
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/

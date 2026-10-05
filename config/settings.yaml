@@ -1,15 +1,15 @@
 language: de
 summary_style: tldr
 streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app
-archive_retention_days: 7
+archive_retention_days: 8
 filter_ads: true
 ad_keywords:
-  - heise-angebot
-  - anzeige
-  - werbung
-  - sponsored
-  - gesponsert
-  - advertorial
-  - partnerangebot
-  - deal des tages
-  - rabatt-aktion
+- heise-angebot
+- anzeige
+- werbung
+- sponsored
+- gesponsert
+- advertorial
+- partnerangebot
+- deal des tages
+- rabatt-aktion
