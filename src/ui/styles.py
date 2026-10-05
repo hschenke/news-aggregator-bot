@@ -148,8 +148,8 @@ def apply_custom_styles() -> None:
     section[data-testid="stSidebar"] [data-testid="stDivider"],
     section[data-testid="stSidebar"] [data-testid="stDivider"] hr,
     section[data-testid="stSidebar"] .stMarkdown hr {
-        margin-top: 0.45rem !important;
-        margin-bottom: 0.65rem !important;
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.35rem !important;
         border: none !important;
         border-top: 1.5px solid rgba(100, 116, 139, 0.55) !important;
         display: block !important;
@@ -160,22 +160,32 @@ def apply_custom_styles() -> None:
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(hr) {
         min-height: 1.5px !important;
         overflow: visible !important;
-        margin-bottom: 0.65rem !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.35rem !important;
+    }
+
+    /* Divider directly below custom navigation (Feedly button): balanced breathing room */
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.custom-nav-container) + [data-testid="stElementContainer"]:has(hr) {
+        margin-top: 0.45rem !important;
     }
 
     /* Snug divider directly below sidebar captions (fixes Gap 1: 24h Newsfeed and Last timestamp) */
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.stCaption) + [data-testid="stElementContainer"]:has(hr),
+    section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has([data-testid="stCaptionContainer"]) + [data-testid="stElementContainer"]:has(hr) {
+        margin-top: 0.15rem !important;
+    }
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(.stCaption) + [data-testid="stElementContainer"]:has(hr) hr,
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has([data-testid="stCaptionContainer"]) + [data-testid="stElementContainer"]:has(hr) hr {
         margin-top: 0.15rem !important;
     }
 
-    /* Sidebar action buttons (e.g. Feeds neu laden, Abmelden): comfortable spacing from dividers */
+    /* Sidebar action buttons (e.g. Feeds neu laden, Abmelden): balanced spacing from dividers */
     section[data-testid="stSidebar"] .stButton {
-        margin-top: 0.45rem !important;
-        margin-bottom: 0.25rem !important;
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.15rem !important;
     }
     section[data-testid="stSidebar"] [data-testid="stElementContainer"]:has(hr) + [data-testid="stElementContainer"]:has(.stButton) {
-        margin-top: 0.45rem !important;
+        margin-top: 0.35rem !important;
     }
 
     /* Headings & Section Typography: uniform vertical rhythm */
@@ -551,8 +561,11 @@ def apply_custom_styles() -> None:
         flex-direction: column !important;
         gap: 0.45rem !important;
         margin-top: 0.35rem !important;
-        margin-bottom: 0.35rem !important;
+        margin-bottom: 0.65rem !important;
         width: 100% !important;
+    }
+    .custom-nav-container .custom-nav-btn:last-child {
+        margin-bottom: 0.25rem !important;
     }
     .custom-nav-btn {
         display: inline-flex !important;
