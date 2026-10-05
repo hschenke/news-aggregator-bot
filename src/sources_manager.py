@@ -18,6 +18,9 @@ from src.filters import normalize_keywords
 logger = logging.getLogger(__name__)
 
 
+PROMPT_KEYS: set[str] = {"custom_main_prompt", "custom_prompt_directives"}
+
+
 def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     """Helper delegating to summarizer.get_streamlit_app_url."""
     from src.summarizer import get_streamlit_app_url as _get_url
@@ -26,6 +29,26 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
 
 def get_sources_path(config_path: str = "config/sources.yaml") -> Path:
     """Ermittelt den absoluten Pfad zur sources.yaml-Datei."""
+    path = Path(config_path)
+    if not path.is_absolute():
+        root_path = Path(__file__).resolve().parent.parent / config_path
+        if root_path.exists() or not path.exists():
+            return root_path
+    return path
+
+
+def get_settings_path(config_path: str = "config/settings.yaml") -> Path:
+    """Ermittelt den absoluten Pfad zur settings.yaml-Datei."""
+    path = Path(config_path)
+    if not path.is_absolute():
+        root_path = Path(__file__).resolve().parent.parent / config_path
+        if root_path.exists() or not path.exists():
+            return root_path
+    return path
+
+
+def get_prompts_path(config_path: str = "config/prompts.yaml") -> Path:
+    """Ermittelt den absoluten Pfad zur prompts.yaml-Datei."""
     path = Path(config_path)
     if not path.is_absolute():
         root_path = Path(__file__).resolve().parent.parent / config_path
@@ -88,11 +111,13 @@ def sync_sources_to_github(
 
     try:
         if config_dict is not None:
-            yaml_content = yaml.dump(config_dict, allow_unicode=True, sort_keys=False, default_flow_style=False)
-        else:
-            file_path = get_sources_path(config_path)
-            with open(file_path, "r", encoding="utf-8") as f:
-                yaml_content = f.read()
+            save_sources(config_dict, config_path=config_path, sync_github=False)
+
+        config_files_to_sync = [
+            ("config/sources.yaml", get_sources_path(config_path)),
+            ("config/settings.yaml", get_settings_path()),
+            ("config/prompts.yaml", get_prompts_path()),
+        ]
 
         # 1. Versuch: Atomarer Multi-File-Push via Git Data API (Trees & Commits)
         if include_rss_feeds:
@@ -103,12 +128,15 @@ def sync_sources_to_github(
                     commit_info_res = requests.get(f"https://api.github.com/repos/{repo}/git/commits/{latest_commit_sha}", headers=headers, timeout=8)
                     base_tree_sha = commit_info_res.json().get("tree", {}).get("sha")
 
-                    tree_elements = [{
-                        "path": "config/sources.yaml",
-                        "mode": "100644",
-                        "type": "blob",
-                        "content": yaml_content
-                    }]
+                    tree_elements: list[dict[str, Any]] = []
+                    for rel_p, abs_p in config_files_to_sync:
+                        if abs_p.exists():
+                            tree_elements.append({
+                                "path": rel_p,
+                                "mode": "100644",
+                                "type": "blob",
+                                "content": abs_p.read_text(encoding="utf-8")
+                            })
 
                     from src.rss_generator import get_static_rss_dir
                     rss_dir = get_static_rss_dir()
@@ -164,36 +192,40 @@ def sync_sources_to_github(
             except Exception as e_tree:
                 logger.warning("Git Data API Multi-File-Push fehlgeschlagen, wechsle zu Contents API Fallback: %s", e_tree)
 
-        # 2. Fallback: Nur sources.yaml via Contents API
-        get_res = requests.get(
-            f"https://api.github.com/repos/{repo}/contents/config/sources.yaml?ref={branch}",
-            headers=headers,
-            timeout=8
-        )
-        current_sha = None
-        if get_res.status_code == 200:
-            current_sha = get_res.json().get("sha")
-
+        # 2. Fallback: Konfigurationsdateien via Contents API aktualisieren
         import base64
-        payload: dict[str, Any] = {
-            "message": commit_message,
-            "content": base64.b64encode(yaml_content.encode("utf-8")).decode("utf-8"),
-            "branch": branch,
-        }
-        if current_sha:
-            payload["sha"] = current_sha
+        last_sha = None
+        for rel_p, abs_p in config_files_to_sync:
+            if not abs_p.exists():
+                continue
+            get_res = requests.get(
+                f"https://api.github.com/repos/{repo}/contents/{rel_p}?ref={branch}",
+                headers=headers,
+                timeout=8
+            )
+            current_sha = get_res.json().get("sha") if get_res.status_code == 200 else None
+            content_b64 = base64.b64encode(abs_p.read_bytes()).decode("utf-8")
+            payload: dict[str, Any] = {
+                "message": commit_message,
+                "content": content_b64,
+                "branch": branch,
+            }
+            if current_sha:
+                payload["sha"] = current_sha
 
-        put_res = requests.put(
-            f"https://api.github.com/repos/{repo}/contents/config/sources.yaml",
-            headers=headers,
-            json=payload,
-            timeout=10
-        )
-        if put_res.status_code in [200, 201]:
+            put_res = requests.put(
+                f"https://api.github.com/repos/{repo}/contents/{rel_p}",
+                headers=headers,
+                json=payload,
+                timeout=10
+            )
+            if put_res.status_code in [200, 201]:
+                last_sha = put_res.json().get("commit", {}).get("sha")
+
+        if last_sha:
             purge_res = purge_jsdelivr_cache()
-            return {"success": True, "commit_sha": put_res.json().get("commit", {}).get("sha"), "method": "contents_api", "jsdelivr_purge": purge_res}
-        else:
-            return {"success": False, "error": f"GitHub API Fehler {put_res.status_code}: {put_res.text}"}
+            return {"success": True, "commit_sha": last_sha, "method": "contents_api", "jsdelivr_purge": purge_res}
+        return {"success": False, "error": "Fehler beim Aktualisieren der Konfigurationsdateien via Contents API"}
 
     except Exception as exc:
         return {"success": False, "error": str(exc)}
@@ -329,23 +361,104 @@ def reconcile_prompt_templates(config: dict[str, Any]) -> bool:
     return changed
 
 
-def load_sources(config_path: str = "config/sources.yaml", auto_reconcile: bool = True) -> dict[str, Any]:
-    """Lädt die Konfiguration aus sources.yaml, garantiert alphabetische Kategoriensortierung
-    und gleicht Prompt-Vorlagen bei Bedarf 1:1 mit den Code-Standards ab."""
+def load_prompts(config_path: str = "config/prompts.yaml") -> dict[str, Any]:
+    """Lädt die KI-Prompt-Konfiguration aus config/prompts.yaml."""
+    path = get_prompts_path(config_path)
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    return data if isinstance(data, dict) else {}
+
+
+def save_prompts(
+    prompts: dict[str, Any],
+    config_path: str = "config/prompts.yaml",
+    sync_github: bool = False,
+) -> dict[str, Any]:
+    """Speichert Prompts persistent in config/prompts.yaml."""
+    path = get_prompts_path(config_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        yaml.dump(prompts, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    gh_res = {"success": False, "error": "Kein Token"}
+    if sync_github:
+        gh_res = sync_sources_to_github()
+    return gh_res
+
+
+def load_settings(config_path: str = "config/settings.yaml") -> dict[str, Any]:
+    """Lädt die allgemeinen Anwendungseinstellungen aus config/settings.yaml."""
+    path = get_settings_path(config_path)
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    if isinstance(data, dict) and "settings" in data and isinstance(data["settings"], dict):
+        return data["settings"]
+    return data if isinstance(data, dict) else {}
+
+
+def save_settings(
+    settings: dict[str, Any],
+    config_path: str = "config/settings.yaml",
+    sync_github: bool = False,
+) -> dict[str, Any]:
+    """Speichert globale Einstellungen persistent in config/settings.yaml (ohne Prompt-Keys)."""
+    clean_settings = {k: v for k, v in settings.items() if k not in PROMPT_KEYS}
+    path = get_settings_path(config_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        yaml.dump(clean_settings, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    gh_res = {"success": False, "error": "Kein Token"}
+    if sync_github:
+        gh_res = sync_sources_to_github()
+    return gh_res
+
+
+def load_sources_raw(config_path: str = "config/sources.yaml") -> dict[str, Any]:
+    """Lädt ausschließlich die Kategorien und Feeds aus config/sources.yaml."""
     path = get_sources_path(config_path)
     if not path.exists():
         raise FileNotFoundError(f"Konfigurationsdatei {path} nicht gefunden.")
     with open(path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
+    if not isinstance(data, dict):
+        data = {}
     if "categories" not in data:
         data["categories"] = []
-    if "settings" not in data:
-        data["settings"] = {}
-
     data["categories"].sort(key=lambda c: c.get("name", "").strip().lower())
     for cat in data["categories"]:
         for f in cat.get("feeds", []):
             f.pop("max_items", None)
+    return data
+
+
+def load_sources(config_path: str = "config/sources.yaml", auto_reconcile: bool = True) -> dict[str, Any]:
+    """Lädt die Quellenkonfiguration aus sources.yaml, ergänzt um Einstellungen aus settings.yaml
+    und Prompts aus prompts.yaml für nahtlose Abwärtskompatibilität."""
+    data = load_sources_raw(config_path)
+
+    path = get_sources_path(config_path)
+    settings_file = path.parent / "settings.yaml"
+    prompts_file = path.parent / "prompts.yaml"
+
+    settings_data: dict[str, Any] = {}
+    if settings_file.exists():
+        settings_data = load_settings(str(settings_file))
+    elif get_settings_path().exists():
+        settings_data = load_settings()
+
+    prompts_data: dict[str, Any] = {}
+    if prompts_file.exists():
+        prompts_data = load_prompts(str(prompts_file))
+    elif get_prompts_path().exists():
+        prompts_data = load_prompts()
+
+    merged_settings = dict(data.get("settings", {}))
+    merged_settings.update(settings_data)
+    merged_settings.update(prompts_data)
+    data["settings"] = merged_settings
 
     if auto_reconcile:
         reconcile_prompt_templates(data)
@@ -358,17 +471,37 @@ def save_sources(
     config_path: str = "config/sources.yaml",
     sync_github: bool = True
 ) -> dict[str, Any]:
-    """Speichert die Quellenkonfiguration persistent in sources.yaml und synchronisiert mit GitHub (falls konfiguriert)."""
-    if "categories" in config:
-        config["categories"].sort(key=lambda c: c.get("name", "").strip().lower())
-        for cat in config["categories"]:
-            for f in cat.get("feeds", []):
-                f.pop("max_items", None)
-
+    """Speichert die Quellenkonfiguration persistent in sources.yaml, settings.yaml und prompts.yaml
+    und synchronisiert bei Bedarf mit GitHub."""
     path = get_sources_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
+
+    sources_data: dict[str, Any] = {}
+    if "categories" in config:
+        categories = list(config["categories"])
+        categories.sort(key=lambda c: c.get("name", "").strip().lower())
+        for cat in categories:
+            for f in cat.get("feeds", []):
+                f.pop("max_items", None)
+        sources_data["categories"] = categories
+    else:
+        sources_data["categories"] = []
+
     with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+        yaml.dump(sources_data, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+
+    settings_dict = config.get("settings")
+    if isinstance(settings_dict, dict):
+        settings_file = path.parent / "settings.yaml"
+        prompts_file = path.parent / "prompts.yaml"
+
+        prompt_data = {k: v for k, v in settings_dict.items() if k in PROMPT_KEYS}
+        general_settings = {k: v for k, v in settings_dict.items() if k not in PROMPT_KEYS}
+
+        if general_settings:
+            save_settings(general_settings, str(settings_file), sync_github=False)
+        if prompt_data:
+            save_prompts(prompt_data, str(prompts_file), sync_github=False)
 
     gh_res = {"success": False, "error": "Kein Token"}
     if sync_github:

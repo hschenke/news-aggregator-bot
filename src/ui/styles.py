@@ -847,7 +847,7 @@ def apply_custom_styles() -> None:
             var btnText = (btn.innerText || "").trim().toLowerCase();
 
             if (keyClass.indexOf("top_save_sources_btn") !== -1 || btnText.indexOf("jetzt sichern") !== -1 || btnText.indexOf("speichern") !== -1) {
-                showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Schreibe Änderungen nach sources.yaml und synchronisiere mit GitHub...");
+                showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Schreibe Änderungen in Konfigurationsdateien und synchronisiere mit GitHub...");
             } else if (keyClass.indexOf("top_discard_sources_btn") !== -1 || btnText.indexOf("verwerfen") !== -1) {
                 showActionOverlay("↩️ Verwerfe ungespeicherte Änderungen...", "Setze alle Formulare und Entwürfe auf den gespeicherten Stand zurück...");
             } else if (keyClass.indexOf("btn_save_feed_") !== -1 || btnText.indexOf("im entwurf merken") !== -1 || btnText.indexOf("entwurf merken") !== -1) {
@@ -868,8 +868,8 @@ def apply_custom_styles() -> None:
                 showActionOverlay("✏️ Benenne Kategorie um...", "Kategorie wird im Arbeitsentwurf umbenannt...");
             } else if (keyClass.indexOf("btn_submit_new_feed") !== -1 || btnText.indexOf("feed hinzufügen") !== -1) {
                 showActionOverlay("➕ Füge neuen Feed hinzu...", "Feed wird im Arbeitsentwurf registriert...");
-            } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("prompts in sources.yaml speichern") !== -1) {
-                showActionOverlay("💾 Speichere KI-Prompts...", "Hauptprompt und Direktiven werden gesichert...");
+            } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("prompts in prompts.yaml speichern") !== -1 || btnText.indexOf("prompts in sources.yaml speichern") !== -1) {
+                showActionOverlay("💾 Speichere KI-Prompts...", "Hauptprompt und Direktiven werden in prompts.yaml gesichert...");
             } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("standard-hauptprompt laden") !== -1) {
                 showActionOverlay("↩️ Lade Standard-Hauptprompt...", "Setze Prompt auf Werkseinstellung zurück...");
             }

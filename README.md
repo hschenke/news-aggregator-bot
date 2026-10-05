@@ -47,7 +47,7 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 
 ### 📬 Weg A: Täglicher E-Mail-Digest (GitHub Actions)
 
-- **Ablauf**: Ein Cronjob (`.github/workflows/daily_digest.yml`) startet jeden Morgen automatisch auf GitHub.
+- **Ablauf**: Ein Cronjob (`.github/workflows/daily_digest.yaml`) startet jeden Morgen automatisch auf GitHub.
 - **Versand**: Kostenlos über [Resend](https://resend.com) (bis zu 3.000 Mails/Monat gratis) oder eigenes SMTP.
 - **Kosten**: 0 € (GitHub Actions bietet 2.000 kostenlose Minuten/Monat).
 
@@ -143,12 +143,15 @@ Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS
 news-aggregator-bot/
 ├── .github/
 │   └── workflows/
-│       └── daily_digest.yml       # Weg A: Automatischer Cloud-Cronjob
+│       ├── daily_digest.yaml      # Weg A: Automatischer Cloud-Cronjob
+│       └── update_rss.yaml        # Automatischer Push von RSS-Feeds zu CDN
 ├── .streamlit/
 │   ├── config.toml                # Weg B: Modernes Theme & Server-Settings
 │   └── secrets.toml.example       # Weg B: Vorlage für Streamlit Cloud Secrets
 ├── config/
-│   └── sources.yaml               # RSS-Feeds und Kategorien
+│   ├── sources.yaml               # RSS-Feeds und Kategorien
+│   ├── settings.yaml              # Globale Bot- und Dashboard-Einstellungen
+│   └── prompts.yaml               # Gemini Prompt-Vorlagen & redaktionelle Direktiven
 ├── src/
 │   ├── aggregator.py              # Sammelt & filtert RSS-News
 │   ├── summarizer.py              # LLM-Zusammenfassung via Gemini API
@@ -210,5 +213,5 @@ Im Tab **"⚙️ Quellen & Feeds verwalten"** der Web-App kannst du:
 - **Bestehende Feeds bearbeiten**: Details wie Name, URL oder Kategoriezuordnung jederzeit anpassen.
 - **Feeds & Kategorien löschen**: Feeds oder ganze Kategorien sicher per Klick entfernen.
 - **Globale Einstellungen konfigurieren**: Sprache (`de`, `en`, etc.), Zusammenfassungs-Stil, Basis-URL sowie **maximales Artikel-Alter in Wochen** (Standard: 20 Wochen).
-- **Persistente Synchronisation**: Alle Änderungen werden sofort in `config/sources.yaml` zurückgespiegelt und stehen sowohl der Web-App als auch dem automatischen E-Mail-Digest zur Verfügung.
+- **Persistente Synchronisation**: Alle Änderungen werden sofort in den Konfigurationsdateien (`config/*.yaml`) zurückgespiegelt und stehen sowohl der Web-App als auch dem automatischen E-Mail-Digest zur Verfügung.
 - **Automatisches Sorting**: Kategorien werden stets alphabetisch sortiert, Artikel in Feeds und Kategorien chronologisch nach Datum absteigend.

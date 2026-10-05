@@ -1,91 +1,45 @@
 categories:
-- name: Berlin
-  feeds:
-  - name: Mahlsdorf
-    url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
-  - name: Polizeimeldungen Berlin
-    url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
-  - name: Rbb Sport
-    url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
-- name: Finanzen & Coins
-  feeds:
-  - name: Investing de
-    url: https://de.investing.com/rss/news_301.rss
-- name: Fun
-  feeds:
-  - name: debeste.de
-    url: https://debeste.de/rss-main
-  - name: Witz des Tages
-    url: https://www.hahaha.de/witze/witzdestages.xml
-- name: Fußball
-  feeds:
-  - name: Hertha Alert
-    url: https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655
-  - name: Transfermarkt
-    url: https://www.transfermarkt.de/rss/news
-- name: Games
-  feeds:
-  - name: Might & Magic Alert
-    url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
-  - name: RPG-Watch
-    url: https://rpgwatch.com/files/rss1.xml
-- name: Tech & AI
-  feeds:
-  - name: AI News
-    url: https://www.all-ai.de/component/jmap/sitemap/rss?format=rss
-  - name: Hacker News (Top)
-    url: https://news.ycombinator.com/rss
-  - name: Heise Online News
-    url: https://www.heise.de/rss/heise-atom.xml
-    exclude_keywords:
-    - heise+
-  - name: Huggingface
-    url: https://huggingface.co/blog/feed.xml
-  - name: TechCrunch AI
-    url: https://techcrunch.com/category/artificial-intelligence/feed/
-settings:
-  language: de
-  summary_style: tldr
-  streamlit_app_url: https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app
-  archive_retention_days: 7
-  filter_ads: true
-  ad_keywords:
-  - heise-angebot
-  - anzeige
-  - werbung
-  - sponsored
-  - gesponsert
-  - advertorial
-  - partnerangebot
-  - deal des tages
-  - rabatt-aktion
-  custom_prompt_directives: '- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte,
-    Advertorials oder gesponserte Beiträge strikt heraus.
-
-    - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.'
-  custom_main_prompt: "Du bist ein professioneller News-Kurator und Redakteur für\
-    \ ein Daily News Briefing.\nDeine Aufgabe ist es, aus den folgenden Roh-Nachrichten\
-    \ ein übersichtliches, kompaktes und leicht lesbares Tages-Briefing auf {lang_name}\
-    \ zu erstellen.\n\nWICHTIGE FORMATIERUNGSRICHTLINIEN:\n1. KEIN \"Executive Summary\"\
-    \ und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den\
-    \ Kategorien (z. B. \"## \U0001F916 Tech & AI\").\n2. INFOBOX GLEICH AM ANFANG\
-    \ JEDER KATEGORIE:\n   - Erstelle direkt unter jeder Kategorie-Überschrift (##)\
-    \ als Allererstes eine Infobox (Markdown Blockquote mit '>').\n   - Fasse darin\
-    \ alle wichtigsten News und Entwicklungen dieser Kategorie kurz, knapp und prägnant\
-    \ in 2 bis maximal 3 Sätzen zusammen.\n   - Format:\n     > \U0001F4A1 **Kompakt:**\
-    \ <Kurze, knappe Zusammenfassung aller wichtigsten News dieser Kategorie>\n3.\
-    \ QUICKLINKS-ZEILE:\n   - Setze direkt nach der Infobox exakt die vorgegebene\
-    \ Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.\n4. DIE TOP\
-    \ 5 ARTIKEL PRO KATEGORIE:\n   - Wähle pro Kategorie maximal die TOP 5 wichtigsten\
-    \ und relevantesten Artikel aus.\n   - Bevorzuge dabei unbedingt Artikel, die\
-    \ vom Nutzer positiv bewertet / geliked wurden (mit '⭐ [NUTZER-FAVORIT / GELIKED]'\
-    \ markiert).\n   - Artikel, die mit '⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]'\
-    \ gekennzeichnet sind, sollen nach Möglichkeit ignoriert oder nur nachrangig berücksichtigt\
-    \ werden.\n   - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.\n\
-    \   - Erstelle pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1\
-    \ bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.\n   - KEINE Kernaussage\
-    \ und KEINE Bedeutung generieren! Das Wort \"TL;DR:\" NICHT verwenden!\n   - Format:\n\
-    \     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>\n\
-    5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##)\
-    \ und passenden Emojis.\n6. REDAKTIONELLE FILTER & ANWEISUNGEN:\n{active_directives}\n\
-    \nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data}"
+  - name: Berlin
+    feeds:
+      - name: Mahlsdorf
+        url: https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956
+      - name: Polizeimeldungen Berlin
+        url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+      - name: Rbb Sport
+        url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
+  - name: Finanzen & Coins
+    feeds:
+      - name: Investing de
+        url: https://de.investing.com/rss/news_301.rss
+  - name: Fun
+    feeds:
+      - name: debeste.de
+        url: https://debeste.de/rss-main
+      - name: Witz des Tages
+        url: https://www.hahaha.de/witze/witzdestages.xml
+  - name: Fußball
+    feeds:
+      - name: Hertha Alert
+        url: https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655
+      - name: Transfermarkt
+        url: https://www.transfermarkt.de/rss/news
+  - name: Games
+    feeds:
+      - name: Might & Magic Alert
+        url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
+      - name: RPG-Watch
+        url: https://rpgwatch.com/files/rss1.xml
+  - name: Tech & AI
+    feeds:
+      - name: AI News
+        url: https://www.all-ai.de/component/jmap/sitemap/rss?format=rss
+      - name: Hacker News (Top)
+        url: https://news.ycombinator.com/rss
+      - name: Heise Online News
+        url: https://www.heise.de/rss/heise-atom.xml
+        exclude_keywords:
+          - heise+
+      - name: Huggingface
+        url: https://huggingface.co/blog/feed.xml
+      - name: TechCrunch AI
+        url: https://techcrunch.com/category/artificial-intelligence/feed/

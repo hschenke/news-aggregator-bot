@@ -70,11 +70,23 @@ class TestModularArchitecture(unittest.TestCase):
             sync_sources_to_github,
             trigger_rss_update_workflow,
             purge_jsdelivr_cache,
+            get_settings_path,
+            get_prompts_path,
+            load_settings,
+            save_settings,
+            load_prompts,
+            save_prompts,
+            load_sources_raw,
         )
         self.assertTrue(callable(load_sources))
         self.assertTrue(callable(save_sources))
         self.assertTrue(callable(add_feed))
         self.assertTrue(callable(sync_sources_to_github))
+        self.assertTrue(callable(load_settings))
+        self.assertTrue(callable(save_settings))
+        self.assertTrue(callable(load_prompts))
+        self.assertTrue(callable(save_prompts))
+        self.assertTrue(callable(load_sources_raw))
 
     def test_aggregator_facade_backward_compatibility(self):
         """Prüft, dass src.aggregator alle alten Symbole via Fassade exportiert."""
@@ -101,6 +113,10 @@ class TestModularArchitecture(unittest.TestCase):
             "_POLICE_TEASER_CACHE",
             "load_sources",
             "save_sources",
+            "load_settings",
+            "save_settings",
+            "load_prompts",
+            "save_prompts",
             "add_feed",
             "delete_feed",
             "update_feed",

@@ -88,7 +88,10 @@ class TestPipelinePerformance(unittest.TestCase):
 
     def test_daily_digest_workflow_uses_requirements_bot_and_unbuffered(self):
         """Stellt sicher, dass die GitHub Actions Pipeline requirements-bot.txt und PYTHONUNBUFFERED nutzt."""
-        workflow_text = Path(".github/workflows/daily_digest.yml").read_text(encoding="utf-8")
+        workflow_path = Path(".github/workflows/daily_digest.yaml")
+        if not workflow_path.exists():
+            workflow_path = Path(".github/workflows/daily_digest.yml")
+        workflow_text = workflow_path.read_text(encoding="utf-8")
         self.assertIn("requirements-bot.txt", workflow_text)
         self.assertIn("PYTHONUNBUFFERED: \"1\"", workflow_text)
         self.assertIn("GEMINI_MODEL", workflow_text)

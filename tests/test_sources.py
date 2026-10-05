@@ -186,6 +186,110 @@ class TestSourcesManagement(unittest.TestCase):
         self.assertEqual(s["max_article_age_weeks"], 12)
         self.assertEqual(s["custom_prompt_directives"], "Keine Filter anwenden.")
 
+    def test_yaml_files_extension_standardization(self):
+        """Stellt sicher, dass alle YAML-Dateien im Repository auf .yaml enden und keine .yml-Dateien existieren."""
+        from pathlib import Path
+        repo_root = Path(__file__).resolve().parent.parent
+        yml_files = []
+        for p in repo_root.rglob("*.yml"):
+            # Ignoriere versteckte Cache/Venv Ordner
+            parts = p.parts
+            if any(part.startswith(".") and part not in [".github", ".streamlit"] for part in parts) or ".venv" in parts:
+                continue
+            yml_files.append(p.relative_to(repo_root).as_posix())
+
+        self.assertEqual(yml_files, [], f"Es wurden Dateien mit der veralteten Endung .yml gefunden: {yml_files}")
+
+    def test_split_config_files_structure(self):
+        """Prüft, dass sources.yaml, settings.yaml und prompts.yaml sauber aufgeteilt existieren."""
+        from pathlib import Path
+        import yaml
+        from src.aggregator import (
+            load_sources,
+            load_sources_raw,
+            load_settings,
+            load_prompts,
+            get_sources_path,
+            get_settings_path,
+            get_prompts_path,
+        )
+
+        sources_path = get_sources_path()
+        settings_path = get_settings_path()
+        prompts_path = get_prompts_path()
+
+        self.assertTrue(sources_path.exists(), "config/sources.yaml existiert nicht!")
+        self.assertTrue(settings_path.exists(), "config/settings.yaml existiert nicht!")
+        self.assertTrue(prompts_path.exists(), "config/prompts.yaml existiert nicht!")
+
+        # sources.yaml darf nur categories enthalten, keine settings
+        raw_sources = yaml.safe_load(sources_path.read_text(encoding="utf-8"))
+        self.assertIn("categories", raw_sources)
+        self.assertNotIn("settings", raw_sources, "sources.yaml darf nach dem Aufsplitten keinen 'settings'-Block mehr enthalten!")
+
+        # settings.yaml enthält globale Einstellungen
+        raw_settings = yaml.safe_load(settings_path.read_text(encoding="utf-8"))
+        self.assertIn("language", raw_settings)
+        self.assertIn("archive_retention_days", raw_settings)
+        self.assertIn("filter_ads", raw_settings)
+        self.assertIn("ad_keywords", raw_settings)
+        self.assertNotIn("custom_main_prompt", raw_settings, "settings.yaml darf keine Prompt-Definitionen enthalten!")
+
+        # prompts.yaml enthält Hauptprompt & Direktiven
+        raw_prompts = yaml.safe_load(prompts_path.read_text(encoding="utf-8"))
+        self.assertIn("custom_main_prompt", raw_prompts)
+        self.assertIn("custom_prompt_directives", raw_prompts)
+
+        # load_sources() führt alles transparent zusammen
+        combined = load_sources(auto_reconcile=False)
+        self.assertIn("categories", combined)
+        self.assertIn("settings", combined)
+        self.assertEqual(combined["settings"]["language"], raw_settings["language"])
+        self.assertEqual(combined["settings"]["custom_main_prompt"], raw_prompts["custom_main_prompt"])
+
+    def test_isolated_config_loaders_and_savers(self):
+        """Testet isolierte Lade- und Speichermethoden für getrennte Konfigurationen."""
+        import tempfile
+        import shutil
+        from pathlib import Path
+        from src.aggregator import (
+            load_sources,
+            save_sources,
+            load_settings,
+            save_settings,
+            load_prompts,
+            save_prompts,
+        )
+
+        temp_dir = Path(tempfile.mkdtemp())
+        try:
+            src_file = temp_dir / "sources.yaml"
+            set_file = temp_dir / "settings.yaml"
+            prm_file = temp_dir / "prompts.yaml"
+
+            # 1. Speichern einzelner Konfigurationen
+            save_settings({"language": "fr", "filter_ads": False}, config_path=str(set_file))
+            loaded_set = load_settings(str(set_file))
+            self.assertEqual(loaded_set["language"], "fr")
+            self.assertFalse(loaded_set["filter_ads"])
+
+            save_prompts({"custom_main_prompt": "Test Prompt", "custom_prompt_directives": "Dir"}, config_path=str(prm_file))
+            loaded_prm = load_prompts(str(prm_file))
+            self.assertEqual(loaded_prm["custom_main_prompt"], "Test Prompt")
+
+            # 2. Speichern & Laden über die integrierte Schnittstelle
+            integrated_cfg = {
+                "categories": [{"name": "Lokal", "feeds": [{"name": "F1", "url": "https://example.com/rss"}]}],
+                "settings": {"language": "it", "custom_main_prompt": "Italienischer Prompt"}
+            }
+            save_sources(integrated_cfg, config_path=str(src_file), sync_github=False)
+            loaded_all = load_sources(config_path=str(src_file), auto_reconcile=False)
+            self.assertEqual(len(loaded_all["categories"]), 1)
+            self.assertEqual(loaded_all["settings"]["language"], "it")
+            self.assertEqual(loaded_all["settings"]["custom_main_prompt"], "Italienischer Prompt")
+        finally:
+            shutil.rmtree(temp_dir, ignore_errors=True)
+
 
 if __name__ == "__main__":
     unittest.main()

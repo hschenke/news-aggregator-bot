@@ -101,7 +101,7 @@ def render_manage_tab(
         col_st1, col_st2, col_st3 = st.columns([3, 1, 1], vertical_alignment="center")
         with col_st1:
             if has_unsaved_changes:
-                st.warning("⚠️ **Ungespeicherte Änderungen vorhanden!** (Noch nicht in `sources.yaml` geschrieben)")
+                st.warning("⚠️ **Ungespeicherte Änderungen vorhanden!** (Noch nicht in die Konfigurationsdateien geschrieben)")
             else:
                 st.success("✅ **Alle Feeds & Einstellungen sind auf dem aktuellen Stand (gespeichert).**")
         with col_st2:
@@ -113,22 +113,22 @@ def render_manage_tab(
                 use_container_width=True,
                 key="top_save_sources_btn",
                 disabled=btn_save_disabled,
-                help="Sichert alle Änderungen dauerhaft in sources.yaml" if has_unsaved_changes else "Alle Feeds & Einstellungen sind aktuell gespeichert.",
+                help="Sichert alle Änderungen dauerhaft in den Konfigurationsdateien" if has_unsaved_changes else "Alle Feeds & Einstellungen sind aktuell gespeichert.",
             ):
                 st.session_state["is_saving_sources"] = True
-                with st.spinner("Sichere Feeds & Einstellungen nach sources.yaml..."):
+                with st.spinner("Sichere Feeds & Einstellungen..."):
                     save_sources(working_config)
                     sync_res = sync_sources_to_github(
                         config_dict=working_config,
-                        commit_message="chore(config): update sources.yaml and RSS feeds via web dashboard",
+                        commit_message="chore(config): update configuration and RSS feeds via web dashboard",
                         include_rss_feeds=True,
                     )
                     st.session_state["has_unsaved_changes"] = False
                     st.session_state["is_saving_sources"] = False
                     if sync_res.get("success"):
-                        st.session_state["manage_notice"] = "Änderungen erfolgreich in sources.yaml gespeichert & zu GitHub synchronisiert!"
+                        st.session_state["manage_notice"] = "Änderungen erfolgreich in Konfigurationsdateien gespeichert & zu GitHub synchronisiert!"
                     else:
-                        st.session_state["manage_notice"] = "Änderungen lokal in sources.yaml gespeichert!"
+                        st.session_state["manage_notice"] = "Änderungen lokal in Konfigurationsdateien gespeichert!"
                     st.rerun()
         with col_st3:
             if has_unsaved_changes:
@@ -403,6 +403,16 @@ def render_manage_tab(
     st.markdown("---")
 
     # --- Sektion 5: Live YAML Preview ---
-    with st.expander("📄 Vorschau der `sources.yaml` Datei", expanded=False):
-        yaml_content = yaml.dump(working_config, allow_unicode=True, sort_keys=False)
-        st.code(yaml_content, language="yaml")
+    with st.expander("📄 Vorschau der YAML-Konfigurationsdateien", expanded=False):
+        tab_src, tab_set, tab_prm = st.tabs(["📁 sources.yaml", "⚙️ settings.yaml", "🤖 prompts.yaml"])
+        with tab_src:
+            sources_preview = {"categories": working_config.get("categories", [])}
+            st.code(yaml.dump(sources_preview, allow_unicode=True, sort_keys=False), language="yaml")
+        with tab_set:
+            from src.sources_manager import PROMPT_KEYS
+            settings_preview = {k: v for k, v in working_config.get("settings", {}).items() if k not in PROMPT_KEYS}
+            st.code(yaml.dump(settings_preview, allow_unicode=True, sort_keys=False), language="yaml")
+        with tab_prm:
+            from src.sources_manager import PROMPT_KEYS
+            prompts_preview = {k: v for k, v in working_config.get("settings", {}).items() if k in PROMPT_KEYS}
+            st.code(yaml.dump(prompts_preview, allow_unicode=True, sort_keys=False), language="yaml")

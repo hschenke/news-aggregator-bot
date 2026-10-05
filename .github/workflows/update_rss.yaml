@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'config/sources.yaml'
+      - 'config/settings.yaml'
+      - 'config/prompts.yaml'
   workflow_dispatch:
 
 jobs:

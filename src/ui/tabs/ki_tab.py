@@ -21,6 +21,8 @@ from src.summarizer import (
 from src.aggregator import (
     load_sources,
     save_sources,
+    load_prompts,
+    save_prompts,
     sync_sources_to_github,
 )
 from src.rss_generator import export_briefing_rss
@@ -90,24 +92,26 @@ def render_ki_tab(
         if is_admin:
             col_save_p, col_reset_p = st.columns([1, 1])
             with col_save_p:
-                if st.button("💾 Prompts in sources.yaml speichern", key="btn_save_ki_prompts", use_container_width=True):
-                    with st.spinner("Speichere Prompts in sources.yaml..."):
-                        sources_config.setdefault("settings", {})["custom_main_prompt"] = ki_main_prompt.strip()
-                        sources_config.setdefault("settings", {})["custom_prompt_directives"] = ki_prompt_directives.strip()
-                        save_sources(sources_config)
+                if st.button("💾 Prompts in prompts.yaml speichern", key="btn_save_ki_prompts", use_container_width=True):
+                    with st.spinner("Speichere Prompts in prompts.yaml..."):
+                        save_prompts({
+                            "custom_main_prompt": ki_main_prompt.strip(),
+                            "custom_prompt_directives": ki_prompt_directives.strip(),
+                        })
                         sync_sources_to_github(
-                            config_dict=sources_config,
                             commit_message="chore(prompt): update custom AI prompts via dashboard",
                         )
-                        st.session_state["ki_notice"] = "Haupt-Prompt & Direktiven erfolgreich gespeichert!"
+                        st.session_state["ki_notice"] = "Haupt-Prompt & Direktiven erfolgreich in prompts.yaml gespeichert!"
                         st.rerun()
             with col_reset_p:
                 if st.button("↩️ Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
                     with st.spinner("Setze Hauptprompt auf Standard zurück..."):
-                        sources_config.setdefault("settings", {})["custom_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+                        save_prompts({
+                            "custom_main_prompt": DEFAULT_MAIN_PROMPT_TEMPLATE.strip(),
+                            "custom_prompt_directives": ki_prompt_directives.strip(),
+                        })
                         st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
-                        save_sources(sources_config)
-                        st.session_state["ki_notice"] = "Standard-Hauptprompt wiederhergestellt!"
+                        st.session_state["ki_notice"] = "Standard-Hauptprompt in prompts.yaml wiederhergestellt!"
                         st.rerun()
 
     # Admin Generation Bar
