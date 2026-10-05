@@ -168,15 +168,19 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn("def on_reset_category_and_feed()", self.articles_tab_py)
 
     def test_compact_layout_and_shortened_texts(self) -> None:
-        """Verifies compact CSS rules, reduced divider gaps, and concise status texts without '(gespeichert)'."""
-        # CSS rules for compact spacing
+        """Verifies balanced CSS rules, divider spacing, and concise status texts without '(gespeichert)'."""
+        # CSS rules for balanced spacing
         self.assertIn('hr, [data-testid="stDivider"], .stMarkdown hr', self.styles_py)
-        self.assertIn('margin-top: 0.4rem !important;', self.styles_py)
-        self.assertIn('margin-bottom: 0.4rem !important;', self.styles_py)
+        self.assertIn('margin-top: 0.55rem !important;', self.styles_py)
+        self.assertIn('margin-bottom: 0.55rem !important;', self.styles_py)
         self.assertIn('section[data-testid="stSidebar"] [data-testid="stVerticalBlock"]', self.styles_py)
-        self.assertIn('gap: 0.35rem !important;', self.styles_py)
+        self.assertIn('gap: 0.45rem !important;', self.styles_py)
         self.assertIn('[data-testid="stAlert"]', self.styles_py)
-        self.assertIn('padding: 0.45rem 0.75rem !important;', self.styles_py)
+        self.assertIn('padding: 0.5rem 0.8rem !important;', self.styles_py)
+
+        # Sidebar dividers above navigation and before refresh feeds
+        self.assertIn('st.sidebar.caption("24h Newsfeed")', self.webapp_py)
+        self.assertIn('st.sidebar.markdown("---")', self.webapp_py)
 
         # Concise text in manage_tab
         self.assertIn("Alle Feeds & Einstellungen sind auf aktuellem Stand.", self.manage_tab_py)

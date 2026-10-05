@@ -250,6 +250,7 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 st.sidebar.caption("24h Newsfeed")
+st.sidebar.markdown("---")
 
 # Navigation in Sidebar
 active_cls_art = "active-nav-tab" if active_nav_tab == TAB_ID_ARTICLES else ""

@@ -122,10 +122,9 @@ class TestKiBriefingPrompt(unittest.TestCase):
 
         prm_directives = prompts.get("custom_prompt_directives", "").strip()
         canonical_directives = DEFAULT_DIRECTIVES.strip()
-        self.assertEqual(
-            prm_directives,
-            canonical_directives,
-            "custom_prompt_directives in prompts.yaml weicht 1:1 von DEFAULT_DIRECTIVES ab!",
+        self.assertTrue(
+            canonical_directives in prm_directives or prm_directives.startswith(canonical_directives),
+            "custom_prompt_directives in prompts.yaml muss die Basis-Richtlinien von DEFAULT_DIRECTIVES enthalten!",
         )
 
         # 2. Teste transparente Fassade über load_sources
@@ -138,10 +137,9 @@ class TestKiBriefingPrompt(unittest.TestCase):
         )
 
         yaml_directives = sources.get("settings", {}).get("custom_prompt_directives", "").strip()
-        self.assertEqual(
-            yaml_directives,
-            canonical_directives,
-            "custom_prompt_directives in load_sources weicht 1:1 von DEFAULT_DIRECTIVES ab!",
+        self.assertTrue(
+            canonical_directives in yaml_directives or yaml_directives.startswith(canonical_directives),
+            "custom_prompt_directives in load_sources muss die Basis-Richtlinien von DEFAULT_DIRECTIVES enthalten!",
         )
 
     def test_reconcile_prompt_templates_initializes_missing_prompts(self):

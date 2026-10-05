@@ -116,82 +116,169 @@ def apply_custom_styles() -> None:
     """Applies high-performance custom CSS to the Streamlit app."""
     st.markdown("""
 <style>
-    /* Main container spacing - compact layout */
+    /* Main container spacing - balanced clean layout */
     .block-container {
-        padding-top: 2.5rem !important;
+        padding-top: 2.25rem !important;
         padding-bottom: 2rem !important;
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
         max-width: 1250px;
     }
 
-    /* Compact flow: tighter default vertical block gaps */
+    /* Vertical block flow: balanced gaps */
     [data-testid="stVerticalBlock"] {
-        gap: 0.5rem !important;
+        gap: 0.55rem !important;
     }
 
-    /* Sidebar compact vertical flow */
+    /* Sidebar vertical flow: balanced spacing without crowding */
     section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
-        gap: 0.35rem !important;
+        gap: 0.45rem !important;
     }
 
-    /* Compact divider rules: eliminate large blank gaps */
+    /* Divider rules: visible, balanced dividers */
     hr, [data-testid="stDivider"], .stMarkdown hr {
-        margin-top: 0.4rem !important;
-        margin-bottom: 0.4rem !important;
+        margin-top: 0.55rem !important;
+        margin-bottom: 0.55rem !important;
         border: none !important;
-        border-top: 1px solid rgba(128, 128, 128, 0.2) !important;
+        border-top: 1px solid rgba(128, 128, 128, 0.3) !important;
     }
 
     section[data-testid="stSidebar"] hr,
     section[data-testid="stSidebar"] [data-testid="stDivider"],
     section[data-testid="stSidebar"] .stMarkdown hr {
-        margin-top: 0.3rem !important;
-        margin-bottom: 0.3rem !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        border: none !important;
+        border-top: 1px solid rgba(128, 128, 128, 0.35) !important;
+        display: block !important;
+        width: 100% !important;
     }
 
-    /* Compact headings & typography */
-    h1, h2, h3, h4, h5, h6 {
-        margin-top: 0.3rem !important;
-        margin-bottom: 0.2rem !important;
+    /* Headings & Section Typography */
+    h1 {
+        margin-top: 0 !important;
+        margin-bottom: 0.15rem !important;
+        line-height: 1.2 !important;
+        padding: 0 !important;
+    }
+    h2, .stSubheader {
+        margin-top: 0.4rem !important;
+        margin-bottom: 0.25rem !important;
+        padding: 0 !important;
+    }
+    h3, .stMarkdown h3 {
+        margin-top: 1.1rem !important;
+        margin-bottom: 0.45rem !important;
+        padding: 0 !important;
+    }
+    h4, h5, h6 {
+        margin-top: 0.4rem !important;
+        margin-bottom: 0.25rem !important;
         padding: 0 !important;
     }
 
-    /* Compact captions */
+    /* Captions: tight paragraph margins to prevent vertical drifting */
     .stCaption, [data-testid="stCaptionContainer"] {
         margin-top: 0.1rem !important;
         margin-bottom: 0.2rem !important;
         line-height: 1.3 !important;
     }
+    .stCaption p, [data-testid="stCaptionContainer"] p {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
 
     section[data-testid="stSidebar"] .stCaption,
     section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
-        margin-top: 0.05rem !important;
-        margin-bottom: 0.15rem !important;
-    }
-
-    /* Compact alerts: st.success, st.warning, st.info, st.error */
-    [data-testid="stAlert"] {
-        padding: 0.45rem 0.75rem !important;
         margin-top: 0.1rem !important;
         margin-bottom: 0.1rem !important;
+    }
+    section[data-testid="stSidebar"] .stCaption p {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Main header: close gap between title, caption and tabs */
+    .block-container [data-testid="stElementContainer"]:has(h1) {
+        margin-bottom: 0 !important;
+    }
+    .block-container [data-testid="stElementContainer"]:has(.stCaption) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .block-container [data-testid="stElementContainer"]:has(.stTabs) {
+        margin-top: 0.1rem !important;
+    }
+
+    /* Streamlit tabs */
+    .stTabs {
+        margin-top: 0.15rem !important;
+    }
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 0.4rem !important;
+        margin-top: 0 !important;
+        margin-bottom: 0.65rem !important;
+        padding-top: 0 !important;
+    }
+    .stTabs [data-baseweb="tab"] {
+        font-size: 0.95rem;
+        font-weight: 500;
+        padding: 0.45rem 0.9rem;
+        border-radius: 0.375rem;
+    }
+
+    /* Compact alerts */
+    [data-testid="stAlert"] {
+        padding: 0.5rem 0.8rem !important;
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.15rem !important;
     }
     [data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
         margin: 0 !important;
         line-height: 1.35 !important;
     }
 
-    /* Compact expanders */
+    /* Expander spacing: comfortable separation so cards don't look glued together */
     [data-testid="stExpander"] {
-        margin-top: 0.2rem !important;
-        margin-bottom: 0.35rem !important;
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.65rem !important;
         border-radius: 0.5rem !important;
     }
     [data-testid="stExpander"] details summary {
-        padding: 0.4rem 0.75rem !important;
+        padding: 0.45rem 0.85rem !important;
     }
     [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
-        padding: 0.5rem 0.75rem !important;
+        padding: 0.65rem 0.85rem !important;
+    }
+
+    /* Expander inner caption & label tightening (fixes gap in KI Prompt configuration) */
+    [data-testid="stExpanderDetails"] [data-testid="stVerticalBlock"] {
+        gap: 0.35rem !important;
+    }
+    [data-testid="stExpanderDetails"] .stCaption {
+        margin-top: 0 !important;
+        margin-bottom: 0.15rem !important;
+    }
+    [data-testid="stExpanderDetails"] .stCaption p {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    [data-testid="stExpanderDetails"] [data-testid="stWidgetLabel"] {
+        margin-top: 0.15rem !important;
+        margin-bottom: 0.15rem !important;
+        min-height: 0 !important;
+    }
+    [data-testid="stExpanderDetails"] [data-testid="stWidgetLabel"] label,
+    [data-testid="stExpanderDetails"] [data-testid="stWidgetLabel"] p {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Bordered containers (Status box, Feed cards) */
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        margin-top: 0.35rem !important;
+        margin-bottom: 0.75rem !important;
+        padding: 0.65rem 0.85rem !important;
     }
 
     /* Compact buttons */
@@ -410,8 +497,8 @@ def apply_custom_styles() -> None:
         display: flex !important;
         flex-direction: column !important;
         gap: 0.45rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.65rem !important;
+        margin-top: 0.25rem !important;
+        margin-bottom: 0.25rem !important;
         width: 100% !important;
     }
     .custom-nav-btn {
