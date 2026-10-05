@@ -195,6 +195,27 @@ class TestWebappMobileFeatures(unittest.TestCase):
         self.assertIn('or feed_name in st.session_state.get("persisted_open_feeds", set())', articles_code)
         self.assertIn('anchor-feed-', articles_code)
 
+    def test_manage_tab_global_settings_and_preview_structure(self):
+        """Prüft, dass alle Settings in den Globalen Einstellungen editierbar sind und nur settings.yaml in der Vorschau verbleibt."""
+        from pathlib import Path
+        manage_code = Path("src/ui/tabs/manage_tab.py").read_text(encoding="utf-8")
+
+        # 1. Alle Settings-Felder sind editierbar
+        self.assertIn('inp_set_app_url', manage_code)
+        self.assertIn('inp_set_lang', manage_code)
+        self.assertIn('inp_set_retention_days', manage_code)
+        self.assertIn('inp_set_style', manage_code)
+        self.assertIn('inp_set_filter_ads', manage_code)
+        self.assertIn('inp_set_ad_keywords', manage_code)
+
+        # 2. Vorschau-Tabs für sources.yaml und prompts.yaml sind entfernt
+        self.assertNotIn('tab_src, tab_set, tab_prm = st.tabs', manage_code)
+        self.assertNotIn('"📁 sources.yaml"', manage_code)
+        self.assertNotIn('"🤖 prompts.yaml"', manage_code)
+
+        # 3. Nur noch Vorschau von settings.yaml vorhanden
+        self.assertIn('with st.expander("⚙️ Vorschau der settings.yaml", expanded=False):', manage_code)
+
 
 if __name__ == "__main__":
     unittest.main()

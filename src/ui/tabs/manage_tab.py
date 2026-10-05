@@ -382,12 +382,46 @@ def render_manage_tab(
             )
             style_val = st.text_input("Zusammenfassungs-Stil:", value=settings.get("summary_style", "tldr"), key="inp_set_style")
 
+        st.markdown("##### 🛡️ Werbe- und Spamfilter")
+        filter_ads_val = st.checkbox(
+            "Werbefilter aktiv (Werbung, Advertorials und Deals automatisch ausfiltern)",
+            value=bool(settings.get("filter_ads", True)),
+            help="Wenn aktiviert, werden erkannte Werbe-Artikel sowie Artikel mit den unten genannten Keywords nicht in die Feeds übernommen.",
+            key="inp_set_filter_ads",
+        )
+
+        curr_ad_kw = settings.get("ad_keywords", [])
+        if isinstance(curr_ad_kw, list):
+            ad_kw_initial = ", ".join(str(k) for k in curr_ad_kw)
+        else:
+            ad_kw_initial = str(curr_ad_kw or "")
+
+        ad_kw_val = st.text_area(
+            "Werbe-Keywords (kommagetrennt oder zeilenweise):",
+            value=ad_kw_initial,
+            help="Artikel, deren Titel oder Teaser diese Schlüsselwörter enthalten, werden bei aktivem Werbefilter herausgefiltert.",
+            placeholder="z. B. heise-angebot, anzeige, werbung, sponsored, advertorial, deal des tages, rabatt-aktion",
+            key="inp_set_ad_keywords",
+            height=85,
+        )
+
         if st.button("✔️ Einstellungen im Entwurf übernehmen", key="btn_apply_settings", use_container_width=True):
             with st.spinner("Übernehme Einstellungen im Arbeitsentwurf..."):
                 settings["streamlit_app_url"] = app_url_val.strip()
                 settings["language"] = lang_val.strip()
                 settings["archive_retention_days"] = int(retention_val)
                 settings["summary_style"] = style_val.strip()
+                settings["filter_ads"] = bool(filter_ads_val)
+
+                raw_kw_tokens = [k.strip() for k in ad_kw_val.replace("\n", ",").split(",") if k.strip()]
+                seen_kw = set()
+                parsed_ad_keywords = []
+                for token in raw_kw_tokens:
+                    if token.lower() not in seen_kw:
+                        seen_kw.add(token.lower())
+                        parsed_ad_keywords.append(token.lower())
+                settings["ad_keywords"] = parsed_ad_keywords
+
                 # Wochenschema sicherstellen, dass es weg ist
                 settings.pop("max_article_age_weeks", None)
                 settings.pop("max_age_weeks", None)
@@ -400,15 +434,7 @@ def render_manage_tab(
 
     st.markdown("---")
 
-    # --- Sektion 5: Live YAML Preview ---
-    with st.expander("📄 Vorschau der YAML-Konfigurationsdateien", expanded=False):
-        tab_src, tab_set, tab_prm = st.tabs(["📁 sources.yaml", "⚙️ settings.yaml", "🤖 prompts.yaml"])
-        with tab_src:
-            sources_preview = {"categories": working_config.get("categories", [])}
-            st.code(yaml.dump(sources_preview, allow_unicode=True, sort_keys=False), language="yaml")
-        with tab_set:
-            settings_preview = {k: v for k, v in working_config.get("settings", {}).items() if k not in PROMPT_KEYS}
-            st.code(yaml.dump(settings_preview, allow_unicode=True, sort_keys=False), language="yaml")
-        with tab_prm:
-            prompts_preview = {k: v for k, v in working_config.get("settings", {}).items() if k in PROMPT_KEYS}
-            st.code(yaml.dump(prompts_preview, allow_unicode=True, sort_keys=False), language="yaml")
+    # --- Sektion 5: Live settings.yaml Preview ---
+    with st.expander("⚙️ Vorschau der settings.yaml", expanded=False):
+        settings_preview = {k: v for k, v in working_config.get("settings", {}).items() if k not in PROMPT_KEYS}
+        st.code(yaml.dump(settings_preview, allow_unicode=True, sort_keys=False), language="yaml")
