@@ -377,7 +377,7 @@ if is_admin:
                 get_storage().set_metadata("last_feed_refresh_time", str(now_ts))
             except Exception:
                 pass
-        st.session_state["sidebar_refresh_notice"] = "Feeds wurden erfolgreich aktualisiert & in Datenbank gesichert!"
+        st.session_state["sidebar_refresh_notice"] = "Feeds erfolgreich aktualisiert!"
         st.rerun()
 
     # Zuletzt aktualisiert Info in der Sidebar (Bild 1)

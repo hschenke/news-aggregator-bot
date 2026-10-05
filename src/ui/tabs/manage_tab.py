@@ -83,7 +83,7 @@ def render_manage_tab(
 ) -> None:
     """Renders the settings and feed management tab."""
     st.subheader("⚙️ Quellen & Feeds verwalten")
-    st.caption("Verwalte deine Kategorien, Feeds und Einstellungen. Änderungen werden im Arbeitsentwurf gesammelt.")
+    st.caption("Kategorien, Feeds und Einstellungen im Arbeitsentwurf verwalten.")
 
     if not is_admin:
         st.info("🔒 Dieser Bereich erfordert eine Administrator-Anmeldung. Bitte melde dich links in der Leiste an.")
@@ -100,9 +100,9 @@ def render_manage_tab(
         col_st1, col_st2, col_st3 = st.columns([3, 1, 1], vertical_alignment="center")
         with col_st1:
             if has_unsaved_changes:
-                st.warning("⚠️ **Ungespeicherte Änderungen vorhanden!** (Noch nicht in die Konfigurationsdateien geschrieben)")
+                st.warning("⚠️ **Ungespeicherte Änderungen im Entwurf.**")
             else:
-                st.success("✅ **Alle Feeds & Einstellungen sind auf dem aktuellen Stand (gespeichert).**")
+                st.success("✅ **Alle Feeds & Einstellungen sind auf aktuellem Stand.**")
         with col_st2:
             btn_save_label = "💾 Jetzt sichern" if has_unsaved_changes else "💾 Gespeichert"
             btn_save_disabled = not has_unsaved_changes or bool(st.session_state.get("is_saving_sources", False))
@@ -112,7 +112,7 @@ def render_manage_tab(
                 use_container_width=True,
                 key="top_save_sources_btn",
                 disabled=btn_save_disabled,
-                help="Sichert alle Änderungen dauerhaft in den Konfigurationsdateien" if has_unsaved_changes else "Alle Feeds & Einstellungen sind aktuell gespeichert.",
+                help="Änderungen in Konfiguration sichern" if has_unsaved_changes else "Alles auf aktuellem Stand.",
             ):
                 st.session_state["is_saving_sources"] = True
                 with st.spinner("Sichere Feeds & Einstellungen..."):
@@ -125,9 +125,9 @@ def render_manage_tab(
                     st.session_state["has_unsaved_changes"] = False
                     st.session_state["is_saving_sources"] = False
                     if sync_res.get("success"):
-                        st.session_state["manage_notice"] = "Änderungen erfolgreich in Konfigurationsdateien gespeichert & zu GitHub synchronisiert!"
+                        st.session_state["manage_notice"] = "Änderungen erfolgreich gespeichert & synchronisiert!"
                     else:
-                        st.session_state["manage_notice"] = "Änderungen lokal in Konfigurationsdateien gespeichert!"
+                        st.session_state["manage_notice"] = "Änderungen lokal gespeichert."
                     st.rerun()
         with col_st3:
             if has_unsaved_changes:
@@ -147,10 +147,8 @@ def render_manage_tab(
                         st.session_state.pop("editing_feed_name", None)
                         st.session_state.pop("editing_feed_category", None)
                         st.session_state.pop("last_edited_category", None)
-                        st.session_state["manage_notice"] = "Alle ungespeicherten Änderungen wurden verworfen."
+                        st.session_state["manage_notice"] = "Ungespeicherte Änderungen verworfen."
                         embed_client_script("setTimeout(function(){ window.location.reload(); }, 60);")
-
-    st.markdown("---")
 
     # --- Sektion 1: Kategorien verwalten (standardmäßig zugeklappt) ---
     with st.expander("📁 Kategorien verwalten", expanded=False):
@@ -158,7 +156,7 @@ def render_manage_tab(
             render_dismissible_notice(st.session_state["manage_cat_notice"], notice_key="manage_cat_notice", icon="📁")
         col_c1, col_c2 = st.columns(2)
         with col_c1:
-            new_cat_name = st.text_input("Neue Kategorie anlegen:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
+            new_cat_name = st.text_input("Neue Kategorie:", placeholder="z. B. Wirtschaft & Finanzen", key="inp_new_cat_name")
             if st.button("➕ Kategorie hinzufügen", key="btn_add_cat", use_container_width=True):
                 if new_cat_name.strip():
                     with st.spinner("Füge Kategorie hinzu..."):
@@ -249,7 +247,7 @@ def render_manage_tab(
         with st.expander(f"📁 **{cat_name}** ({len(feeds)} Feeds)", expanded=is_cat_expanded):
             col_cinf, col_cdel = st.columns([5, 1], vertical_alignment="center")
             with col_cinf:
-                st.caption(f"{len(feeds)} konfigurierte Feeds in dieser Kategorie.")
+                st.caption(f"{len(feeds)} konfigurierte Feeds")
             with col_cdel:
                 with st.popover("🗑️ Kategorie löschen", use_container_width=True):
                     st.markdown(f"Kategorie **'{cat_name}'** samt aller Feeds wirklich löschen?")
@@ -286,7 +284,7 @@ def render_manage_tab(
                         or st.session_state.get("editing_feed_url") == f_url
                         or st.session_state.get("editing_feed_name") == f_name
                     )
-                    with st.expander("🛠️ Details & URL bearbeiten / Feed testen", expanded=is_feed_expanded):
+                    with st.expander("🛠️ Feed bearbeiten & testen", expanded=is_feed_expanded):
                         col_ed1, col_ed2 = st.columns(2)
                         with col_ed1:
                             edit_name_val = st.text_input("Name:", value=f_name, key=f"ed_name_{key_hash}")
@@ -322,7 +320,7 @@ def render_manage_tab(
                                     render_feed_test_result(res)
                         with col_eb2:
                             if st.session_state.get("last_saved_feed_key") == key_hash:
-                                st.success("✅ Feed-Änderungen im Entwurf gemerkt!")
+                                st.success("✅ Änderungen im Entwurf gemerkt!")
                             if st.button("✔️ Im Entwurf merken", key=f"btn_save_feed_{key_hash}", type="primary", use_container_width=True):
                                 if edit_name_val.strip() and edit_url_val.strip():
                                     with st.spinner("Merke Feed-Änderungen im Arbeitsentwurf..."):
@@ -346,7 +344,7 @@ def render_manage_tab(
                                         st.session_state["editing_feed_category"] = edit_cat_val.strip()
                                         st.session_state["last_edited_category"] = edit_cat_val.strip()
                                         st.session_state["has_unsaved_changes"] = True
-                                        st.session_state["manage_notice"] = f"Feed-Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!"
+                                        st.session_state["manage_notice"] = f"Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!"
                                         st.rerun()
                                 else:
                                     st.error("Name und URL dürfen nicht leer sein.")
@@ -383,7 +381,7 @@ def render_manage_tab(
             style_val = st.text_input("Zusammenfassungs-Stil:", value=settings.get("summary_style", "tldr"), key="inp_set_style")
 
         filter_ads_val = st.checkbox(
-            "Werbefilter aktiv (Werbung, Advertorials und Deals automatisch ausfiltern)",
+            "Werbefilter aktiv (Werbung & Deals filtern)",
             value=bool(settings.get("filter_ads", True)),
             help="Wenn aktiviert, werden erkannte Werbe-Artikel sowie Artikel mit den unten genannten Keywords nicht in die Feeds übernommen.",
             key="inp_set_filter_ads",
@@ -427,11 +425,9 @@ def render_manage_tab(
                 settings.pop("batch_sync_interval_minutes", None)
                 working_config["settings"] = settings
                 st.session_state["has_unsaved_changes"] = True
-                st.session_state["manage_settings_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
-                st.session_state["manage_notice"] = "Globale Einstellungen erfolgreich im Entwurf übernommen!"
+                st.session_state["manage_settings_notice"] = "Einstellungen im Entwurf übernommen."
+                st.session_state["manage_notice"] = "Einstellungen im Entwurf übernommen."
                 st.rerun()
-
-    st.markdown("---")
 
     # --- Sektion 5: Live settings.yaml Preview ---
     with st.expander("⚙️ Vorschau der settings.yaml", expanded=False):

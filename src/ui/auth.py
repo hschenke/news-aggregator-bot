@@ -166,7 +166,7 @@ def render_sidebar_auth(is_admin: bool) -> None:
                 st.rerun()
     else:
         with st.sidebar.expander("🔐 Admin-Anmeldung", expanded=False):
-            st.caption("Admin-Zugang für Einstellungen, Briefing-Generierung und Feeds.")
+            st.caption("Admin-Zugang für Konfiguration und Feeds.")
             pwd_input = st.text_input(
                 "Passwort:",
                 type="password",

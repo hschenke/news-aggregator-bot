@@ -36,7 +36,7 @@ def render_ki_tab(
 ) -> None:
     """Renders the AI briefing tab."""
     st.subheader("🧠 KI-Briefing")
-    st.caption("Tagesaktuelle, kuratierte Zusammenfassung der relevantesten Meldungen.")
+    st.caption("Kuratierte Zusammenfassung der wichtigsten Meldungen.")
 
     if st.session_state.get("ki_notice"):
         render_dismissible_notice(st.session_state["ki_notice"], notice_key="ki_notice", icon="✨")
@@ -65,8 +65,8 @@ def render_ki_tab(
     current_main_prompt = (prompts_cfg.get("custom_main_prompt") or "").strip() or DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
     current_directives = (prompts_cfg.get("custom_prompt_directives") or "").strip() or DEFAULT_DIRECTIVES.strip()
 
-    with st.expander("🛠️ KI-Prompt-Konfiguration (Hauptprompt & Direktiven)", expanded=False):
-        st.caption("Hier kannst du den vollständigen Haupt-/Systemprompt sowie redaktionelle Richtlinien für Gemini steuern.")
+    with st.expander("🛠️ KI-Prompt-Konfiguration", expanded=False):
+        st.caption("Systemprompt und redaktionelle Richtlinien für Gemini anpassen.")
 
         ki_main_prompt = st.text_area(
             "Haupt-Prompt für Gemini (Rolle, Struktur & Format):",
@@ -98,7 +98,7 @@ def render_ki_tab(
                         sync_sources_to_github(
                             commit_message="chore(prompt): update custom AI prompts via dashboard",
                         )
-                        st.session_state["ki_notice"] = "Haupt-Prompt & Direktiven erfolgreich in prompts.yaml gespeichert!"
+                        st.session_state["ki_notice"] = "Prompts erfolgreich in prompts.yaml gespeichert!"
                         st.rerun()
             with col_reset_p:
                 if st.button("↩️ Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
@@ -108,7 +108,7 @@ def render_ki_tab(
                             "custom_prompt_directives": ki_prompt_directives.strip(),
                         })
                         st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
-                        st.session_state["ki_notice"] = "Standard-Hauptprompt in prompts.yaml wiederhergestellt!"
+                        st.session_state["ki_notice"] = "Standard-Prompt wiederhergestellt!"
                         st.rerun()
 
     # Admin Generation Bar
@@ -177,7 +177,7 @@ def render_ki_tab(
                                 logger.warning("Could not export briefing RSS: %s", e_rss)
 
                             st.session_state["is_generating_briefing"] = False
-                            st.session_state["ki_notice"] = f"KI-Briefing erfolgreich mit {selected_model} generiert!"
+                            st.session_state["ki_notice"] = f"KI-Briefing erfolgreich generiert ({selected_model})!"
                             st.rerun()
                         except Exception as exc:
                             st.session_state["is_generating_briefing"] = False

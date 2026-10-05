@@ -167,6 +167,27 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         self.assertIn('key="btn_reset_cat_feed"', self.articles_tab_py)
         self.assertIn("def on_reset_category_and_feed()", self.articles_tab_py)
 
+    def test_compact_layout_and_shortened_texts(self) -> None:
+        """Verifies compact CSS rules, reduced divider gaps, and concise status texts without '(gespeichert)'."""
+        # CSS rules for compact spacing
+        self.assertIn('hr, [data-testid="stDivider"], .stMarkdown hr', self.styles_py)
+        self.assertIn('margin-top: 0.4rem !important;', self.styles_py)
+        self.assertIn('margin-bottom: 0.4rem !important;', self.styles_py)
+        self.assertIn('section[data-testid="stSidebar"] [data-testid="stVerticalBlock"]', self.styles_py)
+        self.assertIn('gap: 0.35rem !important;', self.styles_py)
+        self.assertIn('[data-testid="stAlert"]', self.styles_py)
+        self.assertIn('padding: 0.45rem 0.75rem !important;', self.styles_py)
+
+        # Concise text in manage_tab
+        self.assertIn("Alle Feeds & Einstellungen sind auf aktuellem Stand.", self.manage_tab_py)
+        self.assertNotIn("(gespeichert)", self.manage_tab_py)
+        self.assertIn("Ungespeicherte Änderungen im Entwurf.", self.manage_tab_py)
+        self.assertIn("Kategorien, Feeds und Einstellungen im Arbeitsentwurf verwalten.", self.manage_tab_py)
+
+        # Concise text in feedly_tab
+        self.assertIn("RSS 2.0 XML-Feeds für Feedly, Inoreader und alle Newsreader.", self.feedly_tab_py)
+        self.assertIn("Feeds erfolgreich neu generiert.", self.feedly_tab_py)
+
 
 if __name__ == "__main__":
     unittest.main()
