@@ -116,13 +116,88 @@ def apply_custom_styles() -> None:
     """Applies high-performance custom CSS to the Streamlit app."""
     st.markdown("""
 <style>
-    /* Main container spacing */
+    /* Main container spacing - compact layout */
     .block-container {
-        padding-top: 3.5rem !important;
+        padding-top: 2.5rem !important;
         padding-bottom: 2rem !important;
         padding-left: 1.25rem !important;
         padding-right: 1.25rem !important;
         max-width: 1250px;
+    }
+
+    /* Compact flow: tighter default vertical block gaps */
+    [data-testid="stVerticalBlock"] {
+        gap: 0.5rem !important;
+    }
+
+    /* Sidebar compact vertical flow */
+    section[data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+        gap: 0.35rem !important;
+    }
+
+    /* Compact divider rules: eliminate large blank gaps */
+    hr, [data-testid="stDivider"], .stMarkdown hr {
+        margin-top: 0.4rem !important;
+        margin-bottom: 0.4rem !important;
+        border: none !important;
+        border-top: 1px solid rgba(128, 128, 128, 0.2) !important;
+    }
+
+    section[data-testid="stSidebar"] hr,
+    section[data-testid="stSidebar"] [data-testid="stDivider"],
+    section[data-testid="stSidebar"] .stMarkdown hr {
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+
+    /* Compact headings & typography */
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0.3rem !important;
+        margin-bottom: 0.2rem !important;
+        padding: 0 !important;
+    }
+
+    /* Compact captions */
+    .stCaption, [data-testid="stCaptionContainer"] {
+        margin-top: 0.1rem !important;
+        margin-bottom: 0.2rem !important;
+        line-height: 1.3 !important;
+    }
+
+    section[data-testid="stSidebar"] .stCaption,
+    section[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+        margin-top: 0.05rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+
+    /* Compact alerts: st.success, st.warning, st.info, st.error */
+    [data-testid="stAlert"] {
+        padding: 0.45rem 0.75rem !important;
+        margin-top: 0.1rem !important;
+        margin-bottom: 0.1rem !important;
+    }
+    [data-testid="stAlert"] [data-testid="stMarkdownContainer"] p {
+        margin: 0 !important;
+        line-height: 1.35 !important;
+    }
+
+    /* Compact expanders */
+    [data-testid="stExpander"] {
+        margin-top: 0.2rem !important;
+        margin-bottom: 0.35rem !important;
+        border-radius: 0.5rem !important;
+    }
+    [data-testid="stExpander"] details summary {
+        padding: 0.4rem 0.75rem !important;
+    }
+    [data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+        padding: 0.5rem 0.75rem !important;
+    }
+
+    /* Compact buttons */
+    .stButton button {
+        padding: 0.35rem 0.75rem !important;
+        min-height: 2.15rem !important;
     }
 
     /* Invisible helper iframes */
@@ -677,11 +752,11 @@ def apply_custom_styles() -> None:
         border: 1px solid #6ee7b7 !important;
         border-left: 4px solid #059669 !important;
         border-radius: 8px !important;
-        padding: 0.75rem 1rem !important;
-        margin-bottom: 1rem !important;
+        padding: 0.5rem 0.85rem !important;
+        margin-bottom: 0.5rem !important;
         color: #065f46 !important;
-        font-size: 0.95rem !important;
-        line-height: 1.4 !important;
+        font-size: 0.92rem !important;
+        line-height: 1.35 !important;
         box-sizing: border-box !important;
         width: 100% !important;
     }
@@ -847,31 +922,31 @@ def apply_custom_styles() -> None:
             var btnText = (btn.innerText || "").trim().toLowerCase();
 
             if (keyClass.indexOf("top_save_sources_btn") !== -1 || btnText.indexOf("jetzt sichern") !== -1 || btnText.indexOf("speichern") !== -1) {
-                showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Schreibe Änderungen in Konfigurationsdateien und synchronisiere mit GitHub...");
+                showActionOverlay("💾 Sichere Feeds & Einstellungen...", "Synchronisiere mit Konfiguration & GitHub...");
             } else if (keyClass.indexOf("top_discard_sources_btn") !== -1 || btnText.indexOf("verwerfen") !== -1) {
-                showActionOverlay("↩️ Verwerfe ungespeicherte Änderungen...", "Setze alle Formulare und Entwürfe auf den gespeicherten Stand zurück...");
+                showActionOverlay("↩️ Verwerfe Änderungen...", "Setze Entwürfe auf gespeicherten Stand zurück...");
             } else if (keyClass.indexOf("btn_save_feed_") !== -1 || btnText.indexOf("im entwurf merken") !== -1 || btnText.indexOf("entwurf merken") !== -1) {
-                showActionOverlay("✏️ Merke Feed-Änderungen...", "Übernehme Feed-Konfiguration in den Arbeitsentwurf...");
+                showActionOverlay("✏️ Merke Feed-Änderungen...", "Übernehme Feed in den Arbeitsentwurf...");
             } else if (keyClass.indexOf("btn_apply_settings") !== -1 || btnText.indexOf("einstellungen im entwurf übernehmen") !== -1) {
-                showActionOverlay("⚙️ Übernehme globale Einstellungen...", "Aktualisiere Einstellungen im Arbeitsentwurf...");
+                showActionOverlay("⚙️ Übernehme Einstellungen...", "Aktualisiere Einstellungen im Arbeitsentwurf...");
             } else if (keyClass.indexOf("btn_generate_briefing") !== -1 || btnText.indexOf("neues briefing generieren") !== -1) {
-                showActionOverlay("🧠 Generiere KI-Briefing mit Gemini...", "Die aktuellen Artikel werden analysiert und zusammengefasst. Dies kann einige Sekunden dauern...");
+                showActionOverlay("🧠 Generiere KI-Briefing mit Gemini...", "Analysiere Artikel und erstelle Zusammenfassung...");
             } else if (keyClass.indexOf("sb_btn_refresh_feeds") !== -1 || btnText.indexOf("feeds neu laden") !== -1) {
-                showActionOverlay("🔄 Lese RSS-Feeds ein...", "Lade alle Feeds live aus dem Web und aktualisiere die Datenbank...");
+                showActionOverlay("🔄 Lese RSS-Feeds ein...", "Lade Feeds live und aktualisiere Datenbank...");
             } else if (keyClass.indexOf("btn_refresh_rss") !== -1 || btnText.indexOf("feeds neu generieren") !== -1) {
-                showActionOverlay("📡 Generiere RSS-Feeds neu...", "Erstelle standardkonforme XML-Dateien für Feedly & Reader...");
+                showActionOverlay("📡 Generiere RSS-Feeds neu...", "Erstelle XML-Dateien für Feedly & Reader...");
             } else if (keyClass.indexOf("btn_push_rss_cdn") !== -1 || btnText.indexOf("zu github & cdn pushen") !== -1) {
-                showActionOverlay("🚀 Pushe RSS-Feeds zu GitHub & CDN...", "Synchronisiere Feeds mit GitHub Actions & jsDelivr...");
+                showActionOverlay("🚀 Pushe Feeds zu GitHub & CDN...", "Synchronisiere Feeds mit GitHub Actions & CDN...");
             } else if (keyClass.indexOf("btn_add_cat") !== -1 || btnText.indexOf("kategorie hinzufügen") !== -1) {
-                showActionOverlay("📁 Füge Kategorie hinzu...", "Kategorie wird im Arbeitsentwurf angelegt...");
+                showActionOverlay("📁 Füge Kategorie hinzu...", "Kategorie wird im Entwurf angelegt...");
             } else if (keyClass.indexOf("btn_ren_cat") !== -1 || btnText.indexOf("umbenennen") !== -1) {
-                showActionOverlay("✏️ Benenne Kategorie um...", "Kategorie wird im Arbeitsentwurf umbenannt...");
+                showActionOverlay("✏️ Benenne Kategorie um...", "Kategorie wird im Entwurf umbenannt...");
             } else if (keyClass.indexOf("btn_submit_new_feed") !== -1 || btnText.indexOf("feed hinzufügen") !== -1) {
-                showActionOverlay("➕ Füge neuen Feed hinzu...", "Feed wird im Arbeitsentwurf registriert...");
+                showActionOverlay("➕ Füge Feed hinzu...", "Feed wird im Entwurf registriert...");
             } else if (keyClass.indexOf("btn_save_ki_prompts") !== -1 || btnText.indexOf("prompts in prompts.yaml speichern") !== -1 || btnText.indexOf("prompts in sources.yaml speichern") !== -1) {
-                showActionOverlay("💾 Speichere KI-Prompts...", "Hauptprompt und Direktiven werden in prompts.yaml gesichert...");
+                showActionOverlay("💾 Speichere KI-Prompts...", "Prompts werden in prompts.yaml gesichert...");
             } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("standard-hauptprompt laden") !== -1) {
-                showActionOverlay("↩️ Lade Standard-Hauptprompt...", "Setze Prompt auf Werkseinstellung zurück...");
+                showActionOverlay("↩️ Lade Standard-Prompt...", "Setze Prompt auf Werkseinstellung zurück...");
             }
         }
 

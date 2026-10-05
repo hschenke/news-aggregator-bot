@@ -461,10 +461,9 @@ def render_articles_tab(
     with col_stat_placeholder:
         if displayed_count > 0:
             st.caption(f"Zeige **{displayed_count}** Artikel in **{categories_rendered}** Kategorien")
-        else:
             if selected_feed != "Alle Feeds":
-                st.warning(f"Keine Artikel für den Feed '{selected_feed}' gefunden (0 Treffer).")
+                st.warning(f"Keine Artikel für den Feed '{selected_feed}' gefunden.")
             elif selected_cat != "Alle Kategorien":
-                st.warning(f"Keine Artikel für die Kategorie '{selected_cat}' gefunden (0 Treffer).")
+                st.warning(f"Keine Artikel für die Kategorie '{selected_cat}' gefunden.")
             else:
-                st.warning("Keine aktuellen Artikel gefunden, die den Suchkriterien entsprechen (0 Treffer).")
+                st.warning("Keine passenden Artikel gefunden.")

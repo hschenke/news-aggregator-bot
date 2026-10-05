@@ -30,9 +30,7 @@ def render_feedly_tab(
 ) -> None:
     """Renders the Feedly RSS tab with strictly the 2 core feeds (Gesamt and KI Briefing)."""
     st.subheader("📡 RSS Feeds")
-    st.caption(
-        "Standardkonforme RSS 2.0 XML-Feeds für Feedly, Inoreader, NetNewsWire oder jeden beliebigen RSS-Reader."
-    )
+    st.caption("RSS 2.0 XML-Feeds für Feedly, Inoreader und alle Newsreader.")
 
     if st.session_state.get("feedly_notice"):
         render_dismissible_notice(st.session_state["feedly_notice"], notice_key="feedly_notice", icon="📡")
@@ -66,7 +64,7 @@ def render_feedly_tab(
                     st.cache_data.clear()
                     st.session_state.pop("cached_news_data", None)
                     st.session_state["is_refreshing_rss"] = False
-                    st.session_state["feedly_notice"] = "Feeds wurden erfolgreich generiert & aktualisiert!"
+                    st.session_state["feedly_notice"] = "Feeds erfolgreich neu generiert."
                     st.rerun()
         with col_act2:
             if st.button("🚀 Zu GitHub & CDN pushen", key="btn_push_rss_cdn", use_container_width=True, disabled=any_busy):
@@ -79,7 +77,7 @@ def render_feedly_tab(
                     )
                     st.session_state["is_pushing_rss"] = False
                     if push_res.get("success"):
-                        st.session_state["feedly_notice"] = "RSS-Feeds erfolgreich zu GitHub & CDN synchronisiert!"
+                        st.session_state["feedly_notice"] = "Feeds erfolgreich zu GitHub & CDN synchronisiert!"
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):
@@ -88,8 +86,6 @@ def render_feedly_tab(
                             st.session_state["feedly_notice"] = f"Fehler beim Synchronisieren: {push_res.get('error')}"
                     st.rerun()
 
-    st.markdown("---")
-
     # 1. Gesamt-Feed (Alle Nachrichten)
     all_info = rss_registry.get("all", {})
     all_url = all_info.get("url") or all_info.get("cdn_url", "")
@@ -97,7 +93,7 @@ def render_feedly_tab(
 
     with st.container(border=True):
         st.markdown(f"#### 🌟 Gesamt-Feed (Alle Nachrichten) — **{all_count}** Artikel")
-        st.caption("Enthält alle aggregierten Nachrichten der letzten 24 Stunden chronologisch sortiert.")
+        st.caption("Alle aggregierten Nachrichten der letzten 24 Stunden.")
         if all_url:
             st.code(all_url, language="text")
             st.link_button("↗️ Im Browser öffnen", all_url, use_container_width=True)
@@ -109,7 +105,7 @@ def render_feedly_tab(
 
     with st.container(border=True):
         st.markdown(f"#### 🧠 KI-Briefing Feed — **{briefing_count}** Eintrag / Top-Meldungen")
-        st.caption("Das kuratierte Tages-Briefing und die Top-Empfehlungen als eigenständiger Feed.")
+        st.caption("Kuriertes Tages-Briefing und Top-Empfehlungen.")
         if briefing_url:
             st.code(briefing_url, language="text")
             st.link_button("↗️ Im Browser öffnen", briefing_url, use_container_width=True)
