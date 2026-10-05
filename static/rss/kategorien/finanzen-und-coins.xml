@@ -5,9 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen+%26+Coins</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Finanzen &amp; Coins' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 05 Oct 2026 11:53:45 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 11:54:17 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/finanzen-und-coins.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Bitcoin steigt über 86.000 $: Schwächere Arbeitsmarktdaten gleichen Druck durch hohe Renditen aus</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-nahert-sich-86000dollarmarke-schwache-arbeitsmarktdaten-stutzen-kurs-gegen-hohe-anleiherenditen-3689420</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-nahert-sich-86000dollarmarke-schwache-arbeitsmarktdaten-stutzen-kurs-gegen-hohe-anleiherenditen-3689420</guid>
+      <pubDate>Mon, 05 Oct 2026 06:32:50 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Cardano steigt um 10% - Die Rally nimmt an Fahrt auf</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/cardano-steigt-um-10--die-rally-nimmt-an-fahrt-auf-3689272</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/cardano-steigt-um-10--die-rally-nimmt-an-fahrt-auf-3689272</guid>
+      <pubDate>Mon, 05 Oct 2026 02:16:04 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
   </channel>
 </rss>
