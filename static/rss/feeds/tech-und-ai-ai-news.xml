@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 04 Oct 2026 20:11:54 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,15 +25,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Nur rund 2 Prozent der US-Haushalte bezahlten im Mai 2026 für einen KI-Dienst. Zahlende Haushalte gaben durchschnittlich 31 Dollar pro Monat aus. Auch Unternehmen nutzen KI bislang meist nur in begrenztem Umfang. Gleichzeitig sorgt KI für eine hohe Nachfrage nach Chips und prägt das Gewinnwachstum der Tech-Branche. ...]]></description>
-    </item>
-    <item>
-      <title>Aleph Alpha veröffentlicht ein Sprachmodell mit Deutsch-Fokus</title>
-      <link>https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/aleph-alpha-sprachmodell-deutsch</guid>
-      <pubDate>Sat, 03 Oct 2026 22:10:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Aleph Alpha veröffentlicht Kolibri als Open-Weights-Modell für Deutsch und Englisch unter Apache 2.0. Deutsche Trainingsdaten und ein eigener Tokenizer berücksichtigen Verwaltungssprache und zusammengesetzte Wörter. Das Modell bietet vier Reasoning-Stufen, Tool Calling und bis zu eine Million Token Kontext. Für den ...]]></description>
     </item>
   </channel>
 </rss>
