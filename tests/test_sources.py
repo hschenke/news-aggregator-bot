@@ -287,6 +287,20 @@ class TestSourcesManagement(unittest.TestCase):
             self.assertEqual(len(loaded_all["categories"]), 1)
             self.assertEqual(loaded_all["settings"]["language"], "it")
             self.assertEqual(loaded_all["settings"]["custom_main_prompt"], "Italienischer Prompt")
+
+            # 3. update_settings ohne config-Objekt aktualisiert direkt settings.yaml & prompts.yaml
+            from src.sources_manager import update_settings
+            update_settings(
+                {"language": "es", "custom_main_prompt": "Spanischer Prompt"},
+                config_path=str(set_file),
+                config=None,
+                save_to_disk=True,
+            )
+            updated_set = load_settings(str(set_file))
+            updated_prm = load_prompts(str(prm_file))
+            self.assertEqual(updated_set["language"], "es")
+            self.assertNotIn("custom_main_prompt", updated_set)
+            self.assertEqual(updated_prm["custom_main_prompt"], "Spanischer Prompt")
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
 

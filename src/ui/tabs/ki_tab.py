@@ -19,8 +19,6 @@ from src.summarizer import (
     DEFAULT_DIRECTIVES,
 )
 from src.aggregator import (
-    load_sources,
-    save_sources,
     load_prompts,
     save_prompts,
     sync_sources_to_github,
@@ -60,13 +58,12 @@ def render_ki_tab(
 
     # Prompt Configuration (for Admin and read-only for others)
     try:
-        sources_config = load_sources()
+        prompts_cfg = load_prompts()
     except Exception:
-        sources_config = {}
-    settings = sources_config.get("settings", {})
+        prompts_cfg = {}
 
-    current_main_prompt = (settings.get("custom_main_prompt") or "").strip() or DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
-    current_directives = (settings.get("custom_prompt_directives") or "").strip() or DEFAULT_DIRECTIVES.strip()
+    current_main_prompt = (prompts_cfg.get("custom_main_prompt") or "").strip() or DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+    current_directives = (prompts_cfg.get("custom_prompt_directives") or "").strip() or DEFAULT_DIRECTIVES.strip()
 
     with st.expander("🛠️ KI-Prompt-Konfiguration (Hauptprompt & Direktiven)", expanded=False):
         st.caption("Hier kannst du den vollständigen Haupt-/Systemprompt sowie redaktionelle Richtlinien für Gemini steuern.")

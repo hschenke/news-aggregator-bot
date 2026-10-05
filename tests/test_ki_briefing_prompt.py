@@ -107,24 +107,41 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertEqual(len(candidates_36), len(expected_models))
 
     def test_sources_yaml_and_canonical_prompt_match_strictly(self):
-        """Prüft strikte 1:1 Übereinstimmung zwischen sources.yaml und kanonischem DEFAULT_MAIN_PROMPT_TEMPLATE / DIRECTIVES."""
-        from src.aggregator import load_sources
+        """Prüft strikte 1:1 Übereinstimmung zwischen prompts.yaml/sources.yaml und kanonischem DEFAULT_MAIN_PROMPT_TEMPLATE / DIRECTIVES."""
+        from src.aggregator import load_sources, load_prompts
 
+        # 1. Teste direktes Laden über load_prompts
+        prompts = load_prompts()
+        prm_prompt = prompts.get("custom_main_prompt", "").strip()
+        canonical_prompt = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
+        self.assertEqual(
+            prm_prompt,
+            canonical_prompt,
+            "custom_main_prompt in prompts.yaml weicht 1:1 von DEFAULT_MAIN_PROMPT_TEMPLATE ab!",
+        )
+
+        prm_directives = prompts.get("custom_prompt_directives", "").strip()
+        canonical_directives = DEFAULT_DIRECTIVES.strip()
+        self.assertEqual(
+            prm_directives,
+            canonical_directives,
+            "custom_prompt_directives in prompts.yaml weicht 1:1 von DEFAULT_DIRECTIVES ab!",
+        )
+
+        # 2. Teste transparente Fassade über load_sources
         sources = load_sources(auto_reconcile=False)
         yaml_prompt = sources.get("settings", {}).get("custom_main_prompt", "").strip()
-        canonical_prompt = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
         self.assertEqual(
             yaml_prompt,
             canonical_prompt,
-            "custom_main_prompt in sources.yaml weicht 1:1 von DEFAULT_MAIN_PROMPT_TEMPLATE ab!",
+            "custom_main_prompt in load_sources weicht 1:1 von DEFAULT_MAIN_PROMPT_TEMPLATE ab!",
         )
 
         yaml_directives = sources.get("settings", {}).get("custom_prompt_directives", "").strip()
-        canonical_directives = DEFAULT_DIRECTIVES.strip()
         self.assertEqual(
             yaml_directives,
             canonical_directives,
-            "custom_prompt_directives in sources.yaml weicht 1:1 von DEFAULT_DIRECTIVES ab!",
+            "custom_prompt_directives in load_sources weicht 1:1 von DEFAULT_DIRECTIVES ab!",
         )
 
     def test_reconcile_prompt_templates_initializes_missing_prompts(self):

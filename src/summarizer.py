@@ -53,12 +53,12 @@ def get_configured_api_key() -> str:
     return api_key or ""
 
 
-def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
-    """Ermittelt die konfigurierte Basis-URL der Streamlit Web-App."""
+def get_streamlit_app_url(config_path: str = "config/settings.yaml") -> str:
+    """Ermittelt die konfigurierte Basis-URL der Streamlit Web-App aus settings.yaml."""
     try:
-        from src.aggregator import load_sources
-        config = load_sources(config_path)
-        configured_url = config.get("settings", {}).get("streamlit_app_url")
+        from src.sources_manager import load_settings
+        settings = load_settings(config_path)
+        configured_url = settings.get("streamlit_app_url")
         if configured_url and str(configured_url).strip():
             return str(configured_url).strip().rstrip("/")
     except Exception:
@@ -79,7 +79,12 @@ def get_streamlit_app_url(config_path: str = "config/sources.yaml") -> str:
     return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
 
 
-def build_category_quicklinks(config: dict[str, Any], streamlit_base_url: str, config_path: str = "config/sources.yaml") -> dict[str, str]:
+def build_category_quicklinks(
+    config: dict[str, Any],
+    streamlit_base_url: str,
+    *args: Any,
+    **kwargs: Any,
+) -> dict[str, str]:
     """
     Erstellt für jede Kategorie den Link-Block.
     WICHTIG: Die Feed-Links verweisen direkt auf die Streamlit-App (mit Kategorie- & Feed-Filter),
@@ -94,7 +99,7 @@ def build_category_quicklinks(config: dict[str, Any], streamlit_base_url: str, c
         import src.auth
         importlib.reload(src.auth)
         from src.auth import get_configured_app_password, generate_readonly_auth_token
-    app_pw = get_configured_app_password(config_path)
+    app_pw = get_configured_app_password()
     auth_param = f"&auth={generate_readonly_auth_token(app_pw)}" if app_pw else ""
 
     category_links = {}
@@ -292,29 +297,31 @@ def summarize_news_with_gemini(
     Quicklinks zur Streamlit App & Feeds sowie den Top 5 verlinkten Artikeln pro Kategorie.
     """
     try:
-        from src.aggregator import load_sources
-        config = load_sources(config_path)
-        settings = config.get("settings", {})
+        from src.sources_manager import load_sources_raw, load_settings, load_prompts
+        config = load_sources_raw(config_path)
+        settings = load_settings()
+        prompts = load_prompts()
     except Exception as exc:
-        logger.warning("Quellen konnten nicht geladen werden (%s). Verwende Defaults.", exc)
+        logger.warning("Konfiguration konnte nicht geladen werden (%s). Verwende Defaults.", exc)
         config = {"categories": []}
         settings = {}
+        prompts = {}
 
     language = settings.get("language", "de")
     lang_name = "Deutsch" if language == "de" else language
 
-    streamlit_app_url = get_streamlit_app_url(config_path)
-    category_links = build_category_quicklinks(config, streamlit_app_url, config_path)
+    streamlit_app_url = get_streamlit_app_url()
+    category_links = build_category_quicklinks(config, streamlit_app_url)
 
     active_directives = (custom_directives or "").strip()
     if not active_directives:
-        active_directives = (settings.get("custom_prompt_directives") or "").strip()
+        active_directives = (prompts.get("custom_prompt_directives") or settings.get("custom_prompt_directives") or "").strip()
     if not active_directives:
         active_directives = DEFAULT_DIRECTIVES
 
     active_main_template = (main_prompt_template or "").strip()
     if not active_main_template:
-        active_main_template = (settings.get("custom_main_prompt") or "").strip()
+        active_main_template = (prompts.get("custom_main_prompt") or settings.get("custom_main_prompt") or "").strip()
     if not active_main_template:
         active_main_template = DEFAULT_MAIN_PROMPT_TEMPLATE
 
