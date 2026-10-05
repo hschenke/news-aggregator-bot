@@ -5,26 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 05 Oct 2026 11:54:17 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 11:58:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Trump setzt Geheimdienstchef an die Spitze der »Super Intelligence Force«</title>
-      <link>https://www.all-ai.de/news/news26/trump-ai-si-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/trump-ai-si-start</guid>
-      <pubDate>Mon, 05 Oct 2026 08:27:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Donald Trump gründet eine neue Arbeitsgruppe für die KI-Politik der US-Regierung. Geheimdienstdirektor Jay Clayton übernimmt den Vorsitz. Die Gruppe koordiniert Behörden und den Austausch mit Unternehmen sowie weiteren Interessengruppen. Der Name folgt Trumps Anordnung, KI offiziell als »Super Intelligence« zu bezei...]]></description>
-    </item>
-    <item>
-      <title>Claude lässt Frau nach Tagebuch-Eintrag festnehmen</title>
-      <link>https://www.all-ai.de/news/news26top/claude-tagebuch-polizei</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-tagebuch-polizei</guid>
-      <pubDate>Mon, 05 Oct 2026 08:11:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Eine Frau aus Florida schrieb in Claude, sie werde das Büro des Sheriffs von Lee County angreifen. Anthropics Sicherheitstechnik markierte den Chat und menschliche Prüfer informierten die Polizei. Die Frau bezeichnete Claude als ihr Tagebuch und muss sich nun wegen einer schriftlichen Gewaltandrohung verantworten. A...]]></description>
-    </item>
+
   </channel>
 </rss>

@@ -27,4 +27,6 @@ custom_main_prompt: "Du bist ein professioneller News-Kurator und Redakteur für
 custom_prompt_directives: '- Filtere reine Werbung, Angebote, Sonderaktionen, Rabatte,
   Advertorials oder gesponserte Beiträge strikt heraus.
 
-  - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.'
+  - Nimm nur Artikel auf, die einen echten nachrichtlichen Informationswert bieten.
+
+  - Berücksichtige dabei wichtige wie Mahlsdorf, Hertha BSC immer vor anderen im Feed'
