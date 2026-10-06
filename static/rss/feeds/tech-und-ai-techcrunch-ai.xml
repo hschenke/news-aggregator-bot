@@ -5,35 +5,116 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 05 Oct 2026 12:17:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 06:07:41 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Google froze its open source bug bounty program due to a ‘significant rise’ in AI submissions</title>
-      <link>https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173559</guid>
-      <pubDate>Sun, 04 Oct 2026 20:31:07 GMT</pubDate>
+      <title>OpenAI will start watermarking ChatGPT’s text in the EU</title>
+      <link>https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173997</guid>
+      <pubDate>Mon, 05 Oct 2026 20:36:48 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[AI slop seems to be overwhelming bug bounty programs.]]></description>
+      <description><![CDATA[OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act. Editing can make the invisible marks harder to detect, it says.]]></description>
     </item>
     <item>
-      <title>Can ‘super intelligence’ and a non-binding safety pact solve AI’s image problem?</title>
-      <link>https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173555</guid>
-      <pubDate>Sun, 04 Oct 2026 20:08:34 GMT</pubDate>
+      <title>Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost</title>
+      <link>https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173994</guid>
+      <pubDate>Mon, 05 Oct 2026 19:33:53 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[On Equity, we discussed the Trump administration's attempts to rebrand AI.]]></description>
+      <description><![CDATA[Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI system by training Reflection’s AI models on their own proprietary data.]]></description>
     </item>
     <item>
-      <title>Trump unveils his new Super Intelligence Force</title>
-      <link>https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3173547</guid>
-      <pubDate>Sun, 04 Oct 2026 15:15:10 GMT</pubDate>
+      <title>Instinct brings its AI agent to group chats, even for friends without an account</title>
+      <link>https://techcrunch.com/2026/10/05/instinct-brings-its-ai-agent-to-group-chats-even-for-friends-without-an-account/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173877</guid>
+      <pubDate>Mon, 05 Oct 2026 18:54:30 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[This new task force is Trump's latest response to the debate over AI safety.]]></description>
+      <description><![CDATA[Instinct is launching group chats that let friends use its AI agent together for tasks like planning trips, organizing carpools, and coordinating events. The company says personal accounts remain separate, with permission required before personal agents share information or take action.]]></description>
+    </item>
+    <item>
+      <title>TikTok rolls out an AI shopping assistant and one-click checkout</title>
+      <link>https://techcrunch.com/2026/10/05/tiktok-rolls-out-an-ai-shopping-assistant-and-one-click-checkout/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173828</guid>
+      <pubDate>Mon, 05 Oct 2026 18:29:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[TikTok describes its new Shopping Assistant as a conversational AI agent designed to help users discover and purchase products.]]></description>
+    </item>
+    <item>
+      <title>Hot Girl Hotline is like ‘Dear Abby’ for the AI era</title>
+      <link>https://techcrunch.com/2026/10/05/hot-girl-hotline-is-like-dear-abby-for-the-ai-era/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173232</guid>
+      <pubDate>Mon, 05 Oct 2026 17:29:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Founded by two sisters, Hot Girl Hotline uses AI to give young women personalized dating and relationship advice, with an emphasis on safety and avoiding emotional dependency.]]></description>
+    </item>
+    <item>
+      <title>HackerRank’s AI interviewer offers a glimpse into what job interviews could become</title>
+      <link>https://techcrunch.com/2026/10/05/hackerranks-ai-interviewer-offers-a-glimpse-into-what-job-interviews-could-become/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173686</guid>
+      <pubDate>Mon, 05 Oct 2026 16:43:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[HackerRank’s AI interviewer has already conducted more than 500,000 interviews, with Snowflake, Snorkel, and Capgemini among its early testers.]]></description>
+    </item>
+    <item>
+      <title>OpenAI launches visual ads that appear alongside image generation results</title>
+      <link>https://techcrunch.com/2026/10/05/openai-launches-visual-ads-that-appear-alongside-image-generation-results/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173723</guid>
+      <pubDate>Mon, 05 Oct 2026 15:14:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.]]></description>
+    </item>
+    <item>
+      <title>Open or closed AI? How founders are choosing what to build on at TechCrunch Disrupt 2026</title>
+      <link>https://techcrunch.com/2026/10/05/open-or-closed-ai-how-founders-are-choosing-what-to-build-on-at-techcrunch-disrupt-2026/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173563</guid>
+      <pubDate>Mon, 05 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Learn how founders are choosing between building on open or closed AI at TechCrunch Disrupt 2026. Register now to save up to $100 and get a second pass at 50% off.]]></description>
+    </item>
+    <item>
+      <title>Researchers are tracking a Chinese AI ‘agent fleet’</title>
+      <link>https://techcrunch.com/2026/10/05/researchers-are-tracking-a-chinese-ai-agent-fleet/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173705</guid>
+      <pubDate>Mon, 05 Oct 2026 14:35:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Independent researchers discovered an agent swarm that seems to be running on Tencent's infrastructure and targeting Alibaba's map service, Amap.]]></description>
+    </item>
+    <item>
+      <title>Meet the Startup Battlefield 200 judges who’ll decide the winner at TechCrunch Disrupt 2026</title>
+      <link>https://techcrunch.com/2026/10/05/meet-the-startup-battlefield-200-judges-wholl-decide-the-winner-at-techcrunch-disrupt-2026/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173591</guid>
+      <pubDate>Mon, 05 Oct 2026 14:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Meet the final five Startup Battlefield judges who'll decide who wins the pitch competition at TechCrunch Disrupt 2026. Get your pass now to save up to $100, and get a second at 50% off.]]></description>
+    </item>
+    <item>
+      <title>The final Disrupt Stage lineup: Three days of conversations you won’t hear anywhere outside of TechCrunch Disrupt 2026</title>
+      <link>https://techcrunch.com/2026/10/05/the-final-disrupt-stage-lineup-three-days-of-conversations-you-wont-hear-anywhere-outside-of-techcrunch-disrupt-2026/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173520</guid>
+      <pubDate>Mon, 05 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The full TechCrunch Disrupt Stage lineup revealed, featuring Max Hodak, Mark Wahlberg, Benchmark partners, and more. Register now to save up to $100 on your pass and get a second at 50% off.]]></description>
+    </item>
+    <item>
+      <title>Can Safeworld convince people that GenAI robots won’t hurt them?</title>
+      <link>https://techcrunch.com/2026/10/05/can-safeworld-convince-people-that-gen-ai-robots-wont-hurt-them/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173325</guid>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Safeworld is building digital humans to make sure robots don't hurt the real ones.]]></description>
     </item>
   </channel>
 </rss>
