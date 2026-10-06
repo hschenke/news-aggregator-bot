@@ -5,62 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 06 Oct 2026 06:07:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 12:05:51 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Europe's new robotics unicorn: Germany's RobCo hits $1B valuation</title>
-      <link>https://techfundingnews.com/europes-new-robotics-unicorn-germanys-robco-hits-1b-valuation/</link>
-      <guid isPermaLink="false">https://techfundingnews.com/europes-new-robotics-unicorn-germanys-robco-hits-1b-valuation/</guid>
-      <pubDate>Mon, 05 Oct 2026 11:13:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Web Search API</title>
-      <link>https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/</link>
-      <guid isPermaLink="false">https://developers.cloudflare.com/changelog/post/2026-10-02-introducing-web-search-api/</guid>
-      <pubDate>Mon, 05 Oct 2026 10:47:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Press Release: Nobel Prize in Physiology or Medicine 2026</title>
-      <link>https://www.nobelprize.org/prizes/medicine/2026/press-release/</link>
-      <guid isPermaLink="false">https://www.nobelprize.org/prizes/medicine/2026/press-release/</guid>
-      <pubDate>Mon, 05 Oct 2026 10:35:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Apple and a Hacker's Future</title>
-      <link>https://stratechery.com/2026/apple-and-a-hackers-future/</link>
-      <guid isPermaLink="false">https://stratechery.com/2026/apple-and-a-hackers-future/</guid>
-      <pubDate>Mon, 05 Oct 2026 10:05:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Denmark Data Breach Exposes 8.8M People's Personal Data</title>
-      <link>https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger</link>
-      <guid isPermaLink="false">https://www.cpr.dk/cpr-nyt/nyhedsarkiv/2026/okt/omfattende-uautoriseret-adgang-til-borgeres-cpr-oplysninger</guid>
-      <pubDate>Mon, 05 Oct 2026 08:09:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Huawei and Qualcomm Announce Broad Patent License Agreement</title>
-      <link>https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement</link>
-      <guid isPermaLink="false">https://www.huawei.com/en/news/2026/10/qualcomm-broad-patent-agreement</guid>
-      <pubDate>Mon, 05 Oct 2026 07:46:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>
