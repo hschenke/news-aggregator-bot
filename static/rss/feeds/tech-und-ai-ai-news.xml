@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 07 Oct 2026 05:01:15 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 11:51:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI veröffentlicht 722 Mathearbeiten eines unveröffentlichten KI-Modells</title>
+      <link>https://www.all-ai.de/news/news26/openai-mathematik-modell</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-mathematik-modell</guid>
+      <pubDate>Wed, 07 Oct 2026 07:51:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI veröffentlicht 722 mathematische Manuskripte aus 372 Themenfamilien. Ein unveröffentlichtes KI-Modell bearbeitete dafür rund 4.000 offene Forschungsprobleme. Viele Beweise sind in Lean formalisiert, doch nicht alle Ergebnisse sind vollständig geprüft. OpenAI dokumentiert Lösungswege und sucht nach einem Archi...]]></description>
+    </item>
     <item>
       <title>Microsoft und Acemoglu: KI wird »fast« gar nichts verändern!</title>
       <link>https://www.all-ai.de/news/beitrage2026/microsoft-acemoglu-ki-zukunft</link>
@@ -52,42 +61,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Mistral Large 4 erreicht 38 Punkte im Artificial Analysis Intelligence Index. Damit ist es das stärkste für Open Weights vorgesehene Modell aus den USA oder Europa. Besonders stark schneidet ML4 bei Cybersecurity, Agenten-Aufgaben und Finanzanalysen ab. Die API ist verfügbar, die Modellgewichte sollen am 27. Oktober...]]></description>
-    </item>
-    <item>
-      <title>OpenAI macht Codex Auto-review für alle Nutzer kostenlos</title>
-      <link>https://www.all-ai.de/news/news26/openai-codex-work-free</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-codex-work-free</guid>
-      <pubDate>Tue, 06 Oct 2026 09:15:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Auto-review lässt einen separaten KI-Agenten über Aktionen außerhalb der Codex-Sandbox entscheiden. Codex stoppt dadurch rund 200-mal seltener für eine menschliche Freigabe. Von 720 geprüften Aktionen lehnte Auto-review in einem internen Beispiel sieben ab. Die Sandbox bleibt unverändert und Auto-review bietet keine...]]></description>
-    </item>
-    <item>
-      <title>Das sind die 50 erfolgreichsten KI-Tools</title>
-      <link>https://www.all-ai.de/news/news26/ki-tools-top50-2026</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-tools-top50-2026</guid>
-      <pubDate>Tue, 06 Oct 2026 06:43:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI und Anthropic führen eine neue Rangliste nach beobachteten monatlichen Ausgaben von US-Verbrauchern an. Higgsfield, Suno, Lovable und ElevenLabs schaffen es ebenfalls in die Top 10. Higgsfield und Lovable bündeln fremde Modelle, während Suno und ElevenLabs eigene spezialisierte Modelle entwickeln. Die Grafik ...]]></description>
-    </item>
-    <item>
-      <title>Eleven v4 oder v4 Turbo: Welches Modell passt besser?</title>
-      <link>https://www.all-ai.de/news/news26/elevenlabs-eleven4-eleven4turbo</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-eleven4-eleven4turbo</guid>
-      <pubDate>Tue, 06 Oct 2026 06:06:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Eleven v4 Turbo übernimmt den ersten Platz in der Provider Voice Arena von Artificial Analysis. Das Modell kostet regulär 40 Dollar pro Million Zeichen und damit halb so viel wie Eleven v4. Turbo eignet sich für Sprachagenten und andere Echtzeitanwendungen, Eleven v4 für hochwertige vorproduzierte Inhalte. Bei schwi...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT und Claude Abos: Wie hoch ist eigentlich der API-Gegenwert?</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-claude-api-gegenwert</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-claude-api-gegenwert</guid>
-      <pubDate>Tue, 06 Oct 2026 05:46:43 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude-Abos bieten mit Opus 5.5 mehr als fünfmal so viel API-Gegenwert wie vergleichbare ChatGPT-Tarife. GPT-6.1 Sol ist pro Aufgabe erheblich günstiger, wodurch OpenAI bei den Abos mehr finanziellen Spielraum besitzt. OpenAIs neuer 500-Dollar-Tarif liefert bei GPT-6 Astra nur 21 Prozent mehr Token als der frühere 2...]]></description>
     </item>
   </channel>
 </rss>
