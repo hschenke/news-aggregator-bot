@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 06 Oct 2026 12:05:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 05:01:15 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -70,24 +70,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The action RPG Rewolt has been announced: Rewolt Announcement Trailer Rewolt is a dark fantasy RPG, heavily inspired by hardcore old-school classics from the 2000s. Back from the dead, a nameless protagonist enters the war for No Man's Land - a remote canyon area....]]></description>
-    </item>
-    <item>
-      <title>RPG General News - Upcoming Dungeon Crawlers</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60303</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60303</guid>
-      <pubDate>Mon, 05 Oct 2026 17:25:53 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Just Jamie Retro Realm presents some upcoming dungeon crawlers: Top 15 Upcoming Retro-Inspired Dungeon Crawlers 2026/2027 Games in Order of Video:UnderkeepGreed & DarknessThe Secret of WeepstoneDice CrawlerHäxeriWyldheartLitGirls: Book...]]></description>
-    </item>
-    <item>
-      <title>ToEE - Upcoming Patch #4</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60302</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60302</guid>
-      <pubDate>Mon, 05 Oct 2026 17:21:56 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Henriquejr spotted an upcoming patch for The Temple of Elemental Evil: Upcoming Patch #4 and price change Adventurers! We want to share an update on what's next for The Temple of Elemental Evil. Patch #4 - 4K and UI scalingThe next patch focuses on higher resolution support and UI scaling....]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 06 Oct 2026 12:05:51 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2026 05:01:15 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft und Acemoglu: KI wird »fast« gar nichts verändern!</title>
+      <link>https://www.all-ai.de/news/beitrage2026/microsoft-acemoglu-ki-zukunft</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/microsoft-acemoglu-ki-zukunft</guid>
+      <pubDate>Tue, 06 Oct 2026 18:37:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Daron Acemoglu erwartet, dass KI in zehn Jahren nur rund fünf Prozent der menschlichen Arbeit ersetzt. Als warnendes Beispiel nennt er Microsofts Umgang mit der Spracherkennung von Nuance. Statt Vollautomatisierung fordert der Ökonom KI, die Beschäftigte bei ihrer Arbeit besser macht. Seine Kritik erscheint ausgerec...]]></description>
+    </item>
+    <item>
+      <title>ElevenLabs lässt KI-Agenten jetzt von KI-Agenten bauen</title>
+      <link>https://www.all-ai.de/news/news26top/elevenlabs-ki-agenten-selbstbau</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/elevenlabs-ki-agenten-selbstbau</guid>
+      <pubDate>Tue, 06 Oct 2026 18:13:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[ElevenAgents Architect erstellt neue KI-Agenten und verbessert bestehende Anwendungen per Sprache oder Chat. Der Assistent untersucht Gespräche, Konfigurationen und Tests und setzt Änderungen als Entwurf um. Simulationen prüfen die Anpassungen, bevor ein Mitarbeiter sie freigibt. Die Alpha ist auch über ChatGPT, Cla...]]></description>
+    </item>
+    <item>
+      <title>Nano Banana 2.1 bringt GIFs statt Qualitätssprung</title>
+      <link>https://www.all-ai.de/news/news26top/nano-banana-2-1-gifs-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/nano-banana-2-1-gifs-start</guid>
+      <pubDate>Tue, 06 Oct 2026 17:28:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google veröffentlicht Nano Banana 2.1 für Bildgenerierung und Bildbearbeitung. Neue Schwerpunkte sind GIFs, wiederverwendbare Avatare und eingezeichnete Masken für Inpainting. Gegenüber Nano Banana 2 verbessert Google bekannte Funktionen, nennt aber keine Benchmarkwerte. Nano Banana 2 bleibt kostenlos, während 2.1 e...]]></description>
+    </item>
+    <item>
+      <title>Google bringt Gemma 2 direkt aufs Smartphone</title>
+      <link>https://www.all-ai.de/news/news26/google-gemma2-smartphone</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-gemma2-smartphone</guid>
+      <pubDate>Tue, 06 Oct 2026 16:26:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[EmbeddingGemma 2 bildet Text, Code, Bilder, Audio und Video in einem gemeinsamen Vektorraum ab. Das vollständige Modell umfasst 740 Millionen Parameter und benötigt quantisiert rund 567 Megabyte Arbeitsspeicher. Im Code-Benchmark legt es gegenüber dem Vorgänger um 9,92 Punkte zu. Google veröffentlicht die Modellgewi...]]></description>
+    </item>
+    <item>
+      <title>Mistral Large 4: Das beste Modell aus Europa</title>
+      <link>https://www.all-ai.de/news/news26top/mistral-4-large-topmodell-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/mistral-4-large-topmodell-start</guid>
+      <pubDate>Tue, 06 Oct 2026 14:31:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Mistral Large 4 erreicht 38 Punkte im Artificial Analysis Intelligence Index. Damit ist es das stärkste für Open Weights vorgesehene Modell aus den USA oder Europa. Besonders stark schneidet ML4 bei Cybersecurity, Agenten-Aufgaben und Finanzanalysen ab. Die API ist verfügbar, die Modellgewichte sollen am 27. Oktober...]]></description>
+    </item>
     <item>
       <title>OpenAI macht Codex Auto-review für alle Nutzer kostenlos</title>
       <link>https://www.all-ai.de/news/news26/openai-codex-work-free</link>
@@ -43,69 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Claude-Abos bieten mit Opus 5.5 mehr als fünfmal so viel API-Gegenwert wie vergleichbare ChatGPT-Tarife. GPT-6.1 Sol ist pro Aufgabe erheblich günstiger, wodurch OpenAI bei den Abos mehr finanziellen Spielraum besitzt. OpenAIs neuer 500-Dollar-Tarif liefert bei GPT-6 Astra nur 21 Prozent mehr Token als der frühere 2...]]></description>
-    </item>
-    <item>
-      <title>ElevenLabs Wettbewerb: 100.000 Dollar für die besten KI-Werbespots</title>
-      <link>https://www.all-ai.de/news/news26/elevenlabs-wettbewerb-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-wettbewerb-start</guid>
-      <pubDate>Mon, 05 Oct 2026 19:12:25 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[ElevenLabs verteilt 100.000 Dollar an die elf besten KI-Werbespots. Der 15 bis 45 Sekunden lange Beitrag braucht einen Jingle aus ElevenCreative. Das Video muss auf mindestens drei Social-Media-Plattformen veröffentlicht werden. Einsendeschluss ist der 1. November 2026 um 23:59 Uhr Pacific Time. The Search for the W...]]></description>
-    </item>
-    <item>
-      <title>ElevenLabs: 300 Eleven v.4 TAGS zum kopieren</title>
-      <link>https://www.all-ai.de/tutorials/tutorials-ki/elevenlabs-eleven4-tags-tutorial</link>
-      <guid isPermaLink="false">https://www.all-ai.de/tutorials/tutorials-ki/elevenlabs-eleven4-tags-tutorial</guid>
-      <pubDate>Mon, 05 Oct 2026 18:20:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Images 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 1. 10 Tipps 2. Tags mit einem Wort 3. Tags mit mehreren Wörtern 4. Häufige Fragen (FAQ) Zur offiziellen Webseite von ElevenLabs Audio-Tags in Eleven v4 und v3: offizielle Anleitung Tipps zu Tags, Emotionen und Sprechweise von ElevenLabs Offizielle Audio-Tag-Liste mit ...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT erhält in der EU ein unsichtbares Text-Wasserzeichen</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-wasserzeichen-eu</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-wasserzeichen-eu</guid>
-      <pubDate>Mon, 05 Oct 2026 15:34:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI führt in der EU ein unsichtbares Wasserzeichen für geeignete Texte von ChatGPT und Codex ein. API-Kunden können textGrain weltweit für ausgewählte Modelle einschalten. Schon der Austausch von zehn Prozent der Wörter senkt die Erkennungsrate bei 400 Token von rund 92 auf 66 Prozent. Der Detektor bleibt zunächs...]]></description>
-    </item>
-    <item>
-      <title>Figure-Gründer startet Hark und verschenkt 100.000 Pro-Zugänge</title>
-      <link>https://www.all-ai.de/news/news26/figure-hark-geschenk</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/figure-hark-geschenk</guid>
-      <pubDate>Mon, 05 Oct 2026 15:09:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Hark startet noch in dieser Woche. Die ersten 100.000 Nutzer erhalten den kostenpflichtigen Tarif gratis. Der Handoff-Agent kann Webseiten bedienen und mehrstufige Aufgaben erledigen. Hark plant neben der Software eigene KI-Modelle und Geräte. Brett Adcock kündigt den Start von Hark an Hark stellt den Browser-Agente...]]></description>
-    </item>
-    <item>
-      <title>OpenAI stoppt »Astra 6.1« wegen zu hohem Risiko</title>
-      <link>https://www.all-ai.de/news/news26/openai-astra-6-1-stopp</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-astra-6-1-stopp</guid>
-      <pubDate>Mon, 05 Oct 2026 14:57:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI hält das bereits einsatzbereite KI-Modell Astra 6.1 wegen eines zu hohen Unfallrisikos zurück. Sam Altman zieht die Grenze bei Katastrophen wie einem dauerhaften Kontrollverlust über KI. Schwere Cyberangriffe und anderen Missbrauch hält er als Preis für einen breiten Zugang zu KI für hinnehmbar. Das freiwilli...]]></description>
-    </item>
-    <item>
-      <title>Safeworld soll verhindern, dass KI-Roboter Menschen verletzen</title>
-      <link>https://www.all-ai.de/news/news26/saveworld-roboter</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/saveworld-roboter</guid>
-      <pubDate>Mon, 05 Oct 2026 14:48:16 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Safeworld erhält 12,2 Millionen Dollar Startkapital für eine Plattform zur Sicherheitsprüfung von KI-Robotern. Digitale Einsatzorte und virtuelle Menschen ermöglichen tausende Tests gefährlicher Situationen. Die Simulationen prüfen unter anderem blinde Ecken, Stürze und unterschiedliche Körperhaltungen. Safeworld wi...]]></description>
-    </item>
-    <item>
-      <title>Cohere North 2 hält KI-Agenten an der kurzen Leine</title>
-      <link>https://www.all-ai.de/news/news26/cohere-north-2-ki-zentrale</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/cohere-north-2-ki-zentrale</guid>
-      <pubDate>Mon, 05 Oct 2026 14:40:33 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Cohere erweitert North zu einer zentral verwalteten Plattform für KI-Agenten. Agenten erhalten Gedächtnis, gemeinsame Bibliotheken, wiederverwendbare Fähigkeiten und zahlreiche Konnektoren. Admins begrenzen Rechte, Modelle, Tokenbudgets und Anfragen bis auf Nutzer- und Agentenebene. North 2 kann in der privaten Clou...]]></description>
     </item>
   </channel>
 </rss>
