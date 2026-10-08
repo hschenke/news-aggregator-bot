@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
     <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 12:06:38 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Zwischen Kurve und Kommerz: Der Streit um die Stadion-Vlogger</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/hammerfix-hertha-bsc-stadionvlogger-viscabarca-unsere-kurve.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/hammerfix-hertha-bsc-stadionvlogger-viscabarca-unsere-kurve.html</guid>
+      <pubDate>Thu, 08 Oct 2026 07:34:00 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Stadion-Vlogger polarisieren: Für die einen sind sie moderne Fußball-Chronisten, für andere das Sinnbild der Kommerzialisierung. Warum sich am Streit um Bilder aus dem Stadion ein Grundkonflikt des Profifußballs zeigt.]]></description>
+    </item>
     <item>
       <title>Sieg bei Salzburg: Eisbären ziehen ins CHL-Achtelfinale ein</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/eishockey-champions-hockey-league-salzburg-eisbaeren-berlin.html</link>
@@ -52,15 +61,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Aufgewachsen ist Paul Schaffran in Potsdam und Potsdam-Mittelmark, mittlerweile leitet er das Nachwuchsleistungszentrum von Fußball-Bundesligist Borussia Dortmund. Sein Weg dorthin ist eher ungewöhnlich.]]></description>
-    </item>
-    <item>
-      <title>Hertha-Spieler fährt zur Ü80-Fußball-Weltmeisterschaft nach Australien</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-ue80-wm-weltmeisterschaft-hertha-bsc-michael-raetsch-berlin.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-ue80-wm-weltmeisterschaft-hertha-bsc-michael-raetsch-berlin.html</guid>
-      <pubDate>Wed, 07 Oct 2026 10:08:09 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Michael Rätsch ist 79 Jahre alt – und längst noch nicht fertig mit dem Fußball. Er steht im Kader der deutschen Ü80-Nationalmannschaft und reist zur Weltmeisterschaft nach Australien. Für ihn ist es das nächste Kapitel einer ungewöhnlichen Karriere.]]></description>
     </item>
   </channel>
 </rss>

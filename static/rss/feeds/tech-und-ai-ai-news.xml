@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 08 Oct 2026 12:06:38 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Haiku 5.5 vs. GPT-6 Luna: Das ist der wahre Gewinner</title>
+      <link>https://www.all-ai.de/news/news26/claude-haiku-vs-chatgpt-luna</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-haiku-vs-chatgpt-luna</guid>
+      <pubDate>Thu, 08 Oct 2026 08:18:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Haiku 5.5 erreicht auf »max« 43 Punkte, GPT-6 Luna kommt auf 38. Haiku kostet dabei mit 21 Cent pro Aufgabe dreimal so viel wie Luna. Bei vergleichbaren Aufgabenkosten liegt Luna jeweils knapp vor Haiku. Oberhalb von 100.000 Eingabetoken verfünffachen sich Haikus Tokenpreise. Anthropic: Introducing Claude Hai...]]></description>
+    </item>
+    <item>
+      <title>Microsoft Surface Laptop bringt riesige KI-Modelle aufs Notebook</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-surface-ki-modelle</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-surface-ki-modelle</guid>
+      <pubDate>Thu, 08 Oct 2026 07:23:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Das Surface Laptop Ultra führt KI-Modelle mit mehr als 120 Milliarden Parametern lokal aus. RTX Spark kombiniert bis zu 128 GB gemeinsamen Arbeitsspeicher mit einem Petaflop FP4-Rechenleistung. Lokale Modelle lassen sich mit GitHub Copilot für Codeprüfungen und KI-Agenten einsetzen. Der Vollausbau kostet 6.879 Euro,...]]></description>
+    </item>
+    <item>
+      <title>Der interessanteste KI-Agent ist jetzt 1,5 Milliarden Dollar wert</title>
+      <link>https://www.all-ai.de/news/news26/ki-agent-hermes-bewertung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-agent-hermes-bewertung</guid>
+      <pubDate>Thu, 08 Oct 2026 07:12:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nous Research nimmt 90 Millionen Dollar bei einer Bewertung von 1,5 Milliarden Dollar ein. Der Open-Source-Agent Hermes wurde mehr als 24 Millionen Mal geklont. Mit »Hermes for Businesses« will Nous Research nun Firmenkunden erreichen. Bis Ende 2026 soll der hochgerechnete Jahresumsatz auf mehr als 100 Millionen Dol...]]></description>
+    </item>
     <item>
       <title>GPT-6 verwandelt ChatGPT in eine interaktive App</title>
       <link>https://www.all-ai.de/news/news26top/chatgpt-interaktive-app-start</link>
@@ -52,15 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Google öffnet den SynthID Detector weltweit und kostenlos für alle Nutzer. Das Portal erkennt Wasserzeichen in Bildern, Audio und Videos von Google, OpenAI, Nvidia und Kakao. Ein fehlender Fund schließt KI-Erstellung nicht aus, weil SynthID nur teilnehmende Angebote erfasst. Apple soll sich dem gemeinsamen Prüfsyste...]]></description>
-    </item>
-    <item>
-      <title>OpenAI veröffentlicht 722 Mathearbeiten eines unveröffentlichten KI-Modells</title>
-      <link>https://www.all-ai.de/news/news26/openai-mathematik-modell</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-mathematik-modell</guid>
-      <pubDate>Wed, 07 Oct 2026 07:51:28 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI veröffentlicht 722 mathematische Manuskripte aus 372 Themenfamilien. Ein unveröffentlichtes KI-Modell bearbeitete dafür rund 4.000 offene Forschungsprobleme. Viele Beweise sind in Lean formalisiert, doch nicht alle Ergebnisse sind vollständig geprüft. OpenAI dokumentiert Lösungswege und sucht nach einem Archi...]]></description>
     </item>
   </channel>
 </rss>
