@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 09 Oct 2026 05:01:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 11:58:33 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI Umsatz: 20 Milliarden Dollar lösen sich im »Nichts« auf</title>
+      <link>https://www.all-ai.de/news/news26/openai-dollar-umsatz</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-dollar-umsatz</guid>
+      <pubDate>Fri, 09 Oct 2026 08:55:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI erreichte Ende September rund 50 Milliarden Dollar annualisierten Umsatz. Die zuvor gemeldeten 70 Milliarden Dollar beruhten auf einer an Anthropic angepassten Rechnung. Verkäufe über Cloud-Partner werden bei beiden Unternehmen unterschiedlich verbucht. Bis Jahresende erwartet OpenAI weiterhin mindestens 70 M...]]></description>
+    </item>
+    <item>
+      <title>OpenAI unter Druck: Entlassene Forscher erheben schwere Vorwürfe</title>
+      <link>https://www.all-ai.de/news/news26/openai-entlassungen-offener-brief</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-entlassungen-offener-brief</guid>
+      <pubDate>Fri, 09 Oct 2026 08:06:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Drei entlassene OpenAI-Sicherheitsforscher bestreiten die Vorwürfe ihres früheren Arbeitgebers. Sie warnen, die Kündigungen könnten Kollegen einschüchtern und externe Sicherheitsarbeit behindern. OpenAI spricht von einem Muster aus Fehlverhalten, bestreitet aber eine Vergeltung für geäußerte Sicherheitsbedenken. Das...]]></description>
+    </item>
+    <item>
+      <title>Anthropic lässt Claude kostenlos nach Sicherheitslücken suchen</title>
+      <link>https://www.all-ai.de/news/news26/claude-cyber-mission</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-cyber-mission</guid>
+      <pubDate>Fri, 09 Oct 2026 07:48:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic startet mit dem OSS Scanner kostenlose und regelmäßige Sicherheitsprüfungen für geeignete Open-Source-Projekte. Die KI-generierten Berichte kommen ohne menschliche Prüfung und sollen eine Trefferquote von mehr als 90 Prozent erreichen. Ein zweites Programm bringt Claude und Anthropic-Ingenieure zu Anbieter...]]></description>
+    </item>
+    <item>
+      <title>Claude Motion baut jetzt Live-Dashboards und animierte Erklärvideos</title>
+      <link>https://www.all-ai.de/news/news26/claude-motion-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-motion-start</guid>
+      <pubDate>Fri, 09 Oct 2026 07:28:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic Kurzfassung ▾ Quellen ▾ Claude Dashboards erstellt aus verbundenen Unternehmensdaten laufend aktualisierte Übersichten. Nutzer können die Abfrage hinter jeder Kennzahl prüfen und Dashboards an Analyseplattformen übergeben. Claude Motion erzeugt editierbare Animationen als Code und exportiert sie als MP4. C...]]></description>
+    </item>
     <item>
       <title>Claude Science erstellt die erste lückenlose UV-Himmelskarte</title>
       <link>https://www.all-ai.de/news/beitrage2026/claude-science-erste-uv-himmelskarte</link>
@@ -43,33 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Google bündelt Wissensarbeit, Medienerstellung und Programmierung in einem universellen Gemini Agenten. Der Agent läuft in der Cloud, behält Kontext und kann Aufgaben über Stunden oder Tage fortsetzen. Für größere Aufträge erstellt Gemini Unteragenten und koordiniert deren Arbeit. Unternehmen erhalten eigene Agenten...]]></description>
-    </item>
-    <item>
-      <title>Claude Haiku 5.5 vs. GPT-6 Luna: Das ist der wahre Gewinner</title>
-      <link>https://www.all-ai.de/news/news26/claude-haiku-vs-chatgpt-luna</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-haiku-vs-chatgpt-luna</guid>
-      <pubDate>Thu, 08 Oct 2026 08:18:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Haiku 5.5 erreicht auf »max« 43 Punkte, GPT-6 Luna kommt auf 38. Haiku kostet dabei mit 21 Cent pro Aufgabe dreimal so viel wie Luna. Bei vergleichbaren Aufgabenkosten liegt Luna jeweils knapp vor Haiku. Oberhalb von 100.000 Eingabetoken verfünffachen sich Haikus Tokenpreise. Anthropic: Introducing Claude Hai...]]></description>
-    </item>
-    <item>
-      <title>Microsoft Surface Laptop bringt riesige KI-Modelle aufs Notebook</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-surface-ki-modelle</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-surface-ki-modelle</guid>
-      <pubDate>Thu, 08 Oct 2026 07:23:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Das Surface Laptop Ultra führt KI-Modelle mit mehr als 120 Milliarden Parametern lokal aus. RTX Spark kombiniert bis zu 128 GB gemeinsamen Arbeitsspeicher mit einem Petaflop FP4-Rechenleistung. Lokale Modelle lassen sich mit GitHub Copilot für Codeprüfungen und KI-Agenten einsetzen. Der Vollausbau kostet 6.879 Euro,...]]></description>
-    </item>
-    <item>
-      <title>Der interessanteste KI-Agent ist jetzt 1,5 Milliarden Dollar wert</title>
-      <link>https://www.all-ai.de/news/news26/ki-agent-hermes-bewertung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-agent-hermes-bewertung</guid>
-      <pubDate>Thu, 08 Oct 2026 07:12:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Nous Research nimmt 90 Millionen Dollar bei einer Bewertung von 1,5 Milliarden Dollar ein. Der Open-Source-Agent Hermes wurde mehr als 24 Millionen Mal geklont. Mit »Hermes for Businesses« will Nous Research nun Firmenkunden erreichen. Bis Ende 2026 soll der hochgerechnete Jahresumsatz auf mehr als 100 Millionen Dol...]]></description>
     </item>
   </channel>
 </rss>
