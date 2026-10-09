@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 12:06:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 05:01:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -49,132 +49,6 @@
       <link>https://mathstodon.xyz/@tao/117395269325940185</link>
       <guid isPermaLink="false">https://mathstodon.xyz/@tao/117395269325940185</guid>
       <pubDate>Thu, 08 Oct 2026 05:14:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Port of the TypeScript compiler, checker and lsp to Rust, by LLM</title>
-      <link>https://github.com/pingdotgg/ts-rust</link>
-      <guid isPermaLink="false">https://github.com/pingdotgg/ts-rust</guid>
-      <pubDate>Thu, 08 Oct 2026 00:46:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Margaret Hamilton has died</title>
-      <link>https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007</link>
-      <guid isPermaLink="false">https://news.mit.edu/2026/margaret-hamilton-computing-pioneer-dies-1007</guid>
-      <pubDate>Wed, 07 Oct 2026 21:16:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>'Jonathan' is the oldest land animal on Earth</title>
-      <link>https://www.404media.co/oldest-living-land-animal-jonathan-the-tortoise/</link>
-      <guid isPermaLink="false">https://www.404media.co/oldest-living-land-animal-jonathan-the-tortoise/</guid>
-      <pubDate>Wed, 07 Oct 2026 20:01:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Mathocalypse</title>
-      <link>https://scottaaronson.blog/?p=10169</link>
-      <guid isPermaLink="false">https://scottaaronson.blog/?p=10169</guid>
-      <pubDate>Wed, 07 Oct 2026 19:33:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Push ifs up and fors down: The idiom, its algebra, and its limits</title>
-      <link>https://debasishg.github.io/blog/push-ifs-up-fors-down/</link>
-      <guid isPermaLink="false">https://debasishg.github.io/blog/push-ifs-up-fors-down/</guid>
-      <pubDate>Wed, 07 Oct 2026 18:43:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Claude Haiku 5.5</title>
-      <link>https://www.anthropic.com/claude-haiku-5-5</link>
-      <guid isPermaLink="false">https://www.anthropic.com/claude-haiku-5-5</guid>
-      <pubDate>Wed, 07 Oct 2026 18:01:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>GPT‑6 and Intelligent UI for everyone</title>
-      <link>https://openai.com/index/gpt-6-for-everyone/</link>
-      <guid isPermaLink="false">https://openai.com/index/gpt-6-for-everyone/</guid>
-      <pubDate>Wed, 07 Oct 2026 18:00:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>In Vienna and Beijing, the first (thorium) nuclear clocks begin to tick</title>
-      <link>https://www.nytimes.com/2026/10/07/science/first-nuclear-clocks-thorium-229.html</link>
-      <guid isPermaLink="false">https://www.nytimes.com/2026/10/07/science/first-nuclear-clocks-thorium-229.html</guid>
-      <pubDate>Wed, 07 Oct 2026 17:59:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Docker Agent</title>
-      <link>https://github.com/docker/docker-agent</link>
-      <guid isPermaLink="false">https://github.com/docker/docker-agent</guid>
-      <pubDate>Wed, 07 Oct 2026 17:48:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: Bigwords.page – Turn any screen into a sign. The URL is the app</title>
-      <link>https://bigwords.page/</link>
-      <guid isPermaLink="false">https://bigwords.page/</guid>
-      <pubDate>Wed, 07 Oct 2026 15:44:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Navier–Stokes Lost in Translation</title>
-      <link>https://arxiv.org/abs/2610.08144</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2610.08144</guid>
-      <pubDate>Wed, 07 Oct 2026 15:24:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Why were Victorian elites so effective?</title>
-      <link>https://worksinprogress.co/issue/the-seven-vices-of-highly-effective-victorians/</link>
-      <guid isPermaLink="false">https://worksinprogress.co/issue/the-seven-vices-of-highly-effective-victorians/</guid>
-      <pubDate>Wed, 07 Oct 2026 15:09:33 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Animated ASCII Art for Web Pages</title>
-      <link>https://ascii.rest/</link>
-      <guid isPermaLink="false">https://ascii.rest/</guid>
-      <pubDate>Wed, 07 Oct 2026 15:05:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>House with 15m underground tunnels for sale for 300k</title>
-      <link>https://www.readingchronicle.co.uk/news/26612080.house-15m-underground-tunnels-sale-300k/</link>
-      <guid isPermaLink="false">https://www.readingchronicle.co.uk/news/26612080.house-15m-underground-tunnels-sale-300k/</guid>
-      <pubDate>Wed, 07 Oct 2026 12:57:10 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

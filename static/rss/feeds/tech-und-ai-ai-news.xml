@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 12:06:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 05:01:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Science erstellt die erste lückenlose UV-Himmelskarte</title>
+      <link>https://www.all-ai.de/news/beitrage2026/claude-science-erste-uv-himmelskarte</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/claude-science-erste-uv-himmelskarte</guid>
+      <pubDate>Thu, 08 Oct 2026 20:39:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Science hat mit dem Astrophysiker Brice Ménard eine lückenlose UV-Karte des Himmels erstellt. Rund ein Drittel der Karte beruht auf Vorhersagen für bislang unbeobachtete Regionen. Tests mit versteckten Messdaten ergaben Abweichungen von etwa zehn Prozent. Zusätzliche Ebenen unterscheiden gemessene und berechn...]]></description>
+    </item>
+    <item>
+      <title>Anthropic Nutzungsrichtlinien: Claude darf nicht mehr grundlos gequält werden</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-claude-neue-regeln</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-neue-regeln</guid>
+      <pubDate>Thu, 08 Oct 2026 17:20:05 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic verbietet anhaltendes und grundlos grausames Verhalten gegenüber Claude. Frust, Widerspruch, düstere kreative Themen sowie Tests und Forschung bleiben erlaubt. Das pauschale Verbot personalisierter Wahlansprache entfällt, während Täuschung und Fake-Kampagnen untersagt bleiben. Für autonome Hardware, Waffen...]]></description>
+    </item>
+    <item>
+      <title>Hacker greift Südkoreas Banken mit KI-Agenten an</title>
+      <link>https://www.all-ai.de/news/news26/hacker-ki-agenten-suedkorea</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/hacker-ki-agenten-suedkorea</guid>
+      <pubDate>Thu, 08 Oct 2026 12:56:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ein unbekannter Angreifer stahl Daten bei mehreren südkoreanischen Finanzunternehmen. Er kombinierte ARTEX mit DeepSeek v4.1-flash, GLM-5.3, Grok 4.6 und Claude Code. Offene Server gaben CrowdStrike Zugriff auf Konfigurationen und komplette KI-Sitzungen. Spuren deuten auf einen finanziell motivierten, chinesischspra...]]></description>
+    </item>
+    <item>
+      <title>Google führt den »Gemini Agenten« ein</title>
+      <link>https://www.all-ai.de/news/news26/google-cloud-agenten</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-cloud-agenten</guid>
+      <pubDate>Thu, 08 Oct 2026 12:48:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google bündelt Wissensarbeit, Medienerstellung und Programmierung in einem universellen Gemini Agenten. Der Agent läuft in der Cloud, behält Kontext und kann Aufgaben über Stunden oder Tage fortsetzen. Für größere Aufträge erstellt Gemini Unteragenten und koordiniert deren Arbeit. Unternehmen erhalten eigene Agenten...]]></description>
+    </item>
     <item>
       <title>Claude Haiku 5.5 vs. GPT-6 Luna: Das ist der wahre Gewinner</title>
       <link>https://www.all-ai.de/news/news26/claude-haiku-vs-chatgpt-luna</link>
@@ -34,51 +70,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Nous Research nimmt 90 Millionen Dollar bei einer Bewertung von 1,5 Milliarden Dollar ein. Der Open-Source-Agent Hermes wurde mehr als 24 Millionen Mal geklont. Mit »Hermes for Businesses« will Nous Research nun Firmenkunden erreichen. Bis Ende 2026 soll der hochgerechnete Jahresumsatz auf mehr als 100 Millionen Dol...]]></description>
-    </item>
-    <item>
-      <title>GPT-6 verwandelt ChatGPT in eine interaktive App</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-interaktive-app-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-interaktive-app-start</guid>
-      <pubDate>Wed, 07 Oct 2026 19:40:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT‑6 kann Antworten als interaktive Oberflächen mit Grafiken, Schaltflächen und Formularen darstellen. Bei Websuchen beginnt GPT‑6 Instant im Durchschnitt 44 Prozent früher mit der Antwort. Bezahlkunden erhalten GPT‑6 Sol, während Free und Go mit GPT‑6 Luna versorgt werden. Work und Codex wechseln im Rahmen dieser ...]]></description>
-    </item>
-    <item>
-      <title>Windows macht Copilot zum lokalen KI-Agenten</title>
-      <link>https://www.all-ai.de/news/news26top/windows-copilot-agenten-ki</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/windows-copilot-agenten-ki</guid>
-      <pubDate>Wed, 07 Oct 2026 19:12:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Copilot soll Aufgaben auf Copilot+ PCs künftig lokal oder in der Cloud bearbeiten. Mit Zustimmung des Nutzers greift der Chatbot auf Dateien und kürzlich verwendete Inhalte zu. Microsoft Execution Containers begrenzen den Zugriff selbstständig arbeitender KI-Agenten. Neue RTX-Spark-Geräte führen große KI-Modelle dir...]]></description>
-    </item>
-    <item>
-      <title>Claude Haiku 5.5 kostet 90 Prozent weniger</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-claude-haiku-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-haiku-start</guid>
-      <pubDate>Wed, 07 Oct 2026 18:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Haiku 5.5 kostet bei kurzen Anfragen 90 Prozent weniger pro Token als sein Vorgänger. In GDPval-AA und OSWorld liegt das kleine Modell vor GPT-6 Luna. Fünf Aufwandsstufen erlauben eine Wahl zwischen niedrigeren Kosten und höherer Antwortqualität. Das Modell ist über die Claude Platform sowie drei große Cloud-...]]></description>
-    </item>
-    <item>
-      <title>Google Playground erstellt Spiele ganz ohne Programmieren</title>
-      <link>https://www.all-ai.de/news/news26/google-playground-games</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-playground-games</guid>
-      <pubDate>Wed, 07 Oct 2026 17:21:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google Playground erstellt spielbare Browser-Games aus Textanweisungen. Nutzer können Regeln, Figuren, Physik und Grafikstil ohne Programmierkenntnisse verändern. Games lassen sich privat nutzen, per Link teilen oder in einer öffentlichen Galerie veröffentlichen. Eine geplante Integration mit Unity Spark soll anspru...]]></description>
-    </item>
-    <item>
-      <title>Google startet KI-Detektor mit OpenAI und Nvidia</title>
-      <link>https://www.all-ai.de/news/news26/openai-google-nvidia-ki-detektor</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-google-nvidia-ki-detektor</guid>
-      <pubDate>Wed, 07 Oct 2026 17:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google öffnet den SynthID Detector weltweit und kostenlos für alle Nutzer. Das Portal erkennt Wasserzeichen in Bildern, Audio und Videos von Google, OpenAI, Nvidia und Kakao. Ein fehlender Fund schließt KI-Erstellung nicht aus, weil SynthID nur teilnehmende Angebote erfasst. Apple soll sich dem gemeinsamen Prüfsyste...]]></description>
     </item>
   </channel>
 </rss>

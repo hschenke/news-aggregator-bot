@@ -5,35 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 08 Oct 2026 12:06:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 05:01:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dragon's Dogma 2 - Dark Arisen DLC Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60318</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60318</guid>
-      <pubDate>Thu, 08 Oct 2026 02:47:39 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Mortismal Gaming reviewed the Dragon's Dogma 2 - Dark Arisen DLC: Dragon's Dogma 2: Dark Arisen DLC Review]]></description>
-    </item>
-    <item>
-      <title>Ved: Recure - Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60317</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60317</guid>
-      <pubDate>Wed, 07 Oct 2026 15:50:08 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Milo Game Reviews reviewed Ved: Recure: Action Roguelite done RIGHT - Ved: Recure Review]]></description>
-    </item>
-    <item>
-      <title>Wundertrench - Announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60316</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60316</guid>
-      <pubDate>Wed, 07 Oct 2026 13:33:45 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The tactical roguelike Wundertrench has been announced: Wundertrench | Out of Bounds Showcase 2026 Wundertrench is a grim tactical roguelike RPG set in a militaristic empire on its last breath. Lead squads into an otherworldly, living trench to harvest resources and technology, and hold back the horrors waiting belo...]]></description>
-    </item>
+
   </channel>
 </rss>
