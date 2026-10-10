@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 09 Oct 2026 11:58:33 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 05:01:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qwen Image 2.1 Turbo: Bilder in nur acht Schritten</title>
+      <link>https://www.all-ai.de/news/news26/qwen-image-2-1-turbo-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/qwen-image-2-1-turbo-start</guid>
+      <pubDate>Fri, 09 Oct 2026 15:17:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Qwen Image 2.1 Turbo erzeugt und bearbeitet Bilder mit acht Denoising-Schritten. Das Basismodell nutzt in den offiziellen Beispielen 40 Schritte. Architektur, 7 Milliarden Parameter und 2K-Auflösungen bleiben erhalten. Qwen bietet Open Weights sowie neue Pro- und Turbo-APIs an. Qwen kündigt Qwen Image 2.1 Turbo an Q...]]></description>
+    </item>
+    <item>
+      <title>Trump erklärt »AI-Nutzer« zu Feinden</title>
+      <link>https://www.all-ai.de/news/news26top/trump-ai-si</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/trump-ai-si</guid>
+      <pubDate>Fri, 09 Oct 2026 14:57:18 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Donald Trump bezeichnet jeden als Feind des Weißen Hauses, der weiterhin den Begriff Artificial Intelligence verwendet. Sein Dekret zwingt nur US-Bundesbehörden zur Bezeichnung Super Intelligence und enthält keine Strafen. Tesla hat seinen X-Auftritt umbenannt, andere große KI-Unternehmen halten sich bei eigenen Mar...]]></description>
+    </item>
     <item>
       <title>OpenAI Umsatz: 20 Milliarden Dollar lösen sich im »Nichts« auf</title>
       <link>https://www.all-ai.de/news/news26/openai-dollar-umsatz</link>
@@ -43,42 +61,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic Kurzfassung ▾ Quellen ▾ Claude Dashboards erstellt aus verbundenen Unternehmensdaten laufend aktualisierte Übersichten. Nutzer können die Abfrage hinter jeder Kennzahl prüfen und Dashboards an Analyseplattformen übergeben. Claude Motion erzeugt editierbare Animationen als Code und exportiert sie als MP4. C...]]></description>
-    </item>
-    <item>
-      <title>Claude Science erstellt die erste lückenlose UV-Himmelskarte</title>
-      <link>https://www.all-ai.de/news/beitrage2026/claude-science-erste-uv-himmelskarte</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/claude-science-erste-uv-himmelskarte</guid>
-      <pubDate>Thu, 08 Oct 2026 20:39:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Science hat mit dem Astrophysiker Brice Ménard eine lückenlose UV-Karte des Himmels erstellt. Rund ein Drittel der Karte beruht auf Vorhersagen für bislang unbeobachtete Regionen. Tests mit versteckten Messdaten ergaben Abweichungen von etwa zehn Prozent. Zusätzliche Ebenen unterscheiden gemessene und berechn...]]></description>
-    </item>
-    <item>
-      <title>Anthropic Nutzungsrichtlinien: Claude darf nicht mehr grundlos gequält werden</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-claude-neue-regeln</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-neue-regeln</guid>
-      <pubDate>Thu, 08 Oct 2026 17:20:05 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic verbietet anhaltendes und grundlos grausames Verhalten gegenüber Claude. Frust, Widerspruch, düstere kreative Themen sowie Tests und Forschung bleiben erlaubt. Das pauschale Verbot personalisierter Wahlansprache entfällt, während Täuschung und Fake-Kampagnen untersagt bleiben. Für autonome Hardware, Waffen...]]></description>
-    </item>
-    <item>
-      <title>Hacker greift Südkoreas Banken mit KI-Agenten an</title>
-      <link>https://www.all-ai.de/news/news26/hacker-ki-agenten-suedkorea</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/hacker-ki-agenten-suedkorea</guid>
-      <pubDate>Thu, 08 Oct 2026 12:56:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ein unbekannter Angreifer stahl Daten bei mehreren südkoreanischen Finanzunternehmen. Er kombinierte ARTEX mit DeepSeek v4.1-flash, GLM-5.3, Grok 4.6 und Claude Code. Offene Server gaben CrowdStrike Zugriff auf Konfigurationen und komplette KI-Sitzungen. Spuren deuten auf einen finanziell motivierten, chinesischspra...]]></description>
-    </item>
-    <item>
-      <title>Google führt den »Gemini Agenten« ein</title>
-      <link>https://www.all-ai.de/news/news26/google-cloud-agenten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-cloud-agenten</guid>
-      <pubDate>Thu, 08 Oct 2026 12:48:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google bündelt Wissensarbeit, Medienerstellung und Programmierung in einem universellen Gemini Agenten. Der Agent läuft in der Cloud, behält Kontext und kann Aufgaben über Stunden oder Tage fortsetzen. Für größere Aufträge erstellt Gemini Unteragenten und koordiniert deren Arbeit. Unternehmen erhalten eigene Agenten...]]></description>
     </item>
   </channel>
 </rss>
