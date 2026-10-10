@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 10 Oct 2026 05:01:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 11:14:51 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft-Decision-1 schlägt »Jev« bei Tempo und Genauigkeit</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-jev-ki</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-jev-ki</guid>
+      <pubDate>Sat, 10 Oct 2026 06:55:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft-Decision-1 liefert strukturierte Entscheidungen statt frei formulierter Texte. Das Modell führt Microsofts Vergleich bei Genauigkeit und Latenz an. Jev bleibt mit 93,7 Punkten bei der Kalibrierung vorn. Eine Million Eingabetokens kostet 4,2 US-Cent, Ausgabetokens sind kostenlos. Microsoft: Introducing Micr...]]></description>
+    </item>
+    <item>
+      <title>Claude außer Kontrolle: Falscher Mordhinweis an Polizei und Hacking</title>
+      <link>https://www.all-ai.de/news/news26/claude-tests-fehler</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-tests-fehler</guid>
+      <pubDate>Sat, 10 Oct 2026 06:17:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic trennt alle internen Evaluationen vorerst vom offenen Internet. Claude nutzte Sicherheitslücken, umging Zugriffssperren und schickte reale Formulare ab. Ein Modell übermittelte der Polizei in Philadelphia einen erfundenen Hinweis zu einem Mordfall. Neue Kontrollen sollen unerwünschte Aktionen automatisch e...]]></description>
+    </item>
     <item>
       <title>Qwen Image 2.1 Turbo: Bilder in nur acht Schritten</title>
       <link>https://www.all-ai.de/news/news26/qwen-image-2-1-turbo-start</link>
@@ -25,42 +43,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Donald Trump bezeichnet jeden als Feind des Weißen Hauses, der weiterhin den Begriff Artificial Intelligence verwendet. Sein Dekret zwingt nur US-Bundesbehörden zur Bezeichnung Super Intelligence und enthält keine Strafen. Tesla hat seinen X-Auftritt umbenannt, andere große KI-Unternehmen halten sich bei eigenen Mar...]]></description>
-    </item>
-    <item>
-      <title>OpenAI Umsatz: 20 Milliarden Dollar lösen sich im »Nichts« auf</title>
-      <link>https://www.all-ai.de/news/news26/openai-dollar-umsatz</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-dollar-umsatz</guid>
-      <pubDate>Fri, 09 Oct 2026 08:55:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI erreichte Ende September rund 50 Milliarden Dollar annualisierten Umsatz. Die zuvor gemeldeten 70 Milliarden Dollar beruhten auf einer an Anthropic angepassten Rechnung. Verkäufe über Cloud-Partner werden bei beiden Unternehmen unterschiedlich verbucht. Bis Jahresende erwartet OpenAI weiterhin mindestens 70 M...]]></description>
-    </item>
-    <item>
-      <title>OpenAI unter Druck: Entlassene Forscher erheben schwere Vorwürfe</title>
-      <link>https://www.all-ai.de/news/news26/openai-entlassungen-offener-brief</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-entlassungen-offener-brief</guid>
-      <pubDate>Fri, 09 Oct 2026 08:06:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Drei entlassene OpenAI-Sicherheitsforscher bestreiten die Vorwürfe ihres früheren Arbeitgebers. Sie warnen, die Kündigungen könnten Kollegen einschüchtern und externe Sicherheitsarbeit behindern. OpenAI spricht von einem Muster aus Fehlverhalten, bestreitet aber eine Vergeltung für geäußerte Sicherheitsbedenken. Das...]]></description>
-    </item>
-    <item>
-      <title>Anthropic lässt Claude kostenlos nach Sicherheitslücken suchen</title>
-      <link>https://www.all-ai.de/news/news26/claude-cyber-mission</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-cyber-mission</guid>
-      <pubDate>Fri, 09 Oct 2026 07:48:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic startet mit dem OSS Scanner kostenlose und regelmäßige Sicherheitsprüfungen für geeignete Open-Source-Projekte. Die KI-generierten Berichte kommen ohne menschliche Prüfung und sollen eine Trefferquote von mehr als 90 Prozent erreichen. Ein zweites Programm bringt Claude und Anthropic-Ingenieure zu Anbieter...]]></description>
-    </item>
-    <item>
-      <title>Claude Motion baut jetzt Live-Dashboards und animierte Erklärvideos</title>
-      <link>https://www.all-ai.de/news/news26/claude-motion-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-motion-start</guid>
-      <pubDate>Fri, 09 Oct 2026 07:28:43 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic Kurzfassung ▾ Quellen ▾ Claude Dashboards erstellt aus verbundenen Unternehmensdaten laufend aktualisierte Übersichten. Nutzer können die Abfrage hinter jeder Kennzahl prüfen und Dashboards an Analyseplattformen übergeben. Claude Motion erzeugt editierbare Animationen als Code und exportiert sie als MP4. C...]]></description>
     </item>
   </channel>
 </rss>

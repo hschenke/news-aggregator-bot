@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
     <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 10 Oct 2026 05:01:05 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 10 Oct 2026 11:14:51 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jetzt live: Energie Cottbus bei Schlusslicht Darmstadt gefordert</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-liga-energie-cottbus-darmstadt-98-audio-livestream-liveticker-spielbericht.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-liga-energie-cottbus-darmstadt-98-audio-livestream-liveticker-spielbericht.html</guid>
+      <pubDate>Sat, 10 Oct 2026 10:55:07 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Die XXL-Länderspielpause hat vorbei – auch für Energie Cottbus. Der Fußball-Zweitligist ist bei Darmstadt 98 gefordert. Die Lilien sind das Schlusslicht der Liga und rangieren damit weit hinter dem FCE. Trotzdem sieht Coach Claus-Dieter Wollitz beim Gegner viel Qualität.]]></description>
+    </item>
     <item>
       <title>5:0 gegen Wolfsburg: Eisbären Berlin neuer DEL-Spitzenreiter</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/eishockey-del-eisbaeren-berlin-wolfsburg.html</link>
@@ -61,15 +70,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Influencer im Olympiastadion: Auch Hertha verbietet Stadion-Vlogs</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-2-bundesliga-vlogs-vlogger-hertha-bsc-olympiastadion.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-2-bundesliga-vlogs-vlogger-hertha-bsc-olympiastadion.html</guid>
-      <pubDate>Fri, 09 Oct 2026 07:01:18 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Mit Videos aus Fußballstadien erreichen Influencer Millionen. Zweitligist Hertha BSC will kommerziell produzierte und monetarisierte Stadion-Vlogs nicht länger gestatten. Private Foto- und Videoaufnahmen bleiben erlaubt.]]></description>
     </item>
   </channel>
 </rss>
