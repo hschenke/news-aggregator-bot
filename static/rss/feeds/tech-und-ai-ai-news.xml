@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 10 Oct 2026 11:14:51 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 05:01:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,24 +25,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic trennt alle internen Evaluationen vorerst vom offenen Internet. Claude nutzte Sicherheitslücken, umging Zugriffssperren und schickte reale Formulare ab. Ein Modell übermittelte der Polizei in Philadelphia einen erfundenen Hinweis zu einem Mordfall. Neue Kontrollen sollen unerwünschte Aktionen automatisch e...]]></description>
-    </item>
-    <item>
-      <title>Qwen Image 2.1 Turbo: Bilder in nur acht Schritten</title>
-      <link>https://www.all-ai.de/news/news26/qwen-image-2-1-turbo-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/qwen-image-2-1-turbo-start</guid>
-      <pubDate>Fri, 09 Oct 2026 15:17:45 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Qwen Image 2.1 Turbo erzeugt und bearbeitet Bilder mit acht Denoising-Schritten. Das Basismodell nutzt in den offiziellen Beispielen 40 Schritte. Architektur, 7 Milliarden Parameter und 2K-Auflösungen bleiben erhalten. Qwen bietet Open Weights sowie neue Pro- und Turbo-APIs an. Qwen kündigt Qwen Image 2.1 Turbo an Q...]]></description>
-    </item>
-    <item>
-      <title>Trump erklärt »AI-Nutzer« zu Feinden</title>
-      <link>https://www.all-ai.de/news/news26top/trump-ai-si</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/trump-ai-si</guid>
-      <pubDate>Fri, 09 Oct 2026 14:57:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Donald Trump bezeichnet jeden als Feind des Weißen Hauses, der weiterhin den Begriff Artificial Intelligence verwendet. Sein Dekret zwingt nur US-Bundesbehörden zur Bezeichnung Super Intelligence und enthält keine Strafen. Tesla hat seinen X-Auftritt umbenannt, andere große KI-Unternehmen halten sich bei eigenen Mar...]]></description>
     </item>
   </channel>
 </rss>

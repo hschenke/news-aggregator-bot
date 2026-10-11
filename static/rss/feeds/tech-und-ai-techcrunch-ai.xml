@@ -5,89 +5,44 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 10 Oct 2026 11:14:51 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 05:01:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Anthropic can’t reliably control its AI agents. It’s cutting off its internal evals from the live internet instead</title>
-      <link>https://techcrunch.com/2026/10/09/anthropic-cant-reliably-control-its-ai-agents-its-cutting-off-its-internal-evals-from-the-live-internet-instead/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3176323</guid>
-      <pubDate>Sat, 10 Oct 2026 00:18:32 GMT</pubDate>
+      <title>Microsoft’s Satya Nadella says AI models need an ‘emergency brake’</title>
+      <link>https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3176448</guid>
+      <pubDate>Sat, 10 Oct 2026 21:47:51 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic said it "turned off live internet access" for "all our internal evaluations" until further notice.]]></description>
+      <description><![CDATA[In a Saturday morning post, Microsoft's CEO wrote that it’s time “to step back and assess the trust architecture” of AI.]]></description>
     </item>
     <item>
-      <title>The maker of non-text AI model Jev valued at $7.5B just weeks after launch</title>
-      <link>https://techcrunch.com/2026/10/09/the-maker-of-non-text-ai-model-jev-valued-at-7-5b-just-weeks-after-launch/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3176290</guid>
-      <pubDate>Fri, 09 Oct 2026 21:41:29 GMT</pubDate>
+      <title>Apple discloses deal to hire team and license tech from personalized podcast startup Huxe</title>
+      <link>https://techcrunch.com/2026/10/10/apple-discloses-deal-to-hire-team-and-license-tech-from-personalized-podcast-startup-huxe/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3176436</guid>
+      <pubDate>Sat, 10 Oct 2026 19:50:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[What has users and large corporations so excited about Jev is TypeSafe’s claim that it works significantly faster and uses far fewer tokens than LLMs.]]></description>
+      <description><![CDATA[Is Apple hoping to get into the AI-generated podcast business?]]></description>
     </item>
     <item>
-      <title>An Anthropic AI model sent a false homicide tip to Philadelphia police</title>
-      <link>https://techcrunch.com/2026/10/09/an-anthropic-ai-model-sent-a-false-homicide-tip-to-philadelphia-police/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3176212</guid>
-      <pubDate>Fri, 09 Oct 2026 19:36:56 GMT</pubDate>
+      <title>3 days to TechCrunch Disrupt 2026: Meet the startups before they hit mainstream</title>
+      <link>https://techcrunch.com/2026/10/10/3-days-to-disrupt-2026-meet-the-startups-before-they-hit-mainstream/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3176326</guid>
+      <pubDate>Sat, 10 Oct 2026 15:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic did not discover this behavior until over two months after its AI submitted the false tip.]]></description>
+      <description><![CDATA[TechCrunch Disrupt 2026 takes place October 13-15 in San Francisco. Over 300 startups will show what they’ve built to 10,000 tech leaders. Plus, 250+ speakers are ready to share insights across 200+ sessions. Register before doors open to save up to $100 and get a second pass at 50% off.]]></description>
     </item>
     <item>
-      <title>Amazon and others are done keeping data center deals secret. Is it enough to build trust?</title>
-      <link>https://techcrunch.com/video/amazon-and-others-are-done-keeping-data-center-deals-secret-is-it-enough-to-build-trust/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_video&amp;p=3176138</guid>
-      <pubDate>Fri, 09 Oct 2026 16:56:42 GMT</pubDate>
+      <title>Here are the top AI agents that can live in your text messages</title>
+      <link>https://techcrunch.com/2026/10/10/all-the-ai-agents-that-can-live-in-your-text-messages/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173132</guid>
+      <pubDate>Sat, 10 Oct 2026 14:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Amazon says it will stop using NDAs when negotiating data center deals with local governments, following a similar move from Microsoft earlier this year. Secrecy has fueled community backlash against AI infrastructure, with opposition leading to hundreds of proposed and enacted moratoriums from New York to San Franc...]]></description>
-    </item>
-    <item>
-      <title>Amazon drops data center NDAs, and AI agents want your credit card</title>
-      <link>https://techcrunch.com/podcast/amazon-drops-data-center-ndas-and-ai-agents-want-your-credit-card/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_podcast&amp;p=3176135</guid>
-      <pubDate>Fri, 09 Oct 2026 16:53:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Amazon says it will stop using NDAs when negotiating data center deals with local governments, following a similar move from Microsoft earlier this year. Secrecy has fueled community backlash against AI infrastructure, with opposition leading to hundreds of proposed and enacted moratoriums from New York to San Franc...]]></description>
-    </item>
-    <item>
-      <title>Danu Robotics’ fight to build a better recycling robot</title>
-      <link>https://techcrunch.com/2026/10/09/danu-robotics-fight-to-build-a-better-recycling-robot/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3174693</guid>
-      <pubDate>Fri, 09 Oct 2026 16:45:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[For six years, Danu founder Amy Ma has been working on a better way to sort recyclable waste.]]></description>
-    </item>
-    <item>
-      <title>We can’t help treating AI like it’s human. But should we?</title>
-      <link>https://techcrunch.com/2026/10/09/we-cant-help-treating-ai-like-its-human-but-should-we/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3175674</guid>
-      <pubDate>Fri, 09 Oct 2026 16:40:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA["When we are drawn into even the most primitive exchanges with a relational artifact, we believe it cares for us," Dr. Sherry Turkle writes. "And we are wired to care for it in return."]]></description>
-    </item>
-    <item>
-      <title>a16z’s Olivia Moore on the state of consumer AI</title>
-      <link>https://techcrunch.com/2026/10/09/a16zs-olivia-moore-on-the-state-of-consumer-ai/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3176079</guid>
-      <pubDate>Fri, 09 Oct 2026 15:43:33 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Moore sees a huge opportunity in consumer AI, particularly if the industry can tap into revenue streams beyond just subscriptions and API charges.]]></description>
-    </item>
-    <item>
-      <title>TechCrunch Disrupt 2026 starts in 4 days — lock in your pass savings of up to $100 before prices rise</title>
-      <link>https://techcrunch.com/2026/10/09/techcrunch-disrupt-2026-starts-in-4-days-lock-in-your-pass-savings-of-up-to-100-before-prices-rise/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3175987</guid>
-      <pubDate>Fri, 09 Oct 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Four days until TechCrunch Disrupt 2026 starts, when 10,000 founders, investors, and tech leaders gather in San Francisco's Moscone West on October 13-15. Save up to $100 on your price. Plus, save 50% on a second pass of the same type.]]></description>
+      <description><![CDATA[We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.]]></description>
     </item>
   </channel>
 </rss>
