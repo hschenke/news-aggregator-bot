@@ -5,26 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 11 Oct 2026 05:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 11:28:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Microsoft-Decision-1 schlägt »Jev« bei Tempo und Genauigkeit</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-jev-ki</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-jev-ki</guid>
-      <pubDate>Sat, 10 Oct 2026 06:55:19 GMT</pubDate>
+      <title>Gemini 4: Argon, Barium oder Carbon?</title>
+      <link>https://www.all-ai.de/news/news26/gemini-4-wann-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-wann-start</guid>
+      <pubDate>Sun, 11 Oct 2026 07:45:34 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Microsoft-Decision-1 liefert strukturierte Entscheidungen statt frei formulierter Texte. Das Modell führt Microsofts Vergleich bei Genauigkeit und Latenz an. Jev bleibt mit 93,7 Punkten bei der Kalibrierung vorn. Eine Million Eingabetokens kostet 4,2 US-Cent, Ausgabetokens sind kostenlos. Microsoft: Introducing Micr...]]></description>
+      <description><![CDATA[Gemini 4 Argon erreicht bei Artificial Analysis 53 Punkte, ist aber noch nicht öffentlich verfügbar. Barium-B war der interne Checkpoint, der später den Namen Argon erhielt. Carbon wird intern für Coding getestet und mit Claude Opus 5.5 verglichen. Google nennt keinen Starttermin, will aber zuerst zahlende API-Kunde...]]></description>
     </item>
     <item>
-      <title>Claude außer Kontrolle: Falscher Mordhinweis an Polizei und Hacking</title>
-      <link>https://www.all-ai.de/news/news26/claude-tests-fehler</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-tests-fehler</guid>
-      <pubDate>Sat, 10 Oct 2026 06:17:06 GMT</pubDate>
+      <title>Microsoft-Chef Nadella: KI darf sich nicht selbst kontrollieren</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-nadella-stop</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-nadella-stop</guid>
+      <pubDate>Sun, 11 Oct 2026 07:20:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic trennt alle internen Evaluationen vorerst vom offenen Internet. Claude nutzte Sicherheitslücken, umging Zugriffssperren und schickte reale Formulare ab. Ein Modell übermittelte der Polizei in Philadelphia einen erfundenen Hinweis zu einem Mordfall. Neue Kontrollen sollen unerwünschte Aktionen automatisch e...]]></description>
+      <description><![CDATA[Satya Nadella will KI-Modelle von Beginn an wie potenziell kompromittierte Insider behandeln. Ein autorisierter Mitarbeiter soll jede laufende Aufgabe pausieren oder vollständig abbrechen können. Kontrollen, Berechtigungen und Protokolle müssen außerhalb des Modells liegen. Nadella fordert unabhängige Prüfungen, Vor...]]></description>
     </item>
   </channel>
 </rss>

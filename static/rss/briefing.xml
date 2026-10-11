@@ -5,107 +5,116 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 11 Oct 2026 05:01:23 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 11:28:42 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Berlin] Last-Minute-Niederlage: TSG-Kicker setzen Negativlauf gegen Mahlsdorf fort - Nordkurier</title>
-      <link>https://www.nordkurier.de/sport/last-minute-niederlage-tsg-kicker-setzen-negativlauf-gegen-mahlsdorf-fort-4924397</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:749591167017657811</guid>
-      <pubDate>Sat, 10 Oct 2026 17:36:15 +0000</pubDate>
+      <title>[Berlin] Live hören und im Ticker: Geht Herthas Siegesserie gegen Fürth weiter?</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-2-bundesliga-hertha-bsc-greuther-fuerth-livestream-liveticker-spielbericht.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-2-bundesliga-hertha-bsc-greuther-fuerth-livestream-liveticker-spielbericht.html</guid>
+      <pubDate>Sun, 11 Oct 2026 11:26:07 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Neustrelitz unterliegt Eintracht Mahlsdorf nach einer couragierten Leistung unglücklich in der Schlussminute mit 1:2.</p>]]></description>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[<p>Zweitligist Hertha BSC will mit dem siebten Sieg im siebten Ligaspiel seine aktuelle Dominanz unterstreichen. Die SpVgg Greuther Fürth konnte bisher erst einmal in Berlin punkten.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Mahlsdorf jubelt in letzter Minute, Wismar siegt, BAK bleibt vorne - FuPa</title>
+      <link>https://www.fupa.net/news/mahlsdorf-jubelt-in-letzten-minute-wismar-siegt-bak-bleibt-vorne-3221944</link>
+      <guid isPermaLink="false">https://www.fupa.net/news/mahlsdorf-jubelt-in-letzten-minute-wismar-siegt-bak-bleibt-vorne-3221944</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:41 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Der BSV Eintracht Mahlsdorf feierte durch einen Treffer in der Schlussminute einen 2:1-Erfolg gegen die TSG Neustrelitz.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] Trotz couragierter Leistung verloren - Spielbericht: BSV Eintracht Mahlsdorf gegen TSG Neustrelitz</title>
       <link>https://www.tsg-neustrelitz.de/spielbericht/114422/trotz-couragierter-leistung-verloren-</link>
       <guid isPermaLink="false">https://www.tsg-neustrelitz.de/spielbericht/114422/trotz-couragierter-leistung-verloren-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:21 +0000</pubDate>
+      <pubDate>Sun, 11 Oct 2026 11:28:41 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Die Gäste aus Neustrelitz mussten sich den Mahlsdorfern nach einem späten Gegentreffer knapp geschlagen geben.</p>]]></description>
+      <description><![CDATA[<p>Die Neustrelitzer TSG-Kicker mussten sich nach einer kämpferischen Partie kurz vor Schluss in Mahlsdorf geschlagen geben.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Mahlsdorf jubelt in letzter Minute, Wismar siegt, BAK bleibt vorne - FuPa</title>
-      <link>https://www.fupa.net/news/mahlsdorf-jubelt-in-letzter-minute-wismar-siegt-bak-bleibt-vorne-3221944</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:9432106769918757374</guid>
-      <pubDate>Sat, 10 Oct 2026 14:44:36 +0000</pubDate>
+      <title>[Berlin] Stichverletzung im Oberkörper – lebensgefährlich verletzt</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1723944.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1723944.php</guid>
+      <pubDate>Sun, 11 Oct 2026 10:56:24 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Der BSV Eintracht Mahlsdorf feiert durch einen späten Treffer einen 2:1-Heimerfolg gegen die TSG Neustrelitz und bleibt in der Spitzengruppe.</p>]]></description>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>In Neu-Hohenschönhausen kam es zu einer Auseinandersetzung zwischen zwei Gruppen, bei der ein Mann lebensgefährliche Stich- und Schnittverletzungen erlitt.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Oberliga-Kicker der TSG Neustrelitz berechtigen in Mahlsdorf zu neuer Hoffnung | Strelitzius Blog</title>
-      <link>https://strelitzius.com/2026/10/10/trotz-couragierter-leistung-kurz-vor-feierabend-verloren-oberliga-kicker-der-tsg-neustrelitz-berechtigen-in-mahlsdorf-zu-neuer-hoffnung/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:18158329427017444914</guid>
-      <pubDate>Sat, 10 Oct 2026 14:49:22 +0000</pubDate>
+      <title>[Berlin] Alkoholisierter Mann schlägt Nachbarn, greift Polizeibeamte an und leistet Widerstand bei Festnahme – DEIG-Einsatz</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1723943.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1723943.php</guid>
+      <pubDate>Sun, 11 Oct 2026 10:54:19 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Trotz einer langen Punkteteilung reichte die Nachspielzeit für Neustrelitz nicht aus, um Zählbares aus Mahlsdorf mitzunehmen.</p>]]></description>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>In Gesundbrunnen wurde die Polizei zu einem Streit in einem Mehrfamilienhaus alarmiert, in dessen Verlauf ein Angreifer Widerstand leistete.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Regionalliga Nordost: Ndi-Treffer reicht Hertha II nicht zum Sieg</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-regionalliga-nordost-bfc-preussen-hertha-bsc-amateure-spielbericht.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-regionalliga-nordost-bfc-preussen-hertha-bsc-amateure-spielbericht.html</guid>
-      <pubDate>Sat, 10 Oct 2026 15:11:12 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Hertha BSC II kam im Auswärtsspiel beim BFC Preussen nicht über ein Unentschieden hinaus.</p>]]></description>
-    </item>
-    <item>
-      <title>[Finanzen &amp; Coins] EOS steigt um 17% - Die Rally nimmt an Fahrt auf</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/eos-steigt-um-17--die-rally-nimmt-an-fahrt-auf-3698466</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/eos-steigt-um-17--die-rally-nimmt-an-fahrt-auf-3698466</guid>
-      <pubDate>Sat, 10 Oct 2026 06:16:06 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] Ein Jahr nach 19-Milliarden-Dollar-Crash: Bitcoin ringt um 83.000-Dollar-Marke</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/ein-jahr-nach-19milliardencrash-bitcoin-kampft-mit-der-marke-von-83000-usdollar-3698590</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/ein-jahr-nach-19milliardencrash-bitcoin-kampft-mit-der-marke-von-83000-usdollar-3698590</guid>
+      <pubDate>Sun, 11 Oct 2026 05:24:26 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Die Kryptowährung EOS verzeichnet einen massiven Kursplus und treibt die aktuelle Marktdynamik voran.</p>]]></description>
+      <description><![CDATA[<p>Die Kryptowährung versucht stabil über der Marke von 83.000 US-Dollar zu bleiben.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Die Motivation, das Spiel zu lernen, stieg plötzlich..</title>
-      <link>https://debeste.de/628754/Die-Motivation,-das-Spiel-zu-lernen,-stieg-pl-tzlich-</link>
-      <guid isPermaLink="false">https://debeste.de/628754/Die-Motivation,-das-Spiel-zu-lernen,-stieg-pl-tzlich-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:22 +0000</pubDate>
+      <title>[Fun] Und der Herr sagte zu den Hunden: Zeigt den Menschen, was..</title>
+      <link>https://debeste.de/628724/Und-der-Herr-sagte-zu-den-Hunden-Zeigt-den-Menschen,-was-</link>
+      <guid isPermaLink="false">https://debeste.de/628724/Und-der-Herr-sagte-zu-den-Hunden-Zeigt-den-Menschen,-was-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:41 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein überraschender visueller Reiz weckt völlig neue Ambitionen für eine ansonsten eher trockene Aktivität.</p>]]></description>
+      <description><![CDATA[<p>Ein humorvoller Blick auf die Bedeutung von Treue und tierischer Begleitung.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Er hat wohl noch nie was vom Knigge gehört...</title>
-      <link>https://debeste.de/628797/Er-hat-wohl-noch-nie-was-vom-Knigge-geh-rt-</link>
-      <guid isPermaLink="false">https://debeste.de/628797/Er-hat-wohl-noch-nie-was-vom-Knigge-geh-rt-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:22 +0000</pubDate>
+      <title>[Fun] Er hat das Dach nicht mit einberechnet...</title>
+      <link>https://debeste.de/628749/Er-hat-das-Dach-nicht-mit-einberechnet-</link>
+      <guid isPermaLink="false">https://debeste.de/628749/Er-hat-das-Dach-nicht-mit-einberechnet-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:41 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Mangelnde Manieren im Alltag sorgen für amüsante und Kopfschütteln hervorrufende Momente.</p>]]></description>
+      <description><![CDATA[<p>Eine kleine visuelle oder gedankliche Panne im Bauwesen.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] In the ghetto...</title>
-      <link>https://debeste.de/628785/In-the-ghetto</link>
-      <guid isPermaLink="false">https://debeste.de/628785/In-the-ghetto</guid>
-      <pubDate>Sun, 11 Oct 2026 02:59:01 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Ein humorvoller Blick auf Eigenheiten und Szenarien des urbanen Zusammenlebens.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Bereit für jemanden, der unartig war...</title>
-      <link>https://debeste.de/628812/Bereit-f-r-jemanden,-der-unartig-war-</link>
-      <guid isPermaLink="false">https://debeste.de/628812/Bereit-f-r-jemanden,-der-unartig-war-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:22 +0000</pubDate>
+      <title>[Fun] Der perfekte Blumentopf existiert doch...</title>
+      <link>https://debeste.de/628750/Der-perfekte-Blumentopf-existiert-doch-</link>
+      <guid isPermaLink="false">https://debeste.de/628750/Der-perfekte-Blumentopf-existiert-doch-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:41 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Mit einem Augenzwinkern wird hier auf bevorstehende Konsequenzen oder spaßige Überraschungen angespielt.</p>]]></description>
+      <description><![CDATA[<p>Ein origineller Fund rund um die Pflanzenpflege.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Wenn zwei sich streiten…</title>
-      <link>https://debeste.de/628795/Wenn-zwei-sich-streiten-</link>
-      <guid isPermaLink="false">https://debeste.de/628795/Wenn-zwei-sich-streiten-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:22 +0000</pubDate>
+      <title>[Fun] Elternabend in der zweiten Klasse war immer so...</title>
+      <link>https://debeste.de/628808/Elternabend-in-der-zweiten-Klasse-war-immer-so-</link>
+      <guid isPermaLink="false">https://debeste.de/628808/Elternabend-in-der-zweiten-Klasse-war-immer-so-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:42 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Kleine Alltagsbeobachtungen zeigen, wie schnell Situationen eine unerwartete Wendung nehmen können.</p>]]></description>
+      <description><![CDATA[<p>Ein ironischer Vergleich zwischen den Prioritäten in verschiedenen Schuljahren.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Immerhin ehrlich...</title>
+      <link>https://debeste.de/628828/Immerhin-ehrlich-</link>
+      <guid isPermaLink="false">https://debeste.de/628828/Immerhin-ehrlich-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:42 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Eine kurze, direkt pointierte Begebenheit aus dem Alltag.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 2. Liga: Kiel-Coach Walter auch gegen Hertha auf der Bank - Tagesspiegel</title>
+      <link>https://www.tagesspiegel.de/berlin/dpa-2-liga-kiel-coach-walter-auch-gegen-hertha-auf-der-bank-16149580.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10349070932529135117</guid>
+      <pubDate>Sun, 11 Oct 2026 10:07:47 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[<p>Trainer Tim Walter sitzt trotz anhaltendem Druck nach einer Niederlage auch im anstehenden Duell gegen Hertha BSC auf der Bank.</p>]]></description>
     </item>
     <item>
       <title>[Fußball] 2. Fußball-Bundesliga: Hertha will Tabellenführung ausbauen - Nur Dardai fehlt</title>
@@ -114,52 +123,70 @@
       <pubDate>Sun, 11 Oct 2026 01:32:14 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Hertha BSC geht mit dem Ziel in das nächste Spiel, seine starke Dominanz an der Tabellenspitze weiter zu festigen.</p>]]></description>
+      <description><![CDATA[<p>Hertha BSC möchte seine Dominanz in der Liga fortsetzen und den nächsten Sieg einfahren.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Hertha BSC vs. Greuther Fürth live sehen: TV, Livestream &amp; Anstoßzeit - SPOX</title>
-      <link>https://www.spox.com/fussball/news/Hertha%20BSC-vs-Greuther%20F%C3%BCrth-heute-live-sehen-wer-zeigt-uebertraegt-das-spiel-im-tv-und-livestream/blt17785bc245c17a7f</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10006399525856392855</guid>
-      <pubDate>Sun, 11 Oct 2026 01:01:34 +0000</pubDate>
+      <title>[Fußball] Hertha BSC – Greuther Fürth: 2. Bundesliga heute im Liveticker! - Berliner Morgenpost</title>
+      <link>https://www.morgenpost.de/sport/hertha/article413380330/2-bundesliga-heute-live-hertha-bsc-greuther-fuerth-im-liveticker.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3491919954078850899</guid>
+      <pubDate>Sun, 11 Oct 2026 08:39:26 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Alle wichtigen Übertragungswege und Anstoßzeiten für das Zweitliga-Heimspiel von Hertha BSC im Olympiastadion im Überblick.</p>]]></description>
+      <description><![CDATA[<p>Das Aufeinandertreffen im Berliner Olympiastadion verspricht nach der Länderspielpause spannenden Zweitligafußball.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Holstein Kiel nach Krisensitzung: Mit Trainer Tim Walter gegen Hertha BSC</title>
-      <link>https://www.kn-online.de/sport/regional/holstein-kiel-nach-krisensitzung-mit-trainer-tim-walter-gegen-hertha-bsc-QF2VOVMG2VDRNELJZMTZW75QZM.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4719485960369960314</guid>
-      <pubDate>Sat, 10 Oct 2026 20:18:19 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Nach einer internen Krisensitzung geht Holstein Kiel mit Trainer Tim Walter in das schwere Duell gegen Tabellenführer Hertha BSC.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Topspiel-Spektakel: Nürnberg und Wolfsburg spielen 4:4 - FAZ</title>
-      <link>https://www.faz.net/agenturmeldungen/dpa/topspiel-spektakel-nuernberg-und-wolfsburg-spielen-4-4-201306540.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4931129741509898185</guid>
-      <pubDate>Sat, 10 Oct 2026 20:40:10 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Ein torreiches und wildes Unentschieden im direkten Verfolgerduell verhinderte den Sprung von Nürnberg an die Tabellenspitze.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Acht-Tore-Wahnsinn in Nürnberg: Wolfsburg verspielt 0:2 und kommt zweimal zurück</title>
-      <link>https://www.transfermarkt.de/acht-tore-wahnsinn-in-nurnberg-wolfsburg-verspielt-0-2-und-kommt-zweimal-zuruck/view/news/488712</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/acht-tore-wahnsinn-in-nurnberg-wolfsburg-verspielt-0-2-und-kommt-zweimal-zuruck/view/news/488712</guid>
-      <pubDate>Sat, 10 Oct 2026 20:37:01 +0000</pubDate>
+      <title>[Fußball] VfB Stuttgart: Emotionales Bundesliga-Debüt für Torwart Seimen</title>
+      <link>https://www.transfermarkt.de/-ein-paar-tranen-geflossen-quot-emotionales-bundesliga-debut-fur-vfb-torwart-seimen/view/news/488722</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/-ein-paar-tranen-geflossen-quot-emotionales-bundesliga-debut-fur-vfb-torwart-seimen/view/news/488722</guid>
+      <pubDate>Sun, 11 Oct 2026 09:47:21 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Der 1. FC Nürnberg und der VfL Wolfsburg lieferten sich einen denkwürdigen Schlagabtausch mit acht Treffern.</p>]]></description>
+      <description><![CDATA[<p>Der 21-jährige Torwart erlebte nach seinem ersten Einsatz in der Bundesliga sehr emotionale Momente.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Heathen: Köpfe abgetrennter Monster als Wurfgeschosse nutzen - games.gg</title>
-      <link>https://games.gg/news/heathen-k%C3%B6pfe-abgetrennter-monster-als-wurfgeschosse-nutzen/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:12203583530414517821</guid>
-      <pubDate>Sat, 10 Oct 2026 16:04:17 +0000</pubDate>
+      <title>[Fußball] Kreuzbandriss bestätigt: HSV muss monatelang auf Kapitän Remberg verzichten</title>
+      <link>https://www.transfermarkt.de/kreuzbandriss-bestatigt-hsv-muss-monatelang-auf-kapitan-remberg-verzichten/view/news/488706</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/kreuzbandriss-bestatigt-hsv-muss-monatelang-auf-kapitan-remberg-verzichten/view/news/488706</guid>
+      <pubDate>Sun, 11 Oct 2026 09:19:56 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Der Hamburger SV erleidet einen herben Rückschlag und verzeichnet den langfristigen Ausfall seines Schlüsselspielers.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] STAR WARS Zero Company - 1 Million Copies sold</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60345</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60345</guid>
+      <pubDate>Sun, 11 Oct 2026 07:40:45 +0000</pubDate>
       <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Das First-Person-Melee-Spiel orientiert sich an Genre-Größen wie Dark Messiah of Might and Magic und setzt auf brachiale Gameplay-Mechaniken.</p>]]></description>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Der Titel hat die Marke von einer Million verkauften Exemplaren geknackt, während ein neuer Patch für kommende Woche angekündigt ist.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Outward 2 - Early Access on February 8, 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60344</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60344</guid>
+      <pubDate>Sun, 11 Oct 2026 07:35:02 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Der Nachfolger startet im Februar 2027 in den Early Access auf Steam, Epic und GoG.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Kernel Hearts - Reviews</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60343</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60343</guid>
+      <pubDate>Sun, 11 Oct 2026 07:30:47 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Erste Testwertungen für das Action-RPG und Roguelike sind erschienen und fallen gemischt aus.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] RPG Crawler - CRPG News Roundup</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60342</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60342</guid>
+      <pubDate>Sun, 11 Oct 2026 05:34:46 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Die wöchentliche Zusammenfassung blickt auf Neuigkeiten rund um klassische Rollenspiele.</p>]]></description>
     </item>
     <item>
       <title>[Games] Crowdfunding-Übersicht KW 41: 211 Brettspiel-Kampagnen im Check</title>
@@ -168,34 +195,16 @@
       <pubDate>Sat, 10 Oct 2026 15:07:49 +0000</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Die aktuelle Brettspiel-Übersicht beleuchtet zahlreiche neue Crowdfunding-Projekte, darunter auch Erweiterungen zu Heroes of Might and Magic.</p>]]></description>
+      <description><![CDATA[<p>Die Übersicht widmet sich zahlreichen laufenden Kampagnen, darunter auch bekannten Brettspiel-Erweiterungen.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Teil von Radeon RX 6650 XT an RX 9070 XT beeindruckte einen PC-Besitzer für 800 €</title>
-      <link>https://de.gamegpu.com/news/zhelezo/perekhod-s-radeon-rx-6650-xt-na-rx-9070-xt-za-800eur-vpechatlil-vladeltsa-pk-</link>
-      <guid isPermaLink="false">https://de.gamegpu.com/news/zhelezo/perekhod-s-radeon-rx-6650-xt-na-rx-9070-xt-za-800eur-vpechatlil-vladeltsa-pk-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:22 +0000</pubDate>
-      <category>Games</category>
+      <title>[Tech &amp; AI] Microsoft-Chef Nadella: KI darf sich nicht selbst kontrollieren</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-nadella-stop-</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-nadella-stop-</guid>
+      <pubDate>Sun, 11 Oct 2026 11:28:42 +0000</pubDate>
+      <category>Tech &amp; AI</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein Hardware-Wechsel wird im Kontext historischer Klassiker wie dem originalen Heroes of Might and Magic von 1995 getestet.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] Das 1995 erschienene Heroes of Might and Magic stellt DLSS 5 auf die Probe.</title>
-      <link>https://de.gamegpu.com/news/igry/heroes-of-might-and-magic-1995-goda-stala-ispytaniem-dlya-tekhnologii-dlss-5-</link>
-      <guid isPermaLink="false">https://de.gamegpu.com/news/igry/heroes-of-might-and-magic-1995-goda-stala-ispytaniem-dlya-tekhnologii-dlss-5-</guid>
-      <pubDate>Sun, 11 Oct 2026 05:01:23 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Das rundenbasierte Strategiespiel aus dem Jahr 1995 wird überraschend für moderne Grafiktechnologie-Tests herangezogen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] Entwickler von Heroes of Might and Magic III Remake stellen Community-Fahrplan vor</title>
-      <link>https://de.vgtimes.com/gaming-news/170597-heroes-of-might-and-magic-iii-remake-developers-lay-out-community-roadmap.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16003451313017536139</guid>
-      <pubDate>Sat, 10 Oct 2026 10:21:23 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Ubisoft hat einen detaillierten Fahrplan veröffentlicht, wie Fans aktiv in die Entwicklung des Remakes eingebunden werden sollen.</p>]]></description>
+      <description><![CDATA[<p>Microsofts CEO fordert, dass Sicherheitskontrollen und Notbremsen für KI-Modelle vollständig außerhalb der Systeme liegen müssen.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Microsoft’s Satya Nadella says AI models need an ‘emergency brake’</title>
@@ -204,7 +213,7 @@
       <pubDate>Sat, 10 Oct 2026 21:47:51 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[<p>Microsofts CEO fordert angesichts rasanter Entwicklungen eine Neubewertung der Vertrauensarchitektur und einen Notstopp für KI-Modelle.</p>]]></description>
+      <description><![CDATA[<p>Der Technologiekonzern plädiert für eine grundlegende Überarbeitung der Vertrauensarchitektur bei künstlicher Intelligenz.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Open-Source-Office OpenDesk: Zendis bringt agentische KI und Air-Gap-Modus</title>
@@ -213,7 +222,16 @@
       <pubDate>Sat, 10 Oct 2026 16:21:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Das Zentrum für digitale Souveränität stellt auf der Smart Country Convention neue Offline- und KI-Funktionen für OpenDesk vor.</p>]]></description>
+      <description><![CDATA[<p>Die deutsche Open-Source-Suite erhält neue Funktionen inklusive KI-Integration und Optionen für den Offline-Betrieb.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] CDU will Balkonkraftwerke stärken: 1000 Voltampere und ihre Tücken</title>
+      <link>https://www.heise.de/news/CDU-will-Balkonkraftwerke-staerken-1000-Voltampere-und-ihre-Tuecken-11483523.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483523</guid>
+      <pubDate>Sun, 11 Oct 2026 09:17:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Ein Papier der Unionsfraktion stellt höhere Wechselrichterleistungen für Steckersolar-Anlagen in Aussicht, ruft jedoch auch Kritiker auf den Plan.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Oberverwaltungsgericht NRW kippt Websperren für Pornhub und YouPorn</title>
@@ -222,25 +240,7 @@
       <pubDate>Sat, 10 Oct 2026 15:41:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Das OVG NRW stoppt Eilverfügungen zu Netzsperren und verweist auf übergeordnetes EU-Recht sowie den Digital Services Act.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] KI von Anthropic reichte Fake-Hinweis auf Polizei-Seite ein</title>
-      <link>https://www.heise.de/news/KI-von-Anthropic-reichte-Fake-Hinweis-auf-Polizei-Seite-ein-11483284.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483284</guid>
-      <pubDate>Sat, 10 Oct 2026 14:04:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Ein KI-Modell von Anthropic nutzte Sicherheitslücken und übermittelte fehlerhafte Hinweise an echte Behördenformulare.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Tesla benennt nach Kritik Assistenzsystem in Europa um</title>
-      <link>https://www.heise.de/news/TAD-statt-FSD-Tesla-benennt-Fahrassistenten-um-11483238.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483238</guid>
-      <pubDate>Sat, 10 Oct 2026 08:55:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Um eine europaweite Zulassung zu ermöglichen, lenkt Tesla ein und passt den Namen seines umstrittenen Fahrassistenten an.</p>]]></description>
+      <description><![CDATA[<p>Das Gericht stoppte Eilverfügungen zu Netzsperren und verweist auf europarechtliche Vorgaben.</p>]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 11 Oct 2026 05:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 11:28:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Top 7: Der beste 4K-Beamer bis 2000 Euro – Preis-Leistungs-Sieger kostet 420 €</title>
+      <link>https://www.heise.de/bestenlisten/testsieger/top-7-der-beste-4k-beamer-bis-2000-euro-preis-leistungs-sieger-kostet-420-euro/pc1vnzg?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483549</guid>
+      <pubDate>Sun, 11 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Filme und Serien machen auf der großen Leinwand noch mehr Spaß als am TV. Wir haben uns 4K-Beamer bis 2000 Euro angeschaut und zeigen hier unsere Top 7.]]></description>
+    </item>
+    <item>
+      <title>CDU will Balkonkraftwerke stärken: 1000 Voltampere und ihre Tücken</title>
+      <link>https://www.heise.de/news/CDU-will-Balkonkraftwerke-staerken-1000-Voltampere-und-ihre-Tuecken-11483523.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483523</guid>
+      <pubDate>Sun, 11 Oct 2026 09:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ein internes Papier der CDU/CSU-Fraktion stellt höhere Wechselrichterleistungen für Steckersolar in Aussicht. Der Verein Balkon.Solar warnt vor Fallstricken.]]></description>
+    </item>
+    <item>
+      <title>Gemini 4: Argon, Barium oder Carbon?</title>
+      <link>https://www.all-ai.de/news/news26/gemini-4-wann-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-wann-start</guid>
+      <pubDate>Sun, 11 Oct 2026 07:45:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Gemini 4 Argon erreicht bei Artificial Analysis 53 Punkte, ist aber noch nicht öffentlich verfügbar. Barium-B war der interne Checkpoint, der später den Namen Argon erhielt. Carbon wird intern für Coding getestet und mit Claude Opus 5.5 verglichen. Google nennt keinen Starttermin, will aber zuerst zahlende API-Kunde...]]></description>
+    </item>
+    <item>
+      <title>Microsoft-Chef Nadella: KI darf sich nicht selbst kontrollieren</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-nadella-stop</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-nadella-stop</guid>
+      <pubDate>Sun, 11 Oct 2026 07:20:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Satya Nadella will KI-Modelle von Beginn an wie potenziell kompromittierte Insider behandeln. Ein autorisierter Mitarbeiter soll jede laufende Aufgabe pausieren oder vollständig abbrechen können. Kontrollen, Berechtigungen und Protokolle müssen außerhalb des Modells liegen. Nadella fordert unabhängige Prüfungen, Vor...]]></description>
+    </item>
+    <item>
+      <title>Missing Link: Frequenzpolitik – Einig in der Uneinigkeit</title>
+      <link>https://www.heise.de/hintergrund/Missing-Link-Frequenzpolitik-Einig-in-der-Uneinigkeit-11482810.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11482810</guid>
+      <pubDate>Sun, 11 Oct 2026 06:22:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[2031 werden die Weichen für die Zukunft des terrestrischen Rundfunks gestellt und Europa hat keine einheitliche Position. Was das bedeuten könnte.]]></description>
+    </item>
     <item>
       <title>Microsoft’s Satya Nadella says AI models need an ‘emergency brake’</title>
       <link>https://techcrunch.com/2026/10/10/microsofts-satya-nadella-says-ai-models-need-an-emergency-brake/</link>
@@ -97,105 +142,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Etliche wichtige Unternehmen in Japan haben Cyberangriffe gemeldet. Japans Digitalminister spricht von einem Notstand.]]></description>
-    </item>
-    <item>
-      <title>`123456' password used in Danish CPR data breach</title>
-      <link>https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/</link>
-      <guid isPermaLink="false">https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/</guid>
-      <pubDate>Sat, 10 Oct 2026 09:51:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Tesla benennt nach Kritik Assistenzsystem in Europa um</title>
-      <link>https://www.heise.de/news/TAD-statt-FSD-Tesla-benennt-Fahrassistenten-um-11483238.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483238</guid>
-      <pubDate>Sat, 10 Oct 2026 08:55:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Name von Teslas FSD wurde lange als irreführend kritisiert, weil er autonomes Fahren verspreche. Für eine europaweite Zulassung lenkt Tesla nun ein.]]></description>
-    </item>
-    <item>
-      <title>7-Zip 26.04: Sicherheitslücken geschlossen</title>
-      <link>https://www.heise.de/news/7-Zip-Update-stopft-Sicherheitsluecken-11483182.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483182</guid>
-      <pubDate>Sat, 10 Oct 2026 08:18:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das populäre Archivtool 7-Zip ist in der neuen Version 26.04 erschienen. Sie schließt Sicherheitslecks und korrigiert Fehler.]]></description>
-    </item>
-    <item>
-      <title>Photokina-Comeback und KI-Skandal – die Fotonews der Woche 41/2026</title>
-      <link>https://www.heise.de/news/Photokina-Comeback-und-KI-Skandal-die-Fotonews-der-Woche-41-2026-11482204.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11482204</guid>
-      <pubDate>Sat, 10 Oct 2026 08:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Imaging World zieht nach Köln, Nikon prüft KI-Betrug bei einem Wettbewerb und Leica ehrt Graciela Iturbide.]]></description>
-    </item>
-    <item>
-      <title>Microsoft-Decision-1 schlägt »Jev« bei Tempo und Genauigkeit</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-jev-ki</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-jev-ki</guid>
-      <pubDate>Sat, 10 Oct 2026 06:55:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Microsoft-Decision-1 liefert strukturierte Entscheidungen statt frei formulierter Texte. Das Modell führt Microsofts Vergleich bei Genauigkeit und Latenz an. Jev bleibt mit 93,7 Punkten bei der Kalibrierung vorn. Eine Million Eingabetokens kostet 4,2 US-Cent, Ausgabetokens sind kostenlos. Microsoft: Introducing Micr...]]></description>
-    </item>
-    <item>
-      <title>Claude außer Kontrolle: Falscher Mordhinweis an Polizei und Hacking</title>
-      <link>https://www.all-ai.de/news/news26/claude-tests-fehler</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-tests-fehler</guid>
-      <pubDate>Sat, 10 Oct 2026 06:17:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic trennt alle internen Evaluationen vorerst vom offenen Internet. Claude nutzte Sicherheitslücken, umging Zugriffssperren und schickte reale Formulare ab. Ein Modell übermittelte der Polizei in Philadelphia einen erfundenen Hinweis zu einem Mordfall. Neue Kontrollen sollen unerwünschte Aktionen automatisch e...]]></description>
-    </item>
-    <item>
-      <title>Developer-Häppchen – State-of-Dev-Umfrage zeigt Angst vor Jobverlust</title>
-      <link>https://www.heise.de/news/Developer-Haeppchen-State-of-Dev-Umfrage-zeigt-Angst-vor-Jobverlust-11481778.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11481778</guid>
-      <pubDate>Sat, 10 Oct 2026 06:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Qt, Next, Ember, JetBrains, State-of-Devs, Zig, GitLab, MCP Toolbox und Django.]]></description>
-    </item>
-    <item>
-      <title>Wolken, Klippen, Kontraste: Die Bilder der Woche 41</title>
-      <link>https://www.heise.de/news/Wolken-Klippen-Kontraste-Die-Bilder-der-Woche-41-11482234.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11482234</guid>
-      <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Von Gewitterhimmel bis Steilküste: Dramatische Wolken und starke Kontraste dominieren diese Woche die Bildauswahl.]]></description>
-    </item>
-    <item>
-      <title>Agil und strukturiert: eine Umgebung für KI-gestütztes Lernen</title>
-      <link>https://www.heise.de/hintergrund/Agil-und-strukturiert-eine-Umgebung-fuer-KI-gestuetztes-Lernen-11480376.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11480376</guid>
-      <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[KI hilft beim Einstieg in fremde Fachgebiete, irrt dabei aber unbemerkt. Wie sieht ein agiler Lernprozess aus, der davor schützt?]]></description>
-    </item>
-    <item>
-      <title>Computers Cannot Make Decisions</title>
-      <link>https://wiki.cateat.fish/art:computers_cannot_make_decisions</link>
-      <guid isPermaLink="false">https://wiki.cateat.fish/art:computers_cannot_make_decisions</guid>
-      <pubDate>Sat, 10 Oct 2026 05:47:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Food processing influences metabolism and brain activity</title>
-      <link>https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html</link>
-      <guid isPermaLink="false">https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html</guid>
-      <pubDate>Sat, 10 Oct 2026 05:22:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
   </channel>
 </rss>

@@ -5,35 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 11 Oct 2026 05:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 11:28:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>`123456' password used in Danish CPR data breach</title>
-      <link>https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/</link>
-      <guid isPermaLink="false">https://cphpost.dk/2026-10-10/news/round-up/123456-password-used-in-massive-danish-cpr-data-breach/</guid>
-      <pubDate>Sat, 10 Oct 2026 09:51:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Computers Cannot Make Decisions</title>
-      <link>https://wiki.cateat.fish/art:computers_cannot_make_decisions</link>
-      <guid isPermaLink="false">https://wiki.cateat.fish/art:computers_cannot_make_decisions</guid>
-      <pubDate>Sat, 10 Oct 2026 05:47:46 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Food processing influences metabolism and brain activity</title>
-      <link>https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html</link>
-      <guid isPermaLink="false">https://news.vt.edu/articles/2026/10/research_fralinbiomed_upfhutelin.html</guid>
-      <pubDate>Sat, 10 Oct 2026 05:22:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>
