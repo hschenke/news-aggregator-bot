@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 12 Oct 2026 05:01:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 13:17:54 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -184,51 +184,6 @@
       <link>https://github.com/rogerbinns/apsw</link>
       <guid isPermaLink="false">https://github.com/rogerbinns/apsw</guid>
       <pubDate>Sun, 11 Oct 2026 16:58:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Terence Tao: Math 2.0 [pdf]</title>
-      <link>https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf</link>
-      <guid isPermaLink="false">https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf</guid>
-      <pubDate>Sun, 11 Oct 2026 13:16:45 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Valen's Memory Safety: A New Kind of Borrow Checking</title>
-      <link>https://verdagon.dev/blog/valen-group-borrowing</link>
-      <guid isPermaLink="false">https://verdagon.dev/blog/valen-group-borrowing</guid>
-      <pubDate>Sun, 11 Oct 2026 12:06:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: BetterWispr – Free, open-source dictation for Mac</title>
-      <link>https://betterwispr.com/</link>
-      <guid isPermaLink="false">https://betterwispr.com/</guid>
-      <pubDate>Sun, 11 Oct 2026 12:01:28 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Building a VMM from scratch, #0: Why BoxLite is replacing libkrun</title>
-      <link>https://blog.boxlite.ai/building-a-vmm-from-scratch-0-why-boxlite-is-replacing-libkrun</link>
-      <guid isPermaLink="false">https://blog.boxlite.ai/building-a-vmm-from-scratch-0-why-boxlite-is-replacing-libkrun</guid>
-      <pubDate>Sun, 11 Oct 2026 10:45:55 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Programmable pigments: Photochromic nanoparticle inks for rewritable tattoos</title>
-      <link>https://www.cell.com/matter-light/fulltext/S3117-5848(26)00119-5</link>
-      <guid isPermaLink="false">https://www.cell.com/matter-light/fulltext/S3117-5848(26)00119-5</guid>
-      <pubDate>Sun, 11 Oct 2026 09:19:46 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
