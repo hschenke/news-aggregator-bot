@@ -5,9 +5,233 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 11 Oct 2026 11:28:23 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 05:01:30 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>X Is Bad, Though</title>
+      <link>https://lexontech.org/x-is-bad-though</link>
+      <guid isPermaLink="false">https://lexontech.org/x-is-bad-though</guid>
+      <pubDate>Mon, 12 Oct 2026 03:50:58 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Doory – Open-Source Canva</title>
+      <link>https://github.com/shaongitbd/doory</link>
+      <guid isPermaLink="false">https://github.com/shaongitbd/doory</guid>
+      <pubDate>Mon, 12 Oct 2026 00:48:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Local Indexing to reduce tool calling and token usage</title>
+      <link>https://tedhaley.ca/pensieve/</link>
+      <guid isPermaLink="false">https://tedhaley.ca/pensieve/</guid>
+      <pubDate>Mon, 12 Oct 2026 00:03:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>HashiCorp archives the Boundary open source repo</title>
+      <link>https://github.com/hashicorp/boundary</link>
+      <guid isPermaLink="false">https://github.com/hashicorp/boundary</guid>
+      <pubDate>Mon, 12 Oct 2026 00:02:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Whatever became of holography? (2011)</title>
+      <link>https://www.americanscientist.org/article/whatever-became-of-holography</link>
+      <guid isPermaLink="false">https://www.americanscientist.org/article/whatever-became-of-holography</guid>
+      <pubDate>Sun, 11 Oct 2026 23:50:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Illustration Beyond Proof</title>
+      <link>https://terrytao.wordpress.com/2026/10/11/illustration-beyond-proof/</link>
+      <guid isPermaLink="false">https://terrytao.wordpress.com/2026/10/11/illustration-beyond-proof/</guid>
+      <pubDate>Sun, 11 Oct 2026 23:22:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>ClickHouse C – Talk to ClickHouse using its native binary protocol</title>
+      <link>https://github.com/ClickHouse/clickhouse-c</link>
+      <guid isPermaLink="false">https://github.com/ClickHouse/clickhouse-c</guid>
+      <pubDate>Sun, 11 Oct 2026 23:08:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Fingerprints are the new cookies</title>
+      <link>https://royfish.dev/fingerprints-are-the-new-cookies</link>
+      <guid isPermaLink="false">https://royfish.dev/fingerprints-are-the-new-cookies</guid>
+      <pubDate>Sun, 11 Oct 2026 22:33:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Google is illegaly cutting forest to build data centers</title>
+      <link>https://www.theguardian.com/technology/2026/oct/06/google-datacentres-finland-temporary-halt-environmental-impact-assessment</link>
+      <guid isPermaLink="false">https://www.theguardian.com/technology/2026/oct/06/google-datacentres-finland-temporary-halt-environmental-impact-assessment</guid>
+      <pubDate>Sun, 11 Oct 2026 22:33:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Recursive self-improvement through collective intelligence</title>
+      <link>https://pub.sakana.ai/mass/</link>
+      <guid isPermaLink="false">https://pub.sakana.ai/mass/</guid>
+      <pubDate>Sun, 11 Oct 2026 22:22:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Shredding JSON columns gave Logfire up to 1000x faster queries</title>
+      <link>https://pydantic.dev/articles/dynamic-shredding-2026-01-26</link>
+      <guid isPermaLink="false">https://pydantic.dev/articles/dynamic-shredding-2026-01-26</guid>
+      <pubDate>Sun, 11 Oct 2026 22:18:26 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Passkeys are a trap</title>
+      <link>https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them</link>
+      <guid isPermaLink="false">https://nonfunctional.substack.com/p/passkeys-are-a-trap-do-not-use-them</guid>
+      <pubDate>Sun, 11 Oct 2026 21:59:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Tattoos you can turn on and off</title>
+      <link>https://www.livescience.com/technology/cool-chemistry-trick-allows-new-tattoos-to-turn-on-and-off</link>
+      <guid isPermaLink="false">https://www.livescience.com/technology/cool-chemistry-trick-allows-new-tattoos-to-turn-on-and-off</guid>
+      <pubDate>Sun, 11 Oct 2026 21:04:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The gap in shared understanding of LLM capability is widening</title>
+      <link>https://twitter.com/karpathy/status/2109361546505966046</link>
+      <guid isPermaLink="false">https://twitter.com/karpathy/status/2109361546505966046</guid>
+      <pubDate>Sun, 11 Oct 2026 20:20:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Cartographers of North Korea (2019)</title>
+      <link>https://cartographers-nk.wonyoung.so/</link>
+      <guid isPermaLink="false">https://cartographers-nk.wonyoung.so/</guid>
+      <pubDate>Sun, 11 Oct 2026 19:46:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>So, You’d Like To Sell Your Print Issues Of The Onion?</title>
+      <link>https://theonion.com/archivehunt/</link>
+      <guid isPermaLink="false">https://theonion.com/archivehunt/</guid>
+      <pubDate>Sun, 11 Oct 2026 19:43:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Chapter 1 of "Ways of Seeing" by John Berger (1972)</title>
+      <link>https://www.ways-of-seeing.com/ch1</link>
+      <guid isPermaLink="false">https://www.ways-of-seeing.com/ch1</guid>
+      <pubDate>Sun, 11 Oct 2026 18:26:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Total Annihilation, rebuilt for modern computers</title>
+      <link>https://nanolathe.gg</link>
+      <guid isPermaLink="false">https://nanolathe.gg</guid>
+      <pubDate>Sun, 11 Oct 2026 18:04:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>NYC's "Click to Cancel" rule is now in effect</title>
+      <link>https://www.nyc.gov/main/click-to-cancel</link>
+      <guid isPermaLink="false">https://www.nyc.gov/main/click-to-cancel</guid>
+      <pubDate>Sun, 11 Oct 2026 18:01:16 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>apsw: Another Python SQLite Wrapper</title>
+      <link>https://github.com/rogerbinns/apsw</link>
+      <guid isPermaLink="false">https://github.com/rogerbinns/apsw</guid>
+      <pubDate>Sun, 11 Oct 2026 16:58:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Terence Tao: Math 2.0 [pdf]</title>
+      <link>https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf</link>
+      <guid isPermaLink="false">https://teorth.github.io/tao-web/slides/math-2-0-caltech-2026.pdf</guid>
+      <pubDate>Sun, 11 Oct 2026 13:16:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Valen's Memory Safety: A New Kind of Borrow Checking</title>
+      <link>https://verdagon.dev/blog/valen-group-borrowing</link>
+      <guid isPermaLink="false">https://verdagon.dev/blog/valen-group-borrowing</guid>
+      <pubDate>Sun, 11 Oct 2026 12:06:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: BetterWispr – Free, open-source dictation for Mac</title>
+      <link>https://betterwispr.com/</link>
+      <guid isPermaLink="false">https://betterwispr.com/</guid>
+      <pubDate>Sun, 11 Oct 2026 12:01:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Building a VMM from scratch, #0: Why BoxLite is replacing libkrun</title>
+      <link>https://blog.boxlite.ai/building-a-vmm-from-scratch-0-why-boxlite-is-replacing-libkrun</link>
+      <guid isPermaLink="false">https://blog.boxlite.ai/building-a-vmm-from-scratch-0-why-boxlite-is-replacing-libkrun</guid>
+      <pubDate>Sun, 11 Oct 2026 10:45:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Programmable pigments: Photochromic nanoparticle inks for rewritable tattoos</title>
+      <link>https://www.cell.com/matter-light/fulltext/S3117-5848(26)00119-5</link>
+      <guid isPermaLink="false">https://www.cell.com/matter-light/fulltext/S3117-5848(26)00119-5</guid>
+      <pubDate>Sun, 11 Oct 2026 09:19:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>
