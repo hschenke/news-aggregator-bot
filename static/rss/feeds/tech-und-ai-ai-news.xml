@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 12 Oct 2026 13:17:54 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic warnt vor KI-Würmern auf Fernsehern und Haushaltsgeräten</title>
+      <link>https://www.all-ai.de/news/news26/anthropic-ki-wurm-warnung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-ki-wurm-warnung</guid>
+      <pubDate>Mon, 12 Oct 2026 19:33:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic zeigt, wie KI-Modelle auf sehr unterschiedlicher Hardware eine Inferenzumgebung einrichten. GLM-5.2 verbreitete sich in einem vereinfachten Test zuverlässig über bis zu acht Cloud-Geräte. Kleine Modelle passen bereits auf verteilte IoT-Hardware, beherrschen aber noch nicht die gesamte Replikationskette. Di...]]></description>
+    </item>
+    <item>
+      <title>Vibecoding nimmt Microsoft Office ins Visier</title>
+      <link>https://www.all-ai.de/news/news26/vibecoding-microsoft-office</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/vibecoding-microsoft-office</guid>
+      <pubDate>Mon, 12 Oct 2026 18:09:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ein Entwickler hat mit Claude Opus 5.5 freie Nachbauten von Word, Excel und PowerPoint erstellt. WordCraft, GridCraft und DeckCraft laufen auf mehreren Betriebssystemen sowie im Browser. Die Apps befinden sich im Alpha-Stadium und erreichen nach Einschätzung der Projektbetreuer 50 bis 60 Prozent eines vollwertigen E...]]></description>
+    </item>
+    <item>
+      <title>Roboter soll 16-Jährige in Köln begrapscht haben. Wer haftet?</title>
+      <link>https://www.all-ai.de/news/news26/roboter-koeln-uebergriff</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/roboter-koeln-uebergriff</guid>
+      <pubDate>Mon, 12 Oct 2026 17:47:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Polizeipräsidium Köln Kurzfassung ▾ Quellen ▾ Ein Roboter soll in Köln eine 16-Jährige am Gesäß berührt und Stoßbewegungen ausgeführt haben. Der 16-jährige Besitzer und sein 19-jähriger Begleiter sollen den Vorfall gefilmt und live übertragen haben. Die Polizei prüft, wer den Roboter steuerte, und ermittelt wegen de...]]></description>
+    </item>
+    <item>
+      <title>Muse Wonder schlägt GPT-Astra und Claude-Fable</title>
+      <link>https://www.all-ai.de/news/news26top/muse-wonder-top-ki-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/muse-wonder-top-ki-start</guid>
+      <pubDate>Mon, 12 Oct 2026 17:20:58 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Meta bringt Muse Wonder und Muse Wonder Full für persönliche und berufliche KI-Agenten. Muse Wonder Full führt mehrere Agenten- und Coding-Benchmarks an, liegt im Artificial Analysis Intelligence Index aber hinter Claude Opus 5.5. Active Memory und Active Focus sollen relevante Informationen behalten und lange Aufga...]]></description>
+    </item>
+    <item>
+      <title>Microsoft setzt ab 2027 auf eigene KI-Chips</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-maya-2027</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-maya-2027</guid>
+      <pubDate>Mon, 12 Oct 2026 15:23:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft baut Azure Maia ab 2027 zu einer KI-Infrastruktur im Multi-Gigawatt-Maßstab aus. Maia 300 soll das wichtigste Inferenzsystem für Produkte und Dienste des Konzerns werden. Ein Rack mit 96 Beschleunigern erreicht bis zu siebenmal so viel Token-Durchsatz wie Maia 200. Der Chip besitzt 288 GB HBM4 mit einer Sp...]]></description>
+    </item>
     <item>
       <title>Google DeepMind löst jahrzehntealte Mathe-Probleme</title>
       <link>https://www.all-ai.de/news/news26/google-deepmind-mathe</link>
@@ -25,15 +70,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Andrej Karpathy beschreibt die weltweite Erfahrung mit Sprachmodellen als schmale Pyramide. Rund sechs Milliarden Menschen hätten kaum Kontakt mit Sprachmodellen, während etwa 20 Millionen sie professionell für Programmierung und Mathematik nutzen. Nur rund 5.000 Menschen hätten Zugang zu internen Spitzenmodellen un...]]></description>
-    </item>
-    <item>
-      <title>ElevenLabs merkt sich jetzt den Look deiner Marke</title>
-      <link>https://www.all-ai.de/news/news26/elevenlabs-merkt-sich-jetzt-den-look-deiner-marke</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-merkt-sich-jetzt-den-look-deiner-marke</guid>
-      <pubDate>Sun, 11 Oct 2026 18:07:01 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[ElevenCreative speichert Farben, Schriften, Logos, Referenzbilder und Gestaltungsregeln in einem Brand Kit. Nutzer binden das Kit per @-Tag in Bild & Video, Flows und den Agenten ein. Teams teilen dieselben Vorgaben über ihren gemeinsamen Workspace. Mehrere Kits lassen sich für Marken, Untermarken oder Kunden anlege...]]></description>
     </item>
   </channel>
 </rss>

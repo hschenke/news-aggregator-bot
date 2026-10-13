@@ -5,11 +5,191 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 12 Oct 2026 13:17:54 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>München: Open Source ist wieder da</title>
+      <title>Speicherkrise: Weltweit jetzt so wenig Smartphones ausgeliefert wie zuletzt 2012</title>
+      <link>https://www.heise.de/news/Speicherkrise-Weltweit-jetzt-so-wenig-Smartphones-ausgeliefert-wie-zuletzt-2012-11485211.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485211</guid>
+      <pubDate>Tue, 13 Oct 2026 04:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Im dritten Quartal wurden weltweit so wenige Smartphones ausgeliefert wie zuletzt vor 14 Jahren. Vor allem im günstigeren Segment steigen die Preise rasant.]]></description>
+    </item>
+    <item>
+      <title>Dienstag: Supermarkt-Kühlsysteme angegriffen, OpenAI-Modell auf Zerstörungstrip</title>
+      <link>https://www.heise.de/news/Dienstag-Supermarkt-Kuehlsysteme-angegriffen-OpenAI-Modell-auf-Zerstoerungstrip-11485167.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485167</guid>
+      <pubDate>Tue, 13 Oct 2026 04:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Cyberangriff auf Kühl- und Gefriersysteme + OpenAI-Modell zerstört Testumgebung + Vorschlag von Satya Nadella + BYD mit neuem Modell + Starlink in Venezuela]]></description>
+    </item>
+    <item>
+      <title>Die Paketsteuer in Österreich wankt</title>
+      <link>https://www.heise.de/news/Die-Paketsteuer-in-Oesterreich-wankt-11485193.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485193</guid>
+      <pubDate>Tue, 13 Oct 2026 03:45:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Regierungspartei NEOS und der ÖVP-Wirtschaftsminister sind gegen die Paketsteuer. Der Handelsverband ruft die EU-Kommission auf den Plan.]]></description>
+    </item>
+    <item>
+      <title>Kryptodiebe verkaufen Hardware-Wallets mit heimlicher eSIM</title>
+      <link>https://www.heise.de/news/Kryptodiebe-verkaufen-Hardware-Wallets-mit-heimlicher-eSIM-11485183.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485183</guid>
+      <pubDate>Tue, 13 Oct 2026 03:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[An die 100 Millionen US-Dollar in Kryptowährung sind Nutzern bestimmter Hardware-Wallets gestohlen werden. Denn wer den Bildschirm auslesen kann, gewinnt.]]></description>
+    </item>
+    <item>
+      <title>Venezuela genehmigt den kommerziellen Betrieb von Starlink im Land</title>
+      <link>https://www.heise.de/news/Venezuela-genehmigt-den-kommerziellen-Betrieb-von-Starlink-im-Land-11485139.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485139</guid>
+      <pubDate>Mon, 12 Oct 2026 19:45:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nach erfolgreichen Testläufen mit D2D-Technologie erhält der Satelliteninternetdienst von SpaceX die behördliche Genehmigung für den Betrieb in Venezuela.]]></description>
+    </item>
+    <item>
+      <title>Cyberangriff auf französische Supermarkt-Kühlschränke: Hunderte Waren verdorben</title>
+      <link>https://www.heise.de/news/Cyberangriff-auf-franzoesische-Supermarkt-Kuehlschraenke-Hunderte-Waren-verdorben-11485129.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11485129</guid>
+      <pubDate>Mon, 12 Oct 2026 18:53:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Unbekannte Angreifer haben die Kühl- und Gefriersysteme französischer Supermärkte außer Betrieb gesetzt. Auch ein niederländischer Betreiber meldet Probleme.]]></description>
+    </item>
+    <item>
+      <title>Top 10: Der beste Mähroboter für kleine Flächen – Testsieger für 550 Euro</title>
+      <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-maehroboter-fuer-kleine-flaechen-testsieger-fuer-550-euro/dtx14fd?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484734</guid>
+      <pubDate>Mon, 12 Oct 2026 18:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Für kleine Gärten braucht es keinen teuren Mähroboter. Wir zeigen günstige Modelle bis 500 m² ohne Begrenzungskabel – mit Kamera-, RTK- oder LiDAR-Navigation.]]></description>
+    </item>
+    <item>
+      <title>Bitkom: Mehrheit der Lehrkräfte will Pflichtfortbildungen zu digitalen Themen</title>
+      <link>https://www.heise.de/news/Bitkom-Mehrheit-der-Lehrkraefte-will-Pflichtfortbildungen-zu-digitalen-Themen-11484716.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484716</guid>
+      <pubDate>Mon, 12 Oct 2026 16:29:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Es gibt mehr Lehrkräfte, die ihre Fähigkeiten für digitalen Unterricht als „gut“ oder „sehr gut“ einstufen. Darauf wollen sie sich aber offenbar nicht ausruhen.]]></description>
+    </item>
+    <item>
+      <title>BYD Atto 8: Was hinter dem Megawatt-Laden steckt – und was noch offen ist</title>
+      <link>https://www.heise.de/news/Schnellstlade-Elektroauto-fuer-Early-Adopter-SUV-BYD-Atto-8-11484622.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484622</guid>
+      <pubDate>Mon, 12 Oct 2026 16:16:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[BYD zeigt in Paris den Atto 8, das erste Europa-Modell mit Flash Charging, macht aber noch keine Angaben zu Preis und Ladeinfrastruktur.]]></description>
+    </item>
+    <item>
+      <title>Airbus testet Kampfdrohne U740 Valkyrie</title>
+      <link>https://www.heise.de/news/Airbus-testet-Kampfdrohne-U740-Valkyrie-11484973.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484973</guid>
+      <pubDate>Mon, 12 Oct 2026 16:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Airbus hat die US-Kampfdrohne U740 Valkyrie getestet. Für den Einsatz in der Bundeswehr soll sie eine von Airbus entwickelte, KI-gestützte Software bekommen.]]></description>
+    </item>
+    <item>
+      <title>Smart #2 vorgestellt: Der Zweisitzer für die Stadt ist zurück</title>
+      <link>https://www.heise.de/news/Smart-2-vorgestellt-Der-Zweisitzer-fuer-die-Stadt-ist-zurueck-11484609.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484609</guid>
+      <pubDate>Mon, 12 Oct 2026 15:16:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nach rund zweieinhalb Jahren Pause hat Smart mit dem #2 wieder einen Zweisitzer im Programm. Optik und Antriebskonzept erinnern an den Vorgänger.]]></description>
+    </item>
+    <item>
+      <title>c't-Podcast: "Die ziehen einen digital aus"</title>
+      <link>https://www.heise.de/news/c-t-Podcast-Die-ziehen-einen-digital-aus-11484798.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484798</guid>
+      <pubDate>Mon, 12 Oct 2026 15:11:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Anneke Buffone erforschte bei Meta, wie viele Menschen die Kontrolle über ihre Nutzungszeit verlieren. Dann wurde sie entlassen – und sagte vor Gericht aus.]]></description>
+    </item>
+    <item>
+      <title>Schulausschluss wegen Datenbrille in Österreich gekippt</title>
+      <link>https://www.heise.de/news/Schulausschluss-wegen-Datenbrille-in-Oesterreich-gekippt-11484838.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484838</guid>
+      <pubDate>Mon, 12 Oct 2026 14:26:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Bundesverwaltungsgericht in Wien hat den Rauswurf eines Schülers wegen einer Datenbrille gekippt. Bloßes Unbehagen von anderen reiche für eine Sperre nicht.]]></description>
+    </item>
+    <item>
+      <title>Aufpreis möglich: Das plant Apple beim neuen iPad mini</title>
+      <link>https://www.heise.de/news/Neues-iPad-mini-koennte-deutlich-teurer-werden-11483675.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483675</guid>
+      <pubDate>Mon, 12 Oct 2026 14:10:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples Kompakt-Tablet bekommt eine zentrale neue Funktion. Das nutzt Apple offenbar, um an der Preisschraube zu drehen.]]></description>
+    </item>
+    <item>
+      <title>Mobiler Monitor Lenovo Thinkvision M16 im Test: mattes Display, 16 Zoll, 220 €</title>
+      <link>https://www.heise.de/bestenlisten/testbericht/mobiler-monitor-lenovo-thinkvision-m16-im-test-mattes-display-16-zoll-220-euro/hes98w8?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484772</guid>
+      <pubDate>Mon, 12 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Lenovo Thinkvision M16 bündelt die Anschlüsse im Standfuß und leitet bis zu 65 W an den Laptop weiter. Was der matte 16-Zöller sonst bietet, zeigt der Test.]]></description>
+    </item>
+    <item>
+      <title>Satya Nadella will „Notbremse“, um KI abschalten zu können</title>
+      <link>https://www.heise.de/news/Microsoft-Chef-will-Notbremse-fuer-kuenstliche-Intelligenz-11483617.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483617</guid>
+      <pubDate>Mon, 12 Oct 2026 13:58:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nach Hacking-Attacken durch KI schlägt Satya Nadella Regeln für die Technologie vor. Die Maßnahmen offenbaren, wie besorgt der Microsoft-Chef ist.]]></description>
+    </item>
+    <item>
+      <title>OpenAI-Modell zerstört absichtlich eigene Testumgebung</title>
+      <link>https://www.heise.de/news/OpenAI-Modell-zerstoert-absichtlich-eigene-Testumgebung-11482632.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11482632</guid>
+      <pubDate>Mon, 12 Oct 2026 13:40:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ein OpenAI-Modell zerstörte seine Testumgebung, um fehlende Input-Dateien zu erhalten. Es versuchte zuvor, Ergebnisse zu fälschen.]]></description>
+    </item>
+    <item>
+      <title>Apple TV 4K kriegt deutlich bessere Hardware, HomePod mini 2 kommt mit</title>
+      <link>https://www.heise.de/news/Apple-TV-4K-kriegt-deutlich-bessere-Hardware-HomePod-mini-2-kommt-mit-11483655.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483655</guid>
+      <pubDate>Mon, 12 Oct 2026 13:34:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples Multimediabox soll deutlich leistungsfähiger werden. Ein Release-Termin steht offenbar fest – ebenso für den neuen HomePod mini 2.]]></description>
+    </item>
+    <item>
+      <title>Bitkom: Analoge Ämter bremsen Wirtschaft aus</title>
+      <link>https://www.heise.de/news/Bitkom-Analoge-Aemter-bremsen-Wirtschaft-aus-11484571.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11484571</guid>
+      <pubDate>Mon, 12 Oct 2026 13:32:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Drei Viertel der Unternehmen sehen die mangelnde Digitalisierung der Behörden als Standortnachteil. Nur 2 Prozent kommunizieren rein digital.]]></description>
+    </item>
+    <item>
+      <title>Datenbanken mit Java, KI und MCP steuern: Googles MCP Toolbox</title>
+      <link>https://www.heise.de/news/Datenbanken-mit-Java-KI-und-MCP-steuern-Googles-MCP-Toolbox-11483877.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483877</guid>
+      <pubDate>Mon, 12 Oct 2026 13:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Java-Entwickler können mit der Google-Toolbox ihre Datenbanken per KI über MCP ansprechen – derzeit noch mit Einschränkungen.]]></description>
+    </item>
+    <item>
+      <title>Münchens Open-Source-Comeback</title>
       <link>https://www.heise.de/news/Muenchen-Open-Source-ist-wieder-da-11484321.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11484321</guid>
       <pubDate>Mon, 12 Oct 2026 13:04:00 GMT</pubDate>
@@ -18,7 +198,16 @@
       <description><![CDATA[Nach dem Ende von LiMux setzt München heute erneut auf Open Source. Neue Projekte und ein OSPO zeigen den Wandel der Stadt.]]></description>
     </item>
     <item>
-      <title>Empfängerüberprüfung beim Online-Banking: vzbv kritisiert Masse an Warnhinweisen</title>
+      <title>KI-Update: SI statt AI, Wer zahlt?, Apples Privacy, SynthID, Closed Source-Ende</title>
+      <link>https://www.heise.de/news/KI-Update-SI-statt-AI-Wer-zahlt-Apples-Privacy-SynthID-Closed-Source-Ende-11482254.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11482254</guid>
+      <pubDate>Mon, 12 Oct 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>„Verfehlt ihr Ziel“: vzbv kritisiert Empfängerüberprüfung beim Online-Banking</title>
       <link>https://www.heise.de/news/Empfaengerueberpruefung-beim-Online-Banking-vzbv-kritisiert-Masse-an-Warnhinweisen-11484343.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11484343</guid>
       <pubDate>Mon, 12 Oct 2026 13:00:00 GMT</pubDate>
@@ -34,15 +223,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Microsoft kündigt die dritte Generation der hauseigenen KI-Beschleuniger Maia an, die in „Multi-Gigawatt“-Dimensionen zum Einsatz kommen sollen.]]></description>
-    </item>
-    <item>
-      <title>KI-Update: SI statt AI, Wer zahlt?, Apples Privacy, SynthID, Closed Source-Ende</title>
-      <link>https://www.heise.de/news/KI-Update-SI-statt-AI-Wer-zahlt-Apples-Privacy-SynthID-Closed-Source-Ende-11482254.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11482254</guid>
-      <pubDate>Mon, 12 Oct 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
     </item>
     <item>
       <title>Datenschutzverstoß: Hohe Strafe für Microsoft-Tochter Xandr</title>
@@ -268,60 +448,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Donald Trump hält den Begriff KI für falsch und macht seine Umbenennung zum Loyalitätstest. Immer mehr führende Vertreter der Tech-Branche folgen ihm jetzt.]]></description>
-    </item>
-    <item>
-      <title>Vor 15 Jahren: Der Tod von Dennis Ritchie und das Rätsel seiner Dissertation</title>
-      <link>https://www.heise.de/news/Vor-15-Jahren-Der-Tod-von-Dennis-Ritchie-und-das-Raetsel-seiner-Dissertation-11483545.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483545</guid>
-      <pubDate>Mon, 12 Oct 2026 04:25:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vor 15 Jahren starb Dennis M. Ritchie, Miterfinder von Unix und C. Ein Rückblick auf sein Leben, Wirken und die nie eingereichte Doktorarbeit.]]></description>
-    </item>
-    <item>
-      <title>Montag: Ukrainische Drohnen gegen russisches Internet, Intels CPU-Wiederauflage</title>
-      <link>https://www.heise.de/news/Montag-Ukrainische-Drohnen-gegen-russisches-Internet-Intels-CPU-Wiederauflage-11483723.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483723</guid>
-      <pubDate>Mon, 12 Oct 2026 04:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Internetausfälle nach Drohnenangriffen + Intels neue Alt-CPUs 2027 + CDU-Vorstoß für stärkere Balkonkraftwerke + Cyberangriffe in Japan + Stopp für Pornosperren]]></description>
-    </item>
-    <item>
-      <title>Die besten Gartengeräte im Herbst: Bequemer Schneiden und Sägen mit Akku</title>
-      <link>https://www.heise.de/bestenlisten/ratgeber/die-besten-gartengeraete-im-herbst-bequemer-schneiden-und-saegen-mit-akku/g2qjc64?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483583</guid>
-      <pubDate>Sun, 11 Oct 2026 18:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Astsäge, Hochentaster oder Akku-Astschere – wofür eignen sie sich? Wir zeigen, warum die kleinen Helfer im Garten so praktisch sind.]]></description>
-    </item>
-    <item>
-      <title>Massive Ausfälle bei Yandex nach ukrainischen Angriffen</title>
-      <link>https://www.heise.de/news/Massive-Ausfaelle-bei-Yandex-nach-ukrainischen-Angriffen-11483627.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483627</guid>
-      <pubDate>Sun, 11 Oct 2026 15:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das russische Internetunternehmen Yandex erleidet massive Ausfälle. Das macht sich für örtliche Internetnutzer bemerkbar.]]></description>
-    </item>
-    <item>
-      <title>FAQ zu Cybergrooming: Ermittler warnen vor Massenphänomen im Netz</title>
-      <link>https://www.heise.de/hintergrund/FAQ-zu-Cybergrooming-Ermittler-warnen-vor-Massenphaenomen-im-Netz-11483635.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483635</guid>
-      <pubDate>Sun, 11 Oct 2026 14:53:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sie haben sexuelle Absichten und knüpfen Kontakte über Chats und Gaming-Plattformen: Wie Täter im Netz vorgehen, welche Hürden bei der Strafverfolgung bestehen.]]></description>
-    </item>
-    <item>
-      <title>Benq Screenbar Max im Test: Perfektes Licht für zwei Monitore – aber hoher Preis</title>
-      <link>https://www.heise.de/bestenlisten/testbericht/benq-screenbar-max-im-test-perfektes-licht-fuer-zwei-monitore-aber-hoher-preis/2mv9rmc?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483553</guid>
-      <pubDate>Sun, 11 Oct 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Benq Screenbar Max leuchtet zwei Monitore auf einmal aus und klemmt dafür an der Tischplatte. Wir testen die Monitorlampe.]]></description>
     </item>
   </channel>
 </rss>
