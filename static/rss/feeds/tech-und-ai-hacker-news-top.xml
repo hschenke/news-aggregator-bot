@@ -5,9 +5,233 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 13 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 13 Oct 2026 12:47:34 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Mozilla Introduces Firefox Enterprise</title>
+      <link>https://www.firefox.com/en-US/enterprise/</link>
+      <guid isPermaLink="false">https://www.firefox.com/en-US/enterprise/</guid>
+      <pubDate>Tue, 13 Oct 2026 12:00:42 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>An hour of audio transcribed in about 13s on MacBook Air</title>
+      <link>https://eg2.haku.sh/</link>
+      <guid isPermaLink="false">https://eg2.haku.sh/</guid>
+      <pubDate>Tue, 13 Oct 2026 11:27:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Character.ai Files for Bankruptcy</title>
+      <link>https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</link>
+      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</guid>
+      <pubDate>Tue, 13 Oct 2026 11:24:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>11 year old unsoundness bugs found in Rust borrow checker</title>
+      <link>https://github.com/rust-lang/rust/issues/164250</link>
+      <guid isPermaLink="false">https://github.com/rust-lang/rust/issues/164250</guid>
+      <pubDate>Tue, 13 Oct 2026 10:27:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Use your OpenAI subscription to create audiobooks</title>
+      <link>https://pdftomp3.com/connect-ai/</link>
+      <guid isPermaLink="false">https://pdftomp3.com/connect-ai/</guid>
+      <pubDate>Tue, 13 Oct 2026 10:08:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades</title>
+      <link>https://www.bloomberg.com/news/features/2026-10-13/cftc-staff-told-to-retract-analysis-of-suspicious-oil-trades-on-iran</link>
+      <guid isPermaLink="false">https://www.bloomberg.com/news/features/2026-10-13/cftc-staff-told-to-retract-analysis-of-suspicious-oil-trades-on-iran</guid>
+      <pubDate>Tue, 13 Oct 2026 10:08:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>AWS Lambda Web Functions</title>
+      <link>https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/</link>
+      <guid isPermaLink="false">https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/</guid>
+      <pubDate>Tue, 13 Oct 2026 10:07:03 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Crypto thieves sell hardware wallets with secret eSIM</title>
+      <link>https://www.heise.de/en/news/Crypto-thieves-sell-hardware-wallets-with-secret-eSIM-11485188.html</link>
+      <guid isPermaLink="false">https://www.heise.de/en/news/Crypto-thieves-sell-hardware-wallets-with-secret-eSIM-11485188.html</guid>
+      <pubDate>Tue, 13 Oct 2026 08:34:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Document Review with Unsiloed and TypeSafe Jev</title>
+      <link>https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev</link>
+      <guid isPermaLink="false">https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev</guid>
+      <pubDate>Tue, 13 Oct 2026 08:24:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>DishwasherBench – Can Frontier Models Stack a Dishwasher?</title>
+      <link>https://github.com/composo-ai/DishwasherBench</link>
+      <guid isPermaLink="false">https://github.com/composo-ai/DishwasherBench</guid>
+      <pubDate>Tue, 13 Oct 2026 08:24:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Character.ai files for Chapter 11 bankruptcy</title>
+      <link>https://blog.character.ai/an-update-on-character-ai/</link>
+      <guid isPermaLink="false">https://blog.character.ai/an-update-on-character-ai/</guid>
+      <pubDate>Tue, 13 Oct 2026 07:28:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Hittite royal archive found in Turkey</title>
+      <link>https://www.thehistoryblog.com/archives/77107</link>
+      <guid isPermaLink="false">https://www.thehistoryblog.com/archives/77107</guid>
+      <pubDate>Tue, 13 Oct 2026 06:02:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>A look at the math that OpenAI claims computes faster Fourier transforms</title>
+      <link>https://www.argmin.net/p/faster-fourier-transforms</link>
+      <guid isPermaLink="false">https://www.argmin.net/p/faster-fourier-transforms</guid>
+      <pubDate>Tue, 13 Oct 2026 02:46:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>AI models can provably hide arbitrary capabilities</title>
+      <link>https://arxiv.org/abs/2610.13928</link>
+      <guid isPermaLink="false">https://arxiv.org/abs/2610.13928</guid>
+      <pubDate>Tue, 13 Oct 2026 02:07:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: SolidCraft – Open-Source Parametric CAD in Rust (With MCP Support)</title>
+      <link>https://github.com/bherbruck/solidcraft</link>
+      <guid isPermaLink="false">https://github.com/bherbruck/solidcraft</guid>
+      <pubDate>Tue, 13 Oct 2026 00:11:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Janas: Run LLMs larger than RAM by streaming experts from SSD</title>
+      <link>https://github.com/prabanta-dev/janas</link>
+      <guid isPermaLink="false">https://github.com/prabanta-dev/janas</guid>
+      <pubDate>Mon, 12 Oct 2026 22:05:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>AI is a tool and using it well takes skill</title>
+      <link>https://yyhh.org/blog/2026/10/ai-is-a-tool/</link>
+      <guid isPermaLink="false">https://yyhh.org/blog/2026/10/ai-is-a-tool/</guid>
+      <pubDate>Mon, 12 Oct 2026 21:40:18 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Intel D270 GPU AI Accelerator–Up to 480 GB LPDDR5X</title>
+      <link>https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html</link>
+      <guid isPermaLink="false">https://www.intel.com/content/www/us/en/products/details/discrete-gpus/data-center-gpu/d-series.html</guid>
+      <pubDate>Mon, 12 Oct 2026 21:35:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Who is vfmaddrnd231pd?</title>
+      <link>https://purplesyringa.moe/blog/who-is-vfmaddrnd231pd/</link>
+      <guid isPermaLink="false">https://purplesyringa.moe/blog/who-is-vfmaddrnd231pd/</guid>
+      <pubDate>Mon, 12 Oct 2026 21:12:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Writing a Demoscene Intro for the ZX Spectrum</title>
+      <link>https://www.markround.com/blog/2026/zx-spectrum-intro</link>
+      <guid isPermaLink="false">https://www.markround.com/blog/2026/zx-spectrum-intro</guid>
+      <pubDate>Mon, 12 Oct 2026 19:40:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Making big downloads resumable in Firefox</title>
+      <link>https://lunarwatcher.codeberg.page/til/firefox/resumable-big-downloads.html</link>
+      <guid isPermaLink="false">https://lunarwatcher.codeberg.page/til/firefox/resumable-big-downloads.html</guid>
+      <pubDate>Mon, 12 Oct 2026 19:36:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Launch HN: Agent37 (YC F26) – Low-cost agent sandboxes for running agents</title>
+      <link>https://news.ycombinator.com/item?id=50059096</link>
+      <guid isPermaLink="false">https://news.ycombinator.com/item?id=50059096</guid>
+      <pubDate>Mon, 12 Oct 2026 16:46:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>A Modern Web App in C</title>
+      <link>https://prophitt.me/writing/a-modern-web-app-in-c</link>
+      <guid isPermaLink="false">https://prophitt.me/writing/a-modern-web-app-in-c</guid>
+      <pubDate>Mon, 12 Oct 2026 16:13:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>GLM-Legal</title>
+      <link>https://z.ai/blog/glm-legal</link>
+      <guid isPermaLink="false">https://z.ai/blog/glm-legal</guid>
+      <pubDate>Mon, 12 Oct 2026 16:11:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Solar panels that plug into your wall</title>
+      <link>https://www.nationalgeographic.com/environment/article/balcony-plug-in-solar-panels-renewable-energy</link>
+      <guid isPermaLink="false">https://www.nationalgeographic.com/environment/article/balcony-plug-in-solar-panels-renewable-energy</guid>
+      <pubDate>Mon, 12 Oct 2026 14:19:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>
