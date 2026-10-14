@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 14 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 10:20:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gemini 4 Argon lässt Roboter vor dem Einsatz üben</title>
+      <link>https://www.all-ai.de/news/news26/gemini-4-roboter</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-roboter</guid>
+      <pubDate>Wed, 14 Oct 2026 08:32:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Gemini 4 Argon steuert Roboter und erprobt ihre Bewegungen in Simulationen. Im ERQA-Benchmark erreicht das Modell 87 Prozent. Simulierte Trainingsabläufe erhöhen in einem Versuch die Erfolgsquote eines Robotikmodells von 56 auf 75 Prozent. Der Zugang erfolgt über Google AI Ultra oder die kostenpflichtige Gemini API....]]></description>
+    </item>
+    <item>
+      <title>Neuron AI lässt Roboter fühlen, hören und sich erinnern</title>
+      <link>https://www.all-ai.de/news/news26top/neura-neuron-ai-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/neura-neuron-ai-start</guid>
+      <pubDate>Wed, 14 Oct 2026 07:22:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Neuron AI verbindet 3D-Sehen, Tastsinn, Hören, Körperzustand und Sprache mit einem Gedächtnis. Das in Metzingen entwickelte Modell läuft direkt auf NEURA-Robotern in fünf Bauformen und benötigt keine Cloud-Verbindung. Kunden können erlernte Fähigkeiten über Neuraverse auf ihre Roboterflotte übertragen. Für die GTC B...]]></description>
+    </item>
+    <item>
+      <title>Russland ohne AI, was passiert eigentlich ohne Rechenleistung?</title>
+      <link>https://www.all-ai.de/news/news26/russland-ai-drohnen</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/russland-ai-drohnen</guid>
+      <pubDate>Wed, 14 Oct 2026 06:28:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ausfälle bei Yandex haben KI-Angebote und digitale Alltagsdienste getroffen. Fehlende Rechenleistung kann KI-Anfragen verzögern und laufendes Training unterbrechen. Gesicherte Modelle brauchen geeignete Ersatzrechner, um wieder zu arbeiten. Ausweichstandorte helfen nur mit vorbereiteten Anwendungen, verfügbaren Date...]]></description>
+    </item>
     <item>
       <title>OpenAI findet Abhörgerät, FBI nimmt Mitarbeiter fest</title>
       <link>https://www.all-ai.de/news/news26/openai-spionage-mitarbeiter</link>
@@ -61,60 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[REA hat fast 185.000 GitHub-Sterne gesammelt und die Spitze der Trends erreicht. Das Tool verbindet Coding-Agenten über MCP mit Programmen wie Ghidra, Hopper und IDA. REA analysiert unter anderem native Programme, Electron-Apps, Webseiten, .NET und Android-APKs. Der Agent erhält keine Originalquellen, sondern Befund...]]></description>
-    </item>
-    <item>
-      <title>Epic Games lässt Claude-KI den Disney-Shooter bauen</title>
-      <link>https://www.all-ai.de/news/news26/epic-games-claude-disney</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/epic-games-claude-disney</guid>
-      <pubDate>Tue, 13 Oct 2026 08:36:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Epic Games stellt seinen unangekündigten Marvel- und Star-Wars-Shooter auf ein »AI first«-Modell um. Claude soll den Code schreiben, während vollständige KI-Abläufe die Grafikproduktion übernehmen. Das ursprünglich für März 2027 geplante Spiel wurde ohne neuen Termin verschoben. Entwickler reagierten intern mit Fass...]]></description>
-    </item>
-    <item>
-      <title>Sam Altman erwartet den größten Gründerboom aller Zeiten</title>
-      <link>https://www.all-ai.de/news/news26/sam-altman-gruenderboom</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/sam-altman-gruenderboom</guid>
-      <pubDate>Tue, 13 Oct 2026 08:25:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Sam Altman hält mit Codex drei Monate Startup-Arbeit in rund 17 Minuten für machbar. KI soll Gründern bei Entwicklung, Marketing, Verträgen und Lieferanten helfen. Lang laufende Agenten könnten künftig als dauerhafte virtuelle Kollegen arbeiten. Altman erwartet durch KI den größten Boom bei Gründungen und kleinen Un...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT Watermark nur in der EU</title>
-      <link>https://www.all-ai.de/news/news26/chatgpt-watermark-eu-only</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-watermark-eu-only</guid>
-      <pubDate>Tue, 13 Oct 2026 07:53:26 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI führt unsichtbare Wasserzeichen für geeignete ChatGPT- und Codex-Texte in der EU ein. Anthropic markiert neue Claude-Modelle weltweit, weil eine dauerhafte regionale Begrenzung bisher fehlt. Schon überschaubare Textänderungen senken die Erkennungsquote von textGrain deutlich. Ein VPN ist kein belegter und ver...]]></description>
-    </item>
-    <item>
-      <title>Nano Banana 3 Pro: Erster Leak zeigt Gemini 4 Basis</title>
-      <link>https://www.all-ai.de/news/news26/gemini-4-nano-banana-3-pro</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-nano-banana-3-pro</guid>
-      <pubDate>Tue, 13 Oct 2026 07:09:47 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Der interne Name »Gempix 3 Pro« ist in einer Google-Funktion zum Schutz generierter Bilder aufgetaucht. Der Leak deutet auf Nano Banana 3 Pro auf Basis von Gemini 4 Argon hin. Als möglicher Startzeitraum gelten November und Dezember 2026. Google hat weder das Modell noch seinen Namen oder Erscheinungstermin bestätig...]]></description>
-    </item>
-    <item>
-      <title>Pleite: Das war Character.AI</title>
-      <link>https://www.all-ai.de/news/news26/charakter-ai-pleite</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/charakter-ai-pleite</guid>
-      <pubDate>Tue, 13 Oct 2026 06:54:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Character.AI hat in den USA Gläubigerschutz nach Chapter 11 beantragt. Disney bietet 20 Millionen Dollar für bestimmte Vermögenswerte. Die Plattform bleibt während des Verkaufsverfahrens erreichbar. Ohne Käufer wird Character.AI abgewickelt. Character.AI: An Update on Character.AI Character.AI: Mitteilung zum Chapte...]]></description>
-    </item>
-    <item>
-      <title>Anthropic bremst Datenklau bei Claude um bis zu 99 Prozent</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-claude-distillaton-ende</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-claude-distillaton-ende</guid>
-      <pubDate>Tue, 13 Oct 2026 06:40:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic will die Menge abgegriffener Reasoning-Daten bei Claude um 90 bis 99 Prozent gesenkt haben. Ein zweistufiger Klassifikator, geschützte Reasoning-Blöcke und Kontosperren erschweren die Angriffe. Das KI-Unternehmen sperrte bereits Zehntausende Konten, oft innerhalb von zwei Stunden. Reguläre Entwickler müsse...]]></description>
     </item>
   </channel>
 </rss>

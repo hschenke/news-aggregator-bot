@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 14 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 14 Oct 2026 10:20:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -40,78 +40,6 @@
       <link>https://github.com/rust-lang/rust/issues/164250</link>
       <guid isPermaLink="false">https://github.com/rust-lang/rust/issues/164250</guid>
       <pubDate>Tue, 13 Oct 2026 10:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: Use your OpenAI subscription to create audiobooks</title>
-      <link>https://pdftomp3.com/connect-ai/</link>
-      <guid isPermaLink="false">https://pdftomp3.com/connect-ai/</guid>
-      <pubDate>Tue, 13 Oct 2026 10:08:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>CFTC Staff Were Told to Retract Analysis of Suspicious Oil Trades</title>
-      <link>https://www.bloomberg.com/news/features/2026-10-13/cftc-staff-told-to-retract-analysis-of-suspicious-oil-trades-on-iran</link>
-      <guid isPermaLink="false">https://www.bloomberg.com/news/features/2026-10-13/cftc-staff-told-to-retract-analysis-of-suspicious-oil-trades-on-iran</guid>
-      <pubDate>Tue, 13 Oct 2026 10:08:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>AWS Lambda Web Functions</title>
-      <link>https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/</link>
-      <guid isPermaLink="false">https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/</guid>
-      <pubDate>Tue, 13 Oct 2026 10:07:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Crypto thieves sell hardware wallets with secret eSIM</title>
-      <link>https://www.heise.de/en/news/Crypto-thieves-sell-hardware-wallets-with-secret-eSIM-11485188.html</link>
-      <guid isPermaLink="false">https://www.heise.de/en/news/Crypto-thieves-sell-hardware-wallets-with-secret-eSIM-11485188.html</guid>
-      <pubDate>Tue, 13 Oct 2026 08:34:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Document Review with Unsiloed and TypeSafe Jev</title>
-      <link>https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev</link>
-      <guid isPermaLink="false">https://www.unsiloed.ai/blog/document-review-unsiloed-typesafe-jev</guid>
-      <pubDate>Tue, 13 Oct 2026 08:24:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>DishwasherBench – Can Frontier Models Stack a Dishwasher?</title>
-      <link>https://github.com/composo-ai/DishwasherBench</link>
-      <guid isPermaLink="false">https://github.com/composo-ai/DishwasherBench</guid>
-      <pubDate>Tue, 13 Oct 2026 08:24:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Character.ai files for Chapter 11 bankruptcy</title>
-      <link>https://blog.character.ai/an-update-on-character-ai/</link>
-      <guid isPermaLink="false">https://blog.character.ai/an-update-on-character-ai/</guid>
-      <pubDate>Tue, 13 Oct 2026 07:28:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Hittite royal archive found in Turkey</title>
-      <link>https://www.thehistoryblog.com/archives/77107</link>
-      <guid isPermaLink="false">https://www.thehistoryblog.com/archives/77107</guid>
-      <pubDate>Tue, 13 Oct 2026 06:02:51 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
