@@ -5,9 +5,180 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:04:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scion: schlanke Git-Alternative von Anthropic für agentische Workflows</title>
+      <link>https://www.heise.de/news/Scion-schlanke-Git-Alternative-von-Anthropic-fuer-agentische-Workflows-11488979.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488979</guid>
+      <pubDate>Thu, 15 Oct 2026 09:48:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Anthropic stellt mit Scion eine serverbasierte Git-Alternative vor. Agenten sind immer online und verursachen eine enorme Last, sodass Git an seine Grenzen kam.]]></description>
+    </item>
+    <item>
+      <title>PAN-OS: Schadcode schlüpft durch Root-Lücke in Palo-Alto-Firewalls</title>
+      <link>https://www.heise.de/news/PAN-OS-Schadcode-schluepft-durch-Root-Luecke-in-Palo-Alto-Firewalls-11488897.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488897</guid>
+      <pubDate>Thu, 15 Oct 2026 09:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Angreifer attackieren zurzeit Firewalls von Palo Alto Networks. Eine reparierte PAN-OS-Version schafft Abhilfe.]]></description>
+    </item>
+    <item>
+      <title>The cost of getting a job today</title>
+      <link>https://weli.dev/blog/the-cost-of-getting-a-job-today/</link>
+      <guid isPermaLink="false">https://weli.dev/blog/the-cost-of-getting-a-job-today/</guid>
+      <pubDate>Thu, 15 Oct 2026 09:13:20 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Kritik an AirTag-„Schalldämpfer“: Produkt zurückgezogen</title>
+      <link>https://www.heise.de/news/Kritik-an-AirTag-Schalldaempfer-Produkt-zurueckgezogen-11488301.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488301</guid>
+      <pubDate>Thu, 15 Oct 2026 09:11:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit einem speziellen AirTag-Tool war es möglich, den Lautsprecher abzuklemmen – nützlich etwa im Diebstahlfall. Kritik an dem Produkt kam schnell.]]></description>
+    </item>
+    <item>
+      <title>ChatGPT und Jugendschutz: Acht US-Bundesstaaten verklagen OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</guid>
+      <pubDate>Thu, 15 Oct 2026 08:59:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Acht US-Bundesstaaten verklagen OpenAI wegen irreführender Sicherheitsversprechen und Risiken für Minderjährige. Im Zentrum steht auch der Vorwurf, ChatGPT binde Nutzer durch übermäßige Zustimmung und vorgetäuschtes Mitgefühl. Arizona verlangt Geldstrafen, die Abschöpfung rechtswidriger Gewinne und strengere Bedingu...]]></description>
+    </item>
+    <item>
+      <title>Starlink in der Ukraine: Beeinträchtigung wohl behoben, niemand will schuld sein</title>
+      <link>https://www.heise.de/news/Starlink-in-der-Ukraine-Beeintraechtigung-wohl-behoben-niemand-will-schuld-sein-11489025.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11489025</guid>
+      <pubDate>Thu, 15 Oct 2026 08:58:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Noch ist unklar, was hinter den plötzlichen Einschränkungen für die militärische Nutzung von Starlink in der Ukraine steckte. Angeblich wurden sie gestoppt.]]></description>
+    </item>
+    <item>
+      <title>Anthropic bereitet sich mit Claude auf die US-Zwischenwahlen vor</title>
+      <link>https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</guid>
+      <pubDate>Thu, 15 Oct 2026 08:50:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude übersah bei Tests Täuschungskampagnen, wenn sie in unverdächtige Einzelaufgaben zerlegt waren. Anthropic ergänzt automatische Erkennungsverfahren und sperrte Konten von Betreibern einer gefälschten Nachrichtenwebseite. Der EU-Bericht zu Einflussoperationen zeigt die Relevanz solcher Methoden für deutsche und ...]]></description>
+    </item>
+    <item>
+      <title>Datenschutz beim HomeView: Was Apple plant und wo Defizite liegen</title>
+      <link>https://www.heise.de/news/Datenschutz-beim-HomeView-Was-Apple-plant-und-wo-Defizite-liegen-11486783.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11486783</guid>
+      <pubDate>Thu, 15 Oct 2026 08:40:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples Heimzentrale hat kein Face ID, nutzt aber dennoch Gesichtserkennung. So hält das Gerät Personen auseinander – auch für Siri AI.]]></description>
+    </item>
+    <item>
+      <title>IPFire repariert die Namensauflösung für VPN-Clients</title>
+      <link>https://www.heise.de/news/IPFire-VPN-Clients-finden-ihre-DNS-Namen-wieder-11488965.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488965</guid>
+      <pubDate>Thu, 15 Oct 2026 08:36:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[IPFire 2.29 Core Update 204 ist da. Es behebt einen Fehler bei der Namensauflösung für VPN-Clients und aktualisiert zahlreiche Systempakete.]]></description>
+    </item>
+    <item>
+      <title>AI was great until it was not</title>
+      <link>https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</link>
+      <guid isPermaLink="false">https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</guid>
+      <pubDate>Thu, 15 Oct 2026 08:18:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>NASA entwickelt Feststoffbatterie für Einsatz in extremer Kälte und Hitze</title>
+      <link>https://www.heise.de/news/NASA-entwickelt-Feststoffbatterie-fuer-Einsatz-in-extremer-Kaelte-und-Hitze-11488875.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488875</guid>
+      <pubDate>Thu, 15 Oct 2026 08:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Herkömmliche Batterien können extremer Hitze und Kälte auf dem Mond nicht standhalten. Die NASA hat Prototypen von Feststoffbatterien entwickelt, die es können.]]></description>
+    </item>
+    <item>
+      <title>US-Klagewelle: Acht Bundesstaaten verklagen OpenAI wegen ChatGPT-Gefahren</title>
+      <link>https://www.heise.de/news/US-Klagewelle-Acht-Bundesstaaten-verklagen-OpenAI-wegen-ChatGPT-Gefahren-11488957.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488957</guid>
+      <pubDate>Thu, 15 Oct 2026 07:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Weil OpenAI Risiken für Minderjährige verharmlost haben soll, klagen acht US-Staaten. Einige fordern auch Grenzen für Tests fortgeschrittener KI-Modelle.]]></description>
+    </item>
+    <item>
+      <title>Aidlc: Adaptive workflow steering rules for AI coding agents</title>
+      <link>https://github.com/awslabs/aidlc-workflows</link>
+      <guid isPermaLink="false">https://github.com/awslabs/aidlc-workflows</guid>
+      <pubDate>Thu, 15 Oct 2026 07:20:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Angreifer nutzen Root-Lücke in Cisco Secure Email Gateway aus</title>
+      <link>https://www.heise.de/news/Angreifer-nutzen-Root-Luecke-in-Cisco-Secure-Email-Gateway-aus-11488853.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488853</guid>
+      <pubDate>Thu, 15 Oct 2026 07:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Eine kritische Lücke in Ciscos Secure Email Gateway wird bereits ausgenutzt. Präparierte Mailanhänge verschaffen Angreifern Root-Rechte.]]></description>
+    </item>
+    <item>
+      <title>Werkzeugwahl, Teil 2: Der Stack steht, bevor das Problem klar ist</title>
+      <link>https://www.heise.de/blog/Werkzeugwahl-Teil-2-Der-Stack-steht-bevor-das-Problem-klar-ist-11483671.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11483671</guid>
+      <pubDate>Thu, 15 Oct 2026 06:57:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Viele Teams legen ihre Datenbank fest, bevor sie das Problem kennen. Das Produkt ist dabei selten der Fehler, die falsche Werkzeugkategorie dagegen sehr oft.]]></description>
+    </item>
+    <item>
+      <title>Paris investiert 200 Millionen Euro in neue Radwege</title>
+      <link>https://www.heise.de/news/Paris-investiert-200-Millionen-Euro-in-neue-Radwege-11488867.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488867</guid>
+      <pubDate>Thu, 15 Oct 2026 06:39:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[In Paris steigt der Anteil der Radfahrer. Jetzt investiert die Metropole 200 Millionen Euro in neue Radwege, um diesen Trend zu unterstützen.]]></description>
+    </item>
+    <item>
+      <title>Bund streicht Fördermittel für E-Busse drastisch</title>
+      <link>https://www.heise.de/news/Weniger-Geld-fuer-E-Busse-Branche-warnt-vor-Folgen-fuer-das-Klima-11488837.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488837</guid>
+      <pubDate>Thu, 15 Oct 2026 06:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Bund will die Förderung für Elektrobusse kürzen. Die Verkehrsbranche sieht dadurch die Umrüstung und Klimaziele in Gefahr.]]></description>
+    </item>
+    <item>
+      <title>„Anno“-Studio betroffen: Ubisoft will rund 100 Stellen in Deutschland abbauen</title>
+      <link>https://www.heise.de/news/Anno-Studio-betroffen-Ubisoft-will-rund-100-Stellen-in-Deutschland-abbauen-11488831.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488831</guid>
+      <pubDate>Thu, 15 Oct 2026 05:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Rund 100 Stellen sollen an Ubisofts deutschen Studios wegfallen. Betroffen ist auch Ubisoft Mainz, das die Aufbaustrategie-Reihe „Anno“ entwickelt.]]></description>
+    </item>
+    <item>
+      <title>Verbände kritisieren Solar-Aufschlag für größere Haus-Photovoltaik-Anlagen</title>
+      <link>https://www.heise.de/news/Verbaende-kritisieren-Solar-Aufschlag-fuer-groessere-Haus-Photovoltaik-Anlagen-11488813.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488813</guid>
+      <pubDate>Thu, 15 Oct 2026 05:12:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Elf Verbände kritisieren, dass Haushalte ab 2029 einen Aufschlag für den Betrieb größerer Heim-Photovoltaikanlagen zahlen sollen. Das hemme den Solarausbau.]]></description>
+    </item>
     <item>
       <title>Figma announces new features to define how agents work on its platform</title>
       <link>https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/</link>
@@ -16,6 +187,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Figma is also releasing its code layers feature in open beta.]]></description>
+    </item>
+    <item>
+      <title>Show HN: Flipflop, Iroh-powered persistent tunnels for filesharing</title>
+      <link>https://github.com/andunieee/flipflop</link>
+      <guid isPermaLink="false">https://github.com/andunieee/flipflop</guid>
+      <pubDate>Thu, 15 Oct 2026 04:25:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>#heiseshow: KI-Klone, PC-Markt, Mathematiker vs. OpenAI</title>
@@ -45,6 +225,15 @@
       <description><![CDATA[Die Geschäfte von Netflix wachsen, aber der Aktienkurs sinkt. Nun will der Streaming-Marktführer sparen. Die Kündigungen betreffen 6 Prozent aller Mitarbeiter.]]></description>
     </item>
     <item>
+      <title>The Double Headed Stack Allocator</title>
+      <link>https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/</link>
+      <guid isPermaLink="false">https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/</guid>
+      <pubDate>Thu, 15 Oct 2026 02:06:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis</title>
       <link>https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3177960</guid>
@@ -63,6 +252,15 @@
       <description><![CDATA[Every day, conversations unfold across social media and websites around the world. A seemingly insignificant post—whether it involves AI-generated misinformation, hate speech, or a damaging rumor—can quickly snowball into a much larger public controversy. Gudea, a company that tracks how stories and rumors spread on...]]></description>
     </item>
     <item>
+      <title>LFM2.5-24B-A2B: Built for fast on-device agents</title>
+      <link>https://www.liquid.ai/blog/lfm2-5-24b-a2b</link>
+      <guid isPermaLink="false">https://www.liquid.ai/blog/lfm2-5-24b-a2b</guid>
+      <pubDate>Wed, 14 Oct 2026 23:59:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Verwanzte Krypto-Wallets von Ledger: Problem größer als gedacht</title>
       <link>https://www.heise.de/news/Verwanzte-Krypto-Wallets-von-Ledger-Problem-groesser-als-gedacht-11488785.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11488785</guid>
@@ -70,6 +268,24 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Jemand baut heimlich LTE-Modems in neue Kryptowallets ein. Käufer haben über 100 Millionen Dollar verloren. Hersteller Ledger kommuniziert wenig.]]></description>
+    </item>
+    <item>
+      <title>Show HN: Ito – Build Terminal UIs in Lua</title>
+      <link>https://uji.sh/ito/</link>
+      <guid isPermaLink="false">https://uji.sh/ito/</guid>
+      <pubDate>Wed, 14 Oct 2026 22:23:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Tiny Little Office</title>
+      <link>https://tinylittleoffice.com/</link>
+      <guid isPermaLink="false">https://tinylittleoffice.com/</guid>
+      <pubDate>Wed, 14 Oct 2026 22:10:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Flock CEO says its microphones detect ‘just gunshots’ — its website says different</title>
@@ -81,6 +297,24 @@
       <description><![CDATA[Langley’s comments come amid mounting scrutiny of Flock from privacy advocates, including the ACLU, and members of the public who are concerned about the misuse of its technology.]]></description>
     </item>
     <item>
+      <title>We’re releasing Jev 1.14.0 along with experimental features for dreamers</title>
+      <link>https://typesafe.ai/blog/jev-1-14</link>
+      <guid isPermaLink="false">https://typesafe.ai/blog/jev-1-14</guid>
+      <pubDate>Wed, 14 Oct 2026 21:11:03 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>OpenCode 2.0</title>
+      <link>https://anoma.ly/notes/opencode-2-0/</link>
+      <guid isPermaLink="false">https://anoma.ly/notes/opencode-2-0/</guid>
+      <pubDate>Wed, 14 Oct 2026 20:48:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Qualcomm v ARM: Geschworene entscheiden für beide</title>
       <link>https://www.heise.de/news/Qualcomm-v-ARM-Geschworene-entscheiden-fuer-beide-11488749.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11488749</guid>
@@ -88,6 +322,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Qualcomm feiert einen Sieg vor Gericht gegen ARM. ARM feiert einen Sieg vor Gericht gegen Qualcomm. Es ist dasselbe Urteil.]]></description>
+    </item>
+    <item>
+      <title>Things to know when you get cancer</title>
+      <link>https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/</link>
+      <guid isPermaLink="false">https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/</guid>
+      <pubDate>Wed, 14 Oct 2026 19:26:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Neues Apple TV 4K und HomeView: Wie Apple die EU unter Druck setzt</title>
@@ -108,6 +351,15 @@
       <description><![CDATA[The label will appear on the player page and include songs entirely generated by AI or partially, such as AI involved in composition and vocals.]]></description>
     </item>
     <item>
+      <title>Show HN: Petal, open-source CoScreen/ScreenHero finally free</title>
+      <link>https://petal.live/</link>
+      <guid isPermaLink="false">https://petal.live/</guid>
+      <pubDate>Wed, 14 Oct 2026 18:23:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Top 5: Der beste Hemdenbügler im Test – Bügelpuppen von Cleanmaxx &amp; Co. ab 50 €</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-5-der-beste-hemdenbuegler-im-test-buegelpuppen-von-cleanmaxx-und-co-ab-50-euro/f3wvxj6?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11488585</guid>
@@ -124,6 +376,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Most companies use AI agents to ship products faster or speed up workflows. Apate.ai sends them undercover to get scammed.]]></description>
+    </item>
+    <item>
+      <title>Containment and monitoring failures are to blame for AI hacking reports: experts</title>
+      <link>https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</link>
+      <guid isPermaLink="false">https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</guid>
+      <pubDate>Wed, 14 Oct 2026 17:45:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Apple-Forscher nutzen Apple-Silicon-Macs im Idle-Betrieb als virtuelle GPUs</title>
@@ -153,6 +414,15 @@
       <description><![CDATA[Auf dem Health Data Summit wird deutlich: Das FDZ soll mit KI und ePA-Daten zum europäischen Riesen werden. Es hakt aber bei Tempo, Usability und Datenqualität.]]></description>
     </item>
     <item>
+      <title>Better HTTP/1 connection reuse in Go 1.27</title>
+      <link>https://go.dev/blog/http-connection-reuse</link>
+      <guid isPermaLink="false">https://go.dev/blog/http-connection-reuse</guid>
+      <pubDate>Wed, 14 Oct 2026 16:29:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
       <link>https://huggingface.co/blog/allenai/hiro-acev2</link>
       <guid isPermaLink="false">https://huggingface.co/blog/allenai/hiro-acev2</guid>
@@ -169,6 +439,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Mit einer neuen Website versucht der Mac-Hersteller, Chrome-User auf dem Mac Richtung Safari zu ziehen – besonders mit dem Thema Datenschutz.]]></description>
+    </item>
+    <item>
+      <title>Americans' social activity has steeply declined in the past 30 years</title>
+      <link>https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years</link>
+      <guid isPermaLink="false">https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years</guid>
+      <pubDate>Wed, 14 Oct 2026 16:09:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>EU-Gericht bestätigt Einstufung von Stripchat als Großplattform</title>
@@ -430,222 +709,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Oktober bringt gleich mehrere VR-Spiele auf Meta Quest, SteamVR und PS VR2, die mit spannenden Konzepten auf sich aufmerksam machen.]]></description>
-    </item>
-    <item>
-      <title>Prima: Netzhautimplantat soll das Lesen wieder möglich machen</title>
-      <link>https://www.heise.de/news/Prima-Netzhautimplantat-soll-das-Lesen-wieder-moeglich-machen-11487407.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487407</guid>
-      <pubDate>Wed, 14 Oct 2026 09:44:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Chip unter der Netzhaut und eine Spezialbrille helfen Betroffenen mit fortgeschrittener Makuladegeneration wieder Buchstaben zu erkennen.]]></description>
-    </item>
-    <item>
-      <title>Personendaten aus Verifizierungsprozess öffentlich: W Social wiegelt ab</title>
-      <link>https://www.heise.de/news/Personendaten-aus-Verifizierungsprozess-oeffentlich-W-Social-wiegelt-ab-11487549.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487549</guid>
-      <pubDate>Wed, 14 Oct 2026 09:34:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das soziale Netz W Social will sich mit einer Verifizierung aller Konten von der Konkurrenz abheben. Dass einige gesammelte Daten publik sind, sei kein Fehler.]]></description>
-    </item>
-    <item>
-      <title>HomeView für die Wand: Kostet gleich viel, bietet weniger</title>
-      <link>https://www.heise.de/news/Wandversion-des-Apple-HomeView-Gleicher-Preis-weniger-Leistung-11486779.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11486779</guid>
-      <pubDate>Wed, 14 Oct 2026 09:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bei der Vorstellung der neuen Heimzentrale gab es Verwunderung. Beide HomeView-Varianten sind preisgleich, obwohl Apple bei einer Version Hardware weglässt.]]></description>
-    </item>
-    <item>
-      <title>HomeView kann iPhone- und iPad-Apps nutzen – über eine Art CarPlay</title>
-      <link>https://www.heise.de/news/HomeView-kann-iPhone-und-iPad-Apps-nutzen-ueber-eine-Art-CarPlay-11487041.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487041</guid>
-      <pubDate>Wed, 14 Oct 2026 09:18:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zwar hat der HomeView keinen App Store, er kann aber unter Umständen doch mit iOS- und iPadOS-Anwendungen umgehen. Das braucht aber einen Trick.]]></description>
-    </item>
-    <item>
-      <title>Appwrite: Passkeys für die eigene App mit selbst gehostetem Backend</title>
-      <link>https://www.heise.de/news/Appwrite-Passkeys-fuer-die-eigene-App-mit-selbst-gehostetem-Backend-11487479.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487479</guid>
-      <pubDate>Wed, 14 Oct 2026 08:55:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Appwrite 2.5 führt Passkeys für Projekte und eine neue Zeitplanung für Functions ein. Zudem behebt das Update diverse Fehler.]]></description>
-    </item>
-    <item>
-      <title>software-architektur.tv: Die KI als Teamkollege</title>
-      <link>https://www.heise.de/news/software-architektur-tv-Die-KI-als-Teamkollege-11487493.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487493</guid>
-      <pubDate>Wed, 14 Oct 2026 08:43:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In dieser Folge gehen Avraham Poupko und Ralf D. Müller der Frage nach, was es wirklich bedeutet, wenn eine KI Teamkollege ist und nicht Werkzeug.]]></description>
-    </item>
-    <item>
-      <title>Patchday: Sicherheitslücken mit Höchstwertung gefährden Adobe-Anwendungen</title>
-      <link>https://www.heise.de/news/Patchday-Sicherheitsluecken-mit-Hoechstwertung-gefaehrden-Adobe-Anwendungen-11487282.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487282</guid>
-      <pubDate>Wed, 14 Oct 2026 08:35:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Adobe hat wichtige Sicherheitsupdates unter anderem für ColdFusion, Commerce und Experience Manager veröffentlicht.]]></description>
-    </item>
-    <item>
-      <title>Gemini 4 Argon lässt Roboter vor dem Einsatz üben</title>
-      <link>https://www.all-ai.de/news/news26/gemini-4-roboter</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-roboter</guid>
-      <pubDate>Wed, 14 Oct 2026 08:32:27 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Gemini 4 Argon steuert Roboter und erprobt ihre Bewegungen in Simulationen. Im ERQA-Benchmark erreicht das Modell 87 Prozent. Simulierte Trainingsabläufe erhöhen in einem Versuch die Erfolgsquote eines Robotikmodells von 56 auf 75 Prozent. Der Zugang erfolgt über Google AI Ultra oder die kostenpflichtige Gemini API....]]></description>
-    </item>
-    <item>
-      <title>Smart Glasses produzieren Energie über Gesichtsmimik und dienen als Sensorsystem</title>
-      <link>https://www.heise.de/news/Smart-Glasses-produzieren-Energie-ueber-Gesichtsmimik-und-dienen-als-Sensorsystem-11487268.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487268</guid>
-      <pubDate>Wed, 14 Oct 2026 08:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit triboelektrischen Nanogeneratoren in Smart Glasses erzeugen Forscher mittels Gesichtsbewegungen elektrische Spannungen, die Körperdaten repräsentieren.]]></description>
-    </item>
-    <item>
-      <title>Gemini 4 Argon: Google öffnet Spitzenmodell für zahlende Nutzer</title>
-      <link>https://www.heise.de/news/Gemini-4-Argon-Google-oeffnet-Spitzenmodell-fuer-zahlende-Nutzer-11487463.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487463</guid>
-      <pubDate>Wed, 14 Oct 2026 08:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Google macht Gemini 4 Argon weltweit verfügbar. Das KI-Spitzenmodell ist jetzt für zahlende Nutzer in der Gemini-App, der Google-Suche und per API zugänglich.]]></description>
-    </item>
-    <item>
-      <title>Xbox Labs: Microsoft gründet Team für Experimente mit dekompilierten Spielen</title>
-      <link>https://www.heise.de/news/Xbox-Labs-Microsoft-gruendet-Team-fuer-Experimente-mit-dekompilierten-Spielen-11487431.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487431</guid>
-      <pubDate>Wed, 14 Oct 2026 07:55:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Xbox-Chefin Asha Sharma gründet ein Team für KI-Experimente. Anlass sind dekompilierte Spiele, die zuletzt im Browser und auf Apple Silicon liefen.]]></description>
-    </item>
-    <item>
-      <title>Neue curl-Version entfernt SMB-Unterstützung und behebt 24 Sicherheitslücken</title>
-      <link>https://www.heise.de/news/Neue-curl-Version-entfernt-SMB-Unterstuetzung-und-behebt-24-Sicherheitsluecken-11487340.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487340</guid>
-      <pubDate>Wed, 14 Oct 2026 07:47:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die schwerste behobene Lücke erlaubt Codeausführung über HTTP/2, gefunden hat sie Anthropic.]]></description>
-    </item>
-    <item>
-      <title>Nvidia steigt bei Ärzteplattform Doctolib ein</title>
-      <link>https://www.heise.de/news/Nvidia-steigt-bei-Aerzteplattform-Doctolib-ein-11487423.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487423</guid>
-      <pubDate>Wed, 14 Oct 2026 07:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Chipgigant Nvidia wird Minderheitsaktionär bei der Ärzteplattform Doctolib. Das französische Unternehmen will damit seine KI-Technik weiterentwickeln.]]></description>
-    </item>
-    <item>
-      <title>Neuron AI lässt Roboter fühlen, hören und sich erinnern</title>
-      <link>https://www.all-ai.de/news/news26top/neura-neuron-ai-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/neura-neuron-ai-start</guid>
-      <pubDate>Wed, 14 Oct 2026 07:22:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Neuron AI verbindet 3D-Sehen, Tastsinn, Hören, Körperzustand und Sprache mit einem Gedächtnis. Das in Metzingen entwickelte Modell läuft direkt auf NEURA-Robotern in fünf Bauformen und benötigt keine Cloud-Verbindung. Kunden können erlernte Fähigkeiten über Neuraverse auf ihre Roboterflotte übertragen. Für die GTC B...]]></description>
-    </item>
-    <item>
-      <title>Schatten-KI in der Personalabteilung: Wie KI heimlich Bewerbungen aussortiert</title>
-      <link>https://www.heise.de/news/Schatten-KI-in-der-Personalabteilung-Wie-KI-heimlich-Bewerbungen-aussortiert-11487362.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487362</guid>
-      <pubDate>Wed, 14 Oct 2026 07:17:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Personaler werden von einer Menge von KI-generierten Bewerbungen überrumpelt. Im Alltag greifen sie dabei oftmals auf unerlaubte KI-Tools zur Bewertung zurück.]]></description>
-    </item>
-    <item>
-      <title>Cloudflare stoppt Deno-Runtime – Open-Source-Community soll übernehmen</title>
-      <link>https://www.heise.de/news/Cloudflare-stoppt-Deno-Runtime-Open-Source-Community-soll-uebernehmen-11487276.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487276</guid>
-      <pubDate>Wed, 14 Oct 2026 07:11:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit der Übernahme von Deno durch Cloudflare soll die Weiterentwicklung der Runtime enden. Cloudflare interessiert sich für ein anderes Deno-Projekt.]]></description>
-    </item>
-    <item>
-      <title>Bald nur noch für Sammler: Analysten vergleichen Konsolen mit Plattenspielern</title>
-      <link>https://www.heise.de/news/Cloud-Gaming-Analysten-sehen-Spielkonsolen-langfristig-vom-Aussterben-bedroht-11487296.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487296</guid>
-      <pubDate>Wed, 14 Oct 2026 07:06:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Cloud-Gaming soll bis 2035 zum 38-Milliarden-Dollar-Markt wachsen, prognostiziert Bloomberg Intelligence. Konsolen würden zum Nischenprodukt.]]></description>
-    </item>
-    <item>
-      <title>„Passwort“ Folge 68: Alte Exploits in neuen Appliances</title>
-      <link>https://www.heise.de/news/Passwort-Folge-68-Alte-Exploits-in-neuen-Appliances-11482528.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11482528</guid>
-      <pubDate>Wed, 14 Oct 2026 07:02:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Hosts fragen sich ob vieler altbekannter Bugs, ob sie versehentlich in die Neunziger zurückgereist sind. Immerhin gibt's echte PKI-Neuigkeiten.]]></description>
-    </item>
-    <item>
-      <title>Patchday: Angreifer nutzen Windows-Shell-Lücke aus</title>
-      <link>https://www.heise.de/news/Patchday-Attacken-auf-verschiedene-Windows-Versionen-beobachtet-11487264.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487264</guid>
-      <pubDate>Wed, 14 Oct 2026 06:59:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Microsoft hat mehr als 1400 Sicherheitslücken in Windows, Office & Co. geschlossen. Es laufen bereits Attacken.]]></description>
-    </item>
-    <item>
-      <title>Russland ohne AI, was passiert eigentlich ohne Rechenleistung?</title>
-      <link>https://www.all-ai.de/news/news26/russland-ai-drohnen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/russland-ai-drohnen</guid>
-      <pubDate>Wed, 14 Oct 2026 06:28:47 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ausfälle bei Yandex haben KI-Angebote und digitale Alltagsdienste getroffen. Fehlende Rechenleistung kann KI-Anfragen verzögern und laufendes Training unterbrechen. Gesicherte Modelle brauchen geeignete Ersatzrechner, um wieder zu arbeiten. Ausweichstandorte helfen nur mit vorbereiteten Anwendungen, verfügbaren Date...]]></description>
-    </item>
-    <item>
-      <title>Bericht: „GTA 6“ kommt schon Anfang 2027 auf den PC</title>
-      <link>https://www.heise.de/news/GTA-6-PC-Version-soll-angeblich-im-ersten-Quartal-2027-erscheinen-11487208.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487208</guid>
-      <pubDate>Wed, 14 Oct 2026 06:13:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Rockstar will „GTA 6“ einem Bericht zufolge schon im ersten Quartal 2027 auf den PC bringen. Beim Xbox-Streaming bleibt der PC dagegen außen vor.]]></description>
-    </item>
-    <item>
-      <title>Digitalministerium stellt klar: Kein Rückzug bei KI-Projekt mit SAP und Mistral</title>
-      <link>https://www.heise.de/news/Digitalministerium-stellt-klar-Kein-Rueckzug-bei-KI-Projekt-mit-SAP-und-Mistral-11487212.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487212</guid>
-      <pubDate>Wed, 14 Oct 2026 06:09:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das Digitalressort widerspricht Berichten über einen Projekt-Stopp mit Mistral: Die Zusammenarbeit laufe unverändert, der Bund setze weiter auf europäische KI.]]></description>
-    </item>
-    <item>
-      <title>Satellitennetz: EU-Telecomriesen schmieden Allianz gegen Elon Musks Starlink</title>
-      <link>https://www.heise.de/news/Satellitennetz-EU-Telecomriesen-schmieden-Allianz-gegen-Elon-Musks-Starlink-11487200.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487200</guid>
-      <pubDate>Wed, 14 Oct 2026 06:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Hilfe aus Paris und Brüssel wollen europäische Mobilfunker wie die Deutsche Telekom den Starlink-Vormarsch bei Satelliten-Direktverbindungen ausbremsen.]]></description>
-    </item>
-    <item>
-      <title>Remote-Angestellte aus Nordkorea: Laptop-Farmen in Texas ausgehoben</title>
-      <link>https://www.heise.de/news/Remote-Angestellte-aus-Nordkorea-Laptop-Farmen-in-Texas-ausgehoben-11487184.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11487184</guid>
-      <pubDate>Wed, 14 Oct 2026 05:59:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Seit Jahren versuchen Nordkoreaner, im Ausland als Remote-Angestellte Geld für das Regime zu verdienen. In Texas wurde jetzt Infrastruktur dafür ausgehoben.]]></description>
     </item>
   </channel>
 </rss>

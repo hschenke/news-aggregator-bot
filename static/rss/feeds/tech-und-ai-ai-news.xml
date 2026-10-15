@@ -5,35 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:04:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Gemini 4 Argon lässt Roboter vor dem Einsatz üben</title>
-      <link>https://www.all-ai.de/news/news26/gemini-4-roboter</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-roboter</guid>
-      <pubDate>Wed, 14 Oct 2026 08:32:27 GMT</pubDate>
+      <title>ChatGPT und Jugendschutz: Acht US-Bundesstaaten verklagen OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</guid>
+      <pubDate>Thu, 15 Oct 2026 08:59:35 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Gemini 4 Argon steuert Roboter und erprobt ihre Bewegungen in Simulationen. Im ERQA-Benchmark erreicht das Modell 87 Prozent. Simulierte Trainingsabläufe erhöhen in einem Versuch die Erfolgsquote eines Robotikmodells von 56 auf 75 Prozent. Der Zugang erfolgt über Google AI Ultra oder die kostenpflichtige Gemini API....]]></description>
+      <description><![CDATA[Acht US-Bundesstaaten verklagen OpenAI wegen irreführender Sicherheitsversprechen und Risiken für Minderjährige. Im Zentrum steht auch der Vorwurf, ChatGPT binde Nutzer durch übermäßige Zustimmung und vorgetäuschtes Mitgefühl. Arizona verlangt Geldstrafen, die Abschöpfung rechtswidriger Gewinne und strengere Bedingu...]]></description>
     </item>
     <item>
-      <title>Neuron AI lässt Roboter fühlen, hören und sich erinnern</title>
-      <link>https://www.all-ai.de/news/news26top/neura-neuron-ai-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/neura-neuron-ai-start</guid>
-      <pubDate>Wed, 14 Oct 2026 07:22:10 GMT</pubDate>
+      <title>Anthropic bereitet sich mit Claude auf die US-Zwischenwahlen vor</title>
+      <link>https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</guid>
+      <pubDate>Thu, 15 Oct 2026 08:50:09 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Neuron AI verbindet 3D-Sehen, Tastsinn, Hören, Körperzustand und Sprache mit einem Gedächtnis. Das in Metzingen entwickelte Modell läuft direkt auf NEURA-Robotern in fünf Bauformen und benötigt keine Cloud-Verbindung. Kunden können erlernte Fähigkeiten über Neuraverse auf ihre Roboterflotte übertragen. Für die GTC B...]]></description>
-    </item>
-    <item>
-      <title>Russland ohne AI, was passiert eigentlich ohne Rechenleistung?</title>
-      <link>https://www.all-ai.de/news/news26/russland-ai-drohnen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/russland-ai-drohnen</guid>
-      <pubDate>Wed, 14 Oct 2026 06:28:47 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ausfälle bei Yandex haben KI-Angebote und digitale Alltagsdienste getroffen. Fehlende Rechenleistung kann KI-Anfragen verzögern und laufendes Training unterbrechen. Gesicherte Modelle brauchen geeignete Ersatzrechner, um wieder zu arbeiten. Ausweichstandorte helfen nur mit vorbereiteten Anwendungen, verfügbaren Date...]]></description>
+      <description><![CDATA[Claude übersah bei Tests Täuschungskampagnen, wenn sie in unverdächtige Einzelaufgaben zerlegt waren. Anthropic ergänzt automatische Erkennungsverfahren und sperrte Konten von Betreibern einer gefälschten Nachrichtenwebseite. Der EU-Bericht zu Einflussoperationen zeigt die Relevanz solcher Methoden für deutsche und ...]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Polizeimeldungen+Berlin</link>
     <description>RSS-Feed für die Quelle 'Polizeimeldungen Berlin' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:04:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-polizeimeldungen-berlin.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Verkehrsunfall – beim Fahrstreifenwechsel Motorradfahrer übersehen</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1726170.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1726170.php</guid>
+      <pubDate>Thu, 15 Oct 2026 09:31:28 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Gestern Abend ereignete sich ein Verkehrsunfall in Westend. Gegen 19 Uhr war den bisherigen Erkenntnissen zufolge ein Autofahrer auf der Heerstraße zwischen dem Scholzplatz und der Passenheimer Straße in Richtung Theodor-Heuss-Platz unterwegs. Bei einem Fahrstreifenwechsel habe der...]]></description>
+    </item>
+    <item>
+      <title>Mann bedroht Ehefrau und Kinder – Festnahme</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1726132.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1726132.php</guid>
+      <pubDate>Thu, 15 Oct 2026 08:51:18 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Treptow-Köpenick** – In der vergangenen Nacht kam es im Ortsteil Altglienicke zu einer Bedrohungslage. Nach bisherigen Erkenntnissen hatte eine 42-jährige Frau gegen 23:30 Uhr die Polizei zu einem Einfamilienhaus in der Agnes-Hacker-Straße gerufen. Zuvor soll es zwischen ihr und ihrem 52-jährigen Ehemann zu Stre...]]></description>
+    </item>
     <item>
       <title>Verkehrsunfall mit Fahrerflucht – Polizei bittet um Mithilfe</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1725812.php</link>
@@ -34,15 +52,6 @@
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – In der vergangenen Nacht brannte es auf einer Friedrichshainer Fahrbahn. Kurz vor Mitternacht erhielt die Besatzung eines Funkwagens den Auftrag, zu einem Feuer an der Kreuzung Rigaer Straße/Liebigstraße zu fahren. Am Einsatzort angekommen, bestätigte sich die von einem Zeugen gemeld...]]></description>
-    </item>
-    <item>
-      <title>Schussabgabe eines Polizeibeamten</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1725507.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1725507.php</guid>
-      <pubDate>Wed, 14 Oct 2026 09:48:06 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Mitte** – Gestern Abend gab ein Polizist in Mitte einen Schuss auf einen flüchtenden Autofahrer ab, der auf einen Polizisten zugefahren sein soll. Gegen 21:15 Uhr bemerkten zwei Polizeibeamte außer Dienst auf der Chausseestraße den 40-jährigen Autofahrer, der über den Radweg fuhr um andere Fahrzeuge zu übe...]]></description>
     </item>
   </channel>
 </rss>

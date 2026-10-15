@@ -5,17 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 05:01:29 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:04:30 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Berlin] Herthas Siegesserie: Ein Tag im Leben der Ha Ho Herrlichkeit</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-bundesliga-hertha-protokoll-eines-tages-siegesserie-rekordsieger.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-bundesliga-hertha-protokoll-eines-tages-siegesserie-rekordsieger.html</guid>
-      <pubDate>Thu, 15 Oct 2026 04:35:54 +0000</pubDate>
+      <title>[Berlin] Trotz holprigem Start: Eintracht Mahlsdorf winkt Sprung an die Tabellenspitze</title>
+      <link>https://alles-mahlsdorf.de/trotz-holprigem-start-eintracht-mahlsdorf-winkt-sprung-an-die-tabellenspirze/</link>
+      <guid isPermaLink="false">https://alles-mahlsdorf.de/trotz-holprigem-start-eintracht-mahlsdorf-winkt-sprung-an-die-tabellenspirze/</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:29 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Der Beitrag beleuchtet den derzeit enormen sportlichen Höhenflug von Hertha BSC und rekonstruiert einen perfekten Tag im Zeichen des Klubs.</p>]]></description>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Nach sieben absolvierten Partien steht Eintracht Mahlsdorf in der Oberliga Nord mit 13 Punkten da und schielt im anstehenden Auswärtsspiel auf die Tabellenspitze.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] S-Bahn Berlin on X: "#S5 Wegen eines Polizeieinsatzes aktuell #Wuhletal&lt;&gt;#Mahlsdorf ...</title>
+      <link>https://x.com/SBahnBerlin/status/2110400884693688805</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7250269899862993388</guid>
+      <pubDate>Wed, 14 Oct 2026 20:22:21 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[<p>Wegen eines akuten Polizeieinsatzes musste der Zugverkehr auf der S5-Linie zwischen Wuhletal und Mahlsdorf vorübergehend eingestellt werden.</p>]]></description>
     </item>
     <item>
       <title>[Berlin] Hertha zu Gast in Kiel – bei Schicksalsspiel von Walter</title>
@@ -24,34 +33,34 @@
       <pubDate>Wed, 14 Oct 2026 15:33:29 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Tabellenführer Hertha BSC tritt in der 2. Bundesliga bei Holstein Kiel an, wo Trainer Tim Walter stark unter Druck steht.</p>]]></description>
+      <description><![CDATA[<p>Spitzenreiter Hertha BSC gastiert in der 2. Bundesliga bei Holstein Kiel, wo für Trainer Tim Walter im Duell der Gegensätze der Job auf dem Spiel steht.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Trotz holprigem Start: Eintracht Mahlsdorf winkt Sprung an die Tabellenspitze</title>
-      <link>https://alles-mahlsdorf.de/trotz-holprigem-start-eintracht-mahlsdorf-winkt-sprung-an-die-tabellenspitze/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:5065919281380499920</guid>
-      <pubDate>Wed, 14 Oct 2026 18:04:25 +0000</pubDate>
+      <title>[Berlin] Herthas Siegesserie: Ein Tag im Leben der Ha Ho Herrlichkeit</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-bundesliga-hertha-protokoll-eines-tages-siegesserie-rekordsieger.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-zweite-bundesliga-hertha-protokoll-eines-tages-siegesserie-rekordsieger.html</guid>
+      <pubDate>Thu, 15 Oct 2026 04:35:54 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Nach sieben absolvierten Partien in der NOFV-Oberliga Nord nimmt Eintracht Mahlsdorf Kurs auf die Tabellenspitze.</p>]]></description>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[<p>Eine Momentaufnahme zeichnet den perfekten Tag im derzeit wie im Rausch spielenden Zweitligisten Hertha BSC nach.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Erstbezug: Modernes Penthouse über den Dächern Mahlsdorfs, nur 28 Minuten bis ins Zentrum.</title>
-      <link>https://www.wg-gesucht.de/14242389.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:17782154157565347143</guid>
-      <pubDate>Thu, 15 Oct 2026 00:17:28 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>In der Neuenhagener Straße in Berlin-Mahlsdorf wird ein Mieter für eine hochwertige 2-Zimmer-Penthouse-Wohnung gesucht.</p>]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Sachbeschädigung durch Schüsse</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1725791.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1725791.php</guid>
-      <pubDate>Wed, 14 Oct 2026 13:45:38 +0000</pubDate>
+      <title>[Berlin] Mann bedroht Ehefrau und Kinder – Festnahme</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1726132.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1726132.php</guid>
+      <pubDate>Thu, 15 Oct 2026 08:51:18 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>Die Polizei ermittelt nach mehreren mutmaßlichen Einschusslöchern an den Schaufenstern eines Blumengeschäfts in Wilmersdorf.</p>]]></description>
+      <description><![CDATA[<p>In Altglienicke rückte die Polizei zu einem Einfamilienhaus aus, nachdem ein 52-Jähriger seine Ehefrau und Kinder bedroht hatte und festgenommen wurde.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Bitcoin fällt auf 81.000 Dollar: Heiße US-Inflation heizt Wetten auf Zinserhöhung an</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-81000-dollar-heise-usinflationsdaten-befeuern-wetten-auf-zinserhohungen-3704806</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-81000-dollar-heise-usinflationsdaten-befeuern-wetten-auf-zinserhohungen-3704806</guid>
+      <pubDate>Thu, 15 Oct 2026 05:55:45 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Unerwartet starke US-Inflationsdaten schüren Sorgen vor steigenden Zinsen und lassen den Bitcoin unter die Marke von 81.000 US-Dollar fallen.</p>]]></description>
     </item>
     <item>
       <title>[Finanzen &amp; Coins] EOS steigt um 10% - Anleger wieder voll dabei</title>
@@ -60,16 +69,7 @@
       <pubDate>Wed, 14 Oct 2026 13:47:02 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Die Kryptowährung EOS verzeichnet einen spürbaren Kursanstieg von rund zehn Prozent und zieht wieder verstärkt das Interesse von Investoren auf sich.</p>]]></description>
-    </item>
-    <item>
-      <title>[Finanzen &amp; Coins] XRP: 1.000 Euro in den ersten ETF – das ist daraus geworden</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/xrp-1000-euro-in-den-etf--das-ist-daraus-geworden-3703706</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-1000-euro-in-den-etf--das-ist-daraus-geworden-3703706</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:28 +0000</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Eine Rückbetrachtung analysiert die historische Wertentwicklung einer Investition von 1.000 Euro in den ersten XRP-ETF.</p>]]></description>
+      <description><![CDATA[<p>Die Kryptowährung EOS verzeichnet einen spürbaren Kursanstieg von rund zehn Prozent und rückt damit wieder stärker in den Fokus von Investoren.</p>]]></description>
     </item>
     <item>
       <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: Übernahme-Krimi – Firma verkauft die Hälfte ihrer Coins</title>
@@ -78,88 +78,70 @@
       <pubDate>Wed, 14 Oct 2026 11:39:56 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Ein ungewöhnlicher Übernahmekrimi sorgt dafür, dass ein Unternehmen große Teile seiner Krypto-Bestände an Bitcoin, Ethereum und Solana abstößt.</p>]]></description>
+      <description><![CDATA[<p>Im Rahmen eines Unternehmenskrimis hat eine involvierte Firma die Hälfte ihrer Bestände an großen Kryptowährungen wie Bitcoin und Ethereum abgestoßen.</p>]]></description>
     </item>
     <item>
-      <title>[Finanzen &amp; Coins] Bitcoin verharrt bei 83.000 Dollar – Märkte blicken gespannt auf US-Inflationsdaten</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-verharrt-bei-83000-dollar--markte-blicken-gespannt-auf-usinflationsdaten-3702702</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-verharrt-bei-83000-dollar--markte-blicken-gespannt-auf-usinflationsdaten-3702702</guid>
-      <pubDate>Wed, 14 Oct 2026 06:57:49 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] XRP: 1.000 Euro in den ersten ETF – das ist daraus geworden</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/xrp-1000-euro-in-den-ersten-etf--das-ist-daraus-geworden-3703706</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-1000-euro-in-den-ersten-etf--das-ist-daraus-geworden-3703706</guid>
+      <pubDate>Wed, 14 Oct 2026 12:22:13 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Die digitale Leitwährung bewegt sich seitwärts um die Marke von 83.000 US-Dollar, während Investoren auf frische US-Wirtschaftsdaten warten.</p>]]></description>
+      <description><![CDATA[<p>Ein Rückblick analysiert die historische Wertentwicklung von frühzeitigen Investitionen in die ersten XRP-Exchange-Traded Funds.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Wie ein Ei dem anderen...</title>
-      <link>https://debeste.de/629696/Wie-Ein-Ei-dem-anderen</link>
-      <guid isPermaLink="false">https://debeste.de/629696/Wie-Ein-Ei-dem-anderen</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:28 +0000</pubDate>
+      <title>[Fun] Elon Musk hat ein Screenshot von Grok gepostet, in dem er..</title>
+      <link>https://debeste.de/629733/Elon-Musk-hat-ein-Screenshot-von-Grok-gepostet,-in-den-er-</link>
+      <guid isPermaLink="false">https://debeste.de/629733/Elon-Musk-hat-ein-Screenshot-von-Grok-gepostet,-in-den-er-</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:29 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Eine humorvolle Bild- oder Textbetrachtung über erstaunliche Ähnlichkeiten im Alltag.</p>]]></description>
+      <description><![CDATA[<p>Nach einem unvorsichtigen Leak von Bestelldaten über einen KI-Chatbot nutzte ein Dritter die Chance, um die Bestellung kurzerhand zu stornieren.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Ich hab ja morgens in der Berliner U-Bahn schon einiges gesehen...</title>
-      <link>https://debeste.de/629732/Ich-hab-ja-morgens-in-der-Berliner-U-Bahn-schon-einiges</link>
-      <guid isPermaLink="false">https://debeste.de/629732/Ich-hab-ja-morgens-in-der-Berliner-U-Bahn-schon-einiges</guid>
-      <pubDate>Thu, 15 Oct 2026 01:29:01 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Eine skurrile Begebenheit über kulinarische Extrem-Erlebnisse im morgendlichen Berliner Berufsverkehr.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Alfons kommt gerade aus der Praxis seines Hausarztes...</title>
-      <link>https://www.hahaha.de/witze/berufe/aerzte/12998/alfons-kommt-gerade-aus-praxis-seines.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/12998/alfons-kommt-gerade-aus-praxis-seines.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:28 +0000</pubDate>
+      <title>[Fun] Ich hab ja morgens in der Berliner U-Bahn schon einiges..</title>
+      <link>https://debeste.de/629732/Ich-hab-ja-morgens-in-der-Berliner-U-Bahn-schon-einiges-</link>
+      <guid isPermaLink="false">https://debeste.de/629732/Ich-hab-ja-morgens-in-der-Berliner-U-Bahn-schon-einiges-</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:30 +0000</pubDate>
       <category>Fun</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein klassischer Witz über einen Arztbesuch und die Herausforderungen beim Aussprechen medizinischer Diagnosen mit einem stotternden Freund.</p>]]></description>
+      <description><![CDATA[<p>Eine typische Szene aus dem Berliner Untergrund beschreibt den gewöhn gewöhnungsbedürftigen Verzehr von Heringsfilets in der morgendlichen U-Bahn.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Fahre mit dem Bus ins Büro. Der ist gut gefüllt mit Schülern...</title>
-      <link>https://debeste.de/629707/Fahre-mit-dem-Bus-ins-B-ro-Der-ist-gut-gef-llt-mit</link>
-      <guid isPermaLink="false">https://debeste.de/629707/Fahre-mit-dem-Bus-ins-B-ro-Der-ist-gut-gef-llt-mit</guid>
-      <pubDate>Thu, 15 Oct 2026 00:59:01 +0000</pubDate>
+      <title>[Fun] Alfons kommt gerade aus der Praxis seines</title>
+      <link>https://www.hahaha.de/witze/berufe/aerzte/12998/alfons-kommt-gerade-aus-der-praxis-seines.html</link>
+      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/12998/alfons-kommt-gerade-aus-der-praxis-seines.html</guid>
+      <pubDate>Thu, 15 Oct 2026 00:00:00 +0000</pubDate>
       <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Ein alltägliches Szenario im Bus voller Schüler, das plötzlichen Juckreiz auslöst.</p>]]></description>
+      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
+      <description><![CDATA[<p>Ein Klassiker unter den Arztwitzen widmet sich der schwer auszusprechenden Diagnose einer Prostataentzündung im Dialog zweier Freunde.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Protestierende Schüler in Paris stahlen einen Benzinkanister...</title>
-      <link>https://debeste.de/629751/Protestierende-Sch-ler-in-Paris-stahlen-einen</link>
-      <guid isPermaLink="false">https://debeste.de/629751/Protestierende-Sch-ler-in-Paris-stahlen-einen</guid>
-      <pubDate>Wed, 14 Oct 2026 18:59:01 +0000</pubDate>
+      <title>[Fun] Protestierende Schüler in Paris stahlen einen..</title>
+      <link>https://debeste.de/629751/Protestierende-Sch-ler-in-Paris-stahlen-einen-</link>
+      <guid isPermaLink="false">https://debeste.de/629751/Protestierende-Sch-ler-in-Paris-stahlen-einen-</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:30 +0000</pubDate>
       <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Eine amüsante Meldung über protestierende Jugendliche in Paris, die an einem kindersicheren Verschluss scheiterten.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] VfB-Kapitän Undav über beendete Torflaute: „Natürlich sieht man alles, hört man alles“</title>
-      <link>https://www.transfermarkt.de/vfb-kapitan-undav-uber-beendete-torflaute-naturlich-sieht-man-alles-hort-man-alles-quot-/view/news/488967</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/vfb-kapitan-undav-uber-beendete-torflaute-naturlich-sieht-man-alles-hort-man-alles-quot-/view/news/488967</guid>
-      <pubDate>Thu, 15 Oct 2026 04:53:03 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Deniz Undav spricht offen über die gestiegenen Erwartungen nach seinem überwundenen Formtief beim VfB Stuttgart.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Kovac nach BVB-Niederlage selbstkritisch – Deutliche Worte an Rotationsspieler</title>
-      <link>https://www.transfermarkt.de/kovac-nach-erster-bvb-niederlage-selbstkritisch-deutliche-worte-an-rotationsspieler/view/news/488966</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/kovac-nach-erster-bvb-niederlage-selbstkritisch-deutliche-worte-an-rotationsspieler/view/news/488966</guid>
-      <pubDate>Thu, 15 Oct 2026 04:33:23 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>BVB-Coach Niko Kovac macht seine umfangreiche Rotation nach der Champions-League-Pleite gegen Bodø/Glimt mitverantwortlich für den Dämpfer.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Knackt Hertha den Zweitliga-Rekord? - SPORT1</title>
-      <link>https://www.sport1.de/news/fussball/2-bundesliga/2026/10/zweitligarekord-winkt-leitl-goennt-es-jungs-von-ganzem-herzen-</link>
-      <guid isPermaLink="false">https://www.sport1.de/news/fussball/2-bundesliga/2026/10/zweitligarekord-winkt-leitl-goennt-es-jungs-von-ganzem-herzen-</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:28 +0000</pubDate>
-      <category>Fußball</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Mit einem weiteren Erfolg gegen Kiel könnte Hertha BSC einen 40 Jahre alten Zweitliga-Bestwert einstellen.</p>]]></description>
+      <description><![CDATA[<p>Streikende Schüler in Paris scheiterten bei dem Versuch, einen Benzinkanister zu entzünden, kläglich am kindersicheren Verschluss.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] „Rentenreform, Pflegereform, Steuerreform... Das Einzige..</title>
+      <link>https://debeste.de/629589/Rentenreform,-Pflegereform,-Steuerreform-Das-Einzige,-was-hier-verlässlich-reformiert-wird,-ist-meine-Armutsgrenze.</link>
+      <guid isPermaLink="false">https://debeste.de/629589/Rentenreform,-Pflegereform,-Steuerreform-Das-Einzige,-was-hier-verlässlich-reformiert-wird,-ist-meine-Armutsgrenze.</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:30 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Ein treffender Kommentar nimmt die endlosen Reformpakete der Politik aufs Korn, die am Ende vor allem den Geldbeutel der Bürger schmälern.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Hertha BSC: Sehen 1500 Fans einen historischen Zweitligaabend in Kiel?</title>
+      <link>https://www.berliner-kurier.de/article/hertha-bsc-sehen-1500-fans-einen-historischen-zweitligaabend-in-kiel-10495290</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2120280207562161441</guid>
+      <pubDate>Wed, 14 Oct 2026 17:16:15 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[<p>Mit einem Sieg im Duell gegen Holstein Kiel könnte Hertha BSC einen 40 Jahre alten Zweitliga-Startrekord einstellen.</p>]]></description>
     </item>
     <item>
       <title>[Fußball] "Gibt uns sehr viele Optionen": Die Wichtigkeit von Pedersen im Spiel von Hertha BSC</title>
@@ -168,7 +150,25 @@
       <pubDate>Wed, 14 Oct 2026 22:02:02 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Mads Pedersen hat sich auf Anhieb als elementarer Bestandteil im taktischen Gefüge von Hertha BSC etabliert.</p>]]></description>
+      <description><![CDATA[<p>Neuzugang Mads Pedersen hat sich auf Anhieb als elementarer Bestandteil im taktischen Gefüge von Hertha BSC etabliert.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Kylian Mbappé lässt Cristiano Ronaldo in Champions League hinter sich</title>
+      <link>https://www.transfermarkt.de/mbappe-uberholt-ronaldo-nur-zwei-spieler-nach-100-champions-league-partien-treffsicherer/view/news/488970</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/mbappe-uberholt-ronaldo-nur-zwei-spieler-nach-100-champions-league-partien-treffsicherer/view/news/488970</guid>
+      <pubDate>Thu, 15 Oct 2026 06:55:05 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Real Madrids Offensivstar hat beim Auswärtssieg gegen die AS Rom einen weiteren Meilenstein in der Königsklasse erreicht.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Kovac nach BVB-Niederlage selbstkritisch – Deutliche Worte an Rotationsspieler</title>
+      <link>https://www.transfermarkt.de/kovac-nach-erster-bvb-niederlage-selbstkritisch-deutliche-worte-an-rotationsspieler/view/news/488966</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/kovac-nach-erster-bvb-niederlage-selbstkritisch-deutliche-worte-an-rotationsspieler/view/news/488966</guid>
+      <pubDate>Thu, 15 Oct 2026 04:33:23 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[<p>Nach der Champions-League-Pleite gegen Bodø/Glimt übt BVB-Trainer Niko Kovac offene Kritik an den Leistungen seiner Rotationsspieler.</p>]]></description>
     </item>
     <item>
       <title>[Fußball] Champions League: Bodø/Glimt schlägt BVB, VfB Stuttgart siegt in Bratislava</title>
@@ -177,25 +177,43 @@
       <pubDate>Wed, 14 Oct 2026 20:55:46 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Neben der Dortmunder Niederlage im hohen Norden feiert der VfB Stuttgart einen wichtigen Auswärtserfolg in der Slowakei.</p>]]></description>
+      <description><![CDATA[<p>Während Borussia Dortmund im hohen Norden strauchelt, feiert der VfB Stuttgart dank eines Treffers von Deniz Undav einen Auswärtssieg.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Red Rooster: Rollenspiel mit physikalischer Brandermittlung - Gameforest</title>
-      <link>https://www.gameforest.de/game-news/red-rooster-summer-eternal-physik-brandermittlung-rollenspiel/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4897008565500426434</guid>
-      <pubDate>Wed, 14 Oct 2026 18:57:17 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Der Titel verbindet klassische Rollenspiel-Elemente mit einer detaillierten physikalischen Simulation von Feuer und Brandursachen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] King's Courier - Gameplay</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60366</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60366</guid>
-      <pubDate>Wed, 14 Oct 2026 18:45:50 +0000</pubDate>
+      <title>[Games] Enshrouded - Release Day</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60368</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60368</guid>
+      <pubDate>Thu, 15 Oct 2026 05:57:24 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Eine ausführliche Vorschau beleuchtet die Demo des kommenden Blobber-RPGs, das Fans an traditionelle Dungeon-Crawler erinnert.</p>]]></description>
+      <description><![CDATA[<p>Das beliebte Koop-Survival-Rollenspiel „Enshrouded“ verlässt offiziell die Early-Access-Phase und veröffentlicht Version 1.0.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Castlevania: Belmont's Curse - Released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60367</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60367</guid>
+      <pubDate>Thu, 15 Oct 2026 05:52:47 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Konami veröffentlicht mit „Castlevania: Belmont's Curse“ ein neues 2D-Action-Exploration-Spiel im Metroidvania-Stil.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Frosthaven - Release Day</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60373</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60373</guid>
+      <pubDate>Thu, 15 Oct 2026 06:14:48 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Die gefeierte Brettspielumsetzung des taktischen Dark-Fantasy-RPGs „Frosthaven“ wagt den Schritt in den digitalen Raum.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] Warhammer 40K: Dark Heresy - Gameplay Trailer</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60369</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60369</guid>
+      <pubDate>Thu, 15 Oct 2026 06:01:49 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Ein neuer Gameplay-Trailer zu „Warhammer 40,000: Dark Heresy“ gewährt frische Einblicke in das Rollenspiel.</p>]]></description>
     </item>
     <item>
       <title>[Games] Valor Mortis - Review @ Noisy Pixel</title>
@@ -204,70 +222,52 @@
       <pubDate>Wed, 14 Oct 2026 12:31:01 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Das Review lobt den anspruchsvollen First-Person-Soulslike-Titel für sein befriedigendes Gameplay trotz anfänglicher erzählerischer Schwächen.</p>]]></description>
+      <description><![CDATA[<p>Kritiken heben bei dem First-Person-Soulslike „Valor Mortis“ die anspruchsvollen Mechaniken hervor, bemängeln jedoch den langsamen Einstieg.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Hollow Home - Release Date: January 27, 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60360</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60360</guid>
-      <pubDate>Wed, 14 Oct 2026 12:09:59 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Die Entwickler haben den offiziellen Veröffentlichungstermin für das narrative RPG auf den 27. Januar 2027 festgelegt.</p>]]></description>
+      <title>[Tech &amp; AI] Scion: schlanke Git-Alternative von Anthropic für agentische Workflows</title>
+      <link>https://www.heise.de/news/Scion-schlanke-Git-Alternative-von-Anthropic-fuer-agentische-Workflows-11488979.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488979</guid>
+      <pubDate>Thu, 15 Oct 2026 09:48:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Anthropic stellt mit Scion eine speziell für autonome KI-Agenten entwickelte, serverbasierte Git-Alternative vor.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Expeditions: Samurai - Dev Diary #4</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60363</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60363</guid>
-      <pubDate>Wed, 14 Oct 2026 16:57:57 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Das neueste Entwicklertagebuch gibt Einblicke in das Camp-System, den Aufbau des Heimatdorfes und Handwerksmechaniken.</p>]]></description>
+      <title>[Tech &amp; AI] ChatGPT und Jugendschutz: Acht US-Bundesstaaten verklagen OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage-</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage-</guid>
+      <pubDate>Thu, 15 Oct 2026 10:04:30 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Mehrere US-Bundesstaaten gehen juristisch gegen OpenAI vor und werfen dem Unternehmen irreführende Sicherheitsversprechen sowie Risiken für Minderjährige vor.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] „Anno“-Studio betroffen: Ubisoft will rund 100 Stellen in Deutschland abbauen</title>
+      <link>https://www.heise.de/news/Anno-Studio-betroffen-Ubisoft-will-rund-100-Stellen-in-Deutschland-abbauen-11488831.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488831</guid>
+      <pubDate>Thu, 15 Oct 2026 05:51:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Von weltweiten Sparmaßnahmen ist auch das deutsche „Anno“-Entwicklerstudio Ubisoft Mainz betroffen, wo rund 100 Arbeitsplätze wegfallen sollen.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Netflix streicht rund 1000 Stellen in größter Entlassungsrunde seit 2022</title>
-      <link>https://www.heise.de/news/Netflix-streicht-rund-rund-1000-Stellen-in-groesster-Entlassungsrunde-seit-2022-11488795.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/Netflix-streicht-rund-rund-1000-Stellen-in-groesster-Entlassungsrunde-seit-2022-11488795.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:29 +0000</pubDate>
+      <link>https://www.heise.de/news/Netflix-streicht-rund-rund-1000-Stellen-in-groesster-Entlassungsrunde-seit-2022-11488795.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488795</guid>
+      <pubDate>Thu, 15 Oct 2026 03:04:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Der Streaming-Marktführer kündigt an, rund sechs Prozent seiner Belegschaft abzubauen, um auf sinkende Aktienkurse zu reagieren.</p>]]></description>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Angesichts sinkender Aktienkurse trennt sich der Streaming-Marktführer von rund sechs Prozent seiner Belegschaft.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Verwanzte Krypto-Wallets von Ledger: Problem größer als gedacht</title>
-      <link>https://www.heise.de/news/Verwanzte-Krypto-Wallets-von-Ledger-Problem-groesser-als-gedacht-11488785.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/Verwanzte-Krypto-Wallets-von-Ledger-Problem-groesser-als-gedacht-11488785.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:29 +0000</pubDate>
+      <link>https://www.heise.de/news/Verwanzte-Krypto-Wallets-von-Ledger-Problem-groesser-als-gedacht-11488785.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11488785</guid>
+      <pubDate>Wed, 14 Oct 2026 22:55:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Unbekannte haben heimlich LTE-Modems in neue Krypto-Wallets eingebaut, wodurch Käufer bereits über 100 Millionen Dollar verloren haben.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Gemini 4 Argon: Google öffnet Spitzenmodell für zahlende Nutzer</title>
-      <link>https://www.heise.de/news/Gemini-4-Argon-Google-oeffnet-Spitzenmodell-fuer-zahlende-Nutzer-11487463.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/Gemini-4-Argon-Google-oeffnet-Spitzenmodell-fuer-zahlende-Nutzer-11487463.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:29 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Google macht sein fortschrittliches KI-Spitzenmodell nun weltweit für zahlende Kunden über die App, die Suche und per API zugänglich.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Qualcomm v ARM: Geschworene entscheiden für beide</title>
-      <link>https://www.heise.de/news/Qualcomm-v-ARM-Geschworene-entscheiden-fuer-beide-11488749.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/Qualcomm-v-ARM-Geschworene-entscheiden-fuer-beide-11488749.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:01:29 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein US-Gerichtsverfahren zwischen Qualcomm und ARM endet mit einem bemerkenswerten Patt-Urteil, bei dem beide Parteien teils recht bekommen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Ricursive Intelligence is betting on AI-designed chips to help solve the compute crisis</title>
-      <link>https://techcrunch.com/2026/10/14/ricursive-intelligence-is-betting-on-ai-designed-chips-to-help-solve-the-compute-crisis/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3177960</guid>
-      <pubDate>Thu, 15 Oct 2026 01:01:32 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[<p>Ein neues Startup entwickelt künstliche Intelligenz, die eigenständig effizientere Halbleiter entwerfen und den Chipdesign-Prozess beschleunigen soll.</p>]]></description>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Nach Entdeckungen heimlich verbauter LTE-Modems in neuen Hardware-Wallets belaufen sich die Verluste betroffener Nutzer auf über 100 Millionen Dollar.</p>]]></description>
     </item>
   </channel>
 </rss>

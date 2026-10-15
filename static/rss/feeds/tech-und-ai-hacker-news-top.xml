@@ -5,9 +5,143 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 10:04:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>The cost of getting a job today</title>
+      <link>https://weli.dev/blog/the-cost-of-getting-a-job-today/</link>
+      <guid isPermaLink="false">https://weli.dev/blog/the-cost-of-getting-a-job-today/</guid>
+      <pubDate>Thu, 15 Oct 2026 09:13:20 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>AI was great until it was not</title>
+      <link>https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</link>
+      <guid isPermaLink="false">https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</guid>
+      <pubDate>Thu, 15 Oct 2026 08:18:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Aidlc: Adaptive workflow steering rules for AI coding agents</title>
+      <link>https://github.com/awslabs/aidlc-workflows</link>
+      <guid isPermaLink="false">https://github.com/awslabs/aidlc-workflows</guid>
+      <pubDate>Thu, 15 Oct 2026 07:20:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Flipflop, Iroh-powered persistent tunnels for filesharing</title>
+      <link>https://github.com/andunieee/flipflop</link>
+      <guid isPermaLink="false">https://github.com/andunieee/flipflop</guid>
+      <pubDate>Thu, 15 Oct 2026 04:25:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The Double Headed Stack Allocator</title>
+      <link>https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/</link>
+      <guid isPermaLink="false">https://blog.demofox.org/2026/10/03/the-double-headed-stack-allocator/</guid>
+      <pubDate>Thu, 15 Oct 2026 02:06:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>LFM2.5-24B-A2B: Built for fast on-device agents</title>
+      <link>https://www.liquid.ai/blog/lfm2-5-24b-a2b</link>
+      <guid isPermaLink="false">https://www.liquid.ai/blog/lfm2-5-24b-a2b</guid>
+      <pubDate>Wed, 14 Oct 2026 23:59:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Ito – Build Terminal UIs in Lua</title>
+      <link>https://uji.sh/ito/</link>
+      <guid isPermaLink="false">https://uji.sh/ito/</guid>
+      <pubDate>Wed, 14 Oct 2026 22:23:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Tiny Little Office</title>
+      <link>https://tinylittleoffice.com/</link>
+      <guid isPermaLink="false">https://tinylittleoffice.com/</guid>
+      <pubDate>Wed, 14 Oct 2026 22:10:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>We’re releasing Jev 1.14.0 along with experimental features for dreamers</title>
+      <link>https://typesafe.ai/blog/jev-1-14</link>
+      <guid isPermaLink="false">https://typesafe.ai/blog/jev-1-14</guid>
+      <pubDate>Wed, 14 Oct 2026 21:11:03 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>OpenCode 2.0</title>
+      <link>https://anoma.ly/notes/opencode-2-0/</link>
+      <guid isPermaLink="false">https://anoma.ly/notes/opencode-2-0/</guid>
+      <pubDate>Wed, 14 Oct 2026 20:48:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Things to know when you get cancer</title>
+      <link>https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/</link>
+      <guid isPermaLink="false">https://jjmaxwell4.com/writing/things-to-know-when-you-get-cancer/</guid>
+      <pubDate>Wed, 14 Oct 2026 19:26:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Petal, open-source CoScreen/ScreenHero finally free</title>
+      <link>https://petal.live/</link>
+      <guid isPermaLink="false">https://petal.live/</guid>
+      <pubDate>Wed, 14 Oct 2026 18:23:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Containment and monitoring failures are to blame for AI hacking reports: experts</title>
+      <link>https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</link>
+      <guid isPermaLink="false">https://www.csoonline.com/article/4234854/ai-agents-arent-going-rogue-frontier-labs-are-skipping-security-basics.html</guid>
+      <pubDate>Wed, 14 Oct 2026 17:45:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Better HTTP/1 connection reuse in Go 1.27</title>
+      <link>https://go.dev/blog/http-connection-reuse</link>
+      <guid isPermaLink="false">https://go.dev/blog/http-connection-reuse</guid>
+      <pubDate>Wed, 14 Oct 2026 16:29:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Americans' social activity has steeply declined in the past 30 years</title>
+      <link>https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years</link>
+      <guid isPermaLink="false">https://www.dataforprogress.org/blog/2026/9/29/americans-social-activity-has-steeply-declined-in-the-past-30-years</guid>
+      <pubDate>Wed, 14 Oct 2026 16:09:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>
