@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 14 Oct 2026 10:20:03 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -34,60 +34,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Ausfälle bei Yandex haben KI-Angebote und digitale Alltagsdienste getroffen. Fehlende Rechenleistung kann KI-Anfragen verzögern und laufendes Training unterbrechen. Gesicherte Modelle brauchen geeignete Ersatzrechner, um wieder zu arbeiten. Ausweichstandorte helfen nur mit vorbereiteten Anwendungen, verfügbaren Date...]]></description>
-    </item>
-    <item>
-      <title>OpenAI findet Abhörgerät, FBI nimmt Mitarbeiter fest</title>
-      <link>https://www.all-ai.de/news/news26/openai-spionage-mitarbeiter</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-spionage-mitarbeiter</guid>
-      <pubDate>Tue, 13 Oct 2026 22:01:23 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI entdeckt ein verstecktes Aufnahmegerät in einem seiner Büros. Eigene KI-Modelle helfen, einen Mitarbeiter als Verantwortlichen zu identifizieren. Das FBI nimmt den Mitarbeiter fest, OpenAI entlässt ihn. Hinweise auf einen Abfluss von Modellgewichten, Quellcode oder Kundendaten gibt es nicht. OpenAI Newsroom: ...]]></description>
-    </item>
-    <item>
-      <title>BMW will mit KI-Agenten Milliarden sparen</title>
-      <link>https://www.all-ai.de/news/news26top/bmw-ki-agenten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/bmw-ki-agenten</guid>
-      <pubDate>Tue, 13 Oct 2026 17:45:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[BMW will ab 2028 als KI-orchestriertes Unternehmen arbeiten. Vier KI-Agenten übernehmen Aufgaben in Beschaffung, Risikomanagement, Qualität und Materialkosten. Der Einkauf verwaltet ein Volumen von rund 80 Milliarden Euro im Jahr. BMW rechnet zunächst mit Einsparungen im mittleren dreistelligen Millionenbereich und ...]]></description>
-    </item>
-    <item>
-      <title>X bündelt Grok, Cursor und Premium in ein Abo</title>
-      <link>https://www.all-ai.de/news/news26/x-abo-neu</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/x-abo-neu</guid>
-      <pubDate>Tue, 13 Oct 2026 17:39:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[»The X Subscription« bündelt Grok, Cursor und X Premium in einem gemeinsamen Tarif. Die fünf Stufen reichen von Free bis Ultra für 200 Dollar im Monat. Grok und Cursor teilen sich ein wöchentliches Nutzungskontingent. Fremdmodelle in Cursor sind nicht enthalten und werden nach API-Preis berechnet. SpaceXSI: Introduc...]]></description>
-    </item>
-    <item>
-      <title>Apple HomeView mit Siri AI kommt... nicht nach Deutschland</title>
-      <link>https://www.all-ai.de/news/news26/apple-home-view-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/apple-home-view-start</guid>
-      <pubDate>Tue, 13 Oct 2026 17:25:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Apple Kurzfassung ▾ Quellen ▾ Apple HomeView kombiniert ein Smart Display für 299 Dollar mit Siri AI und Apple Intelligence. Das Gerät erkennt bis zu sechs Bewohner und greift über ein gekoppeltes iPhone oder iPad auf persönliche Inhalte zu. Apple Intelligence fasst Smart-Home-Ereignisse und Aufnahmen kompatibler Ka...]]></description>
-    </item>
-    <item>
-      <title>Gemini 4 jetzt für alle verfügbar</title>
-      <link>https://www.all-ai.de/news/news26top/gemini-4-breiter-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/gemini-4-breiter-start</guid>
-      <pubDate>Tue, 13 Oct 2026 16:59:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Gemini 4 Argon ist weltweit über die API sowie für Pro- und Ultra-Abonnenten in der Gemini-App verfügbar. Ein neuer Aufgabenmodus kann Arbeiten auch ohne anwesenden Nutzer fortsetzen und mehr als 40 Apps einbinden. Der Einführungspreis beträgt 2 Dollar für Input und 10 Dollar für Output je Million Token. In unabhäng...]]></description>
-    </item>
-    <item>
-      <title>GitHub 185.000 Sterne: REA baut jedes Tool einfach nach</title>
-      <link>https://www.all-ai.de/news/news26top/rea-github-erfolg</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/rea-github-erfolg</guid>
-      <pubDate>Tue, 13 Oct 2026 12:39:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[REA hat fast 185.000 GitHub-Sterne gesammelt und die Spitze der Trends erreicht. Das Tool verbindet Coding-Agenten über MCP mit Programmen wie Ghidra, Hopper und IDA. REA analysiert unter anderem native Programme, Electron-Apps, Webseiten, .NET und Android-APKs. Der Agent erhält keine Originalquellen, sondern Befund...]]></description>
     </item>
   </channel>
 </rss>

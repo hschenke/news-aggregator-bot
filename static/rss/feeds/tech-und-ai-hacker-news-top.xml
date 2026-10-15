@@ -5,44 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 14 Oct 2026 10:20:03 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2026 05:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Mozilla Introduces Firefox Enterprise</title>
-      <link>https://www.firefox.com/en-US/enterprise/</link>
-      <guid isPermaLink="false">https://www.firefox.com/en-US/enterprise/</guid>
-      <pubDate>Tue, 13 Oct 2026 12:00:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>An hour of audio transcribed in about 13s on MacBook Air</title>
-      <link>https://eg2.haku.sh/</link>
-      <guid isPermaLink="false">https://eg2.haku.sh/</guid>
-      <pubDate>Tue, 13 Oct 2026 11:27:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Character.ai Files for Bankruptcy</title>
-      <link>https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</link>
-      <guid isPermaLink="false">https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney</guid>
-      <pubDate>Tue, 13 Oct 2026 11:24:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>11 year old unsoundness bugs found in Rust borrow checker</title>
-      <link>https://github.com/rust-lang/rust/issues/164250</link>
-      <guid isPermaLink="false">https://github.com/rust-lang/rust/issues/164250</guid>
-      <pubDate>Tue, 13 Oct 2026 10:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>
