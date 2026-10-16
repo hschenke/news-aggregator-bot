@@ -5,14 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
     <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 16 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:56:25 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Füchse vor Flensburg: Fokus auf zukünftigem Spieler Simon Pytlick</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/handball-bundesliga-fuechse-flensburg-simon-pytlick.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/handball-bundesliga-fuechse-flensburg-simon-pytlick.html</guid>
+      <pubDate>Fri, 16 Oct 2026 08:35:52 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Wenn die Füchse Berlin am Sonntag beim Auswärtsspiel auf die SG Flensburg-Handewitt treffen, steht ein Spieler der Gegner im Fokus: Simon Pytlick. Der Wechsel des Dänen könnte zu einem Schlüssel für zukünftige Berliner Titel-Ambitionen werden.]]></description>
+    </item>
     <item>
       <title>Social Media im Spitzensport: Athleten oder Influencer?</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/laufen-marathon-leistungssport-spitzensport-social-media-pfeiffer-tortell-sporthilfe.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/laufen-marathon-leistungssport-spitzensport-social-media-pfeiffer-tortell-sporthilfe.html</guid>
-      <pubDate>Fri, 16 Oct 2026 04:50:11 GMT</pubDate>
+      <pubDate>Fri, 16 Oct 2026 07:54:36 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Talent, Disziplin und Leidenschaft bringen Leistungssportlern wenig, wenn niemand davon erfährt. Gerade in Zeiten des Laufbooms wird Social Media immer mehr zur Bühne, auf der sie sich präsentieren können. Die Konkurrenz: Influencer und Amateursportler.]]></description>
@@ -61,15 +70,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Klose und Cottbus: Eine besondere Fußballbeziehung in fünf Akten</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/2-bundesliga-energie-cottbus-1-fc-nuernberg-miro-klose-fuenf-epi.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/2-bundesliga-energie-cottbus-1-fc-nuernberg-miro-klose-fuenf-epi.html</guid>
-      <pubDate>Thu, 15 Oct 2026 05:56:08 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Die glorreichen Jahre von Energie Cottbus in der Bundesliga fallen mit dem Aufstieg des späteren Weltmeister-Stürmers Miroslav Klose zusammen. Am Freitag ist der DFB-Rekordtorjäger als Trainer des 1. FC Nürnberg erneut zu Gast in der Lausitz.]]></description>
     </item>
   </channel>
 </rss>

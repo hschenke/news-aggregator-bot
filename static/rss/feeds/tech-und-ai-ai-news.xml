@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 16 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:56:25 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -97,24 +97,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OmniHuman 2.0 erzeugt aus einem Bild und einer Audiospur bis zu fünf Minuten lange Avatar-Videos. Das Modell passt Mimik und Gesten an Sprache oder Musik an und unterstützt zusätzliche Text-Prompts. Die Ausgabe erfolgt in 720p, der Preis sinkt auf 0,07 Dollar pro Videosekunde. BytePlus: OmniHuman 2.0, Funktionen und...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT und Jugendschutz: Acht US-Bundesstaaten verklagen OpenAI</title>
-      <link>https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-jugendschutz-klage</guid>
-      <pubDate>Thu, 15 Oct 2026 08:59:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Acht US-Bundesstaaten verklagen OpenAI wegen irreführender Sicherheitsversprechen und Risiken für Minderjährige. Im Zentrum steht auch der Vorwurf, ChatGPT binde Nutzer durch übermäßige Zustimmung und vorgetäuschtes Mitgefühl. Arizona verlangt Geldstrafen, die Abschöpfung rechtswidriger Gewinne und strengere Bedingu...]]></description>
-    </item>
-    <item>
-      <title>Anthropic bereitet sich mit Claude auf die US-Zwischenwahlen vor</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-claude-us-zwischenwahlen</guid>
-      <pubDate>Thu, 15 Oct 2026 08:50:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude übersah bei Tests Täuschungskampagnen, wenn sie in unverdächtige Einzelaufgaben zerlegt waren. Anthropic ergänzt automatische Erkennungsverfahren und sperrte Konten von Betreibern einer gefälschten Nachrichtenwebseite. Der EU-Bericht zu Einflussoperationen zeigt die Relevanz solcher Methoden für deutsche und ...]]></description>
     </item>
   </channel>
 </rss>

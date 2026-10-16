@@ -5,35 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 16 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 09:56:25 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>The cost of getting a job today</title>
-      <link>https://weli.dev/blog/the-cost-of-getting-a-job-today/</link>
-      <guid isPermaLink="false">https://weli.dev/blog/the-cost-of-getting-a-job-today/</guid>
-      <pubDate>Thu, 15 Oct 2026 09:13:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>AI was great until it was not</title>
-      <link>https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</link>
-      <guid isPermaLink="false">https://thetheorygirlie.substack.com/p/ai-was-great-until-it-was-not</guid>
-      <pubDate>Thu, 15 Oct 2026 08:18:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Aidlc: Adaptive workflow steering rules for AI coding agents</title>
-      <link>https://github.com/awslabs/aidlc-workflows</link>
-      <guid isPermaLink="false">https://github.com/awslabs/aidlc-workflows</guid>
-      <pubDate>Thu, 15 Oct 2026 07:20:39 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>
