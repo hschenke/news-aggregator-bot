@@ -5,14 +5,23 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 15 Oct 2026 10:04:13 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 05:01:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
-      <link>https://huggingface.co/blog/allenai/hiro-acev2</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/allenai/hiro-acev2</guid>
-      <pubDate>Wed, 14 Oct 2026 16:12:42 GMT</pubDate>
+      <title>Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline</title>
+      <link>https://huggingface.co/blog/nvidia/scaling-indic-pretraining</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/scaling-indic-pretraining</guid>
+      <pubDate>Fri, 16 Oct 2026 01:44:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint</title>
+      <link>https://huggingface.co/blog/ibm-granite/granite-switch-4-1</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/ibm-granite/granite-switch-4-1</guid>
+      <pubDate>Thu, 15 Oct 2026 20:34:01 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
