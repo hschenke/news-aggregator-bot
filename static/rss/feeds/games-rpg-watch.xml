@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 16 Oct 2026 09:56:25 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Valor Mortis - Review</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60383</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60383</guid>
+      <pubDate>Fri, 16 Oct 2026 15:30:50 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Mortismal Gaming reviewed Valor Mortis: Valor Mortis - Review After 100%]]></description>
+    </item>
+    <item>
+      <title>The Lich Wars - Prequel to The Necromancer's Tale</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60382</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60382</guid>
+      <pubDate>Fri, 16 Oct 2026 09:01:51 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Lich Wars is a prequel to The Necromancer's Tale: Announcing The Lich Wars: Prequel to The Necromancer's Tale We're working on the prequel We're excited to announce that we're developing The Lich Wars - prequel to The Necromancer's Tale! This time, we lean more directly into story and writing, which were among t...]]></description>
+    </item>
+    <item>
+      <title>Lair of the Leviathan - New Trailer</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60381</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60381</guid>
+      <pubDate>Fri, 16 Oct 2026 08:56:01 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Here's a new trailer for Lair of the Leviathan: Lair of the Leviathan - Official Announcement Trailer]]></description>
+    </item>
     <item>
       <title>Enshrouded - Update 1.0 Highlights</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60380</link>
@@ -34,24 +61,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Tales of Eternia Remastered is now available: Tales of Eternia Remastered - Launch Trailer Tales of Eternia returns as a remastered edition! As the threat of world destruction looms, an epic journey begins to determine the fate of two worlds: Inferia and Celestia....]]></description>
-    </item>
-    <item>
-      <title>ATOM RPG - Plague Island DLC released</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60377</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60377</guid>
-      <pubDate>Thu, 15 Oct 2026 16:55:46 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The DLC ATOM RPG - Plague Island has been released: ATOM RPG - Plague Island Plague Island is a story-driven DLC for the original ATOM RPG that introduces new locations, storylines, characters, and a host of other exciting gameplay features. The plot takes you from a small airfield near Fogelevka to a new world map:...]]></description>
-    </item>
-    <item>
-      <title>Drova II - Torn Lands - Announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60376</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60376</guid>
-      <pubDate>Thu, 15 Oct 2026 13:14:42 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The action RPG Drova II - Torn Lands has been announced: Drova II - Announcement Trailer The Divinites have been freed. Discover the Torn Lands that the Mist revealed: an all-new world, led by two ancient tribes that endured the Dark Fog. ...]]></description>
     </item>
   </channel>
 </rss>

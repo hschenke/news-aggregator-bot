@@ -5,98 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 16 Oct 2026 09:56:25 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Paukenschlag bei Anthropic: Unabhängige KI-Prüfer dürfen jetzt fast alles</title>
-      <link>https://www.all-ai.de/news/beitrage2026/anthropic-ki-metre-pruefung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/anthropic-ki-metre-pruefung</guid>
-      <pubDate>Thu, 15 Oct 2026 18:31:00 GMT</pubDate>
+      <title>Linus Torvalds liefert ersten KI-Patch für den Linux-Kernel</title>
+      <link>https://www.all-ai.de/news/news26/linux-ki-patch</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/linux-ki-patch</guid>
+      <pubDate>Fri, 16 Oct 2026 13:06:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Sechs METR-Prüfer erhalten bei Anthropic internen Zugang ähnlich dem eigener Mitarbeiter. METR darf seine Bewertungen ohne Freigabe veröffentlichen, Anthropic kann bestimmte vertrauliche Informationen schwärzen lassen. Ein Modell mit drei Stufen regelt den Zugang und die Veröffentlichungsrechte weiterer Prüfer. Anth...]]></description>
+      <description><![CDATA[Linus Torvalds hat seine erste mit KI entwickelte Linux-Patch-Serie zur Prüfung veröffentlicht. In einem synthetischen Benchmark steigt die Leistung bestimmter Lesezugriffe um den Faktor 23. Ein Entwickler meldete bei der Prüfung bereits einen Fehler und lieferte einen Korrekturvorschlag. Parallel streichen die Proj...]]></description>
     </item>
     <item>
-      <title>Muse Spark Open bringt Metas Milliardenmodell auf den Schreibtisch</title>
-      <link>https://www.all-ai.de/news/news26top/meta-muse-spark-open-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-muse-spark-open-start</guid>
-      <pubDate>Thu, 15 Oct 2026 18:07:49 GMT</pubDate>
+      <title>Mercedes-Benz und Nvidia nehmen fahrerlose Limousinen ins Visier</title>
+      <link>https://www.all-ai.de/news/news26/mercedes-nvidia-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/mercedes-nvidia-start</guid>
+      <pubDate>Fri, 16 Oct 2026 13:01:01 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Meta veröffentlicht Muse Spark Open mit 816 Milliarden Parametern und einer Million Token Kontext. Das multimodale Modell führt im Vergleich bei MCP-Atlas und läuft lokal auf zwei Mac Studios mit M5 Ultra. Bei beruflichen Arbeitsergebnissen und Programmieraufgaben liegen mehrere Konkurrenten vorn. Die Modellgewichte...]]></description>
-    </item>
-    <item>
-      <title>Krea 3 bearbeitet Bilder besser und schneller</title>
-      <link>https://www.all-ai.de/news/news26top/krea-3-image-edit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/krea-3-image-edit</guid>
-      <pubDate>Thu, 15 Oct 2026 16:44:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Krea 3 ist als öffentliche Beta über die Krea-App und die API zugänglich. Eine 2K-Bearbeitung dauert unter acht Sekunden und kostet 0,06 Dollar pro Bild. Das Modell verändert markierte Bereiche und übernimmt Farbvorgaben als Hexcode. Die finale Veröffentlichung mit weiteren Benchmarks ist für die kommende Woche ange...]]></description>
-    </item>
-    <item>
-      <title>Claude Mythos findet Sicherheitslücken, Bank of America holt 1.000 Programmierer</title>
-      <link>https://www.all-ai.de/news/news26/claude-mythos-bank-of-america</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-mythos-bank-of-america</guid>
-      <pubDate>Thu, 15 Oct 2026 16:23:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Die Bank of America hat rund 1.000 Externe für Patcharbeiten engagiert, die etwa 3.000 interne Mitarbeiter unterstützen. KI-Modelle wie Anthropics Mythos haben die Sicherheitslücken aufgedeckt. Die Reparaturen und zusätzliche Geldwäschevorgaben verursachen zusammen Mehrausgaben von mehreren Hundert Millionen Dollar....]]></description>
-    </item>
-    <item>
-      <title>Microsoft Praise: Wie lernen Programmierer, wenn KI alles macht?</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-praise-programmierer</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-praise-programmierer</guid>
-      <pubDate>Thu, 15 Oct 2026 16:12:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Microsoft startet PRAISE für junge Softwareentwickler. Erfahrene Entwickler begleiten die Teilnehmer bei ihrer Arbeit mit KI. Kurse der Carnegie Mellon University ergänzen die praktische Ausbildung. Die Teilnehmer lernen, KI-Code zu verstehen, zu prüfen und zu verantworten. Microsoft Command Line: PRAISE und die Aus...]]></description>
-    </item>
-    <item>
-      <title>FLUX 3 Image Klein startet mit 4K und Open Weights</title>
-      <link>https://www.all-ai.de/news/news26top/flux-3-klein-openweights</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/flux-3-klein-openweights</guid>
-      <pubDate>Thu, 15 Oct 2026 15:52:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[FLUX 3 Image Klein erzeugt native 4K-Bilder und verarbeitet bis zu zehn Referenzbilder. Der Bildgenerator hat 5,6 Milliarden Parameter und übertrifft im BFL-Vergleich größere Modelle. Das Modell ist als Download, über die BFL-API und in Web-Demos verfügbar. Optimierte INT8-Ausführungen laufen ab 8 GB VRAM, der Refer...]]></description>
-    </item>
-    <item>
-      <title>Anthropic wächst um 45 Prozent und enttäuscht trotzdem Investoren</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-boerse-schwach</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-boerse-schwach</guid>
-      <pubDate>Thu, 15 Oct 2026 15:39:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic erzielt im dritten Quartal 16,8 Milliarden Dollar Umsatz, rund 45 Prozent mehr als im Vorquartal. Das langsamere Wachstum dämpft vor dem geplanten November-Börsengang die Bewertungserwartungen. Anthropic meldet eine bereinigte operative Marge von elf Prozent für die ersten neun Monate. Fünf bis sieben Proz...]]></description>
-    </item>
-    <item>
-      <title>GPT-6-Astra löst 49 von 50 Physikaufgaben im neuen Benchmark</title>
-      <link>https://www.all-ai.de/news/news26/gpt-astra-benchmark-theophyseval</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gpt-astra-benchmark-theophyseval</guid>
-      <pubDate>Thu, 15 Oct 2026 15:29:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT-6-Astra löste in Codex 49 von 50 Aufgaben des Physik-Benchmarks TheoPhysEval. Die berechneten API-Kosten betragen rund 2,37 Dollar pro erfolgreicher Lösung. Bei der Nachprüfung bestätigten Experten KI-Antworten, die zunächst wegen fehlerhafter Referenzlösungen als falsch galten. Originalpaper: TheoPhysEval: Asse...]]></description>
-    </item>
-    <item>
-      <title>ElevenLabs Recast: Gleicher Clip, andere Figur</title>
-      <link>https://www.all-ai.de/news/news26/elevenlabs-recast-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-recast-start</guid>
-      <pubDate>Thu, 15 Oct 2026 14:25:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Recast tauscht die Hauptfigur eines Videos anhand eines Referenzfotos aus. Bewegungen, Kulisse, Kamera, Schnitte und Originalton bleiben erhalten. Clips dürfen fünf bis 30 Sekunden lang sein, einzelne Einstellungen höchstens 15 Sekunden. ElevenCreative: Ankündigung von Recast ElevenCreative: Recast-Vorlage ElevenLab...]]></description>
-    </item>
-    <item>
-      <title>OmniHuman 2.0 liefert längere KI-Avatare zum niedrigeren Preis</title>
-      <link>https://www.all-ai.de/news/news26/omnihuman-2-ki-avatare-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/omnihuman-2-ki-avatare-start</guid>
-      <pubDate>Thu, 15 Oct 2026 11:51:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OmniHuman 2.0 erzeugt aus einem Bild und einer Audiospur bis zu fünf Minuten lange Avatar-Videos. Das Modell passt Mimik und Gesten an Sprache oder Musik an und unterstützt zusätzliche Text-Prompts. Die Ausgabe erfolgt in 720p, der Preis sinkt auf 0,07 Dollar pro Videosekunde. BytePlus: OmniHuman 2.0, Funktionen und...]]></description>
+      <description><![CDATA[Mercedes-Benz und Nvidia erweitern ihre Partnerschaft für Fahrassistenz und automatisiertes Fahren. MB.OS wird mit Nvidias Hyperion, Alpamayo Stack und Halos verbunden. Zu den Entwicklungszielen gehören Stadtassistenz, automatisiertes Parken und künftige Level-4-Robolimousinen. Die Zusammenarbeit umfasst außerdem Si...]]></description>
     </item>
   </channel>
 </rss>
