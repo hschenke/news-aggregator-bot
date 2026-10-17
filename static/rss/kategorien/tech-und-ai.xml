@@ -5,9 +5,99 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 17 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2026 09:29:27 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT und Co. geben Chat-Daten an Tracker weiter</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-daten-tracker</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-daten-tracker</guid>
+      <pubDate>Sat, 17 Oct 2026 09:16:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Sechs von neun untersuchten Web-Chatbots geben Gesprächsinformationen an externe Dienste weiter. ChatGPT und Claude senden Chat-Kennungen oder Links, während Gemini, Grok und Mistral auch Chat-Titel übermitteln. Grok gibt bei geteilten Chats Prompts und Screenshots weiter und macht Gespräche standardmäßig öffentlich...]]></description>
+    </item>
+    <item>
+      <title>DeepSeek V4.1 rückt plötzlich nah an Opus 5</title>
+      <link>https://www.all-ai.de/news/news26/deepseek-4-neu</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/deepseek-4-neu</guid>
+      <pubDate>Sat, 17 Oct 2026 08:51:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[DeepSeek aktualisiert V4.1 Flash mit der neuen Fassung 1017. Das Modell legt bei Coding, Agenten und visuellen Aufgaben deutlich zu. In einzelnen Benchmarks überholt es Opus 5, während Opus beim Wissenstest HLE klar vorne bleibt. Die Modellgewichte stehen auf Hugging Face unter der MIT-Lizenz bereit. DeepSeek V4.1 F...]]></description>
+    </item>
+    <item>
+      <title>Belttunnel – Arbeiten laufen nach Cyberangriff wieder an</title>
+      <link>https://www.heise.de/news/Belttunnel-Arbeiten-laufen-nach-Cyberangriff-wieder-an-11491544.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11491544</guid>
+      <pubDate>Sat, 17 Oct 2026 08:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zwischen Deutschland und Dänemark wird ein Tunnel gebaut. Nach einem Cyberangriff können nun die Arbeiten am Fehmarnbelt schrittweise wie geplant weitergehen.]]></description>
+    </item>
+    <item>
+      <title>„Street Fighter“ im Kino: Eine Achterbahnfahrt ins Nirgendwo</title>
+      <link>https://www.heise.de/tests/Street-Fighter-im-Test-Erfolg-dank-Achselschweiss-11490670.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11490670</guid>
+      <pubDate>Sat, 17 Oct 2026 07:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der neue „Street Fighter“-Film ist richtig dumm. Offenbar wissen das auch alle Beteiligten. So entsteht vielleicht kein großes Kino, aber ein großer Spaß.]]></description>
+    </item>
+    <item>
+      <title>Gettys Restrukturierung und imposantes Wildlife – Fotonews der Woche 42/2026</title>
+      <link>https://www.heise.de/news/Gettys-Restrukturierung-und-imposantes-Wildlife-Fotonews-der-Woche-42-2026-11490974.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11490974</guid>
+      <pubDate>Sat, 17 Oct 2026 07:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zwischen Gettys finanzieller Neuaufstellung, Canons Fingerabdruck-Idee und preisgekrönter Wildlife-Fotografie zeigt sich, wie vielfältig Fotografie ist.]]></description>
+    </item>
+    <item>
+      <title>Microsoft korrigiert Wettermodelle für Prognosen bis zu sechs Wochen</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-wettermodelle-besser</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-wettermodelle-besser</guid>
+      <pubDate>Sat, 17 Oct 2026 06:13:01 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft Research korrigiert mit PBC typische Fehler bestehender Wettermodelle. Das Verfahren verbessert Prognosen für den schwierigen Zeitraum von zwei bis sechs Wochen. MicroDuet gewann mit PBC alle Kategorien des ersten Abschnitts der AI Weather Quest. In Kenia unterstützt PBC bereits Regenprognosen für landwirt...]]></description>
+    </item>
+    <item>
+      <title>Developer-Häppchen – was Postgres 19, Python 3.16 und Symfony 8.2 Neues bringen</title>
+      <link>https://www.heise.de/news/Developer-Haeppchen-was-Postgres-19-Python-3-16-und-Symfony-8-2-Neues-bringen-11490397.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11490397</guid>
+      <pubDate>Sat, 17 Oct 2026 06:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Postgres, Node.js, PyPy, Python, Crystal, pnpm, Eclipse Theia, Symfony, CouchDB und List & Label.]]></description>
+    </item>
+    <item>
+      <title>Gemini 4: Warum diese Videos keine KI-Videos sind</title>
+      <link>https://www.all-ai.de/news/news26top/gemini-4-video-code</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/gemini-4-video-code</guid>
+      <pubDate>Sat, 17 Oct 2026 06:04:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Gemini 4 Argon erzeugt für Googles Demos ausführbare 3D-Szenen statt einer festen Videodatei. Aus Fotos eines Schreibtischs entstand ein spielbares Rennspiel mit Kollisionen, Physik, Shadern und Ton. Das Schachbeispiel enthält animierte Figuren, Bruchphysik und eine Einzelspieler-KI. Mehrere Agenten prüfen Zwischene...]]></description>
+    </item>
+    <item>
+      <title>Kommentar: Bei der d-you jetzt nicht anfangen aufzuhören!</title>
+      <link>https://www.heise.de/meinung/Kommentar-Bei-der-d-you-jetzt-nicht-anfangen-aufzuhoeren-11490834.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11490834</guid>
+      <pubDate>Sat, 17 Oct 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Trotz viel Kritik aus Sicherheits- und Datenschutzkreisen: Eigentlich startet die d-you mit ziemlich guten Voraussetzungen. Das jetzt bitte nicht verschenken!]]></description>
+    </item>
+    <item>
+      <title>Schwarz-Weiß konsequent: Die Bilder der Woche 42</title>
+      <link>https://www.heise.de/news/Schwarz-Weiss-konsequent-Die-Bilder-der-Woche-42-11490323.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11490323</guid>
+      <pubDate>Sat, 17 Oct 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Unsere Auswahl zeigt das ganze Spektrum der Fotografie: von Porträt und Pilzen bis zu Brücken und Berggipfeln – alles in Schwarz-Weiß.]]></description>
+    </item>
     <item>
       <title>Smartwatches im Test: Pebble-Comeback und die Pixel Watch 5 | c’t uplink</title>
       <link>https://www.heise.de/news/Smartwatches-im-Test-Pebble-Comeback-und-die-Pixel-Watch-5-c-t-uplink-11490658.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -144,13 +234,13 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Reifen selbst wechseln: So funktioniert es mit Wagenheber, RDKS &amp; Co.</title>
+      <title>Reifen wechseln: So funktioniert es</title>
       <link>https://www.heise.de/bestenlisten/ratgeber/reifen-selbst-wechseln-so-funktioniert-es-mit-wagenheber-rdks-und-co/4w1e0dz?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11491310</guid>
       <pubDate>Fri, 16 Oct 2026 18:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit dem richtigen Werkzeug gelingt der Reifenwechsel in Eigenregie. Wir zeigen Wagenheber, Schlagschrauber und Luftpumpen – und erklären das RDKS.]]></description>
+      <description><![CDATA[Mit dem richtigen Werkzeug gelingt der Reifenwechsel in Eigenregie. Wir zeigen Wagenheber, Schlagschrauber und erklären RDKS.]]></description>
     </item>
     <item>
       <title>India becomes the latest country to report rogue AI agent activity</title>
@@ -520,141 +610,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Nach der Installation der Oktober-Updates für Windows Server kommt es auf Exchange-Servern zu Ausfällen. Microsoft untersucht das Problem.]]></description>
-    </item>
-    <item>
-      <title>Sprout: iPod-Platine modernisiert Apples MP3-Spieler</title>
-      <link>https://www.heise.de/news/Sprout-iPod-Platine-modernisiert-Apples-MP3-Spieler-11488731.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11488731</guid>
-      <pubDate>Fri, 16 Oct 2026 08:50:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Projekt hat passende Elektronik für das Gehäuse alter iPods entwickelt, das die Geräte modernisieren soll. Demnächst startet ein Crowdfunding.]]></description>
-    </item>
-    <item>
-      <title>Kolibri-1 denkt deutsch. Hilft das auch beim Antworten?</title>
-      <link>https://www.heise.de/hintergrund/Kolibri-1-denkt-deutsch-Hilft-das-auch-beim-Antworten-11489670.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11489670</guid>
-      <pubDate>Fri, 16 Oct 2026 08:39:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Aleph Alphas Kolibri-1 ist ein neues KI-Modell, das speziell für deutsche Texte optimiert wurde und auch auf Deutsch argumentiert. iX hat es ausprobiert.]]></description>
-    </item>
-    <item>
-      <title>Deutsch-französische Initiative soll Autoindustrie stärken</title>
-      <link>https://www.heise.de/news/Deutsch-franzoesische-Initiative-soll-Autoindustrie-staerken-11490369.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490369</guid>
-      <pubDate>Fri, 16 Oct 2026 08:26:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Europas Autohersteller stehen unter Druck, auch durch Konkurrenz aus China. Frankreich und Deutschland wollen nun unterstützend eingreifen.]]></description>
-    </item>
-    <item>
-      <title>Jetzt sind auch die Schrauben vergoldet: Neue Sony-Walkmans für bis zu 5000 Euro</title>
-      <link>https://www.heise.de/news/Besserer-Sound-dank-goldener-Schrauben-Neue-Sony-Walkmans-fuer-bis-zu-5000-Euro-11490285.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490285</guid>
-      <pubDate>Fri, 16 Oct 2026 08:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Signature-Reihe von Sony soll Audiophile und Musikenthusiasten ansprechen. Die neuesten mobilen Musikplayer kosten jetzt 2500 beziehungsweise 5000 Euro.]]></description>
-    </item>
-    <item>
-      <title>Siri AI bleibt draußen: Apple-Intelligence-Start in China naht</title>
-      <link>https://www.heise.de/news/Apple-Intelligence-kommt-nach-China-ohne-Siri-AI-11489007.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11489007</guid>
-      <pubDate>Fri, 16 Oct 2026 08:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Seit zwei Jahren versucht Apple, sein KI-System im Reich der Mitte auf die Geräte zu holen. Die Zulassung liegt nun offenbar vor – ein Starttermin auch.]]></description>
-    </item>
-    <item>
-      <title>Meta und Apple optimieren riesiges KI-Modell für Mac Studios</title>
-      <link>https://www.heise.de/news/Meta-veroeffentlicht-Muse-Spark-Open-und-kooperiert-dabei-mit-Apple-11490339.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490339</guid>
-      <pubDate>Fri, 16 Oct 2026 08:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Meta hat mit Muse Spark Open ein großes Open-Weight-Modell veröffentlicht. Es wurde gemeinsam mit Apple für zwei Mac Studios optimiert.]]></description>
-    </item>
-    <item>
-      <title>Post zum Freitag: Vibe-Coding lehrt Adobe das Fürchten – und Microsoft gleich mit</title>
-      <link>https://www.heise.de/meinung/Post-zum-Freitag-Vibe-Coding-lehrt-Adobe-das-Fuerchten-und-Microsoft-gleich-mit-11489894.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11489894</guid>
-      <pubDate>Fri, 16 Oct 2026 08:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Schon ewig verdienen Software-Giganten wie Adobe und Microsoft ihr Geld mit Photoshop, Word und Co. Doch nun gibt es vibe-gecodete Konkurrenz.]]></description>
-    </item>
-    <item>
-      <title>Nach Cyberangriff: Bauarbeiten am Fehmarnbelt-Tunnel gestört</title>
-      <link>https://www.heise.de/news/Nach-Cyberangriff-Bauarbeiten-am-Fehmarnbelt-Tunnel-gestoert-11490277.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490277</guid>
-      <pubDate>Fri, 16 Oct 2026 07:21:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Offline-Zwang für Arbeiter, Probleme bei der Schiffsnavigation und ausgefallene Zutrittskontrollen erschwerten die Arbeit am Mammutprojekt.]]></description>
-    </item>
-    <item>
-      <title>„GTA 6“: Rockstar veröffentlicht Launch-Trailer fünf Wochen vor Release</title>
-      <link>https://www.heise.de/news/GTA-6-Rockstar-veroeffentlicht-Launch-Trailer-fuenf-Wochen-vor-Release-11490271.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490271</guid>
-      <pubDate>Fri, 16 Oct 2026 07:08:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Rockstar hat den Launch-Trailer zu „GTA 6“ veröffentlicht. Ungewöhnlich: Bis zum Release am 19. November dauert es noch fünf Wochen.]]></description>
-    </item>
-    <item>
-      <title>„Total War: Shogun 2“: Sega nimmt Remaster nach zwei Tagen aus dem Verkauf</title>
-      <link>https://www.heise.de/news/Total-War-Shogun-2-Sega-nimmt-Remaster-nach-zwei-Tagen-aus-dem-Verkauf-11490249.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490249</guid>
-      <pubDate>Fri, 16 Oct 2026 07:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sega nimmt die Complete Edition von „Total War: Shogun 2“ nach Kritik vorerst aus dem Verkauf. Das Original von 2011 kehrt derweil zurück.]]></description>
-    </item>
-    <item>
-      <title>Nach Hackerangriff: Akute Gefährdung für Berlins Verwaltung gebannt</title>
-      <link>https://www.heise.de/news/Nach-Hackerangriff-Akute-Gefaehrdung-fuer-Berlins-Verwaltung-gebannt-11490231.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490231</guid>
-      <pubDate>Fri, 16 Oct 2026 06:42:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bei dem Hackerangriff auf die Berliner Verwaltung sind riesige Mengen an Daten gestohlen und dann veröffentlicht worden. Nun ist die akute Lage beendet.]]></description>
-    </item>
-    <item>
-      <title>Merz und Macron einigen sich offenbar bei Verbrenner-Ende</title>
-      <link>https://www.heise.de/news/Ende-des-Verbrenners-Deutschland-und-Frankreich-fuer-Lockerungen-11490190.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490190</guid>
-      <pubDate>Fri, 16 Oct 2026 06:35:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Deutschland will neue Verbrenner weiter zulassen. Frankreichs Präsident Macron sperrte sich bisher – nun zeichnet sich eine Einigung ab.]]></description>
-    </item>
-    <item>
-      <title>Biobatterie nutzt sporenbildende Bakterien in künstlichen Darmzotten</title>
-      <link>https://www.heise.de/news/Biobatterie-nutzt-sporenbildende-Bakterien-in-kuenstlichen-Darmzotten-11490196.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490196</guid>
-      <pubDate>Fri, 16 Oct 2026 06:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Eine Biobatterie erzeugt mittels sporenbildender Bakterien in künstlichen Darmzotten Energie. Das System könnte in Abwasserrohren zugleich das Wasser reinigen.]]></description>
-    </item>
-    <item>
-      <title>TV-Staffel gelöscht, kein Backup: Schwedischer Sender bestreitet Schuld von KI</title>
-      <link>https://www.heise.de/news/TV-Staffel-geloescht-kein-Backup-Schwedischer-Sender-bestreitet-Schuld-von-KI-11490175.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490175</guid>
-      <pubDate>Fri, 16 Oct 2026 06:19:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die nächste Staffel von „The Challenge Sverige“ verspätet sich, die geschnittene Fassung wurde gelöscht. Schuld sei keine KI, wohl aber ein defektes Backup.]]></description>
-    </item>
-    <item>
-      <title>Tesla Roadster II vorgestellt: Ganz schön abgehoben – Raketentechnik sei Dank</title>
-      <link>https://www.heise.de/news/Tesla-Roadster-II-vorgestellt-Ganz-schoen-abgehoben-Raketentechnik-sei-Dank-11490167.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11490167</guid>
-      <pubDate>Fri, 16 Oct 2026 06:10:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Tesla zeigt den Roadster II mit aktivem Ground Effect, die das Auto auf den Boden pressen, und Kaltgastriebwerken, mit denen es ein bisschen fliegen kann.]]></description>
     </item>
   </channel>
 </rss>
