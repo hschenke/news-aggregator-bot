@@ -5,89 +5,35 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 17 Oct 2026 09:29:27 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Replit is no longer working with Anthropic, CEO says</title>
-      <link>https://techcrunch.com/2026/10/16/replit-is-no-longer-working-with-anthropic-ceo-says/</link>
+      <title>Meta removes language that raised scraping and AI training concerns</title>
+      <link>https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3178941</guid>
+      <pubDate>Sat, 17 Oct 2026 21:31:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web.]]></description>
+    </item>
+    <item>
+      <title>Anthropic says its workforce has become less junior and is spending more time in meetings</title>
+      <link>https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3178934</guid>
+      <pubDate>Sat, 17 Oct 2026 20:21:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The composition of Anthropic’s workforce and the type of work getting done have changed significantly in the past year.]]></description>
+    </item>
+    <item>
+      <title>Replit makes OpenAI its default over Anthropic, CEO says</title>
+      <link>https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3178496</guid>
-      <pubDate>Fri, 16 Oct 2026 21:22:28 GMT</pubDate>
+      <pubDate>Sat, 17 Oct 2026 18:48:08 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Masad said the decision was made for a number of different reasons, including cost. Replit announced a partnership with OpenAI in August, but there was never any indication that it was no longer with Anthropic.]]></description>
-    </item>
-    <item>
-      <title>India becomes the latest country to report rogue AI agent activity</title>
-      <link>https://techcrunch.com/2026/10/16/india-becomes-the-latest-country-to-report-rogue-ai-agent-activity/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178813</guid>
-      <pubDate>Fri, 16 Oct 2026 17:52:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The agents got in through credentials and connection settings left exposed in app configurations, public code repositories, and overly permissive cloud roles.]]></description>
-    </item>
-    <item>
-      <title>An Nvidia insider-turned-VC on why robotics hasn’t hit its ChatGPT moment, yet</title>
-      <link>https://techcrunch.com/video/a-nvidia-insider-turned-vc-on-why-robotics-hasnt-hit-its-chatgpt-moment-yet/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_video&amp;p=3176211</guid>
-      <pubDate>Fri, 16 Oct 2026 16:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic hands, software, and safety standards still being rebuilt. This view runs counter to those who believe that robotics...]]></description>
-    </item>
-    <item>
-      <title>Physical AI is more than robots, says the Nvidia veteran now investing in it</title>
-      <link>https://techcrunch.com/podcast/physical-ai-is-more-than-robots-says-the-nvidia-veteran-now-investing-in-it/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_podcast&amp;p=3176205</guid>
-      <pubDate>Fri, 16 Oct 2026 16:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Amulya Vishwanath, who spent seven years leading product marketing for NVIDIA’s robotics platforms, says robotics is currently in its “Lego era,” with the basic building blocks like actuators, robotic hands, software, and safety standards still being rebuilt. This view runs counter to those who believe that robotics...]]></description>
-    </item>
-    <item>
-      <title>Elorian’s first AI model wants to reason with images, not just about them</title>
-      <link>https://techcrunch.com/2026/10/16/elorians-first-ai-model-wants-to-reason-with-images-not-just-about-them/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178756</guid>
-      <pubDate>Fri, 16 Oct 2026 16:01:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[According to Elorian's evaluations, Glimpse outperforms even GPT-6 Astra on scientific chart reasoning and short-form video captioning, with competitive results on other visual reasoning tasks.]]></description>
-    </item>
-    <item>
-      <title>Jev is Vercel’s fastest-adopted AI model ever</title>
-      <link>https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178711</guid>
-      <pubDate>Fri, 16 Oct 2026 15:33:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The data comes from Vercel's AI gateway, a unified API service similar to OpenRouter.]]></description>
-    </item>
-    <item>
-      <title>Mark Wahlberg on using AI in film ‘the right way’ and being open to an AI clone carrying on his legacy</title>
-      <link>https://techcrunch.com/2026/10/16/mark-wahlberg-on-using-ai-in-film-the-right-way-and-being-open-to-an-ai-clone-carrying-on-his-legacy/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178550</guid>
-      <pubDate>Fri, 16 Oct 2026 14:26:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Actor and angel investor Mark Wahlberg says he's OK with using AI in filmmaking, provided it's used "to enhance what you're doing."]]></description>
-    </item>
-    <item>
-      <title>Veritas expands its anti-counterfeit chip to jewelry, trophies, and fragrance bottles</title>
-      <link>https://techcrunch.com/2026/10/16/veritas-is-building-a-chip-to-verify-luxury-goods/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3177529</guid>
-      <pubDate>Fri, 16 Oct 2026 14:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Counterfeiters are getting better at replicating brands' marks and passing off dupes, known as "superfakes," as genuine items. A startup called Veritas wants to tackle the problem with its own chip that verifies goods.]]></description>
-    </item>
-    <item>
-      <title>Replit’s CEO says the future of work is the ‘self-driving company’</title>
-      <link>https://techcrunch.com/2026/10/16/replits-ceo-says-the-future-of-work-is-the-self-driving-company/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178541</guid>
-      <pubDate>Fri, 16 Oct 2026 12:55:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Replit CEO Amjad Masad envisions a future of “self-driving companies,” where AI agents handle day-to-day tasks and people focus on higher-level decisions.]]></description>
+      <description><![CDATA[Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform.]]></description>
     </item>
   </channel>
 </rss>
