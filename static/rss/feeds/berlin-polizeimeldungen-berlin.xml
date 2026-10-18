@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Polizeimeldungen+Berlin</link>
     <description>RSS-Feed für die Quelle 'Polizeimeldungen Berlin' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 18 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 09:43:06 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-polizeimeldungen-berlin.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Motorradfahrerin bei Verkehrsunfall verletzt</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1727207.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1727207.php</guid>
+      <pubDate>Sun, 18 Oct 2026 09:22:00 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Gestern Mittag wurden Einsatzkräfte des Regionalabschnitts 52/53 zu einem Verkehrsunfall nach Kreuzberg alarmiert. Nach bisherigen Erkenntnissen war ein 38-Jähriger gegen 12:20 Uhr mit seinem Pkw auf dem Mehringdamm in Richtung Platz der Luftbrücke unterwegs. An einem Durchbruch auf ...]]></description>
+    </item>
     <item>
       <title>Fußgängerin nach Zusammenstoß mit Auto verletzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1727163.php</link>
@@ -43,24 +52,6 @@
       <category>Berlin</category>
       <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
       <description><![CDATA[📍 **Pankow** – Gestern Nachmittag kam es im Ortsteil Rosenthal zu einem Verkehrsunfall, bei dem ein Kind verletzt wurde. Nach bisherigen Erkenntnissen befuhr ein 68-jähriger Autofahrer gegen 17:50 Uhr die Friedrich-Engels-Straße in Richtung Kastanienallee, als plötzlich ein vier Jahre altes Kind von links auf d...]]></description>
-    </item>
-    <item>
-      <title>82-Jähriger nach Verkehrsunfall im Krankenhaus verstorben</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1727138.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1727138.php</guid>
-      <pubDate>Sat, 17 Oct 2026 09:20:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Spandau** – Gestern Nachmittag kam es in Spandau zu einem Verkehrsunfall, bei dem ein Mann tödlich verletzt wurde. Nach bisherigen Ermittlungen befuhr ein 82-jähriger Autofahrer gegen 15 Uhr die Prisdorfer Straße in Richtung Brunsbütteler Damm. Im Kreuzungsbereich Prisdorfer Straße/Brunsbütteler Damm stieß e...]]></description>
-    </item>
-    <item>
-      <title>Versuchtes Tötungsdelikt – Mordkommission ermittelt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1727134.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1727134.php</guid>
-      <pubDate>Sat, 17 Oct 2026 09:15:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Friedrichshain-Kreuzberg** – Aufgrund von Wartungsarbeiten im Berliner Landesnetz kommt es zu Ausfällen der Internetwache im Zeitraum vom 16.10., 18:00 Uhr bis zum 19.10.2026, 06:00 Uhr.]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 18 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 18 Oct 2026 09:43:06 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Forge of the Fae - Release: March 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60390</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60390</guid>
+      <pubDate>Sun, 18 Oct 2026 04:53:48 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Forge of the Fae will be released in March 2027: Forge of the Fae - Release Window Reveal Trailer]]></description>
+    </item>
+    <item>
+      <title>RPG Crawler - CRPG News Roundup</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60389</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60389</guid>
+      <pubDate>Sun, 18 Oct 2026 04:47:41 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Like every week the RPG Crawler sums up the CRPG news: CRPG News Roundup (10-17-2026)]]></description>
+    </item>
     <item>
       <title>No Rest for the Wicked - Class System Overview</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60388</link>
@@ -16,42 +34,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Learn more about the character progression sytem of No Rest for the Wicked: No Rest for the Wicked - Official Class System: 1.0 Launch Preview Video]]></description>
-    </item>
-    <item>
-      <title>Caves of Qud - Diaspora DLC announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60387</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60387</guid>
-      <pubDate>Sat, 17 Oct 2026 06:20:20 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Caves of Qud: Diaspora DLC will be released into Early Access on December 9: Caves of Qud: Diaspora The world currents are in flux. Glacial flooding ousts the peoples of the north combs, and in the warming clime, a thousand new pollens lead the kingdom of mousy fauna into the common weald....]]></description>
-    </item>
-    <item>
-      <title>The Life and Suffering of Prince Jerian - Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60386</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60386</guid>
-      <pubDate>Sat, 17 Oct 2026 06:15:44 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPGamer reviewed The Life and Suffering of Prince Jerian: The Life and Suffering of Prince Jerian Review Shatter Day In William Shakespeare’s “King Henry IV, Part II,” one of the world’s most famous quotes was born: “Heavy is the head that wears the crown....]]></description>
-    </item>
-    <item>
-      <title>Romancing SaGa 3: Destinies United - Release Date: February 16, 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60385</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60385</guid>
-      <pubDate>Sat, 17 Oct 2026 06:10:23 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The remake Romancing SaGa 3: Destinies United will be released on February 16, 2027. RPGFan checked it out: Romancing SaGa 3: Destinies United Hands-On Preview - SaGa Fans Rejoice!]]></description>
-    </item>
-    <item>
-      <title>Aeterna: Curse of The First King - Announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60384</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60384</guid>
-      <pubDate>Sat, 17 Oct 2026 05:59:29 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The action RPG Aeterna: Curse of The First King has been announced: Aeterna: Curse of The First King - Official Announcement Trailer An isometric soulslike action RPG set in the final years of the Roman Republic. As one of the Custodes Umbrae, a secret order sworn to protect Rome from threats beyond mortal comprehen...]]></description>
     </item>
   </channel>
 </rss>
