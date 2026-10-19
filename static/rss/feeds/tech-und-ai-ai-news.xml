@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 18 Oct 2026 09:43:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 05:01:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>So besiegten vier Gemini-Agenten »Minecraft« nach 605 Toden</title>
+      <link>https://www.all-ai.de/news/beitrage2026/minecraft-ki-gemini-erfolg-1</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/minecraft-ki-gemini-erfolg-1</guid>
+      <pubDate>Sun, 18 Oct 2026 13:13:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Vier Gemini-4-Argon-Agenten besiegten den Enderdrachen nach 27 Stunden und 14 Minuten. Das Team schrieb 2.783 JavaScript-Programme, verteilte seine Aufgaben selbst und starb 605-mal. Eine berechnete Kreuzung zweier Enderaugen-Flugbahnen führte bis auf 43 Meter an den Portalraum heran. Drecksäulen halfen den Agenten ...]]></description>
+    </item>
     <item>
       <title>Für diese Personen lohnt sich ein Nvidia Spark Laptop</title>
       <link>https://www.all-ai.de/news/news26/nvidia-spark-laptop</link>
@@ -25,15 +34,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Replit macht OpenAI zum bevorzugten Partner für seinen KI-Agenten. CEO Amjad Masad begründet den Wechsel mit Leistung, Kosten und der Zusammenarbeit. Claude bleibt für Nutzer auswählbar und ist weiterhin in Replits Modellmenü vertreten. Die neue Voreinstellung dürfte einen großen Teil der Nutzung zu OpenAI verschieb...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT hat endlich richtige deutsche Stimmen</title>
-      <link>https://www.all-ai.de/news/news26top/chatgt-deutsch-voice</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgt-deutsch-voice</guid>
-      <pubDate>Sat, 17 Oct 2026 14:33:11 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[ChatGPT Voice bekommt mit Miko und Sonna zwei deutsche Stimmen. Die neuen Stimmen starten zusammen mit GPT-Live-1.1 und GPT-Live-1.1 Quip. Der Rollout läuft seit dem 15. Oktober 2026 und kann je nach Region und Konto variieren. ChatGPT Release Notes ChatGPT Voice OpenAI stattet ChatGPT Voice mit zwei deutschen Stimm...]]></description>
     </item>
   </channel>
 </rss>

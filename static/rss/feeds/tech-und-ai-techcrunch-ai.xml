@@ -5,35 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 18 Oct 2026 09:43:06 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 19 Oct 2026 05:01:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Meta removes language that raised scraping and AI training concerns</title>
-      <link>https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178941</guid>
-      <pubDate>Sat, 17 Oct 2026 21:31:32 GMT</pubDate>
+      <title>Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’</title>
+      <link>https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3178960</guid>
+      <pubDate>Sun, 18 Oct 2026 20:37:40 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[A Meta spokesperson insisted that the updated terms did not reflect a change in the way Meta crawls the web.]]></description>
+      <description><![CDATA[Anthropic said that it will commit 5% of its shares to the fund.]]></description>
     </item>
     <item>
-      <title>Anthropic says its workforce has become less junior and is spending more time in meetings</title>
-      <link>https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178934</guid>
-      <pubDate>Sat, 17 Oct 2026 20:21:19 GMT</pubDate>
+      <title>Disney agrees to hire the majority of Character.AI’s workforce</title>
+      <link>https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3178949</guid>
+      <pubDate>Sun, 18 Oct 2026 16:30:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The composition of Anthropic’s workforce and the type of work getting done have changed significantly in the past year.]]></description>
-    </item>
-    <item>
-      <title>Replit makes OpenAI its default over Anthropic, CEO says</title>
-      <link>https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178496</guid>
-      <pubDate>Sat, 17 Oct 2026 18:48:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Over the weekend, Masad clarified that OpenAI would replace Anthropic as its default model provider. Claude will still be available to customers on the platform.]]></description>
+      <description><![CDATA[The filing also says that the “vast majority” of Character.AI employees who were offered jobs at Disney accepted them. However, this is a stalking horse bid, so another company could come forward with a higher offer.]]></description>
     </item>
   </channel>
 </rss>
