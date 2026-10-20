@@ -5,26 +5,116 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 19 Oct 2026 10:56:06 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 05:01:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Anthropic says it’s committing 5% of its shares to a ‘public benefit fund’</title>
-      <link>https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178960</guid>
-      <pubDate>Sun, 18 Oct 2026 20:37:40 GMT</pubDate>
+      <title>Mamdani says feds have abdicated on AI, urges New Yorkers to push back</title>
+      <link>https://techcrunch.com/2026/10/19/mamdani-says-feds-have-abdicated-on-ai-urges-new-yorkers-to-push-back/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179517</guid>
+      <pubDate>Tue, 20 Oct 2026 01:27:03 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic said that it will commit 5% of its shares to the fund.]]></description>
+      <description><![CDATA[Mayor Zohran Mamdani said Monday night that New Yorkers must resist the narrative that an AI takeover is inevitable and demand regulations that protect the public and put power back in their hands.]]></description>
     </item>
     <item>
-      <title>Disney agrees to hire the majority of Character.AI’s workforce</title>
-      <link>https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3178949</guid>
-      <pubDate>Sun, 18 Oct 2026 16:30:00 GMT</pubDate>
+      <title>Nscale and Anthropic are reportedly in talks for yet another $45B compute deal</title>
+      <link>https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179487</guid>
+      <pubDate>Mon, 19 Oct 2026 23:39:38 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The filing also says that the “vast majority” of Character.AI employees who were offered jobs at Disney accepted them. However, this is a stalking horse bid, so another company could come forward with a higher offer.]]></description>
+      <description><![CDATA[If the deal goes through, it would be the latest in a long string of giant compute deals Anthropic has struck over the past year.]]></description>
+    </item>
+    <item>
+      <title>Embedded AI evaluators won’t be an easy solution, Hugging Face’s policy chief says</title>
+      <link>https://techcrunch.com/2026/10/19/embedded-ai-evaluators-wont-be-an-easy-solution-hugging-faces-policy-chief-says/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3178312</guid>
+      <pubDate>Mon, 19 Oct 2026 22:49:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The idea of embedded evaluators — in which supposedly "neutral" third-party observers are placed inside AI organizations — has been popularized over the last several months, as AI labs grapple with a rash of safety incidents that have spurred concerns over the potential harms of their technology.]]></description>
+    </item>
+    <item>
+      <title>Microsoft says AI agents are like insider threats as ‘frontier models can’t be trusted’</title>
+      <link>https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179279</guid>
+      <pubDate>Mon, 19 Oct 2026 22:04:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Microsoft wants enterprises to closely watch the agents that employees use with systems not controlled by AI labs like OpenAI and Anthropic.]]></description>
+    </item>
+    <item>
+      <title>Amazon is taking its biggest shot at Nvidia yet with new TorchNeuron dev tool</title>
+      <link>https://techcrunch.com/2026/10/19/amazon-is-taking-its-biggest-shot-at-nvidia-yet-with-new-torchneuron-dev-tool/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179099</guid>
+      <pubDate>Mon, 19 Oct 2026 20:09:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Amazon wants to break Nvidia’s hold on PyTorch, the free toolkit used to build most AI apps, so that more developers run their apps on alternative chips like its own.]]></description>
+    </item>
+    <item>
+      <title>Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts</title>
+      <link>https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179164</guid>
+      <pubDate>Mon, 19 Oct 2026 19:28:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[OpenCode is an open source AI coding agent that's become a popular alternative to Claude Code and Cursor. But hackers got into part of its online platform and stole some users’ API keys, and the AI tools it turned to for help kept refusing to look at the malicious code.]]></description>
+    </item>
+    <item>
+      <title>Tolan snags $30M for its AI companion that helps users navigate life</title>
+      <link>https://techcrunch.com/2026/10/19/tolan-snags-30m-for-its-ai-companion-that-helps-users-navigate-life/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179141</guid>
+      <pubDate>Mon, 19 Oct 2026 19:00:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[AI companion app Tolan has raised another $30 million after attracting more than 250,000 active users.]]></description>
+    </item>
+    <item>
+      <title>Replika’s founder built the AI assistant she pitched at Disrupt 12 years ago</title>
+      <link>https://techcrunch.com/2026/10/19/replikas-founder-built-the-ai-assistant-she-pitched-at-disrupt-12-years-ago/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179172</guid>
+      <pubDate>Mon, 19 Oct 2026 18:49:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Eugenia Kuyda's newest startup Wabi is positioned to take advantage of an idea she had more than a decade ago. Wabi offers a personal AI assistant with a twist, free and downloadable to anyone today.]]></description>
+    </item>
+    <item>
+      <title>Tenstorrent hits $6.2B valuation to scale open-weight AI chips</title>
+      <link>https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179171</guid>
+      <pubDate>Mon, 19 Oct 2026 18:37:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[After drawing acquisition interest earlier this year, the Nvidia challenger raised $1.5 billion to remain independent.]]></description>
+    </item>
+    <item>
+      <title>People are using AI to make their smart TVs dumb again</title>
+      <link>https://techcrunch.com/2026/10/19/people-are-using-ai-to-make-their-smart-tvs-dumb-again/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3179051</guid>
+      <pubDate>Mon, 19 Oct 2026 16:13:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Fed up with ads, tracking, and sluggish interfaces, some smart TV owners are turning to AI agents to strip away bloatware and take back control of their TVs.]]></description>
+    </item>
+    <item>
+      <title>Nvidia launches new open models to run agents in the enterprise and on PCs</title>
+      <link>https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3177977</guid>
+      <pubDate>Mon, 19 Oct 2026 15:37:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Nvidia is leaning hard into the trend of enterprise companies wanting to run their own open models in their own data centers and also trying to make on-device, private AI agents a thing.]]></description>
+    </item>
+    <item>
+      <title>Laplace Intelligence red-teams robots and self-driving cars before they hit the real world</title>
+      <link>https://techcrunch.com/2026/10/19/laplace-intelligence-red-teams-robots-and-self-driving-cars-before-they-hit-the-real-world/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3166117</guid>
+      <pubDate>Mon, 19 Oct 2026 12:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[University of Michigan spinout Laplace Intelligence uses AI agents and interactive simulation to stress-test robots and self-driving vehicles before deployment. The profitable startup is competing in Startup Battlefield at TechCrunch Disrupt, October 13-15 in San Francisco.]]></description>
     </item>
   </channel>
 </rss>

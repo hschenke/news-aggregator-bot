@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 19 Oct 2026 10:56:06 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 05:01:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VtM: Bloodlines - A Remake is coming?</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60397</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60397</guid>
+      <pubDate>Mon, 19 Oct 2026 09:59:34 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[PC Gamer shared some rumors about a Vampire - The Masquerade: Bloodlines remake.]]></description>
+    </item>
+    <item>
+      <title>Romancing SaGa 3: Destinies United - Preview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60396</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60396</guid>
+      <pubDate>Mon, 19 Oct 2026 09:53:13 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGFan checked out Romancing SaGa 3: Destinies United: Romancing SaGa 3: Destinies United Hands-On Preview - SaGa Fans Rejoice!]]></description>
+    </item>
     <item>
       <title>STAR WARS Zero Company - Patch 1.2</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60395</link>
@@ -34,24 +52,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[RPGamer sums up last week's RPG news.]]></description>
-    </item>
-    <item>
-      <title>Tales of Eternia Remastered - Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60392</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60392</guid>
-      <pubDate>Sun, 18 Oct 2026 18:38:13 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPGFan reviewed Tales of Eternia Remastered: Tales of Eternia Remastered Tales of Eternia Remastered is only my second foray into the luminous Tales series. Originally released on PlayStation in Japan as Tales of Eternia and in North America as Tales of Destiny II, Tales of Eternia later received a limited, European...]]></description>
-    </item>
-    <item>
-      <title>Trails in the Sky 2nd Chapter - Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60391</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60391</guid>
-      <pubDate>Sun, 18 Oct 2026 18:37:50 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[RPGamer reviewed Trails in the Sky 2nd Chapter: Trails in the Sky 2nd Chapter Review Pleasantly Full of Character There are few RPGs out there with the level of precision and care in their worldbuilding as Nihon Falcom’s Trails franchise. Adding modern mechanics into the first titles in their sprawling series is a s...]]></description>
     </item>
   </channel>
 </rss>
