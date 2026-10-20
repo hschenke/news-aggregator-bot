@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 20 Oct 2026 05:01:16 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 10:10:33 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -175,15 +175,6 @@
       <link>https://news.ycombinator.com/item?id=50151036</link>
       <guid isPermaLink="false">https://news.ycombinator.com/item?id=50151036</guid>
       <pubDate>Mon, 19 Oct 2026 11:24:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>I built a drone with only one motor [video]</title>
-      <link>https://www.youtube.com/watch?v=Ndftcft6XhU</link>
-      <guid isPermaLink="false">https://www.youtube.com/watch?v=Ndftcft6XhU</guid>
-      <pubDate>Mon, 19 Oct 2026 09:05:07 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

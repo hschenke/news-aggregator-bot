@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=Might+%26+Magic+Alert</link>
     <description>RSS-Feed für die Quelle 'Might &amp; Magic Alert' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 20 Oct 2026 05:01:16 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 10:10:33 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-might-und-magic-alert.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BallonBob77 - YouTube</title>
+      <link>https://www.youtube.com/@MARTEX77/streams</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14322386724270386959</guid>
+      <pubDate>Mon, 19 Oct 2026 21:27:00 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[HEROS OF MIGHT & MAGIC 3 HD Edition:Szenario Mandat des Himmels. 496 views. Streamed 6 days ago · 1:29:29 · Fortnitemares LIVE. 36 views. Streamed 7 ...]]></description>
+    </item>
     <item>
       <title>REDMAGIC Announces 5K Mini-LED Monitor with 330 Hz - Igors Lab</title>
       <link>https://www.igorslab.de/en/redmagic-5k-mini-led-5184-dimming-zones-330hz-dual-mode/</link>
@@ -43,15 +52,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[r/MightAndMagic vor 8 Std. u/-RedWitch.]]></description>
-    </item>
-    <item>
-      <title>Heroes of Might and Magic 3 Complete (Collector's Edition) — HoMM III - OpenGL Wrapper / Patches</title>
-      <link>https://de.vgtimes.com/games/heroes-of-might-and-magic-iii-complete-collectors-edition/files/66967-homm-iii-obgortka-opengl.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13996983456218284631</guid>
-      <pubDate>Mon, 19 Oct 2026 07:59:27 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Lade HoMM III - OpenGL Wrapper für Heroes of Might and Magic 3 Complete (Collector's Edition) herunter. Dieser Patch sorgt für eine flüssige ...]]></description>
     </item>
   </channel>
 </rss>
