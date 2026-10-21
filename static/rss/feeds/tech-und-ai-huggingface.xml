@@ -5,9 +5,35 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 20 Oct 2026 10:10:33 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 05:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>NVIDIA Cosmos3-H-Dreams: Bringing Clinical Surgery to Life Through Generative Simulation</title>
+      <link>https://huggingface.co/blog/nvidia/cosmos3-h-dreams</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/cosmos3-h-dreams</guid>
+      <pubDate>Tue, 20 Oct 2026 18:17:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>FairStress: A deeper evaluation of fairness in LLM decision-making</title>
+      <link>https://huggingface.co/blog/allenai/fairstress</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/allenai/fairstress</guid>
+      <pubDate>Tue, 20 Oct 2026 16:09:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>ALTK-Evolve: How learned memory tops the τ²-bench leaderboard on customer service tasks without a frontier model</title>
+      <link>https://huggingface.co/blog/ibm-research/altk-evolve-bc</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/ibm-research/altk-evolve-bc</guid>
+      <pubDate>Tue, 20 Oct 2026 15:19:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
   </channel>
 </rss>
