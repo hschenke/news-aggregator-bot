@@ -5,9 +5,206 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 21 Oct 2026 05:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 10:18:23 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Eight Bits of Trust; eMudhra's CA keys cracked in milliseconds</title>
+      <link>https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/</link>
+      <guid isPermaLink="false">https://scotthelme.co.uk/eight-bits-of-trust-emudhras-ca-keys-cracked-in-milliseconds/</guid>
+      <pubDate>Wed, 21 Oct 2026 09:08:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The 1.5°C goal of the Paris Agreement is no longer viable</title>
+      <link>https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/</link>
+      <guid isPermaLink="false">https://unric.org/en/unep-emissions-gap-report-2026-1-5-degree-overshoot/</guid>
+      <pubDate>Wed, 21 Oct 2026 09:07:49 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Pillowfort Is Closing</title>
+      <link>https://www.pillowfort.social/posts/8413273</link>
+      <guid isPermaLink="false">https://www.pillowfort.social/posts/8413273</guid>
+      <pubDate>Wed, 21 Oct 2026 05:05:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Battlezone Online: BZFlag in the Browser</title>
+      <link>https://github.com/timriker/bzo</link>
+      <guid isPermaLink="false">https://github.com/timriker/bzo</guid>
+      <pubDate>Wed, 21 Oct 2026 05:05:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Setting Up SSH Keys on macOS with Touch ID</title>
+      <link>https://nmattia.com/posts/2026-10-19-setting-up-ssh-keys-touch-id/</link>
+      <guid isPermaLink="false">https://nmattia.com/posts/2026-10-19-setting-up-ssh-keys-touch-id/</guid>
+      <pubDate>Wed, 21 Oct 2026 03:51:25 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Using Claude to reduce the attack surface of code</title>
+      <link>https://www.anthropic.com/research/attack-surface-reduction</link>
+      <guid isPermaLink="false">https://www.anthropic.com/research/attack-surface-reduction</guid>
+      <pubDate>Wed, 21 Oct 2026 03:36:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>C# now beats Rust on WASM size</title>
+      <link>https://github.com/zion-sati/NetWasm</link>
+      <guid isPermaLink="false">https://github.com/zion-sati/NetWasm</guid>
+      <pubDate>Wed, 21 Oct 2026 02:53:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>In Hilbert space, all things are quantumly possible</title>
+      <link>https://www.quantamagazine.org/in-hilbert-space-all-things-are-quantumly-possible-20260826/</link>
+      <guid isPermaLink="false">https://www.quantamagazine.org/in-hilbert-space-all-things-are-quantumly-possible-20260826/</guid>
+      <pubDate>Wed, 21 Oct 2026 02:04:15 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The Future of CSS</title>
+      <link>https://www.joshwcomeau.com/css/interop-2027/</link>
+      <guid isPermaLink="false">https://www.joshwcomeau.com/css/interop-2027/</guid>
+      <pubDate>Wed, 21 Oct 2026 01:47:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Good type against all odds</title>
+      <link>https://unsung.aresluna.org/good-type-against-all-odds/</link>
+      <guid isPermaLink="false">https://unsung.aresluna.org/good-type-against-all-odds/</guid>
+      <pubDate>Wed, 21 Oct 2026 01:45:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Muse exposes users' personal and business secrets when they share conversations</title>
+      <link>https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/</link>
+      <guid isPermaLink="false">https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/</guid>
+      <pubDate>Wed, 21 Oct 2026 00:45:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The Other Epidemic: Trying to get off benzodiazepines</title>
+      <link>https://www.thebeliever.net/the-other-epidemic/</link>
+      <guid isPermaLink="false">https://www.thebeliever.net/the-other-epidemic/</guid>
+      <pubDate>Tue, 20 Oct 2026 23:04:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Feds suspect ransom negotiator ran ShinyHunters extortion site</title>
+      <link>https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/</link>
+      <guid isPermaLink="false">https://krebsonsecurity.com/2026/10/feds-suspect-ransom-negotiator-ran-shinyhunters-extortion-site/</guid>
+      <pubDate>Tue, 20 Oct 2026 22:21:05 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Upcoming critical PHP security release (CVE-2026-109618 / -109619)</title>
+      <link>https://news-web.php.net/php.announce/509</link>
+      <guid isPermaLink="false">https://news-web.php.net/php.announce/509</guid>
+      <pubDate>Tue, 20 Oct 2026 20:15:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: SimCity, but with Permits</title>
+      <link>https://permit.petercai.com/</link>
+      <guid isPermaLink="false">https://permit.petercai.com/</guid>
+      <pubDate>Tue, 20 Oct 2026 18:29:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>What shall I teach my son?</title>
+      <link>https://stevekrouse.com/ends</link>
+      <guid isPermaLink="false">https://stevekrouse.com/ends</guid>
+      <pubDate>Tue, 20 Oct 2026 17:25:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Google open-sources TorchTPU, a native PyTorch back end for TPUs</title>
+      <link>https://github.com/google-pytorch/torch_tpu</link>
+      <guid isPermaLink="false">https://github.com/google-pytorch/torch_tpu</guid>
+      <pubDate>Tue, 20 Oct 2026 16:40:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Voxtral 3</title>
+      <link>https://mistral.ai/news/voxtral-3/</link>
+      <guid isPermaLink="false">https://mistral.ai/news/voxtral-3/</guid>
+      <pubDate>Tue, 20 Oct 2026 16:02:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Ofcom concedes defeat in 4chan case</title>
+      <link>https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/</link>
+      <guid isPermaLink="false">https://prestonbyrne.com/2026/10/20/ofcom-concedes-defeat/</guid>
+      <pubDate>Tue, 20 Oct 2026 14:30:31 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>eMudhra intermediate CA compromise</title>
+      <link>https://emudhra.we-have-a-problem.com/</link>
+      <guid isPermaLink="false">https://emudhra.we-have-a-problem.com/</guid>
+      <pubDate>Tue, 20 Oct 2026 13:58:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Four Years with Decker</title>
+      <link>https://beyondloom.com/blog/fouryearsdecker.html</link>
+      <guid isPermaLink="false">https://beyondloom.com/blog/fouryearsdecker.html</guid>
+      <pubDate>Tue, 20 Oct 2026 12:18:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Apple broke an essential presentation feature of iPads</title>
+      <link>https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/</link>
+      <guid isPermaLink="false">https://teddysvoronos.com/2026-10-19-apple-broke-an-essential-presentation-feature-of-ipads/</guid>
+      <pubDate>Tue, 20 Oct 2026 12:17:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>
