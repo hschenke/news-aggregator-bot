@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 21 Oct 2026 10:18:23 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 05:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Enshrouded - Preview @ MG</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60409</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60409</guid>
+      <pubDate>Wed, 21 Oct 2026 13:01:37 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Mortismal Gaming checked out Enshrouded: Check Out: Enshrouded (1.0 Release)]]></description>
+    </item>
     <item>
       <title>Enshrouded - Impressions @ COG</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60408</link>
@@ -61,24 +70,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[RPGamer reviewed Final Fantasy Resonance: Final Fantasy Resonance Review A Final Fantasy for RPGamers I’ve always been a fan of what Square Enix has done with HD-2D, and its games have only gotten better with each release. Final Fantasy Resonance is the first Final Fantasy to receive the HD-2D treatment, taking the ...]]></description>
-    </item>
-    <item>
-      <title>Final Fantasy Resonance - Review @ Noisy Pixel</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60402</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60402</guid>
-      <pubDate>Tue, 20 Oct 2026 15:32:42 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Noisy Pixel reviewed Final Fantasy Resonance: Final Fantasy Resonance Review - What If Classic Final Fantasy Kept Evolving?]]></description>
-    </item>
-    <item>
-      <title>Steam - Next Fest Demos</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60401</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60401</guid>
-      <pubDate>Tue, 20 Oct 2026 10:42:43 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The RPG Codex has listed a few RPG demos taking part in the Steam Next Fest: A Knight's Fury: The Vaults of Venom ATOM RPG 2 Blood Sword Code of the Savage Contract Terminated Delving The Depths Little Frontier Pool of Radiance: Ruins ...]]></description>
     </item>
   </channel>
 </rss>

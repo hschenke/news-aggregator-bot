@@ -5,62 +5,89 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 21 Oct 2026 10:18:23 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 05:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Mistral startet Voxtral 3 für Sprachagenten in Echtzeit</title>
-      <link>https://www.all-ai.de/news/news26/mistral-sprachagenten-echtzeit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/mistral-sprachagenten-echtzeit</guid>
-      <pubDate>Tue, 20 Oct 2026 18:15:48 GMT</pubDate>
+      <title>Claude Duet: Anthropics Gegenentwurf zu OpenAI dot und Grok Bot</title>
+      <link>https://www.all-ai.de/news/news26top/claude-duet-openai-dot-grok-bot</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-duet-openai-dot-grok-bot</guid>
+      <pubDate>Wed, 21 Oct 2026 19:45:20 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Voxtral 3 verbindet Transkription, Reasoning, Tool-Aufrufe und Sprachausgabe in einem SDK. Die Transkriptionsmodelle unterstützen mehr als 50 Sprachen, die Sprachausgabe mehr als 35 Sprachen und über 50 Dialekte. Sprachagenten können während eines Telefonats Daten abrufen und Aufgaben in verbundenen Diensten erledig...]]></description>
+      <description><![CDATA[Claude Duet tritt als Anthropics Gegenentwurf zu OpenAI dot und Grok Bot an. Alle drei Agenten arbeiten auf einem eigenen virtuellen Computer und führen Aufgaben unabhängig im Hintergrund fort. Claude Duet konzentriert sich auf Morgenbriefings, verbundene Geschäftsanwendungen und selbstständige Priorisierung. OpenAI...]]></description>
     </item>
     <item>
-      <title>Nvidia und Bundesregierung starten Bündnis für deutsche Industrie-KI</title>
-      <link>https://www.all-ai.de/news/news26/nvidia-deutschland-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-deutschland-start</guid>
-      <pubDate>Tue, 20 Oct 2026 17:22:25 GMT</pubDate>
+      <title>Anthropic nennt fünf Ziele, für die das Unternehmen stehen will</title>
+      <link>https://www.all-ai.de/news/news26/anthropic-leitbild</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-leitbild</guid>
+      <pubDate>Wed, 21 Oct 2026 19:25:35 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Die Bundesregierung und NVIDIA wollen gemeinsam KI-Modelle für Robotik, Fertigung und autonomes Fahren entwickeln. Der Mittelstand soll sein Produktionswissen und seine Daten für industrielle KI nutzen. NVIDIA plant Investitionen in Agile Robots, Avelios Medical, Mirelo und Reflex Aerospace. Siemens erprobt in Erlan...]]></description>
+      <description><![CDATA[Anthropic legt fünf Leitziele fest, an denen sich das KI-Unternehmen künftig messen lassen will. Fortgeschrittene Modelle sollen technisch sicher sein und verbindlichen, gesetzlich abgesicherten Regeln folgen. KI soll Demokratien stärken und den entstehenden Wohlstand möglichst vielen Menschen zugänglich machen. For...]]></description>
     </item>
     <item>
-      <title>ElevenLabs startet eigene Echtzeit-Modelle für Sprachagenten</title>
-      <link>https://www.all-ai.de/news/news26/elevenlabs-sprachagenten-modelle</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-sprachagenten-modelle</guid>
-      <pubDate>Tue, 20 Oct 2026 17:10:00 GMT</pubDate>
+      <title>GPT entdeckt kritische PHP-Lücke: Angriffe laufen bereits</title>
+      <link>https://www.all-ai.de/news/news26/gpt-php-angriffe</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gpt-php-angriffe</guid>
+      <pubDate>Wed, 21 Oct 2026 16:57:15 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Eleven Realtime bündelt alle zentralen Komponenten eines Sprachagenten in einem Modell. V1 Mini zielt auf günstige, natürliche Gespräche, v1 Max auf komplexe Abläufe und Tool-Nutzung. V1 Max erreicht bei Big Bench Audio 99 Prozent und reagiert im Mittel nach 570 Millisekunden. Die WebSocket-API ist mit OpenAIs Realt...]]></description>
+      <description><![CDATA[Zwei kritische Fehler im PHP-Kern erlauben Angriffe ohne Anmeldung. GPT-5.6 Sol half Calif bei der Entdeckung einer der Lücken. Cloudflare beobachtete nach einem Leak bereits veränderte Angriffsversuche. Betreiber sollten sofort auf PHP 8.5.12, 8.4.27, 8.3.36 oder 8.2.35 wechseln. OpenAI: Patch the Planet PHP: Secur...]]></description>
     </item>
     <item>
-      <title>Anthropic lässt Claude an einem Skorpion-Gegengift forschen</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-claude-gift</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-claude-gift</guid>
-      <pubDate>Tue, 20 Oct 2026 14:31:28 GMT</pubDate>
+      <title>OpenAI bringt seine Modelle direkt in Google Cloud</title>
+      <link>https://www.all-ai.de/news/news26/openai-google-cloud-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-google-cloud-start</guid>
+      <pubDate>Wed, 21 Oct 2026 13:05:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude erzeugte in 64 Stunden 318.484 Proteinentwürfe gegen fünf Skorpion-Neurotoxine. Von 211 getesteten Kandidaten banden 17 an vier einzelne Gifte. Die Binder wurden noch nicht an Zellen oder Tieren als Gegengift geprüft. Anthropic veröffentlicht alle Entwürfe und Messdaten für weitere Forschung. How Claude desig...]]></description>
+      <description><![CDATA[OpenAI-Modelle und Codex kommen in Googles Model Garden. Unternehmen können den Kauf über den Google Cloud Marketplace abwickeln und bestehende GCP-Zusagen nutzen. Die allgemeine Verfügbarkeit ist für die kommenden Wochen geplant. OpenAI: OpenAI models are coming to Google Cloud Google Cloud: Google Cloud brings Ope...]]></description>
     </item>
     <item>
-      <title>Neue Leaks: Fable 5.5, GPT Terra, GPT Images 3</title>
-      <link>https://www.all-ai.de/news/news26/openai-anthropic-fable-gpt-images</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-fable-gpt-images</guid>
-      <pubDate>Tue, 20 Oct 2026 11:53:09 GMT</pubDate>
+      <title>Neuer »Unitree H2-X« tritt eine Autotür ein und hebt einen Wagen an - Video</title>
+      <link>https://www.all-ai.de/news/news26top/unitree-h2-x-auto-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/unitree-h2-x-auto-start</guid>
+      <pubDate>Wed, 21 Oct 2026 12:26:50 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Fable 5.5 wird für den 20. oder 22. Oktober erwartet. GPT-6.1 Terra taucht in 18 Evaluationskonfigurationen von Microsoft auf. Terra soll GPT-6.1 Sol übertreffen und dabei weniger kosten. Drei Aurora-Modelle in der Arena deuten auf GPT Image 3 hin. LuminaBench: GPT-6.1 Terra in Microsoft-Pull-Request Microsof...]]></description>
+      <description><![CDATA[Unitree zeigt den H2-X mit Kung-Fu-Moves, Saltos und Sprüngen von einer vier Meter hohen Plattform. Der Roboter beschädigt im Video eine Autotür und hebt in einer Rettungsszene die Front eines Wagens an. Die acht Stunden Laufzeit gelten für stehenden Betrieb, nicht für dauerhafte Bewegung. Vollständige technische Da...]]></description>
     </item>
     <item>
-      <title>DeepSeek macht sein Framework »DeepInfer « öffentlich</title>
-      <link>https://www.all-ai.de/news/news26/deepseek-framework-open-source</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/deepseek-framework-open-source</guid>
-      <pubDate>Tue, 20 Oct 2026 10:20:00 GMT</pubDate>
+      <title>Elon Musk: Geld wird bedeutungslos, KI übernimmt die Kontrolle</title>
+      <link>https://www.all-ai.de/news/news26top/elon-musk-geldlos</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/elon-musk-geldlos</guid>
+      <pubDate>Wed, 21 Oct 2026 12:07:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[DeepSeek veröffentlicht sein Inferenz-Framework DeepInfer unter Apache 2.0. Die Software treibt DeepSeek-V4.1-Flash an und unterstützt Nvidia SM100 sowie Huawei Ascend 950. Für einen vollständigen Inferenzdienst müssen Betreiber weitere Infrastruktur ergänzen. deepseek-recipe bildet die Verarbeitung der offiziellen ...]]></description>
+      <description><![CDATA[Elon Musk erwartet, dass herkömmliches Geld in einer von KI und Robotern geprägten Wirtschaft seine Bedeutung verliert. Eine künftige Währung könnte auf physikalischen Größen wie Leistung, Masse und Energie beruhen. Arbeit wäre nicht mehr nötig, weil Maschinen alle Aufgaben besser erledigen könnten. Menschen würden ...]]></description>
+    </item>
+    <item>
+      <title>Meta stoppt Muse-Freigaben nach Fund von 6.800 Chats</title>
+      <link>https://www.all-ai.de/news/news26top/muse-chats-frei-fehler</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/muse-chats-frei-fehler</guid>
+      <pubDate>Wed, 21 Oct 2026 10:45:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claroc fand mehr als 6.800 geteilte Meta-Muse-Unterhaltungen über eine einzige Suche in passiven DNS-Daten. Unter den frei erreichbaren Seiten lagen interne Firmenberichte, Finanzdaten und Mitarbeiterinformationen. Der Gesprächstitel und die zufällige Zeichenfolge steckten gemeinsam in einer öffentlich erfassten Sub...]]></description>
+    </item>
+    <item>
+      <title>Nvidia steckt die komplette KI-Fabrik in einen Container</title>
+      <link>https://www.all-ai.de/news/news26/nvidia-container-ki-fabrik</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-container-ki-fabrik</guid>
+      <pubDate>Wed, 21 Oct 2026 10:30:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nvidia bündelt eine komplette Vera-Rubin-KI-Fabrik in vorgefertigten Containern. Am vorbereiteten Standort verkürzt sich die Inbetriebnahme von sechs Monaten auf bis zu 14 Tage. Strom, Kühlung, Netzwerk und Verkabelung werden bereits in der Fabrik integriert und geprüft. 17 Partner wollen die modularen Rechenzentren...]]></description>
+    </item>
+    <item>
+      <title>OpenAI kauft Orchestra Bio und greift nach der Medikamentenentwicklung</title>
+      <link>https://www.all-ai.de/news/news26/openai-orchestra-bio-kauf</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-orchestra-bio-kauf</guid>
+      <pubDate>Wed, 21 Oct 2026 10:23:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI hat die Agenten-Plattform Orchestra Bio übernommen. Das Startup koordiniert Pläne, Budgets, Studien, Risiken und Abhängigkeiten in der Medikamentenentwicklung. Eine Unternehmensbewertung und der Kaufpreis wurden nicht veröffentlicht. Team und Technik werden in Rosalind integriert, um Forschung und operative A...]]></description>
     </item>
   </channel>
 </rss>
