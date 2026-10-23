@@ -5,50 +5,32 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 22 Oct 2026 10:19:18 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 05:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox</title>
+      <link>https://huggingface.co/blog/microsoft/thinkingbox-training</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/microsoft/thinkingbox-training</guid>
+      <pubDate>Thu, 22 Oct 2026 22:24:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>OlmoEarth v1.3: State-of-the-art embeddings for the whole planet</title>
+      <link>https://huggingface.co/blog/allenai/olmoearth-v1-3</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/allenai/olmoearth-v1-3</guid>
+      <pubDate>Thu, 22 Oct 2026 16:11:31 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
     <item>
       <title>Ensemble forecasting with IBM Granite time-series models</title>
       <link>https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1</link>
       <guid isPermaLink="false">https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1</guid>
       <pubDate>Thu, 22 Oct 2026 07:51:31 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>NVIDIA Kumo Relational Outperforms Supervised Machine Learning on Relational Data, No Training Required</title>
-      <link>https://huggingface.co/blog/nvidia/kumo-relational</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/kumo-relational</guid>
-      <pubDate>Wed, 21 Oct 2026 18:26:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications</title>
-      <link>https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization</guid>
-      <pubDate>Wed, 21 Oct 2026 17:35:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.</title>
-      <link>https://huggingface.co/blog/amazon/profiling-torchneuron-part-1</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/amazon/profiling-torchneuron-part-1</guid>
-      <pubDate>Wed, 21 Oct 2026 16:04:43 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Granite Speech 5.0: Transcribe, Translate, and Attribute more Accurately and Faster</title>
-      <link>https://huggingface.co/blog/ibm-granite/granite-speech-5</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/ibm-granite/granite-speech-5</guid>
-      <pubDate>Wed, 21 Oct 2026 14:58:18 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
