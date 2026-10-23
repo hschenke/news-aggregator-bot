@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 10:13:26 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HeyGen Video 1: Anstelle von Avataren jetzt auch ganze KI-Videos</title>
+      <link>https://www.all-ai.de/news/news26/heygen-video-1-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/heygen-video-1-start</guid>
+      <pubDate>Fri, 23 Oct 2026 07:25:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[HeyGen Video 1 erzeugt fünf bis 15 Sekunden lange Clips mit Bild und Ton in einem Durchgang. Das Modell verarbeitet Text, ein Startbild oder bis zu zwölf Referenzen und liefert Auflösungen bis 2K. Bei Artificial Analysis steigt HeyGen Video 1 mit 1.160 Elo auf Platz 3 ein. Der Zugang erfolgt über das Creative Studio...]]></description>
+    </item>
+    <item>
+      <title>Kling 4.0 verdoppelt die Videolänge auf 30 Sekunden</title>
+      <link>https://www.all-ai.de/news/news26/kling-4-0-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/kling-4-0-start</guid>
+      <pubDate>Fri, 23 Oct 2026 07:06:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Kling 4.0 erzeugt nativ Videos mit einer Länge von bis zu 30 Sekunden. Bis zu zehn Keyframes steuern wichtige Momente und Szenenwechsel. Omni Reference kombiniert bis zu 15 Bilder, Videos, Figuren und Stimmen. 4K und Stereo sind verfügbar, 10-Bit-HDR und Verlängerungen bis zwei Minuten folgen später. Kuaishou: Kling...]]></description>
+    </item>
+    <item>
+      <title>Sundar Pichai: Gemini wird persönlicher 24/7-Agent</title>
+      <link>https://www.all-ai.de/news/news26/sundar-pichai-gemini-4-interview</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/sundar-pichai-gemini-4-interview</guid>
+      <pubDate>Fri, 23 Oct 2026 06:48:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google will Gemini als persönlichen Agenten rund um die Uhr in der Cloud betreiben. Die Agenten sollen Aufgaben über die Suche, Gmail und weitere Google-Dienste hinweg fortsetzen. Gemini 4 Argon bearbeitet intern bereits Aufgaben in Codebasen mit Millionen Zeilen. In den ersten 72 Stunden verarbeitete Argon fast 25 ...]]></description>
+    </item>
     <item>
       <title>OpenAI stellt »Decisions API« für alle bereit</title>
       <link>https://www.all-ai.de/news/news26/openai-decisions-api-start</link>

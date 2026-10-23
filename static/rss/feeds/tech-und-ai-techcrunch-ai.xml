@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 05:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 23 Oct 2026 10:13:26 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -45,15 +45,6 @@
       <description><![CDATA[The new feature allows agents to log into a customer's personal accounts while still protecting the private credentials that secure those accounts.]]></description>
     </item>
     <item>
-      <title>Canva releases its first image generation model</title>
-      <link>https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180617</guid>
-      <pubDate>Thu, 22 Oct 2026 19:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Canva is making its new image model available to all users, promising better, more customizable performance at lower costs.]]></description>
-    </item>
-    <item>
       <title>OpenAI makes its Jev competitor widely available as decision model competition heats up</title>
       <link>https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3180667</guid>
@@ -61,6 +52,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[OpenAI is launching its decision model to the world. Can it compete with the original Jev?]]></description>
+    </item>
+    <item>
+      <title>Canva releases its first image generation model</title>
+      <link>https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3180617</guid>
+      <pubDate>Thu, 22 Oct 2026 19:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Canva is making its new image model available to all users, promising better, more customizable performance at lower costs.]]></description>
     </item>
     <item>
       <title>Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’</title>
