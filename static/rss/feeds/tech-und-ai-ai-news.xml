@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 10:13:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 05:01:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kimi K3.1 Pro: Das weltweit beste KI-Modell kommt aus China</title>
+      <link>https://www.all-ai.de/news/news26top/kimi-k3-1-pro-ki-modell-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kimi-k3-1-pro-ki-modell-start</guid>
+      <pubDate>Fri, 23 Oct 2026 17:43:03 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Kimi K3.1 Pro liegt in mehreren aktuellen Benchmarks vor GPT-6 Astra und Claude Opus 5.5. Das Open-Weights-Modell verarbeitet bis zu eine Million Token und ist auf lange Agentenaufgaben ausgelegt. Die API kostet 2 Dollar pro Million Eingabetoken und 10 Dollar pro Million Ausgabetoken. Die vollständigen Modellgewicht...]]></description>
+    </item>
+    <item>
+      <title>Warhound sammelt 200 Millionen Dollar für genetische Kriegshunde</title>
+      <link>https://www.all-ai.de/news/news26top/warhound-genitik-hunde</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/warhound-genitik-hunde</guid>
+      <pubDate>Fri, 23 Oct 2026 17:20:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Warhound startet mit 200 Millionen Dollar Kapital und einer Bewertung von 1,2 Milliarden Dollar. Das Unternehmen will leistungsfähige Einsatzhunde klonen und ihre Gene gezielt bearbeiten. Anduril liefert Schutzkleidung, Sensoren und die Anbindung an Eagle Eye. Erste Welpen sind für 2027 geplant, Kunden und Preise gi...]]></description>
+    </item>
     <item>
       <title>HeyGen Video 1: Anstelle von Avataren jetzt auch ganze KI-Videos</title>
       <link>https://www.all-ai.de/news/news26/heygen-video-1-start</link>
@@ -34,69 +52,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Google will Gemini als persönlichen Agenten rund um die Uhr in der Cloud betreiben. Die Agenten sollen Aufgaben über die Suche, Gmail und weitere Google-Dienste hinweg fortsetzen. Gemini 4 Argon bearbeitet intern bereits Aufgaben in Codebasen mit Millionen Zeilen. In den ersten 72 Stunden verarbeitete Argon fast 25 ...]]></description>
-    </item>
-    <item>
-      <title>OpenAI stellt »Decisions API« für alle bereit</title>
-      <link>https://www.all-ai.de/news/news26/openai-decisions-api-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-decisions-api-start</guid>
-      <pubDate>Thu, 22 Oct 2026 20:25:39 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI stellt die Decisions API allgemein bereit. Sie beantwortet fest umrissene Fragen mit einer Wahrscheinlichkeit, Auswahl oder Bewertung. Pro Anfrage sind bis zu 400 Fragen möglich, GPT-Live lässt sich direkt anbinden. Nicht zwischengespeicherte Eingaben kosten 0,10 Dollar pro Million Tokens. OpenAI: Build more ...]]></description>
-    </item>
-    <item>
-      <title>Canva steigt mit erstem Bildmodell in die Spitzenklasse ein</title>
-      <link>https://www.all-ai.de/news/news26top/canva-craft-ki-image-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/canva-craft-ki-image-start</guid>
-      <pubDate>Thu, 22 Oct 2026 19:54:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Canva steigt mit seinem ersten eigenen Bildmodell im Anbieter-Ranking direkt hinter OpenAI auf Rang zwei ein. Craft belegt unter den einzelnen Bildmodellen Rang vier, hinter drei Modellen von OpenAI. Bei Porträts sowie Landschaften erreicht Craft jeweils Platz eins und bei abstrakten Motiven Platz zwei. Das zweistuf...]]></description>
-    </item>
-    <item>
-      <title>Ideogram Vector 1.0: Wandelt Bilder in editierbare SVGs um</title>
-      <link>https://www.all-ai.de/news/news26top/ideogram-vector-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/ideogram-vector-1</guid>
-      <pubDate>Thu, 22 Oct 2026 16:58:55 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ideogram Vector 1.0 erzeugt editierbare SVG-Dateien aus Textvorgaben. Vorhandene Bilder lassen sich für 0,10 Dollar in Vektorgrafiken umwandeln. SVGs bleiben in jeder Größe scharf und erlauben Änderungen an einzelnen Formen und Farben. Das Modell ist in Ideogram, über die API und auf Partnerplattformen verfügbar. Id...]]></description>
-    </item>
-    <item>
-      <title>Google DeepMind zeigt erstmals den wahren Zustand der Wälder</title>
-      <link>https://www.all-ai.de/news/news26/google-deepmind-waldqualitaet</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-deepmind-waldqualitaet</guid>
-      <pubDate>Thu, 22 Oct 2026 16:38:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google DeepMind veröffentlicht mit Partnern eine weltweite Karte der Waldtypen in 10-Meter-Auflösung. ForTy unterscheidet sechs Klassen und erreicht dabei eine Genauigkeit von 90 Prozent. Eine vorläufige Zeitreihe zeigt von 2017 bis 2025, wodurch verschwundene Wälder ersetzt wurden. Die offenen Daten sollen Forschun...]]></description>
-    </item>
-    <item>
-      <title>US Banken warnen: KI-Agenten greifen auf Bankkonten zu</title>
-      <link>https://www.all-ai.de/news/news26/us-banken-ki-agenten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/us-banken-ki-agenten</guid>
-      <pubDate>Thu, 22 Oct 2026 14:37:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Große US-Banken haben unautorisierte KI-Agenten in Kundenkonten entdeckt. Einige Agenten führten offenbar Aktionen ohne erkennbaren Auftrag des Kontoinhabers aus. Morgan Stanley, JPMorgan, Bank of America und Citi sperren oder beschränken externe KI-Agenten. Als Mittelweg prüfen Banken rein lesende Zugänge ohne Erla...]]></description>
-    </item>
-    <item>
-      <title>NEURA Robotics und die TUM eröffnen RoboGym in München</title>
-      <link>https://www.all-ai.de/news/news26top/neura-robotics-tum-robogym</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/neura-robotics-tum-robogym</guid>
-      <pubDate>Thu, 22 Oct 2026 14:10:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Neura Kurzfassung ▾ Quellen ▾ NEURA Robotics und die TUM eröffnen am Flughafen München ein 2.300 Quadratmeter großes RoboGym. Roboter lernen dort mit realen Daten, menschlichen Vorführungen und Simulationen konkrete Arbeitsabläufe. Der neue humanoide 4NE1 Gen 4 ist 20 Prozent leichter und arbeitet mit dem Physical-A...]]></description>
-    </item>
-    <item>
-      <title>Nvidia Cosmos baut die Fabrik für physische KI aus</title>
-      <link>https://www.all-ai.de/news/news26/nvidia-cosmos-ausbau</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-cosmos-ausbau</guid>
-      <pubDate>Thu, 22 Oct 2026 10:45:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Nvidia ergänzt Cosmos um fünf Blueprints für Auswahl, Beschriftung und Erzeugung von Trainingsdaten. Das Cosmos Framework passt nun weitere offene Modelle per Fine-Tuning, Reinforcement Learning, Destillation und Quantisierung an. Neue Cosmos-3-Nano-Varianten testen Fahrzeuge und Roboter in wiederholbaren Simulation...]]></description>
     </item>
   </channel>
 </rss>

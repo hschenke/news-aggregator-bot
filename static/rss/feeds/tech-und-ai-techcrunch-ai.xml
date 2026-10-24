@@ -5,125 +5,35 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 23 Oct 2026 10:13:26 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 05:01:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Uber rival inDrive eyes 2027 robotaxi tests in Central Asia with Pony.ai and Nvidia</title>
-      <link>https://techcrunch.com/2026/10/22/uber-rival-indrive-eyes-2027-robotaxi-tests-in-central-asia-with-pony-ai-and-nvidia/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180898</guid>
-      <pubDate>Fri, 23 Oct 2026 04:00:00 GMT</pubDate>
+      <title>OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”</title>
+      <link>https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181396</guid>
+      <pubDate>Fri, 23 Oct 2026 23:05:49 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[inDrive plans to begin testing Pony.ai's robotaxis in Kazakhstan's capital in the first half of 2027.]]></description>
+      <description><![CDATA[OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.]]></description>
     </item>
     <item>
-      <title>Left alone with nothing to do, AI agents started playing</title>
-      <link>https://techcrunch.com/2026/10/22/left-alone-with-nothing-to-do-ai-agents-started-playing/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181016</guid>
-      <pubDate>Fri, 23 Oct 2026 00:45:37 GMT</pubDate>
+      <title>Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell</title>
+      <link>https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181412</guid>
+      <pubDate>Fri, 23 Oct 2026 21:59:19 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[MIT researchers marooned 13 AIs on a virtual island, and they responded by inventing games, mourning a lost ring and, eventually, getting better at their jobs.]]></description>
+      <description><![CDATA[The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a "nap," and summersaulted on voice command.]]></description>
     </item>
     <item>
-      <title>OpenAI working on new $30B raise at $1.25T valuation ahead of IPO</title>
-      <link>https://techcrunch.com/2026/10/22/openai-working-on-new-30b-raise-at-1-25t-valuation-ahead-of-ipo/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180936</guid>
-      <pubDate>Thu, 22 Oct 2026 22:08:24 GMT</pubDate>
+      <title>From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026</title>
+      <link>https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181271</guid>
+      <pubDate>Fri, 23 Oct 2026 19:06:23 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Should OpenAI command an over $1 trillion valuation with this round, it would break records as the most highly valued private company ever.]]></description>
-    </item>
-    <item>
-      <title>1Password launches a way for AI agents to log in on your behalf without seeing your password</title>
-      <link>https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180727</guid>
-      <pubDate>Thu, 22 Oct 2026 19:07:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The new feature allows agents to log into a customer's personal accounts while still protecting the private credentials that secure those accounts.]]></description>
-    </item>
-    <item>
-      <title>OpenAI makes its Jev competitor widely available as decision model competition heats up</title>
-      <link>https://techcrunch.com/2026/10/22/openai-makes-its-jev-competitor-widely-available-as-decision-model-competition-heats-up/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180667</guid>
-      <pubDate>Thu, 22 Oct 2026 19:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[OpenAI is launching its decision model to the world. Can it compete with the original Jev?]]></description>
-    </item>
-    <item>
-      <title>Canva releases its first image generation model</title>
-      <link>https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180617</guid>
-      <pubDate>Thu, 22 Oct 2026 19:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Canva is making its new image model available to all users, promising better, more customizable performance at lower costs.]]></description>
-    </item>
-    <item>
-      <title>Microsoft’s Mustafa Suleyman says its AI outperforms doctors on hard cases as he chases ‘medical superintelligence’</title>
-      <link>https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180761</guid>
-      <pubDate>Thu, 22 Oct 2026 18:43:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Microsoft’s new AI diagnostic system beat generalist doctors on hard cases, according to a study in Science. But most of the improvement seems to come from the AI models underneath, not from Microsoft’s system itself.]]></description>
-    </item>
-    <item>
-      <title>Chinese hackers spied on thousands of companies after breaching IT giant ConnectWise</title>
-      <link>https://techcrunch.com/2026/10/22/chinese-hackers-spied-on-thousands-of-companies-after-breaching-it-giant-connectwise/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180678</guid>
-      <pubDate>Thu, 22 Oct 2026 16:47:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Microsoft points the blame for ConnectWise's breach at a China-aligned hacker, which relied on AI agents to rapidly hack into thousands of its customers.]]></description>
-    </item>
-    <item>
-      <title>Uber puts all 30,000 employees on ChatGPT Work</title>
-      <link>https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180196</guid>
-      <pubDate>Thu, 22 Oct 2026 16:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The ride-share giant previously deployed a much smaller pilot for ChatGPT Work but is now taking the enterprise agent company-wide.]]></description>
-    </item>
-    <item>
-      <title>Spotify’s current AI bet is about being the music service that agents choose</title>
-      <link>https://techcrunch.com/2026/10/22/spotifys-current-ai-bet-is-about-being-the-music-service-that-agents-choose/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180626</guid>
-      <pubDate>Thu, 22 Oct 2026 15:03:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Spotify co-CEO Gustav Söderström explains why the rise of AI agents could be good news for the music service.]]></description>
-    </item>
-    <item>
-      <title>Claude Duet app is Anthropic’s bet on agents</title>
-      <link>https://techcrunch.com/2026/10/22/claude-duet-app-is-anthropics-bet-on-agents/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180587</guid>
-      <pubDate>Thu, 22 Oct 2026 13:53:26 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Claude Duet is available through waitlist for Pro and Max plan users.]]></description>
-    </item>
-    <item>
-      <title>Nirva raises $33M for a pendant that only listens to you</title>
-      <link>https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180570</guid>
-      <pubDate>Thu, 22 Oct 2026 13:26:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Nirva will ship its $249 ambient AI pendant by the end of the year.]]></description>
-    </item>
-    <item>
-      <title>DeepSeek reportedly raises $15B days after US restrictions</title>
-      <link>https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3180589</guid>
-      <pubDate>Thu, 22 Oct 2026 13:11:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[DeepSeek has reportedly raised $15 billion in one of China's largest funding rounds, just days after the U.S. ordered federal agencies to remove its technology over national security concerns.]]></description>
+      <description><![CDATA[Hosted by TechCrunch in partnership with Fidelity Private Shares, the full-day event goes beyond fundraising and AI to explore the realities of finding customers, building teams, sharpening a pitch, developing founder leadership, and scaling companies both inside and outside traditional startup hubs.]]></description>
     </item>
   </channel>
 </rss>
