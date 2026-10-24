@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 24 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 09:37:31 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic lässt KI-Agenten Verhandlungsregeln für Menschen lernen</title>
+      <link>https://www.heise.de/news/Anthropic-laesst-KI-Agenten-Verhandlungsregeln-fuer-Menschen-lernen-11498981.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11498981</guid>
+      <pubDate>Sat, 24 Oct 2026 08:14:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Anthropic berät sich angeblich mit Anwaltskanzleien, wie KI-Agenten künftig Preise, Gehälter und Verträge für ihre Nutzer aushandeln sollten.]]></description>
+    </item>
+    <item>
+      <title>Continuous Architecture: KI zwingt uns dazu, veraltete Dokumentation aufzuräumen</title>
+      <link>https://www.heise.de/hintergrund/Continuous-Architecture-KI-zwingt-uns-dazu-veraltete-Dokumentation-aufzuraeumen-11497700.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11497700</guid>
+      <pubDate>Sat, 24 Oct 2026 08:03:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Im Interview beschreibt Murat Erder, wie KI Softwareentwicklung verändern kann, ohne die grundlegenden Prinzipien guter Architektur außer Kraft zu setzen.]]></description>
+    </item>
+    <item>
+      <title>Pixii ist pleite und Fujifilm baut Instax aus – die Fotonews der Woche 43/2026</title>
+      <link>https://www.heise.de/news/Pixii-ist-pleite-und-Fujifilm-baut-Instax-aus-die-Fotonews-der-Woche-43-2026-11498250.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11498250</guid>
+      <pubDate>Sat, 24 Oct 2026 07:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ein Messsucher-Hersteller gibt auf, Sofortbild boomt und ein Smartphone bricht Rekorde. Plus: Retro-Digicams und eine historische Fotografie.]]></description>
+    </item>
+    <item>
+      <title>Developer-Häppchen – Go fragt nach, Python patcht, TypeScript lernt dazu</title>
+      <link>https://www.heise.de/news/Developer-Haeppchen-Go-fragt-nach-Python-patcht-TypeScript-lernt-dazu-11497901.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11497901</guid>
+      <pubDate>Sat, 24 Oct 2026 06:07:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Myrlyn, Crystal, Go, VS Code, Atlassian, Python, TypeScript, React Native und BoxLang.]]></description>
+    </item>
+    <item>
+      <title>Die Kraft der Farben und Kontraste: Die Bilder der Woche 43</title>
+      <link>https://www.heise.de/news/Die-Kraft-der-Farben-und-Kontraste-Die-Bilder-der-Woche-43-11498238.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11498238</guid>
+      <pubDate>Sat, 24 Oct 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ob rot glühendes Wattenmeer oder Licht auf grauer Wand: Sieben kraftvolle Aufnahmen zwischen leuchtenden Farben und bewussten Gegensätzen.]]></description>
+    </item>
     <item>
       <title>Foldables: iPhone Duo, Galaxy Z Fold &amp; Co. | c’t uplink</title>
       <link>https://www.heise.de/news/Foldables-iPhone-Duo-Galaxy-Z-Fold-Co-c-t-uplink-11498062.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -18,13 +63,13 @@
       <description><![CDATA[Im c’t uplink sprechen wir diesmal über Apples erstes Foldable und seine Konkurrenten.]]></description>
     </item>
     <item>
-      <title>Top 10: Die beste kabellose Überwachungskamera im Test – Akku, WLAN, LTE &amp; Solar</title>
+      <title>Top 10: Die beste kabellose Überwachungskamera</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-die-beste-kabellose-ueberwachungskamera-im-test-akku-wlan-lte-und-solar/0spn5e4?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag#id-8-reolink-argus-eco-ultra</link>
       <guid isPermaLink="false">http://heise.de/-11498901</guid>
       <pubDate>Fri, 23 Oct 2026 18:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[4K-Auflösung, Dual-Objektiv, Akku, Wi-Fi und Laden per Solarmodul: Kabellose Überwachungskameras haben viel zu bieten. Wir zeigen die besten Modelle.]]></description>
+      <description><![CDATA[4K-Auflösung, Dual-Objektiv, Akku, Wi-Fi und Laden per Solarmodul: Kabellose Überwachungskameras haben viel zu bieten.]]></description>
     </item>
     <item>
       <title>EU-Parlament will eigene Regeln für Glasfaser und Kupferabschaltung</title>
@@ -232,159 +277,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Ein gewebtes Display zeigt Fotos und Videos an, reagiert auf Berührungen und kann allerlei Funktionen ausführen.]]></description>
-    </item>
-    <item>
-      <title>W3C: Ein Auftrag ist kein Freibrief für KI-Agenten</title>
-      <link>https://www.heise.de/news/W3C-Ein-Auftrag-ist-kein-Freibrief-fuer-KI-Agenten-11497919.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497919</guid>
-      <pubDate>Fri, 23 Oct 2026 09:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Wie bleiben Nutzer in Kontrolle, wenn KI-Agenten Websites bedienen? Das W3C-Strategieteam skizziert Anforderungen an sichere Webstandards.]]></description>
-    </item>
-    <item>
-      <title>„Mass Effect: Universe“: Trailer zum gestrichenen Rollenspiel geleakt</title>
-      <link>https://www.heise.de/news/Mass-Effect-Universe-Trailer-zum-gestrichenen-Rollenspiel-geleakt-11498028.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11498028</guid>
-      <pubDate>Fri, 23 Oct 2026 09:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Einen Tag nach der Schließung von BioWare ist ein Trailer zum eingestellten „Mass Effect“ aufgetaucht. Er zeigt einen Spionage-Thriller – Fans sind enttäuscht.]]></description>
-    </item>
-    <item>
-      <title>Cisco stopft diverse, teils kritische Sicherheitslücken</title>
-      <link>https://www.heise.de/news/Cisco-stopft-diverse-teils-kritische-Sicherheitsluecken-11497857.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497857</guid>
-      <pubDate>Fri, 23 Oct 2026 08:10:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In mehreren Produkten von Cisco klaffen teils kritische Lücken. Der Hersteller stellt Sicherheitsupdates bereit.]]></description>
-    </item>
-    <item>
-      <title>Am 22. Dezember ist Schluss: The Browser Company stellt Arc-Browser ein</title>
-      <link>https://www.heise.de/news/Am-22-Dezember-ist-Schluss-The-Browser-Company-stellt-Arc-Browser-ein-11497895.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497895</guid>
-      <pubDate>Fri, 23 Oct 2026 08:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[The Browser Company wird seinen Arc-Browser am 22. Dezember 2026 einstellen. Nutzer sollen auf den KI-Browser Dia wechseln.]]></description>
-    </item>
-    <item>
-      <title>Mercedes-Baukasten für die 2030er: Was über die Modulpläne bekannt ist</title>
-      <link>https://www.heise.de/news/Tech-Stacks-Mercedes-Benz-plant-modularen-Baukasten-11497779.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497779</guid>
-      <pubDate>Fri, 23 Oct 2026 07:45:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mercedes-Benz arbeitet an einer modularen Architektur für Modelle der 30er-Jahre. Der Konzern bestätigt das vor allem als „ambitionierten Zukunftsplan“.]]></description>
-    </item>
-    <item>
-      <title>GitHub Package Firewall blockiert schädliche npm-Pakete</title>
-      <link>https://www.heise.de/news/GitHub-Package-Firewall-blockiert-schaedliche-npm-Pakete-11497748.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497748</guid>
-      <pubDate>Fri, 23 Oct 2026 07:40:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[GitHub hat die Package Firewall als öffentliche Vorschau für Enterprise-Cloud-Kunden freigegeben. Sie prüft Paketabfragen und Downloads.]]></description>
-    </item>
-    <item>
-      <title>software-architektur.tv: Spielt Struktur noch eine Rolle, wenn KI codet?</title>
-      <link>https://www.heise.de/news/software-architektur-tv-Braucht-KI-generierter-Code-noch-saubere-Struktur-11497732.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497732</guid>
-      <pubDate>Fri, 23 Oct 2026 07:18:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In dieser Folge gehen Alexander von Zitzewitz und Ralf D. Müller der Frage nach, wie relevant eine saubere Software-Architektur im Zeitalter der KI ist.]]></description>
-    </item>
-    <item>
-      <title>Bericht: Microsoft kalkuliert für nächste Xbox mit 1200 bis 1800 US-Dollar</title>
-      <link>https://www.heise.de/news/Project-Helix-Naechste-Xbox-soll-bis-zu-1800-US-Dollar-kosten-11497736.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497736</guid>
-      <pubDate>Fri, 23 Oct 2026 06:53:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Laut Fortune plant Microsoft für die nächste Xbox intern mit einem Preispunkt von 1200 bis 1800 US-Dollar. Schuld ist die Speicherkrise.]]></description>
-    </item>
-    <item>
-      <title>TypeScript-Compiler in Rust: Cloudflare übernimmt tsrs</title>
-      <link>https://www.heise.de/news/TypeScript-Compiler-in-Rust-Cloudflare-uebernimmt-tsrs-11497672.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497672</guid>
-      <pubDate>Fri, 23 Oct 2026 06:47:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[KI-Agenten haben den TypeScript-Compiler nach Rust übersetzt. Microsoft nutzt einige der dabei entdeckten Optimierungen bereits für TypeScript 7.1.]]></description>
-    </item>
-    <item>
-      <title>Trump: Musk hat Starlink-Drosselung für Ukraine aufgehoben</title>
-      <link>https://www.heise.de/news/Trump-Musk-hat-Starlink-Drosselung-fuer-Ukraine-aufgehoben-11497718.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497718</guid>
-      <pubDate>Fri, 23 Oct 2026 06:42:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das ukrainische Militär beklagt eine Drosselung von Elon Musks Satelliteninternet. Jetzt nimmt der US-Präsident Stellung dazu – doch viele Fragen bleiben offen.]]></description>
-    </item>
-    <item>
-      <title>AWS Continuum: KI findet und behebt Code-Schwachstellen</title>
-      <link>https://www.heise.de/news/AWS-Continuum-KI-findet-und-behebt-Code-Schwachstellen-11497692.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497692</guid>
-      <pubDate>Fri, 23 Oct 2026 06:38:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Amazon Web Services macht die KI-gestützte Erkennung und Behebung von Code-Schwachstellen in AWS Continuum allgemein verfügbar.]]></description>
-    </item>
-    <item>
-      <title>JFrog führt BYOK-Unterstützung für KI-Sicherheitsscans ein</title>
-      <link>https://www.heise.de/news/JFrog-AI-Security-Mehr-Kontrolle-ueber-Schatten-KI-auf-Entwicklerrechnern-11496904.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11496904</guid>
-      <pubDate>Fri, 23 Oct 2026 06:32:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[JFrog erweitert die Erkennung von Schatten-KI in seiner KI-Sicherheitssuite AI Security. Ebenfalls neu ist BYOK für AI Asset Scanning.]]></description>
-    </item>
-    <item>
-      <title>Linux-Desktop-Suite DMS 2.0 im neuen Look mit Dateimanager Dux Files</title>
-      <link>https://www.heise.de/news/Linux-Desktop-DMS-2-0-Aus-DankMaterialShell-wird-Dux-Shell-11497532.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497532</guid>
-      <pubDate>Fri, 23 Oct 2026 06:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Linux-Desktop-Suite DMS 2.0 „Heisenberg“ für Wayland-Compositors wie Niri kommt in neuem Design und bringt erstmals einen eigenen Dateimanager mit.]]></description>
-    </item>
-    <item>
-      <title>Bosch: 62.500 Beschäftigte wechseln zu neuen Tochtergesellschaften</title>
-      <link>https://www.heise.de/news/Bosch-ordnet-Konzern-neu-Mobilitaet-bleibt-groesster-Bereich-11497706.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497706</guid>
-      <pubDate>Fri, 23 Oct 2026 06:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Rund 62.500 Bosch-Beschäftigte wechseln in neue Tochtergesellschaften. Die Arbeitsbedingungen sollen gleich bleiben. Was bedeutet der Umbau für den Konzern?]]></description>
-    </item>
-    <item>
-      <title>DB-InfraGO-Chef: Zugverspätungen sollen erst 2029 deutlich sinken</title>
-      <link>https://www.heise.de/news/Deutsche-Bahn-Erst-ab-2029-soll-Puenktlichkeit-wieder-besser-werden-11497688.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497688</guid>
-      <pubDate>Fri, 23 Oct 2026 06:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Bahn wird unpünktlicher, obwohl sie Strecken saniert. DB-InfraGO-Chef Philipp Nagl nennt 2029 als Wendepunkt – doch bis dahin warten noch heikle Baustellen.]]></description>
-    </item>
-    <item>
-      <title>Cariad und Audi: VW schafft gemeinsame Organisation für Assistenzsysteme</title>
-      <link>https://www.heise.de/news/VW-stellt-Fahrassistenz-Entwicklung-in-Europa-neu-auf-11497666.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497666</guid>
-      <pubDate>Fri, 23 Oct 2026 05:48:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Volkswagen will die Entwicklung des hochautomatisierten und autonomen Fahrens beschleunigen und baut dafür intern Strukturen massiv um.]]></description>
-    </item>
-    <item>
-      <title>Polizei warnt vor getunten E-Scootern</title>
-      <link>https://www.heise.de/news/Polizei-warnt-vor-getunten-E-Scootern-11497660.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497660</guid>
-      <pubDate>Fri, 23 Oct 2026 05:46:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[E-Scooter werden gerne von Jugendlichen getunt. Die Gefahr für den Straßenverkehr ist groß.]]></description>
     </item>
   </channel>
 </rss>

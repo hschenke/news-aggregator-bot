@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 24 Oct 2026 05:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 09:37:31 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stupid Never Dies - Review</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60432</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60432</guid>
+      <pubDate>Sat, 24 Oct 2026 08:03:00 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Grimoire reviewed Stupid Never Dies: Stupid Never Dies Review – A Surprisingly Brilliant Action RPG]]></description>
+    </item>
+    <item>
+      <title>Final Fantasy Resonance - Overview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60431</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60431</guid>
+      <pubDate>Sat, 24 Oct 2026 07:57:38 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Scarlett Seeker checked out Final Fantasy Resonance: FINAL FANTASY RESONANCE | Worth Your Time and Money (Overview)]]></description>
+    </item>
+    <item>
+      <title>Eye of the Beholder - Retrospective</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60430</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60430</guid>
+      <pubDate>Sat, 24 Oct 2026 07:54:38 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Dr. Jerry Gaming looks back at Eye of the Beholder: Eye of the Beholder Retrospective - A D&D Classic]]></description>
+    </item>
+    <item>
+      <title>Terrinoth: Heroes of Descent - Trailer</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60429</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60429</guid>
+      <pubDate>Sat, 24 Oct 2026 07:52:18 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[GOG shared a new trailer for Terrinoth: Heroes of Descent: Terrinoth®: Heroes of Descent | Trailer [GOG]]]></description>
+    </item>
     <item>
       <title>Genshin Impact - Version 7.2 Special Program</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60428</link>
@@ -16,24 +52,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Genshin Impact version 7.2 releases on November 4, 2026: Genshin Impact Version 7.2 Special Program New codes:HourofRuinExpertMityaPhotoTime Thanks Alrik!]]></description>
-    </item>
-    <item>
-      <title>A Knight's Fury - Release Date: December 1</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60427</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60427</guid>
-      <pubDate>Fri, 23 Oct 2026 06:00:41 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The dungeon crawler A Knight's Fury - The Vaults of Venom will be released on December 1: A Knight's Fury new Gameplay Trailer A nostalgic first-person dungeon-crawling adventure inspired by classic RPGs of the 80s and 90s. Battle monsters face to face, gather loot, and grow stronger as a lone adventurer on a quest ...]]></description>
-    </item>
-    <item>
-      <title>Ignite the Depths - Gameplay</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60426</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60426</guid>
-      <pubDate>Fri, 23 Oct 2026 05:45:43 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Splattercatgaming checked out Ignite the Depths: A Dark and Vicious New Dungeon Crawling RPG! - Ignite the Depths]]></description>
     </item>
   </channel>
 </rss>
