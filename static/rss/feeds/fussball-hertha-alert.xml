@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Hertha+Alert</link>
     <description>RSS-Feed für die Quelle 'Hertha Alert' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 09:54:53 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-hertha-alert.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -16,6 +16,15 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[Bei Hertha BSC waren alle über den 1:0-Heimsieg gegen Arminia Bielefeld glücklich. Doch keiner hebt bei den Blau-Weißen ab. Lesen Sie mal, was Kapitän ...]]></description>
+    </item>
+    <item>
+      <title>Pressekonferenz nach Union: Lustrinelli und Baum - FC Augsburg</title>
+      <link>https://www.fcaugsburg.de/detail/livestream/pressekonferenz-nach-union-lustrinelli-und-baum-11</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2010828267797025574</guid>
+      <pubDate>Sun, 25 Oct 2026 03:33:47 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[Highlights: Remis im Härtetest gegen Hertha BSC. 02.10.2026. Advertisement Sponsored Ad. Anzeige. Advertisement Sponsored Ad. Anzeige. Nach oben.]]></description>
     </item>
     <item>
       <title>Hertha-Elferkrimi gegen Bielefeld: Pokal ist doch erst Mittwoch... - Berliner Kurier</title>
@@ -178,15 +187,6 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[Tabellenführer Hertha sichert sich mit einem Elfmeter in der Nachspielzeit einen hart erkämpften 1:0-Heimsieg gegen Arminia Bielefeld! Die Herthaner ...]]></description>
-    </item>
-    <item>
-      <title>2. Bundesliga - Hertha BSC 1-0 DSC Arminia Bielefeld - OneFootball</title>
-      <link>https://onefootball.com/de/video/2-bundesliga-hertha-bsc-1-0-dsc-arminia-bielefeld-43664553</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16111868824629864092</guid>
-      <pubDate>Sat, 24 Oct 2026 14:44:05 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[2. Bundesliga - Hertha BSC 1-0 DSC Arminia Bielefeld. Logo: Logo: Bundesliga Pass. Bundesliga Pass. Offizielles Wappen. vor 2 Stunden. Teile dieses ...]]></description>
     </item>
   </channel>
 </rss>

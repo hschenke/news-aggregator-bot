@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 09:54:53 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI setzt gegen Anthropic auf die Karte »Preis«</title>
+      <link>https://www.all-ai.de/news/news26/openai-anthropic-preis</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-preis</guid>
+      <pubDate>Sun, 25 Oct 2026 08:18:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI gewinnt mit günstigeren Angeboten KI-Ausgaben von Anthropic-Kunden. Replit nutzt OpenAI als bevorzugten Partner für seinen Agenten und verlagert den Großteil seines KI-Budgets dorthin. Bei Rippling steigt OpenAIs Anteil an der Programmierarbeit von 16 auf 52 Prozent. DataCamp erwartet bis zu 90 Prozent wenige...]]></description>
+    </item>
+    <item>
+      <title>„Tomb Raider“: Der Hit, der Core Design zum Verhängnis wurde</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Tomb-Raider-Zum-Erfolg-verdammt-11495198.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11495198</guid>
+      <pubDate>Sun, 25 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor 30 Jahren sprang Lara Croft erstmals durch die 3D-Welten von „Tomb Raider“. Sie wurde zur Gaming-Ikone, aber auch zum Fluch für das Entwicklerteam.]]></description>
+    </item>
+    <item>
+      <title>Kimi K3.1: Influencer-Lob nach Vorlage, Werbung ohne Kennzeichnung?</title>
+      <link>https://www.all-ai.de/news/news26top/kimi-k3-influencer-lob</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kimi-k3-influencer-lob</guid>
+      <pubDate>Sun, 25 Oct 2026 07:59:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Elshayib wirft Moonshot vor, Influencer für positive Kimi-Beiträge zu bezahlen. Die veröffentlichten Anweisungen verlangen eine Freigabe und den Verzicht auf die Kennzeichnung als bezahlte Partnerschaft. Die Herkunft und Echtheit der Unterlagen sind nicht unabhängig bestätigt. Kimi K3.1 Pro erreicht im Intelligence ...]]></description>
+    </item>
+    <item>
+      <title>Missing Link: Vor, zurück, vor zurück</title>
+      <link>https://www.heise.de/hintergrund/Missing-Link-Vor-zurueck-vor-zurueck-11498921.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11498921</guid>
+      <pubDate>Sun, 25 Oct 2026 06:48:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Seit 2018 will die EU die Zeitumstellung abschaffen – passiert ist nichts. Eine leicht satirische Spurensuche durch die Geschichte der europäischen Zeitpolitik.]]></description>
+    </item>
     <item>
       <title>The AI graveyard: a running list of projects and startups that didn’t make it</title>
       <link>https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/</link>
@@ -115,51 +151,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[OpenAI verschärfte nach Hacking-Attacken durch seine KI die Sicherheits-Maßnahmen. Die „Offline-Welten“ dafür sind aber nicht offline.]]></description>
-    </item>
-    <item>
-      <title>Anthropic lässt KI-Agenten Verhandlungsregeln für Menschen lernen</title>
-      <link>https://www.heise.de/news/Anthropic-laesst-KI-Agenten-Verhandlungsregeln-fuer-Menschen-lernen-11498981.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11498981</guid>
-      <pubDate>Sat, 24 Oct 2026 08:14:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anthropic berät sich angeblich mit Anwaltskanzleien, wie KI-Agenten künftig Preise, Gehälter und Verträge für ihre Nutzer aushandeln sollten.]]></description>
-    </item>
-    <item>
-      <title>ThinkRail from JetBrains</title>
-      <link>https://thinkrail.ai/</link>
-      <guid isPermaLink="false">https://thinkrail.ai/</guid>
-      <pubDate>Sat, 24 Oct 2026 08:08:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Continuous Architecture: KI zwingt uns dazu, veraltete Dokumentation aufzuräumen</title>
-      <link>https://www.heise.de/hintergrund/Continuous-Architecture-KI-zwingt-uns-dazu-veraltete-Dokumentation-aufzuraeumen-11497700.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497700</guid>
-      <pubDate>Sat, 24 Oct 2026 08:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Im Interview beschreibt Murat Erder, wie KI Softwareentwicklung verändern kann, ohne die grundlegenden Prinzipien guter Architektur außer Kraft zu setzen.]]></description>
-    </item>
-    <item>
-      <title>Pixii ist pleite und Fujifilm baut Instax aus – die Fotonews der Woche 43/2026</title>
-      <link>https://www.heise.de/news/Pixii-ist-pleite-und-Fujifilm-baut-Instax-aus-die-Fotonews-der-Woche-43-2026-11498250.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11498250</guid>
-      <pubDate>Sat, 24 Oct 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Messsucher-Hersteller gibt auf, Sofortbild boomt und ein Smartphone bricht Rekorde. Plus: Retro-Digicams und eine historische Fotografie.]]></description>
-    </item>
-    <item>
-      <title>Developer-Häppchen – Go fragt nach, Python patcht, TypeScript lernt dazu</title>
-      <link>https://www.heise.de/news/Developer-Haeppchen-Go-fragt-nach-Python-patcht-TypeScript-lernt-dazu-11497901.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497901</guid>
-      <pubDate>Sat, 24 Oct 2026 06:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Myrlyn, Crystal, Go, VS Code, Atlassian, Python, TypeScript, React Native und BoxLang.]]></description>
     </item>
   </channel>
 </rss>

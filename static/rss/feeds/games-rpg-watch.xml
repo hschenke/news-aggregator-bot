@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 09:54:53 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matt Chat - #583 - Guillotine Games Interview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60438</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60438</guid>
+      <pubDate>Sun, 25 Oct 2026 06:53:47 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Matt talked with Guillotine Games: Guillotine Games' Marcus Mera and Russ Danner on Mystery House, Space Quest and AI | Matt Chat 583]]></description>
+    </item>
+    <item>
+      <title>The Eldian Labyrinths - Announced</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60437</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60437</guid>
+      <pubDate>Sun, 25 Oct 2026 06:50:32 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The dungeon crawler The Eldian Labyrinths has been announced: The Eldian Labyrinths A dungeon-crawling RPG where you'll explore the labyrinths of the Eldia Islands and unravel the mystery of the strange curse that has befallen them.]]></description>
+    </item>
+    <item>
+      <title>RPG Crawler - CRPG News Roundup</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60436</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60436</guid>
+      <pubDate>Sun, 25 Oct 2026 06:36:06 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Like every week the RPG Crawler sums up the CRPG news: CRPG News Roundup (10-24-2026)]]></description>
+    </item>
     <item>
       <title>Titan Quest II - Road to Version 1.0</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60435</link>
@@ -34,42 +61,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Mortismal Gaming checked out Fallout 4: FEVer Dreams: Fallout 4: FEVer Dreams Is Official Free DLC In All But Name]]></description>
-    </item>
-    <item>
-      <title>Stupid Never Dies - Review</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60432</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60432</guid>
-      <pubDate>Sat, 24 Oct 2026 08:03:00 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Grimoire reviewed Stupid Never Dies: Stupid Never Dies Review – A Surprisingly Brilliant Action RPG]]></description>
-    </item>
-    <item>
-      <title>Final Fantasy Resonance - Overview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60431</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60431</guid>
-      <pubDate>Sat, 24 Oct 2026 07:57:38 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Scarlett Seeker checked out Final Fantasy Resonance: FINAL FANTASY RESONANCE | Worth Your Time and Money (Overview)]]></description>
-    </item>
-    <item>
-      <title>Eye of the Beholder - Retrospective</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60430</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60430</guid>
-      <pubDate>Sat, 24 Oct 2026 07:54:38 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Dr. Jerry Gaming looks back at Eye of the Beholder: Eye of the Beholder Retrospective - A D&D Classic]]></description>
-    </item>
-    <item>
-      <title>Terrinoth: Heroes of Descent - Trailer</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60429</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60429</guid>
-      <pubDate>Sat, 24 Oct 2026 07:52:18 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[GOG shared a new trailer for Terrinoth: Heroes of Descent: Terrinoth®: Heroes of Descent | Trailer [GOG]]]></description>
     </item>
   </channel>
 </rss>
