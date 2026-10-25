@@ -5,35 +5,44 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 24 Oct 2026 09:37:31 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OpenAI says it will no longer train its AI models on the live internet, citing “significant risks”</title>
-      <link>https://techcrunch.com/2026/10/23/openai-says-it-will-no-longer-train-its-ai-models-on-the-live-internet-citing-significant-risks/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181396</guid>
-      <pubDate>Fri, 23 Oct 2026 23:05:49 GMT</pubDate>
+      <title>The AI graveyard: a running list of projects and startups that didn’t make it</title>
+      <link>https://techcrunch.com/2026/10/24/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3162590</guid>
+      <pubDate>Sat, 24 Oct 2026 19:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[OpenAI will cut frontier models off from the internet weeks after one of its engineers said that solution wouldn't work.]]></description>
+      <description><![CDATA[From Apple's repeatedly delayed Siri AI to OpenAI's messy "super app" launch, here's a look at the AI projects that shut down or missed expectations.]]></description>
     </item>
     <item>
-      <title>Hottest toy for Christmas? Nvidia CEO plays with adorable Microduck robots, 20,000 sell</title>
-      <link>https://techcrunch.com/2026/10/23/hottest-toy-for-christmas-nvidia-ceo-plays-with-adorable-microduck-robots-20000-sell/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181412</guid>
-      <pubDate>Fri, 23 Oct 2026 21:59:19 GMT</pubDate>
+      <title>Block’s new voice model sounds eerily human</title>
+      <link>https://techcrunch.com/2026/10/24/blocks-new-voice-model-sounds-eerily-human/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181490</guid>
+      <pubDate>Sat, 24 Oct 2026 16:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The robots, stomping their little feet and making tiny R2-D2 noises, sat, fell down dead for a "nap," and summersaulted on voice command.]]></description>
+      <description><![CDATA[Block said that the voice model can run locally on a MacBook M4 Max]]></description>
     </item>
     <item>
-      <title>From Toast to Bessemer: Who founders will hear from at TechCrunch Founder Summit 2026</title>
-      <link>https://techcrunch.com/2026/10/23/from-toast-to-bessemer-who-founders-will-hear-from-at-techcrunch-founder-summit-2026/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181271</guid>
-      <pubDate>Fri, 23 Oct 2026 19:06:23 GMT</pubDate>
+      <title>Forced to pick, Grok’s AI model chooses Republicans. OpenAI’s picks Democrats.</title>
+      <link>https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181243</guid>
+      <pubDate>Sat, 24 Oct 2026 15:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Hosted by TechCrunch in partnership with Fidelity Private Shares, the full-day event goes beyond fundraising and AI to explore the realities of finding customers, building teams, sharpening a pitch, developing founder leadership, and scaling companies both inside and outside traditional startup hubs.]]></description>
+      <description><![CDATA[A new study found Grok's AI overwhelmingly recommends Republican candidates while OpenAI's GPT favors Democrats, with the two AI models disagreeing in more than 90% of nearly 500 election races.]]></description>
+    </item>
+    <item>
+      <title>Here are the top AI agents that can live in your text messages</title>
+      <link>https://techcrunch.com/2026/10/24/all-the-ai-agents-that-can-live-in-your-text-messages/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3173132</guid>
+      <pubDate>Sat, 24 Oct 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[We created a list of the most notable AI agents that can live in your text messages, from general assistants to agents designed for families, travel, and work.]]></description>
     </item>
   </channel>
 </rss>

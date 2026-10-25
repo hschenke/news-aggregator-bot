@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 24 Oct 2026 09:37:31 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Titan Quest II - Road to Version 1.0</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60435</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60435</guid>
+      <pubDate>Sat, 24 Oct 2026 19:37:52 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Titan Quest II will be released on January 19, 2027: Learn more about version 1.0: The Road To 1.0 Heroes!In our last post we announced the Titan Quest II launch date as the 19th of January 2027.Now, we want to talk about what the 1.0 version will include and also give an overview of what’s planned until then....]]></description>
+    </item>
+    <item>
+      <title>Romancing SaGa 2: Revenge of the Seven - One Million Copies sold</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60434</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60434</guid>
+      <pubDate>Sat, 24 Oct 2026 19:31:15 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Gematsu reports that Romancing SaGa 2: Revenge of the Seven shipments and digital sales top one million.]]></description>
+    </item>
+    <item>
+      <title>Fallout 4 - FEVer Dreams Overview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60433</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60433</guid>
+      <pubDate>Sat, 24 Oct 2026 18:53:59 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Mortismal Gaming checked out Fallout 4: FEVer Dreams: Fallout 4: FEVer Dreams Is Official Free DLC In All But Name]]></description>
+    </item>
     <item>
       <title>Stupid Never Dies - Review</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60432</link>
@@ -43,15 +70,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[GOG shared a new trailer for Terrinoth: Heroes of Descent: Terrinoth®: Heroes of Descent | Trailer [GOG]]]></description>
-    </item>
-    <item>
-      <title>Genshin Impact - Version 7.2 Special Program</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60428</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60428</guid>
-      <pubDate>Fri, 23 Oct 2026 18:38:15 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Genshin Impact version 7.2 releases on November 4, 2026: Genshin Impact Version 7.2 Special Program New codes:HourofRuinExpertMityaPhotoTime Thanks Alrik!]]></description>
     </item>
   </channel>
 </rss>

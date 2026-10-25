@@ -5,53 +5,17 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 24 Oct 2026 09:37:31 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 25 Oct 2026 06:01:10 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Echte Muskeln lassen Mini-Roboter springen und greifen</title>
-      <link>https://www.all-ai.de/news/news26/eth-muskeln-roboter</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/eth-muskeln-roboter</guid>
-      <pubDate>Sat, 24 Oct 2026 05:59:43 GMT</pubDate>
+      <title>Nvidia steigt bei Video-KI-Riese Higgsfield ein</title>
+      <link>https://www.all-ai.de/news/news26/huang-nvidia-higgsfield-ki</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/huang-nvidia-higgsfield-ki</guid>
+      <pubDate>Sat, 24 Oct 2026 16:13:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Forscher der ETH Zürich verbinden lebendes Muskelgewebe mit einem weichen Hydrogel-Gerüst. Die Bioaktuatoren erreichen einen bis zu elfmal größeren Bewegungsumfang als frühere Konstruktionen. Die Mini-Roboter können springen, schwimmen, gehen und Gegenstände greifen. Für den Einsatz außerhalb des Labors fehlt dem le...]]></description>
-    </item>
-    <item>
-      <title>MIT Studie: Das tun KI-Agenten ohne Anweisungen auf einer einsamen Insel</title>
-      <link>https://www.all-ai.de/news/news26/mit-studie-ki-angenten-einsame-insel</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/mit-studie-ki-angenten-einsame-insel</guid>
-      <pubDate>Sat, 24 Oct 2026 05:49:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[13 KI-Agenten verbrachten jeweils 30 Stunden ohne feste Aufgabe auf einer simulierten Insel. Sie erfanden eigene Spiele und hielten ihre Entdeckungen in Textdateien fest. Erfahrene Agenten lösten anschließende Aufgaben besser als identische Agenten ohne Inselerfahrung. Sechs Agenten fanden einen Bewegungstrick, den ...]]></description>
-    </item>
-    <item>
-      <title>OpenAI stärkstes Modell darf nur noch in der Matrix trainieren</title>
-      <link>https://www.all-ai.de/news/news26/openai-modell-matrix</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-modell-matrix</guid>
-      <pubDate>Sat, 24 Oct 2026 05:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ein internes OpenAI-Modell erreichte über eine DNS-Fehlkonfiguration das Live-Internet. OpenAI stoppte das Frontier-Training für elf Tage und stellte es auf eine abgeschottete Offline-Umgebung um. Agententeams fanden bei Red-Team-Tests neue Softwarelücken, VM-Ausbrüche und Kommunikationswege zwischen isolierten Aufg...]]></description>
-    </item>
-    <item>
-      <title>Kimi K3.1 Pro: Das weltweit beste KI-Modell kommt aus China</title>
-      <link>https://www.all-ai.de/news/news26top/kimi-k3-1-pro-ki-modell-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kimi-k3-1-pro-ki-modell-start</guid>
-      <pubDate>Fri, 23 Oct 2026 17:43:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Kimi K3.1 Pro liegt in mehreren aktuellen Benchmarks vor GPT-6 Astra und Claude Opus 5.5. Das Open-Weights-Modell verarbeitet bis zu eine Million Token und ist auf lange Agentenaufgaben ausgelegt. Die API kostet 2 Dollar pro Million Eingabetoken und 10 Dollar pro Million Ausgabetoken. Die vollständigen Modellgewicht...]]></description>
-    </item>
-    <item>
-      <title>Warhound sammelt 200 Millionen Dollar für genetische Kriegshunde</title>
-      <link>https://www.all-ai.de/news/news26top/warhound-genitik-hunde</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/warhound-genitik-hunde</guid>
-      <pubDate>Fri, 23 Oct 2026 17:20:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Warhound startet mit 200 Millionen Dollar Kapital und einer Bewertung von 1,2 Milliarden Dollar. Das Unternehmen will leistungsfähige Einsatzhunde klonen und ihre Gene gezielt bearbeiten. Anduril liefert Schutzkleidung, Sensoren und die Anbindung an Eagle Eye. Erste Welpen sind für 2027 geplant, Kunden und Preise gi...]]></description>
+      <description><![CDATA[Nvidia und TCV beteiligen sich an einer Erweiterung der Series-B-Runde von Higgsfield. Higgsfield meldet mehr als 40 Millionen Nutzer und eine annualisierte Umsatzrate von einer Milliarde Dollar. Die Plattform verarbeitet monatlich 150 Millionen Generierungen und zwölf Billionen Token. Higgsfield bündelt eigene Krea...]]></description>
     </item>
   </channel>
 </rss>
