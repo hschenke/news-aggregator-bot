@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 25 Oct 2026 09:54:53 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emberville - Preview @ MG</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60440</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60440</guid>
+      <pubDate>Sun, 25 Oct 2026 12:16:08 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Mortismal Gaming checked out Emberville: Check Out: Emberville]]></description>
+    </item>
+    <item>
+      <title>Waxworks - Retrospective Review</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60439</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60439</guid>
+      <pubDate>Sun, 25 Oct 2026 12:14:04 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Aqua Walrus looks back at the 1992 dungeon crawler Waxworks: Waxworks | Scenes of Violence | Review and Playthrough Thanks Muhabor!]]></description>
+    </item>
     <item>
       <title>Matt Chat - #583 - Guillotine Games Interview</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60438</link>
@@ -34,33 +52,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Like every week the RPG Crawler sums up the CRPG news: CRPG News Roundup (10-24-2026)]]></description>
-    </item>
-    <item>
-      <title>Titan Quest II - Road to Version 1.0</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60435</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60435</guid>
-      <pubDate>Sat, 24 Oct 2026 19:37:52 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Titan Quest II will be released on January 19, 2027: Learn more about version 1.0: The Road To 1.0 Heroes!In our last post we announced the Titan Quest II launch date as the 19th of January 2027.Now, we want to talk about what the 1.0 version will include and also give an overview of what’s planned until then....]]></description>
-    </item>
-    <item>
-      <title>Romancing SaGa 2: Revenge of the Seven - One Million Copies sold</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60434</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60434</guid>
-      <pubDate>Sat, 24 Oct 2026 19:31:15 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Gematsu reports that Romancing SaGa 2: Revenge of the Seven shipments and digital sales top one million.]]></description>
-    </item>
-    <item>
-      <title>Fallout 4 - FEVer Dreams Overview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60433</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60433</guid>
-      <pubDate>Sat, 24 Oct 2026 18:53:59 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Mortismal Gaming checked out Fallout 4: FEVer Dreams: Fallout 4: FEVer Dreams Is Official Free DLC In All But Name]]></description>
     </item>
   </channel>
 </rss>
