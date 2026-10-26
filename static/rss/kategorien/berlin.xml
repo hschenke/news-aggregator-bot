@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Berlin' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 26 Oct 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 11:16:33 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/berlin.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ermittlungen nach mutmaßlichem Schuss auf Wohnungstür</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1730989.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1730989.php</guid>
+      <pubDate>Mon, 26 Oct 2026 10:56:14 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Charlottenburg-Wilmersdorf** – Heute Morgen wurden Einsatzkräfte der Polizei Berlin wegen des Verdachts einer Straftat nach Charlottenburg alarmiert. Nach bisherigen Erkenntnissen stellte eine in einem Mehrfamilienhaus am Iburger Ufer wohnende Familie gegen 7:20 Uhr ein Einschussloch in ihrer Wohnungstür fest. B...]]></description>
+    </item>
+    <item>
+      <title>Mann mit Messer verletzt – Festnahme</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1730978.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1730978.php</guid>
+      <pubDate>Mon, 26 Oct 2026 10:43:29 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Pankow** – Gestern Abend wurden Einsatzkräfte der Polizei Berlin wegen einer gefährlichen Körperverletzung in den Ortsteil Prenzlauer Berg alarmiert. Nach bisherigen Erkenntnissen soll ein 47-jähriger Mann gegen 20:40 Uhr einen 42-jährigen Mann in der Oderberger Straße mit einem Messer verletzt haben. Die a...]]></description>
+    </item>
+    <item>
+      <title>Mit 70 Jahren: Ehemaliger Alba-Kapitän gestorben</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/basketball-matthias-strauss-tot-alba-berlin-mtv-giessen-dbb-kapi.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/basketball-matthias-strauss-tot-alba-berlin-mtv-giessen-dbb-kapi.html</guid>
+      <pubDate>Mon, 26 Oct 2026 10:19:16 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Drei Baustellen ab heute: Sperrungen in Mahlsdorf und Hellersdorf</title>
+      <link>https://marzahn-hellersdorf.com/drei-baustellen-ab-heute-sperrungen-in-mahlsdorf-und-hellersdorf/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4778098292737626975</guid>
+      <pubDate>Mon, 26 Oct 2026 07:28:10 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[In Mahlsdorf sind die Elsenstraße und der Hultschiner Damm abschnittsweise voll gesperrt, in Hellersdorf ist die Riesaer Straße in einer ...]]></description>
+    </item>
+    <item>
+      <title>Datenschutz - Friseur | Sandys Salon | Ihr Friseur in Mahlsdorf %</title>
+      <link>https://sandys-salon.de/951-2/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:8282543047560116771</guid>
+      <pubDate>Mon, 26 Oct 2026 05:40:55 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[View, CA 94043, USA. Google Analytics verwendet so genannte "Cookies". Das sind. Textdateien, die auf Ihrem Computer gespeichert werden und die eine ...]]></description>
+    </item>
     <item>
       <title>Provisionsfrei EFH 160qm freistehend Einliegerwohnung PV-Anlage in Berlin - Mahlsdorf</title>
       <link>https://www.kleinanzeigen.de/s-anzeige/provisionsfrei-efh-160qm-freistehend-einliegerwohnung-pv-anlage/3552588328-208-27141</link>
@@ -205,78 +250,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Mutmaßlich antisemitisch motivierte Körperverletzung</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1730802.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1730802.php</guid>
-      <pubDate>Sun, 25 Oct 2026 11:15:07 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Tempelhof-Schöneberg** – Gestern Abend wurde ein Mann in Schöneberg angegriffen und verletzt. Nach bisherigen Erkenntnissen saß der 60-Jährige gegen 20 Uhr gemeinsam mit einem Bekannten auf einer Parkbank an der Gleditschstraße, als er von einem Unbekannten angesprochen wurde. Nachdem der Mann dem 60-Jährigen ei...]]></description>
-    </item>
-    <item>
-      <title>Nach Union-Spiel: Rassismus gegen Augsburg-Spieler Juma Bah</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-bundesliga-union-berlin-fc-augsburg-juma-bah-rassismus-drohungen-social-media.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-bundesliga-union-berlin-fc-augsburg-juma-bah-rassismus-drohungen-social-media.html</guid>
-      <pubDate>Sun, 25 Oct 2026 11:08:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Rassistische Kommentare und Todesdrohung: Nach seiner Roten Karte beim 1:1 gegen Union Berlin muss Augsburg-Spieler Juma Bah heftige Anfeindungen ertragen. Sein Verein hat dazu ein Statement veröffentlicht - und bekommt Unterstützung aus Köpenick.]]></description>
-    </item>
-    <item>
-      <title>Union Berlin nach 1:1 in Augsburg: Lustrinelli will mehr</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-bundesliga-union-berlin-fc-augsburg-analyse.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-bundesliga-union-berlin-fc-augsburg-analyse.html</guid>
-      <pubDate>Sun, 25 Oct 2026 11:04:21 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[In Augsburg sieht Union Berlin früh Rot und tritt danach eine Zeitreise an. Nach dem Spiel ist klar, dass die Mannschaft wieder kann, was sie über Jahre auszeichnete. Spielerisch sollen nächste Schritte folgen.]]></description>
-    </item>
-    <item>
-      <title>Wohnungsbrand - toter Mann aufgefunden</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1730799.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/pressemitteilung.1730799.php</guid>
-      <pubDate>Sun, 25 Oct 2026 10:45:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Reinickendorf** – Nach einem Brand in einer Wohnung in Reinickendorf wurde gestern Nachmittag ein toter Mann aufgefunden. Rettungskräfte wurden gegen 18:50 Uhr in die Emmentaler Straße gerufen, da Zeugen eine Rauchentwicklung aus einer dortigen Wohnung wahrnahmen. Die Berliner Feuerwehr öffnete die entsprechende...]]></description>
-    </item>
-    <item>
-      <title>In Mahlsdorf-Süd sollten 120 Seniorenwohnungen entstehen. Der Bezirk sicherte das ... - Facebook</title>
-      <link>https://www.facebook.com/entwicklungsstadt/posts/in-mahlsdorf-s%C3%BCd-sollten-120-seniorenwohnungen-entstehen-der-bezirk-sicherte-das/1545486190929916/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4599806158392750225</guid>
-      <pubDate>Sun, 25 Oct 2026 09:37:05 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Relevant locations. Mahlsdorf-Süd, Parler Feld, Hultschiner Damm, BERLIN. Berlin. Germany. Recent posts. Entwicklungsstadt.]]></description>
-    </item>
-    <item>
-      <title>In Mahlsdorf-Süd sollten 120 Seniorenwohnungen entstehen. Der Bezirk sicherte das ... - Instagram</title>
-      <link>https://www.instagram.com/p/De6Tc8CCGOb/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14189338119177617020</guid>
-      <pubDate>Sun, 25 Oct 2026 09:26:19 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[An der Landsberger Straße 178 haben jetzt mit einer offiziellen Grundsteinlegung die Bauarbeiten für die erste Jugendfreizeiteinrichtung in Mahlsdorf ...]]></description>
-    </item>
-    <item>
-      <title>Lager &amp; Lagerraum in Mahlsdorf (Berlin) - Halle mieten</title>
-      <link>https://www.immobilienscout24.de/Suche/showroom/5ntekl5p8g23yk-9sor2k7x0uhgmcmokkuy8ytlghw/de/berlin/berlin/marzahn-hellersdorf/mahlsdorf/hallenproduktion-mieten</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:511314919264649323</guid>
-      <pubDate>Sun, 25 Oct 2026 08:39:33 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Mahlsdorf (Berlin): Suchen sie eine Halle oder ein Lager zur Miete in Mahlsdorf (Berlin)? Finden Sie die passende Halle in Mahlsdorf (Berlin) beim ...]]></description>
-    </item>
-    <item>
-      <title>Berlins unbekannte Attraktionen: Diese Ausflugsziele in den Bezirken müssen Sie gesehen haben</title>
-      <link>https://www.tagesspiegel.de/berlin/bezirke/charlottenburg-wilmersdorf/aber-mir-ist-so-langweilig-berlins-unbekannte-attraktionen--diese-ausflugsziele-mussen-sie-gesehen-haben-15939393.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:12231818342612859171</guid>
-      <pubDate>Sun, 25 Oct 2026 08:19:52 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Im Berliner Osten erlaubt das Gründerzeitmuseum im Gutshaus Mahlsdorf einen Blick in ...]]></description>
     </item>
   </channel>
 </rss>

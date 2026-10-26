@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 26 Oct 2026 06:03:37 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 11:16:55 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Berlin] Drei Baustellen ab heute: Sperrungen in Mahlsdorf und Hellersdorf</title>
+      <link>https://marzahn-hellersdorf.com/drei-baustellen-ab-heute-sperrungen-in-mahlsdorf-und-hellersdorf/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4778098292737626975</guid>
+      <pubDate>Mon, 26 Oct 2026 07:28:10 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[<p>In Mahlsdorf sind die Elsenstraße und der Hultschiner Damm abschnittsweise voll gesperrt, während in Hellersdorf die Riesaer Straße betroffen ist. Verkehrsteilnehmer müssen sich auf erhebliche Einschränkungen und Umleitungen einstellen.</p>]]></description>
+    </item>
     <item>
       <title>[Berlin] Der Berliner Osten wird zur Baustelle: Wo ab Montag nichts mehr geht</title>
       <link>https://www.berliner-kurier.de/article/berlinverkehrstrassensperrungen-ost-berlin-mahlsdorf-hellersdorf-friedrichshain-10528834</link>
@@ -15,151 +24,169 @@
       <pubDate>Sun, 25 Oct 2026 18:32:59 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Ab Montag sorgen zahlreiche Baustellen und Straßensperrungen, unter anderem am Hultschiner Damm in Mahlsdorf, für massive Verkehrsbehinderungen im östlichen Teil der Stadt.</p>]]></description>
+      <description><![CDATA[<p>Umfangreiche Straßensperrungen im Ost-Berliner Raum sorgen für Verkehrsbehinderungen. Besonders der Bereich um den Hultschiner Damm in Mahlsdorf ist stark betroffen.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] In Mahlsdorf-Süd sollten 120 Seniorenwohnungen entstehen</title>
-      <link>https://www.facebook.com/entwicklungsstadt/posts/in-mahlsdorf-s%C3%BCd-sollten-120-seniorenwohnungen-entstehen-der-bezirk-sicherte-das/1545486190929916/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4599806158392750225</guid>
-      <pubDate>Sun, 25 Oct 2026 09:37:05 +0000</pubDate>
+      <title>[Berlin] Ermittlungen nach mutmaßlichem Schuss auf Wohnungstür</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1730989.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1730989.php</guid>
+      <pubDate>Mon, 26 Oct 2026 10:56:14 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Während der Bezirk Flächen für Seniorenwohnen sichern will, haben an der Landsberger Straße zudem die Bauarbeiten für eine neue Jugendfreizeiteinrichtung begonnen.</p>]]></description>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>Die Berliner Polizei ermittelt in Charlottenburg-Wilmersdorf, nachdem eine Familie ein Einschussloch in ihrer Wohnungstür entdeckt hat. Verletzt wurde bei dem Vorfall am Iburger Ufer nach ersten Erkenntnissen niemand.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] 2. Liga Frauen: Viktoria baut Serie aus, Hertha holt Punkt</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-frauen-zweite-liga-hertha-bsc-viktoria-berlin-turbine-potsdam.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14144627729139515842</guid>
-      <pubDate>Sun, 25 Oct 2026 16:55:38 +0000</pubDate>
+      <title>[Berlin] Mann mit Messer verletzt – Festnahme</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1730978.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1730978.php</guid>
+      <pubDate>Mon, 26 Oct 2026 10:43:29 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Die Fußballerinnen von Hertha BSC sicherten sich nach einem frühen Rückstand ein Unentschieden gegen Andernach, während Viktoria Berlin ihre Erfolgsserie weiter ausbaute.</p>]]></description>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>In Prenzlauer Berg soll ein 47-jähriger Mann einen anderen Mann mit einem Messer verletzt haben. Die Polizei konnte den Tatverdächtigen nach dem Vorfall in der Oderberger Straße festnehmen.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Brand auf Gütermotorschiff in Oberschöneweide: Feuerwehr mit rund 80 Kräften im Einsatz</title>
-      <link>https://marzahn-hellersdorf.com/brand-auf-guetermotorschiff-in-oberschoeneweide-feuerwehr-mit-rund-80-kraeften-im-einsatz/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15413135132819785388</guid>
-      <pubDate>Sun, 25 Oct 2026 12:57:36 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Die Berliner Feuerwehr war mit etwa 80 Einsatzkräften vor Ort, um ein Feuer auf einem Schiffsfahrzeug im Bezirk Treptow-Köpenick zu bekämpfen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Basketball: Starkes Alba stoppt Niederlagenserie gegen Ulm</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/basketball-bundesliga-bbl-alba-berlin-ulm.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/basketball-bundesliga-bbl-alba-berlin-ulm.html</guid>
-      <pubDate>Sun, 25 Oct 2026 21:30:23 +0000</pubDate>
+      <title>[Berlin] Mit 70 Jahren: Ehemaliger Alba-Kapitän gestorben</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/basketball-matthias-strauss-tot-alba-berlin-mtv-giessen-dbb-kapi.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/basketball-matthias-strauss-tot-alba-berlin-mtv-giessen-dbb-kapi.html</guid>
+      <pubDate>Mon, 26 Oct 2026 10:19:16 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Dank der Rückkehr von Spielgestalter Martin Hermannsson beendete Alba Berlin seine Durststrecke in der Bundesliga mit einem wichtigen Heimsieg.</p>]]></description>
+      <description><![CDATA[<p>Der ehemalige Alba-Kapitän Matthias Strauß ist im Alter von 70 Jahren verstorben. Die Basketball-Gemeinde trauert um den langjährigen Spieler und verdienten Sportler.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] 2. Bundesliga: Hertha holt Sieg gegen Bielefeld</title>
-      <link>https://www.sportschau.de/fussball/bundesliga2/hertha-knackt-bielefeld-in-der-nachspielzeit,video-zweite-bundesliga-hertha-bsc-arminia-bielefeld-100.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:8088371304900819675</guid>
-      <pubDate>Sun, 25 Oct 2026 23:02:29 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] Bitcoin klebt bei 80.200 US-Dollar: Fed, EZB und Ölpreis bremsen den Kryptomarkt</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-verharrt-bei-80200-dollar--zins-und-olsorgen-dampfen-kryptoappetit-3721961</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-verharrt-bei-80200-dollar--zins-und-olsorgen-dampfen-kryptoappetit-3721961</guid>
+      <pubDate>Mon, 26 Oct 2026 06:24:50 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Die größte Kryptowährung bewegt sich seit Tagen kaum von der Marke von 80.200 US-Dollar fort. Anhaltende Inflations- und Zinsängste der Notenbanken dämpfen derzeit die Kauflaune der Investoren.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] LEGO ist eine der wenigen Firmen, die fast unendlich viele...</title>
+      <link>https://debeste.de/632483/LEGO-ist-eine-der-wenigen-Firmen,-die-fast-unendlich-viele-</link>
+      <guid isPermaLink="false">https://debeste.de/632483/LEGO-ist-eine-der-wenigen-Firmen,-die-fast-unendlich-viele-</guid>
+      <pubDate>Mon, 26 Oct 2026 11:16:55 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Der Beitrag wirft einen amüsanten Blick auf das Geschäftsmodell des dänischen Spielwarenherstellers. Dabei wird scharfsinnig analysiert, wie das Unternehmen konstant Neuheiten auf den Markt bringt, ohne im Kern neue Produkte zu erfinden.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Ich habe gerade auf "neues Passwort anfordern" für mein...</title>
+      <link>https://debeste.de/632522/Ich-habe-gerade-auf-neues-Passwort-anfordern-f-r-mein-</link>
+      <guid isPermaLink="false">https://debeste.de/632522/Ich-habe-gerade-auf-neues-Passwort-anfordern-f-r-mein-</guid>
+      <pubDate>Mon, 26 Oct 2026 11:16:55 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Eine humorvolle Realsatire über die Digitalisierung in Deutschland am Beispiel der Agentur für Arbeit. Das neue Passwort erreicht den Nutzer dabei ganz klassisch per Postkarte oder Brief.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Das deutsche Schulsystem - erklärt an einem Sack...</title>
+      <link>https://debeste.de/632469/Das-deutsche-Schulsystem-erkl-rt-an-einem-Sack-</link>
+      <guid isPermaLink="false">https://debeste.de/632469/Das-deutsche-Schulsystem-erkl-rt-an-einem-Sack-</guid>
+      <pubDate>Mon, 26 Oct 2026 11:16:55 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Mit einer überspitzten Metapher rund um Kartoffelsäcke werden die Unterschiede zwischen den verschiedenen Schulformen aufs Korn genommen. Die humorvolle Analogie karikiert praxisfern formulierte Rechenaufgaben.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Der Ehemann findet seine Frau mit dem Arzt</title>
+      <link>https://www.hahaha.de/witze/berufe/aerzte/13239/der-ehemann-findet-seine-frau-mit-dem-arzt.html</link>
+      <guid isPermaLink="false">https://www.hahaha.de/witze/berufe/aerzte/13239/der-ehemann-findet-seine-frau-mit-dem-arzt.html</guid>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
+      <description><![CDATA[<p>Ein klassischer Witz über eine überraschende Entdeckung im Ehebett und die gewohnt pragmatische Reaktion des Ehemanns. Die Pointe setzt auf eine unerwartete Wendung bei der Beantwortung medizinischer Fragen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fun] Menschen haben ihre Kinder immer gern nach teuren Dingen...</title>
+      <link>https://debeste.de/632468/Menschen-haben-ihre-Kinder-immer-gern-nach-teuren-Dingen-</link>
+      <guid isPermaLink="false">https://debeste.de/632468/Menschen-haben-ihre-Kinder-immer-gern-nach-teuren-Dingen-</guid>
+      <pubDate>Mon, 26 Oct 2026 11:16:55 +0000</pubDate>
+      <category>Fun</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Der humorvolle Beitrag greift den Trend von ungewöhnlichen Vornamen auf und spinnt ihn satirisch in die Richtung aktueller Energiekosten weiter. Die Aussicht auf Namen wie Strom oder Gas sorgt für ironische Zukunftsaussichten.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 2. Liga: Hertha siegt dank Last-Minute-Brekalo - rbb24</title>
+      <link>https://www.rbb24.de/sport/av/av24/video-fussball-zweite-bundesliga-hertha-bielefeld-sportschau-spielbericht.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6431577457964009354</guid>
+      <pubDate>Sun, 25 Oct 2026 23:09:45 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Spitzenreiter Hertha BSC sicherte sich tief in der Nachspielzeit durch einen verwandelten Handelfmeter von Josip Brekalo den 1:0-Erfolg gegen Arminia Bielefeld.</p>]]></description>
+      <description><![CDATA[<p>Hertha BSC sicherte sich gegen Arminia Bielefeld einen späten und hart umkämpften 1:0-Heimsieg. Den entscheidenden Treffer erzielte Josip Brekalo per Handelfmeter in der Nachspielzeit.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Spitze in der 2. Liga: Hertha BSC trotzt Kaderwert und Stürmerflaute</title>
-      <link>https://www.transfermarkt.de/fans-leben-100-punkte-traum-hertha-trotzt-kaderwert-und-sturmerflaute-scheissegal-quot-/view/news/489469</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/fans-leben-100-punkte-traum-hertha-trotzt-kaderwert-und-sturmerflaute-scheissegal-quot-/view/news/489469</guid>
-      <pubDate>Sun, 25 Oct 2026 15:56:35 +0000</pubDate>
+      <title>[Fußball] Hertha BSC: Chef Josip Brekalo ist Herthas Mr. Unverzichtbar - BZ Berlin</title>
+      <link>https://www.bz-berlin.de/berlin-sport/hertha-bsc/hertha-bsc-chef-josip-brekalo-ist-herthas-mr-unverzichtbar-6addd06251fb647ba7e7c335</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1534068058087806200</guid>
+      <pubDate>Sun, 25 Oct 2026 16:23:50 +0000</pubDate>
       <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Obwohl die Stürmer derzeit Ladehemmungen haben, marschiert die Alte Dame weiter an der Tabellenspitze voran und begeistert die Fans.</p>]]></description>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[<p>Nach dem knappen Erfolg gegen Bielefeld festigt die Alte Dame ihre Spitzenposition in der 2. Bundesliga. Vor allem Kapitän Josip Brekalo erweist sich dabei als zentraler Erfolgsgarant im Team.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Real Madrids Mbappé verhindert Barça-Rekord – Flick enttäuscht</title>
+      <title>[Fußball] 0:1 bei Hertha: Großers Handspiel kostet Arminia Bielefeld einen Punkt - Die Glocke</title>
+      <link>https://www.die-glocke.de/lokalsport/kreis-guetersloh/artikel/01-bei-hertha-grossers-handspiel-kostet-arminia-bielefeld-einen-punkt-1792938004</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11402318861585321636</guid>
+      <pubDate>Sun, 25 Oct 2026 20:22:49 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[<p>Arminia Bielefeld war nah dran, einen Punkt aus Berlin entführen zu können. Ein spätes Handspiel von Großer machte die Hoffnungen der Gäste jedoch in der Schlussphase zunichte.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Elf des Bundesliga-Spieltages: Füllkrug endlich dabei, FC Bayern dominiert</title>
+      <link>https://www.transfermarkt.de/fullkrug-schiesst-sich-endlich-in-die-elf-des-spieltages-eine-stimme-fehlt-spitze/view/news/489498</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/fullkrug-schiesst-sich-endlich-in-die-elf-des-spieltages-eine-stimme-fehlt-spitze/view/news/489498</guid>
+      <pubDate>Mon, 26 Oct 2026 11:16:55 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Niclas Füllkrug steht nach einer starken Torserie von sechs Partien in Folge verdient in der Elf des Spieltages. Der FC Bayern dominiert das Aufgebot nach weiteren erfolgreichen Auftritten ebenfalls deutlich.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Clásico: Real Madrids Mbappé verhindert FC Barcelona-Rekord – Flick enttäuscht</title>
       <link>https://www.transfermarkt.de/mbappe-verhindert-barca-rekord-flick-will-nach-niederlage-gegen-real-keine-ausreden-quot-/view/news/489479</link>
       <guid isPermaLink="false">https://www.transfermarkt.de/mbappe-verhindert-barca-rekord-flick-will-nach-niederlage-gegen-real-keine-ausreden-quot-/view/news/489479</guid>
       <pubDate>Mon, 26 Oct 2026 05:24:58 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Hansi Flick verpasste mit dem FC Barcelona den historischen Startrekord in LaLiga nach einer Niederlage im Clásico gegen den Erzrivalen Real Madrid.</p>]]></description>
+      <description><![CDATA[<p>Hansi Flicks Traum von einem historischen Startrekord mit zehn Siegesspielen in LaLiga wurde von Real Madrid durchkreuzt. Kylian Mbappé sorgte dafür, dass die Siegesserie des FC Barcelona ausgerechnet im Clásico riss.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] FC Bayern gewinnt umkämpftes Spiel in Freiburg – Olise sorgt für Entscheidung</title>
-      <link>https://www.transfermarkt.de/fc-bayern-gewinnt-umkampftes-top-spiel-in-freiburg-olise-sorgt-fur-spate-entscheidung/view/news/489472</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/fc-bayern-gewinnt-umkampftes-top-spiel-in-freiburg-olise-sorgt-fur-spate-entscheidung/view/news/489472</guid>
-      <pubDate>Sun, 25 Oct 2026 18:27:26 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Michael Olise machte in der Schlussphase den Sieg für den FC Bayern perfekt, der damit weiterhin souverän an der Spitze der Bundesliga bleibt.</p>]]></description>
+      <title>[Games] Heroes of Might and Magic III macht mit erstem Arttagebuch den Schritt in die 3D-Grafik</title>
+      <link>https://foro3d.com/de/2026/octubre/heroes-of-might-and-magic-iii-avanza-hacia-el-3d-con-su-primer-diario.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7613847870518671677</guid>
+      <pubDate>Sun, 25 Oct 2026 17:27:13 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[<p>Das Remake des Strategie-Klassikers gewährt in einem ersten Arttagebuch Einblicke in die Überarbeitung. Dabei wird erklärt, wie die ursprünglichen 2D-Sprites in moderne dreidimensionale Umgebungen übertragen werden.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Hoffenheim stoppt Bayer 04: Kramaric erzielt 1000. TSG-Tor</title>
-      <link>https://www.transfermarkt.de/hoffenheim-stoppt-bayer-kramaric-erzielt-1000-tsg-tor-prass-entscheidet-spiel-und-sieht-rot/view/news/489471</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/hoffenheim-stoppt-bayer-kramaric-erzielt-1000-tsg-tor-prass-entscheidet-spiel-und-sieht-rot/view/news/489471</guid>
-      <pubDate>Sun, 25 Oct 2026 16:33:55 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Die TSG Hoffenheim beendete Leverkusens Torserie mit einem späten 3:0-Sieg, bei dem Andrej Kramaric ein meilensteinartiges Vereinsjubiläum feierte.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Google erlaubt sich nun Zugriff auf Gmail und Fotos für personalisierte Werbung</title>
-      <link>https://www.heise.de/news/Google-erlaubt-sich-nun-Zugriff-auf-Gmail-und-Fotos-fuer-personalisierte-Werbung-11499567.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11499567</guid>
-      <pubDate>Mon, 26 Oct 2026 04:03:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Durch eine Änderung der Datenschutzerklärung kann Google künftig Werbeanzeigen auf Basis persönlicher Mails und Fotos schalten, was von Nutzern jedoch manuell deaktiviert werden kann.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Mistral- und DeepL-Chefs warnen vor KI-Kapitulation Europas</title>
-      <link>https://www.heise.de/news/KI-Streit-in-Europa-EU-Tech-Chefs-wehren-sich-gegen-Kapitulation-11499445.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11499445</guid>
-      <pubDate>Sun, 25 Oct 2026 13:28:00 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Europäische Branchenführer kritisieren den Fokus der EU auf reine Anwendungssoftware und fordern mehr Unterstützung für die Entwicklung eigener Basismodelle.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] OpenAI setzt gegen Anthropic auf die Karte »Preis«</title>
-      <link>https://www.all-ai.de/news/news26/openai-anthropic-preis</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-preis</guid>
-      <pubDate>Sun, 25 Oct 2026 08:18:33 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[<p>Massenhafte Preissenkungen führen dazu, dass immer mehr Großkunden wie Replit und Rippling ihre Budgets von Anthropic zu OpenAI verlagern.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] IBM CEO says open weight models are now good and cheap on-prem</title>
-      <link>https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640</link>
-      <guid isPermaLink="false">https://www.theregister.com/systems/2026/10/22/ibm-ceo-says-open-weight-models-are-now-irresistibly-good-and-cheap-on-prem/5304640</guid>
-      <pubDate>Mon, 26 Oct 2026 01:47:46 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[<p>Laut IBM-Chef Arvind Krishna bieten frei zugängliche Modellgewichte mittlerweile eine hervorragende und extrem kostengünstige Alternative für eigene Rechenzentren.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis</title>
-      <link>https://lynchlab.net/llm-skin-cancer</link>
-      <guid isPermaLink="false">https://lynchlab.net/llm-skin-cancer</guid>
-      <pubDate>Sun, 25 Oct 2026 17:15:38 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[<p>Eine aktuelle Untersuchung zeigt, dass ältere, spezialisierte Convolutional Neural Networks bei der Hautkrebsdiagnose deutlich bessere Ergebnisse liefern als modernste General-Purpose-LLMs.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] The Eldian Labyrinths - Announced</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60437</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60437</guid>
-      <pubDate>Sun, 25 Oct 2026 06:50:32 +0000</pubDate>
+      <title>[Games] Grove of the Seven Stones - RPGWatch Developer Interview</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60444</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60444</guid>
+      <pubDate>Mon, 26 Oct 2026 09:30:19 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Ein neuer Dungeon-Crawler wurde offiziell angekündigt, in dem Spieler die mysteriösen Labyrinthe der Eldia-Inseln erkunden müssen, um einen alten Fluch zu brechen.</p>]]></description>
+      <description><![CDATA[<p>RPGWatch hat sich mit den Entwicklern von Mystic Dream Studios über ihr aktuelles Projekt unterhalten. Im Interview werden Einblicke in die Entstehungsgeschichte des Rollenspiels gegeben.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Emberville - Preview @ MG</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60440</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60440</guid>
-      <pubDate>Sun, 25 Oct 2026 12:16:08 +0000</pubDate>
+      <title>[Games] Phantom Blade Zero - Review @ Fextralife</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60441</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60441</guid>
+      <pubDate>Mon, 26 Oct 2026 09:01:54 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Mortismal Gaming wirft in einer umfassenden Vorschau einen ersten detaillierten Blick auf das kommende Rollenspiel Emberville.</p>]]></description>
+      <description><![CDATA[<p>Fextralife hat das kommende Action-Rollenspiel ausführlich getestet und analysiert. Dabei wird die Frage aufgeworfen, ob es sich hierbei um einen echten Anwärter auf den Titel des Spiel des Jahres handelt.</p>]]></description>
+    </item>
+    <item>
+      <title>[Games] RPGamer - News Round-Up</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60442</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60442</guid>
+      <pubDate>Mon, 26 Oct 2026 09:13:10 +0000</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Eine kompakte Zusammenfassung beleuchtet die wichtigsten Rollenspiel-Meldungen der vergangenen Woche. Spieler erhalten so einen schnellen Überblick über kommende Releases und Ankündigungen.</p>]]></description>
     </item>
     <item>
       <title>[Games] Waxworks - Retrospective Review</title>
@@ -168,70 +195,52 @@
       <pubDate>Sun, 25 Oct 2026 12:14:04 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Ein neuer Rückblick beleuchtet den klassischen Horror-Dungeon-Crawler „Waxworks“ aus dem Jahr 1992 und seine drastischen Gewaltdarstellungen.</p>]]></description>
+      <description><![CDATA[<p>Ein retrospektiver Blick widmet sich dem klassischen Dungeon Crawler aus dem Jahr 1992. Der Artikel beleuchtet die mechanischen Besonderheiten und die düstere Atmosphäre des damaligen Titels.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Matt Chat - #583 - Guillotine Games Interview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60438</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60438</guid>
-      <pubDate>Sun, 25 Oct 2026 06:53:47 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Im Interview sprechen Marcus Mera und Russ Danner über Titel wie Mystery House, Space Quest und den Einsatz von KI im Spieledesign.</p>]]></description>
+      <title>[Tech &amp; AI] Python schließt per Update kritische TLS-Lücke wegen eMudhra-Schlüsseln</title>
+      <link>https://www.heise.de/news/Python-schliesst-per-Update-kritische-TLS-Luecke-wegen-eMudhra-Schluesseln-11499933.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11499933</guid>
+      <pubDate>Mon, 26 Oct 2026 10:18:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Mehrere Python-Versionen wurden durch Patches aktualisiert, um eine kritische Schwachstelle im Zusammenhang mit kompromittierten eMudhra-Zertifikaten zu beheben. Administratoren wird ein zügiges Einspielen der Updates empfohlen.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Heroes of Might and Magic IV Complete</title>
-      <link>https://www.filmundo.de/pc-spiele-videospiele/strategie/pc-spiele/heroes-of-might-and-magic-iv-complete_art_11960780.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10391558661085710930</guid>
-      <pubDate>Sun, 25 Oct 2026 14:15:58 +0000</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Der Strategieklassiker bietet Rundenkämpfe mit 11 verschiedenen Heldenklassen und fünf einzigartigen Magieschulen.</p>]]></description>
+      <title>[Tech &amp; AI] Neura Robotics zeigt leichteren humanoiden Roboter für die Serienfertigung</title>
+      <link>https://www.heise.de/news/Neura-Robotics-zeigt-leichteren-humanoiden-Roboter-fuer-die-Serienfertigung-11500110.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11500110</guid>
+      <pubDate>Mon, 26 Oct 2026 10:54:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Das Unternehmen hat die vierte Generation seines verbesserten Roboters 4NE1 vorgestellt. Künftige Trainingsläufe sind unter anderem im neuen TUM RoboGym geplant.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Drei italienische Hobbits flogen im Kostüm nach Irland...</title>
-      <link>https://debeste.de/632478/Drei-italienische-Hobbits-flogen-im-Kost-m-nach-Irland,-um-</link>
-      <guid isPermaLink="false">https://debeste.de/632478/Drei-italienische-Hobbits-flogen-im-Kost-m-nach-Irland,-um-</guid>
-      <pubDate>Mon, 26 Oct 2026 06:03:37 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Um einen gefundenen Ehering zurückzubringen, reisten drei Freunde im Verkleidungs-Look nach Irland und erlebten eine unvergessliche Reise.</p>]]></description>
+      <title>[Tech &amp; AI] Google erlaubt sich nun Zugriff auf Gmail und Fotos für personalisierte Werbung</title>
+      <link>https://www.heise.de/news/Google-erlaubt-sich-nun-Zugriff-auf-Gmail-und-Fotos-fuer-personalisierte-Werbung-11499567.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11499567</guid>
+      <pubDate>Mon, 26 Oct 2026 04:03:00 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[<p>Durch eine Anpassung der Datenschutzerklärung kann Google künftig persönliche Inhalte aus E-Mails und Fotos für zielgerichtete Anzeigen nutzen. In Europa greift diese Neuerung vorerst noch nicht.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Die Polizei in Neu-Taipeh hat ihre jüngsten Rekruten vorgestellt...</title>
-      <link>https://debeste.de/632275/Die-Polizei-in-Neu-Taipeh-hat-ihre-j-ngsten-Rekruten-</link>
-      <guid isPermaLink="false">https://debeste.de/632275/Die-Polizei-in-Neu-Taipeh-hat-ihre-j-ngsten-Rekruten-</guid>
-      <pubDate>Mon, 26 Oct 2026 06:03:37 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Süße Labrador-Welpen stahlen bei einem offiziellen Fotoshooting in winzigen Polizeigeschirren sofort allen die Show.</p>]]></description>
+      <title>[Tech &amp; AI] OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?</title>
+      <link>https://minimaxir.com/2026/10/cheap-llms/</link>
+      <guid isPermaLink="false">https://minimaxir.com/2026/10/cheap-llms/</guid>
+      <pubDate>Sun, 25 Oct 2026 21:11:31 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[<p>Ein tiefgehender Artikel beleuchtet die massiven Preissenkungen bei großen Sprachmodellen innerhalb kurzer Zeit. Dabei werden wirtschaftliche Hintergründe und der wachsende Konkurrenzdruck im KI-Sektor analysiert.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Das deutsche Schulsystem - erklärt an einem Sack Kartoffeln</title>
-      <link>https://debeste.de/632469/Das-deutsche-Schulsystem-erkl-rt-an-einem-Sack-</link>
-      <guid isPermaLink="false">https://debeste.de/632469/Das-deutsche-Schulsystem-erkl-rt-an-einem-Sack-</guid>
-      <pubDate>Mon, 26 Oct 2026 06:03:37 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Eine humorvolle Gegenüberstellung zeigt, wie unterschiedlich Schultypen ein simples mathematisches Rechenbeispiel aufbereiten.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Und was, wenn du deinen Job verlierst und ich jagen muss...</title>
-      <link>https://debeste.de/632481/Und-was,-wenn-du-deinen-Job-verlierst-und-ich-jagen-muss-</link>
-      <guid isPermaLink="false">https://debeste.de/632481/Und-was,-wenn-du-deinen-Job-verlierst-und-ich-jagen-muss-</guid>
-      <pubDate>Mon, 26 Oct 2026 06:03:37 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Der besorgte Gedanke an die eigenen Überlebensfähigkeiten scheitert schon an der Unkenntnis über den natürlichen Lebensraum von Würstchen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Kinder heute brauchen Handys...</title>
-      <link>https://debeste.de/632389/Kinder-heute-brauchen-Handys-</link>
-      <guid isPermaLink="false">https://debeste.de/632389/Kinder-heute-brauchen-Handys-</guid>
-      <pubDate>Mon, 26 Oct 2026 06:03:37 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein Blick zurück erinnert daran, wie ein einzelner Regentropfen an der Autoscheibe früher für stundenlange Unterhaltung und Spannung reichte.</p>]]></description>
+      <title>[Tech &amp; AI] Grok releases the first seven minutes of its AI-generated ‘Odyssey’</title>
+      <link>https://techcrunch.com/2026/10/25/grok-releases-the-first-seven-minutes-of-its-ai-generated-odyssey/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181554</guid>
+      <pubDate>Sun, 25 Oct 2026 21:31:16 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[<p>Die erste, knapp sieben Minuten lange Episode des von Grok generierten Filmprojekts wurde veröffentlicht. Kritiker bemängeln jedoch, dass die Aufnahmen zwar technisch solide wirken, aber menschliche Tiefe und künstlerische Finesse vermissen lassen.</p>]]></description>
     </item>
   </channel>
 </rss>

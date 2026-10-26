@@ -5,26 +5,62 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 26 Oct 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 11:16:33 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OpenAI setzt gegen Anthropic auf die Karte »Preis«</title>
-      <link>https://www.all-ai.de/news/news26/openai-anthropic-preis</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-preis</guid>
-      <pubDate>Sun, 25 Oct 2026 08:18:33 GMT</pubDate>
+      <title>Hacker kapern Trading-Zugänge über japanischen Windows-Cloud-Dienst</title>
+      <link>https://www.all-ai.de/news/news26/hacker-ki-japan-cloud-trading</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/hacker-ki-japan-cloud-trading</guid>
+      <pubDate>Mon, 26 Oct 2026 09:55:13 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI gewinnt mit günstigeren Angeboten KI-Ausgaben von Anthropic-Kunden. Replit nutzt OpenAI als bevorzugten Partner für seinen Agenten und verlagert den Großteil seines KI-Budgets dorthin. Bei Rippling steigt OpenAIs Anteil an der Programmierarbeit von 16 auf 52 Prozent. DataCamp erwartet bis zu 90 Prozent wenige...]]></description>
+      <description><![CDATA[Onamae Desktop Cloud vermietet virtuelle Windows-Desktops, auf denen viele Kunden ihre Tradingprogramme betreiben. Angreifer installierten Schadsoftware in Kundenumgebungen und stahlen Zugangsdaten für Handelskonten. 26.739 Server gelten als möglicherweise betroffen, nicht als bestätigt gehackt. GMO schaltete den ge...]]></description>
     </item>
     <item>
-      <title>Kimi K3.1: Influencer-Lob nach Vorlage, Werbung ohne Kennzeichnung?</title>
-      <link>https://www.all-ai.de/news/news26top/kimi-k3-influencer-lob</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kimi-k3-influencer-lob</guid>
-      <pubDate>Sun, 25 Oct 2026 07:59:29 GMT</pubDate>
+      <title>Samsung-TV: KI soll Zuschauer durchleuchten</title>
+      <link>https://www.all-ai.de/news/news26top/samsung-tv-ki-ueberwachung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/samsung-tv-ki-ueberwachung</guid>
+      <pubDate>Mon, 26 Oct 2026 08:32:42 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Elshayib wirft Moonshot vor, Influencer für positive Kimi-Beiträge zu bezahlen. Die veröffentlichten Anweisungen verlangen eine Freigabe und den Verzicht auf die Kennzeichnung als bezahlte Partnerschaft. Die Herkunft und Echtheit der Unterlagen sind nicht unabhängig bestätigt. Kimi K3.1 Pro erreicht im Intelligence ...]]></description>
+      <description><![CDATA[Ein Sicherheitsforscher fand in einem Samsung-TV Funktionen für Audioanalyse, Screenshots und Werbetracking. Ein lokales KI-Modell erfasst das Sehverhalten und übersprungene Anzeigen. Samsung beschreibt ACR als freiwillig, während eine Studie Verbindungen zu ACR-Servern auch nach dem Abschalten feststellte. Original...]]></description>
+    </item>
+    <item>
+      <title>Vorbild für Deutschland: China will Beschäftigte vor schneller KI-Automatisierung schützen</title>
+      <link>https://www.all-ai.de/news/news26top/china-ki-arbeit-deutschland</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/china-ki-arbeit-deutschland</guid>
+      <pubDate>Mon, 26 Oct 2026 08:25:01 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[China führt Beschäftigungsprüfungen für bestimmte KI-Projekte ein. Arbeitsintensive Branchen sollen KI vorsichtiger und schrittweise einführen. Betroffene Arbeitnehmer erhalten Hilfe bei Weiterbildung und Berufswechsel. Auch Diskriminierung und Eingriffe in die Privatsphäre durch Algorithmen geraten in den Blick. Ch...]]></description>
+    </item>
+    <item>
+      <title>Nanbeige4.3-33B dominiert Coding-Agenten</title>
+      <link>https://www.all-ai.de/news/news26/nanbeige-coding-modell</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nanbeige-coding-modell</guid>
+      <pubDate>Mon, 26 Oct 2026 08:05:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nanbeige4.3-33B erreicht im Terminal-Bench 4.0 mit 23,8 Punkten fast das Vierfache von Qwen3.8-27B. Auch bei Automation Bench und JobBench liegt das Modell vor den drei direkten Konkurrenten. In GDPval und GPQA Diamond führt dagegen Qwen beziehungsweise Gemma. Das 33B-Modell bietet 512K Kontext, Open Weights und ein...]]></description>
+    </item>
+    <item>
+      <title>Elon Musk sieht ein Massensterben bei KI-Clouds kommen</title>
+      <link>https://www.all-ai.de/news/news26top/elon-musk-ki-clouds-sterben</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/elon-musk-ki-clouds-sterben</guid>
+      <pubDate>Mon, 26 Oct 2026 07:18:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Elon Musk erwartet eine Pleite- und Übernahmewelle unter mehr als 200 Neocloud-Anbietern. SpaceX will keine Neocloud kaufen und verweist auf eigene Einnahmen aus Starlink und Raketenstarts. CoreWeaves Kurssturz und hohe Schulden zeigen den Druck auf das Geschäftsmodell. Gartner erwartet bis 2030 eine starke Marktber...]]></description>
+    </item>
+    <item>
+      <title>Elon Musks groß angekündigter KI-Kinofilm dauert 7 Minuten</title>
+      <link>https://www.all-ai.de/news/news26top/elon-musk-ki-kinofilm-fail</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/elon-musk-ki-kinofilm-fail</guid>
+      <pubDate>Mon, 26 Oct 2026 07:05:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Grok Imagine hat eine sieben Minuten und zwölf Sekunden lange erste Episode seiner »Odyssey« veröffentlicht. Elon Musk hatte zuvor einen vollständigen, historisch korrekten Film für 2026 angekündigt. Einzelne Bilder wirken glaubwürdig, doch Handlung, Dialoge und Figuren bleiben schwach. Wie die Serie in einen Langfi...]]></description>
     </item>
   </channel>
 </rss>
