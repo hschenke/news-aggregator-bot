@@ -84,27 +84,31 @@ class TestKiBriefingPrompt(unittest.TestCase):
         self.assertIn("Streamlit App", html)
 
     def test_gemini_models_and_fallback_order(self):
-        """Prüft die absteigende Sortierung der Modelle (3.8 bis 3.5) und die Fallback-Kette."""
+        """Prüft die verfügbaren Modelle (mit gemini-3.5-flash-lite als Standard) und die Fallback-Kette."""
         expected_models = [
-            "gemini-3.8-flash",
-            "gemini-3.7-flash",
+            "gemini-3.5-flash-lite",
             "gemini-3.6-flash",
             "gemini-3.5-flash",
-            "gemini-3.5-flash-lite",
+            "gemini-3.1-flash-lite",
         ]
         self.assertEqual(AVAILABLE_GEMINI_MODELS, expected_models)
-        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemini-3.8-flash")
+        self.assertEqual(DEFAULT_GEMINI_MODEL, "gemini-3.5-flash-lite")
 
         # Standardauswahl ohne explizite Angabe
         candidates = get_candidate_models()
         self.assertEqual(candidates, expected_models)
-        self.assertEqual(candidates[0], "gemini-3.8-flash")
+        self.assertEqual(candidates[0], "gemini-3.5-flash-lite")
 
         # Auswahl mit bevorzugtem Modell
         candidates_36 = get_candidate_models("gemini-3.6-flash")
         self.assertEqual(candidates_36[0], "gemini-3.6-flash")
         self.assertEqual(set(candidates_36), set(expected_models))
         self.assertEqual(len(candidates_36), len(expected_models))
+
+        # Nicht verfügbares / veraltetes Modell fällt sauber auf DEFAULT_GEMINI_MODEL zurück
+        candidates_invalid = get_candidate_models("gemini-3.8-flash")
+        self.assertEqual(candidates_invalid[0], "gemini-3.5-flash-lite")
+        self.assertEqual(candidates_invalid, expected_models)
 
     def test_sources_yaml_and_canonical_prompt_match_strictly(self):
         """Prüft strikte 1:1 Übereinstimmung zwischen prompts.yaml/sources.yaml und kanonischem DEFAULT_MAIN_PROMPT_TEMPLATE / DIRECTIVES."""

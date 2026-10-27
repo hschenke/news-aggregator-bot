@@ -73,7 +73,7 @@ class TestPipelinePerformance(unittest.TestCase):
         """Prüft, dass get_candidate_models das bevorzugte Modell an Position 0 setzt."""
         candidates = get_candidate_models("gemini-3.5-flash")
         self.assertEqual(candidates[0], "gemini-3.5-flash")
-        self.assertIn("gemini-3.8-flash", candidates)
+        self.assertIn("gemini-3.5-flash-lite", candidates)
 
         # Prüfe Umgebungsvariable GEMINI_MODEL
         with patch.dict(os.environ, {"GEMINI_MODEL": "gemini-3.5-flash"}):

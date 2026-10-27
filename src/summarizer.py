@@ -16,22 +16,28 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
 AVAILABLE_GEMINI_MODELS: list[str] = [
-    "gemini-3.8-flash",
-    "gemini-3.7-flash",
+    "gemini-3.5-flash-lite",
     "gemini-3.6-flash",
     "gemini-3.5-flash",
-    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
 ]
 DEFAULT_GEMINI_MODEL: str = AVAILABLE_GEMINI_MODELS[0]
 
 
 def get_candidate_models(preferred_model: str | None = None) -> list[str]:
     """
-    Ermittelt die geordnete Liste an KI-Modellkandidaten inklusive Fallback-Kette.
-    Das bevorzugte Modell steht an erster Stelle, gefolgt von den weiteren verfügbaren
-    Modellen in absteigender Reihenfolge (vom neuesten 3.8 bis zum ältesten 3.5).
+    Ermittelt die geordnete Liste an verfügbaren KI-Modellkandidaten inklusive Fallback-Kette.
+    Das bevorzugte Modell (Standard: gemini-3.5-flash-lite) steht an erster Stelle,
+    gefolgt von den weiteren verfügbaren Modellen.
     """
-    selected = preferred_model or os.getenv("GEMINI_MODEL") or DEFAULT_GEMINI_MODEL
+    env_model = os.getenv("GEMINI_MODEL")
+    if preferred_model and preferred_model in AVAILABLE_GEMINI_MODELS:
+        selected = preferred_model
+    elif env_model and env_model in AVAILABLE_GEMINI_MODELS:
+        selected = env_model
+    else:
+        selected = DEFAULT_GEMINI_MODEL
+
     candidates: list[str] = [selected]
     for model_name in AVAILABLE_GEMINI_MODELS:
         if model_name not in candidates:
