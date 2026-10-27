@@ -5,14 +5,86 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 21:13:08 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 21:13:35 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Disruptive raises $10B fund to make big bets on at least 10 companies</title>
+      <link>https://techcrunch.com/2026/10/27/disruptive-raises-10b-fund-to-make-big-bets-on-at-least-10-companies/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182189</guid>
+      <pubDate>Tue, 27 Oct 2026 18:55:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Disruptive has made headlines in recent years for pouring money into companies like chip startup Groq and the AI voice-generation startup ElevenLabs.]]></description>
+    </item>
+    <item>
+      <title>Frontier AI labs say their models refuted the Exponential Time Hypothesis. What does that mean?</title>
+      <link>https://techcrunch.com/2026/10/27/frontier-ai-labs-say-their-models-refuted-the-exponential-time-hypothesis-what-does-that-mean/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182002</guid>
+      <pubDate>Tue, 27 Oct 2026 17:08:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[TechCrunch spoke to the MIT computer scientist charged with explaining OpenAI's latest mind-bending discovery.]]></description>
+    </item>
+    <item>
+      <title>Google’s Genie 4 world model adds audio, more realistic worlds, and real-time steering</title>
+      <link>https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182045</guid>
+      <pubDate>Tue, 27 Oct 2026 16:30:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Genie 4 can maintain a consistent scene for up to two minutes, double Genie 3's limit, and offers better physics and more humanlike characters.]]></description>
+    </item>
+    <item>
+      <title>Meta AI director Rohit Patel leaves to take on Microsoft Office and Google Workspace</title>
+      <link>https://techcrunch.com/2026/10/27/meta-ai-director-rohit-patel-leaves-to-take-on-microsoft-office-and-google-workspace/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182018</guid>
+      <pubDate>Tue, 27 Oct 2026 14:59:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Rohit Patel is departing Meta after eight years working on AI evaluations and reinforcement learning, TechCrunch has exclusively learned. His startup, Ndoc, aims to take on Microsoft Office Suite.]]></description>
+    </item>
+    <item>
+      <title>Japan internet giant GMO says hackers posted stolen customer data</title>
+      <link>https://techcrunch.com/2026/10/27/japan-internet-giant-gmo-says-hackers-posted-stolen-customer-data/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182015</guid>
+      <pubDate>Tue, 27 Oct 2026 13:32:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Japan's GMO Internet is verifying alleged customer data posted by suspected hackers following a cloud service breach.]]></description>
+    </item>
+    <item>
+      <title>Opera introduces a new web standard to let users deploy AI locally in their browser</title>
+      <link>https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181922</guid>
+      <pubDate>Tue, 27 Oct 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The new standard, WebAI, is designed to work with a variety of AI models.]]></description>
+    </item>
+    <item>
+      <title>General Compute raises $100 million Series A, countering the neocloud disaster narrative</title>
+      <link>https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181881</guid>
+      <pubDate>Tue, 27 Oct 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[General Compute is betting on inference chips from outside the Nvidia ecosystem.]]></description>
+    </item>
+    <item>
+      <title>Nvidia backs Indian startup helping companies run AI models with fewer GPUs</title>
+      <link>https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181625</guid>
+      <pubDate>Tue, 27 Oct 2026 11:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Simplismart says its annualized revenue run rate has grown 14-fold in six months, with the U.S. accounting for more than half its revenue.]]></description>
+    </item>
     <item>
       <title>How OpenAI turned its coding tools into dots, an always-on personal assistant</title>
       <link>https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3181218</guid>
-      <pubDate>Tue, 27 Oct 2026 02:00:00 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 02:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Alexander Embiricos, the OpenAI executive responsible for dots, never wants to have a meeting with someone else's AI agent.]]></description>
@@ -21,7 +93,7 @@
       <title>Cohere says Alibaba’s Qwen model tried to send a file to Beijing</title>
       <link>https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3181989</guid>
-      <pubDate>Tue, 27 Oct 2026 01:12:21 +0000</pubDate>
+      <pubDate>Tue, 27 Oct 2026 01:12:21 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[An AI model said it wouldn’t use any tools, then tried to send something to a server in Beijing anyway, and while researchers say it’s probably a training quirk and not espionage, the whole thing has people asking how much to trust free Chinese AI.]]></description>
