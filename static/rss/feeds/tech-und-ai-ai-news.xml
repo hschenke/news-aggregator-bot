@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 12:31:22 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 12:31:51 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Anthropic: Sicherheitsforscher gelangen über Drittsoftware an interne Daten</title>
       <link>https://www.all-ai.de/news/news26/anthropic-sicherheit</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-sicherheit</guid>
-      <pubDate>Tue, 27 Oct 2026 10:16:50 +0100</pubDate>
+      <pubDate>Tue, 27 Oct 2026 09:16:50 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Cathedral gelangte bei einem Sicherheitstest über externe Geschäftssoftware in interne Systeme von Anthropic. KI-Agenten fanden innerhalb von zwölf Stunden Wege zu sensiblen Daten. Claude-Gespräche, Quellcode und Modellgewichte waren laut Anthropic nicht zugänglich. Anthropic ließ die Schwachstellen beheben und krit...]]></description>
@@ -21,7 +21,7 @@
       <title>OpenAI meldet drei große Forschungsergebnisse aus Mathematik und Physik</title>
       <link>https://www.all-ai.de/news/beitrage2026/openai-forschung-mathe-informatik-physik</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/openai-forschung-mathe-informatik-physik</guid>
-      <pubDate>Tue, 27 Oct 2026 09:52:42 +0100</pubDate>
+      <pubDate>Tue, 27 Oct 2026 08:52:42 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI meldet drei KI-Ergebnisse aus Mathematik, Informatik und Physik. Ein Beweis stellt die Exponential Time Hypothesis infrage und wird von externen Informatikern geprüft. Die mathematische Arbeit betrifft Wellen und die Kakeya-Vermutung. Das Physik-Ergebnis behandelt einen Teil des Yang-Mills-Millennium-Problems...]]></description>
@@ -30,7 +30,7 @@
       <title>Ein lokales Qwen-Modell telefoniert nach Hause</title>
       <link>https://www.all-ai.de/news/news26top/qwen-lokal-nach-hause</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/qwen-lokal-nach-hause</guid>
-      <pubDate>Tue, 27 Oct 2026 09:33:45 +0100</pubDate>
+      <pubDate>Tue, 27 Oct 2026 08:33:45 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Qwen3.8-Flash-Next versuchte bei einem Sicherheitstest, eine Testzeichenfolge nach Peking hochzuladen. Die abgeschottete Testumgebung blockierte die Verbindung. Die Ursache ist ungeklärt; Belege für eine eingebaute Hintertür gibt es nicht. Cohere hat Testprotokolle und ein Skript zur Reproduktion veröffentlicht. Coh...]]></description>
@@ -39,7 +39,7 @@
       <title>GPT-6.1 Terra: Besser als Sol und Astra?</title>
       <link>https://www.all-ai.de/news/news26top/openai-gpt-6-1-terra-start</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-gpt-6-1-terra-start</guid>
-      <pubDate>Mon, 26 Oct 2026 19:50:12 +0100</pubDate>
+      <pubDate>Mon, 26 Oct 2026 18:50:12 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT-6.1 Terra konzentriert sich auf visuelles Verständnis, Computerbedienung und Textarbeit. Das Modell kommt Sol und Astra in mehreren Benchmarks nahe, bleibt bei schwerem Coding aber dahinter. Eine Million Eingabetoken kostet 1 Dollar, eine Million Ausgabetoken 5 Dollar. Terra ist in der API sowie für Plus, Pro, E...]]></description>
