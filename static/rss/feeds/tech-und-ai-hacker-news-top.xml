@@ -5,9 +5,188 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 06:01:21 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 10:42:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>UK to charge universities $1,200 per international student</title>
+      <link>https://africa.businessinsider.com/local/markets/uk-to-charge-universities-dollar1200-per-international-student-including-those-from/qe5rqbe</link>
+      <guid isPermaLink="false">https://africa.businessinsider.com/local/markets/uk-to-charge-universities-dollar1200-per-international-student-including-those-from/qe5rqbe</guid>
+      <pubDate>Tue, 27 Oct 2026 05:13:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>There are now 5 inference providers for abliterated DeepSeek</title>
+      <link>https://allmodels.io/llm/abliterated</link>
+      <guid isPermaLink="false">https://allmodels.io/llm/abliterated</guid>
+      <pubDate>Tue, 27 Oct 2026 04:53:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>I still teach OpenGL ES 3.0</title>
+      <link>https://eliasfarhan.ch/graphics/cpp/2026/01/27/why-i-teach-opengles.html</link>
+      <guid isPermaLink="false">https://eliasfarhan.ch/graphics/cpp/2026/01/27/why-i-teach-opengles.html</guid>
+      <pubDate>Tue, 27 Oct 2026 02:15:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows</title>
+      <link>https://github.com/otya128/winevdm</link>
+      <guid isPermaLink="false">https://github.com/otya128/winevdm</guid>
+      <pubDate>Tue, 27 Oct 2026 01:15:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)</title>
+      <link>https://blog.cloudflare.com/kv-cache-exposure-remediation/</link>
+      <guid isPermaLink="false">https://blog.cloudflare.com/kv-cache-exposure-remediation/</guid>
+      <pubDate>Mon, 26 Oct 2026 22:41:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Is PHP Running on Your ColdFusion Server? How to Check, and Remove It</title>
+      <link>https://www.gregoryalexander.com/blog/2026/10/23/is-php-quietly-running-on-your-coldfusion-server-how-to-check-and-remove-it</link>
+      <guid isPermaLink="false">https://www.gregoryalexander.com/blog/2026/10/23/is-php-quietly-running-on-your-coldfusion-server-how-to-check-and-remove-it</guid>
+      <pubDate>Mon, 26 Oct 2026 22:27:17 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The Exponential Time Hypothesis Is False [pdf]</title>
+      <link>https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf</link>
+      <guid isPermaLink="false">https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf</guid>
+      <pubDate>Mon, 26 Oct 2026 21:59:15 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Three new discoveries in mathematics, computer science, and physics</title>
+      <link>https://openai.com/index/building-scientific-understanding-with-academic-communities/</link>
+      <guid isPermaLink="false">https://openai.com/index/building-scientific-understanding-with-academic-communities/</guid>
+      <pubDate>Mon, 26 Oct 2026 21:35:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Type Server Protocol</title>
+      <link>https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md</link>
+      <guid isPermaLink="false">https://github.com/microsoft/pylance-release/blob/main/docs/tsp/type-server-protocol.md</guid>
+      <pubDate>Mon, 26 Oct 2026 18:14:49 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>GPT-6.1 Terra</title>
+      <link>https://openai.com/index/introducing-gpt-6-1-terra/</link>
+      <guid isPermaLink="false">https://openai.com/index/introducing-gpt-6-1-terra/</guid>
+      <pubDate>Mon, 26 Oct 2026 18:01:17 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Oldest GUI application that still runs on Windows 11</title>
+      <link>https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/</link>
+      <guid isPermaLink="false">https://blog.enlyth.com/posts/oldest-windows-gui-app-win-11/</guid>
+      <pubDate>Mon, 26 Oct 2026 17:56:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>A Man from the Future: Why Johnny Can't Stop Abstracting</title>
+      <link>http://muratbuffalo.blogspot.com/2026/10/the-man-from-future-why-johnny-cant.html</link>
+      <guid isPermaLink="false">http://muratbuffalo.blogspot.com/2026/10/the-man-from-future-why-johnny-cant.html</guid>
+      <pubDate>Mon, 26 Oct 2026 17:49:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Nietzschian Debugger</title>
+      <link>https://github.com/DilawarShafiq/nietzschian-debugger</link>
+      <guid isPermaLink="false">https://github.com/DilawarShafiq/nietzschian-debugger</guid>
+      <pubDate>Mon, 26 Oct 2026 17:25:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>CSS-Tricks has a new owner</title>
+      <link>https://css-tricks.com/css-tricks-has-a-new-owner/</link>
+      <guid isPermaLink="false">https://css-tricks.com/css-tricks-has-a-new-owner/</guid>
+      <pubDate>Mon, 26 Oct 2026 15:51:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Microsoft offers mass buyouts for roughly a quarter of its workforce</title>
+      <link>https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/</link>
+      <guid isPermaLink="false">https://www.seattletimes.com/business/microsoft/microsoft-offers-mass-buyouts-for-roughly-a-quarter-of-its-workforce/</guid>
+      <pubDate>Mon, 26 Oct 2026 15:35:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Solar power is becoming bigger than nuclear</title>
+      <link>https://www.bbc.com/future/article/20261023-how-solar-became-bigger-than-nuclear</link>
+      <guid isPermaLink="false">https://www.bbc.com/future/article/20261023-how-solar-became-bigger-than-nuclear</guid>
+      <pubDate>Mon, 26 Oct 2026 15:26:17 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Sebastian Raschka's from-scratch video course on building reasoning models</title>
+      <link>https://magazine.sebastianraschka.com/p/building-reasoning-models</link>
+      <guid isPermaLink="false">https://magazine.sebastianraschka.com/p/building-reasoning-models</guid>
+      <pubDate>Mon, 26 Oct 2026 15:11:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>New iPad mini</title>
+      <link>https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/</link>
+      <guid isPermaLink="false">https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/</guid>
+      <pubDate>Mon, 26 Oct 2026 13:13:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Anthropic S-1</title>
+      <link>https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm</link>
+      <guid isPermaLink="false">https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm</guid>
+      <pubDate>Mon, 26 Oct 2026 13:04:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Pharo 14</title>
+      <link>https://pharo.org/news/2026-10-26-Pharo14Release.html</link>
+      <guid isPermaLink="false">https://pharo.org/news/2026-10-26-Pharo14Release.html</guid>
+      <pubDate>Mon, 26 Oct 2026 11:15:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>
