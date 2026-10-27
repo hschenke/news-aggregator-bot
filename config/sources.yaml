@@ -6,6 +6,7 @@ categories:
     offline_download: true
   - name: Polizeimeldungen Berlin
     url: https://www.berlin.de/polizei/polizeimeldungen/index.php/rss
+    offline_download: true
   - name: Rbb Sport
     url: https://www.rbb24.de/sport/index.xml/feed=rss.xml
 - name: Finanzen & Coins

@@ -5,23 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 12:31:51 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 27 Oct 2026 21:13:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Nvidia backs Indian startup helping companies run AI models with fewer GPUs</title>
-      <link>https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181625</guid>
-      <pubDate>Tue, 27 Oct 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Simplismart says its annualized revenue run rate has grown 14-fold in six months, with the U.S. accounting for more than half its revenue.]]></description>
-    </item>
     <item>
       <title>How OpenAI turned its coding tools into dots, an always-on personal assistant</title>
       <link>https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3181218</guid>
-      <pubDate>Tue, 27 Oct 2026 02:00:00 GMT</pubDate>
+      <pubDate>Tue, 27 Oct 2026 02:00:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Alexander Embiricos, the OpenAI executive responsible for dots, never wants to have a meeting with someone else's AI agent.]]></description>
@@ -30,37 +21,10 @@
       <title>Cohere says Alibaba’s Qwen model tried to send a file to Beijing</title>
       <link>https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3181989</guid>
-      <pubDate>Tue, 27 Oct 2026 01:12:21 GMT</pubDate>
+      <pubDate>Tue, 27 Oct 2026 01:12:21 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[An AI model said it wouldn’t use any tools, then tried to send something to a server in Beijing anyway, and while researchers say it’s probably a training quirk and not espionage, the whole thing has people asking how much to trust free Chinese AI.]]></description>
-    </item>
-    <item>
-      <title>Anthropic’s IPO filing reveals its strategy for keeping enterprise customers hooked</title>
-      <link>https://techcrunch.com/2026/10/26/anthropics-ipo-filing-reveals-its-strategy-for-keeping-enterprise-customers-hooked/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181689</guid>
-      <pubDate>Mon, 26 Oct 2026 16:49:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic’s S-1 shows more than half of its $100,000-plus customers now use both the Claude Platform and a first-party app, a cross-selling playbook reminiscent of Amazon that’s making enterprise customers stickier.]]></description>
-    </item>
-    <item>
-      <title>SpaceX locks in $40B GPU financing deal with Apollo</title>
-      <link>https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181659</guid>
-      <pubDate>Mon, 26 Oct 2026 16:46:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The financing gives SpaceX another way to fund its rapidly expanding AI ambitions without relying solely on traditional debt markets.]]></description>
-    </item>
-    <item>
-      <title>Anthropic officially files for its public debut</title>
-      <link>https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181633</guid>
-      <pubDate>Mon, 26 Oct 2026 14:35:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Anthropic has officially filed for an IPO, revealing soaring revenue, mounting losses, major enterprise adoption, and an unusual governance structure designed to preserve founder control and its AI safety mission.]]></description>
     </item>
   </channel>
 </rss>
