@@ -15,6 +15,7 @@ import streamlit as st
 from src.summarizer import (
     summarize_news_with_gemini,
     AVAILABLE_GEMINI_MODELS,
+    DEFAULT_GEMINI_MODEL,
     DEFAULT_MAIN_PROMPT_TEMPLATE,
     DEFAULT_DIRECTIVES,
 )
@@ -49,10 +50,12 @@ def render_ki_tab(
         try:
             storage = get_storage()
             latest = storage.get_latest_briefing()
-            if latest and isinstance(latest.get("content"), str):
-                current_briefing = latest["content"]
-                briefing_meta = latest
-                st.session_state["cached_summary"] = current_briefing
+            if latest:
+                content = latest.get("content_markdown") or latest.get("content")
+                if isinstance(content, str) and content.strip():
+                    current_briefing = content
+                    briefing_meta = latest
+                    st.session_state["cached_summary"] = current_briefing
         except Exception as exc:
             logger.debug("Failed to load latest briefing from storage: %s", exc)
 
@@ -120,7 +123,7 @@ def render_ki_tab(
                 default_idx = (
                     AVAILABLE_GEMINI_MODELS.index(default_model)
                     if default_model in AVAILABLE_GEMINI_MODELS
-                    else len(AVAILABLE_GEMINI_MODELS) - 1
+                    else 0
                 )
                 selected_model = st.selectbox(
                     "LLM-Modell:",
@@ -188,5 +191,3 @@ def render_ki_tab(
     if current_briefing:
         st.markdown("---")
         st.markdown(current_briefing, unsafe_allow_html=True)
-    else:
-        st.info("Aktuell nichts neues generiert.")

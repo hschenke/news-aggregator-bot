@@ -63,14 +63,14 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
     def test_ki_tab_models_prompts_and_state(self) -> None:
         """KI tab must support Gemini 3.8-3.5 models with 3.5-flash-lite default, prompt editing, and disabled button."""
         self.assertIn("gemini-3.5-flash-lite", AVAILABLE_GEMINI_MODELS)
-        self.assertIn("gemini-3.8-flash", AVAILABLE_GEMINI_MODELS)
+        self.assertIn("gemini-3.6-flash", AVAILABLE_GEMINI_MODELS)
         self.assertIn("AVAILABLE_GEMINI_MODELS", self.ki_tab_py)
         self.assertIn("default_model = \"gemini-3.5-flash-lite\"", self.ki_tab_py)
         self.assertIn("input_ki_main_prompt", self.ki_tab_py)
         self.assertIn("input_ki_prompt_directives", self.ki_tab_py)
         self.assertIn("disabled=is_generating", self.ki_tab_py)
         # Concise briefing message
-        self.assertIn("Aktuell nichts neues generiert.", self.ki_tab_py)
+        self.assertNotIn("Aktuell nichts neues generiert.", self.ki_tab_py)
 
     def test_manage_tab_no_purge_and_disabled_save_when_no_changes(self) -> None:
         """Manage tab must not have purge block, and save button must be disabled when no changes."""
