@@ -509,6 +509,29 @@ def save_sources(
     return gh_res
 
 
+def get_offline_enabled_feeds(
+    config: dict[str, Any] | None = None,
+    config_path: str = "config/sources.yaml",
+) -> list[dict[str, Any]]:
+    """Gibt alle Feeds zurück, bei denen der Offline-Download (offline_download: True) aktiviert ist."""
+    if config is None:
+        config = load_sources(config_path)
+    offline_feeds: list[dict[str, Any]] = []
+    for cat in config.get("categories", []):
+        cat_name = str(cat.get("name") or "Allgemein").strip()
+        for f in cat.get("feeds", []):
+            if bool(f.get("offline_download", False)):
+                offline_feeds.append({
+                    "category": cat_name,
+                    "name": str(f.get("name") or f.get("url") or "").strip(),
+                    "url": str(f.get("url") or "").strip(),
+                    "include_keywords": f.get("include_keywords", []),
+                    "exclude_keywords": f.get("exclude_keywords", []),
+                    "offline_download": True,
+                })
+    return offline_feeds
+
+
 def add_feed(
     category_name: str,
     feed_name: str,
@@ -519,6 +542,7 @@ def add_feed(
     save_to_disk: bool = True,
     include_keywords: Any = None,
     exclude_keywords: Any = None,
+    offline_download: bool = False,
     **kwargs: Any,
 ) -> dict[str, Any]:
     """
@@ -555,7 +579,7 @@ def add_feed(
             existing_feed = f
             break
 
-    new_feed_obj = {
+    new_feed_obj: dict[str, Any] = {
         "name": feed_name,
         "url": feed_url,
     }
@@ -565,9 +589,13 @@ def add_feed(
     norm_exc = normalize_keywords(exclude_keywords)
     if norm_exc:
         new_feed_obj["exclude_keywords"] = norm_exc
+    if bool(offline_download):
+        new_feed_obj["offline_download"] = True
 
     if existing_feed:
         existing_feed.update(new_feed_obj)
+        if not bool(offline_download):
+            existing_feed.pop("offline_download", None)
         existing_feed.pop("max_items", None)
     else:
         feeds.append(new_feed_obj)
@@ -626,9 +654,10 @@ def update_feed(
     save_to_disk: bool = True,
     include_keywords: Any = None,
     exclude_keywords: Any = None,
+    offline_download: bool | None = None,
     **kwargs: Any,
 ) -> bool:
-    """Aktualisiert Name, URL, Keywords und/oder Kategorie eines bestehenden Feeds."""
+    """Aktualisiert Name, URL, Keywords, Offline-Download-Status und/oder Kategorie eines bestehenden Feeds."""
     if config is None:
         config = load_sources(config_path)
     categories = config.get("categories", [])
@@ -677,6 +706,12 @@ def update_feed(
                 target_feed["exclude_keywords"] = norm_exc
             else:
                 target_feed.pop("exclude_keywords", None)
+
+        if offline_download is not None:
+            if bool(offline_download):
+                target_feed["offline_download"] = True
+            else:
+                target_feed.pop("offline_download", None)
 
         updated = True
 
@@ -834,4 +869,3 @@ def update_settings(
         save_settings(settings_data, config_path)
         if prompt_updates:
             save_prompts(prompts_data, prompts_config_arg)
-

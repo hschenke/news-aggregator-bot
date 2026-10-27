@@ -11,13 +11,14 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Any
 
-from src.models import Article
+from src.models import Article, OfflineArticle
 from src.exceptions import StorageError, StorageConnectionError
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_TIMEOUT_SECONDS: float = float(os.getenv("TURSO_TIMEOUT", "30.0"))
 DEFAULT_SQLITE_PATH: str = "data/news_bot.db"
+OFFLINE_RETENTION_DAYS: int = 90
 
 
 def get_safe_db_path(db_path: str | Path | None = None) -> Path:
@@ -229,6 +230,60 @@ class StorageBackend(ABC):
     @abstractmethod
     def set_metadata(self, key: str, value: str) -> None:
         """Schreibt oder aktualisiert einen Schlüsselwert in der Metadaten-Tabelle."""
+        pass
+
+    @abstractmethod
+    def save_offline_article(self, article: OfflineArticle | dict[str, Any]) -> bool:
+        """
+        Speichert einen Artikel inkl. Webseiten-Abbild (Text, HTML, Bilder) in offline_articles
+        und entfernt automatisch Einträge, die älter als 3 Monate (90 Tage) sind.
+        """
+        pass
+
+    @abstractmethod
+    def save_offline_articles(self, articles: list[OfflineArticle | dict[str, Any]]) -> int:
+        """
+        Speichert mehrere Offline-Artikel in offline_articles
+        und entfernt automatisch Einträge, die älter als 3 Monate (90 Tage) sind.
+        """
+        pass
+
+    @abstractmethod
+    def get_offline_articles(
+        self,
+        feed_name: str | None = None,
+        category: str | None = None,
+        search_query: str | None = None,
+        limit: int = 500,
+    ) -> list[OfflineArticle]:
+        """Gibt gespeicherte Offline-Artikel sortiert nach timestamp DESC zurück."""
+        pass
+
+    @abstractmethod
+    def get_offline_article(self, url: str) -> OfflineArticle | None:
+        """Gibt einen einzelnen gespeicherten Offline-Artikel anhand seiner URL zurück."""
+        pass
+
+    @abstractmethod
+    def get_offline_urls(self, feed_name: str | None = None) -> set[str]:
+        """Gibt die Menge aller bereits offline gespeicherten Artikel-URLs zurück."""
+        pass
+
+    @abstractmethod
+    def delete_offline_article(self, url: str) -> bool:
+        """Löscht einen einzelnen Offline-Artikel anhand seiner URL."""
+        pass
+
+    @abstractmethod
+    def delete_offline_articles_by_feed(self, feed_name: str) -> int:
+        """Löscht alle gespeicherten Offline-Artikel eines bestimmten Feeds."""
+        pass
+
+    @abstractmethod
+    def cleanup_offline_articles(self, max_age_days: int | float = OFFLINE_RETENTION_DAYS) -> int:
+        """
+        Entfernt automatisch Offline-Artikel aus offline_articles, die älter als max_age_days (Standard: 90 Tage / 3 Monate) sind.
+        """
         pass
 
     @abstractmethod

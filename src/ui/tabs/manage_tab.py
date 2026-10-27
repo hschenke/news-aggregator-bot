@@ -25,8 +25,10 @@ from src.aggregator import (
     delete_category,
     test_feed_connection,
     sync_sources_to_github,
+    get_offline_enabled_feeds,
     DEFAULT_ARCHIVE_RETENTION_DAYS,
 )
+from src.offline_archiver import start_offline_archive_task
 from src.storage import get_storage
 from src.ui.styles import embed_client_script, render_dismissible_notice
 
@@ -117,6 +119,8 @@ def render_manage_tab(
                 st.session_state["is_saving_sources"] = True
                 with st.spinner("Sichere Feeds & Einstellungen..."):
                     save_sources(working_config)
+                    if get_offline_enabled_feeds(working_config):
+                        start_offline_archive_task(config=working_config)
                     sync_res = sync_sources_to_github(
                         config_dict=working_config,
                         commit_message="chore(config): update configuration and RSS feeds via web dashboard",
@@ -201,6 +205,13 @@ def render_manage_tab(
             with col_kw2:
                 exc_kw_input = st.text_input("🔴 Ohne Keywords (Komma):", placeholder="z. B. Krypto, Sport", key="inp_new_feed_exc")
 
+        offline_dl_input = st.checkbox(
+            "📥 Offline-Download aktivieren (Webseite, Text & Bilder für 3 Monate im Archiv speichern)",
+            value=False,
+            key="inp_new_feed_offline",
+            help="Wenn aktiviert, werden alle Artikel dieses Feeds automatisch im Hintergrund als Offline-Abbild (HTML/PDF mit Text & Bildern) für 3 Monate in der Datenbank archiviert.",
+        )
+
         col_tst, col_add = st.columns([1, 1])
         with col_tst:
             if st.button("🔍 Feed testen", key="btn_test_new_feed", use_container_width=True):
@@ -220,9 +231,15 @@ def render_manage_tab(
                             feed_url=feed_url_input.strip(),
                             include_keywords=inc_kw_input.strip(),
                             exclude_keywords=exc_kw_input.strip(),
+                            offline_download=bool(offline_dl_input),
                             config=working_config,
                             save_to_disk=False,
                         )
+                        if offline_dl_input:
+                            start_offline_archive_task(
+                                config=working_config,
+                                target_feed_url=feed_url_input.strip(),
+                            )
                         st.session_state["has_unsaved_changes"] = True
                         st.session_state["manage_notice"] = f"Feed '{feed_name_input.strip()}' hinzugefügt!"
                         st.rerun()
@@ -262,12 +279,14 @@ def render_manage_tab(
                 f_url = feed.get("url", "")
                 f_inc = feed.get("include_keywords", [])
                 f_exc = feed.get("exclude_keywords", [])
+                f_offline = bool(feed.get("offline_download", False))
                 key_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
 
                 with st.container(border=True):
                     col_top1, col_top2 = st.columns([5, 1], vertical_alignment="center")
                     with col_top1:
-                        st.markdown(f"**{f_name}**")
+                        offline_badge = " · `📥 Offline-Archiv aktiv`" if f_offline else ""
+                        st.markdown(f"**{f_name}**{offline_badge}")
                         st.caption(f"🔗 [{f_url}]({f_url})")
                     with col_top2:
                         with st.popover("🗑️ Löschen", use_container_width=True):
@@ -307,6 +326,13 @@ def render_manage_tab(
                                     key=f"ed_exc_{key_hash}",
                                 )
 
+                        edit_offline_val = st.checkbox(
+                            "📥 Offline-Download für diesen Feed aktivieren (3 Monate Aufbewahrung im Archiv)",
+                            value=f_offline,
+                            key=f"ed_offline_{key_hash}",
+                            help="Speichert automatisch im Hintergrund alle Artikel dieses Feeds inklusive Webseite, Text und Bildern für 3 Monate im Tab 'Archiv'.",
+                        )
+
                         col_eb1, col_eb2 = st.columns([1, 1])
                         with col_eb1:
                             if st.button("🔍 Feed testen", key=f"btn_tst_{key_hash}", use_container_width=True):
@@ -332,9 +358,15 @@ def render_manage_tab(
                                             new_category=edit_cat_val.strip(),
                                             include_keywords=edit_inc_val.strip(),
                                             exclude_keywords=edit_exc_val.strip(),
+                                            offline_download=bool(edit_offline_val),
                                             config=working_config,
                                             save_to_disk=False,
                                         )
+                                        if edit_offline_val:
+                                            start_offline_archive_task(
+                                                config=working_config,
+                                                target_feed_url=edit_url_val.strip(),
+                                            )
                                         new_hash = hashlib.md5(edit_url_val.strip().encode("utf-8")).hexdigest()[:8]
                                         # State merken, damit der Expander OFFEN bleibt!
                                         st.session_state["editing_feed_key"] = new_hash

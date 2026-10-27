@@ -13,12 +13,13 @@ import logging
 from pathlib import Path
 import requests  # Erforderlich für Abwärtskompatibilität und Test-Mocking
 
-from src.models import Article
+from src.models import Article, OfflineArticle
 from src.exceptions import StorageError, StorageConnectionError
 from src.storage.base import (
     StorageBackend,
     DEFAULT_TIMEOUT_SECONDS,
     DEFAULT_SQLITE_PATH,
+    OFFLINE_RETENTION_DAYS,
     get_safe_db_path,
     get_turso_config,
 )
@@ -85,6 +86,8 @@ __all__ = [
     "StorageConnectionError",
     "DEFAULT_TIMEOUT_SECONDS",
     "DEFAULT_SQLITE_PATH",
+    "OFFLINE_RETENTION_DAYS",
+    "OfflineArticle",
     "get_safe_db_path",
     "get_turso_config",
     "get_storage",

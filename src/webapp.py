@@ -1,6 +1,6 @@
 """
 News Aggregator Bot Web-App.
-Modular entry point for dashboard, 24h news stream, AI briefings, RSS exposure, and feed management.
+Modular entry point for dashboard, 24h news stream, AI briefings, RSS exposure, offline archive, and feed management.
 """
 
 from __future__ import annotations
@@ -60,6 +60,7 @@ from src.ui.state import (
     TAB_KI,
     TAB_MANAGE,
     TAB_FEEDLY,
+    TAB_ARCHIVE,
     TAB_LABELS,
     VALID_TAB_IDS,
 )
@@ -72,6 +73,7 @@ from src.ui.tabs.articles_tab import (
 from src.ui.tabs.ki_tab import render_ki_tab
 from src.ui.tabs.feedly_tab import render_feedly_tab
 from src.ui.tabs.manage_tab import render_manage_tab
+from src.ui.tabs.archive_tab import render_archive_tab
 
 # Page Configuration
 st.set_page_config(
@@ -93,13 +95,21 @@ TAB_ID_ARTICLES = TAB_ARTICLES
 TAB_ID_KI = TAB_KI
 TAB_ID_MANAGE = TAB_MANAGE
 TAB_ID_FEEDLY = TAB_FEEDLY
+TAB_ID_ARCHIVE = TAB_ARCHIVE
 
 TAB_LABEL_ARTICLES = TAB_LABELS[TAB_ARTICLES]
 TAB_LABEL_KI = TAB_LABELS[TAB_KI]
 TAB_LABEL_MANAGE = TAB_LABELS[TAB_MANAGE]
 TAB_LABEL_FEEDLY = TAB_LABELS[TAB_FEEDLY]
+TAB_LABEL_ARCHIVE = TAB_LABELS[TAB_ARCHIVE]
 
-TAB_ORDER = [TAB_LABEL_ARTICLES, TAB_LABEL_KI, TAB_LABEL_MANAGE, TAB_LABEL_FEEDLY]
+TAB_ORDER = [
+    TAB_LABEL_ARTICLES,
+    TAB_LABEL_KI,
+    TAB_LABEL_MANAGE,
+    TAB_LABEL_FEEDLY,
+    TAB_LABEL_ARCHIVE,
+]
 
 
 def label_to_tab_id(label: str) -> str:
@@ -112,6 +122,8 @@ def label_to_tab_id(label: str) -> str:
         return TAB_ID_MANAGE
     if "Feedly" in label or "RSS" in label:
         return TAB_ID_FEEDLY
+    if "Archiv" in label:
+        return TAB_ID_ARCHIVE
     return TAB_ID_ARTICLES
 
 
@@ -123,6 +135,8 @@ def tab_id_to_label(tab_id: str) -> str:
         return TAB_LABEL_MANAGE
     if tab_id in [TAB_ID_FEEDLY, "rss", "feeds_rss"]:
         return TAB_LABEL_FEEDLY
+    if tab_id in [TAB_ID_ARCHIVE, "archiv", "offline"]:
+        return TAB_LABEL_ARCHIVE
     return TAB_LABEL_ARTICLES
 
 
@@ -225,12 +239,14 @@ else:
             active_nav_tab = TAB_ID_FEEDLY
         elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
             active_nav_tab = TAB_ID_MANAGE
+        elif qp_tab in ["archive", "archiv", "offline"]:
+            active_nav_tab = TAB_ID_ARCHIVE
         else:
             active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
 
 # Daten laden (fest 24 Stunden)
-# Performance-Optimierung: Wenn der Verwalten-Tab aktiv ist, werden keine Artikeldaten benötigt -> 0 DB-Calls!
+# Performance-Optimierung: Wenn der Verwalten- oder Archiv-Tab aktiv ist, werden keine 24h-Artikeldaten benötigt
 if active_nav_tab in (TAB_ID_ARTICLES, TAB_ID_KI, TAB_ID_FEEDLY):
     if "cached_news_data" not in st.session_state:
         st.session_state["cached_news_data"] = get_news_data(force_live_fetch=False)
@@ -257,6 +273,7 @@ active_cls_art = "active-nav-tab" if active_nav_tab == TAB_ID_ARTICLES else ""
 active_cls_ki = "active-nav-tab" if active_nav_tab == TAB_ID_KI else ""
 active_cls_man = "active-nav-tab" if active_nav_tab == TAB_ID_MANAGE else ""
 active_cls_fdl = "active-nav-tab" if active_nav_tab == TAB_ID_FEEDLY else ""
+active_cls_arc = "active-nav-tab" if active_nav_tab == TAB_ID_ARCHIVE else ""
 
 if is_admin:
     st.sidebar.markdown(f"""
@@ -265,6 +282,7 @@ if is_admin:
         <button type="button" class="custom-nav-btn {active_cls_ki}" data-tab-id="{TAB_ID_KI}">✨ KI</button>
         <button type="button" class="custom-nav-btn {active_cls_man}" data-tab-id="{TAB_ID_MANAGE}">⚙️ Verwalten</button>
         <button type="button" class="custom-nav-btn {active_cls_fdl}" data-tab-id="{TAB_ID_FEEDLY}">📡 Feedly</button>
+        <button type="button" class="custom-nav-btn {active_cls_arc}" data-tab-id="{TAB_ID_ARCHIVE}">📦 Archiv</button>
     </div>
     """, unsafe_allow_html=True)
 else:
@@ -275,6 +293,7 @@ else:
         <button type="button" class="custom-nav-btn disabled-nav-btn" disabled title="Admin erforderlich">✨ KI 🔒</button>
         <button type="button" class="custom-nav-btn disabled-nav-btn" disabled title="Admin erforderlich">⚙️ Verwalten 🔒</button>
         <button type="button" class="custom-nav-btn disabled-nav-btn" disabled title="Admin erforderlich">📡 Feedly 🔒</button>
+        <button type="button" class="custom-nav-btn disabled-nav-btn" disabled title="Admin erforderlich">📦 Archiv 🔒</button>
     </div>
     """, unsafe_allow_html=True)
 
@@ -304,7 +323,7 @@ embed_client_script(f"""
         var tabId = btn.getAttribute('data-tab-id');
         if (!tabId) return;
 
-        var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "feedly": 3 }};
+        var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "feedly": 3, "archive": 4 }};
         var idx = tabMap[tabId] !== undefined ? tabMap[tabId] : 0;
         setActiveTabClient(tabId, idx);
     }}, true);
@@ -408,15 +427,21 @@ if default_tab_label not in TAB_ORDER:
     default_tab_label = TAB_ORDER[0]
 
 if is_admin:
-    tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
+    tab_articles, tab_ki, tab_manage, tab_feedly, tab_archive = st.tabs(
         TAB_ORDER,
         default=default_tab_label,
         key="main_tabs_nav",
     )
 else:
     # Andere Tabs mit Schloss-Symbol
-    locked_tab_labels = [TAB_LABEL_ARTICLES, f"{TAB_LABEL_KI} 🔒", f"{TAB_LABEL_MANAGE} 🔒", f"{TAB_LABEL_FEEDLY} 🔒"]
-    tab_articles, tab_ki, tab_manage, tab_feedly = st.tabs(
+    locked_tab_labels = [
+        TAB_LABEL_ARTICLES,
+        f"{TAB_LABEL_KI} 🔒",
+        f"{TAB_LABEL_MANAGE} 🔒",
+        f"{TAB_LABEL_FEEDLY} 🔒",
+        f"{TAB_LABEL_ARCHIVE} 🔒",
+    ]
+    tab_articles, tab_ki, tab_manage, tab_feedly, tab_archive = st.tabs(
         locked_tab_labels,
         default=TAB_LABEL_ARTICLES,
         key="main_tabs_nav",
@@ -445,6 +470,13 @@ with tab_feedly:
     else:
         st.subheader("📡 RSS Exposure")
         st.info("🔒 Die RSS-Feeds und Feedly-Integration sind im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
+
+with tab_archive:
+    if is_admin:
+        render_archive_tab(working_config, is_admin=True)
+    else:
+        st.subheader("📦 Offline-Archiv")
+        st.info("🔒 Das Offline-Archiv ist im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
 
 # Release loading overlay and re-enable action buttons on render completion
 release_action_overlay()

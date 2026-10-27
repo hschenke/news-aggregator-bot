@@ -11,8 +11,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from src.models import Article
-from src.storage.base import StorageBackend, DEFAULT_TIMEOUT_SECONDS, get_safe_db_path
+from src.models import Article, OfflineArticle
+from src.storage.base import (
+    StorageBackend,
+    DEFAULT_TIMEOUT_SECONDS,
+    OFFLINE_RETENTION_DAYS,
+    get_safe_db_path,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +42,7 @@ class SqliteStorage(StorageBackend):
     def _get_connection(self) -> sqlite3.Connection:
         if self._shared_conn is not None:
             return self._shared_conn
-        conn = sqlite3.connect(self._db_path, timeout=DEFAULT_TIMEOUT_SECONDS)
+        conn = sqlite3.connect(self._db_path, timeout=DEFAULT_TIMEOUT_SECONDS, check_same_thread=False)
         conn.row_factory = sqlite3.Row
         return conn
 
@@ -89,12 +94,29 @@ class SqliteStorage(StorageBackend):
                     updated_at TEXT DEFAULT CURRENT_TIMESTAMP
                 );
 
+                CREATE TABLE IF NOT EXISTS offline_articles (
+                    url TEXT PRIMARY KEY,
+                    title TEXT NOT NULL,
+                    feed_name TEXT DEFAULT '',
+                    feed_url TEXT DEFAULT '',
+                    category TEXT DEFAULT '',
+                    published TEXT DEFAULT '',
+                    timestamp REAL DEFAULT 0.0,
+                    content_text TEXT DEFAULT '',
+                    content_html TEXT DEFAULT '',
+                    images_json TEXT DEFAULT '[]',
+                    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+                );
+
                 CREATE INDEX IF NOT EXISTS idx_articles_timestamp ON articles(timestamp DESC);
                 CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);
                 CREATE INDEX IF NOT EXISTS idx_articles_feedback ON articles(feedback);
                 CREATE INDEX IF NOT EXISTS idx_articles_bookmark ON articles(is_bookmarked);
                 CREATE INDEX IF NOT EXISTS idx_archived_articles_timestamp ON archived_articles(timestamp DESC);
                 CREATE INDEX IF NOT EXISTS idx_archived_articles_archived_at ON archived_articles(archived_at DESC);
+                CREATE INDEX IF NOT EXISTS idx_offline_articles_feed_name ON offline_articles(feed_name);
+                CREATE INDEX IF NOT EXISTS idx_offline_articles_timestamp ON offline_articles(timestamp DESC);
+                CREATE INDEX IF NOT EXISTS idx_offline_articles_created_at ON offline_articles(created_at DESC);
             """)
 
     def save_articles(self, articles: list[Article | dict[str, Any]]) -> int:
@@ -635,6 +657,200 @@ class SqliteStorage(StorageBackend):
                 )
         except Exception as exc:
             logger.warning("Fehler beim Schreiben von SQLite-Metadata '%s': %s", key, exc)
+
+    def cleanup_offline_articles(self, max_age_days: int | float = OFFLINE_RETENTION_DAYS) -> int:
+        """
+        Entfernt automatisch Offline-Artikel aus offline_articles, die älter als max_age_days
+        (Standard: 90 Tage / 3 Monate) sind.
+        """
+        days = float(max_age_days)
+        if days <= 0:
+            return 0
+
+        cutoff_ts = time.time() - (days * 86400.0)
+        cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
+
+        sql = """
+            DELETE FROM offline_articles
+            WHERE (timestamp > 0.0 AND timestamp < ?)
+               OR ((timestamp IS NULL OR timestamp <= 0.0) AND created_at < ?)
+        """
+        with self._get_connection() as conn:
+            cursor = conn.execute(sql, (cutoff_ts, cutoff_iso))
+            return cursor.rowcount if cursor.rowcount >= 0 else 0
+
+    def save_offline_article(self, article: OfflineArticle | dict[str, Any]) -> bool:
+        """
+        Speichert einen einzelnen Offline-Artikel und prüft/entfernt automatisch
+        ältere Einträge als 3 Monate (90 Tage).
+        """
+        return self.save_offline_articles([article]) > 0
+
+    def save_offline_articles(self, articles: list[OfflineArticle | dict[str, Any]]) -> int:
+        """
+        Speichert mehrere Offline-Artikel in offline_articles und prüft bei jedem Anlegen,
+        ob ältere Artikel als 3 Monate (90 Tage) vorhanden sind (automatisches Entfernen).
+        """
+        # Automatische 3-Monats-Bereinigung bei jedem Neu-Anlegen prüfen
+        self.cleanup_offline_articles(max_age_days=OFFLINE_RETENTION_DAYS)
+
+        if not articles:
+            return 0
+
+        now_iso = datetime.now(timezone.utc).isoformat()
+        cutoff_ts = time.time() - (float(OFFLINE_RETENTION_DAYS) * 86400.0)
+
+        upsert_sql = """
+            INSERT INTO offline_articles (
+                url, title, feed_name, feed_url, category, published,
+                timestamp, content_text, content_html, images_json, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                feed_name = excluded.feed_name,
+                feed_url = excluded.feed_url,
+                category = excluded.category,
+                published = excluded.published,
+                timestamp = excluded.timestamp,
+                content_text = excluded.content_text,
+                content_html = excluded.content_html,
+                images_json = excluded.images_json,
+                created_at = excluded.created_at
+        """
+
+        params_list: list[tuple[Any, ...]] = []
+        for item in articles:
+            art = OfflineArticle.from_dict(item) if not isinstance(item, OfflineArticle) else item
+            clean_url = art.url.strip()
+            if not clean_url or clean_url == "#":
+                continue
+
+            # Artikel älter als 3 Monate (90 Tage) gar nicht erst speichern
+            if art.timestamp > 0.0 and art.timestamp < cutoff_ts:
+                continue
+
+            created_val = art.created_at or now_iso
+            params_list.append((
+                clean_url,
+                art.title,
+                art.feed_name,
+                art.feed_url,
+                art.category,
+                art.published,
+                art.timestamp,
+                art.content_text,
+                art.content_html,
+                art.images_json,
+                created_val,
+            ))
+
+        if not params_list:
+            return 0
+
+        with self._get_connection() as conn:
+            cursor = conn.executemany(upsert_sql, params_list)
+            return cursor.rowcount if cursor.rowcount > 0 else len(params_list)
+
+    def get_offline_articles(
+        self,
+        feed_name: str | None = None,
+        category: str | None = None,
+        search_query: str | None = None,
+        limit: int = 500,
+    ) -> list[OfflineArticle]:
+        clauses: list[str] = []
+        params: list[Any] = []
+
+        if feed_name and feed_name not in ("Alle Feeds", "Alle Offline-Feeds"):
+            clauses.append("feed_name = ?")
+            params.append(feed_name.strip())
+
+        if category and category != "Alle Kategorien":
+            clauses.append("category = ?")
+            params.append(category.strip())
+
+        if search_query and search_query.strip():
+            clauses.append("(title LIKE ? OR content_text LIKE ? OR feed_name LIKE ?)")
+            q_like = f"%{search_query.strip()}%"
+            params.extend([q_like, q_like, q_like])
+
+        where_stmt = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+        sql = f"""
+            SELECT * FROM offline_articles
+            {where_stmt}
+            ORDER BY timestamp DESC, created_at DESC
+            LIMIT ?
+        """
+        params.append(max(1, limit))
+
+        with self._get_connection() as conn:
+            rows = conn.execute(sql, params).fetchall()
+
+        result: list[OfflineArticle] = []
+        for r in rows:
+            result.append(OfflineArticle(
+                url=r["url"],
+                title=r["title"],
+                feed_name=r["feed_name"] or "",
+                feed_url=r["feed_url"] or "",
+                category=r["category"] or "",
+                published=r["published"] or "",
+                timestamp=float(r["timestamp"] or 0.0),
+                content_text=r["content_text"] or "",
+                content_html=r["content_html"] or "",
+                images_json=r["images_json"] or "[]",
+                created_at=r["created_at"] or "",
+            ))
+        return result
+
+    def get_offline_article(self, url: str) -> OfflineArticle | None:
+        clean_url = url.strip()
+        if not clean_url:
+            return None
+        with self._get_connection() as conn:
+            row = conn.execute("SELECT * FROM offline_articles WHERE url = ? LIMIT 1", (clean_url,)).fetchone()
+            if not row:
+                return None
+            return OfflineArticle(
+                url=row["url"],
+                title=row["title"],
+                feed_name=row["feed_name"] or "",
+                feed_url=row["feed_url"] or "",
+                category=row["category"] or "",
+                published=row["published"] or "",
+                timestamp=float(row["timestamp"] or 0.0),
+                content_text=row["content_text"] or "",
+                content_html=row["content_html"] or "",
+                images_json=row["images_json"] or "[]",
+                created_at=row["created_at"] or "",
+            )
+
+    def get_offline_urls(self, feed_name: str | None = None) -> set[str]:
+        with self._get_connection() as conn:
+            if feed_name:
+                rows = conn.execute(
+                    "SELECT url FROM offline_articles WHERE feed_name = ?",
+                    (feed_name.strip(),)
+                ).fetchall()
+            else:
+                rows = conn.execute("SELECT url FROM offline_articles").fetchall()
+            return {r["url"] for r in rows}
+
+    def delete_offline_article(self, url: str) -> bool:
+        clean_url = url.strip()
+        if not clean_url:
+            return False
+        with self._get_connection() as conn:
+            cursor = conn.execute("DELETE FROM offline_articles WHERE url = ?", (clean_url,))
+            return cursor.rowcount > 0
+
+    def delete_offline_articles_by_feed(self, feed_name: str) -> int:
+        clean_feed = feed_name.strip()
+        if not clean_feed:
+            return 0
+        with self._get_connection() as conn:
+            cursor = conn.execute("DELETE FROM offline_articles WHERE feed_name = ?", (clean_feed,))
+            return max(0, cursor.rowcount)
 
     def close(self) -> None:
         if self._shared_conn is not None:

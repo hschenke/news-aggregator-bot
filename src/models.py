@@ -108,3 +108,128 @@ class Article:
     def __contains__(self, key: str) -> bool:
         """Ermöglicht 'key in item' Abfragen."""
         return hasattr(self, key) or key in self.extra
+
+
+@dataclass(frozen=True)
+class OfflineArticle:
+    """
+    Unveränderlicher, für den Offline-Zugriff archivierter Artikel inklusive
+    gespeichertem Webseiten-Text, bereinigtem HTML-Abbild und eingebetteten Bildern (JSON/Base64).
+    """
+    url: str
+    title: str
+    feed_name: str = ""
+    feed_url: str = ""
+    category: str = ""
+    published: str = ""
+    timestamp: float = 0.0
+    content_text: str = ""
+    content_html: str = ""
+    images_json: str = "[]"
+    created_at: str = ""
+    extra: dict[str, Any] = field(default_factory=dict)
+
+    @property
+    def images(self) -> list[dict[str, Any]]:
+        """Gibt die gespeicherten Bilder als geparste Liste zurück."""
+        import json
+        if not self.images_json:
+            return []
+        try:
+            parsed = json.loads(self.images_json)
+            return parsed if isinstance(parsed, list) else []
+        except Exception:
+            return []
+
+    def to_dict(self) -> dict[str, Any]:
+        """Konvertiert die OfflineArticle-Instanz in ein Dictionary."""
+        data = asdict(self)
+        extra_data = data.pop("extra", {})
+        data.update(extra_data)
+        data["link"] = self.url
+        return data
+
+    @classmethod
+    def from_dict(cls, data: dict[str, Any] | OfflineArticle) -> OfflineArticle:
+        """Erstellt eine OfflineArticle-Instanz aus einem Dictionary."""
+        if isinstance(data, cls):
+            return data
+
+        import json
+        known_fields = {
+            "url", "link", "title", "feed_name", "source", "feed_url", "source_url",
+            "category", "published", "timestamp", "content_text", "content_html",
+            "images_json", "images", "created_at",
+        }
+        extra: dict[str, Any] = {}
+        for k, v in data.items():
+            if k not in known_fields:
+                extra[k] = v
+
+        url = str(data.get("url") or data.get("link") or "").strip() or "#"
+        title = str(data.get("title") or "").strip() or "Kein Titel"
+        feed_name = str(data.get("feed_name") or data.get("source") or "").strip()
+        feed_url = str(data.get("feed_url") or data.get("source_url") or "").strip()
+        category = str(data.get("category") or "").strip()
+        published = str(data.get("published") or "").strip()
+
+        raw_ts = data.get("timestamp", 0.0)
+        try:
+            ts_float = float(raw_ts) if raw_ts is not None else 0.0
+        except (ValueError, TypeError):
+            ts_float = 0.0
+
+        content_text = str(data.get("content_text") or data.get("summary") or "")
+        content_html = str(data.get("content_html") or "")
+
+        raw_images = data.get("images_json")
+        if raw_images is None and "images" in data:
+            imgs = data.get("images")
+            if isinstance(imgs, list):
+                try:
+                    raw_images = json.dumps(imgs, ensure_ascii=False)
+                except Exception:
+                    raw_images = "[]"
+        images_json_str = str(raw_images).strip() if raw_images else "[]"
+
+        created_at = str(data.get("created_at") or "").strip()
+
+        return cls(
+            url=url,
+            title=title,
+            feed_name=feed_name,
+            feed_url=feed_url,
+            category=category,
+            published=published,
+            timestamp=ts_float,
+            content_text=content_text,
+            content_html=content_html,
+            images_json=images_json_str,
+            created_at=created_at,
+            extra=extra,
+        )
+
+    def get(self, key: str, default: Any = None) -> Any:
+        """Ermöglicht dictionary-kompatiblen Zugriff via .get(key, default)."""
+        if key == "link":
+            return self.url
+        if hasattr(self, key) and key != "extra":
+            val = getattr(self, key)
+            return default if val is None else val
+        return self.extra.get(key, default)
+
+    def __getitem__(self, key: str) -> Any:
+        """Ermöglicht dictionary-kompatiblen Zugriff via item['key']."""
+        if key == "link":
+            return self.url
+        if hasattr(self, key) and key != "extra":
+            return getattr(self, key)
+        if key in self.extra:
+            return self.extra[key]
+        raise KeyError(key)
+
+    def __contains__(self, key: str) -> bool:
+        """Ermöglicht 'key in item' Abfragen."""
+        if key == "link":
+            return True
+        return hasattr(self, key) or key in self.extra

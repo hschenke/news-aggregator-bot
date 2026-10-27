@@ -12,9 +12,13 @@ from urllib.parse import urlparse
 
 import requests
 
-from src.models import Article
+from src.models import Article, OfflineArticle
 from src.exceptions import StorageError, StorageConnectionError
-from src.storage.base import StorageBackend, DEFAULT_TIMEOUT_SECONDS
+from src.storage.base import (
+    StorageBackend,
+    DEFAULT_TIMEOUT_SECONDS,
+    OFFLINE_RETENTION_DAYS,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -205,12 +209,30 @@ class TursoStorage(StorageBackend):
                 updated_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
             """, []),
+            ("""
+            CREATE TABLE IF NOT EXISTS offline_articles (
+                url TEXT PRIMARY KEY,
+                title TEXT NOT NULL,
+                feed_name TEXT DEFAULT '',
+                feed_url TEXT DEFAULT '',
+                category TEXT DEFAULT '',
+                published TEXT DEFAULT '',
+                timestamp REAL DEFAULT 0.0,
+                content_text TEXT DEFAULT '',
+                content_html TEXT DEFAULT '',
+                images_json TEXT DEFAULT '[]',
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+            """, []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_timestamp ON articles(timestamp DESC);", []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_category ON articles(category);", []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_feedback ON articles(feedback);", []),
             ("CREATE INDEX IF NOT EXISTS idx_articles_bookmark ON articles(is_bookmarked);", []),
             ("CREATE INDEX IF NOT EXISTS idx_archived_articles_timestamp ON archived_articles(timestamp DESC);", []),
             ("CREATE INDEX IF NOT EXISTS idx_archived_articles_archived_at ON archived_articles(archived_at DESC);", []),
+            ("CREATE INDEX IF NOT EXISTS idx_offline_articles_feed_name ON offline_articles(feed_name);", []),
+            ("CREATE INDEX IF NOT EXISTS idx_offline_articles_timestamp ON offline_articles(timestamp DESC);", []),
+            ("CREATE INDEX IF NOT EXISTS idx_offline_articles_created_at ON offline_articles(created_at DESC);", []),
         ]
         self._execute_pipeline(stmts)
 
@@ -782,6 +804,215 @@ class TursoStorage(StorageBackend):
             self._execute_pipeline([(sql, [key, str(value)])])
         except Exception as exc:
             logger.warning("Fehler beim Schreiben von Turso-Metadata '%s': %s", key, exc)
+
+    def cleanup_offline_articles(self, max_age_days: int | float = OFFLINE_RETENTION_DAYS) -> int:
+        """
+        Entfernt automatisch Offline-Artikel aus offline_articles, die älter als max_age_days
+        (Standard: 90 Tage / 3 Monate) sind.
+        """
+        days = float(max_age_days)
+        if days <= 0:
+            return 0
+
+        cutoff_ts = time.time() - (days * 86400.0)
+        cutoff_iso = datetime.fromtimestamp(cutoff_ts, tz=timezone.utc).isoformat()
+
+        sql = """
+            DELETE FROM offline_articles
+            WHERE (timestamp > 0.0 AND timestamp < ?)
+               OR ((timestamp IS NULL OR timestamp <= 0.0) AND created_at < ?)
+        """
+        res = self._execute_pipeline([(sql, [cutoff_ts, cutoff_iso])])
+        if not res:
+            return 0
+        return int(res[0].get("affected_rows", 0))
+
+    def save_offline_article(self, article: OfflineArticle | dict[str, Any]) -> bool:
+        """
+        Speichert einen einzelnen Offline-Artikel und prüft/entfernt automatisch
+        ältere Einträge als 3 Monate (90 Tage).
+        """
+        return self.save_offline_articles([article]) > 0
+
+    def save_offline_articles(self, articles: list[OfflineArticle | dict[str, Any]]) -> int:
+        """
+        Speichert mehrere Offline-Artikel via Turso HTTP-Pipeline und prüft bei jedem Anlegen,
+        ob ältere Artikel als 3 Monate (90 Tage) vorhanden sind (automatisches Entfernen).
+        """
+        # Automatische 3-Monats-Bereinigung bei jedem Neu-Anlegen prüfen
+        self.cleanup_offline_articles(max_age_days=OFFLINE_RETENTION_DAYS)
+
+        if not articles:
+            return 0
+
+        now_iso = datetime.now(timezone.utc).isoformat()
+        cutoff_ts = time.time() - (float(OFFLINE_RETENTION_DAYS) * 86400.0)
+
+        upsert_sql = """
+            INSERT INTO offline_articles (
+                url, title, feed_name, feed_url, category, published,
+                timestamp, content_text, content_html, images_json, created_at
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            ON CONFLICT(url) DO UPDATE SET
+                title = excluded.title,
+                feed_name = excluded.feed_name,
+                feed_url = excluded.feed_url,
+                category = excluded.category,
+                published = excluded.published,
+                timestamp = excluded.timestamp,
+                content_text = excluded.content_text,
+                content_html = excluded.content_html,
+                images_json = excluded.images_json,
+                created_at = excluded.created_at
+        """
+
+        stmts: list[tuple[str, list[Any]]] = []
+        for item in articles:
+            art = OfflineArticle.from_dict(item) if not isinstance(item, OfflineArticle) else item
+            clean_url = art.url.strip()
+            if not clean_url or clean_url == "#":
+                continue
+
+            if art.timestamp > 0.0 and art.timestamp < cutoff_ts:
+                continue
+
+            created_val = art.created_at or now_iso
+            stmts.append((upsert_sql, [
+                clean_url,
+                art.title,
+                art.feed_name,
+                art.feed_url,
+                art.category,
+                art.published,
+                art.timestamp,
+                art.content_text,
+                art.content_html,
+                art.images_json,
+                created_val,
+            ]))
+
+        if not stmts:
+            return 0
+
+        BATCH_SIZE = 10  # Kleinere Batches wegen Bildern / HTML-Payloads
+        saved_count = 0
+        for i in range(0, len(stmts), BATCH_SIZE):
+            batch = stmts[i:i + BATCH_SIZE]
+            res = self._execute_pipeline(batch)
+            for r in res:
+                saved_count += max(1, r.get("affected_rows", 1))
+
+        return saved_count
+
+    def get_offline_articles(
+        self,
+        feed_name: str | None = None,
+        category: str | None = None,
+        search_query: str | None = None,
+        limit: int = 500,
+    ) -> list[OfflineArticle]:
+        clauses: list[str] = []
+        params: list[Any] = []
+
+        if feed_name and feed_name not in ("Alle Feeds", "Alle Offline-Feeds"):
+            clauses.append("feed_name = ?")
+            params.append(feed_name.strip())
+
+        if category and category != "Alle Kategorien":
+            clauses.append("category = ?")
+            params.append(category.strip())
+
+        if search_query and search_query.strip():
+            clauses.append("(title LIKE ? OR content_text LIKE ? OR feed_name LIKE ?)")
+            q_like = f"%{search_query.strip()}%"
+            params.extend([q_like, q_like, q_like])
+
+        where_stmt = f"WHERE {' AND '.join(clauses)}" if clauses else ""
+        sql = f"""
+            SELECT * FROM offline_articles
+            {where_stmt}
+            ORDER BY timestamp DESC, created_at DESC
+            LIMIT ?
+        """
+        params.append(max(1, limit))
+
+        res = self._execute_pipeline([(sql, params)])
+        if not res or not res[0].get("rows"):
+            return []
+
+        result: list[OfflineArticle] = []
+        for r in res[0]["rows"]:
+            result.append(OfflineArticle(
+                url=r["url"],
+                title=r["title"],
+                feed_name=r.get("feed_name") or "",
+                feed_url=r.get("feed_url") or "",
+                category=r.get("category") or "",
+                published=r.get("published") or "",
+                timestamp=float(r.get("timestamp") or 0.0),
+                content_text=r.get("content_text") or "",
+                content_html=r.get("content_html") or "",
+                images_json=r.get("images_json") or "[]",
+                created_at=r.get("created_at") or "",
+            ))
+        return result
+
+    def get_offline_article(self, url: str) -> OfflineArticle | None:
+        clean_url = url.strip()
+        if not clean_url:
+            return None
+        res = self._execute_pipeline([
+            ("SELECT * FROM offline_articles WHERE url = ? LIMIT 1", [clean_url])
+        ])
+        if not res or not res[0].get("rows"):
+            return None
+        row = res[0]["rows"][0]
+        return OfflineArticle(
+            url=row["url"],
+            title=row["title"],
+            feed_name=row.get("feed_name") or "",
+            feed_url=row.get("feed_url") or "",
+            category=row.get("category") or "",
+            published=row.get("published") or "",
+            timestamp=float(row.get("timestamp") or 0.0),
+            content_text=row.get("content_text") or "",
+            content_html=row.get("content_html") or "",
+            images_json=row.get("images_json") or "[]",
+            created_at=row.get("created_at") or "",
+        )
+
+    def get_offline_urls(self, feed_name: str | None = None) -> set[str]:
+        if feed_name:
+            res = self._execute_pipeline([
+                ("SELECT url FROM offline_articles WHERE feed_name = ?", [feed_name.strip()])
+            ])
+        else:
+            res = self._execute_pipeline([
+                ("SELECT url FROM offline_articles", [])
+            ])
+        if not res or not res[0].get("rows"):
+            return set()
+        return {r["url"] for r in res[0]["rows"] if "url" in r}
+
+    def delete_offline_article(self, url: str) -> bool:
+        clean_url = url.strip()
+        if not clean_url:
+            return False
+        res = self._execute_pipeline([
+            ("DELETE FROM offline_articles WHERE url = ?", [clean_url])
+        ])
+        return bool(res and res[0].get("affected_rows", 0) > 0)
+
+    def delete_offline_articles_by_feed(self, feed_name: str) -> int:
+        clean_feed = feed_name.strip()
+        if not clean_feed:
+            return 0
+        res = self._execute_pipeline([
+            ("DELETE FROM offline_articles WHERE feed_name = ?", [clean_feed])
+        ])
+        if not res:
+            return 0
+        return int(res[0].get("affected_rows", 0))
 
     def close(self) -> None:
         try:

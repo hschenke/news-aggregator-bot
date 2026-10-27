@@ -92,6 +92,7 @@ from src.sources_manager import (
     add_category,
     delete_category,
     update_settings,
+    get_offline_enabled_feeds,
 )
 
 logger = logging.getLogger(__name__)
@@ -390,6 +391,9 @@ def collect_all_news(
             if flat_items:
                 storage.save_articles(flat_items)
             storage.set_metadata("last_feed_refresh_time", str(time.time()))
+            if get_offline_enabled_feeds(config=config):
+                from src.offline_archiver import start_offline_archive_task
+                start_offline_archive_task(config=config)
         except Exception as e_db:
             logger.debug("DB-Persistierung in collect_all_news übersprungen: %s", e_db)
 
@@ -556,6 +560,7 @@ __all__ = [
     "add_category",
     "delete_category",
     "update_settings",
+    "get_offline_enabled_feeds",
     # Exceptions
     "NewsAggregatorError",
     "ConfigurationError",
