@@ -18,7 +18,7 @@ from src.aggregator import (
     trigger_rss_update_workflow,
 )
 from src.rss_generator import export_all_rss_feeds
-from src.ui.styles import render_dismissible_notice
+from src.ui.styles import render_dismissible_notice, set_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -64,7 +64,7 @@ def render_feedly_tab(
                     st.cache_data.clear()
                     st.session_state.pop("cached_news_data", None)
                     st.session_state["is_refreshing_rss"] = False
-                    st.session_state["feedly_notice"] = "Feeds erfolgreich neu generiert."
+                    set_dismissible_notice("feedly_notice", "Feeds erfolgreich neu generiert.", icon="📡")
                     st.rerun()
         with col_act2:
             if st.button("🚀 Zu GitHub & CDN pushen", key="btn_push_rss_cdn", use_container_width=True, disabled=any_busy):
@@ -77,13 +77,13 @@ def render_feedly_tab(
                     )
                     st.session_state["is_pushing_rss"] = False
                     if push_res.get("success"):
-                        st.session_state["feedly_notice"] = "Feeds erfolgreich zu GitHub & CDN synchronisiert!"
+                        set_dismissible_notice("feedly_notice", "Feeds erfolgreich zu GitHub & CDN synchronisiert!", icon="📡")
                     else:
                         trig_res = trigger_rss_update_workflow()
                         if trig_res.get("success"):
-                            st.session_state["feedly_notice"] = "GitHub Action 'Update RSS Feeds' wurde angestoßen!"
+                            set_dismissible_notice("feedly_notice", "GitHub Action 'Update RSS Feeds' wurde angestoßen!", icon="📡")
                         else:
-                            st.session_state["feedly_notice"] = f"Fehler beim Synchronisieren: {push_res.get('error')}"
+                            set_dismissible_notice("feedly_notice", f"Fehler beim Synchronisieren: {push_res.get('error')}", icon="⚠️")
                     st.rerun()
 
     # 1. Gesamt-Feed (Alle Nachrichten)

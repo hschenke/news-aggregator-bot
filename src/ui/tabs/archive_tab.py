@@ -35,7 +35,7 @@ from src.offline_archiver import (
 from src.storage import OFFLINE_RETENTION_DAYS, get_storage
 from src.ui.background import run_in_background
 from src.ui.state import format_local_dt
-from src.ui.styles import render_dismissible_notice
+from src.ui.styles import render_dismissible_notice, set_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -166,7 +166,7 @@ def on_clear_feed_archive(feed_name: str, category: str = "") -> None:
         bump_offline_cache_version()
 
     run_in_background(_bg_clear)
-    st.session_state["archive_notice"] = f"Offline-Archiv für '{feed_name}' wurde geleert."
+    set_dismissible_notice("archive_notice", f"Offline-Archiv für '{feed_name}' wurde geleert.", icon="📦")
 
 
 def on_sync_and_refresh_archive(working_config: dict[str, Any]) -> None:
@@ -181,11 +181,17 @@ def on_sync_and_refresh_archive(working_config: dict[str, Any]) -> None:
     st.session_state.pop("_offline_cache_ver", None)
     saved_cnt = int(result.get("saved", 0))
     if saved_cnt > 0:
-        st.session_state["archive_notice"] = (
-            f"Offline-Archiv aktualisiert — {saved_cnt} neue Artikel gespeichert!"
+        set_dismissible_notice(
+            "archive_notice",
+            f"Offline-Archiv aktualisiert — {saved_cnt} neue Artikel gespeichert!",
+            icon="📦",
         )
     else:
-        st.session_state["archive_notice"] = "Offline-Archiv ist auf dem neuesten Stand."
+        set_dismissible_notice(
+            "archive_notice",
+            "Offline-Archiv ist auf dem neuesten Stand.",
+            icon="📦",
+        )
 
 
 def on_cleanup_expired_offline() -> None:
@@ -209,8 +215,10 @@ def on_cleanup_expired_offline() -> None:
         bump_offline_cache_version()
 
     run_in_background(_bg_cleanup)
-    st.session_state["archive_notice"] = (
-        f"Bereinigung abgeschlossen ({removed_est} abgelaufene Artikel > {OFFLINE_RETENTION_DAYS} Tage entfernt)."
+    set_dismissible_notice(
+        "archive_notice",
+        f"Bereinigung abgeschlossen ({removed_est} abgelaufene Artikel > {OFFLINE_RETENTION_DAYS} Tage entfernt).",
+        icon="📦",
     )
 
 
@@ -248,11 +256,17 @@ def on_toggle_feed_offline(
         st.session_state.pop("cached_offline_articles", None)
         st.session_state.pop("_offline_cache_ver", None)
         saved_cnt = int(res.get("saved", 0))
-        st.session_state["archive_notice"] = (
-            f"Offline-Download für '{f_name}' aktiviert ({saved_cnt} neue Artikel archiviert)!"
+        set_dismissible_notice(
+            "archive_notice",
+            f"Offline-Download für '{f_name}' aktiviert ({saved_cnt} neue Artikel archiviert)!",
+            icon="📦",
         )
     else:
-        st.session_state["archive_notice"] = f"Offline-Download für '{f_name}' deaktiviert."
+        set_dismissible_notice(
+            "archive_notice",
+            f"Offline-Download für '{f_name}' deaktiviert.",
+            icon="📦",
+        )
 
 
 def _render_html_action_buttons(

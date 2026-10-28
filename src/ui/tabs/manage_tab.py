@@ -30,7 +30,7 @@ from src.aggregator import (
 )
 from src.offline_archiver import start_offline_archive_task
 from src.storage import get_storage
-from src.ui.styles import embed_client_script, render_dismissible_notice
+from src.ui.styles import embed_client_script, render_dismissible_notice, set_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -130,7 +130,7 @@ def render_manage_tab(
                 )
                 st.session_state["has_unsaved_changes"] = False
                 st.session_state["is_saving_sources"] = False
-                st.session_state["manage_notice"] = "Änderungen gespeichert & Hintergrund-Synchronisation gestartet!"
+                set_dismissible_notice("manage_notice", "Änderungen gespeichert & Hintergrund-Synchronisation gestartet!", icon="✅")
                 st.rerun()
         with col_st3:
             if has_unsaved_changes:
@@ -150,7 +150,7 @@ def render_manage_tab(
                         st.session_state.pop("editing_feed_name", None)
                         st.session_state.pop("editing_feed_category", None)
                         st.session_state.pop("last_edited_category", None)
-                        st.session_state["manage_notice"] = "Ungespeicherte Änderungen verworfen."
+                        set_dismissible_notice("manage_notice", "Ungespeicherte Änderungen verworfen.", icon="✅")
                         embed_client_script("setTimeout(function(){ window.location.reload(); }, 60);")
 
     # --- Sektion 1: Kategorien verwalten (standardmäßig zugeklappt) ---
@@ -165,8 +165,8 @@ def render_manage_tab(
                     with st.spinner("Füge Kategorie hinzu..."):
                         add_category(new_cat_name.strip(), config=working_config, save_to_disk=False)
                         st.session_state["has_unsaved_changes"] = True
-                        st.session_state["manage_cat_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
-                        st.session_state["manage_notice"] = f"Kategorie '{new_cat_name.strip()}' hinzugefügt."
+                        set_dismissible_notice("manage_cat_notice", f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="📁")
+                        set_dismissible_notice("manage_notice", f"Kategorie '{new_cat_name.strip()}' hinzugefügt.", icon="✅")
                         st.rerun()
                 else:
                     st.error("Bitte einen Kategorienamen angeben.")
@@ -184,8 +184,8 @@ def render_manage_tab(
                         with st.spinner("Benenne Kategorie um..."):
                             rename_category(cat_to_rename, cat_new_name.strip(), config=working_config, save_to_disk=False)
                             st.session_state["has_unsaved_changes"] = True
-                            st.session_state["manage_cat_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
-                            st.session_state["manage_notice"] = f"Kategorie umbenannt in '{cat_new_name.strip()}'."
+                            set_dismissible_notice("manage_cat_notice", f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="📁")
+                            set_dismissible_notice("manage_notice", f"Kategorie umbenannt in '{cat_new_name.strip()}'.", icon="✅")
                             st.rerun()
 
     # --- Sektion 2: Neuen RSS-Feed hinzufügen (standardmäßig zugeklappt) ---
@@ -240,7 +240,7 @@ def render_manage_tab(
                                 target_feed_url=feed_url_input.strip(),
                             )
                         st.session_state["has_unsaved_changes"] = True
-                        st.session_state["manage_notice"] = f"Feed '{feed_name_input.strip()}' hinzugefügt!"
+                        set_dismissible_notice("manage_notice", f"Feed '{feed_name_input.strip()}' hinzugefügt!", icon="✅")
                         st.rerun()
                 else:
                     st.error("Bitte Feed-URL und Feed-Name ausfüllen.")
@@ -270,7 +270,7 @@ def render_manage_tab(
                     if st.button("Kategorie löschen", key=f"del_cat_{cat_idx}", type="primary", use_container_width=True):
                         delete_category(cat_name, config=working_config, save_to_disk=False)
                         st.session_state["has_unsaved_changes"] = True
-                        st.session_state["manage_notice"] = f"Kategorie '{cat_name}' gelöscht."
+                        set_dismissible_notice("manage_notice", f"Kategorie '{cat_name}' gelöscht.", icon="✅")
                         st.rerun()
 
             for feed_idx, feed in enumerate(feeds):
@@ -293,7 +293,7 @@ def render_manage_tab(
                             if st.button("Löschen bestätigen", key=f"del_feed_{cat_idx}_{feed_idx}", type="primary", use_container_width=True):
                                 delete_feed(cat_name, f_url, config=working_config, save_to_disk=False)
                                 st.session_state["has_unsaved_changes"] = True
-                                st.session_state["manage_notice"] = f"Feed '{f_name}' entfernt."
+                                set_dismissible_notice("manage_notice", f"Feed '{f_name}' entfernt.", icon="✅")
                                 st.rerun()
 
                     # Der Bearbeiten-Block: Bleibt bei Änderungen explizit OFFEN!
@@ -345,7 +345,11 @@ def render_manage_tab(
                                     render_feed_test_result(res)
                         with col_eb2:
                             if st.session_state.get("last_saved_feed_key") == key_hash:
-                                st.success("✅ Änderungen im Entwurf gemerkt!")
+                                render_dismissible_notice(
+                                    "Änderungen im Entwurf gemerkt!",
+                                    notice_key=f"feed_saved_{key_hash}",
+                                    icon="✅",
+                                )
                             if st.button("✔️ Im Entwurf merken", key=f"btn_save_feed_{key_hash}", type="primary", use_container_width=True):
                                 if edit_name_val.strip() and edit_url_val.strip():
                                     with st.spinner("Merke Feed-Änderungen im Arbeitsentwurf..."):
@@ -375,7 +379,8 @@ def render_manage_tab(
                                         st.session_state["editing_feed_category"] = edit_cat_val.strip()
                                         st.session_state["last_edited_category"] = edit_cat_val.strip()
                                         st.session_state["has_unsaved_changes"] = True
-                                        st.session_state["manage_notice"] = f"Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!"
+                                        set_dismissible_notice(f"feed_saved_{new_hash}", "Änderungen im Entwurf gemerkt!", icon="✅")
+                                        set_dismissible_notice("manage_notice", f"Änderungen für '{edit_name_val.strip()}' im Entwurf gemerkt!", icon="✅")
                                         st.rerun()
                                 else:
                                     st.error("Name und URL dürfen nicht leer sein.")
@@ -456,8 +461,8 @@ def render_manage_tab(
                 settings.pop("batch_sync_interval_minutes", None)
                 working_config["settings"] = settings
                 st.session_state["has_unsaved_changes"] = True
-                st.session_state["manage_settings_notice"] = "Einstellungen im Entwurf übernommen."
-                st.session_state["manage_notice"] = "Einstellungen im Entwurf übernommen."
+                set_dismissible_notice("manage_settings_notice", "Einstellungen im Entwurf übernommen.", icon="⚙️")
+                set_dismissible_notice("manage_notice", "Einstellungen im Entwurf übernommen.", icon="✅")
                 st.rerun()
 
     # --- Sektion 5: Live settings.yaml Preview ---

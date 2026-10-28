@@ -21,23 +21,52 @@ def embed_client_script(js_code: str) -> None:
     st.html(html_wrapper, unsafe_allow_javascript=True)
 
 
-def render_dismissible_notice(notice_text: str, notice_key: str, icon: str = "✅") -> None:
-    """Renders a prominent, dismissible notice banner with an instant client-side close button."""
-    if not notice_text or not str(notice_text).strip():
+def set_dismissible_notice(notice_key: str, message: str, icon: str = "✅") -> None:
+    """
+    Zentrale Funktion zum Setzen einer grünen Info-/Erfolgsmeldung über alle Seiten hinweg.
+    Erhöht automatisch die Sequenznummer, damit auch identische Folgemeldungen nach einem
+    vorherigen Schließen per '✖' zuverlässig wieder eingeblendet werden.
+    """
+    if not notice_key or not message or not str(message).strip():
+        return
+    st.session_state[notice_key] = str(message).strip()
+    st.session_state[f"_notice_icon_{notice_key}"] = icon
+    curr_seq = int(st.session_state.get(f"_notice_seq_{notice_key}", 0))
+    st.session_state[f"_notice_seq_{notice_key}"] = curr_seq + 1
+
+
+def render_dismissible_notice(
+    notice_text: str | None = None,
+    notice_key: str = "global_notice",
+    icon: str = "✅",
+) -> None:
+    """
+    Zentrale Funktion zum Rendern aller grünen Info-/Erfolgsmeldungen.
+    Verschwindet NICHT automatisch, sondern ausschließlich bei Klick auf das '✖'.
+    """
+    resolved_text = notice_text if notice_text is not None else st.session_state.get(notice_key)
+    if not resolved_text or not str(resolved_text).strip():
         return
     import html
     import hashlib
-    escaped_text = html.escape(str(notice_text).strip())
-    content_hash = hashlib.md5(escaped_text.encode("utf-8")).hexdigest()[:8]
+    resolved_str = str(resolved_text).strip()
+    if st.session_state.get(f"_notice_last_text_{notice_key}") != resolved_str:
+        st.session_state[f"_notice_last_text_{notice_key}"] = resolved_str
+        st.session_state[f"_notice_seq_{notice_key}"] = int(st.session_state.get(f"_notice_seq_{notice_key}", 0)) + 1
+
+    resolved_icon = str(st.session_state.get(f"_notice_icon_{notice_key}") or icon)
+    seq = int(st.session_state.get(f"_notice_seq_{notice_key}", 1))
+    escaped_text = html.escape(resolved_str)
+    content_hash = hashlib.md5(f"{escaped_text}_{seq}".encode("utf-8")).hexdigest()[:8]
     banner_id = f"notice-banner-{notice_key}-{content_hash}"
     btn_id = f"notice-close-btn-{notice_key}-{content_hash}"
     html_markup = f"""
     <div id="{banner_id}" class="persistent-dismissible-notice" data-banner-id="{banner_id}">
         <div class="notice-content">
-            <span class="notice-icon">{icon}</span>
+            <span class="notice-icon">{resolved_icon}</span>
             <span class="notice-message" style="color: #065f46; font-weight: 600;">{escaped_text}</span>
         </div>
-        <button id="{btn_id}" class="notice-close-btn" type="button" onclick="var el=document.getElementById('{banner_id}');if(el){{el.style.display='none';el.remove();}}" title="Hinweis schließen">✖</button>
+        <button id="{btn_id}" class="notice-close-btn" type="button" onclick="try{{sessionStorage.setItem('{banner_id}','dismissed');}}catch(e){{}}var el=document.getElementById('{banner_id}');if(el){{el.style.display='none';el.remove();}}" title="Hinweis schließen">✖</button>
     </div>
     <script>
     (function() {{
@@ -64,26 +93,6 @@ def render_dismissible_notice(notice_text: str, notice_key: str, icon: str = "�
                 }}
             }};
         }}
-
-        // Auto-dismiss after 10 seconds with smooth fade-out
-        setTimeout(function() {{
-            var el = document.getElementById(bId);
-            if (el) {{
-                el.style.transition = "opacity 0.6s ease, max-height 0.6s ease, margin 0.6s ease, padding 0.6s ease";
-                el.style.opacity = "0";
-                el.style.maxHeight = "0";
-                el.style.paddingTop = "0";
-                el.style.paddingBottom = "0";
-                el.style.marginTop = "0";
-                el.style.marginBottom = "0";
-                setTimeout(function() {{
-                    try {{ sessionStorage.setItem(bId, "dismissed"); }} catch(e) {{}}
-                    if (el && el.parentNode) {{
-                        el.remove();
-                    }}
-                }}, 600);
-            }}
-        }}, 10000);
     }})();
     </script>
     """

@@ -26,7 +26,7 @@ from src.aggregator import (
 )
 from src.rss_generator import export_briefing_rss
 from src.storage import get_storage
-from src.ui.styles import render_dismissible_notice
+from src.ui.styles import render_dismissible_notice, set_dismissible_notice
 
 logger = logging.getLogger(__name__)
 
@@ -101,7 +101,7 @@ def render_ki_tab(
                         sync_sources_to_github(
                             commit_message="chore(prompt): update custom AI prompts via dashboard",
                         )
-                        st.session_state["ki_notice"] = "Prompts erfolgreich in prompts.yaml gespeichert!"
+                        set_dismissible_notice("ki_notice", "Prompts erfolgreich in prompts.yaml gespeichert!", icon="✨")
                         st.rerun()
             with col_reset_p:
                 if st.button("↩️ Standard-Hauptprompt laden", key="btn_reset_ki_main_prompt", use_container_width=True):
@@ -111,7 +111,7 @@ def render_ki_tab(
                             "custom_prompt_directives": ki_prompt_directives.strip(),
                         })
                         st.session_state["input_ki_main_prompt"] = DEFAULT_MAIN_PROMPT_TEMPLATE.strip()
-                        st.session_state["ki_notice"] = "Standard-Prompt wiederhergestellt!"
+                        set_dismissible_notice("ki_notice", "Standard-Prompt wiederhergestellt!", icon="✨")
                         st.rerun()
 
     # Admin Generation Bar
@@ -180,7 +180,7 @@ def render_ki_tab(
                                 logger.warning("Could not export briefing RSS: %s", e_rss)
 
                             st.session_state["is_generating_briefing"] = False
-                            st.session_state["ki_notice"] = f"KI-Briefing erfolgreich generiert ({selected_model})!"
+                            set_dismissible_notice("ki_notice", f"KI-Briefing erfolgreich generiert ({selected_model})!", icon="✨")
                             st.rerun()
                         except Exception as exc:
                             st.session_state["is_generating_briefing"] = False

@@ -42,7 +42,13 @@ from src.aggregator import (
     DEFAULT_MAX_ARTICLE_AGE_WEEKS,
 )
 from src.storage import get_storage
-from src.ui.styles import apply_custom_styles, embed_client_script, release_action_overlay
+from src.ui.styles import (
+    apply_custom_styles,
+    embed_client_script,
+    release_action_overlay,
+    render_dismissible_notice,
+    set_dismissible_notice,
+)
 from src.__version__ import get_app_version
 from src.ui.auth import (
     is_admin_user,
@@ -414,8 +420,13 @@ def get_effective_last_update_ts(pool_data: dict[str, list[dict[str, Any]]]) -> 
 # Button: Feeds neu laden (nur im Administrator-Modus verfügbar)
 if is_admin:
     st.sidebar.markdown("---")
-    if "sidebar_refresh_notice" in st.session_state:
-        st.sidebar.success(st.session_state.pop("sidebar_refresh_notice"))
+    if st.session_state.get("sidebar_refresh_notice"):
+        with st.sidebar:
+            render_dismissible_notice(
+                st.session_state["sidebar_refresh_notice"],
+                notice_key="sidebar_refresh_notice",
+                icon="✅",
+            )
 
     if st.sidebar.button(
         "🔄 Feeds neu laden",
@@ -435,7 +446,7 @@ if is_admin:
                 get_storage().set_metadata("last_feed_refresh_time", str(now_ts))
             except Exception:
                 pass
-        st.session_state["sidebar_refresh_notice"] = "Feeds erfolgreich aktualisiert!"
+        set_dismissible_notice("sidebar_refresh_notice", "Feeds erfolgreich aktualisiert!", icon="✅")
         st.rerun()
 
     # Zuletzt aktualisiert Info in der Sidebar (Bild 1)

@@ -122,7 +122,8 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         # High contrast readable color for light mode and auto-dismiss timer
         self.assertIn("#065f46", self.styles_py)
         self.assertIn("handleNoticeClose", self.styles_py)
-        self.assertIn("10000", self.styles_py)
+        self.assertIn("set_dismissible_notice", self.styles_py)
+        self.assertNotIn("Auto-dismiss after", self.styles_py)
 
     def test_toast_removal_and_overlay_release(self) -> None:
         """st.toast must be completely eliminated across all UI modules and overlay auto-released."""
