@@ -29,7 +29,6 @@ categories:
   feeds:
   - name: Might & Magic Alert
     url: https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876
-    offline_download: true
   - name: RPG-Watch
     url: https://rpgwatch.com/files/rss1.xml
     offline_download: true
