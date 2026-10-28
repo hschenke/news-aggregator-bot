@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 16:21:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 16:47:40 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Tech &amp; AI] Mistral startet Responses API für KI-Agenten</title>
+      <link>https://www.all-ai.de/news/news26/mistral-api-ki-agenten</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/mistral-api-ki-agenten</guid>
+      <pubDate>Wed, 28 Oct 2026 16:40:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Mistrals Responses API ist als öffentliche Vorschau verfügbar. Sie trennt Modellantworten, Reasoning und Funktionsaufrufe in einzelne Elemente. Die Schnittstelle verwendet das Responses-Format von OpenAI. DeepSeek V4.1 Flash und GLM 5.3 Flash ergänzen Mistrals Cloud-Angebot. Mistral AI: Ankündigung der Responses API...]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Liveticker | SSV Jeddeloh II - Hertha BSC : | 2. Runde | DFB-Pokal 2026/27 - Kicker</title>
+      <link>https://www.kicker.de/jeddeloh-ii-gegen-hertha-2026-dfb-pokal-5265843/ticker</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13940001979286323887</guid>
+      <pubDate>Wed, 28 Oct 2026 16:17:29 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[17:13 Uhr Werfen wir einen Blick aufs Personal, angefangen bei der Hertha: Trainer Stefan Leitl hatte eine Rotation light bereits angekündigt und ...]]></description>
+    </item>
     <item>
       <title>[Tech &amp; AI] GitHub: TypeScript bleibt dank KI-Agenten populärste Programmiersprache</title>
       <link>https://www.heise.de/news/GitHub-TypeScript-bleibt-dank-KI-Agenten-populaerste-Programmiersprache-11493892.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -70,6 +88,15 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[In der zweiten Runde des DFB-Pokals trifft die SSV Jeddeloh II auf die Hertha aus Berlin. Nach dem Coup gegen Heidenheim, hofft der Regionalligist ...]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Jeddeloh vs. Hertha BSC heute live: Übertragung im TV &amp; Stream - Tipico</title>
+      <link>https://www.tipico.de/wett-tipps/sportwetten-news/jeddeloh-vs-hertha-bsc-heute-live-uebertragung-im-tv-stream</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:1523564510936246664</guid>
+      <pubDate>Wed, 28 Oct 2026 15:24:01 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[Du willst die DFB Pokal heute live sehen? Alle Infos zur Jeddeloh - Hertha Übertragung im TV & Stream.]]></description>
     </item>
     <item>
       <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: Firma kommt nicht an ihre Coins – Aktie halbiert</title>
@@ -963,15 +990,6 @@
       <description><![CDATA[Der Auftritt von Audi-Chef Döllner im Wahlkampf des US-Präsidenten erregt seit Tagen die Gemüter. Nun gibt es auch grundsätzliche Kritik am geplanten Werk.]]></description>
     </item>
     <item>
-      <title>[Fußball] Kein Bock auf Blamage: So ernst nimmt Hertha BSC Pokalschreck Jeddeloh II - Berliner Kurier</title>
-      <link>https://www.berliner-kurier.de/article/hertha-bsc-jeddeloh-ii-dfb-pokal-pokalschreck-10534766</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7622469638604980479</guid>
-      <pubDate>Wed, 28 Oct 2026 08:04:12 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Der Regionalligist will nach Heidenheim auch Hertha ärgern. Und der neue Trainer des Pokalschrecks kennt die blau-weißen Profis genau.]]></description>
-    </item>
-    <item>
       <title>[Tech &amp; AI] Angreifer nehmen Brotli-, Adobe-Commerce- und Magento-Lecks ins Visier</title>
       <link>https://www.heise.de/news/Angreifer-nehmen-Brotli-Adobe-Commerce-und-Magento-Lecks-ins-Visier-11502623.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11502623</guid>
@@ -979,15 +997,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[In freier Wildbahn wurden Angriffe auf kritische Sicherheitslücken in Brotli, Adobe Commerce und Magento beobachtet. Updates helfen.]]></description>
-    </item>
-    <item>
-      <title>[Fußball] SSV Jeddeloh vs. Hertha BSC live im TV und Livestream: DFB-Pokal übertragen | SPOX</title>
-      <link>https://www.spox.com/fussball/news/SSV%20Jeddeloh-vs-Hertha%20BSC-heute-live-sehen-wer-zeigt-uebertraegt-das-spiel-im-tv-und-livestream/blt2874350208bd6dea</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15545584730096591708</guid>
-      <pubDate>Wed, 28 Oct 2026 08:02:13 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Wo wird SSV Jeddeloh gegen Hertha BSC live übertragen? Alle Infos zu TV-Sender, Livestream und Anstoßzeit im DFB-Pokal.]]></description>
     </item>
     <item>
       <title>[Games] SacriFire - Playtest starts on October 29</title>
@@ -1915,69 +1924,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Ex-Herthaner Ibo Maza: Ballon d'Or der Herzen</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-auszeichnung-ballon-dor-ibo-maza-kopa-trophae-toptalent-platz-neun.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-auszeichnung-ballon-dor-ibo-maza-kopa-trophae-toptalent-platz-neun.html</guid>
-      <pubDate>Tue, 27 Oct 2026 16:43:29 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Es war der Abend der großen Stars. In London wurden am Montag bei der Ballon-d'Or-Gala die Besten des Fußballs ausgezeichnet. Mittendrin: Ibo Maza. Der Berliner landete auf Platz neun der besten jungen Spieler - und fiel im ganzen Glamour auf. Weil er anders war.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Jeder von uns braucht manchmal jemanden, an den er sich kuscheln kann.</title>
-      <link>https://debeste.de/633015/Jeder-von-uns-braucht-manchmal-jemanden,-an-den-er-sich-kuscheln-kann</link>
-      <guid isPermaLink="false">https://debeste.de/633015/Jeder-von-uns-braucht-manchmal-jemanden,-an-den-er-sich-kuscheln-kann</guid>
-      <pubDate>Tue, 27 Oct 2026 16:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Googles »Genie 4« erschafft begehbare KI-Welten mit Ton und Dialogen</title>
-      <link>https://www.all-ai.de/news/news26top/google-genie-4-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-genie-4-start</guid>
-      <pubDate>Tue, 27 Oct 2026 16:38:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Genie 4 erzeugt interaktive Welten in Echtzeit und liefert Ton und Dialoge dazu. Nutzer bewegen sich mit der Tastatur und verändern Szenen per Texteingabe. Gemini unterstützt die Planung und Steuerung komplexer Abläufe. Ausgewählte Tester erhalten zuerst Zugang, weitere Nutzer sollen folgen. Google DeepMind: Genie 4...]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Google’s Genie 4 world model adds audio, more realistic worlds, and real-time steering</title>
-      <link>https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182045</guid>
-      <pubDate>Tue, 27 Oct 2026 16:30:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Genie 4 can maintain a consistent scene for up to two minutes, double Genie 3's limit, and offers better physics and more humanlike characters.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Classification of Finite Simple Groups Formalized in Lean</title>
-      <link>https://cfsg.axiommath.ai/</link>
-      <guid isPermaLink="false">https://cfsg.axiommath.ai/</guid>
-      <pubDate>Tue, 27 Oct 2026 16:29:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] EU digitalisiert Abschiebungen: Frontex wird zur Überwachungs- und IT-Zentrale</title>
-      <link>https://www.heise.de/news/EU-digitalisiert-Abschiebungen-Frontex-wird-zur-Ueberwachungs-und-IT-Zentrale-11502261.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502261</guid>
-      <pubDate>Tue, 27 Oct 2026 16:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die EU-Kommission sieht für Frontex vernetzte Datenbanken, automatisiertes Fallmanagement und den deutlichen Ausbau digitaler Überwachung für Rückführungen vor.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Anthropics Börsengang: Die Milliardenrisiken hinter dem KI-Boom</title>
-      <link>https://www.heise.de/news/Anthropics-Boersengang-Die-Milliardenrisiken-hinter-dem-KI-Boom-11502267.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502267</guid>
-      <pubDate>Tue, 27 Oct 2026 16:22:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anthropics Geschäft boomt. Doch der geplante Börsengang bringt erhebliche Risiken ans Licht, wie ein genauerer Blick auf die Börsenunterlagen zeigt.]]></description>
     </item>
   </channel>
 </rss>

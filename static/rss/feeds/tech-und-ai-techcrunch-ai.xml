@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 16:21:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 16:47:40 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -106,15 +106,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[TechCrunch spoke to the MIT computer scientist charged with explaining OpenAI's latest mind-bending discovery.]]></description>
-    </item>
-    <item>
-      <title>Google’s Genie 4 world model adds audio, more realistic worlds, and real-time steering</title>
-      <link>https://techcrunch.com/2026/10/27/googles-genie-4-world-model-adds-audio-more-realistic-worlds-and-real-time-steering/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182045</guid>
-      <pubDate>Tue, 27 Oct 2026 16:30:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Genie 4 can maintain a consistent scene for up to two minutes, double Genie 3's limit, and offers better physics and more humanlike characters.]]></description>
     </item>
   </channel>
 </rss>

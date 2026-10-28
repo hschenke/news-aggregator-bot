@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 16:21:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 16:47:40 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -412,24 +412,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Apple kündigt KI-Assistenten in Logic Pro, Keynote, Pages und Numbers an. Final Cut Pro erhält MotionVFX-Inhalte. Die Updates kommen aber erst im November.]]></description>
-    </item>
-    <item>
-      <title>EU digitalisiert Abschiebungen: Frontex wird zur Überwachungs- und IT-Zentrale</title>
-      <link>https://www.heise.de/news/EU-digitalisiert-Abschiebungen-Frontex-wird-zur-Ueberwachungs-und-IT-Zentrale-11502261.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502261</guid>
-      <pubDate>Tue, 27 Oct 2026 16:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die EU-Kommission sieht für Frontex vernetzte Datenbanken, automatisiertes Fallmanagement und den deutlichen Ausbau digitaler Überwachung für Rückführungen vor.]]></description>
-    </item>
-    <item>
-      <title>Anthropics Börsengang: Die Milliardenrisiken hinter dem KI-Boom</title>
-      <link>https://www.heise.de/news/Anthropics-Boersengang-Die-Milliardenrisiken-hinter-dem-KI-Boom-11502267.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502267</guid>
-      <pubDate>Tue, 27 Oct 2026 16:22:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anthropics Geschäft boomt. Doch der geplante Börsengang bringt erhebliche Risiken ans Licht, wie ein genauerer Blick auf die Börsenunterlagen zeigt.]]></description>
     </item>
   </channel>
 </rss>
