@@ -13,6 +13,7 @@ categories:
   feeds:
   - name: Investing de
     url: https://de.investing.com/rss/news_301.rss
+    offline_download: true
 - name: Fun
   feeds:
   - name: debeste.de
