@@ -162,12 +162,12 @@ def persist_active_tab(active_nav_tab: str) -> None:
     if st.query_params.get("tab") != active_nav_tab:
         st.query_params["tab"] = active_nav_tab
 
+    if st.session_state.get("_synced_active_tab") == active_nav_tab:
+        return
     st.session_state["_synced_active_tab"] = active_nav_tab
-    nonce = time.time()
 
     embed_client_script(f"""
     (function() {{
-        var _n = "{nonce}";
         var tab = "{active_nav_tab}";
         try {{
             document.cookie = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tab) + "; path=/; max-age=31536000; SameSite=Lax";
@@ -191,25 +191,6 @@ def persist_active_tab(active_nav_tab: str) -> None:
                 syncUrl(window.parent);
             }}
         }} catch(e) {{}}
-
-        var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
-        var idx = tabMap[tab] !== undefined ? tabMap[tab] : 0;
-        var ensureTabSelected = function() {{
-            var sideBtns = document.querySelectorAll('.custom-nav-btn');
-            for (var i = 0; i < sideBtns.length; i++) {{
-                if (sideBtns[i].getAttribute('data-tab-id') === tab) {{
-                    sideBtns[i].classList.add('active-nav-tab');
-                }} else {{
-                    sideBtns[i].classList.remove('active-nav-tab');
-                }}
-            }}
-            var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
-            if (tabs && tabs[idx] && tabs[idx].getAttribute('aria-selected') !== 'true') {{
-                tabs[idx].click();
-            }}
-        }};
-        setTimeout(ensureTabSelected, 30);
-        setTimeout(ensureTabSelected, 150);
     }})();
     """)
 
@@ -251,6 +232,9 @@ else:
     elif qp_category or qp_feed:
         active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
+    elif "main_tabs_nav" in st.session_state:
+        active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
+        persist_active_tab(active_nav_tab)
     else:
         persisted_tab = get_persisted_active_tab()
         if persisted_tab:
@@ -263,8 +247,6 @@ else:
             active_nav_tab = TAB_ID_FEEDLY
         elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
             active_nav_tab = TAB_ID_MANAGE
-        elif "main_tabs_nav" in st.session_state:
-            active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
         else:
             active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
@@ -366,27 +348,49 @@ embed_client_script(f"""
     }};
     window._newsBotSetActiveTabClient = setActiveTabClient;
 
-    document.addEventListener('click', function(evt) {{
-        var btn = evt.target && evt.target.closest ? evt.target.closest('.custom-nav-btn:not(.disabled-nav-btn)') : null;
-        if (btn) {{
-            var tabId = btn.getAttribute('data-tab-id');
-            if (!tabId) return;
-            var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
-            var idx = tabMap[tabId] !== undefined ? tabMap[tabId] : 0;
-            setActiveTabClient(tabId, idx, false);
-            return;
-        }}
-        var topTab = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTabs"] [data-testid="stTab"]') : null;
-        if (topTab) {{
-            var txt = (topTab.innerText || "").trim();
-            var tId = "articles";
-            if (txt.indexOf("KI") !== -1) tId = "ki";
-            else if (txt.indexOf("Verwalten") !== -1) tId = "manage";
-            else if (txt.indexOf("Archiv") !== -1) tId = "archive";
-            else if (txt.indexOf("Feedly") !== -1) tId = "feedly";
-            setActiveTabClient(tId, 0, true);
-        }}
-    }}, true);
+    var syncSidebarFromDomTab = function() {{
+        var activeTabEl = document.querySelector('[data-testid="stTabs"] [data-testid="stTab"][aria-selected="true"]');
+        if (!activeTabEl) return;
+        var txt = (activeTabEl.innerText || "").trim();
+        var tId = "articles";
+        if (txt.indexOf("KI") !== -1) tId = "ki";
+        else if (txt.indexOf("Verwalten") !== -1) tId = "manage";
+        else if (txt.indexOf("Archiv") !== -1) tId = "archive";
+        else if (txt.indexOf("Feedly") !== -1) tId = "feedly";
+        setActiveTabClient(tId, 0, true);
+    }};
+    syncSidebarFromDomTab();
+    setTimeout(syncSidebarFromDomTab, 60);
+    setTimeout(syncSidebarFromDomTab, 200);
+
+    if (!window._newsBotNavListenerAttached) {{
+        window._newsBotNavListenerAttached = true;
+        document.addEventListener('click', function(evt) {{
+            var btn = evt.target && evt.target.closest ? evt.target.closest('.custom-nav-btn:not(.disabled-nav-btn)') : null;
+            if (btn) {{
+                var tabId = btn.getAttribute('data-tab-id');
+                if (!tabId) return;
+                var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
+                var idx = tabMap[tabId] !== undefined ? tabMap[tabId] : 0;
+                if (window._newsBotSetActiveTabClient) {{
+                    window._newsBotSetActiveTabClient(tabId, idx, false);
+                }}
+                return;
+            }}
+            var topTab = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTabs"] [data-testid="stTab"]') : null;
+            if (topTab) {{
+                var txt = (topTab.innerText || "").trim();
+                var tId = "articles";
+                if (txt.indexOf("KI") !== -1) tId = "ki";
+                else if (txt.indexOf("Verwalten") !== -1) tId = "manage";
+                else if (txt.indexOf("Archiv") !== -1) tId = "archive";
+                else if (txt.indexOf("Feedly") !== -1) tId = "feedly";
+                if (window._newsBotSetActiveTabClient) {{
+                    window._newsBotSetActiveTabClient(tId, 0, true);
+                }}
+            }}
+        }}, true);
+    }}
 }})();
 """)
 

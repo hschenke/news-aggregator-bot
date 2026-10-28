@@ -107,20 +107,20 @@ def _load_cached_offline_articles() -> list[OfflineArticle]:
 
 def on_clear_archive_search() -> None:
     """Resets the archive search term without blocking."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     st.session_state["inp_archive_search"] = ""
 
 
 def on_reset_archive_filters() -> None:
     """Resets category and feed filter selections in the Archive tab."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     st.session_state["sel_archive_cat"] = "Alle Kategorien"
     st.session_state["sel_archive_feed"] = "Alle Feeds"
 
 
 def on_delete_offline_article(article_url: str, category: str = "", feed_name: str = "") -> None:
     """Optimistically removes an offline article from session state and deletes it in the background."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     clean_url = (article_url or "").strip()
     if not clean_url:
         return
@@ -147,7 +147,7 @@ def on_delete_offline_article(article_url: str, category: str = "", feed_name: s
 
 def on_clear_feed_archive(feed_name: str, category: str = "") -> None:
     """Optimistically clears all offline articles of a feed and deletes them in the background."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     if not feed_name:
         return
 
@@ -174,7 +174,7 @@ def on_sync_and_refresh_archive(working_config: dict[str, Any]) -> None:
     Combined Sync & Refresh action: synchronizes all active offline feeds,
     clears the session cache, and refreshes the Archive page (with grey overlay).
     """
-    st.session_state["pending_nav_tab"] = "archive"
+    
     st.session_state["archive_mgmt_expanded"] = True
     result = sync_offline_archive_now(config=working_config)
     st.session_state.pop("cached_offline_articles", None)
@@ -196,7 +196,7 @@ def on_sync_and_refresh_archive(working_config: dict[str, Any]) -> None:
 
 def on_cleanup_expired_offline() -> None:
     """Optimistically removes expired (>90 days) offline articles and runs DB cleanup in the background."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     st.session_state["archive_mgmt_expanded"] = True
     cutoff_ts = time.time() - (float(OFFLINE_RETENTION_DAYS) * 86400.0)
     if "cached_offline_articles" in st.session_state:
@@ -230,7 +230,7 @@ def on_toggle_feed_offline(
     working_config: dict[str, Any],
 ) -> None:
     """Toggles offline_download, persists config in background, and immediately syncs if enabled."""
-    st.session_state["pending_nav_tab"] = "archive"
+    
     st.session_state["archive_mgmt_expanded"] = True
     update_feed(
         cat_name,
@@ -705,7 +705,7 @@ def render_archive_tab(
                                 key=f"btn_more_arch_{feed_hash}",
                                 use_container_width=True,
                             ):
-                                st.session_state["pending_nav_tab"] = "archive"
+                                
                                 st.session_state[limit_key] = curr_limit + DEFAULT_ARCHIVE_PAGE_SIZE
                                 st.session_state.setdefault("persisted_open_archive_cats", set()).add(category)
                                 st.session_state.setdefault("persisted_open_archive_feeds", set()).add(feed_name)
