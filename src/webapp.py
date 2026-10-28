@@ -162,12 +162,12 @@ def persist_active_tab(active_nav_tab: str) -> None:
     if st.query_params.get("tab") != active_nav_tab:
         st.query_params["tab"] = active_nav_tab
 
-    if st.session_state.get("_synced_active_tab") == active_nav_tab:
-        return
     st.session_state["_synced_active_tab"] = active_nav_tab
+    nonce = time.time()
 
     embed_client_script(f"""
     (function() {{
+        var _n = "{nonce}";
         var tab = "{active_nav_tab}";
         try {{
             document.cookie = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tab) + "; path=/; max-age=31536000; SameSite=Lax";
@@ -191,6 +191,25 @@ def persist_active_tab(active_nav_tab: str) -> None:
                 syncUrl(window.parent);
             }}
         }} catch(e) {{}}
+
+        var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
+        var idx = tabMap[tab] !== undefined ? tabMap[tab] : 0;
+        var ensureTabSelected = function() {{
+            var sideBtns = document.querySelectorAll('.custom-nav-btn');
+            for (var i = 0; i < sideBtns.length; i++) {{
+                if (sideBtns[i].getAttribute('data-tab-id') === tab) {{
+                    sideBtns[i].classList.add('active-nav-tab');
+                }} else {{
+                    sideBtns[i].classList.remove('active-nav-tab');
+                }}
+            }}
+            var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
+            if (tabs && tabs[idx] && tabs[idx].getAttribute('aria-selected') !== 'true') {{
+                tabs[idx].click();
+            }}
+        }};
+        setTimeout(ensureTabSelected, 30);
+        setTimeout(ensureTabSelected, 150);
     }})();
     """)
 
@@ -250,14 +269,11 @@ else:
             active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
 
-# Daten laden (fest 24 Stunden)
-# Performance-Optimierung: Wenn der Verwalten- oder Archiv-Tab aktiv ist, werden keine 24h-Artikeldaten benötigt
-if active_nav_tab in (TAB_ID_ARTICLES, TAB_ID_KI, TAB_ID_FEEDLY):
-    if "cached_news_data" not in st.session_state:
-        st.session_state["cached_news_data"] = get_news_data(force_live_fetch=False)
-    news_data = st.session_state["cached_news_data"]
-else:
-    news_data = {}
+# Daten laden (fest 24 Stunden) - immer aus dem Session-Cache bereitstellen,
+# damit bei Aktionen im Archiv- oder Verwalten-Tab die Artikel im Artikel-Tab niemals leer gerendert werden!
+if "cached_news_data" not in st.session_state:
+    st.session_state["cached_news_data"] = get_news_data(force_live_fetch=False)
+news_data = st.session_state["cached_news_data"]
 
 # ----------------- SIDEBAR -----------------
 app_version = get_app_version()

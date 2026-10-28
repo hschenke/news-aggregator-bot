@@ -446,6 +446,7 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         # Tab order: Archiv (index 3) before Feedly (index 4)
         self.assertIn('TAB_ARCHIVE = "archive"', state_py)
         self.assertIn('"archive": 3, "feedly": 4', webapp_py)
+        self.assertNotIn("news_data = {}", webapp_py)
         pos_arch = webapp_py.find('data-tab-id="{TAB_ID_ARCHIVE}"')
         pos_fdl = webapp_py.find('data-tab-id="{TAB_ID_FEEDLY}"')
         self.assertGreater(pos_arch, 0)
