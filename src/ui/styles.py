@@ -1061,7 +1061,7 @@ def apply_custom_styles() -> None:
             if (btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
             var khCheck = btn.closest("[class*='st-key-']");
             var kcCheck = khCheck ? khCheck.className : "";
-            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1) return;
+            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1) return;
 
             var keyHolder = btn.closest("[class*='st-key-']");
             var keyClass = keyHolder ? keyHolder.className : "";
@@ -1093,6 +1093,10 @@ def apply_custom_styles() -> None:
                 showActionOverlay("💾 Speichere KI-Prompts...", "Prompts werden in prompts.yaml gesichert...");
             } else if (keyClass.indexOf("btn_reset_ki_main_prompt") !== -1 || btnText.indexOf("standard-hauptprompt laden") !== -1) {
                 showActionOverlay("↩️ Lade Standard-Prompt...", "Setze Prompt auf Werkseinstellung zurück...");
+            } else if (keyClass.indexOf("btn_archive_sync_refresh") !== -1 || btnText.indexOf("archiv aktualisieren") !== -1) {
+                showActionOverlay("🔄 Aktualisiere Offline-Archiv...", "Synchronisiere Offline-Feeds und lade gespeicherte Artikel...");
+            } else if (keyClass.indexOf("arch_toggle_off_") !== -1) {
+                showActionOverlay("⚙️ Aktualisiere Offline-Feed...", "Synchronisiere Feed-Einstellung und Offline-Archiv...");
             }
         }
 

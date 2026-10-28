@@ -827,6 +827,26 @@ def start_offline_archive_task(
     return thread
 
 
+def sync_offline_archive_now(
+    config: dict[str, Any] | None = None,
+    target_feed_url: str | None = None,
+) -> dict[str, Any]:
+    """
+    Synchronisiert die Offline-Feeds direkt (oder wartet auf einen bereits laufenden
+    Hintergrund-Task) und erhöht danach die Cache-Version für ein sofortiges UI-Update.
+    """
+    wait_start = time.time()
+    while get_offline_task_status().get("is_running") and (time.time() - wait_start) < 20.0:
+        time.sleep(0.2)
+
+    result = run_offline_archive_for_feeds(
+        config=config,
+        target_feed_url=target_feed_url,
+    )
+    bump_offline_cache_version()
+    return result
+
+
 # ---------------------------------------------------------------------------
 # HTML EXPORT FÜR EINZELNE ARTIKEL UND KOMPLETTE FEEDS
 # ---------------------------------------------------------------------------
@@ -866,18 +886,26 @@ def generate_offline_feed_html(
     export_dt = datetime.now().strftime("%d.%m.%Y, %H:%M Uhr")
 
     toc_html = ""
-    if not single_article_mode and len(parsed_articles) > 1:
+    floating_toc_btn_html = ""
+    if not single_article_mode and len(parsed_articles) >= 1:
         toc_items = []
         for idx, art in enumerate(parsed_articles, start=1):
             toc_items.append(
-                f'<li><a href="#art-{idx}">{html.escape(art.title)}</a> '
+                f'<li><a href="#art-{idx}" onclick="var el=document.getElementById(\'art-{idx}\');if(el){{el.scrollIntoView({{behavior:\'smooth\'}});return false;}}">{html.escape(art.title)}</a> '
                 f'<span class="meta-inline">({html.escape(art.published or art.created_at[:10])})</span></li>'
             )
         toc_html = (
-            '<nav class="toc-box">'
+            '<nav id="toc-top" class="toc-box">'
             f"<h3>Inhaltsverzeichnis ({len(parsed_articles)} Artikel)</h3>"
             f"<ol>{''.join(toc_items)}</ol>"
             "</nav>"
+        )
+        floating_toc_btn_html = (
+            '<a href="#toc-top" class="floating-toc-btn" title="Nach oben zum Inhaltsverzeichnis springen" '
+            'onclick="var t=document.getElementById(\'toc-top\')||document.getElementById(\'page-top\')||document.body;'
+            't.scrollIntoView({behavior:\'smooth\'});return false;">'
+            "⬆️ Zum Inhaltsverzeichnis"
+            "</a>"
         )
 
     articles_blocks: list[str] = []
@@ -1046,10 +1074,43 @@ def generate_offline_feed_html(
             word-break: break-all;
         }}
         .source-footer a {{ color: #2563eb; }}
+        html {{
+            scroll-behavior: smooth;
+        }}
+        .floating-toc-btn {{
+            position: fixed;
+            bottom: 1.75rem;
+            right: 1.75rem;
+            z-index: 9999;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #2563eb;
+            color: #ffffff !important;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            padding: 0.65rem 1.15rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.38);
+            border: 1px solid #1d4ed8;
+            cursor: pointer;
+            transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+        }}
+        .floating-toc-btn:hover {{
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(29, 78, 216, 0.48);
+        }}
+        @media print {{
+            .floating-toc-btn {{
+                display: none !important;
+            }}
+        }}
     </style>
 </head>
 <body>
-    <div class="container">
+    <div id="page-top" class="container">
         <div class="toolbar">
             <div>
                 <strong>📦 {html.escape(doc_title)}</strong>
@@ -1059,5 +1120,6 @@ def generate_offline_feed_html(
         {toc_html}
         {''.join(articles_blocks)}
     </div>
+    {floating_toc_btn_html}
 </body>
 </html>"""

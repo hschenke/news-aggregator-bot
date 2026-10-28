@@ -356,6 +356,9 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("Erster Offline-Artikel", html_feed_str)
         self.assertIn("Zweiter Offline-Artikel", html_feed_str)
         self.assertIn("Inhaltsverzeichnis (2 Artikel)", html_feed_str)
+        self.assertIn('id="toc-top"', html_feed_str)
+        self.assertIn('class="floating-toc-btn"', html_feed_str)
+        self.assertIn("⬆️ Zum Inhaltsverzeichnis", html_feed_str)
 
     @patch("src.offline_archiver.fetch_article_snapshot")
     @patch("src.aggregator.fetch_feed_items")
@@ -429,10 +432,16 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertNotIn("application/pdf", archive_py)
 
         # HTML open in browser tab & HTML download buttons present
-        self.assertIn("open_html_", archive_py)
-        self.assertIn("dl_html_", archive_py)
+        self.assertIn("open_btn_", archive_py)
+        self.assertIn("dl_btn_", archive_py)
         self.assertIn("window.open(url, \"_blank\"", archive_py)
         self.assertIn("URL.createObjectURL(blob)", archive_py)
+
+        # Combined Sync & Refresh button + bottom collapsible management block
+        self.assertIn("btn_archive_sync_refresh", archive_py)
+        self.assertIn("_render_archive_management_block", archive_py)
+        self.assertNotIn("btn_archive_start_bg", archive_py)
+        self.assertNotIn("btn_archive_refresh_ui", archive_py)
 
         # Tab order: Archiv (index 3) before Feedly (index 4)
         self.assertIn('TAB_ARCHIVE = "archive"', state_py)

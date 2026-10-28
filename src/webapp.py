@@ -226,9 +226,6 @@ else:
     elif qp_category or qp_feed:
         active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
-    elif "main_tabs_nav" in st.session_state:
-        active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
-        persist_active_tab(active_nav_tab)
     else:
         persisted_tab = get_persisted_active_tab()
         if persisted_tab:
@@ -241,6 +238,8 @@ else:
             active_nav_tab = TAB_ID_FEEDLY
         elif qp_tab in ["manage", "settings", "feeds", "quellen"]:
             active_nav_tab = TAB_ID_MANAGE
+        elif "main_tabs_nav" in st.session_state:
+            active_nav_tab = label_to_tab_id(st.session_state["main_tabs_nav"])
         else:
             active_nav_tab = TAB_ID_ARTICLES
         persist_active_tab(active_nav_tab)
@@ -300,8 +299,34 @@ else:
 # Client-seitiger Click Handler & Tab-Synchronisation für Navigation
 embed_client_script(f"""
 (function() {{
-    var setActiveTabClient = function(tabId, tabIdx) {{
+    var persistTabClient = function(tabId) {{
         if (!tabId) return;
+        try {{
+            document.cookie = "{COOKIE_TAB_NAME}=" + encodeURIComponent(tabId) + "; path=/; max-age=31536000; SameSite=Lax";
+            localStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+            sessionStorage.setItem("{COOKIE_TAB_NAME}", tabId);
+        }} catch(e) {{}}
+        var syncUrl = function(win) {{
+            if (!win || !win.location) return;
+            try {{
+                var url = new URL(win.location.href);
+                if (url.searchParams.get("tab") !== tabId) {{
+                    url.searchParams.set("tab", tabId);
+                    win.history.replaceState(null, "", url.toString());
+                }}
+            }} catch(e) {{}}
+        }};
+        try {{
+            syncUrl(window);
+            if (window.parent && window.parent !== window) {{
+                syncUrl(window.parent);
+            }}
+        }} catch(e) {{}}
+    }};
+
+    var setActiveTabClient = function(tabId, tabIdx, skipTabClick) {{
+        if (!tabId) return;
+        persistTabClient(tabId);
         var sideBtns = document.querySelectorAll('.custom-nav-btn');
         for (var i = 0; i < sideBtns.length; i++) {{
             if (sideBtns[i].getAttribute('data-tab-id') === tabId) {{
@@ -310,22 +335,35 @@ embed_client_script(f"""
                 sideBtns[i].classList.remove('active-nav-tab');
             }}
         }}
-        var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
-        if (tabs && tabs[tabIdx]) {{
-            tabs[tabIdx].click();
+        if (!skipTabClick) {{
+            var tabs = document.querySelectorAll('[data-testid="stTabs"] [data-testid="stTab"]');
+            if (tabs && tabs[tabIdx]) {{
+                tabs[tabIdx].click();
+            }}
         }}
     }};
     window._newsBotSetActiveTabClient = setActiveTabClient;
 
     document.addEventListener('click', function(evt) {{
         var btn = evt.target && evt.target.closest ? evt.target.closest('.custom-nav-btn:not(.disabled-nav-btn)') : null;
-        if (!btn) return;
-        var tabId = btn.getAttribute('data-tab-id');
-        if (!tabId) return;
-
-        var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
-        var idx = tabMap[tabId] !== undefined ? tabMap[tabId] : 0;
-        setActiveTabClient(tabId, idx);
+        if (btn) {{
+            var tabId = btn.getAttribute('data-tab-id');
+            if (!tabId) return;
+            var tabMap = {{ "articles": 0, "ki": 1, "manage": 2, "archive": 3, "feedly": 4 }};
+            var idx = tabMap[tabId] !== undefined ? tabMap[tabId] : 0;
+            setActiveTabClient(tabId, idx, false);
+            return;
+        }}
+        var topTab = evt.target && evt.target.closest ? evt.target.closest('[data-testid="stTabs"] [data-testid="stTab"]') : null;
+        if (topTab) {{
+            var txt = (topTab.innerText || "").trim();
+            var tId = "articles";
+            if (txt.indexOf("KI") !== -1) tId = "ki";
+            else if (txt.indexOf("Verwalten") !== -1) tId = "manage";
+            else if (txt.indexOf("Archiv") !== -1) tId = "archive";
+            else if (txt.indexOf("Feedly") !== -1) tId = "feedly";
+            setActiveTabClient(tId, 0, true);
+        }}
     }}, true);
 }})();
 """)

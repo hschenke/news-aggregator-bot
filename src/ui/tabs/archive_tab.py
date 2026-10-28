@@ -1,8 +1,8 @@
 """
 Offline-Archiv tab module for News Aggregator Bot UI.
-Renders archived webpage snapshots (text & images) with non-blocking background actions,
-3-month (90 days) retention, and instant client-side HTML download & new-tab browser view.
-Modeled after articles_tab.py for maximum smoothness and zero UI blocking.
+Renders archived webpage snapshots (text & images) with non-blocking actions,
+3-month (90 days) retention, instant client-side HTML download & new-tab browser view,
+and a collapsible management block at the bottom of the page.
 """
 
 from __future__ import annotations
@@ -18,7 +18,6 @@ from typing import Any
 import streamlit as st
 
 from src.aggregator import (
-    format_summary_html,
     get_offline_enabled_feeds,
     sync_sources_to_github,
     update_feed,
@@ -31,7 +30,7 @@ from src.offline_archiver import (
     get_offline_cache_version,
     get_offline_task_status,
     repair_police_offline_article,
-    start_offline_archive_task,
+    sync_offline_archive_now,
 )
 from src.storage import OFFLINE_RETENTION_DAYS, get_storage
 from src.ui.background import run_in_background
@@ -108,25 +107,29 @@ def _load_cached_offline_articles() -> list[OfflineArticle]:
 
 def on_clear_archive_search() -> None:
     """Resets the archive search term without blocking."""
+    st.session_state["pending_nav_tab"] = "archive"
     st.session_state["inp_archive_search"] = ""
 
 
 def on_reset_archive_filters() -> None:
     """Resets category and feed filter selections in the Archive tab."""
+    st.session_state["pending_nav_tab"] = "archive"
     st.session_state["sel_archive_cat"] = "Alle Kategorien"
     st.session_state["sel_archive_feed"] = "Alle Feeds"
 
 
 def on_delete_offline_article(article_url: str, category: str = "", feed_name: str = "") -> None:
     """Optimistically removes an offline article from session state and deletes it in the background."""
+    st.session_state["pending_nav_tab"] = "archive"
     clean_url = (article_url or "").strip()
     if not clean_url:
         return
 
     if "cached_offline_articles" in st.session_state:
         st.session_state["cached_offline_articles"] = [
-            a for a in st.session_state["cached_offline_articles"]
-            if a.url.strip() != clean_url
+            OfflineArticle.from_dict(a)
+            for a in st.session_state["cached_offline_articles"]
+            if OfflineArticle.from_dict(a).url.strip() != clean_url
         ]
 
     if category:
@@ -144,13 +147,15 @@ def on_delete_offline_article(article_url: str, category: str = "", feed_name: s
 
 def on_clear_feed_archive(feed_name: str, category: str = "") -> None:
     """Optimistically clears all offline articles of a feed and deletes them in the background."""
+    st.session_state["pending_nav_tab"] = "archive"
     if not feed_name:
         return
 
     if "cached_offline_articles" in st.session_state:
         st.session_state["cached_offline_articles"] = [
-            a for a in st.session_state["cached_offline_articles"]
-            if a.feed_name != feed_name
+            OfflineArticle.from_dict(a)
+            for a in st.session_state["cached_offline_articles"]
+            if OfflineArticle.from_dict(a).feed_name != feed_name
         ]
 
     if category:
@@ -164,14 +169,36 @@ def on_clear_feed_archive(feed_name: str, category: str = "") -> None:
     st.session_state["archive_notice"] = f"Offline-Archiv für '{feed_name}' wurde geleert."
 
 
+def on_sync_and_refresh_archive(working_config: dict[str, Any]) -> None:
+    """
+    Combined Sync & Refresh action: synchronizes all active offline feeds,
+    clears the session cache, and refreshes the Archive page (with grey overlay).
+    """
+    st.session_state["pending_nav_tab"] = "archive"
+    st.session_state["archive_mgmt_expanded"] = True
+    result = sync_offline_archive_now(config=working_config)
+    st.session_state.pop("cached_offline_articles", None)
+    st.session_state.pop("_offline_cache_ver", None)
+    saved_cnt = int(result.get("saved", 0))
+    if saved_cnt > 0:
+        st.session_state["archive_notice"] = (
+            f"Offline-Archiv aktualisiert — {saved_cnt} neue Artikel gespeichert!"
+        )
+    else:
+        st.session_state["archive_notice"] = "Offline-Archiv ist auf dem neuesten Stand."
+
+
 def on_cleanup_expired_offline() -> None:
     """Optimistically removes expired (>90 days) offline articles and runs DB cleanup in the background."""
+    st.session_state["pending_nav_tab"] = "archive"
+    st.session_state["archive_mgmt_expanded"] = True
     cutoff_ts = time.time() - (float(OFFLINE_RETENTION_DAYS) * 86400.0)
     if "cached_offline_articles" in st.session_state:
         before_cnt = len(st.session_state["cached_offline_articles"])
         st.session_state["cached_offline_articles"] = [
-            a for a in st.session_state["cached_offline_articles"]
-            if not (a.timestamp > 0.0 and a.timestamp < cutoff_ts)
+            OfflineArticle.from_dict(a)
+            for a in st.session_state["cached_offline_articles"]
+            if not (OfflineArticle.from_dict(a).timestamp > 0.0 and OfflineArticle.from_dict(a).timestamp < cutoff_ts)
         ]
         removed_est = max(0, before_cnt - len(st.session_state["cached_offline_articles"]))
     else:
@@ -183,7 +210,7 @@ def on_cleanup_expired_offline() -> None:
 
     run_in_background(_bg_cleanup)
     st.session_state["archive_notice"] = (
-        f"Bereinigung im Hintergrund gestartet ({removed_est} abgelaufene Artikel > {OFFLINE_RETENTION_DAYS} Tage entfernt)."
+        f"Bereinigung abgeschlossen ({removed_est} abgelaufene Artikel > {OFFLINE_RETENTION_DAYS} Tage entfernt)."
     )
 
 
@@ -194,7 +221,9 @@ def on_toggle_feed_offline(
     new_state: bool,
     working_config: dict[str, Any],
 ) -> None:
-    """Toggles offline_download in memory immediately and persists/syncs in the background."""
+    """Toggles offline_download, persists config in background, and immediately syncs if enabled."""
+    st.session_state["pending_nav_tab"] = "archive"
+    st.session_state["archive_mgmt_expanded"] = True
     update_feed(
         cat_name,
         f_url,
@@ -215,9 +244,12 @@ def on_toggle_feed_offline(
 
     run_in_background(_bg_persist)
     if new_state:
-        start_offline_archive_task(config=working_config, target_feed_url=f_url)
+        res = sync_offline_archive_now(config=working_config, target_feed_url=f_url)
+        st.session_state.pop("cached_offline_articles", None)
+        st.session_state.pop("_offline_cache_ver", None)
+        saved_cnt = int(res.get("saved", 0))
         st.session_state["archive_notice"] = (
-            f"Offline-Download für '{f_name}' aktiviert — Hintergrund-Archivierung läuft!"
+            f"Offline-Download für '{f_name}' aktiviert ({saved_cnt} neue Artikel archiviert)!"
         )
     else:
         st.session_state["archive_notice"] = f"Offline-Download für '{f_name}' deaktiviert."
@@ -231,69 +263,71 @@ def _render_html_action_buttons(
     dl_label: str = "⬇️ HTML-Download",
 ) -> None:
     """
-    Renders two zero-latency client-side buttons for an HTML snapshot:
-    1) Opens the self-contained HTML directly in a new browser tab via Blob URL (no popup blocker, no server rerun).
-    2) Downloads the self-contained HTML file directly via Blob URL (no server rerun).
+    Renders two zero-rerun client-side HTML action buttons:
+    1) Open directly as a new browser tab via Blob URL
+    2) Download directly as a .html file via Blob URL
     """
-    b64_payload = base64.b64encode(html_document.encode("utf-8")).decode("ascii")
+    b64_html = base64.b64encode(html_document.encode("utf-8")).decode("ascii")
     safe_file = html.escape(file_name)
-    open_btn_id = f"open_html_{btn_id_suffix}"
-    dl_btn_id = f"dl_html_{btn_id_suffix}"
-    payload_id = f"html_b64_{btn_id_suffix}"
+    open_btn_id = f"open_btn_{btn_id_suffix}"
+    dl_btn_id = f"dl_btn_{btn_id_suffix}"
 
     st.html(
         f"""
-        <div class="archive-html-actions" style="display:flex;gap:0.45rem;align-items:center;flex-wrap:wrap;margin:0.15rem 0;">
-            <script type="text/plain" id="{payload_id}">{b64_payload}</script>
-            <button type="button" id="{open_btn_id}" class="arch-html-btn arch-html-btn-open" title="Öffnet das komplette Offline-HTML-Abbild sofort in einem neuen Browser-Tab">
-                {html.escape(open_label)}
-            </button>
-            <button type="button" id="{dl_btn_id}" class="arch-html-btn arch-html-btn-dl" title="Lädt die eigenständige Offline-HTML-Datei herunter">
-                {html.escape(dl_label)}
-            </button>
-        </div>
         <style>
+            .arch-html-actions {{
+                display: inline-flex;
+                flex-wrap: wrap;
+                gap: 0.45rem;
+                align-items: center;
+                margin: 0.15rem 0;
+            }}
             .arch-html-btn {{
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                padding: 0.3rem 0.68rem;
-                font-size: 0.82rem;
+                gap: 0.35rem;
+                padding: 0.32rem 0.7rem;
+                font-size: 0.8rem;
                 font-weight: 500;
                 line-height: 1.25;
-                border-radius: 0.4rem;
-                cursor: pointer;
-                transition: all 0.12s ease-in-out;
-                font-family: inherit;
-                white-space: nowrap;
-            }}
-            .arch-html-btn-open {{
-                background-color: rgba(37, 99, 235, 0.1);
-                color: #2563eb;
-                border: 1px solid rgba(37, 99, 235, 0.3);
-            }}
-            .arch-html-btn-open:hover {{
-                background-color: #2563eb;
-                color: #ffffff;
-                border-color: #1d4ed8;
-            }}
-            .arch-html-btn-dl {{
-                background-color: rgba(100, 116, 139, 0.08);
+                border-radius: 0.42rem;
+                border: 1px solid rgba(128, 128, 128, 0.32);
+                background-color: transparent;
                 color: inherit;
-                border: 1px solid rgba(128, 128, 128, 0.25);
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.15s ease-in-out;
+                user-select: none;
+                font-family: inherit;
             }}
-            .arch-html-btn-dl:hover {{
-                background-color: rgba(37, 99, 235, 0.08);
+            .arch-html-btn:hover {{
                 border-color: #2563eb;
                 color: #2563eb;
+                background-color: rgba(37, 99, 235, 0.08);
+            }}
+            .arch-html-btn-primary {{
+                border-color: rgba(37, 99, 235, 0.45);
+                color: #2563eb;
+                background-color: rgba(37, 99, 235, 0.06);
+            }}
+            .arch-html-btn-primary:hover {{
+                background-color: #2563eb;
+                color: #ffffff;
             }}
         </style>
+        <div class="arch-html-actions">
+            <button id="{open_btn_id}" type="button" class="arch-html-btn arch-html-btn-primary" title="Gespeichertes HTML-Abbild direkt in einem neuen Browser-Tab anzeigen">
+                {html.escape(open_label)}
+            </button>
+            <button id="{dl_btn_id}" type="button" class="arch-html-btn" title="Gespeichertes HTML-Abbild als Datei herunterladen">
+                {html.escape(dl_label)}
+            </button>
+        </div>
         <script>
         (function() {{
+            var b64 = "{b64_html}";
             function getBlobUrl() {{
-                var el = document.getElementById("{payload_id}");
-                if (!el) return null;
-                var b64 = el.textContent || "";
                 var binStr = atob(b64);
                 var len = binStr.length;
                 var bytes = new Uint8Array(len);
@@ -339,11 +373,79 @@ def _render_html_action_buttons(
     )
 
 
+def _render_archive_management_block(
+    working_config: dict[str, Any],
+    offline_feeds: list[dict[str, Any]],
+) -> None:
+    """
+    Renders the collapsible management block at the very bottom of the Archive tab:
+    - Combined Sync & Refresh button + >90d Cleanup button
+    - Feed selection list per category (Offline-Feeds auswählen)
+    """
+    st.markdown("---")
+    mgmt_expanded = bool(st.session_state.pop("archive_mgmt_expanded", False)) or (len(offline_feeds) == 0)
+    with st.expander(
+        f"⚙️ Archiv-Verwaltung & Offline-Feeds ({len(offline_feeds)} aktiv)",
+        expanded=mgmt_expanded,
+    ):
+        col_act1, col_act2 = st.columns([2.2, 1.2], vertical_alignment="center")
+        with col_act1:
+            st.button(
+                "🔄 Archiv aktualisieren & synchronisieren",
+                key="btn_archive_sync_refresh",
+                type="primary",
+                use_container_width=True,
+                disabled=len(offline_feeds) == 0,
+                on_click=on_sync_and_refresh_archive,
+                args=(working_config,),
+                help="Synchronisiert alle aktiven Offline-Feeds und aktualisiert sofort die Archiv-Ansicht.",
+            )
+        with col_act2:
+            st.button(
+                f"🧹 Älter als {OFFLINE_RETENTION_DAYS}T bereinigen",
+                key="btn_archive_cleanup_90d",
+                use_container_width=True,
+                on_click=on_cleanup_expired_offline,
+                help=f"Entfernt alle Offline-Artikel älter als {OFFLINE_RETENTION_DAYS} Tage (3 Monate).",
+            )
+
+        st.markdown("##### 📡 Offline-Feeds auswählen")
+        categories_cfg = sorted(
+            working_config.get("categories", []),
+            key=lambda c: c.get("name", "").strip().lower(),
+        )
+        for cat in categories_cfg:
+            cat_name = cat.get("name", "Allgemein")
+            feeds_list = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
+            if not feeds_list:
+                continue
+            st.caption(f"📁 **{cat_name}**")
+            for feed in feeds_list:
+                f_name = feed.get("name", "Unbenannt")
+                f_url = feed.get("url", "")
+                f_off = bool(feed.get("offline_download", False))
+                f_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
+
+                c_qf1, c_qf2 = st.columns([2.8, 1.2], vertical_alignment="center")
+                with c_qf1:
+                    status_dot = "🟢" if f_off else "⚪"
+                    st.markdown(f"{status_dot} **{f_name}**")
+                with c_qf2:
+                    st.button(
+                        "Deaktivieren" if f_off else "📥 Aktivieren",
+                        key=f"arch_toggle_off_{f_hash}",
+                        type="secondary" if f_off else "primary",
+                        use_container_width=True,
+                        on_click=on_toggle_feed_offline,
+                        args=(cat_name, f_name, f_url, not f_off, working_config),
+                    )
+
+
 def render_archive_tab(
     working_config: dict[str, Any],
     is_admin: bool,
 ) -> None:
-    """Renders the Offline Archive tab with non-blocking actions and HTML export/view."""
+    """Renders the Offline Archive tab with non-blocking actions, HTML export/view, and bottom management block."""
     st.subheader("📦 Offline-Archiv")
     st.caption(
         f"Gespeicherte Webseiten-Abbilder (Text & Bilder) pro Feed · "
@@ -361,137 +463,72 @@ def render_archive_tab(
     offline_feeds = get_offline_enabled_feeds(working_config)
     all_offline_articles = _load_cached_offline_articles()
     is_running = bool(task_status.get("is_running", False))
+    cache_ver = get_offline_cache_version()
 
-    # --- 1. Kompakte, nicht-blockierende Status- & Aktionsleiste ---
-    col_bar1, col_bar2, col_bar3, col_bar4 = st.columns([2.8, 1.2, 0.8, 0.8], vertical_alignment="center")
-    with col_bar1:
-        if is_running:
-            curr_feed = task_status.get("current_feed") or "Initialisiere..."
-            processed_a = int(task_status.get("processed_articles", 0))
-            total_a = int(task_status.get("total_articles", 0))
-            saved_a = int(task_status.get("saved_articles", 0))
-            st.caption(
-                f"🔄 **Hintergrund-Sync aktiv:** `{curr_feed}` ({processed_a}/{total_a} geprüft · {saved_a} gespeichert)"
-            )
-        else:
-            last_finished = task_status.get("last_run_at")
-            last_str = f" · Letzter Lauf: {format_local_dt(last_finished)}" if last_finished else ""
-            st.caption(
-                f"✅ **{len(offline_feeds)} Offline-Feeds aktiv** · **{len(all_offline_articles)} Artikel im Archiv**{last_str}"
-            )
-    with col_bar2:
-        if st.button(
-            "🔄 Hintergrund-Sync",
-            key="btn_archive_start_bg",
-            type="primary",
-            use_container_width=True,
-            disabled=is_running or len(offline_feeds) == 0,
-            help="Startet den Offline-Download im Hintergrund ohne die App zu blockieren.",
-        ):
-            start_offline_archive_task(config=working_config)
-            st.session_state["archive_notice"] = (
-                f"Hintergrund-Synchronisation für {len(offline_feeds)} Offline-Feed(s) gestartet!"
-            )
-            st.rerun()
-    with col_bar3:
-        if st.button(
-            "🔃 Aktualisieren",
-            key="btn_archive_refresh_ui",
-            use_container_width=True,
-            help="Lädt neu gespeicherte Artikel aus dem Hintergrund-Task in die Ansicht.",
-        ):
-            bump_offline_cache_version()
-            st.rerun()
-    with col_bar4:
-        st.button(
-            f"🧹 >{OFFLINE_RETENTION_DAYS}T",
-            key="btn_archive_cleanup_90d",
-            use_container_width=True,
-            on_click=on_cleanup_expired_offline,
-            help=f"Entfernt im Hintergrund alle Offline-Artikel älter als {OFFLINE_RETENTION_DAYS} Tage (3 Monate).",
+    # --- 1. Kompakte Statuszeile ---
+    if is_running:
+        curr_feed = task_status.get("current_feed") or "Initialisiere..."
+        processed_a = int(task_status.get("processed_articles", 0))
+        total_a = int(task_status.get("total_articles", 0))
+        saved_a = int(task_status.get("saved_articles", 0))
+        st.caption(
+            f"🔄 **Hintergrund-Sync aktiv:** `{curr_feed}` ({processed_a}/{total_a} geprüft · {saved_a} gespeichert)"
+        )
+    else:
+        last_finished = task_status.get("last_run_at")
+        last_str = f" · Letzter Lauf: {format_local_dt(last_finished)}" if last_finished else ""
+        st.caption(
+            f"✅ **{len(offline_feeds)} Offline-Feeds aktiv** · **{len(all_offline_articles)} Artikel im Archiv**{last_str}"
         )
 
-    # --- 2. Kompakte Filter, Suche & Feed-Konfiguration (wie im Artikel-Tab) ---
+    # --- 2. Filter & Suche (oben wie im Artikel-Tab) ---
     available_cats = sorted({art.category for art in all_offline_articles if art.category}, key=lambda x: x.lower())
     available_feeds = sorted({art.feed_name for art in all_offline_articles if art.feed_name}, key=lambda x: x.lower())
 
-    col_exp_flt, col_exp_cfg = st.columns(2)
-    with col_exp_flt:
-        with st.expander("🔍 Filter & Suche", expanded=False):
-            f_col1, f_col2, f_col3 = st.columns([1.3, 1.3, 0.9], vertical_alignment="bottom")
-            with f_col1:
-                selected_cat = st.selectbox(
-                    "Kategorie:",
-                    options=["Alle Kategorien"] + available_cats,
-                    key="sel_archive_cat",
-                )
-            with f_col2:
-                selected_feed = st.selectbox(
-                    "Feed / Quelle:",
-                    options=["Alle Feeds"] + available_feeds,
-                    key="sel_archive_feed",
-                )
-            with f_col3:
-                st.button(
-                    "Reset",
-                    key="btn_reset_archive_filters",
-                    use_container_width=True,
-                    on_click=on_reset_archive_filters,
-                )
-
-            s_col1, s_col2 = st.columns([5, 1], vertical_alignment="bottom")
-            with s_col1:
-                search_query = st.text_input(
-                    "Volltext- & Titelsuche:",
-                    placeholder="Im gespeicherten Artikeltext suchen...",
-                    key="inp_archive_search",
-                )
-            with s_col2:
-                st.button(
-                    "X",
-                    key="btn_clear_archive_search",
-                    use_container_width=True,
-                    on_click=on_clear_archive_search,
-                    help="Suchbegriff löschen",
-                )
-
-    with col_exp_cfg:
-        with st.expander(f"⚙️ Offline-Feeds auswählen ({len(offline_feeds)} aktiv)", expanded=len(offline_feeds) == 0):
-            categories_cfg = sorted(
-                working_config.get("categories", []),
-                key=lambda c: c.get("name", "").strip().lower(),
+    with st.expander("🔍 Filter & Suche", expanded=False):
+        f_col1, f_col2, f_col3 = st.columns([1.5, 1.5, 0.8], vertical_alignment="bottom")
+        with f_col1:
+            selected_cat = st.selectbox(
+                "Kategorie:",
+                options=["Alle Kategorien"] + available_cats,
+                key="sel_archive_cat",
             )
-            for cat in categories_cfg:
-                cat_name = cat.get("name", "Allgemein")
-                feeds_list = sorted(cat.get("feeds", []), key=lambda f: f.get("name", "").strip().lower())
-                if not feeds_list:
-                    continue
-                st.caption(f"📁 **{cat_name}**")
-                for feed in feeds_list:
-                    f_name = feed.get("name", "Unbenannt")
-                    f_url = feed.get("url", "")
-                    f_off = bool(feed.get("offline_download", False))
-                    f_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
+        with f_col2:
+            selected_feed = st.selectbox(
+                "Feed / Quelle:",
+                options=["Alle Feeds"] + available_feeds,
+                key="sel_archive_feed",
+            )
+        with f_col3:
+            st.button(
+                "Reset",
+                key="btn_reset_archive_filters",
+                use_container_width=True,
+                on_click=on_reset_archive_filters,
+            )
 
-                    c_qf1, c_qf2 = st.columns([2.8, 1.2], vertical_alignment="center")
-                    with c_qf1:
-                        status_dot = "🟢" if f_off else "⚪"
-                        st.markdown(f"{status_dot} **{f_name}**")
-                    with c_qf2:
-                        st.button(
-                            "Deaktivieren" if f_off else "📥 Aktivieren",
-                            key=f"arch_toggle_off_{f_hash}",
-                            type="secondary" if f_off else "primary",
-                            use_container_width=True,
-                            on_click=on_toggle_feed_offline,
-                            args=(cat_name, f_name, f_url, not f_off, working_config),
-                        )
+        s_col1, s_col2 = st.columns([5, 1], vertical_alignment="bottom")
+        with s_col1:
+            search_query = st.text_input(
+                "Volltext- & Titelsuche:",
+                placeholder="Im gespeicherten Artikeltext suchen...",
+                key="inp_archive_search",
+            )
+        with s_col2:
+            st.button(
+                "X",
+                key="btn_clear_archive_search",
+                use_container_width=True,
+                on_click=on_clear_archive_search,
+                help="Suchbegriff löschen",
+            )
 
     if not all_offline_articles:
         st.info(
             "📭 **Noch keine gespeicherten Offline-Artikel im Archiv.**  \n"
-            "Aktiviere oben unter **⚙️ Offline-Feeds auswählen** (oder im Tab **⚙️ Verwalten**) einen Feed für den Offline-Download."
+            "Aktiviere unten unter **⚙️ Archiv-Verwaltung & Offline-Feeds** (oder im Tab **⚙️ Verwalten**) einen Feed für den Offline-Download."
         )
+        _render_archive_management_block(working_config, offline_feeds)
         return
 
     # --- 3. Filterung & Kategorien-/Feed-Hierarchie analog zum Artikel-Tab ---
@@ -518,6 +555,7 @@ def render_archive_tab(
     total_displayed = sum(len(v) for v in by_category.values())
     if total_displayed == 0:
         st.warning("Keine passenden Offline-Artikel für die gewählten Filter gefunden.")
+        _render_archive_management_block(working_config, offline_feeds)
         return
 
     st.caption(f"Zeige **{total_displayed}** Offline-Artikel in **{len(by_category)}** Kategorien")
@@ -554,7 +592,7 @@ def render_archive_tab(
                         _render_html_action_buttons(
                             html_document=feed_html_doc,
                             file_name=f"offline_feed_{feed_slug}.html",
-                            btn_id_suffix=f"feed_{feed_hash}",
+                            btn_id_suffix=f"feed_{feed_hash}_{len(feed_articles)}_{cache_ver}",
                             open_label=f"↗️ Alle {len(feed_articles)} Artikel im Browser öffnen",
                             dl_label=f"⬇️ Alle als HTML herunterladen ({len(feed_articles)})",
                         )
@@ -628,7 +666,7 @@ def render_archive_tab(
                                     _render_html_action_buttons(
                                         html_document=art_html_doc,
                                         file_name=f"artikel_{art_slug}.html",
-                                        btn_id_suffix=f"art_{art_hash}_{idx}",
+                                        btn_id_suffix=f"art_{art_hash}_{idx}_{cache_ver}",
                                         open_label="↗️ Im Tab öffnen",
                                         dl_label="⬇️ HTML-Download",
                                     )
@@ -653,7 +691,11 @@ def render_archive_tab(
                                 key=f"btn_more_arch_{feed_hash}",
                                 use_container_width=True,
                             ):
+                                st.session_state["pending_nav_tab"] = "archive"
                                 st.session_state[limit_key] = curr_limit + DEFAULT_ARCHIVE_PAGE_SIZE
                                 st.session_state.setdefault("persisted_open_archive_cats", set()).add(category)
                                 st.session_state.setdefault("persisted_open_archive_feeds", set()).add(feed_name)
                                 st.rerun()
+
+    # --- 4. Aufklappbarer Verwaltungs-Block ganz unten ---
+    _render_archive_management_block(working_config, offline_feeds)
