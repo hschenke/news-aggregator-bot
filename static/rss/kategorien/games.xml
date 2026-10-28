@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Games' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/games.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -133,15 +133,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Dark Messiah of Might & Magic: Community Edition soll noch 2026 für Windows und Linux erscheinen. Der kostenlose Steam-Mod macht aus dem ...]]></description>
-    </item>
-    <item>
-      <title>Dark Messiah of Might &amp; Magic: Community Edition Gets Steam Page With Ubisoft's Approval</title>
-      <link>https://de.vgtimes.com/news/172475-dark-messiah-of-might-magic-community-edition-gets-steam-page-with-ubisofts-approval.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11742847949044550259</guid>
-      <pubDate>Tue, 27 Oct 2026 11:23:04 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[On October 26, Ubisoft's approval helped Dark Messiah of Might and Magic: Community Edition land its own Steam page. The project is being made by.]]></description>
     </item>
   </channel>
 </rss>

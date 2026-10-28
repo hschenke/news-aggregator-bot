@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -115,15 +115,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[General Compute is betting on inference chips from outside the Nvidia ecosystem.]]></description>
-    </item>
-    <item>
-      <title>Nvidia backs Indian startup helping companies run AI models with fewer GPUs</title>
-      <link>https://techcrunch.com/2026/10/27/nvidia-backs-indian-startup-helping-companies-run-ai-models-with-fewer-gpus/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181625</guid>
-      <pubDate>Tue, 27 Oct 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Simplismart says its annualized revenue run rate has grown fourteenfold in six months, with the U.S. accounting for more than half its revenue.]]></description>
     </item>
   </channel>
 </rss>

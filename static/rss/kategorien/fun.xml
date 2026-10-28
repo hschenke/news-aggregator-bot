@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Fun' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/fun.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Achtung österreichisches Dorf...</title>
+      <link>https://debeste.de/633127/Achtung-sterreichisches-Dorf</link>
+      <guid isPermaLink="false">https://debeste.de/633127/Achtung-sterreichisches-Dorf</guid>
+      <pubDate>Wed, 28 Oct 2026 11:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Achtung österreichisches Dorf. - Betreten auf eigene Gefahr. - Hier haben wir Kirchtuerme, die regelmaissig laeuten. - Hähne, die sehr früh krähen. - Herden, die in der Nähe leben. - Einige tragen sogar Glocken um den Hals. - Landwirte und Handwerker, die arbeiten, um Sie zu ernähren. - Bei uns wird auch Langlauf be...]]></description>
+    </item>
+    <item>
+      <title>Gestern gab es eine Blutspendenaktion bei uns im Ort und..</title>
+      <link>https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und</link>
+      <guid isPermaLink="false">https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und</guid>
+      <pubDate>Wed, 28 Oct 2026 10:59:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Gestern gab es eine Blutspendenaktion bei uns im Ort und heute hat der Metzger Blutwurst im Angebot. Ich bin ja sonst nicht so misstrauisch, aber...]]></description>
+    </item>
     <item>
       <title>Ich kann immer noch nicht glauben...</title>
       <link>https://debeste.de/633139/Ich-kann-immer-noch-nicht-glauben</link>
@@ -484,24 +502,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Die zwei Seiten einer Soldatin]]></description>
-    </item>
-    <item>
-      <title>"Aus der Kneipe geflogen..."..</title>
-      <link>https://debeste.de/632737/Aus-der-Kneipe-geflogen</link>
-      <guid isPermaLink="false">https://debeste.de/632737/Aus-der-Kneipe-geflogen</guid>
-      <pubDate>Tue, 27 Oct 2026 11:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA["Aus der Kneipe geflogen..."]]></description>
-    </item>
-    <item>
-      <title>Jetzt gibt's fliegende Tesla-Autos...</title>
-      <link>https://debeste.de/632871/Jetzt-gibt-s-fliegende-Tesla-Autos</link>
-      <guid isPermaLink="false">https://debeste.de/632871/Jetzt-gibt-s-fliegende-Tesla-Autos</guid>
-      <pubDate>Tue, 27 Oct 2026 10:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
     </item>
   </channel>
 </rss>

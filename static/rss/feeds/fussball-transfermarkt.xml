@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Transfermarkt</link>
     <description>RSS-Feed für die Quelle 'Transfermarkt' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ex-Gladbach-Coach Seoane spricht über Nervenerkrankung</title>
+      <link>https://www.transfermarkt.de/seoane-spricht-uber-nervenerkrankung-konnte-nicht-mehr-stehen/view/news/489620</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/seoane-spricht-uber-nervenerkrankung-konnte-nicht-mehr-stehen/view/news/489620</guid>
+      <pubDate>Wed, 28 Oct 2026 10:56:12 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der frühere Bundesliga-Trainer Gerardo Seoane hat nach einem Klinikaufenthalt über seine Entzündung des Gleichgewichtsnervs gesprochen. Der 47-Jährige berichtete in einem vom...]]></description>
+    </item>
     <item>
       <title>Kuriose Strafe: FC Barcelona soll 602 Euro wegen Julian Álvarez zahlen</title>
       <link>https://www.transfermarkt.de/kuriose-strafe-fc-barcelona-soll-602-euro-wegen-kontakt-zu-alvarez-zahlen/view/news/489614</link>
@@ -88,15 +97,6 @@
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
       <description><![CDATA[Im Clásico gegen Real (1:2) war Barcelonas Raphinha wieder von Anfang an dabei und lieferte sein 13. Tor am zehnten Spieltag – ein historischer Wert. Als der Brasilianer bei den...]]></description>
-    </item>
-    <item>
-      <title>Schweiz holt Xhaka und Embolo nach Impfbetrug zurück ins Team</title>
-      <link>https://www.transfermarkt.de/schweiz-greift-wieder-auf-xhaka-und-embolo-zuruck-neue-leitlinien-verabschiedet/view/news/489585</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/schweiz-greift-wieder-auf-xhaka-und-embolo-zuruck-neue-leitlinien-verabschiedet/view/news/489585</guid>
-      <pubDate>Tue, 27 Oct 2026 15:45:40 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Nach dem Verzicht in der vergangenen Länderspielperiode aufgrund des Bekanntwerdens des Erwerbs gefälschter Covid-Zertifikate in den Jahren 2021 und 2022 greift die Schweiz in den...]]></description>
     </item>
   </channel>
 </rss>

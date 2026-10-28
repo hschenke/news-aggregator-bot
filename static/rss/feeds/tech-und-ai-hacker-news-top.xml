@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -157,15 +157,6 @@
       <link>https://www.apple.com/imac/</link>
       <guid isPermaLink="false">https://www.apple.com/imac/</guid>
       <pubDate>Tue, 27 Oct 2026 13:02:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Python's experimental JIT to be removed</title>
-      <link>https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/</link>
-      <guid isPermaLink="false">https://lwn.net/SubscriberLink/1102102/0c00e4d550f25f8c/</guid>
-      <pubDate>Tue, 27 Oct 2026 11:17:57 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
