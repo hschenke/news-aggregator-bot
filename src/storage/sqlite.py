@@ -44,6 +44,12 @@ class SqliteStorage(StorageBackend):
             return self._shared_conn
         conn = sqlite3.connect(self._db_path, timeout=DEFAULT_TIMEOUT_SECONDS, check_same_thread=False)
         conn.row_factory = sqlite3.Row
+        try:
+            conn.execute("PRAGMA journal_mode=WAL;")
+            conn.execute("PRAGMA synchronous=NORMAL;")
+            conn.execute("PRAGMA busy_timeout=5000;")
+        except Exception:
+            pass
         return conn
 
     def init_db(self) -> None:

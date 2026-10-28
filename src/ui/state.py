@@ -36,8 +36,8 @@ TAB_LABELS: dict[str, str] = {
     TAB_ARTICLES: "📋 Artikel",
     TAB_KI: "✨ KI",
     TAB_MANAGE: "⚙️ Verwalten",
-    TAB_FEEDLY: "📡 Feedly",
     TAB_ARCHIVE: "📦 Archiv",
+    TAB_FEEDLY: "📡 Feedly",
 }
 
 VALID_TAB_IDS = set(TAB_LABELS.keys())

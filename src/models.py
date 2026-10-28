@@ -41,6 +41,8 @@ class Article:
         """Erstellt eine Article-Instanz aus einem Dictionary oder gibt das Objekt unverändert zurück."""
         if isinstance(data, cls):
             return data
+        if not isinstance(data, dict) and hasattr(data, "to_dict"):
+            data = data.to_dict()
 
         known_fields = {
             "title", "link", "summary", "source", "category",
@@ -154,6 +156,8 @@ class OfflineArticle:
         """Erstellt eine OfflineArticle-Instanz aus einem Dictionary."""
         if isinstance(data, cls):
             return data
+        if not isinstance(data, dict) and hasattr(data, "to_dict"):
+            data = data.to_dict()
 
         import json
         known_fields = {

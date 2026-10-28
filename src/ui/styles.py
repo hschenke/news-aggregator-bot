@@ -1058,7 +1058,10 @@ def apply_custom_styles() -> None:
         function handleClick(e) {
             var btn = e.target && e.target.closest ? e.target.closest("button") : null;
             if (!btn) return;
-            if (btn.classList.contains("disabled-nav-btn")) return;
+            if (btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
+            var khCheck = btn.closest("[class*='st-key-']");
+            var kcCheck = khCheck ? khCheck.className : "";
+            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1) return;
 
             var keyHolder = btn.closest("[class*='st-key-']");
             var keyClass = keyHolder ? keyHolder.className : "";

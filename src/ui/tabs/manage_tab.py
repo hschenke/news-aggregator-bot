@@ -117,22 +117,21 @@ def render_manage_tab(
                 help="Änderungen sichern" if has_unsaved_changes else "Alles aktuell.",
             ):
                 st.session_state["is_saving_sources"] = True
-                with st.spinner("Sichere Feeds & Einstellungen..."):
-                    save_sources(working_config)
-                    if get_offline_enabled_feeds(working_config):
-                        start_offline_archive_task(config=working_config)
-                    sync_res = sync_sources_to_github(
-                        config_dict=working_config,
-                        commit_message="chore(config): update configuration and RSS feeds via web dashboard",
-                        include_rss_feeds=True,
-                    )
-                    st.session_state["has_unsaved_changes"] = False
-                    st.session_state["is_saving_sources"] = False
-                    if sync_res.get("success"):
-                        st.session_state["manage_notice"] = "Änderungen erfolgreich gespeichert & synchronisiert!"
-                    else:
-                        st.session_state["manage_notice"] = "Änderungen lokal gespeichert."
-                    st.rerun()
+                save_sources(working_config)
+                if get_offline_enabled_feeds(working_config):
+                    start_offline_archive_task(config=working_config)
+                from src.ui.background import run_in_background
+                cfg_copy = copy.deepcopy(working_config)
+                run_in_background(
+                    sync_sources_to_github,
+                    config_dict=cfg_copy,
+                    commit_message="chore(config): update configuration and RSS feeds via web dashboard",
+                    include_rss_feeds=True,
+                )
+                st.session_state["has_unsaved_changes"] = False
+                st.session_state["is_saving_sources"] = False
+                st.session_state["manage_notice"] = "Änderungen gespeichert & Hintergrund-Synchronisation gestartet!"
+                st.rerun()
         with col_st3:
             if has_unsaved_changes:
                 if st.button("↩️ Verwerfen", use_container_width=True, key="top_discard_sources_btn"):
@@ -209,7 +208,7 @@ def render_manage_tab(
             "📥 Offline-Download aktivieren (Webseite, Text & Bilder für 3 Monate im Archiv speichern)",
             value=False,
             key="inp_new_feed_offline",
-            help="Wenn aktiviert, werden alle Artikel dieses Feeds automatisch im Hintergrund als Offline-Abbild (HTML/PDF mit Text & Bildern) für 3 Monate in der Datenbank archiviert.",
+            help="Wenn aktiviert, werden alle Artikel dieses Feeds automatisch im Hintergrund als Offline-HTML-Abbild (mit Text & Bildern) für 3 Monate in der Datenbank archiviert.",
         )
 
         col_tst, col_add = st.columns([1, 1])

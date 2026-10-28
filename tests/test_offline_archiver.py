@@ -5,9 +5,10 @@ Unit tests for the Offline Download & Archiving feature:
 - SqliteStorage offline_articles table, CRUD, and automatic 3-month (90 days) retention cleanup
 - SSRF validation (is_safe_external_url)
 - Webpage snapshot extraction (text + compressed Base64 images)
-- HTML & PDF generation for single articles and entire feeds
-- Non-blocking background worker task
-- Navigation tab '📦 Archiv' integration in webapp.py, state.py, manage_tab.py, and archive_tab.py
+- Berlin Police report extraction & repair (preserving district line like 'Marzahn-Hellersdorf' and '**Nr. 1396**')
+- Pure HTML generation for single articles and entire feeds (no PDF overhead)
+- Client-side Blob HTML download & new-tab browser preview in archive_tab.py
+- Navigation tab '📦 Archiv' positioned before '📡 Feedly' in webapp.py and state.py
 """
 
 from __future__ import annotations
@@ -24,13 +25,13 @@ from PIL import Image
 
 from src.models import OfflineArticle
 from src.offline_archiver import (
+    _extract_article_paragraphs_from_html,
     fetch_article_snapshot,
     generate_offline_article_html,
-    generate_offline_article_pdf,
     generate_offline_feed_html,
-    generate_offline_feed_pdf,
     get_offline_task_status,
     is_safe_external_url,
+    repair_police_offline_article,
     run_offline_archive_for_feeds,
 )
 from src.sources_manager import add_feed, get_offline_enabled_feeds, update_feed
@@ -41,7 +42,6 @@ from src.storage.sqlite import SqliteStorage
 def _create_sample_image_bytes() -> bytes:
     """Creates a valid PNG image (>= 100x100 px and > 800 bytes) in memory for testing."""
     img = Image.new("RGB", (240, 180), color=(30, 120, 200))
-    # Draw a simple gradient so the compressed PNG is > 800 bytes
     pixels = img.load()
     for x in range(240):
         for y in range(180):
@@ -124,7 +124,6 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertEqual(enabled[0]["name"], "Heise")
         self.assertTrue(enabled[0]["offline_download"])
 
-        # Toggle Heise off and Golem on via update_feed
         update_feed(
             category_name="Tech",
             old_url="https://www.heise.de/rss/heise.rdf",
@@ -150,7 +149,6 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         storage.init_db()
 
         now_ts = time.time()
-        # Insert an expired article (95 days old) directly via SQL to simulate an old entry
         expired_ts = now_ts - (95 * 86400.0)
         with storage._get_connection() as conn:
             conn.execute(
@@ -177,7 +175,6 @@ class TestOfflineArchiverFeature(unittest.TestCase):
 
         self.assertEqual(len(storage.get_offline_articles()), 1)
 
-        # Saving a new offline article must automatically trigger cleanup of >90-day-old articles
         fresh_art = OfflineArticle(
             url="https://example.com/fresh-article",
             title="Frischer Artikel",
@@ -193,18 +190,15 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         saved_ok = storage.save_offline_article(fresh_art)
         self.assertTrue(saved_ok)
 
-        # Old article (> 90 days) must now be automatically deleted!
         remaining = storage.get_offline_articles()
         self.assertEqual(len(remaining), 1)
         self.assertEqual(remaining[0].url, "https://example.com/fresh-article")
 
-        # Verify get_offline_article and get_offline_urls
         single = storage.get_offline_article("https://example.com/fresh-article")
         self.assertIsNotNone(single)
         self.assertEqual(single.title, "Frischer Artikel")
         self.assertIn("https://example.com/fresh-article", storage.get_offline_urls())
 
-        # Verify delete_offline_article
         self.assertTrue(storage.delete_offline_article("https://example.com/fresh-article"))
         self.assertEqual(len(storage.get_offline_articles()), 0)
 
@@ -218,6 +212,56 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertFalse(is_safe_external_url("http://169.254.169.254/latest/meta-data/"))
         self.assertFalse(is_safe_external_url("http://192.168.1.100/feed.xml"))
         self.assertFalse(is_safe_external_url("http://10.0.0.5/internal"))
+
+    def test_berlin_police_report_extraction_and_repair(self) -> None:
+        """
+        Berlin police reports must preserve the district line (e.g. 'Marzahn-Hellersdorf')
+        between 'Polizeimeldung vom ...' and '**Nr. 1396**', and repair existing entries.
+        """
+        police_html = """
+        <html>
+          <body>
+            <article>
+              <h1>Flucht mit E-Scootern endet mit Festnahmen</h1>
+              <p class="polizeimeldung">Polizeimeldung vom 20.10.2026</p>
+              <p class="polizeimeldung" title="Ereignisort">Marzahn-Hellersdorf</p>
+              <div class="textile">
+                <p><strong>Nr. 1396</strong><br />
+                In der vergangenen Nacht nahmen Einsatzkräfte in Biesdorf zwei Jugendliche nach einer Flucht fest.</p>
+              </div>
+            </article>
+          </body>
+        </html>
+        """
+        paragraphs = _extract_article_paragraphs_from_html(police_html)
+        self.assertEqual(paragraphs[0], "Polizeimeldung vom 20.10.2026")
+        self.assertEqual(paragraphs[1], "Marzahn-Hellersdorf")
+        self.assertEqual(paragraphs[2], "**Nr. 1396**")
+        self.assertTrue(paragraphs[3].startswith("In der vergangenen Nacht nahmen Einsatzkräfte"))
+
+        # Test repairing an already-archived police article that missed 'Marzahn-Hellersdorf' and merged 'Nr. 1396'
+        legacy_art = OfflineArticle(
+            url="https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1396.php",
+            title="Flucht mit E-Scootern endet mit Festnahmen",
+            feed_name="Polizeimeldungen Berlin",
+            category="Berlin",
+            content_text=(
+                "Polizeimeldung vom 20.10.2026\n\n"
+                "Nr. 1396 In der vergangenen Nacht nahmen Einsatzkräfte in Biesdorf zwei Jugendliche fest."
+            ),
+        )
+        with patch.dict(
+            "src.offline_archiver._POLICE_TEASER_CACHE",
+            {legacy_art.url: "📍 **Marzahn-Hellersdorf** – In der vergangenen Nacht..."},
+            clear=False,
+        ):
+            repaired_art, changed = repair_police_offline_article(legacy_art, allow_network_lookup=False)
+            self.assertTrue(changed)
+            repaired_blocks = repaired_art.content_text.split("\n\n")
+            self.assertEqual(repaired_blocks[0], "Polizeimeldung vom 20.10.2026")
+            self.assertEqual(repaired_blocks[1], "Marzahn-Hellersdorf")
+            self.assertEqual(repaired_blocks[2], "**Nr. 1396**")
+            self.assertTrue(repaired_blocks[3].startswith("In der vergangenen Nacht"))
 
     @patch("src.offline_archiver.is_safe_external_url", return_value=True)
     @patch("src.offline_archiver.requests.Session.get")
@@ -271,8 +315,8 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("data_b64", snapshot["images"][0])
         self.assertIn("<img src=\"data:image/jpeg;base64,", snapshot["content_html"])
 
-    def test_generate_html_and_pdf_for_single_article_and_feed(self) -> None:
-        """Both HTML and PDF generators must produce valid non-empty outputs for single articles and feeds."""
+    def test_generate_html_for_single_article_and_feed_without_pdf(self) -> None:
+        """HTML generators must produce valid self-contained HTML for single articles and feeds."""
         img_dict = _create_sample_image_dict()
         art1 = OfflineArticle(
             url="https://example.com/a1",
@@ -282,7 +326,7 @@ class TestOfflineArchiverFeature(unittest.TestCase):
             category="Wirtschaft",
             published="27.10.2026",
             timestamp=time.time(),
-            content_text="Absatz eins mit Euro-Zeichen € und „deutschen Anführungszeichen“.\n\nAbsatz zwei.",
+            content_text="Polizeimeldung vom 20.10.2026\n\nMarzahn-Hellersdorf\n\n**Nr. 1396**\n\nInhalt des ersten Artikels.",
             content_html="<p>Absatz eins</p>",
             images_json=json.dumps([img_dict]),
         )
@@ -303,24 +347,15 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         html_single_str = generate_offline_article_html(art1)
         self.assertIn("<!DOCTYPE html>", html_single_str)
         self.assertIn("Erster Offline-Artikel", html_single_str)
+        self.assertIn("Marzahn-Hellersdorf", html_single_str)
+        self.assertIn("<strong>Nr. 1396</strong>", html_single_str)
         self.assertIn(img_dict["data_b64"], html_single_str)
-        self.assertIn("window.print()", html_single_str)
 
         # Feed HTML
         html_feed_str = generate_offline_feed_html("Test Feed", [art1, art2])
         self.assertIn("Erster Offline-Artikel", html_feed_str)
         self.assertIn("Zweiter Offline-Artikel", html_feed_str)
-        self.assertIn("Inhaltsverzeichnis", html_feed_str)
-
-        # Single article PDF
-        pdf_single = generate_offline_article_pdf(art1)
-        self.assertTrue(pdf_single.startswith(b"%PDF-"))
-        self.assertGreater(len(pdf_single), 500)
-
-        # Feed PDF
-        pdf_feed = generate_offline_feed_pdf("Test Feed", [art1, art2])
-        self.assertTrue(pdf_feed.startswith(b"%PDF-"))
-        self.assertGreater(len(pdf_feed), len(pdf_single))
+        self.assertIn("Inhaltsverzeichnis (2 Artikel)", html_feed_str)
 
     @patch("src.offline_archiver.fetch_article_snapshot")
     @patch("src.aggregator.fetch_feed_items")
@@ -378,25 +413,38 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         status = get_offline_task_status()
         self.assertFalse(status["is_running"])
 
-    def test_ui_navigation_and_archive_tab_wired(self) -> None:
-        """Verifies that TAB_ARCHIVE ('📦 Archiv') and offline checkboxes are wired in UI modules."""
+    def test_ui_navigation_order_and_html_only_archive_tab(self) -> None:
+        """Verifies that TAB_ARCHIVE ('📦 Archiv') is before '📡 Feedly' and only HTML open/download exists."""
         root = Path(__file__).resolve().parent.parent
         state_py = (root / "src" / "ui" / "state.py").read_text(encoding="utf-8")
         webapp_py = (root / "src" / "webapp.py").read_text(encoding="utf-8")
         manage_py = (root / "src" / "ui" / "tabs" / "manage_tab.py").read_text(encoding="utf-8")
         archive_py = (root / "src" / "ui" / "tabs" / "archive_tab.py").read_text(encoding="utf-8")
+        req_txt = (root / "requirements.txt").read_text(encoding="utf-8")
 
+        # No PDF in requirements or archive_tab
+        self.assertNotIn("fpdf2", req_txt)
+        self.assertNotIn("generate_offline_article_pdf", archive_py)
+        self.assertNotIn("generate_offline_feed_pdf", archive_py)
+        self.assertNotIn("application/pdf", archive_py)
+
+        # HTML open in browser tab & HTML download buttons present
+        self.assertIn("open_html_", archive_py)
+        self.assertIn("dl_html_", archive_py)
+        self.assertIn("window.open(url, \"_blank\"", archive_py)
+        self.assertIn("URL.createObjectURL(blob)", archive_py)
+
+        # Tab order: Archiv (index 3) before Feedly (index 4)
         self.assertIn('TAB_ARCHIVE = "archive"', state_py)
-        self.assertIn('"📦 Archiv"', state_py)
-        self.assertIn("render_archive_tab", webapp_py)
-        self.assertIn("TAB_ID_ARCHIVE", webapp_py)
-        self.assertIn('"archive": 4', webapp_py)
+        self.assertIn('"archive": 3, "feedly": 4', webapp_py)
+        pos_arch = webapp_py.find('data-tab-id="{TAB_ID_ARCHIVE}"')
+        pos_fdl = webapp_py.find('data-tab-id="{TAB_ID_FEEDLY}"')
+        self.assertGreater(pos_arch, 0)
+        self.assertLess(pos_arch, pos_fdl, "Archiv tab button must appear before Feedly in sidebar")
+
+        # Manage tab offline checkboxes
         self.assertIn("inp_new_feed_offline", manage_py)
         self.assertIn("ed_offline_", manage_py)
-        self.assertIn("dl_feed_html_", archive_py)
-        self.assertIn("dl_feed_pdf_", archive_py)
-        self.assertIn("dl_art_html_", archive_py)
-        self.assertIn("dl_art_pdf_", archive_py)
 
 
 if __name__ == "__main__":
