@@ -232,7 +232,9 @@ class TestSourcesManagement(unittest.TestCase):
         self.assertIn("language", raw_settings)
         self.assertIn("archive_retention_days", raw_settings)
         self.assertIn("filter_ads", raw_settings)
+        self.assertIn("strip_ads", raw_settings)
         self.assertIn("ad_keywords", raw_settings)
+        self.assertIn("ad_patterns", raw_settings)
         self.assertNotIn("custom_main_prompt", raw_settings, "settings.yaml darf keine Prompt-Definitionen enthalten!")
 
         # prompts.yaml enthält Hauptprompt & Direktiven

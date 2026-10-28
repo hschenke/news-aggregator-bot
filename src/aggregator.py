@@ -43,6 +43,7 @@ from src.filters import (
     get_canonical_url,
     normalize_keywords,
     is_ad_item,
+    strip_ads,
     get_article_timestamp,
     is_article_too_old,
     filter_articles_by_age,
@@ -105,6 +106,8 @@ def fetch_feed_items(
     exclude_keywords: list[str] | None = None,
     filter_ads: bool = True,
     custom_ad_keywords: list[str] | None = None,
+    ad_patterns: list[str] | None = None,
+    strip_ads_enabled: bool = False,
     max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
     max_age_weeks: int | float | None = None,
 ) -> list[dict[str, Any]]:
@@ -204,8 +207,14 @@ def fetch_feed_items(
                 ).strip()
 
             # 1. Stufe: Werbe- und Anzeigen-Filter (Global & quellenspezifisch)
-            if filter_ads and is_ad_item(title, summary, custom_ad_keywords):
+            if filter_ads and is_ad_item(title, summary, custom_ad_keywords=custom_ad_keywords, ad_patterns=ad_patterns):
                 continue
+
+            # Ads Stripping (Bereinigt Werbe-Präfixe aus Titel und Teaser)
+            if strip_ads_enabled:
+                title = strip_ads(title, patterns=ad_patterns, keywords=custom_ad_keywords)
+                if summary:
+                    summary = strip_ads(summary, patterns=ad_patterns, keywords=custom_ad_keywords)
 
             # 2. Stufe: Feed-spezifische Keyword-Filterung
             search_corpus = f"{title} {summary}".lower()
@@ -272,7 +281,9 @@ def collect_all_news(
     config = load_sources(config_path)
     settings = config.get("settings", {})
     filter_ads = settings.get("filter_ads", True)
+    strip_ads_enabled = bool(settings.get("strip_ads", False))
     custom_ad_keywords = settings.get("ad_keywords", [])
+    ad_patterns = settings.get("ad_patterns", [])
     max_age_hours = DEFAULT_MAX_ARTICLE_AGE_HOURS
 
     collected: dict[str, list[dict[str, Any]]] = {}
@@ -311,6 +322,8 @@ def collect_all_news(
                 exclude_keywords=exc,
                 filter_ads=filter_ads,
                 custom_ad_keywords=custom_ad_keywords,
+                ad_patterns=ad_patterns,
+                strip_ads_enabled=strip_ads_enabled,
                 max_age_hours=max_age_hours,
             )
         except Exception as e_fetch:
@@ -509,6 +522,7 @@ __all__ = [
     "get_canonical_url",
     "normalize_keywords",
     "is_ad_item",
+    "strip_ads",
     "get_article_timestamp",
     "is_article_too_old",
     "filter_articles_by_age",
