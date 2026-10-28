@@ -123,6 +123,19 @@ class SqliteStorage(StorageBackend):
                 CREATE INDEX IF NOT EXISTS idx_offline_articles_feed_name ON offline_articles(feed_name);
                 CREATE INDEX IF NOT EXISTS idx_offline_articles_timestamp ON offline_articles(timestamp DESC);
                 CREATE INDEX IF NOT EXISTS idx_offline_articles_created_at ON offline_articles(created_at DESC);
+
+                CREATE TABLE IF NOT EXISTS settings_backups (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    timestamp REAL DEFAULT 0.0,
+                    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                    settings_yaml TEXT NOT NULL,
+                    label TEXT DEFAULT '',
+                    filter_ads INTEGER DEFAULT 1,
+                    keywords_count INTEGER DEFAULT 0,
+                    patterns_count INTEGER DEFAULT 0
+                );
+
+                CREATE INDEX IF NOT EXISTS idx_settings_backups_ts ON settings_backups(timestamp DESC);
             """)
 
     def save_articles(self, articles: list[Article | dict[str, Any]]) -> int:
@@ -857,6 +870,88 @@ class SqliteStorage(StorageBackend):
         with self._get_connection() as conn:
             cursor = conn.execute("DELETE FROM offline_articles WHERE feed_name = ?", (clean_feed,))
             return max(0, cursor.rowcount)
+
+    def save_settings_backup(
+        self,
+        settings_yaml: str,
+        label: str = "Manuelles Backup",
+        filter_ads: bool = True,
+        keywords_count: int = 0,
+        patterns_count: int = 0,
+    ) -> int:
+        now_ts = time.time()
+        created_at = datetime.now(timezone.utc).isoformat()
+        with self._get_connection() as conn:
+            cursor = conn.execute(
+                """
+                INSERT INTO settings_backups (
+                    timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    now_ts,
+                    created_at,
+                    settings_yaml,
+                    label,
+                    1 if filter_ads else 0,
+                    keywords_count,
+                    patterns_count,
+                ),
+            )
+            return cursor.lastrowid or 0
+
+    def get_settings_backups(self, limit: int = 50) -> list[dict[str, Any]]:
+        with self._get_connection() as conn:
+            rows = conn.execute(
+                """
+                SELECT id, timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+                FROM settings_backups
+                ORDER BY timestamp DESC, id DESC
+                LIMIT ?
+                """,
+                (limit,),
+            ).fetchall()
+            return [
+                {
+                    "id": r["id"],
+                    "timestamp": float(r["timestamp"]),
+                    "created_at": str(r["created_at"]),
+                    "settings_yaml": str(r["settings_yaml"]),
+                    "label": str(r["label"] or ""),
+                    "filter_ads": bool(r["filter_ads"]),
+                    "keywords_count": int(r["keywords_count"] or 0),
+                    "patterns_count": int(r["patterns_count"] or 0),
+                }
+                for r in rows
+            ]
+
+    def get_settings_backup(self, backup_id: int) -> dict[str, Any] | None:
+        with self._get_connection() as conn:
+            r = conn.execute(
+                """
+                SELECT id, timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+                FROM settings_backups
+                WHERE id = ?
+                """,
+                (backup_id,),
+            ).fetchone()
+            if not r:
+                return None
+            return {
+                "id": r["id"],
+                "timestamp": float(r["timestamp"]),
+                "created_at": str(r["created_at"]),
+                "settings_yaml": str(r["settings_yaml"]),
+                "label": str(r["label"] or ""),
+                "filter_ads": bool(r["filter_ads"]),
+                "keywords_count": int(r["keywords_count"] or 0),
+                "patterns_count": int(r["patterns_count"] or 0),
+            }
+
+    def delete_settings_backup(self, backup_id: int) -> bool:
+        with self._get_connection() as conn:
+            cursor = conn.execute("DELETE FROM settings_backups WHERE id = ?", (backup_id,))
+            return cursor.rowcount > 0
 
     def close(self) -> None:
         if self._shared_conn is not None:

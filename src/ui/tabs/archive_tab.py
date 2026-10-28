@@ -455,6 +455,85 @@ def _render_archive_management_block(
                     )
 
 
+def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
+    """Renders the collapsible settings backups block in the Archive tab."""
+    st.markdown("---")
+    storage = get_storage()
+    backups = storage.get_settings_backups(limit=30)
+
+    with st.expander(f"📁 Gespeicherte Settings-Backups ({len(backups)} Versionen im Archiv)", expanded=False):
+        st.caption("Verwalte historische Snapshots deiner Einstellungen (Ad-Filter, Keywords, Patterns).")
+        col_sb1, col_sb2 = st.columns([3.2, 1.2], vertical_alignment="bottom")
+        with col_sb1:
+            manual_label = st.text_input(
+                "Notiz / Bezeichnung für neues Backup:",
+                placeholder="z. B. Stand vor Anpassung der Ad-Keywords",
+                key="inp_manual_backup_label",
+            )
+        with col_sb2:
+            if st.button("💾 Backup erstellen", key="btn_create_settings_backup", use_container_width=True):
+                import yaml
+                from src.sources_manager import PROMPT_KEYS
+                curr_settings = working_config.get("settings", {})
+                clean = {k: v for k, v in curr_settings.items() if k not in PROMPT_KEYS}
+                yaml_str = yaml.dump(clean, allow_unicode=True, sort_keys=False, default_flow_style=False)
+                lbl = manual_label.strip() or "Manuelles Backup"
+                new_id = storage.save_settings_backup(
+                    settings_yaml=yaml_str,
+                    label=lbl,
+                    filter_ads=bool(clean.get("filter_ads", True)),
+                    keywords_count=len(clean.get("ad_keywords", [])),
+                    patterns_count=len(clean.get("ad_patterns", [])),
+                )
+                set_dismissible_notice("archive_notice", f"Settings-Backup #{new_id} ({lbl}) erfolgreich gespeichert!", icon="✅")
+                st.rerun()
+
+        if not backups:
+            st.info("Noch keine Settings-Backups in der Datenbank gespeichert.")
+            return
+
+        for b in backups:
+            b_id = b["id"]
+            created_str = format_local_dt(b["timestamp"]) if b.get("timestamp") else b.get("created_at", "")
+            lbl = b.get("label") or "Backup"
+            f_ads = "✅ Ad-Filter aktiv" if b.get("filter_ads") else "⚪ Ad-Filter aus"
+            kw_c = b.get("keywords_count", 0)
+            pat_c = b.get("patterns_count", 0)
+
+            with st.container(border=True):
+                c_head1, c_head2 = st.columns([3.5, 1.5], vertical_alignment="center")
+                with c_head1:
+                    st.markdown(f"**Backup #{b_id}** · `{created_str}` — *{lbl}*")
+                    st.caption(f"{f_ads} · {kw_c} Ad-Keywords · {pat_c} Ad-Patterns")
+                with c_head2:
+                    col_b_act1, col_b_act2 = st.columns(2)
+                    with col_b_act1:
+                        if st.button("🔄 Laden", key=f"btn_restore_sb_{b_id}", help="Dieses Backup in den aktuellen Einstellungen laden"):
+                            import yaml
+                            from src.sources_manager import save_settings
+                            restored_dict = yaml.safe_load(b["settings_yaml"]) or {}
+                            save_settings(restored_dict, backup_label=f"Auto-Backup vor Wiederherstellung von #{b_id}")
+                            working_config["settings"] = restored_dict
+                            st.session_state["has_unsaved_changes"] = True
+                            set_dismissible_notice("archive_notice", f"Settings aus Backup #{b_id} erfolgreich wiederhergestellt!", icon="✅")
+                            st.rerun()
+                    with col_b_act2:
+                        if st.button("🗑️", key=f"btn_del_sb_{b_id}", help="Dieses Backup löschen"):
+                            storage.delete_settings_backup(b_id)
+                            set_dismissible_notice("archive_notice", f"Backup #{b_id} gelöscht.", icon="🗑️")
+                            st.rerun()
+
+                with st.expander("👁️ YAML-Inhalt anzeigen & herunterladen", expanded=False):
+                    st.code(b["settings_yaml"], language="yaml")
+                    st.download_button(
+                        "⬇️ Als settings.yaml herunterladen",
+                        data=b["settings_yaml"],
+                        file_name=f"settings_backup_{b_id}.yaml",
+                        mime="text/yaml",
+                        key=f"dl_sb_{b_id}",
+                    )
+
+
 def render_archive_tab(
     working_config: dict[str, Any],
     is_admin: bool,
@@ -542,6 +621,7 @@ def render_archive_tab(
             "📭 **Noch keine gespeicherten Offline-Artikel im Archiv.**  \n"
             "Aktiviere unten unter **⚙️ Archiv-Verwaltung & Offline-Feeds** (oder im Tab **⚙️ Verwalten**) einen Feed für den Offline-Download."
         )
+        _render_settings_backups_block(working_config)
         _render_archive_management_block(working_config, offline_feeds)
         return
 
@@ -569,6 +649,7 @@ def render_archive_tab(
     total_displayed = sum(len(v) for v in by_category.values())
     if total_displayed == 0:
         st.warning("Keine passenden Offline-Artikel für die gewählten Filter gefunden.")
+        _render_settings_backups_block(working_config)
         _render_archive_management_block(working_config, offline_feeds)
         return
 
@@ -711,5 +792,6 @@ def render_archive_tab(
                                 st.session_state.setdefault("persisted_open_archive_feeds", set()).add(feed_name)
                                 st.rerun()
 
-    # --- 4. Aufklappbarer Verwaltungs-Block ganz unten ---
+    # --- 4. Settings-Backups & Aufklappbarer Verwaltungs-Block ganz unten ---
+    _render_settings_backups_block(working_config)
     _render_archive_management_block(working_config, offline_feeds)

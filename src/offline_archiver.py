@@ -686,7 +686,6 @@ def run_offline_archive_for_feeds(
 
         settings = config.get("settings", {})
         filter_ads = bool(settings.get("filter_ads", True))
-        strip_ads_enabled = bool(settings.get("strip_ads", False))
         custom_ad_keywords = settings.get("ad_keywords", [])
         ad_patterns = settings.get("ad_patterns", [])
         max_age_hours_3m = float(OFFLINE_RETENTION_DAYS) * 24.0
@@ -706,7 +705,6 @@ def run_offline_archive_for_feeds(
                     filter_ads=filter_ads,
                     custom_ad_keywords=custom_ad_keywords,
                     ad_patterns=ad_patterns,
-                    strip_ads_enabled=strip_ads_enabled,
                     max_age_hours=max_age_hours_3m,
                 )
                 for it in items:

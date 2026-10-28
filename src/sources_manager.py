@@ -403,13 +403,31 @@ def save_settings(
     settings: dict[str, Any],
     config_path: str = "config/settings.yaml",
     sync_github: bool = False,
+    backup_label: str = "Einstellungen gespeichert",
 ) -> dict[str, Any]:
-    """Speichert globale Einstellungen persistent in config/settings.yaml (ohne Prompt-Keys)."""
+    """Speichert globale Einstellungen persistent in config/settings.yaml (ohne Prompt-Keys)
+    und legt automatisch einen Backup-Snapshot in der settings_backups-Tabelle ab."""
     clean_settings = {k: v for k, v in settings.items() if k not in PROMPT_KEYS}
     path = get_settings_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
+    yaml_str = yaml.dump(clean_settings, allow_unicode=True, sort_keys=False, default_flow_style=False)
     with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(clean_settings, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+        f.write(yaml_str)
+
+    # Automatisches Backup in die settings_backups Datenbanktabelle
+    try:
+        from src.storage import get_storage
+        storage = get_storage()
+        storage.save_settings_backup(
+            settings_yaml=yaml_str,
+            label=backup_label,
+            filter_ads=bool(clean_settings.get("filter_ads", True)),
+            keywords_count=len(clean_settings.get("ad_keywords", [])),
+            patterns_count=len(clean_settings.get("ad_patterns", [])),
+        )
+    except Exception as exc:
+        logger.debug("Automatisches Settings-Backup konnte nicht erstellt werden: %s", exc)
+
     gh_res = {"success": False, "error": "Kein Token"}
     if sync_github:
         gh_res = sync_sources_to_github()

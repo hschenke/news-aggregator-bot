@@ -162,82 +162,22 @@ def is_ad_item(
             k = kw.strip().lower()
             if not k:
                 continue
-            try:
-                pat = rf"\b{re.escape(k)}\b"
-                if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
+            # Allgemeine Kennzeichnungen wie 'anzeige' oder 'werbung' dürfen nicht als einfache Substring-Suche
+            # im Fließtext (summary) matchen, da sie dort häufig in legitimem Kontext
+            # (z. B. 'Strafanzeige', redaktionelle Banner-Hinweise 'Quelle: Google Anzeige') vorkommen.
+            if k in ("anzeige", "werbung", "sponsored", "gesponsert"):
+                label_pat = rf"(?:^|\[|\()\s*{re.escape(k)}\s*(?:[:\-\\|•\]\)]|$)"
+                if re.search(label_pat, t_clean, re.IGNORECASE) or re.search(rf"^{re.escape(k)}\s*[:\-\\|•]", s_clean, re.IGNORECASE):
                     return True
-            except re.error:
-                continue
+            else:
+                try:
+                    pat = rf"\b{re.escape(k)}\b"
+                    if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
+                        return True
+                except re.error:
+                    continue
 
     return False
-
-
-def strip_ads(
-    text: str,
-    patterns: list[str] | None = None,
-    keywords: list[str] | None = None,
-) -> str:
-    """
-    Bereinigt Werbe-Kennzeichnungen, Präfixe und Suffixe (Ads Stripping) aus einem Text (Titel oder Teaser).
-    
-    Entfernt z. B. führende oder geklammerte Werbekennzeichnungen wie:
-    - '[Anzeige] Mein Titel' -> 'Mein Titel'
-    - 'Anzeige: Mein Titel' -> 'Mein Titel'
-    - 'heise-Angebot: Mein Titel' -> 'Mein Titel'
-    - 'Mein Titel [Sponsored]' -> 'Mein Titel'
-    
-    Verwendet ausschließlich dynamisch konfigurierte Muster und Keywords aus den Einstellungen.
-    """
-    if not text:
-        return ""
-
-    if patterns is None:
-        if DEFAULT_AD_PATTERNS:
-            patterns = list(DEFAULT_AD_PATTERNS)
-        else:
-            try:
-                from src.sources_manager import load_settings
-                loaded_settings = load_settings()
-                patterns = loaded_settings.get("ad_patterns", [])
-                if keywords is None:
-                    keywords = loaded_settings.get("ad_keywords", [])
-            except Exception:
-                patterns = []
-
-    cleaned = text.strip()
-
-    # 1. Regex-Muster anwenden, die typische Markierungen wie [Anzeige], (Werbung), Anzeige: etc. matchen
-    if patterns:
-        for pat in patterns:
-            if not pat:
-                continue
-            try:
-                if pat.startswith("^"):
-                    cleaned = re.sub(pat, "", cleaned, flags=re.IGNORECASE).strip()
-                elif "\\[" in pat or "\\(" in pat:
-                    cleaned = re.sub(pat, "", cleaned, flags=re.IGNORECASE).strip()
-            except re.error:
-                continue
-
-    # 2. Keywords als Klammer- oder Präfix-Markierungen strippen
-    if keywords:
-        for kw in keywords:
-            k = kw.strip()
-            if not k:
-                continue
-            try:
-                bracket_pat = rf"\[\s*{re.escape(k)}\s*\]|\(\s*{re.escape(k)}\s*\)"
-                cleaned = re.sub(bracket_pat, "", cleaned, flags=re.IGNORECASE).strip()
-                prefix_pat = rf"^{re.escape(k)}\s*[:\-\|•]\s*"
-                cleaned = re.sub(prefix_pat, "", cleaned, flags=re.IGNORECASE).strip()
-            except re.error:
-                continue
-
-    # 3. Bereinigung eventuell verbliebener führender Trennzeichen (z. B. Doppelpunkt oder Bindestrich)
-    cleaned = re.sub(r"^\s*[:\-\|•]\s*", "", cleaned).strip()
-    cleaned = re.sub(r"\s+", " ", cleaned).strip()
-    return cleaned if cleaned else text.strip()
-
 
 def get_article_timestamp(item: Any) -> float:
     """

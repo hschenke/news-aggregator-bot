@@ -6,7 +6,6 @@ import unittest
 import re
 from src.aggregator import (
     is_ad_item,
-    strip_ads,
     DEFAULT_AD_PATTERNS,
     clean_html_text,
     format_summary_html,
@@ -292,27 +291,6 @@ class TestFilteringAndScraping(unittest.TestCase):
             self.assertGreater(item["timestamp"], 0.0)
 
 
-    def test_strip_ads(self):
-        # 1. Präfix mit eckigen Klammern
-        self.assertEqual(strip_ads("[Anzeige] Neues Smartphone im Test"), "Neues Smartphone im Test")
-        # 2. Präfix mit Doppelpunkt
-        self.assertEqual(strip_ads("Anzeige: Die besten Versicherungen"), "Die besten Versicherungen")
-        # 3. Präfix mit Bindestrich
-        self.assertEqual(strip_ads("Anzeige - Top Rabatte"), "Top Rabatte")
-        # 4. heise-Angebot
-        self.assertEqual(strip_ads("heise-Angebot: 20% Rabatt auf Monitore"), "20% Rabatt auf Monitore")
-        # 5. Geklammertes Suffix
-        self.assertEqual(strip_ads("Neues Smartphone im Test [Sponsored]"), "Neues Smartphone im Test")
-        # 6. Eigene Keywords für Ads Stripping
-        self.assertEqual(
-            strip_ads("Gewinnspiel: Jetzt neues Auto gewinnen!", keywords=["gewinnspiel"]),
-            "Jetzt neues Auto gewinnen!"
-        )
-        # 7. Normaler Artikel bleibt unverändert
-        self.assertEqual(strip_ads("Python 3.14 veröffentlicht"), "Python 3.14 veröffentlicht")
-        # 8. Leerer String
-        self.assertEqual(strip_ads(""), "")
-
     def test_no_hardcoded_ad_keywords_in_code(self):
         # DEFAULT_AD_PATTERNS im Python-Quellcode muss eine leere Liste sein
         self.assertEqual(DEFAULT_AD_PATTERNS, [])
@@ -322,32 +300,6 @@ class TestFilteringAndScraping(unittest.TestCase):
         self.assertTrue(is_ad_item("special-promo: Nur heute", ad_patterns=[r"^special-promo:"]))
         # Ungültiges Regex führt nicht zum Absturz
         self.assertFalse(is_ad_item("Normaler Titel", ad_patterns=[r"[unclosed-bracket"]))
-
-    def test_fetch_feed_items_strip_ads(self):
-        from unittest.mock import patch
-        from src.aggregator import fetch_feed_items
-        mock_xml = """<?xml version="1.0" encoding="UTF-8"?>
-        <rss version="2.0">
-          <channel>
-            <title>Test Feed</title>
-            <item>
-              <title>[Anzeige] Bestes Tablet 2026</title>
-              <link>https://example.com/tablet-ad</link>
-              <description>Werbe-Teaser Text</description>
-            </item>
-          </channel>
-        </rss>
-        """.encode("utf-8")
-        with patch("src.aggregator.fetch_feed_raw", return_value={"success": True, "content": mock_xml}):
-            # Mit filter_ads=False und strip_ads_enabled=True wird der Werbetitel gestrippt
-            items = fetch_feed_items(
-                "https://example.com/feed",
-                filter_ads=False,
-                strip_ads_enabled=True,
-                max_age_hours=0
-            )
-            self.assertEqual(len(items), 1)
-            self.assertEqual(items[0]["title"], "Bestes Tablet 2026")
 
 
 if __name__ == "__main__":

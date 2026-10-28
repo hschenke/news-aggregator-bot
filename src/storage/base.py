@@ -287,6 +287,33 @@ class StorageBackend(ABC):
         pass
 
     @abstractmethod
+    def save_settings_backup(
+        self,
+        settings_yaml: str,
+        label: str = "Manuelles Backup",
+        filter_ads: bool = True,
+        keywords_count: int = 0,
+        patterns_count: int = 0,
+    ) -> int:
+        """Speichert einen Snapshot der Einstellungen in der Tabelle settings_backups."""
+        pass
+
+    @abstractmethod
+    def get_settings_backups(self, limit: int = 50) -> list[dict[str, Any]]:
+        """Gibt gespeicherte Settings-Backups sortiert nach timestamp DESC zurück."""
+        pass
+
+    @abstractmethod
+    def get_settings_backup(self, backup_id: int) -> dict[str, Any] | None:
+        """Gibt ein bestimmtes Settings-Backup anhand seiner ID zurück."""
+        pass
+
+    @abstractmethod
+    def delete_settings_backup(self, backup_id: int) -> bool:
+        """Löscht ein bestimmtes Settings-Backup anhand seiner ID."""
+        pass
+
+    @abstractmethod
     def close(self) -> None:
         """Schließt alle Verbindungen und gibt Ressourcen frei."""
         pass

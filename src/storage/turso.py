@@ -233,6 +233,19 @@ class TursoStorage(StorageBackend):
             ("CREATE INDEX IF NOT EXISTS idx_offline_articles_feed_name ON offline_articles(feed_name);", []),
             ("CREATE INDEX IF NOT EXISTS idx_offline_articles_timestamp ON offline_articles(timestamp DESC);", []),
             ("CREATE INDEX IF NOT EXISTS idx_offline_articles_created_at ON offline_articles(created_at DESC);", []),
+            ("""
+            CREATE TABLE IF NOT EXISTS settings_backups (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                timestamp REAL DEFAULT 0.0,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+                settings_yaml TEXT NOT NULL,
+                label TEXT DEFAULT '',
+                filter_ads INTEGER DEFAULT 1,
+                keywords_count INTEGER DEFAULT 0,
+                patterns_count INTEGER DEFAULT 0
+            );
+            """, []),
+            ("CREATE INDEX IF NOT EXISTS idx_settings_backups_ts ON settings_backups(timestamp DESC);", []),
         ]
         self._execute_pipeline(stmts)
 
@@ -1013,6 +1026,91 @@ class TursoStorage(StorageBackend):
         if not res:
             return 0
         return int(res[0].get("affected_rows", 0))
+
+    def save_settings_backup(
+        self,
+        settings_yaml: str,
+        label: str = "Manuelles Backup",
+        filter_ads: bool = True,
+        keywords_count: int = 0,
+        patterns_count: int = 0,
+    ) -> int:
+        now_ts = time.time()
+        created_at = datetime.now(timezone.utc).isoformat()
+        sql = """
+            INSERT INTO settings_backups (
+                timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+            ) VALUES (?, ?, ?, ?, ?, ?, ?)
+        """
+        res = self._execute_pipeline([(
+            sql,
+            [now_ts, created_at, settings_yaml, label, 1 if filter_ads else 0, keywords_count, patterns_count]
+        )])
+        if res and res[0].get("last_insert_rowid"):
+            return int(res[0]["last_insert_rowid"])
+        return 0
+
+    def get_settings_backups(self, limit: int = 50) -> list[dict[str, Any]]:
+        sql = """
+            SELECT id, timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+            FROM settings_backups
+            ORDER BY timestamp DESC, id DESC
+            LIMIT ?
+        """
+        try:
+            res = self._execute_pipeline([(sql, [limit])])
+            if not res or not res[0].get("rows"):
+                return []
+            return [
+                {
+                    "id": int(r["id"]),
+                    "timestamp": float(r.get("timestamp") or 0.0),
+                    "created_at": str(r.get("created_at") or ""),
+                    "settings_yaml": str(r.get("settings_yaml") or ""),
+                    "label": str(r.get("label") or ""),
+                    "filter_ads": bool(r.get("filter_ads")),
+                    "keywords_count": int(r.get("keywords_count") or 0),
+                    "patterns_count": int(r.get("patterns_count") or 0),
+                }
+                for r in res[0]["rows"]
+            ]
+        except Exception as exc:
+            logger.warning("Fehler beim Abrufen von Turso-Settings-Backups: %s", exc)
+            return []
+
+    def get_settings_backup(self, backup_id: int) -> dict[str, Any] | None:
+        sql = """
+            SELECT id, timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
+            FROM settings_backups
+            WHERE id = ?
+        """
+        try:
+            res = self._execute_pipeline([(sql, [backup_id])])
+            if not res or not res[0].get("rows"):
+                return None
+            r = res[0]["rows"][0]
+            return {
+                "id": int(r["id"]),
+                "timestamp": float(r.get("timestamp") or 0.0),
+                "created_at": str(r.get("created_at") or ""),
+                "settings_yaml": str(r.get("settings_yaml") or ""),
+                "label": str(r.get("label") or ""),
+                "filter_ads": bool(r.get("filter_ads")),
+                "keywords_count": int(r.get("keywords_count") or 0),
+                "patterns_count": int(r.get("patterns_count") or 0),
+            }
+        except Exception as exc:
+            logger.warning("Fehler beim Abrufen von Turso-Settings-Backup %d: %s", backup_id, exc)
+            return None
+
+    def delete_settings_backup(self, backup_id: int) -> bool:
+        sql = "DELETE FROM settings_backups WHERE id = ?"
+        try:
+            res = self._execute_pipeline([(sql, [backup_id])])
+            return bool(res and res[0].get("affected_rows", 0) > 0)
+        except Exception as exc:
+            logger.warning("Fehler beim Löschen von Turso-Settings-Backup %d: %s", backup_id, exc)
+            return False
 
     def close(self) -> None:
         try:

@@ -232,7 +232,6 @@ class TestSourcesManagement(unittest.TestCase):
         self.assertIn("language", raw_settings)
         self.assertIn("archive_retention_days", raw_settings)
         self.assertIn("filter_ads", raw_settings)
-        self.assertIn("strip_ads", raw_settings)
         self.assertIn("ad_keywords", raw_settings)
         self.assertIn("ad_patterns", raw_settings)
         self.assertNotIn("custom_main_prompt", raw_settings, "settings.yaml darf keine Prompt-Definitionen enthalten!")
@@ -305,6 +304,34 @@ class TestSourcesManagement(unittest.TestCase):
             self.assertEqual(updated_prm["custom_main_prompt"], "Spanischer Prompt")
         finally:
             shutil.rmtree(temp_dir, ignore_errors=True)
+
+
+    def test_settings_backups_storage(self):
+        from src.storage import get_storage
+        storage = get_storage()
+        yaml_sample = "language: de\nfilter_ads: true\n"
+        backup_id = storage.save_settings_backup(
+            settings_yaml=yaml_sample,
+            label="Test Backup Unit",
+            filter_ads=True,
+            keywords_count=5,
+            patterns_count=2,
+        )
+        self.assertGreater(backup_id, 0)
+
+        # Abrufen
+        backups = storage.get_settings_backups(limit=10)
+        self.assertTrue(any(b["id"] == backup_id for b in backups))
+
+        single_b = storage.get_settings_backup(backup_id)
+        self.assertIsNotNone(single_b)
+        self.assertEqual(single_b["label"], "Test Backup Unit")
+        self.assertEqual(single_b["settings_yaml"], yaml_sample)
+
+        # Löschen
+        deleted = storage.delete_settings_backup(backup_id)
+        self.assertTrue(deleted)
+        self.assertIsNone(storage.get_settings_backup(backup_id))
 
 
 if __name__ == "__main__":
