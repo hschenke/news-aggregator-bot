@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 11:26:16 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 16:21:35 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI execs may be too out of touch to build for the general public</title>
+      <link>https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182042</guid>
+      <pubDate>Wed, 28 Oct 2026 15:53:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Tech leaders are flaunting how out of touch they are when they brag about using AI to connect with their families.]]></description>
+    </item>
+    <item>
+      <title>South Korea’s financial industry hit by fresh wave of cyberattacks</title>
+      <link>https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182513</guid>
+      <pubDate>Wed, 28 Oct 2026 15:41:18 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[South Korea’s financial institutions have been hit by another wave of cyberattacks, highlighting the growing risk of AI-driven hacking in Asia.]]></description>
+    </item>
+    <item>
+      <title>Voice AI in vogue: Nvidia releases new open transcription model</title>
+      <link>https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182159</guid>
+      <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Nvidia just released a free speech-to-text model that can transcribe up to 40 languages, but it only works on recordings, not live audio, so it’s a big step for meeting and medical transcription tools while still leaving real-time use to rivals like ElevenLabs.]]></description>
+    </item>
+    <item>
+      <title>7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open</title>
+      <link>https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182455</guid>
+      <pubDate>Wed, 28 Oct 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[In just 7 days, TechCrunch Founder Summit takes over Boston’s SoWa Power Station on November 4. Your chance to save up to $100 on tickets is running out, and the opportunity to learn and connect directly with experienced founders, investors, and startup leaders is almost here.]]></description>
+    </item>
     <item>
       <title>VCs will make billions on Anthropic’s IPO, but Amazon is set to make much (much) more</title>
       <link>https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/</link>
@@ -79,42 +115,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Genie 4 can maintain a consistent scene for up to two minutes, double Genie 3's limit, and offers better physics and more humanlike characters.]]></description>
-    </item>
-    <item>
-      <title>Meta AI director Rohit Patel leaves to take on Microsoft Office and Google Workspace</title>
-      <link>https://techcrunch.com/2026/10/27/meta-ai-director-rohit-patel-leaves-to-take-on-microsoft-office-and-google-workspace/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182018</guid>
-      <pubDate>Tue, 27 Oct 2026 14:59:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Rohit Patel is departing Meta after eight years working on AI evaluations and reinforcement learning, TechCrunch has exclusively learned. His startup, Ndoc, aims to take on Microsoft Office Suite.]]></description>
-    </item>
-    <item>
-      <title>Japan internet giant GMO says hackers posted stolen customer data</title>
-      <link>https://techcrunch.com/2026/10/27/japan-internet-giant-gmo-says-hackers-posted-stolen-customer-data/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182015</guid>
-      <pubDate>Tue, 27 Oct 2026 13:32:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Japan's GMO Internet is verifying alleged customer data posted by suspected hackers following a cloud service breach.]]></description>
-    </item>
-    <item>
-      <title>Opera introduces a new web standard to let users deploy AI locally in their browser</title>
-      <link>https://techcrunch.com/2026/10/27/opera-introduces-a-new-web-standard-to-let-users-deploy-ai-locally-in-their-browser/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181922</guid>
-      <pubDate>Tue, 27 Oct 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The new standard, WebAI, is designed to work with a variety of AI models.]]></description>
-    </item>
-    <item>
-      <title>General Compute raises $100 million Series A, countering the neocloud disaster narrative</title>
-      <link>https://techcrunch.com/2026/10/27/general-compute-raises-100-million-series-a-countering-the-neocloud-disaster-narrative/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181881</guid>
-      <pubDate>Tue, 27 Oct 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[General Compute is betting on inference chips from outside the Nvidia ecosystem.]]></description>
     </item>
   </channel>
 </rss>
