@@ -5,9 +5,80 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:45:28 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 10:47:50 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Artificial Analysis v5.0: OpenAI dominiert auf einmal ALLES</title>
+      <link>https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</guid>
+      <pubDate>Wed, 28 Oct 2026 08:22:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Der neue Intelligence Index bewertet KI-Modelle mit überarbeiteten Benchmarks und Gewichtungen. OpenAI stellt drei der fünf bestplatzierten Modelle, Claude Opus 5.5 bleibt an der Spitze. Open Weights fallen zurück, während OpenAI beim Preis-Leistungs-Vergleich stark abschneidet. Private Testdaten erschweren Benchmar...]]></description>
+    </item>
+    <item>
+      <title>Microsoft senkt die Kosten für KI-Sicherheitsprüfungen</title>
+      <link>https://www.all-ai.de/news/news26/ki-sicherheit-microsoft-mai-cyber</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-sicherheit-microsoft-mai-cyber</guid>
+      <pubDate>Tue, 27 Oct 2026 20:23:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft stellt MAI Cyber 1.1 Flash für MDASH vor. Im internen Vergleich kostet ein Scan 18 Prozent weniger als mit dem Vorgänger. Das bisherige MAI-Profil wird für fast die Hälfte aller MDASH-Scans genutzt. Verifizierte MDASH-Kunden können das neue Modellprofil auswählen. Microsoft: MAI Cyber 1.1 Flash Microsoft: ...]]></description>
+    </item>
+    <item>
+      <title>Microsoft MAI Image 2.7: Fast die Nummer 1 bei der Bildbearbeitung</title>
+      <link>https://www.all-ai.de/news/news26top/microsoft-mai-image-2-7-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/microsoft-mai-image-2-7-start</guid>
+      <pubDate>Tue, 27 Oct 2026 19:33:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[MAI Image 2.7 erreicht Platz zwei bei Artificial Analysis für Bildbearbeitung. OpenAIs GPT Image 2.5 Sunburst liegt knapp davor. Die Vorschau bearbeitet bestehende Bilder und ist unter anderem im MAI Playground verfügbar. MAI Image 2.6 und 2.6 Flash sind allgemein in Microsoft Foundry verfügbar. Microsoft AI: MAI Im...]]></description>
+    </item>
+    <item>
+      <title>Chinas Reichenliste zeigt den Aufstieg der KI-Unternehmer</title>
+      <link>https://www.all-ai.de/news/news26/china-ki-reichtum</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/china-ki-reichtum</guid>
+      <pubDate>Tue, 27 Oct 2026 19:25:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[ByteDance-Gründer Zhang Yiming führt die Liste mit 99,7 Milliarden Dollar an. DeepSeek-Gründer Liang Wenfeng steigt mit 41,7 Milliarden Dollar auf Platz sieben ein. Cambricon-Gründer Chen Tianshi erreicht Platz zehn. Rund 160 Personen auf der Liste verdienen ihr Geld mit KI. Hurun China Rich List 2026 Hurun Australa...]]></description>
+    </item>
+    <item>
+      <title>Echo-3 macht aus Video-Aufnahmen begehbare 3D-Räume</title>
+      <link>https://www.all-ai.de/news/news26/echo-3-video-3d</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/echo-3-video-3d</guid>
+      <pubDate>Tue, 27 Oct 2026 16:59:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Echo-3 rekonstruiert reale Umgebungen aus iPhone-Aufnahmen als begehbare 3D-Räume. Das KI-Modell ergänzt nicht erfasste Bereiche und nutzt einen realen Maßstab. Die iOS-App bietet den ersten Abomonat kostenlos, eine Android-Version ist angekündigt. Für Unternehmen ist eine API geplant. SpAItial: Introducing Echo-3 a...]]></description>
+    </item>
+    <item>
+      <title>Googles »Genie 4« erschafft begehbare KI-Welten mit Ton und Dialogen</title>
+      <link>https://www.all-ai.de/news/news26top/google-genie-4-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-genie-4-start</guid>
+      <pubDate>Tue, 27 Oct 2026 16:38:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Genie 4 erzeugt interaktive Welten in Echtzeit und liefert Ton und Dialoge dazu. Nutzer bewegen sich mit der Tastatur und verändern Szenen per Texteingabe. Gemini unterstützt die Planung und Steuerung komplexer Abläufe. Ausgewählte Tester erhalten zuerst Zugang, weitere Nutzer sollen folgen. Google DeepMind: Genie 4...]]></description>
+    </item>
+    <item>
+      <title>Welches OpenAI Modell passt wann? Astra, Sol, Terra und Luna</title>
+      <link>https://www.all-ai.de/news/news26top/openai-gpt-astra-sol-terra-luna</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-gpt-astra-sol-terra-luna</guid>
+      <pubDate>Tue, 27 Oct 2026 13:33:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI ordnet seine Modelle als Luna, Terra, Sol und Astra ein. Astra steht für höchste Qualität, Sol für anspruchsvolle Aufgaben zu geringeren Kosten. Terra punktet beim Schreiben, Bildverständnis und der Computerbedienung. Luna eignet sich für günstige, klar umrissene Aufgaben. OpenAI-Mitarbeiter zur Modellauswahl...]]></description>
+    </item>
+    <item>
+      <title>Anthropics Börsenprospekt: Fünf überraschende Details und eine Aktie sie alle zu knechten</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-boerse-5-details</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-boerse-5-details</guid>
+      <pubDate>Tue, 27 Oct 2026 12:58:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic garantiert Amazon mindestens 110 Milliarden Dollar über zehn Jahre. Verträge mit SpaceX.AI sehen Ausgaben von bis zu 120,5 Milliarden Dollar vor und sind nach anfänglichen Fristen kündbar. Eine Sonderaktie sichert der Gründergesellschaft 50,1 Prozent der Stimmen bei allgemeinen Abstimmungen. Der Prospekt e...]]></description>
+    </item>
   </channel>
 </rss>
