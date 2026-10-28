@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 21:13:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 06:01:28 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VCs will make billions on Anthropic’s IPO, but Amazon is set to make much (much) more</title>
+      <link>https://techcrunch.com/2026/10/27/vcs-will-make-billions-on-anthropics-ipo-but-amazon-is-set-to-make-much-much-more/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182406</guid>
+      <pubDate>Wed, 28 Oct 2026 01:15:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Massive note conversions reveal the true extent of Amazon's ownership in Anthropic.]]></description>
+    </item>
+    <item>
+      <title>Parents sue OpenAI, alleging GPT-4o coached their daughter off seizure medication</title>
+      <link>https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182387</guid>
+      <pubDate>Tue, 27 Oct 2026 23:34:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[A family is suing OpenAI, saying ChatGPT coached their daughter to quietly taper off her seizure medication and keep it from her doctors before she died in February.]]></description>
+    </item>
+    <item>
+      <title>The data center boom has an upside: innovation for the US grid</title>
+      <link>https://techcrunch.com/2026/10/27/the-data-center-boom-has-an-upside-innovation-for-the-us-grid/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3181301</guid>
+      <pubDate>Tue, 27 Oct 2026 22:55:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[As the AI boom stresses the existing power grid, all sorts of new opportunities for grid modernization are also emerging as a result, industry insiders say.]]></description>
+    </item>
+    <item>
+      <title>Bank of America kindly asks that you don’t share your banking password with your AI assistant</title>
+      <link>https://techcrunch.com/2026/10/27/bank-of-america-kindly-asks-that-you-dont-share-your-banking-password-with-your-ai-assistant/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182297</guid>
+      <pubDate>Tue, 27 Oct 2026 21:44:34 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The banking giant reminds customers that "you're responsible for activity" resulting from your AI agents' access.]]></description>
+    </item>
+    <item>
+      <title>Who’s really in charge at Anthropic after the IPO?</title>
+      <link>https://techcrunch.com/2026/10/27/whos-really-in-charge-at-anthropic-after-the-ipo/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3182153</guid>
+      <pubDate>Tue, 27 Oct 2026 21:38:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Here's a clear explanation of Anthropic's incredibly complex governance structure.]]></description>
+    </item>
     <item>
       <title>Disruptive raises $10B fund to make big bets on at least 10 companies</title>
       <link>https://techcrunch.com/2026/10/27/disruptive-raises-10b-fund-to-make-big-bets-on-at-least-10-companies/</link>
@@ -78,25 +123,7 @@
       <pubDate>Tue, 27 Oct 2026 11:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Simplismart says its annualized revenue run rate has grown 14-fold in six months, with the U.S. accounting for more than half its revenue.]]></description>
-    </item>
-    <item>
-      <title>How OpenAI turned its coding tools into dots, an always-on personal assistant</title>
-      <link>https://techcrunch.com/2026/10/26/how-openai-turned-its-coding-tools-into-dots-an-always-on-personal-assistant/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181218</guid>
-      <pubDate>Tue, 27 Oct 2026 02:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Alexander Embiricos, the OpenAI executive responsible for dots, never wants to have a meeting with someone else's AI agent.]]></description>
-    </item>
-    <item>
-      <title>Cohere says Alibaba’s Qwen model tried to send a file to Beijing</title>
-      <link>https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3181989</guid>
-      <pubDate>Tue, 27 Oct 2026 01:12:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[An AI model said it wouldn’t use any tools, then tried to send something to a server in Beijing anyway, and while researchers say it’s probably a training quirk and not espionage, the whole thing has people asking how much to trust free Chinese AI.]]></description>
+      <description><![CDATA[Simplismart says its annualized revenue run rate has grown fourteenfold in six months, with the U.S. accounting for more than half its revenue.]]></description>
     </item>
   </channel>
 </rss>

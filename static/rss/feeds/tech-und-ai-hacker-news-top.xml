@@ -5,80 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 21:13:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 06:01:28 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>UK to charge universities $1,200 per international student</title>
-      <link>https://africa.businessinsider.com/local/markets/uk-to-charge-universities-dollar1200-per-international-student-including-those-from/qe5rqbe</link>
-      <guid isPermaLink="false">https://africa.businessinsider.com/local/markets/uk-to-charge-universities-dollar1200-per-international-student-including-those-from/qe5rqbe</guid>
-      <pubDate>Tue, 27 Oct 2026 05:13:08 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>There are now 5 inference providers for abliterated DeepSeek</title>
-      <link>https://allmodels.io/llm/abliterated</link>
-      <guid isPermaLink="false">https://allmodels.io/llm/abliterated</guid>
-      <pubDate>Tue, 27 Oct 2026 04:53:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>I still teach OpenGL ES 3.0</title>
-      <link>https://eliasfarhan.ch/graphics/cpp/2026/01/27/why-i-teach-opengles.html</link>
-      <guid isPermaLink="false">https://eliasfarhan.ch/graphics/cpp/2026/01/27/why-i-teach-opengles.html</guid>
-      <pubDate>Tue, 27 Oct 2026 02:15:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>16-bit Windows (Windows 1.x, 2.x, 3.0, 3.1, etc.) on 64-bit Windows</title>
-      <link>https://github.com/otya128/winevdm</link>
-      <guid isPermaLink="false">https://github.com/otya128/winevdm</guid>
-      <pubDate>Tue, 27 Oct 2026 01:15:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Cross-request KV cache exposure in the GLM-5.3 Workers AI model (155 responses)</title>
-      <link>https://blog.cloudflare.com/kv-cache-exposure-remediation/</link>
-      <guid isPermaLink="false">https://blog.cloudflare.com/kv-cache-exposure-remediation/</guid>
-      <pubDate>Mon, 26 Oct 2026 22:41:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Is PHP Running on Your ColdFusion Server? How to Check, and Remove It</title>
-      <link>https://www.gregoryalexander.com/blog/2026/10/23/is-php-quietly-running-on-your-coldfusion-server-how-to-check-and-remove-it</link>
-      <guid isPermaLink="false">https://www.gregoryalexander.com/blog/2026/10/23/is-php-quietly-running-on-your-coldfusion-server-how-to-check-and-remove-it</guid>
-      <pubDate>Mon, 26 Oct 2026 22:27:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Exponential Time Hypothesis Is False [pdf]</title>
-      <link>https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf</link>
-      <guid isPermaLink="false">https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf</guid>
-      <pubDate>Mon, 26 Oct 2026 21:59:15 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Three new discoveries in mathematics, computer science, and physics</title>
-      <link>https://openai.com/index/building-scientific-understanding-with-academic-communities/</link>
-      <guid isPermaLink="false">https://openai.com/index/building-scientific-understanding-with-academic-communities/</guid>
-      <pubDate>Mon, 26 Oct 2026 21:35:28 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>

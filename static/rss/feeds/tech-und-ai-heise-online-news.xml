@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 27 Oct 2026 21:13:35 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 06:01:28 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mittwoch: Werbung mit Spyware für Starlink-User, Amazon-Übernahme von Globalstar</title>
+      <link>https://www.heise.de/news/Mittwoch-Werbung-mit-Spyware-fuer-Starlink-User-Amazon-Uebernahme-von-Globalstar-11502517.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11502517</guid>
+      <pubDate>Wed, 28 Oct 2026 05:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Bespitzelung von Starlink-Nutzern + Satelliten-Deal trotz Einspruch + Infineons Wafer-Werk in Österreich + Angriffe auf php2shell + Tempolimit bei Dieselmangel]]></description>
+    </item>
+    <item>
+      <title>Amazon darf Globalstar trotz Yippy-Einspruch gegen Satelliten-Deal übernehmen</title>
+      <link>https://www.heise.de/news/Amazon-darf-Globalstar-trotz-Yippy-Einspruch-gegen-Satelliten-Deal-uebernehmen-11502501.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11502501</guid>
+      <pubDate>Wed, 28 Oct 2026 04:04:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die US-Aufsicht genehmigt Amazons Übernahme von Satellitenbetreiber Globalstar. Nur dessen Partner Yippy legte Einspruch ein, doch das wurde vom Tisch gewischt.]]></description>
+    </item>
+    <item>
+      <title>Starlink-Observation geht über Online-Werbung</title>
+      <link>https://www.heise.de/news/Starlink-Observation-geht-ueber-Online-Werbung-11502479.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11502479</guid>
+      <pubDate>Tue, 27 Oct 2026 23:02:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Discover-Tech soll über Online-Werbung Spyware installieren. Ganz besonders soll sich die israelische Firma für Starlink-Nutzer interessieren.]]></description>
+    </item>
     <item>
       <title>Infineon baut erste Hochvolumenfertigung für 300-mm-Galliumnitrid-Halbleiter</title>
       <link>https://www.heise.de/news/Infineon-baut-erste-Hochvolumenfertigung-fuer-300-mm-Galliumnitrid-Halbleiter-11502449.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -15,7 +42,7 @@
       <pubDate>Tue, 27 Oct 2026 20:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Infineon Technologies Austria die weltweit erste Fabrik für Galliumnitrid-Leistungshalbleiter auf 300-Millimeter-Wafern in Stückzahlen. EU-Subventionen helfen.]]></description>
+      <description><![CDATA[In Österreich plant Infineon die weltweit erste Fabrik für Galliumnitrid-Leistungshalbleiter auf 300-Millimeter-Wafern in Stückzahlen. EU-Subventionen helfen.]]></description>
     </item>
     <item>
       <title>Top 10: Der beste Saugroboter – wischen, klettern und saugen schon ab 550 Euro</title>
@@ -376,42 +403,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Anfang Oktober hat die US-Regierung die Sanktionen gegen den Internationalen Strafgerichtshof ausgebaut. Nun wird bekannt, dass es umfangreiche Ausnahmen gibt.]]></description>
-    </item>
-    <item>
-      <title>Erste KI-Blase geplatzt? Chinas KI-Leitindex 40 Prozent unter dem Höchststand</title>
-      <link>https://www.heise.de/news/Erste-KI-Blase-geplatzt-Chinas-KI-Leitindex-40-Prozent-unter-dem-Hoechststand-11501107.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11501107</guid>
-      <pubDate>Tue, 27 Oct 2026 05:53:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Chinas Aktienindex für KI- und Halbleiterfirmen hat seit dem Sommer massiv an Wert verloren. Dem ist aber eine viel größere Rallye vorausgegangen als anderswo.]]></description>
-    </item>
-    <item>
-      <title>Dienstag: Goldener Handschlag bei Microsoft, Milliarden-Deal von SpaceX</title>
-      <link>https://www.heise.de/news/Dienstag-Goldener-Handschlag-bei-Microsoft-Milliarden-Deal-von-SpaceX-11501077.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11501077</guid>
-      <pubDate>Tue, 27 Oct 2026 05:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Microsoft baut Stellen ab + SpaceX schließt Finanzierungsdeal + Verfahren gegen Milei eingestellt + Anthropic vor Börsengang + Debatte um PHP-Schwachstellen]]></description>
-    </item>
-    <item>
-      <title>Space X: Vereinbarung zur Finanzierung von KI-Chips über 40 Milliarden US-Dollar</title>
-      <link>https://www.heise.de/news/Space-X-Vereinbarung-zur-Finanzierung-von-KI-Chips-ueber-40-Milliarden-US-Dollar-11501039.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11501039</guid>
-      <pubDate>Tue, 27 Oct 2026 04:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das Raumfahrtunternehmen SpaceX schließt eine milliardenschwere Leasing-Vereinbarung mit dem Vermögensverwalter Apollo zur Finanzierung von Nvidia-Chips.]]></description>
-    </item>
-    <item>
-      <title>Kryptowährung $Libra: Betrugsprozess gegen Präsident Milei eingestellt</title>
-      <link>https://www.heise.de/news/Kryptowaehrung-Libra-Betrugsprozess-gegen-Praesident-Milei-eingestellt-11500979.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11500979</guid>
-      <pubDate>Mon, 26 Oct 2026 21:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die argentinische Justiz hat den Prozess gegen Präsident Javier Milei im Fall des $Libra-Kryptowährungsbetrugs eingestellt. Das Strafrecht greift nicht.]]></description>
     </item>
   </channel>
 </rss>
