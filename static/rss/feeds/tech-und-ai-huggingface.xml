@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 28 Oct 2026 10:15:26 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 10:14:22 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Build specialized multimodal models with LFM3</title>
       <link>https://huggingface.co/blog/LiquidAI/lfm3</link>
       <guid isPermaLink="false">https://huggingface.co/blog/LiquidAI/lfm3</guid>
-      <pubDate>Tue, 27 Oct 2026 17:16:52 GMT</pubDate>
+      <pubDate>Tue, 27 Oct 2026 17:16:52 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
@@ -21,7 +21,7 @@
       <title>Can we trust LLMs to judge whether a research idea is novel?</title>
       <link>https://huggingface.co/blog/allenai/novelty-bench</link>
       <guid isPermaLink="false">https://huggingface.co/blog/allenai/novelty-bench</guid>
-      <pubDate>Tue, 27 Oct 2026 16:12:42 GMT</pubDate>
+      <pubDate>Tue, 27 Oct 2026 16:12:42 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
