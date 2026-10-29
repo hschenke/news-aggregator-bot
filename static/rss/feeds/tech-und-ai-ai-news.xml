@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 11:36:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 14:33:29 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft erzielt zehn Milliarden Dollar Umsatz mit OpenAI</title>
       <link>https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</guid>
-      <pubDate>Thu, 29 Oct 2026 09:58:14 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 10:58:14 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Microsoft erzielt im Quartal zehn Milliarden Dollar Umsatz mit OpenAI. Der Gesamtumsatz steigt auf 92,3 Milliarden Dollar, der Nettogewinn auf 36,6 Milliarden Dollar. Microsoft Cloud wächst um 30 Prozent, Azure um 48 Prozent. Die Zahl der täglichen Copilot-Nutzer steigt gegenüber dem Vorquartal um fast 50 Prozent. M...]]></description>
@@ -21,7 +21,7 @@
       <title>Meta startet KI-Tamagotchi mit eigenem Tagebuch</title>
       <link>https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</guid>
-      <pubDate>Thu, 29 Oct 2026 08:25:44 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 09:25:44 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Meta hat Waddle World für Android und iOS auf den Philippinen veröffentlicht. Ein virtuelles Haustier verwandelt Erzählungen in illustrierte Tagebucheinträge und verschickt Postkarten. Die kostenlose App richtet sich an Erwachsene und bietet kurze Minispiele. Das Tagebuch ist gegenüber anderen Nutzern standardmäßig ...]]></description>
@@ -30,7 +30,7 @@
       <title>GitHub Copilot koordiniert jetzt KI-Agenten über mehrere Projekte</title>
       <link>https://www.all-ai.de/news/news26/github-agenten-projekte</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/github-agenten-projekte</guid>
-      <pubDate>Thu, 29 Oct 2026 08:14:25 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 09:14:25 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Copilot-Projekte koordinieren parallele KI-Agenten über mehrere Repositories hinweg. Copilot Fusion wählt und kombiniert KI-Modelle von Anthropic und OpenAI. Fusion Max erreicht 60 Punkte im Coding Agent Index und kostet im Test 5,59 Dollar pro Aufgabe. GitHub-Enterprise-Kunden zahlen für verbrauchte KI-Credits stat...]]></description>
@@ -39,7 +39,7 @@
       <title>ElevenLabs Cue bringt Untertitel im richtigen Moment</title>
       <link>https://www.all-ai.de/news/news26/elevenlabs-cue-untertitel</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/elevenlabs-cue-untertitel</guid>
-      <pubDate>Wed, 28 Oct 2026 20:20:48 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:20:48 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[ElevenLabs Cue ordnet Wörter und Zeichen ihren Zeitpunkten in einer Audioaufnahme zu. Das Modell unterstützt mehr als 90 Sprachen und verarbeitet lange Aufnahmen in einem Durchlauf. Eine Stunde Audio lässt sich auf einer Grafikkarte in rund einer halben Sekunde zuordnen. Cue arbeitet in Scribe und ist auch über die ...]]></description>
@@ -48,7 +48,7 @@
       <title>n8n 3.0 startet als Beta: Das müssen Nutzer jetzt ändern</title>
       <link>https://www.all-ai.de/news/news26/n8n-3-0-beta-start</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/n8n-3-0-beta-start</guid>
-      <pubDate>Wed, 28 Oct 2026 19:15:32 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 20:15:32 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[n8n 3.0 ist als Beta verfügbar, die stabile Version ist für Anfang Dezember geplant. Selbst gehostete Installationen benötigen künftig Docker, ältere Nodes entfallen. Der Migration Report zeigt betroffene Workflows und Einstellungen und behebt viele Probleme automatisch. Vor dem Umstieg empfiehlt n8n ein Backup und ...]]></description>
@@ -57,7 +57,7 @@
       <title>Gemini 4 Carbon: Die neue Nummer 1 schlägt Claude Opus 5.5</title>
       <link>https://www.all-ai.de/news/news26top/gemini-4-carbon-nummer-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/gemini-4-carbon-nummer-1</guid>
-      <pubDate>Wed, 28 Oct 2026 17:20:36 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 18:20:36 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Gemini 4 Carbon erreicht laut Google 59 Punkte im Artificial Analysis Intelligence Index 5.0. Das Modell verbessert sich bei Programmierung und Cybersicherheit gegenüber Gemini 4 Argon. Ausgewählte Experten für Cyberabwehr erhalten zuerst Zugang. Der Einführungspreis beträgt 2 Dollar pro Million Eingabe-Token und 10...]]></description>
@@ -66,19 +66,10 @@
       <title>Mistral startet Responses API für KI-Agenten</title>
       <link>https://www.all-ai.de/news/news26/mistral-api-ki-agenten</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/mistral-api-ki-agenten</guid>
-      <pubDate>Wed, 28 Oct 2026 16:40:54 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 17:40:54 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Mistrals Responses API ist als öffentliche Vorschau verfügbar. Sie trennt Modellantworten, Reasoning und Funktionsaufrufe in einzelne Elemente. Die Schnittstelle verwendet das Responses-Format von OpenAI. DeepSeek V4.1 Flash und GLM 5.3 Flash ergänzen Mistrals Cloud-Angebot. Mistral AI: Ankündigung der Responses API...]]></description>
-    </item>
-    <item>
-      <title>Gesicht gescannt? Lieferroboter stehen in Chicago vor Gericht</title>
-      <link>https://www.all-ai.de/news/news26top/usa-lieferroboter-gesicht-protest</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/usa-lieferroboter-gesicht-protest</guid>
-      <pubDate>Wed, 28 Oct 2026 12:28:11 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[In den USA liefern bereits rund 5.000 Roboter Bestellungen aus. In mehreren Städten werden die Maschinen angegriffen, in Chicago protestieren Anwohner gegen ihren Einsatz. Zwei Kunden werfen Coco und Serve vor, biometrische Daten ohne Zustimmung erfasst zu haben. Beide Unternehmen bestreiten die Vorwürfe. Block Club...]]></description>
     </item>
   </channel>
 </rss>

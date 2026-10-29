@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 11:36:36 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 14:33:29 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft just shared Azure’s actual revenue in dollars: $33.2 billion</title>
       <link>https://techcrunch.com/2026/10/28/microsoft-just-shared-azures-actual-revenue-in-dollars-33-2-billion/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182841</guid>
-      <pubDate>Wed, 28 Oct 2026 21:58:32 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:58:32 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Microsoft has never disclosed Azure's quarterly revenue in dollars. But for the first time, we can see just how close it is getting to besting the biggest competitor in the market, AWS.]]></description>
@@ -21,7 +21,7 @@
       <title>Google expands AI Search ads globally as core ad growth slows</title>
       <link>https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182884</guid>
-      <pubDate>Wed, 28 Oct 2026 21:48:37 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:48:37 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The announcement came alongside parent company Alphabet's third-quarter earnings report, which saw revenue grow 25% year over year to $127.6 billion.]]></description>
@@ -30,7 +30,7 @@
       <title>Microsoft recorded $10 billion in revenue from OpenAI</title>
       <link>https://techcrunch.com/2026/10/28/microsoft-recorded-10-billion-in-revenue-from-openai/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182880</guid>
-      <pubDate>Wed, 28 Oct 2026 21:34:30 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:34:30 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Microsoft said it made $10 billion in revenue from commercial arrangements with OpenAI, including revenue-sharing payments, in the quarter ending September 30. It underscores the still-enormous financial dependency of the partnership.]]></description>
@@ -39,7 +39,7 @@
       <title>Microsoft hits 10 quarters of record-breaking revenue in a row</title>
       <link>https://techcrunch.com/2026/10/28/microsoft-hits-10-quarters-of-record-breaking-revenue-in-a-row/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182838</guid>
-      <pubDate>Wed, 28 Oct 2026 21:25:30 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:25:30 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Whatever the future of AI might be, the current situation is still very good for Microsoft. The tech giant reported yet another record for quarterly revenue on Wednesday: $92.3 billion, a 19% increase over the year-ago quarter.]]></description>
@@ -48,7 +48,7 @@
       <title>Anthropic just launched tools to show companies what their AI spending is buying</title>
       <link>https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182643</guid>
-      <pubDate>Wed, 28 Oct 2026 19:19:58 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 19:19:58 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The frontier lab is lifting the curtain on how users spend money on its models ahead of a planned IPO.]]></description>
@@ -57,7 +57,7 @@
       <title>Wiz’s CTO on PHP2Shell and the coming ‘vulnpocalypse’</title>
       <link>https://techcrunch.com/video/wizs-cto-on-php2shell-and-the-coming-vulnpocalypse/</link>
       <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_video&amp;p=3182776</guid>
-      <pubDate>Wed, 28 Oct 2026 19:05:46 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 19:05:46 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, with some taking sites offline until the vulnerabilities could be patched. According to researcher...]]></description>
@@ -66,7 +66,7 @@
       <title>The ‘Vulnpocalypse’ is coming for the internet’s aging code, says Wiz’s CTO</title>
       <link>https://techcrunch.com/podcast/the-vulnpocalypse-is-coming-for-the-internets-aging-code-says-wizs-cto/</link>
       <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_podcast&amp;p=3182774</guid>
-      <pubDate>Wed, 28 Oct 2026 18:50:39 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 18:50:39 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, with some taking sites offline until the vulnerabilities could be patched. According to researcher...]]></description>
@@ -75,7 +75,7 @@
       <title>Chrome’s AI-powered Autofill can now dig through your Gmail to fill out forms</title>
       <link>https://techcrunch.com/2026/10/28/chromes-ai-powered-autofill-can-now-dig-through-your-gmail-to-fill-out-forms/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182578</guid>
-      <pubDate>Wed, 28 Oct 2026 17:00:00 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 17:00:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[The autofill update lets Chrome pull flight confirmations, tracking info, order details, and other information from your inbox, with your permission.]]></description>
@@ -84,7 +84,7 @@
       <title>As AI agents reshape the web, Google opens Gemini and Search to more apps</title>
       <link>https://techcrunch.com/2026/10/28/as-ai-agents-reshape-the-web-google-opens-gemini-and-search-to-more-apps/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182509</guid>
-      <pubDate>Wed, 28 Oct 2026 17:00:00 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 17:00:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[A new developer platform will let businesses bring their services to Google's AI experiences, potentially changing how consumers discover and use apps.]]></description>
@@ -93,7 +93,7 @@
       <title>AI execs may be too out of touch to build for the general public</title>
       <link>https://techcrunch.com/2026/10/28/ai-execs-may-be-too-out-of-touch-to-build-for-the-general-public/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182042</guid>
-      <pubDate>Wed, 28 Oct 2026 15:53:52 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 15:53:52 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Tech leaders are flaunting how out of touch they are when they brag about using AI to connect with their families.]]></description>
@@ -102,7 +102,7 @@
       <title>South Korea’s financial industry hit by fresh wave of cyberattacks</title>
       <link>https://techcrunch.com/2026/10/28/south-koreas-financial-industry-hit-by-fresh-wave-of-cyberattacks/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182513</guid>
-      <pubDate>Wed, 28 Oct 2026 15:41:18 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 15:41:18 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[South Korea’s financial institutions have been hit by another wave of cyberattacks, highlighting the growing risk of AI-driven hacking in Asia.]]></description>
@@ -111,19 +111,10 @@
       <title>Voice AI in vogue: Nvidia releases new open transcription model</title>
       <link>https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182159</guid>
-      <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 15:00:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Nvidia just released a free speech-to-text model that can transcribe up to 40 languages, but it only works on recordings, not live audio, so it’s a big step for meeting and medical transcription tools while still leaving real-time use to rivals like ElevenLabs.]]></description>
-    </item>
-    <item>
-      <title>7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open</title>
-      <link>https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182455</guid>
-      <pubDate>Wed, 28 Oct 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[In just 7 days, TechCrunch Founder Summit takes over Boston’s SoWa Power Station on November 4. Your chance to save up to $100 on tickets is running out, and the opportunity to learn and connect directly with experienced founders, investors, and startup leaders is almost here.]]></description>
     </item>
   </channel>
 </rss>
