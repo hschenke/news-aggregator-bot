@@ -495,11 +495,9 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
         with col_sb2:
             if st.button("💾 Backup erstellen", key="btn_create_settings_backup", use_container_width=True):
                 import yaml
-                from src.sources_manager import PROMPT_KEYS, DEFAULT_AD_KEYWORDS
+                from src.sources_manager import PROMPT_KEYS
                 curr_settings = working_config.get("settings", {})
                 clean = {k: v for k, v in curr_settings.items() if k not in PROMPT_KEYS}
-                if "ad_keywords" not in clean or clean.get("ad_keywords") is None or (isinstance(clean.get("ad_keywords"), list) and len(clean["ad_keywords"]) == 0):
-                    clean["ad_keywords"] = list(DEFAULT_AD_KEYWORDS)
                 yaml_str = yaml.dump(clean, allow_unicode=True, sort_keys=False, default_flow_style=False)
                 lbl = manual_label.strip() or "Manuelles Backup"
                 new_id = storage.save_settings_backup(
@@ -530,7 +528,6 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
                 c_head1, c_head2 = st.columns([3.6, 1.4], vertical_alignment="center")
                 with c_head1:
                     st.markdown(f"**Backup #{b_id}** · `{created_str}` — *{lbl}*")
-                    st.caption(f"{f_ads} · {kw_c} Ad-Keywords · {pat_c} Ad-Patterns")
                 with c_head2:
                     col_b_act1, col_b_act2 = st.columns(2)
                     with col_b_act1:

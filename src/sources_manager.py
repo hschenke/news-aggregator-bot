@@ -20,18 +20,6 @@ logger = logging.getLogger(__name__)
 
 PROMPT_KEYS: set[str] = {"custom_main_prompt", "custom_prompt_directives"}
 
-DEFAULT_AD_KEYWORDS: list[str] = [
-    "heise-angebot",
-    "anzeige",
-    "werbung",
-    "sponsored",
-    "gesponsert",
-    "advertorial",
-    "partnerangebot",
-    "deal des tages",
-    "rabatt-aktion",
-]
-
 
 def get_streamlit_app_url(config_path: str = "config/settings.yaml") -> str:
     """Helper delegating to summarizer.get_streamlit_app_url."""
@@ -403,16 +391,12 @@ def load_settings(config_path: str = "config/settings.yaml") -> dict[str, Any]:
     """Lädt die allgemeinen Anwendungseinstellungen aus config/settings.yaml."""
     path = get_settings_path(config_path)
     if not path.exists():
-        return {"ad_keywords": list(DEFAULT_AD_KEYWORDS)}
+        return {}
     with open(path, "r", encoding="utf-8") as f:
         data = yaml.safe_load(f) or {}
     if isinstance(data, dict) and "settings" in data and isinstance(data["settings"], dict):
-        data = data["settings"]
-    if not isinstance(data, dict):
-        data = {}
-    if "ad_keywords" not in data or data.get("ad_keywords") is None or (isinstance(data.get("ad_keywords"), list) and len(data["ad_keywords"]) == 0):
-        data["ad_keywords"] = list(DEFAULT_AD_KEYWORDS)
-    return data
+        return data["settings"]
+    return data if isinstance(data, dict) else {}
 
 
 def save_settings(
@@ -420,31 +404,32 @@ def save_settings(
     config_path: str = "config/settings.yaml",
     sync_github: bool = False,
     backup_label: str = "Einstellungen gespeichert",
+    create_backup: bool = True,
 ) -> dict[str, Any]:
     """Speichert globale Einstellungen persistent in config/settings.yaml (ohne Prompt-Keys)
-    und legt automatisch einen Backup-Snapshot in der settings_backups-Tabelle ab."""
+    und legt bei Bedarf einen Backup-Snapshot in der settings_backups-Tabelle ab."""
     clean_settings = {k: v for k, v in settings.items() if k not in PROMPT_KEYS}
-    if "ad_keywords" not in clean_settings or clean_settings.get("ad_keywords") is None or (isinstance(clean_settings.get("ad_keywords"), list) and len(clean_settings["ad_keywords"]) == 0):
-        clean_settings["ad_keywords"] = list(DEFAULT_AD_KEYWORDS)
     path = get_settings_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     yaml_str = yaml.dump(clean_settings, allow_unicode=True, sort_keys=False, default_flow_style=False)
     with open(path, "w", encoding="utf-8") as f:
         f.write(yaml_str)
 
-    # Automatisches Backup in die settings_backups Datenbanktabelle
-    try:
-        from src.storage import get_storage
-        storage = get_storage()
-        storage.save_settings_backup(
-            settings_yaml=yaml_str,
-            label=backup_label,
-            filter_ads=bool(clean_settings.get("filter_ads", True)),
-            keywords_count=len(clean_settings.get("ad_keywords", [])),
-            patterns_count=len(clean_settings.get("ad_patterns", [])),
-        )
-    except Exception as exc:
-        logger.debug("Automatisches Settings-Backup konnte nicht erstellt werden: %s", exc)
+    # Automatisches Backup nur für die tatsächliche Anwendungs-Konfiguration, nicht für temporäre Testdateien
+    is_app_config = path.resolve() == get_settings_path("config/settings.yaml").resolve()
+    if create_backup and is_app_config:
+        try:
+            from src.storage import get_storage
+            storage = get_storage()
+            storage.save_settings_backup(
+                settings_yaml=yaml_str,
+                label=backup_label,
+                filter_ads=bool(clean_settings.get("filter_ads", True)),
+                keywords_count=len(clean_settings.get("ad_keywords", [])),
+                patterns_count=len(clean_settings.get("ad_patterns", [])),
+            )
+        except Exception as exc:
+            logger.debug("Automatisches Settings-Backup konnte nicht erstellt werden: %s", exc)
 
     gh_res = {"success": False, "error": "Kein Token"}
     if sync_github:

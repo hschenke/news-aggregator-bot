@@ -307,8 +307,9 @@ class TestSourcesManagement(unittest.TestCase):
 
 
     def test_settings_backups_storage(self):
-        from src.storage import get_storage
-        storage = get_storage()
+        from src.storage.sqlite import SqliteStorage
+        storage = SqliteStorage(":memory:")
+        storage.init_db()
         yaml_sample = "language: de\nfilter_ads: true\n"
         backup_id = storage.save_settings_backup(
             settings_yaml=yaml_sample,
@@ -342,20 +343,6 @@ class TestSourcesManagement(unittest.TestCase):
         deleted = storage.delete_settings_backup(backup_id)
         self.assertTrue(deleted)
         self.assertIsNone(storage.get_settings_backup(backup_id))
-
-
-    def test_default_ad_keywords_fallback(self):
-        from pathlib import Path
-        from src.sources_manager import DEFAULT_AD_KEYWORDS, load_settings
-        import tempfile, shutil
-        t_dir = tempfile.mkdtemp()
-        try:
-            s_file = Path(t_dir) / "settings.yaml"
-            s_file.write_text("language: de\nfilter_ads: true\n", encoding="utf-8")
-            loaded = load_settings(str(s_file))
-            self.assertEqual(loaded.get("ad_keywords"), DEFAULT_AD_KEYWORDS)
-        finally:
-            shutil.rmtree(t_dir, ignore_errors=True)
 
 
 if __name__ == "__main__":

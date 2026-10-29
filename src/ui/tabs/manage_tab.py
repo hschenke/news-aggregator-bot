@@ -424,24 +424,17 @@ def render_manage_tab(
             key="inp_set_filter_ads",
         )
 
-        curr_ad_kw = settings.get("ad_keywords")
-        if curr_ad_kw is None or (isinstance(curr_ad_kw, list) and len(curr_ad_kw) == 0):
-            from src.sources_manager import DEFAULT_AD_KEYWORDS
-            curr_ad_kw = list(DEFAULT_AD_KEYWORDS)
-
+        curr_ad_kw = settings.get("ad_keywords", [])
         if isinstance(curr_ad_kw, list):
             ad_kw_initial = ", ".join(str(k) for k in curr_ad_kw)
         else:
             ad_kw_initial = str(curr_ad_kw or "")
 
-        if "inp_set_ad_keywords" in st.session_state and not str(st.session_state["inp_set_ad_keywords"]).strip() and ad_kw_initial.strip():
-            st.session_state["inp_set_ad_keywords"] = ad_kw_initial
-
         ad_kw_val = st.text_area(
             "Ad-Keywords (kommagetrennt oder zeilenweise):",
             value=ad_kw_initial,
-            help="Artikel, deren Titel oder Teaser diese Schlüsselwörter enthalten, werden bei aktivem Ad-Filter herausgefiltert.",
-            placeholder="z. B. heise-angebot, anzeige, werbung, sponsored, advertorial, deal des tages, rabatt-aktion",
+            help="Optionale zusätzliche Schlüsselwörter. Hinweis: Patterns erfassen Werbe-Formulierungen bereits präzise per Regex.",
+            placeholder="Optional leer lassen, da Ad-Patterns bereits greifen",
             key="inp_set_ad_keywords",
             height=85,
         )
@@ -477,9 +470,6 @@ def render_manage_tab(
                     if token.lower() not in seen_kw:
                         seen_kw.add(token.lower())
                         parsed_ad_keywords.append(token.lower())
-                if not parsed_ad_keywords:
-                    from src.sources_manager import DEFAULT_AD_KEYWORDS
-                    parsed_ad_keywords = list(DEFAULT_AD_KEYWORDS)
                 settings["ad_keywords"] = parsed_ad_keywords
 
                 raw_pat_lines = [p.strip() for p in ad_pat_val.splitlines() if p.strip()]

@@ -912,7 +912,7 @@ class SqliteStorage(StorageBackend):
                 (
                     now_ts,
                     created_at,
-                    clean_yaml,
+                    settings_yaml,
                     label,
                     1 if filter_ads else 0,
                     keywords_count,
