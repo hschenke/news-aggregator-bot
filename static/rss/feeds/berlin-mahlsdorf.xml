@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Mahlsdorf</link>
     <description>RSS-Feed für die Quelle 'Mahlsdorf' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 15:01:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 15:42:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-mahlsdorf.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -106,15 +106,6 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Die Lage in Berlin-Mahlsdorf bietet eine familienfreundliche Umgebung mit guter Anbindung an S-Bahn S5 und Buslinien 195 sowie 197. Ein ...]]></description>
-    </item>
-    <item>
-      <title>4- Raumwohnung mit eigenem Garten in Berlin - Mahlsdorf | Etagenwohnung mieten</title>
-      <link>https://www.kleinanzeigen.de/s-anzeige/4-raumwohnung-mit-eigenem-garten/3554831351-203-27141</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:17154355170658891754</guid>
-      <pubDate>Wed, 28 Oct 2026 15:13:18 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Wunderschöne 4 Zimmerwohnung im ruhigen Mahlsdorf. Die Wohnung verfügt über drei Schlafzimmer...,4- Raumwohnung mit eigenem Garten in Berlin ...]]></description>
     </item>
   </channel>
 </rss>

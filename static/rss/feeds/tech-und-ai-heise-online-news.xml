@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 15:01:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 15:42:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sofa auf Stollenreifen: Das vollgefederte Fat-E-Bike Himiway D5 2.0 ST im Test</title>
+      <link>https://www.heise.de/bestenlisten/testbericht/sofa-auf-stollenreifen-das-vollgefederte-fat-e-bike-himiway-d5-20-st-im-test/erl3txm?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504835</guid>
+      <pubDate>Thu, 29 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vollfederung, 4-Zoll-Reifen und ein umschaltbarer Sensor: Das Himiway D5 2.0 ST ist ein komfortables Fat-E-Bike mit tiefem Einstieg für 2599 Euro.]]></description>
+    </item>
+    <item>
+      <title>Pandemien früh mit globalem Überwachungsnetz erkennen</title>
+      <link>https://www.heise.de/news/Pandemien-frueh-mit-globalem-Ueberwachungsnetz-erkennen-11504881.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504881</guid>
+      <pubDate>Thu, 29 Oct 2026 14:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Corona-Pandemie zeigte: Die Welt war auf Pandemien nicht gut vorbereitet. Die WHO will das künftig mithilfe einer weltweiten Pandemiestrategie verbessern.]]></description>
+    </item>
     <item>
       <title>One UI 9: Diese Galaxy-Smartphones haben das Update in Deutschland erhalten</title>
       <link>https://www.heise.de/news/One-UI-9-Diese-Galaxy-Smartphones-haben-das-Update-in-Deutschland-erhalten-11505063.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -18,7 +36,7 @@
       <description><![CDATA[Samsung hat in Deutschland bereits 29 Galaxy-Modelle mit dem Update auf One UI 9 versorgt. Weitere dürften folgen.]]></description>
     </item>
     <item>
-      <title>Überlebt die App den Node-Drain? Kubernetes plant den Härtetest</title>
+      <title>Der Cluster ist konform, die App aber nicht – da gibt's bald was von Kubernetes</title>
       <link>https://www.heise.de/news/Ueberlebt-die-App-den-Node-Drain-Kubernetes-plant-den-Haertetest-11505071.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11505071</guid>
       <pubDate>Thu, 29 Oct 2026 14:24:00 GMT</pubDate>

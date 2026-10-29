@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Games' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 15:01:11 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 15:42:21 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/games.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kristala - Major Content Update</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60466</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60466</guid>
+      <pubDate>Thu, 29 Oct 2026 14:09:04 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Kristala got a major content update: Kristala - Mane of a New Dawn Launch Trailer Step into Kristala: Mane of a New Dawn, our latest FREE major content update, featuring new characters, expanded storylines, fresh voice performances, new quests,...]]></description>
+    </item>
     <item>
       <title>The Bill for Trumpism Comes Due - SZ.de</title>
       <link>https://www.sueddeutsche.de/projekte/artikel/politik/the-bill-for-trumpism-comes-due-e287330/</link>
@@ -151,33 +160,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Dark Messiah of Might and Magic bekommt noch 2026 eine umfangreiche Neuauflage, die von Fans in Zusammenarbeit mit Ubisoft entwickelt wurde. Die ...]]></description>
-    </item>
-    <item>
-      <title>Pool of Radiance: Ruins of Myth Drannor - Preview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60459</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60459</guid>
-      <pubDate>Wed, 28 Oct 2026 15:13:42 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Mortismal Gaming checked out the re-release of Pool of Radiance: Ruins of Myth Drannor: Check Out - Pool Of Radiance: Ruins Of Myth Drannor]]></description>
-    </item>
-    <item>
-      <title>Threads of Time - Release: Summer 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60458</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60458</guid>
-      <pubDate>Wed, 28 Oct 2026 15:07:28 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The J-RPG Threads of Time will be released in Summer 2027: Threads of Time | Release Window Trailer Threads of Time is an era-spanning, turn-based RPG inspired by the timeless classics. Embark on a journey through time, gather a party of charismatic heroes from across ages, and uncover a plot that threatens to unrav...]]></description>
-    </item>
-    <item>
-      <title>Dark Messiah of Might &amp; Magic - Community Edition Campaign Reveal Trailer - PC Games Database</title>
-      <link>https://www.pcgamesdatabase.de/gameinfo.php?sort=2&amp;id=72013</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16435345924569794298</guid>
-      <pubDate>Wed, 28 Oct 2026 15:02:10 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Schau dir das Video Dark Messiah of Might & Magic - Community Edition Campaign Reveal Trailer zu Dark Messiah of Might & Magic an und entdecke ...]]></description>
     </item>
   </channel>
 </rss>
