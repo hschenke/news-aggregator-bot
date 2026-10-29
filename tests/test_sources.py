@@ -319,6 +319,16 @@ class TestSourcesManagement(unittest.TestCase):
         )
         self.assertGreater(backup_id, 0)
 
+        # Deduplizierung: Zweiter identischer Aufruf liefert dieselbe ID ohne neue Zeile
+        dup_id = storage.save_settings_backup(
+            settings_yaml=yaml_sample,
+            label="Test Backup Unit",
+            filter_ads=True,
+            keywords_count=5,
+            patterns_count=2,
+        )
+        self.assertEqual(dup_id, backup_id)
+
         # Abrufen
         backups = storage.get_settings_backups(limit=10)
         self.assertTrue(any(b["id"] == backup_id for b in backups))
@@ -332,6 +342,20 @@ class TestSourcesManagement(unittest.TestCase):
         deleted = storage.delete_settings_backup(backup_id)
         self.assertTrue(deleted)
         self.assertIsNone(storage.get_settings_backup(backup_id))
+
+
+    def test_default_ad_keywords_fallback(self):
+        from pathlib import Path
+        from src.sources_manager import DEFAULT_AD_KEYWORDS, load_settings
+        import tempfile, shutil
+        t_dir = tempfile.mkdtemp()
+        try:
+            s_file = Path(t_dir) / "settings.yaml"
+            s_file.write_text("language: de\nfilter_ads: true\n", encoding="utf-8")
+            loaded = load_settings(str(s_file))
+            self.assertEqual(loaded.get("ad_keywords"), DEFAULT_AD_KEYWORDS)
+        finally:
+            shutil.rmtree(t_dir, ignore_errors=True)
 
 
 if __name__ == "__main__":

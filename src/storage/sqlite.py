@@ -879,9 +879,30 @@ class SqliteStorage(StorageBackend):
         keywords_count: int = 0,
         patterns_count: int = 0,
     ) -> int:
+        clean_yaml = (settings_yaml or "").strip()
         now_ts = time.time()
         created_at = datetime.now(timezone.utc).isoformat()
         with self._get_connection() as conn:
+            # Deduplizierung: Kein identisches Backup anlegen, wenn der letzte Snapshot denselben Inhalt hat
+            row = conn.execute(
+                """
+                SELECT id, timestamp, settings_yaml, label
+                FROM settings_backups
+                ORDER BY timestamp DESC, id DESC
+                LIMIT 1
+                """
+            ).fetchone()
+            if row:
+                prev_id = int(row[0])
+                prev_ts = float(row[1] or 0.0)
+                prev_yaml = str(row[2] or "").strip()
+                prev_label = str(row[3] or "")
+                if prev_yaml == clean_yaml:
+                    is_auto = "einstellungen gespeichert" in label.lower() or "auto" in label.lower()
+                    time_diff = abs(now_ts - prev_ts)
+                    if time_diff < 300 or is_auto or label == prev_label:
+                        return prev_id
+
             cursor = conn.execute(
                 """
                 INSERT INTO settings_backups (
@@ -891,7 +912,7 @@ class SqliteStorage(StorageBackend):
                 (
                     now_ts,
                     created_at,
-                    settings_yaml,
+                    clean_yaml,
                     label,
                     1 if filter_ads else 0,
                     keywords_count,

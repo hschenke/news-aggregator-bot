@@ -68,6 +68,7 @@ from src.police_scraper import (
 )
 
 from src.sources_manager import (
+    DEFAULT_AD_KEYWORDS,
     PROMPT_KEYS,
     get_streamlit_app_url,
     get_sources_path,
@@ -539,6 +540,7 @@ __all__ = [
     "_save_police_cache",
     "extract_police_teaser",
     # Sources, Settings & Prompts Manager
+    "DEFAULT_AD_KEYWORDS",
     "PROMPT_KEYS",
     "get_streamlit_app_url",
     "get_sources_path",

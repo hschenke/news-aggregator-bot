@@ -455,13 +455,35 @@ def _render_archive_management_block(
                     )
 
 
+def on_delete_settings_backup(backup_id: int) -> None:
+    """Optimistically deletes a settings backup from the UI cache and persists in the background."""
+    st.session_state["settings_backups_expanded"] = True
+    if "cached_settings_backups" in st.session_state:
+        st.session_state["cached_settings_backups"] = [
+            b for b in st.session_state["cached_settings_backups"] if b.get("id") != backup_id
+        ]
+    st.session_state.setdefault("deleted_backup_ids", set()).add(backup_id)
+
+    def _bg_del_backup() -> None:
+        get_storage().delete_settings_backup(backup_id)
+
+    run_in_background(_bg_del_backup)
+
+
 def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
-    """Renders the collapsible settings backups block in the Archive tab."""
+    """Renders the settings backups block at the very bottom of the archive tab."""
     st.markdown("---")
     storage = get_storage()
-    backups = storage.get_settings_backups(limit=30)
 
-    with st.expander(f"📁 Gespeicherte Settings-Backups ({len(backups)} Versionen im Archiv)", expanded=False):
+    if "cached_settings_backups" not in st.session_state or st.session_state.get("_reload_settings_backups"):
+        st.session_state["cached_settings_backups"] = storage.get_settings_backups(limit=50)
+        st.session_state["_reload_settings_backups"] = False
+
+    deleted_ids = st.session_state.get("deleted_backup_ids", set())
+    backups = [b for b in st.session_state.get("cached_settings_backups", []) if b.get("id") not in deleted_ids]
+
+    is_expanded = bool(st.session_state.get("settings_backups_expanded", False))
+    with st.expander(f"📁 Gespeicherte Settings-Backups ({len(backups)} Versionen im Archiv)", expanded=is_expanded):
         st.caption("Verwalte historische Snapshots deiner Einstellungen (Ad-Filter, Keywords, Patterns).")
         col_sb1, col_sb2 = st.columns([3.2, 1.2], vertical_alignment="bottom")
         with col_sb1:
@@ -473,9 +495,11 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
         with col_sb2:
             if st.button("💾 Backup erstellen", key="btn_create_settings_backup", use_container_width=True):
                 import yaml
-                from src.sources_manager import PROMPT_KEYS
+                from src.sources_manager import PROMPT_KEYS, DEFAULT_AD_KEYWORDS
                 curr_settings = working_config.get("settings", {})
                 clean = {k: v for k, v in curr_settings.items() if k not in PROMPT_KEYS}
+                if "ad_keywords" not in clean or clean.get("ad_keywords") is None or (isinstance(clean.get("ad_keywords"), list) and len(clean["ad_keywords"]) == 0):
+                    clean["ad_keywords"] = list(DEFAULT_AD_KEYWORDS)
                 yaml_str = yaml.dump(clean, allow_unicode=True, sort_keys=False, default_flow_style=False)
                 lbl = manual_label.strip() or "Manuelles Backup"
                 new_id = storage.save_settings_backup(
@@ -485,6 +509,8 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
                     keywords_count=len(clean.get("ad_keywords", [])),
                     patterns_count=len(clean.get("ad_patterns", [])),
                 )
+                st.session_state["_reload_settings_backups"] = True
+                st.session_state["settings_backups_expanded"] = True
                 set_dismissible_notice("archive_notice", f"Settings-Backup #{new_id} ({lbl}) erfolgreich gespeichert!", icon="✅")
                 st.rerun()
 
@@ -501,7 +527,7 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
             pat_c = b.get("patterns_count", 0)
 
             with st.container(border=True):
-                c_head1, c_head2 = st.columns([3.5, 1.5], vertical_alignment="center")
+                c_head1, c_head2 = st.columns([3.6, 1.4], vertical_alignment="center")
                 with c_head1:
                     st.markdown(f"**Backup #{b_id}** · `{created_str}` — *{lbl}*")
                     st.caption(f"{f_ads} · {kw_c} Ad-Keywords · {pat_c} Ad-Patterns")
@@ -515,13 +541,21 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
                             save_settings(restored_dict, backup_label=f"Auto-Backup vor Wiederherstellung von #{b_id}")
                             working_config["settings"] = restored_dict
                             st.session_state["has_unsaved_changes"] = True
+                            st.session_state["_reload_settings_backups"] = True
+                            st.session_state["settings_backups_expanded"] = True
                             set_dismissible_notice("archive_notice", f"Settings aus Backup #{b_id} erfolgreich wiederhergestellt!", icon="✅")
                             st.rerun()
                     with col_b_act2:
-                        if st.button("🗑️", key=f"btn_del_sb_{b_id}", help="Dieses Backup löschen"):
-                            storage.delete_settings_backup(b_id)
-                            set_dismissible_notice("archive_notice", f"Backup #{b_id} gelöscht.", icon="🗑️")
-                            st.rerun()
+                        with st.popover("", icon=":material/delete:", key=f"pop_del_sb_{b_id}", help="Dieses Backup löschen..."):
+                            st.markdown(f"Backup **#{b_id}** (`{lbl}`) wirklich unwiderruflich löschen?")
+                            st.button(
+                                "🗑️ Unwiderruflich löschen",
+                                key=f"btn_confirm_del_sb_{b_id}",
+                                type="primary",
+                                use_container_width=True,
+                                on_click=on_delete_settings_backup,
+                                args=(b_id,),
+                            )
 
                 with st.expander("👁️ YAML-Inhalt anzeigen & herunterladen", expanded=False):
                     st.code(b["settings_yaml"], language="yaml")
@@ -792,6 +826,6 @@ def render_archive_tab(
                                 st.session_state.setdefault("persisted_open_archive_feeds", set()).add(feed_name)
                                 st.rerun()
 
-    # --- 4. Settings-Backups & Aufklappbarer Verwaltungs-Block ganz unten ---
-    _render_settings_backups_block(working_config)
+    # --- 4. Aufklappbarer Verwaltungs-Block & Settings-Backups ganz unten ---
     _render_archive_management_block(working_config, offline_feeds)
+    _render_settings_backups_block(working_config)

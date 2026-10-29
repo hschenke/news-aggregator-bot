@@ -1035,8 +1035,22 @@ class TursoStorage(StorageBackend):
         keywords_count: int = 0,
         patterns_count: int = 0,
     ) -> int:
+        clean_yaml = (settings_yaml or "").strip()
         now_ts = time.time()
         created_at = datetime.now(timezone.utc).isoformat()
+
+        # Deduplizierung: Kein identisches Backup anlegen, wenn der letzte Snapshot denselben Inhalt hat
+        recent = self.get_settings_backups(limit=1)
+        if recent:
+            latest = recent[0]
+            latest_yaml = str(latest.get("settings_yaml") or "").strip()
+            if latest_yaml == clean_yaml:
+                is_auto = "einstellungen gespeichert" in label.lower() or "auto" in label.lower()
+                prev_ts = float(latest.get("timestamp") or 0.0)
+                time_diff = abs(now_ts - prev_ts)
+                if time_diff < 300 or is_auto or label == str(latest.get("label") or ""):
+                    return int(latest["id"])
+
         sql = """
             INSERT INTO settings_backups (
                 timestamp, created_at, settings_yaml, label, filter_ads, keywords_count, patterns_count
