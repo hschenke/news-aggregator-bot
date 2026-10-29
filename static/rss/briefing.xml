@@ -5,62 +5,71 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 06:02:16 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 11:36:52 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Berlin] Lok Stendal erwartet Primus Mahlsdorf, Füchse Berlin in Wismar</title>
-      <link>https://www.fupa.net/news/lok-stendal-erwartet-primus-mahlsdorf-fuechse-berlin-in-wismar-3223732</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6673018955652865450</guid>
-      <pubDate>Wed, 28 Oct 2026 11:14:12 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Der BSV Eintracht Mahlsdorf führt als Tabellenführer die NOFV-Oberliga Nord an und trifft im kommenden Auswärtsspiel auf Lok Stendal.</p>]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Hertha zieht ins Pokal-Achtelfinale ein: Alles gelingt ihnen</title>
+      <title>[Berlin] Hertha zieht ins Pokal-Achtelfinale ein: (Fast) alles gelingt ihnen</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-jeddeloh-ii-hertha-bsc-analyse.html</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16416326963752567946</guid>
       <pubDate>Wed, 28 Oct 2026 21:08:37 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Hertha BSC hat sich in der zweiten Runde des DFB-Pokals mit einem 2:0 beim Regionalligisten SSV Jeddeloh II durchgesetzt und das Achtelfinale erreicht.</p>]]></description>
+      <description><![CDATA[<p>Herthas Pokalspiel bei Jeddeloh II erinnerte zeitweise eher an einen ratlosen Hausmeister als an den Zweitliga-Spitzenreiter. Warum der Sieg am Ende trotzdem typisch für die aktuelle Saison war und was den Ausflug nach Oldenburg so besonders machte.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] S‑Bahn Strausberg – Berlin: Achtung Pendler - wann statt der S5 Busse fahren</title>
+      <title>[Berlin] S‑Bahn Strausberg – Berlin: Achtung Pendler - wann statt der S5 Busse fahren - MOZ.de</title>
       <link>https://www.moz.de/lokales/strausberg/sbahn-strausberg-berlin-achtung-pendler-wann-statt-der-s5-busse-fahren-79613714.html</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15289616562665032651</guid>
       <pubDate>Thu, 29 Oct 2026 03:20:30 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Pendler auf der S5-Strecke zwischen Strausberg und Berlin müssen sich auf temporäre Einschränkungen und Schienenersatzverkehr mit Busse einrichten.</p>]]></description>
+      <description><![CDATA[<p>S5-Pendler müssen sich auf mehrere Tage Schienenersatzverkehr einrichten. Wie lange auf welchem Teilstück zwischen Strausberg und Berlin Busse ...</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Kunsthaus Flora verwandelt sich in Gruselparadies mit hunderten Besuchern</title>
+      <title>[Berlin] Mega-Support: Brekalo führt Hertha ins Pokal-Achtelfinale</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-hertha-bsc-jeddeloh-ll-dfb-pokal-audiostream-liveticker-spielbericht.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-hertha-bsc-jeddeloh-ll-dfb-pokal-audiostream-liveticker-spielbericht.html</guid>
+      <pubDate>Wed, 28 Oct 2026 20:45:00 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[<p>Hertha BSC hat seine Pflichtaufgabe im DFB-Pokal erfüllt. Die Berliner gewannen verdient mit 2:0 gegen den SSV Jeddeloh II.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Explosion auf Balkon eines Mehrfamilienhauses</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1732557.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1732557.php</guid>
+      <pubDate>Thu, 29 Oct 2026 10:09:21 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[<p>In Tempelhof kam es in der vergangenen Nacht zu einer Explosion auf dem Balkon eines Mehrfamilienhauses. Anwohner nahmen gegen 0:30 Uhr in der Ullsteinstraße einen lauten Knall wahr.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Kunsthaus Flora verwandelt sich in Gruselparadies mit hunderten Besuchern - Alles-Mahlsdorf.de</title>
       <link>https://alles-mahlsdorf.de/halloween-in-mahlsdorf-kunsthaus-flora-verwandelt-sich-in-gruselparadies-mit-hunderten-besuchern/</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4739402520700442723</guid>
       <pubDate>Wed, 28 Oct 2026 19:33:10 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Das Kunsthaus Flora in Mahlsdorf verwandelte sich rechtzeitig zu Halloween in eine aufwendig gestaltete Gruselwelt für zahlreiche Besucher.</p>]]></description>
+      <description><![CDATA[<p>Am kommenden Samstag, dem 31. Oktober, verwandelt sich das Kunsthaus Flora in Mahlsdorf in ein schaurig-schönes Gruselparadies mit mehreren aufwendig gestalteten Welten.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Unions Pokal-Klatsche in Köln: Systemversagen</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-union-debakel-in-koeln-analyse.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-union-debakel-in-koeln-analyse.html</guid>
-      <pubDate>Wed, 28 Oct 2026 06:10:00 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Nach einer herben 0:5-Niederlage im Kölner Regen steht der 1. FC Union Berlin nach dem Pokal-Aus vor tiefgreifenden Fragen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Finanzen &amp; Coins] Bitcoin nähert sich 81.000 US-Dollar – Tech-Rally stützt vor Fed-Entscheid</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-klettert-auf-fast-81000-dollar-krypto-stutzt-risikofreude-vor-fedzinsentscheid-3726998</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-klettert-auf-fast-81000-dollar-krypto-stutzt-risikofreude-vor-fedzinsentscheid-3726998</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:14 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] Bitcoin gibt auf 80.000 US-Dollar nach: Fed-Falken und Tech-Zahlen drücken Krypto</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-fallt-auf-80000-falkenhafte-fed-und-gemischte-techbilanzen-belasten-3730484</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-fallt-auf-80000-falkenhafte-fed-und-gemischte-techbilanzen-belasten-3730484</guid>
+      <pubDate>Thu, 29 Oct 2026 06:37:45 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Der Bitcoin-Kurs klettert kurz vor dem anstehenden Zinsentscheid der US-Notenbank stark nach oben und nähert sich der Marke von 81.000 US-Dollar.</p>]]></description>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Der Bitcoin-Kurs gerät spürbar unter Druck und fällt auf die Marke von 80.000 US-Dollar zurück. Auslöser sind dabei unter anderem falkenhafte Signale der Notenbank Fed sowie durchwachsene Bilanzen aus dem Tech-Sektor.</p>]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] FCA erzielt gerichtliche Einigung mit Krypto-Börse HTX</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/fca-erzielt-gerichtliche-einigung-mit-kryptoborse-htx-93CH-3731561</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/fca-erzielt-gerichtliche-einigung-mit-kryptoborse-htx-93CH-3731561</guid>
+      <pubDate>Thu, 29 Oct 2026 10:30:17 +0000</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[<p>Die britische Finanzaufsicht FCA hat nach rechtlichen Auseinandersetzungen eine offizielle Einigung mit der Kryptobörse HTX erzielt. Details dazu wurden im Rahmen der regulatorischen Berichterstattung bekannt gegeben.</p>]]></description>
     </item>
     <item>
       <title>[Finanzen &amp; Coins] XRP: 63-Billionen-Dollar-Bank steigt jetzt ein</title>
@@ -69,7 +78,7 @@
       <pubDate>Wed, 28 Oct 2026 15:42:26 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Eine der weltgrössten Banken plant Berichten zufolge den Einstieg und treibt damit die Aufmerksamkeit um den XRP-Token voran.</p>]]></description>
+      <description><![CDATA[<p>Eine globale Großbank mit einem verwalteten Vermögen im Billionenbereich wagt den Einstieg in das Ökosystem rund um XRP. Dieser Schritt sorgt in der Krypto-Community für erhebliche Aufmerksamkeit.</p>]]></description>
     </item>
     <item>
       <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: Firma kommt nicht an ihre Coins – Aktie halbiert</title>
@@ -78,88 +87,43 @@
       <pubDate>Wed, 28 Oct 2026 15:20:45 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Technische beziehungsweise administrative Probleme beim Zugriff auf digitale Krypto-Bestände haben bei einem Unternehmen zu massiven Kursverlusten der Aktie geführt.</p>]]></description>
+      <description><![CDATA[<p>Ein börsennotiertes Unternehmen hat vorübergehend keinen Zugriff auf seine beträktlichen Krypto-Bestände an Bitcoin, Ethereum und Solana. Anleger reagieren panisch, woraufhin sich der Aktienkurs des Unternehmens halbiert hat.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Was denken ein Callgirl, eine Jungfrau und</title>
-      <link>https://www.hahaha.de/witze/menschen/frauen/511/was-denken-ein-callgirl-eine-jungfrau-und.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/frauen/511/was-denken-ein-callgirl-eine-jungfrau-und.html</guid>
-      <pubDate>Thu, 29 Oct 2026 00:00:00 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[<p>Ein klassischer Witz beleuchtet humorvoll die sehr unterschiedlichen Gedankenwelten verschiedener Frauen während intimer Momente.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Musste eben im Bett liegend aufstoßen...</title>
-      <link>https://debeste.de/633257/Musste-eben-im-Bett-liegend-aufsto-en-</link>
-      <guid isPermaLink="false">https://debeste.de/633257/Musste-eben-im-Bett-liegend-aufsto-en-</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:15 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein unerwartet lauter Geräuschpegel im Schlafzimmer wird vom Partner mit sofortigem Applaus und bestem Support quittiert.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] WhatsApp-Familienchat. Mama: "Heute kommen Tante Gabi &amp;.."</title>
-      <link>https://debeste.de/633245/WhatsApp-Familienchat-Mama-Heute-kommen-Tante-Gabi-amp-</link>
-      <guid isPermaLink="false">https://debeste.de/633245/WhatsApp-Familienchat-Mama-Heute-kommen-Tante-Gabi-amp-</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:15 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein fingierter Familienchat zeigt die kreativen Ausreden der Verwandtschaft, wenn ein ungeliebtes Familientreffen bevorsteht.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Gestern gab es eine Blutspendenaktion bei uns im Ort und..</title>
-      <link>https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und-</link>
-      <guid isPermaLink="false">https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und-</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:15 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Ein kleiner lokaler Ortsvergleich zwischen einer Blutspendeaktion und dem anschliessenden Angebot des örtlichen Metzgers sorgt für skurrile Gedanken.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fun] Nachdem er den Friedensnobelpreis...</title>
-      <link>https://debeste.de/632879/Nachdem-er-den-Friedensnobelpreis-</link>
-      <guid isPermaLink="false">https://debeste.de/632879/Nachdem-er-den-Friedensnobelpreis-</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:15 +0000</pubDate>
-      <category>Fun</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Eine satirische Anekdote greift die Reaktionen auf verpasste internationale Auszeichnungen und politische Reaktionen auf.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Mit Mühe gegen Dorfclub: Hertha erreicht Pokal-Achtelfinale | STERN.de</title>
-      <link>https://www.stern.de/gesellschaft/regional/berlin-brandenburg/dfb-pokal--mit-muehe-gegen-dorfclub--hertha-erreicht-pokal-achtelfinale-38466772.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4920873774678265708</guid>
-      <pubDate>Wed, 28 Oct 2026 23:26:47 +0000</pubDate>
+      <title>[Fußball] Hertha kocht Dorfklub ab: Dresden haut Schalke raus - VfB und SCF stechen in letzter Minute zu - Ntv</title>
+      <link>https://www.n-tv.de/sport/fussball/Dresden-haut-Schalke-raus-VfB-und-SCF-stechen-in-letzter-Minute-id31469647.html</link>
+      <guid isPermaLink="false">https://www.n-tv.de/sport/fussball/Dresden-haut-Schalke-raus-VfB-und-SCF-stechen-in-letzter-Minute-id31469647.html</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
       <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Gegen wackere Amateure aus Jeddeloh musste Hertha BSC Geduld beweisen, bevor der Einzug in die nächste Pokalrunde feststand.</p>]]></description>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Der VfB Stuttgart und der SC Freiburg jubeln ganz spät, während Hertha BSC sich bei einem Dorfklub keine Blöße gibt und Schalke gegen Dresden ausscheidet.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Dynamo wirft Schalke aus dem Pokal – Undav rettet Stuttgart, Krimi in Freiburg</title>
-      <link>https://www.transfermarkt.de/dynamo-wirft-schalke-aus-dem-pokal-undav-rettet-stuttgart-krimi-in-freiburg/view/news/489660</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/dynamo-wirft-schalke-aus-dem-pokal-undav-rettet-stuttgart-krimi-in-freiburg/view/news/489660</guid>
-      <pubDate>Wed, 28 Oct 2026 19:05:26 +0000</pubDate>
+      <title>[Fußball] Hertha erledigt Pflichtaufgabe gegen Jeddeloh II - DFB-Pokal - ZDF</title>
+      <link>https://www.zdf.de/video/kurzfassungen/saison-2026-27-fussball-livestreams-highlights-ergebnisse-100/ssv-jeddeloh-2-hertha-bsc-2-runde-zusammenfassung-100-</link>
+      <guid isPermaLink="false">https://www.zdf.de/video/kurzfassungen/saison-2026-27-fussball-livestreams-highlights-ergebnisse-100/ssv-jeddeloh-2-hertha-bsc-2-runde-zusammenfassung-100-</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Das Achtelfinale findet ohne den SSV Jeddeloh II statt, da dem Regionalligisten gegen Hertha BSC nach einer Stunde die Puste ausgeht.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 1. FC Kaiserslautern bejubelt verrücktes Comeback von Ivan Prtajin</title>
+      <link>https://www.transfermarkt.de/prtajin-feiert-umjubeltes-fck-comeback-nach-neun-monaten-leidenszeit-das-ist-verruckt-quot-/view/news/489689</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/prtajin-feiert-umjubeltes-fck-comeback-nach-neun-monaten-leidenszeit-das-ist-verruckt-quot-/view/news/489689</guid>
+      <pubDate>Thu, 29 Oct 2026 09:49:18 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Neben Herthas Weiterkommen sorgten unter anderem Dynamo Dresdens Sieg gegen Schalke und späte Entscheidungen für Spannung im DFB-Pokal.</p>]]></description>
+      <description><![CDATA[<p>Ivan Prtajin vom 1. FC Kaiserslautern hat im DFB-Pokal ein spektakuläres Comeback gefeiert, nachdem er neune Monate lang wegen eines Achillessehnenrisses gefehlt hatte.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Bayern-Trainer Kompany aus Krankenhaus entlassen – „Gefunden, was es ist“</title>
-      <link>https://www.transfermarkt.de/bayern-trainer-kompany-aus-krankenhaus-entlassen-man-hat-gefunden-was-es-isthtml/view/news/489667</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/bayern-trainer-kompany-aus-krankenhaus-entlassen-man-hat-gefunden-was-es-isthtml/view/news/489667</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:15 +0000</pubDate>
+      <title>[Fußball] 1. FC Köln: Ex-Profi Ismail Jakobs tritt mit 27 aus Senegal-Nationalelf zurück</title>
+      <link>https://www.transfermarkt.de/jakobs-tritt-mit-27-aus-senegals-nationalteam-zuruck-mehr-wertvolle-zeit-fur-mutig-quot-/view/news/489681</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/jakobs-tritt-mit-27-aus-senegals-nationalteam-zuruck-mehr-wertvolle-zeit-fur-mutig-quot-/view/news/489681</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Nach rund einer Woche stationärem Aufenthalt konnte Bayern-Coach Vincent Kompany das Krankenhaus wieder verlassen.</p>]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Werder Bremen: Leihgabe Mbangula mit Dreierpack bei Startelfdebüt für Bologna</title>
-      <link>https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</guid>
-      <pubDate>Wed, 28 Oct 2026 19:37:17 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[<p>Werders Leihspieler Samuel Mbangula sorgte bei seinem ersten Startelfeinsatz für den FC Bologna in Mailand mit drei Toren für Furore.</p>]]></description>
+      <description><![CDATA[<p>Der ehemalige Kölner Profi Ismail Jakobs hat für eine große Überraschung gesorgt und mit gerade einmal 27 Jahren seinen Rücktritt aus der senegalesischen Nationalmannschaft erklärt.</p>]]></description>
     </item>
     <item>
       <title>[Games] Dark Messiah: Fan-Remaster kommt kostenlos auf Steam - Gagadget.de</title>
@@ -168,7 +132,7 @@
       <pubDate>Wed, 28 Oct 2026 17:13:18 +0000</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Mit offizieller Zustimmung von Ubisoft veröffentlichen Fans eine kostenlose Community-Edition des Kultspiels Dark Messiah of Might and Magic auf Steam.</p>]]></description>
+      <description><![CDATA[<p>Dark Messiah of Might and Magic bekommt mit Zustimmung von Ubisoft eine kostenlose Neuauflage von Fans spendiert. Die sogenannte „Community Edition“ bringt unter anderem aktualisierte Modi und eine verbesserte Source-Engine mit.</p>]]></description>
     </item>
     <item>
       <title>[Games] Dark Messiah kommt zurück: Kultspiel bekommt Gratis-Neuauflage - PC Games</title>
@@ -177,79 +141,79 @@
       <pubDate>Wed, 28 Oct 2026 16:27:23 +0000</pubDate>
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Die Neuauflage bringt neben Kampagnen-Überarbeitungen auch Multiplayer- und Koop-Modi in einer von der Community entwickelten Version zurück.</p>]]></description>
+      <description><![CDATA[<p>Das Kultspiel erhält noch im Laufe des Jahres 2026 eine umfangreiche Neuauflage, die in enger Zusammenarbeit zwischen Fans und Ubisoft entwickelt wurde.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Threads of Time - Release: Summer 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60458</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60458</guid>
-      <pubDate>Wed, 28 Oct 2026 15:07:28 +0000</pubDate>
+      <title>[Games] Witchbrook - Release Date: January 28, 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60462</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60462</guid>
+      <pubDate>Thu, 29 Oct 2026 06:52:16 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Das zeitumspannende, rundenbasierte JRPG Threads of Time hat mit dem Sommer 2027 ein offizielles Veröffentlichungsfenster erhalten.</p>]]></description>
+      <description><![CDATA[<p>Die immersive Lebenssimulation *Witchbrook* für bis zu vier Spieler wurde offiziell für den 28. Januar 2027 angekündigt. Spieler schlüpfen darin in die Rolle einer Huze in der geschäftigen Küstenstadt Mossport.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Cyberpunk 2077 - Edgerunners 2 Update released</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60456</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60456</guid>
-      <pubDate>Wed, 28 Oct 2026 07:57:32 +0000</pubDate>
+      <title>[Games] Vampire Tactics - Announced</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60461</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60461</guid>
+      <pubDate>Thu, 29 Oct 2026 06:47:02 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Cyberpunk 2077 erhält ein umfangreiches Update, das Inhalte und Extras basierend auf der Anime-Serie mitbringt.</p>]]></description>
+      <description><![CDATA[<p>Mit *Vampire Tactics* wurde ein rasanter taktischer Roguelite in einer düsteren Fantasiewelt enthüllt. Darin verwandeln Spieler Sterbliche in mächtige Vampire und bauen ihre eigene Gefolgschaft auf.</p>]]></description>
     </item>
     <item>
-      <title>[Games] Gut bewertete Fantasy-Strategie erstmals für unter 6 Euro auf Steam - Notebookcheck</title>
-      <link>https://www.notebookcheck.com/Gut-bewertete-Fantasy-Strategie-erstmals-fuer-unter-6-Euro-auf-Steam.1436127.0.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6828331476243612358</guid>
-      <pubDate>Wed, 28 Oct 2026 12:55:14 +0000</pubDate>
+      <title>[Games] Phantom Blade Zero - Released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60460</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60460</guid>
+      <pubDate>Thu, 29 Oct 2026 06:38:18 +0000</pubDate>
       <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[<p>Das von Fans gefeierte Strategiespiel Songs of Conquest ist derzeit stark rabattiert erstmals für unter sechs Euro auf Steam erhältlich.</p>]]></description>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>Das Action-RPG *Phantom Blade Zero* ist erschienen und verbindet klassische Wuxia-Erzählungen mit rasanten Kämpfen auf Basis der Unreal Engine 5.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Microsoft hits 10 quarters of record-breaking revenue in a row</title>
-      <link>https://techcrunch.com/2026/10/28/microsoft-hits-10 quarters-of-record-breaking-revenue-in-a-row/</link>
-      <guid isPermaLink="false">https://techcrunch.com/2026/10/28/microsoft-hits-10 quarters-of-record-breaking-revenue-in-a-row/</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:16 +0000</pubDate>
+      <title>[Tech &amp; AI] Neues LLM: Gemini 4 Carbon ist Exploit-Experte</title>
+      <link>https://www.heise.de/news/Gemini-Argon-war-gestern-jetzt-kommt-Carbon-11503849.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Gemini-Argon-war-gestern-jetzt-kommt-Carbon-11503849.html</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Microsoft hat erneut Rekordzahlen für das Quartal vorgelegt und dank Cloud- und KI-Wachstum ein deutliches Umsatzplus verzeichnet.</p>]]></description>
+      <description><![CDATA[<p>Nur vier Wochen nach der Freigabe von Gemini Argon schickt Google mit Gemini 4 Carbon bereits den nächsten Spitzenreiter ins Rennen. Das Modell zeigt starke Verbesserungen bei Programmierung und Cybersicherheit.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Microsoft erzielt zehn Milliarden Dollar Umsatz mit OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz-</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz-</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Microsoft hat im abgelaufenen Quartal zehn Milliarden Dollar Umsatz im Rahmen kommerzieller Partnerschaften mit OpenAI erzielt. Der Gesamtumsatz des Tech-Giganten kletterte auf 92,3 Milliarden Dollar.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Teure „Power einer neuen Ära“: Apples 33.329-Euro-Mac-Studio ist da</title>
+      <link>https://www.heise.de/news/Teure-Power-einer-neuen-Aera-Apples-33-329-Euro-Mac-Studio-ist-da-11504379.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Teure-Power-einer-neuen-Aera-Apples-33-329-Euro-Mac-Studio-ist-da-11504379.html</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:51 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Apple bietet ab sofort den wohl teuersten Mac aller Zeiten an, der vor allem für Anwender lokaler KI-Modelle konzipiert wurde. Der Preis für das High-End-Gerät liegt bei rund 33.329 Euro.</p>]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Gut getarnt: Automatisch startender Wurm bei GitHub ist schwer zu finden</title>
+      <link>https://www.heise.de/news/Angreifer-kapern-42-GitHub-Repositories-fuer-npm-Wurm-Kampagne-testmetest-11503164.html</link>
+      <guid isPermaLink="false">https://www.heise.de/news/Angreifer-kapern-42-GitHub-Repositories-fuer-npm-Wurm-Kampagne-testmetest-11503164.html</guid>
+      <pubDate>Thu, 29 Oct 2026 11:36:52 +0000</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>IT-Forscher von JFrog haben Schadcode in 42 GitHub-Repositories entdeckt, der sich automatisch über KI-Assistenten oder bei der Entwicklungsarbeit verbreitet.</p>]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Gemini 4 Carbon: Die neue Nummer 1 schlägt Claude Opus 5.5</title>
       <link>https://www.all-ai.de/news/news26top/gemini-4-carbon-nummer-1-</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/gemini-4-carbon-nummer-1-</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:16 +0000</pubDate>
+      <pubDate>Thu, 29 Oct 2026 11:36:52 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Google hat mit Gemini 4 Carbon ein neues Sprachmodell veröffentlicht, das in Benchmarks bei Programmierung und Cybersicherheit stark abschneidet.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Touch me: Apple MacBook Pro erstmals mit OLED-Touchscreen</title>
-      <link>https://www.heise.de/news/Touch-me-Apple-MacBook-Pro-erstmals-mit-OLED-Touchscreen-11503623.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/Touch-me-Apple-MacBook-Pro-erstmals-mit-OLED-Touchscreen-11503623.html</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:16 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Apple stattet das neue MacBook Pro erstmals mit einem OLED-Touchscreen, Tandem-OLED und der Dynamic Island aus.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Google expands AI Search ads globally as core ad growth slows</title>
-      <link>https://techcrunch.com/2026/10/28/google-expands-ai-search-ads-globally-as-core-ad-growth-slows/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182884</guid>
-      <pubDate>Wed, 28 Oct 2026 21:48:37 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[<p>Alphabet hat starke Quartalszahlen gemeldet und treibt weltweit die Integration von KI-gestützten Werbeanzeigen in der Suche voran.</p>]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] UEFI-Lücke: Kritischer Bug versteckt sich seit 16 Jahren in vielen Servern</title>
-      <link>https://www.heise.de/news/UEFI-Luecke-Kritischer-Bug-versteckt-sich-seit-16-Jahren-in-vielen-Servern-11503527.html</link>
-      <guid isPermaLink="false">https://www.heise.de/news/UEFI-Luecke-Kritischer-Bug-versteckt-sich-seit-16-Jahren-in-vielen-Servern-11503527.html</guid>
-      <pubDate>Thu, 29 Oct 2026 06:02:16 +0000</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>Eine langjährig unentdeckte Sicherheitslücke in der UEFI-Firmware von Netzwerkservern ermöglicht unter Umständen die Ausführung von Schadcode.</p>]]></description>
+      <description><![CDATA[<p>Googles neues KI-Modell erreicht 59 Punkte im Artificial Analysis Intelligence Index 5.0 und übertrifft damit die Konkurrenzmodelle. Ausgewählte Experten für Cyberabwehr erhalten vorab exklusiven Zugang.</p>]]></description>
     </item>
   </channel>
 </rss>

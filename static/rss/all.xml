@@ -5,9 +5,432 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 06:01:20 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 11:36:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Berlin] Deutschland Cup: Rankel nominiert drei Debütanten um Jonas Neffin</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/deutschland-cup-deb-nationalmannschaft-nominierung-jonas-neffin.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/deutschland-cup-deb-nationalmannschaft-nominierung-jonas-neffin.html</guid>
+      <pubDate>Thu, 29 Oct 2026 11:33:40 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Angriffsversuche auf junge Lücke in Oracle E-Business-Suite</title>
+      <link>https://www.heise.de/news/Angriffsversuche-auf-junge-Luecke-in-Oracle-E-Business-Suite-11504666.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504666</guid>
+      <pubDate>Thu, 29 Oct 2026 11:29:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Oracle hat mit dem Oktober-CPU auch Lücken in der E-Business-Suite geschlossen. Nun sehen IT-Forscher erste Angriffsversuche.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Artificial Analysis Index v5: Mehr geheime KI-Benchmarks</title>
+      <link>https://www.heise.de/news/Artificial-Analysis-Index-v5-Mehr-geheime-KI-Benchmarks-11504417.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504417</guid>
+      <pubDate>Thu, 29 Oct 2026 11:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Artificial Analysis hat seinen KI-Benchmark-Index aktualisiert. Version 5 enthält neue Tests und arbeitet erstmals mit 60 Prozent nicht öffentlichen Aufgaben.]]></description>
+    </item>
+    <item>
+      <title>[Fun] Stimmt, du hattest recht...</title>
+      <link>https://debeste.de/633176/Stimmt,-du-hattest-recht</link>
+      <guid isPermaLink="false">https://debeste.de/633176/Stimmt,-du-hattest-recht</guid>
+      <pubDate>Thu, 29 Oct 2026 11:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Stimmt, du hattest recht... Menschen landen tatsächlich nicht auf ihren Füßen.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Eintracht Frankfurt: Christoph Spycher sagt ab, verlässt aber Young Boys</title>
+      <link>https://www.transfermarkt.de/sportchef-spycher-kundigt-abschied-von-young-boys-an-guter-zeitpunkt-um-loszulassen-quot-/view/news/489693</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/sportchef-spycher-kundigt-abschied-von-young-boys-an-guter-zeitpunkt-um-loszulassen-quot-/view/news/489693</guid>
+      <pubDate>Thu, 29 Oct 2026 11:07:24 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der zwischenzeitlich bei Eintracht Frankfurt gehandelte Christoph Spycher wird sein Amt als Sportvorstand beim BSC Young Boys mit Ablauf des Transferfensters im Sommer 2027 abgeben. Das ist das...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Bausteine für die Entstehung des Lebens kamen wohl nicht von Kometen</title>
+      <link>https://www.heise.de/news/Bausteine-fuer-die-Entstehung-des-Lebens-kamen-wohl-nicht-von-Kometen-11504375.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504375</guid>
+      <pubDate>Thu, 29 Oct 2026 11:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Seit einem Jahrhundert gelten Kometen als mögliche Quelle für die molekularen Bausteine, aus denen das Leben entstanden ist. Das muss wohl revidiert werden.]]></description>
+    </item>
+    <item>
+      <title>[Fun] Damals / Heute..</title>
+      <link>https://debeste.de/633312/Damals-Heute</link>
+      <guid isPermaLink="false">https://debeste.de/633312/Damals-Heute</guid>
+      <pubDate>Thu, 29 Oct 2026 10:59:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Damals / Heute]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Gut getarnt: Automatisch startender Wurm bei GitHub ist schwer zu finden</title>
+      <link>https://www.heise.de/news/Angreifer-kapern-42-GitHub-Repositories-fuer-npm-Wurm-Kampagne-testmetest-11503164.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503164</guid>
+      <pubDate>Thu, 29 Oct 2026 10:57:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[JFrog hat Schadcode in 42 GitHub-Repositories entdeckt. Dieser startet automatisch durch KI-Assistenten oder bei der Arbeit an Projekten.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Jürgen Klinsmann: Doppelter Bandscheibenvorfall als FC Bayern-Trainer</title>
+      <link>https://www.transfermarkt.de/klinsmann-doppelter-bandscheibenvorfall-bei-bayern-nachts-sport-tagsuber-nickerchen/view/news/489684</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/klinsmann-doppelter-bandscheibenvorfall-bei-bayern-nachts-sport-tagsuber-nickerchen/view/news/489684</guid>
+      <pubDate>Thu, 29 Oct 2026 10:45:17 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Die beste Nachricht ereilte den FC Bayern am Mittwochabend nicht auf dem Platz, sondern daneben: Cheftrainer Vincent Kompany ist nach knapp einer Woche aus dem Krankenhaus entlassen worden. Eine...]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Werder Bremen: Leihgabe Mbangula mit Dreierpack bei Startelfdebüt für Bologna</title>
+      <link>https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</guid>
+      <pubDate>Thu, 29 Oct 2026 10:43:52 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der Artikel erschien in erster Fassung am 28. Oktober um 20:58 Uhr und wurde um Reaktionen ergänzt. Werder Bremens Leihgabe Samuel Mbangula (22) hat bei seinem ersten Startelfeinsatz für...]]></description>
+    </item>
+    <item>
+      <title>[Fun] Nur der begabteste Mediziner...</title>
+      <link>https://debeste.de/633124/Nur-der-begabteste-Mediziner</link>
+      <guid isPermaLink="false">https://debeste.de/633124/Nur-der-begabteste-Mediziner</guid>
+      <pubDate>Thu, 29 Oct 2026 10:40:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Nur der begabteste Mediziner kann einen Patienten abhören, ohne sein Stethoskop im Ohr zu haben.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Teure „Power einer neuen Ära“: Apples 33.329-Euro-Mac-Studio ist da</title>
+      <link>https://www.heise.de/news/Teure-Power-einer-neuen-Aera-Apples-33-329-Euro-Mac-Studio-ist-da-11504379.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504379</guid>
+      <pubDate>Thu, 29 Oct 2026 10:32:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wie von Apple angekündigt kann man nun den wohl teuersten Mac aller Zeiten erwerben. Hauptzielgruppe: Anwender lokaler KI.]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] FCA erzielt gerichtliche Einigung mit Krypto-Börse HTX</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/fca-erzielt-gerichtliche-einigung-mit-kryptoborse-htx-93CH-3731561</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/fca-erzielt-gerichtliche-einigung-mit-kryptoborse-htx-93CH-3731561</guid>
+      <pubDate>Thu, 29 Oct 2026 10:30:17 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Fun] Steht so im Rezept..</title>
+      <link>https://debeste.de/633258/Steht-so-im-Rezept</link>
+      <guid isPermaLink="false">https://debeste.de/633258/Steht-so-im-Rezept</guid>
+      <pubDate>Thu, 29 Oct 2026 10:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Windows-Update-Vorschau bringt „~\“ für alle und viele Verbesserungen</title>
+      <link>https://www.heise.de/news/Windows-Update-Vorschau-Tilde-fuer-alle-und-kleine-Verbesserungen-11504321.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504321</guid>
+      <pubDate>Thu, 29 Oct 2026 10:19:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Anfang des Monats war der Pfad „~\“ in der Insider-Vorschau, nun erreicht er alle Windows-Nutzer. Weitere Verbesserungen kommen.]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Explosion auf Balkon eines Mehrfamilienhauses</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1732557.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1732557.php</guid>
+      <pubDate>Thu, 29 Oct 2026 10:09:21 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Tempelhof-Schöneberg** – In der vergangenen Nacht kam es in Tempelhof zu einer Explosion auf dem Balkon eines Mehrfamilienhauses. Nach bisherigen Erkenntnissen nahmen eine 67-jährige Anwohnerin und ein 16-jähriger Anwohner gegen 0:30 Uhr in der Ullsteinstraße einen lauten Knall wahr, der von einer Detonation auf...]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Schalke in der Krise? Schwächste Offensive, in Formtabelle hinten</title>
+      <link>https://www.transfermarkt.de/schalke-blockt-krisen-frage-ab-schwachste-offensive-der-top-ligen-in-formtabelle-hinten/view/news/489690</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/schalke-blockt-krisen-frage-ab-schwachste-offensive-der-top-ligen-in-formtabelle-hinten/view/news/489690</guid>
+      <pubDate>Thu, 29 Oct 2026 10:03:48 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Ist die Krise da beim FC Schalke 04 oder noch nicht? In den Mund wollten die Verantwortlichen das Wort nach der 0:2-Pokalschlappe bei Zweitligist Dynamo Dresden. „Es war klar, dass schwere...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Microsoft erzielt zehn Milliarden Dollar Umsatz mit OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</guid>
+      <pubDate>Thu, 29 Oct 2026 09:58:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft erzielt im Quartal zehn Milliarden Dollar Umsatz mit OpenAI. Der Gesamtumsatz steigt auf 92,3 Milliarden Dollar, der Nettogewinn auf 36,6 Milliarden Dollar. Microsoft Cloud wächst um 30 Prozent, Azure um 48 Prozent. Die Zahl der täglichen Copilot-Nutzer steigt gegenüber dem Vorquartal um fast 50 Prozent. M...]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 1. FC Kaiserslautern bejubelt verrücktes Comeback von Ivan Prtajin</title>
+      <link>https://www.transfermarkt.de/prtajin-feiert-umjubeltes-fck-comeback-nach-neun-monaten-leidenszeit-das-ist-verruckt-quot-/view/news/489689</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/prtajin-feiert-umjubeltes-fck-comeback-nach-neun-monaten-leidenszeit-das-ist-verruckt-quot-/view/news/489689</guid>
+      <pubDate>Thu, 29 Oct 2026 09:49:18 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Ivan Prtajin vom 1. FC Kaiserslautern hat im DFB-Pokal ein spektakuläres Comeback hingelegt. Neun Monate lang fehlte der 30 Jahre alte Kroate wegen eines Achillessehnenrisses. Beim 2:0...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Volkswagen meldet 5,82 Milliarden Euro Quartalsverlust</title>
+      <link>https://www.heise.de/news/Volkswagen-meldet-5-82-Milliarden-Euro-Quartalsverlust-11504313.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504313</guid>
+      <pubDate>Thu, 29 Oct 2026 09:36:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Milliarden-Abschreibung auf Porsche, schwache China-Geschäfte und teurer Konzernumbau: Bei Volkswagen läuft es noch schlechter als erwartet.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Samsung gibt groben Ausblick auf Galaxy S27 und Produktroadmap 2027</title>
+      <link>https://www.heise.de/news/Samsung-gibt-groben-Ausblick-auf-Galaxy-S27-und-Produktroadmap-2027-11504263.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504263</guid>
+      <pubDate>Thu, 29 Oct 2026 09:33:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Samsung hat im Zuge der Veröffentlichung der Quartalszahlen einen Ausblick auf das Galaxy S27 und eine grobe Produktroadmap für das Jahr 2027 gewährt.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Ubuntu Core Desktop ist zurück – fürs Web, Entwickler und Gamer</title>
+      <link>https://www.heise.de/news/Ubuntu-Core-Desktop-ist-zurueck-fuers-Web-Entwickler-und-Gamer-11504219.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504219</guid>
+      <pubDate>Thu, 29 Oct 2026 09:25:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Canonical belebt den Ubuntu Core Desktop wieder: Mit neuer Core-26-Basis und modularen Snaps soll das System langfristig den Standard-Desktop ablösen.]]></description>
+    </item>
+    <item>
+      <title>[Fun] Ich habe zwar auch nicht gerade viel Geduld..</title>
+      <link>https://debeste.de/633363/Ich-habe-zwar-auch-nicht-gerade-viel-Geduld</link>
+      <guid isPermaLink="false">https://debeste.de/633363/Ich-habe-zwar-auch-nicht-gerade-viel-Geduld</guid>
+      <pubDate>Thu, 29 Oct 2026 09:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Racing Straßburg bindet Marokkos WM-Teilnehmer Samir El Mourabet</title>
+      <link>https://www.transfermarkt.de/racing-strassburg-bindet-marokkos-wm-teilnehmer-el-mourabet-einziges-eigengewachs/view/news/489683</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/racing-strassburg-bindet-marokkos-wm-teilnehmer-el-mourabet-einziges-eigengewachs/view/news/489683</guid>
+      <pubDate>Thu, 29 Oct 2026 09:11:29 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Racing Straßburg hat den Vertrag von Marokkos WM-Teilnehmer Samir El Mourabet (21) vorzeitig um ein Jahr verlängert. Der Mittelfeldspieler unterschrieb ein neues Arbeitspapier bis zum...]]></description>
+    </item>
+    <item>
+      <title>[Fun] Als Kind hatte ich drei große Träume...</title>
+      <link>https://debeste.de/633121/Als-Kind-hatte-ich-drei-gro-e-Tr-ume</link>
+      <guid isPermaLink="false">https://debeste.de/633121/Als-Kind-hatte-ich-drei-gro-e-Tr-ume</guid>
+      <pubDate>Thu, 29 Oct 2026 08:59:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Als Kind hatte ich drei große Träume: Arbeiten gehen! Heiraten! Unabhängig sein! Heute weiß ich: Ich war schon als Kind nicht ganz dicht.]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Wie Delay Sports das Leben von Andreas Schild verändert hat</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/berlin-fussball-delay-sports-eli-nerlich-andreas-schild-influencer.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/berlin-fussball-delay-sports-eli-nerlich-andreas-schild-influencer.html</guid>
+      <pubDate>Thu, 29 Oct 2026 08:54:00 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Andreas Schild war viele Jahre Trainer einer klassischen Kreisliga-Truppe. Doch dann kam Influencer Elias Nerlich mit Delay Sports und veränderte Schilds Leben. Nun soll der Berliner ein Fußball-Imperium aufbauen - in Teilzeit.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] „Tangiert gegen Null“: ProSiebenSat.1 schaltet Teletext ab</title>
+      <link>https://www.heise.de/news/ProSiebenSat-1-stellt-Teletext-Anfang-2027-ein-11504083.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504083</guid>
+      <pubDate>Thu, 29 Oct 2026 08:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[ProSiebenSat.1 stellt den Teletext seiner Sender Anfang 2027 ein. Kaum jemand nutze ihn noch. Untertitel gibt es künftig auf anderem Weg.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] 1. FC Köln: Ex-Profi Ismail Jakobs tritt mit 27 aus Senegal-Nationalelf zurück</title>
+      <link>https://www.transfermarkt.de/jakobs-tritt-mit-27-aus-senegals-nationalteam-zuruck-mehr-wertvolle-zeit-fur-mich-quot-/view/news/489681</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/jakobs-tritt-mit-27-aus-senegals-nationalteam-zuruck-mehr-wertvolle-zeit-fur-mich-quot-/view/news/489681</guid>
+      <pubDate>Thu, 29 Oct 2026 08:29:35 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der Ex-Kölner Ismail Jakobs hat für eine große Überraschung gesorgt. Mit gerade einmal 27 Jahren tritt der Linksverteidiger aus der senegalesischen Nationalmannschaft...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Meta startet KI-Tamagotchi mit eigenem Tagebuch</title>
+      <link>https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</guid>
+      <pubDate>Thu, 29 Oct 2026 08:25:44 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Meta hat Waddle World für Android und iOS auf den Philippinen veröffentlicht. Ein virtuelles Haustier verwandelt Erzählungen in illustrierte Tagebucheinträge und verschickt Postkarten. Die kostenlose App richtet sich an Erwachsene und bietet kurze Minispiele. Das Tagebuch ist gegenüber anderen Nutzern standardmäßig ...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Valve zu KI-Klonen: Community und Updates sollen Indie-Spiele schützen</title>
+      <link>https://www.heise.de/news/Valve-zu-KI-Klonen-Community-und-Updates-sollen-Indie-Spiele-schuetzen-11504029.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504029</guid>
+      <pubDate>Thu, 29 Oct 2026 08:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Indie-Entwickler fürchten KI-Klone ihrer Spiele und Schrott-Demos beim Next Fest. Valve will KI auf Steam aber nicht verbieten.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] GitHub Copilot koordiniert jetzt KI-Agenten über mehrere Projekte</title>
+      <link>https://www.all-ai.de/news/news26/github-agenten-projekte</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/github-agenten-projekte</guid>
+      <pubDate>Thu, 29 Oct 2026 08:14:25 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Copilot-Projekte koordinieren parallele KI-Agenten über mehrere Repositories hinweg. Copilot Fusion wählt und kombiniert KI-Modelle von Anthropic und OpenAI. Fusion Max erreicht 60 Punkte im Coding Agent Index und kostet im Test 5,59 Dollar pro Aufgabe. GitHub-Enterprise-Kunden zahlen für verbrauchte KI-Credits stat...]]></description>
+    </item>
+    <item>
+      <title>[Fun] "Die arabische, die islamische Kultur, Religion ist nicht.."</title>
+      <link>https://debeste.de/633378/Die-arabische,-die-islamische-Kultur,-Religion-ist-nicht</link>
+      <guid isPermaLink="false">https://debeste.de/633378/Die-arabische,-die-islamische-Kultur,-Religion-ist-nicht</guid>
+      <pubDate>Thu, 29 Oct 2026 07:59:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[„Die arabische, die islamische Kultur, Religion ist nicht kompatibel mit unserem Land, nicht kompatibel mit unserer Demokratie. Wer was anderes sagt, lügt oder hat keine Ahnung.“ – Wolfgang Büschcher]]></description>
+    </item>
+    <item>
+      <title>[Fun] Halloween ist eine gruselige Zeit! Sogar der Kürbis hat ungebetene Untermieter!</title>
+      <link>https://debeste.de/633278/Halloween-ist-eine-gruselige-Zeit-Sogar-der-K-rbis-hat-ungebetene-Untermieter</link>
+      <guid isPermaLink="false">https://debeste.de/633278/Halloween-ist-eine-gruselige-Zeit-Sogar-der-K-rbis-hat-ungebetene-Untermieter</guid>
+      <pubDate>Thu, 29 Oct 2026 07:40:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Angriffe auf Linux- und VMware-ESX-Schwachstellen</title>
+      <link>https://www.heise.de/news/Angriffe-auf-Linux-und-VMware-ESX-Schwachstellen-11503947.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503947</guid>
+      <pubDate>Thu, 29 Oct 2026 07:34:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die IT-Sicherheitsbehörde CISA warnt vor Angriffen auf Lecks im Linux-Kernel und VMware ESX. Dieses Mal sind Hintergründe bekannt.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] „Du kannst die Hundescheiße aufheben“: Neues „GTA 6“-Gameplay in „South Park“</title>
+      <link>https://www.heise.de/news/GTA-6-Download-auf-der-Playstation-5-ist-offenbar-210-GByte-gross-11503967.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503967</guid>
+      <pubDate>Thu, 29 Oct 2026 07:32:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Download von „GTA 6“ ist auf der Playstation 5 offenbar 210 GByte groß. Rockstar wirbt derweil in South Park für sein Spiel – mit Hundekot.]]></description>
+    </item>
+    <item>
+      <title>[Fun] Wenn du im Navi die kürzere Route gewählt hast...</title>
+      <link>https://debeste.de/633268/Wenn-du-im-Navi-die-k-rzere-Route-gew-hlt-hast</link>
+      <guid isPermaLink="false">https://debeste.de/633268/Wenn-du-im-Navi-die-k-rzere-Route-gew-hlt-hast</guid>
+      <pubDate>Thu, 29 Oct 2026 07:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Wenn du im Navi die kürzere Route gewählt hast.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] FC Bayern: Wann Kompany zurückkehren soll – Kane-Vertrag in Detailarbeit</title>
+      <link>https://www.transfermarkt.de/-soll-sich-zeit-nehmen-quot-wie-bayern-mit-kompany-plant-kanes-vertrag-in-detailarbeit/view/news/489678</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/-soll-sich-zeit-nehmen-quot-wie-bayern-mit-kompany-plant-kanes-vertrag-in-detailarbeit/view/news/489678</guid>
+      <pubDate>Thu, 29 Oct 2026 07:15:33 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Vincent Kompany soll sich nach seiner Entlassung aus dem Krankenhaus zunächst komplett erholen, bevor er beim FC Bayern München wieder seinen Job als Trainer ausübt. Das war eine...]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Samsung erzielt Rekordgewinn dank KI-Boom</title>
+      <link>https://www.heise.de/news/Samsung-erzielt-Rekordgewinn-dank-KI-Boom-11503953.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503953</guid>
+      <pubDate>Thu, 29 Oct 2026 07:08:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Südkoreas größtes Unternehmen Samsung Electronics hat seinen Betriebsgewinn fast verneunfacht. Die Anleger reagieren dennoch enttäuscht.]]></description>
+    </item>
+    <item>
+      <title>[Games] Dark Messiah - Community Edition</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60463</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60463</guid>
+      <pubDate>Thu, 29 Oct 2026 07:02:57 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Community Edition of Dark Messiah of Might & Magic is coming to Steam: Dark Messiah: Community Edition Campaign Reveal Trailer Revisit the genre-defying Action-RPG set in the Might & Magic® Universe with an updated Source™ engine, brand new game modes, and an expandable framework built by the community, for the ...]]></description>
+    </item>
+    <item>
+      <title>[Games] Witchbrook - Release Date: January 28, 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60462</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60462</guid>
+      <pubDate>Thu, 29 Oct 2026 06:52:16 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The immersive sim Witchbrook will be released on January 28, 2027: Witchbrook - Release Date Trailer Discover magic and mystery in Witchbrook, a spellbinding witch life-sim for up to 4-players! Start your life as the newest resident witch in the bustling seaside town of Mossport....]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Langsameres Wachstum im Google-Kerngeschäft alarmiert Börse</title>
+      <link>https://www.heise.de/news/Langsameres-Wachstum-im-Google-Kerngeschaeft-alarmiert-Boerse-11503941.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503941</guid>
+      <pubDate>Thu, 29 Oct 2026 06:49:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Geschäft von Google wächst weiter – aber nicht mehr so schnell wie noch kürzlich. Anleger schicken die Aktie auf Talfahrt.]]></description>
+    </item>
+    <item>
+      <title>[Games] Vampire Tactics - Announced</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60461</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60461</guid>
+      <pubDate>Thu, 29 Oct 2026 06:47:02 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The roguelike Vampire Tactics has been announced: Vampire Tactics Reveal Trailer Vampire Tactics is a fast-paced tactical roguelite set in a dark fantasy world. Turn mortals into powerful vampires and make them join your ranks. Capture castles,...]]></description>
+    </item>
+    <item>
+      <title>[Games] Phantom Blade Zero - Released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60460</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60460</guid>
+      <pubDate>Thu, 29 Oct 2026 06:38:18 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The action RPG Phantom Blade Zero has been released: Phantom Blade Zero - Official Launch Trailer S-GAME presents Phantom Blade Zero, a fusion of classic Wuxia storytelling and exhilarating action powered by Unreal Engine 5. You play as Soul, a warrior with only sixty-six days left to live....]]></description>
+    </item>
+    <item>
+      <title>[Finanzen &amp; Coins] Bitcoin gibt auf 80.000 US-Dollar nach: Fed-Falken und Tech-Zahlen drücken Krypto</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-fallt-auf-80000-falkenhafte-fed-und-gemischte-techbilanzen-belasten-3730484</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-fallt-auf-80000-falkenhafte-fed-und-gemischte-techbilanzen-belasten-3730484</guid>
+      <pubDate>Thu, 29 Oct 2026 06:37:45 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>[Fun] Manche Dinge sind einfach da, und man hinterfragt ihr..</title>
+      <link>https://debeste.de/633274/Manche-Dinge-sind-einfach-da,-und-man-hinterfragt-ihr</link>
+      <guid isPermaLink="false">https://debeste.de/633274/Manche-Dinge-sind-einfach-da,-und-man-hinterfragt-ihr</guid>
+      <pubDate>Thu, 29 Oct 2026 06:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Manche Dinge sind einfach da, und man hinterfragt ihr Aussehen nicht. Doch manchmal sorgt der Zufall dafür, dass sich ihre wahre Bestimmung offenbart.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Apples Touch-Kehrtwende: Bloß keine zweite Touch Bar</title>
+      <link>https://www.heise.de/meinung/Apples-Touch-Kehrtwende-Bloss-keine-zweite-Touch-Bar-11503889.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503889</guid>
+      <pubDate>Thu, 29 Oct 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der iPhone-Konzern bringt Touch auf den Mac. Aber von einem vollen Bekenntnis dazu ist man noch weit entfernt, analysiert Malte Kirchner in Los Angeles.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Liverpool und Manchester City nach Elfer-Krimi im Viertelfinale</title>
+      <link>https://www.transfermarkt.de/liverpool-und-man-city-nach-elfer-krimi-im-viertelfinale-roses-bournemouth-in-hochform/view/news/489674</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/liverpool-und-man-city-nach-elfer-krimi-im-viertelfinale-roses-bournemouth-in-hochform/view/news/489674</guid>
+      <pubDate>Thu, 29 Oct 2026 05:59:14 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der FC Liverpool steht nach einem Krimi gegen den FC Chelsea im Viertelfinale des englischen Ligapokals. Die Reds gewannen am Mittwochabend mit 7:6 (1:1, 1:1) nach Elfmeterschießen. Die Tore...]]></description>
+    </item>
     <item>
       <title>[Fun] Ich habe gelernt, dass Blut nicht dicker...</title>
       <link>https://debeste.de/633104/Ich-habe-gelernt,-dass-Blut-nicht-dicker</link>
@@ -57,7 +480,7 @@
       <title>[Berlin] Vom Video-Studium zur KI: So prägt Technologie die Trainerbank</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/datenanaylsen-bundesliga-co-trainer-bildschirm-tablet-hendrik-weber.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/datenanaylsen-bundesliga-co-trainer-bildschirm-tablet-hendrik-weber.html</guid>
-      <pubDate>Thu, 29 Oct 2026 05:11:01 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 05:11:00 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Videoanalysen prägen bereits den Bundesliga-Alltag. Hinter den Kulissen wächst die Bedeutung von Daten, 3D-Tracking und KI. Glaubt man der Bundesliga, können Trainer künftig nicht nur analysieren, was war, sondern künftig auch Spielverläufe vorhersagen.]]></description>
@@ -270,10 +693,10 @@
       <description><![CDATA[Microsoft has never disclosed Azure's quarterly revenue in dollars. But for the first time, we can see just how close it is getting to besting the biggest competitor in the market, AWS.]]></description>
     </item>
     <item>
-      <title>[Berlin] Basketball Champions League: Alba Berlin schlägt Bilbao nach 13-Punkte-Rückstand</title>
+      <title>[Berlin] Champions League: Alba Berlin schlägt Bilbao nach klarem Rückstand</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/berlin-basketball-alba-bilbao-champions-league-spielbericht.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/berlin-basketball-alba-bilbao-champions-league-spielbericht.html</guid>
-      <pubDate>Wed, 28 Oct 2026 21:49:35 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:49:00 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[]]></description>
@@ -351,10 +774,10 @@
       <description><![CDATA[Jeddeloh II verliert gegen Hertha BSC. Sendung: NDR 2 | 28.10.2026 | 19:58 Uhr 1 Min | Verfügbar bis 27.10.2028. Beitrag teilen ...]]></description>
     </item>
     <item>
-      <title>[Berlin] Hertha zieht ins Pokal-Achtelfinale ein: Alles gelingt ihnen</title>
+      <title>[Berlin] Hertha zieht ins Pokal-Achtelfinale ein: (Fast) alles gelingt ihnen</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-jeddeloh-ii-hertha-bsc-analyse.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-jeddeloh-ii-hertha-bsc-analyse.html</guid>
-      <pubDate>Wed, 28 Oct 2026 21:04:36 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 21:04:00 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Herthas Pokalspiel bei Jeddeloh II erinnerte zeitweise eher an einen ratlosen Hausmeister als an den Zweitliga-Spitzenreiter. Warum der Sieg am Ende trotzdem typisch für die aktuelle Saison war und was den Ausflug nach Oldenburg so besonders machte.]]></description>
@@ -390,10 +813,10 @@
       <title>[Berlin] Mega-Support: Brekalo führt Hertha ins Pokal-Achtelfinale</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-hertha-bsc-jeddeloh-ll-dfb-pokal-audiostream-liveticker-spielbericht.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-hertha-bsc-jeddeloh-ll-dfb-pokal-audiostream-liveticker-spielbericht.html</guid>
-      <pubDate>Wed, 28 Oct 2026 20:45:39 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 20:45:00 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Hertha BSC hat seine Pflichtaufgabe im DFB-Pokal erfüllt. Die Berliner gewinnen verdient mit 2:0 gegen den SSV Jeddeloh II. Der Regionalligist wehrte sich lange tapfer, hatte aber auch durchaus Glück, dass Hertha das altbekannte Abschlussproblem auch im Pokal zeigte.]]></description>
+      <description><![CDATA[Hertha BSC hat seine Pflichtaufgabe im DFB-Pokal erfüllt. Die Berliner gewannen verdient mit 2:0 gegen den SSV Jeddeloh II. Der Regionalligist wehrte sich lange tapfer, hatte aber auch durchaus Glück, dass Hertha das altbekannte Abschlussproblem auch im Pokal zeigte.]]></description>
     </item>
     <item>
       <title>[Fun] Audrey Hepburn auf einer seltenen Privataufnahme aus dem Jahr 1956.</title>
@@ -459,15 +882,6 @@
       <description><![CDATA[Der Nord-Regionalligist verlor vor knapp 10.000 Zuschauern gegen Zweitligist Hertha BSC mit 0:2 (0:0). Von Martin Schneider. Es sollte einfach ...]]></description>
     </item>
     <item>
-      <title>[Fußball] Bayern-Trainer Kompany aus Krankenhaus entlassen – „Gefunden, was es ist“</title>
-      <link>https://www.transfermarkt.de/bayern-trainer-kompany-aus-krankenhaus-entlassen-man-hat-gefunden-was-es-ist-quot-/view/news/489667</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/bayern-trainer-kompany-aus-krankenhaus-entlassen-man-hat-gefunden-was-es-ist-quot-/view/news/489667</guid>
-      <pubDate>Wed, 28 Oct 2026 20:07:35 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Bayern-Trainer Vincent Kompany ist nach knapp einer Woche aus dem Krankenhaus entlassen worden. Dies sagte Sportvorstand Max Eberl vor dem DFB-Pokalspiel der Münchner gegen Zweitligist 1. FC...]]></description>
-    </item>
-    <item>
       <title>[Fußball] Hertha erledigt Pflichtaufgabe gegen Jeddeloh II - DFB-Pokal - ZDF</title>
       <link>https://www.zdf.de/video/kurzfassungen/saison-2026-27-fussball-livestreams-highlights-ergebnisse-100/ssv-jeddeloh-2-hertha-bsc-2-runde-zusammenfassung-100</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:9714070974651812606</guid>
@@ -522,15 +936,6 @@
       <description><![CDATA[Gebt ihr in Klamottenläden Trinkgeld??? Die Kassiererin hat gerade so eine Fresse gezogen, weil ich auf meine 2€ Rückgeld gewartet habe??? Ich gebe gerne Trinkgeld, aber seit wann ist das dort üblich? Zumal ich meine Sachen sogar selbst einpacken musste LMAOO]]></description>
     </item>
     <item>
-      <title>[Fußball] Werder Bremen: Leihgabe Mbangula mit Dreierpack bei Startelfdebüt für Bologna</title>
-      <link>https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/mbangula-gala-werder-leihgabe-trifft-bei-bologna-debut-so-oft-wie-fur-bremen-insgesamt/view/news/489664</guid>
-      <pubDate>Wed, 28 Oct 2026 19:37:17 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Werder Bremens Leihspieler Samuel Mbangula (22) hat bei seinem ersten Startelfeinsatz für Bologna eine Torgala in Mailand hingelegt. Beim 4:2-Auswärtserfolg bei der AC Milan erzielte der...]]></description>
-    </item>
-    <item>
       <title>[Fußball] Hertha kocht Dorfklub ab: Dresden haut Schalke raus - VfB und SCF stechen in letzter Minute zu - Ntv</title>
       <link>https://www.n-tv.de/sport/fussball/Dresden-haut-Schalke-raus-VfB-und-SCF-stechen-in-letzter-Minute-zu-id31469647.html</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:5584300758225844322</guid>
@@ -547,15 +952,6 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Geplant sind mehrere aufwendig gestaltete Gruselwelten. In Mahlsdorf wird es wieder schaurig-schön: Am kommenden Samstag, dem 31. Oktober, verwandelt ...]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Espanyol präsentiert Trainer Sarabia – War bei Barça Assistent von Setién</title>
-      <link>https://www.transfermarkt.de/espanyol-prasentiert-trainer-sarabia-war-bei-barca-assistent-von-setien/view/news/489656</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/espanyol-prasentiert-trainer-sarabia-war-bei-barca-assistent-von-setien/view/news/489656</guid>
-      <pubDate>Wed, 28 Oct 2026 19:29:19 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Espanyol Barcelona hat seinen neuen Trainer gefunden. Am Mittwoch, kurz nach der Trennung von Manolo González, präsentierten die Katalanen Eder Sarabia als Nachfolger. Für den...]]></description>
     </item>
     <item>
       <title>[Fußball] DFB-Pokal: Mit Mühe gegen Dorfclub: Hertha erreicht Pokal-Achtelfinale - DIE ZEIT</title>
@@ -630,15 +1026,6 @@
       <description><![CDATA[The PHP scare may have faded from your feed, but the cleanup is far from over. Last week, two critical bugs in the open source language behind roughly 70% of websites left organizations scrambling to fix their systems, with some taking sites offline until the vulnerabilities could be patched. According to researcher...]]></description>
     </item>
     <item>
-      <title>[Fußball] Dynamo wirft Schalke aus dem Pokal – Undav rettet Stuttgart, Krimi in Freiburg</title>
-      <link>https://www.transfermarkt.de/dynamo-wirft-schalke-aus-dem-pokal-undav-rettet-stuttgart-krimi-in-freiburg/view/news/489660</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/dynamo-wirft-schalke-aus-dem-pokal-undav-rettet-stuttgart-krimi-in-freiburg/view/news/489660</guid>
-      <pubDate>Wed, 28 Oct 2026 19:05:26 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Schalke 04 ist im DFB-Pokal ein weiteres Mal in Dresden gescheitert. Der VfB Stuttgart hat den nächsten Tiefschlag gegen Paderborn nur mit sehr viel Mühe abwenden können. Mit einem...]]></description>
-    </item>
-    <item>
       <title>[Fußball] 2:0 gegen Viertligisten: Hertha froh in Jeddeloh! Locker ins Pokal-Achtelfinale - BILD.de</title>
       <link>https://www.bild.de/sport/fussball/2-0-gegen-viertligisten-hertha-froh-in-jeddeloh-locker-ins-pokal-achtelfinale-6ae1fc2a8f0a4dd417a5efd5</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:12781679193207342479</guid>
@@ -666,13 +1053,13 @@
       <description><![CDATA[Zweitliga-Spitzenreiter Hertha BSC darf weiter vom Pokalfinale im Olympiastadion träumen. Gegen den Viertligist Jeddeloh II benötigen die Berlin ...]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Top 10: Das beste Klapprad-E-Bike im Test – Preis-Leistungs-Sieger unter 700 €</title>
+      <title>[Tech &amp; AI] Top 10: Das beste Klapprad-E-Bike im Test</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-klapprad-e-bike-im-test-preis-leistungs-sieger-unter-700-euro/pv04tgj?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11503721</guid>
       <pubDate>Wed, 28 Oct 2026 19:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kompakt und faltbar: Wir zeigen die besten Klapprad-E-Bikes aus über 40 Tests. Testsieger ist das Urtopia Carbon Fold 2 mit nur 16 kg.]]></description>
+      <description><![CDATA[Kompakt und faltbar: Wir zeigen die besten Klapprad-E-Bikes aus über 40 Tests. Testsieger ist das Urtopia Carbon Fold 2.]]></description>
     </item>
     <item>
       <title>[Fun] Unglaubliche Skulptur von Luo Li Rong..</title>
@@ -768,7 +1155,7 @@
       <title>[Berlin] Energie Cottbus: Wollitz erwartet "90 Minuten volle Intensität"</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-fc-energie-cottbus-vfl-bochum-2-liga-bittencourt-vorbericht.html</link>
       <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-fc-energie-cottbus-vfl-bochum-2-liga-bittencourt-vorbericht.html</guid>
-      <pubDate>Wed, 28 Oct 2026 17:12:08 GMT</pubDate>
+      <pubDate>Wed, 28 Oct 2026 17:12:00 GMT</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Zuletzt in Heidenheim hatte Cottbus Trainer Wollitz so wenig Personal zur Verfügung, dass auf der Auswechselbank ein Platz frei blieb. Vor dem Heimspiel am kommenden Freitag gegen Bochum scheint sich die Lage zu entspannen.]]></description>
@@ -1035,15 +1422,6 @@
       <description><![CDATA[Argusaugen haben Linux-Konfigurationsdateien für neue, abgespeckte Einplatinencomputer entdeckt: Raspberry Pi Zero 3 W und Raspberry Pi 4 Model A.]]></description>
     </item>
     <item>
-      <title>[Fußball] Trainer Marco Rose beklagt fehlende Rückendeckung bei Ex-Klub</title>
-      <link>https://www.transfermarkt.de/rose-beklagt-fehlende-ruckendeckung-in-leipzig-bei-demichelis-ist-der-daumen-gesenkt-quot-/view/news/489641</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/rose-beklagt-fehlende-ruckendeckung-in-leipzig-bei-demichelis-ist-der-daumen-gesenkt-quot-/view/news/489641</guid>
-      <pubDate>Wed, 28 Oct 2026 14:29:29 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Marco Rose hat die mangelnde Rückendeckung zum Ende seiner Amtszeit beim bei RB Leipzig beklagt und für mehr Geduld mit Trainer Martín Demichelis geworben. „Die letzten...]]></description>
-    </item>
-    <item>
       <title>[Fun] Europa kann nur gerettet werden...</title>
       <link>https://debeste.de/633201/Europa-kann-nur-gerettet-werden</link>
       <guid isPermaLink="false">https://debeste.de/633201/Europa-kann-nur-gerettet-werden</guid>
@@ -1051,15 +1429,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Europa kann nur gerettet werden, wenn es zu seiner christlichen Identität zurückkehrt.]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Eintracht Frankfurt: Chatzialexiou Favorit auf Krösche-Nachfolge – Spycher keine Option mehr</title>
-      <link>https://www.transfermarkt.de/-bild-quot-nurnbergs-chatzialexiou-favorit-auf-krosche-nachfolge-in-frankfurt/view/news/489640</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/-bild-quot-nurnbergs-chatzialexiou-favorit-auf-krosche-nachfolge-in-frankfurt/view/news/489640</guid>
-      <pubDate>Wed, 28 Oct 2026 14:11:46 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Eintracht Frankfurt steht offenbar kurz vor der Verpflichtung eines neuen Sportvorstands. Laut einem Bericht der „Bild“ ist Joti Chatzialexiou der Favorit und Wunschlösung für...]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] KI-Update kompakt: Anthropics Börsengang, Wahlhilfe, DeepMind Genie, Magnetband</title>
@@ -1152,15 +1521,6 @@
       <description><![CDATA[Microsoft hat im Authenticator eine Sicherheitslücke geschlossen, durch die bösartige Apps hätten Zugangstoken abgreifen können.]]></description>
     </item>
     <item>
-      <title>[Fußball] Spanischer Verband sagt nach schwerem Zugunglück Pokalspiele ab</title>
-      <link>https://www.transfermarkt.de/spanischer-verband-sagt-nach-schwerem-zugungluck-pokalspiele-ab/view/news/489637</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/spanischer-verband-sagt-nach-schwerem-zugungluck-pokalspiele-ab/view/news/489637</guid>
-      <pubDate>Wed, 28 Oct 2026 13:07:23 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Der spanische Fußballverband RFEF hat aufgrund des schweren Zugunglücks mit Dutzenden Toten den heutigen Spieltag der Copa del Rey abgesagt. Alle geplanten 24 Spiele werden verschoben,...]]></description>
-    </item>
-    <item>
       <title>[Tech &amp; AI] 7 days until TechCrunch Founder Summit: Save up to $100 on your pass before doors open</title>
       <link>https://techcrunch.com/2026/10/28/7-days-until-techcrunch-founder-summit-save-up-to-100-before-doors-open/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3182455</guid>
@@ -1206,15 +1566,6 @@
       <description><![CDATA[MASHLE: MAGIC AND MUSCLES The Tri-Magicathlon Divine Visionary Final Exam Arc ... Your browser can't play this video. Learn more. An error occurred. Try ...]]></description>
     </item>
     <item>
-      <title>[Fußball] FC Bayern kann sich jeden Spieler leisten, „aber wir wollen nicht jeden kaufen“</title>
-      <link>https://www.transfermarkt.de/dreesen-bayern-kann-sich-jeden-spieler-leisten-aber-wir-wollen-nicht-jeden-kaufen-quot-/view/news/489628</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/dreesen-bayern-kann-sich-jeden-spieler-leisten-aber-wir-wollen-nicht-jeden-kaufen-quot-/view/news/489628</guid>
-      <pubDate>Wed, 28 Oct 2026 12:46:49 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Jan-Christian Dreesen, Vorstandsvorsitzender des FC Bayern, hat die enorme Kaufkraft des Klubs herausgestellt und den derzeit erkrankten Cheftrainer Vincent Kompany in den höchsten Tönen...]]></description>
-    </item>
-    <item>
       <title>[Fun] Ohne millionenfache Sozialmigration...</title>
       <link>https://debeste.de/633167/Ohne-millionenfache-Sozialmigration</link>
       <guid isPermaLink="false">https://debeste.de/633167/Ohne-millionenfache-Sozialmigration</guid>
@@ -1222,15 +1573,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Ohne millionenfache Sozialmigration aus dem Ausland wäre der deutsche Sozialstaat kerngesund und könnte alle Deutsche absichern!]]></description>
-    </item>
-    <item>
-      <title>[Fußball] RB Leipzig plant zum 5. Mal mit über 100 Millionen aus Spielerverkäufen</title>
-      <link>https://www.transfermarkt.de/leipzig-plant-zum-5-mal-mit-uber-100-millionen-aus-verkaufen-abhangigkeit-soll-sinken/view/news/489634</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/leipzig-plant-zum-5-mal-mit-uber-100-millionen-aus-verkaufen-abhangigkeit-soll-sinken/view/news/489634</guid>
-      <pubDate>Wed, 28 Oct 2026 12:37:19 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[RB Leipzig plant offenbar auch im kommenden Jahr mit dreistelligen Millionenerlösen auf dem Transfermarkt – will diese Abhängigkeit aber sukzessive reduzieren. Laut einem Bericht...]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Cisco: Netzwerke über MCP verwalten</title>
@@ -1330,483 +1672,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Die Polizei in Dubai hat ihre Flotte um einen Lamborghini Temerario mit 920 PS erweitert.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Tailscale SSH: „Tailworm“-Lücke führt zu Root-Rechten und Kompromittierung</title>
-      <link>https://www.heise.de/news/Tailscale-SSH-Update-stopft-Tailworm-Sicherheitsluecken-11502847.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502847</guid>
-      <pubDate>Wed, 28 Oct 2026 11:35:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Am Wochenende wurden Sicherheitslücken in Tailscale-Software bekannt, die Angreifer etwa zum Ausweiten der Rechte missbrauchen können.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Kopfhörer Beats 360: Nutzerklagen wegen Rauschen im Transparenz- und ANC-Modus</title>
-      <link>https://www.heise.de/news/Kopfhoerer-Beats-360-Nutzerklagen-wegen-Rauschen-im-Transparenz-und-ANC-Modus-11499093.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11499093</guid>
-      <pubDate>Wed, 28 Oct 2026 11:33:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Normalerweise sorgt der ANC-Modus von Apple-Stöpseln und Over-Ears für himmlische Ruhe. Die jüngsten Beats sind hier aber nicht perfekt, sagen User.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] SK Hynix: Mehr als die Hälfte der Speicherproduktion bis 2028 schon vergeben</title>
-      <link>https://www.heise.de/news/SK-Hynix-Mehr-als-die-Haelfte-der-Speicherproduktion-bis-2028-schon-vergeben-11503056.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503056</guid>
-      <pubDate>Wed, 28 Oct 2026 11:29:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zum ersten Mal in der Firmengeschichte setzt SK Hynix 70 Milliarden Euro um. Die Aussichten für PC-Käufer bleiben schlecht.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Festnahme nach Schüssen auf ein Auto</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1731975.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1731975.php</guid>
-      <pubDate>Wed, 28 Oct 2026 11:25:05 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Spandau** – Gestern Abend sollen mehrere Männer in Spandau ein anderes Fahrzeug von der Straße gedrängt und mehrfach auf dieses geschossen haben. Nach derzeitigem Kenntnisstand befuhren gegen 20:20 Uhr drei Fahrzeuge, ein BMW, ein Audi und ein Mercedes, mit hoher Geschwindigkeit den Altstädter Ring in Richtu...]]></description>
-    </item>
-    <item>
-      <title>[Fun] Achtung österreichisches Dorf...</title>
-      <link>https://debeste.de/633127/Achtung-sterreichisches-Dorf</link>
-      <guid isPermaLink="false">https://debeste.de/633127/Achtung-sterreichisches-Dorf</guid>
-      <pubDate>Wed, 28 Oct 2026 11:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Achtung österreichisches Dorf. - Betreten auf eigene Gefahr. - Hier haben wir Kirchtuerme, die regelmaissig laeuten. - Hähne, die sehr früh krähen. - Herden, die in der Nähe leben. - Einige tragen sogar Glocken um den Hals. - Landwirte und Handwerker, die arbeiten, um Sie zu ernähren. - Bei uns wird auch Langlauf be...]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Fußgänger von Pkw angefahren und schwer verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1731974.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1731974.php</guid>
-      <pubDate>Wed, 28 Oct 2026 11:18:47 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Reinickendorf** – Gestern Mittag ereignete sich ein Verkehrsunfall in Tegel bei dem ein Fußgänger schwer verletzt wurde. Nach bisherigen Erkenntnissen überquerte der 85-jährige Fußgänger gegen 12:30 Uhr die Ziekowstraße auf Höhe der Hatzfeldtallee in Richtung Marzahnstraße. Als er die Fahrbahn betrat, soll er vo...]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] KI-Agenten an der kurzen Leine: PipesHub durchsucht das Firmenwissen</title>
-      <link>https://www.heise.de/news/KI-Agenten-an-der-kurzen-Leine-PipesHub-durchsucht-das-Firmenwissen-11502811.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502811</guid>
-      <pubDate>Wed, 28 Oct 2026 11:16:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[PipesHub bündelt Daten aus Slack, Jira oder GitHub für die interne Suche und KI-Agenten. Version 1.0.0 bringt unter anderem Code-Graphen und strengere Rechte.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Lok Stendal erwartet Primus Mahlsdorf, Füchse Berlin in Wismar - FuPa</title>
-      <link>https://www.fupa.net/news/lok-stendal-erwartet-primus-mahlsdorf-fuechse-berlin-in-wismar-3223732</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6673018955652865450</guid>
-      <pubDate>Wed, 28 Oct 2026 11:14:12 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Der 10. Spieltag der NOFV-Oberliga Nord steht im Zeichen des engen Rennens an der Tabellenspitze. Der BSV Eintracht Mahlsdorf führt die Liga nach ...]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Moto Guzzi „The Trip“: Kleines Naked Bike mit Aprilia-Motor</title>
-      <link>https://www.heise.de/news/Moto-Guzzi-The-Trip-Kleines-Naked-Bike-mit-Aprilia-Motor-11503038.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503038</guid>
-      <pubDate>Wed, 28 Oct 2026 11:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Moto Guzzi kündigt ein neues Naked Bike mit einem 457-cm³-Zweizylinder von Aprilia und damit zugleich einen Bruch mit liebgewonnenen Traditionen an.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Gestern gab es eine Blutspendenaktion bei uns im Ort und..</title>
-      <link>https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und</link>
-      <guid isPermaLink="false">https://debeste.de/632952/Gestern-gab-es-eine-Blutspendenaktion-bei-uns-im-Ort-und</guid>
-      <pubDate>Wed, 28 Oct 2026 10:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Gestern gab es eine Blutspendenaktion bei uns im Ort und heute hat der Metzger Blutwurst im Angebot. Ich bin ja sonst nicht so misstrauisch, aber...]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Autofahrer flüchtet vor Verkehrskontrolle – Polizeibeamter verletzt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1731959.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1731959.php</guid>
-      <pubDate>Wed, 28 Oct 2026 10:42:27 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Tempelhof-Schöneberg** – Gestern Abend wollten Einsatzkräfte der Polizeiabschnitte 41 und 44 in Mariendorf einen Autofahrer kontrollieren, der zuvor durch mehrere Verkehrsverstöße aufgefallen ist. Gegen 21:20 Uhr beabsichtigten die Einsatzkräfte, den 19-Jährigen im Steinhellenweg einer Verkehrskontrolle zu unter...]]></description>
-    </item>
-    <item>
-      <title>[Fun] Ich kann immer noch nicht glauben...</title>
-      <link>https://debeste.de/633139/Ich-kann-immer-noch-nicht-glauben</link>
-      <guid isPermaLink="false">https://debeste.de/633139/Ich-kann-immer-noch-nicht-glauben</guid>
-      <pubDate>Wed, 28 Oct 2026 10:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] VW reagiert auf Absatzschwäche mit neuer China-Exportstrategie</title>
-      <link>https://www.heise.de/news/Volkswagen-will-kuenftig-Modelle-aus-China-im-Globalen-Sueden-verkaufen-11502862.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502862</guid>
-      <pubDate>Wed, 28 Oct 2026 10:32:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Volkswagen betonte in China lange, für den chinesischen Markt zu produzieren. Seine China-Autos exportieren wollte VW bislang nicht. Doch das ändert sich jetzt.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Schau mal, wie es leuchtet!..</title>
-      <link>https://debeste.de/633011/Schau-mal,-wie-es-leuchtet</link>
-      <guid isPermaLink="false">https://debeste.de/633011/Schau-mal,-wie-es-leuchtet</guid>
-      <pubDate>Wed, 28 Oct 2026 10:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Schau mal, wie es leuchtet!]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Chinas mysteriöser Raumgleiter: US-Geheimdienst macht erstes gutes Foto publik</title>
-      <link>https://www.heise.de/news/Satellitenfoto-von-Maxar-zeigt-erstmals-Chinas-geheimen-Raumgleiter-im-Orbit-11502777.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502777</guid>
-      <pubDate>Wed, 28 Oct 2026 10:01:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Seit 2020 hat China unter enormer Geheimhaltung mehrere mysteriöse Raumgleiter gestartet. Ein privater Satellit aus den USA hat das Gefährt im All fotografiert.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] **Afrika-Quiz in Mahlsdorf-Süd** Am Samstag, den **14.11.2026 um 17:00 Uhr**, erwartet Sie ein ...</title>
-      <link>https://www.facebook.com/groups/wirhellersdorfer/posts/4695181314037054/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:17894654318556743102</guid>
-      <pubDate>Wed, 28 Oct 2026 09:59:40 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[... Mahlsdorf-Süd, Hultschiner Damm 98, 12623 Berlin Eintritt: 8,00 € Anmeldung: 030 / 56 69 83 95 **Kommen Sie vorbei und testen Sie Ihr Wissen ...]]></description>
-    </item>
-    <item>
-      <title>[Fun] Habe gerade einen circa Zweijährigen gesehen...</title>
-      <link>https://debeste.de/632890/Habe-gerade-einen-circa-Zweij-hrigen-gesehen</link>
-      <guid isPermaLink="false">https://debeste.de/632890/Habe-gerade-einen-circa-Zweij-hrigen-gesehen</guid>
-      <pubDate>Wed, 28 Oct 2026 09:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] eMudhra-TLS-Leck: Apple lässt Problem auf macOS-Kommandozeile zunächst bestehen</title>
-      <link>https://www.heise.de/news/eMudhra-TLS-Leck-Apple-laesst-Problem-auf-macOS-Kommandozeile-zunaechst-bestehen-11500945.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11500945</guid>
-      <pubDate>Wed, 28 Oct 2026 09:53:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Während Browser längst gepatcht sind, hat Apple die Datei cert.pem, die diverse CLI-Werkzeuge nutzen, nicht korrigiert. Immerhin gibt es eine Anleitung.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Autofahrer prallt gegen Baum und Lichtmast</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1731927.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1731927.php</guid>
-      <pubDate>Wed, 28 Oct 2026 09:47:36 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Lichtenberg** – In der vergangenen Nacht kam es im Ortsteil Fennpfuhl zu einem Verkehrsunfall, bei dem ein Mann erhebliche Verletzungen erlitt. Nach bisherigen Erkenntnissen befuhr ein 50-jähriger Autofahrer gegen 0:30 Uhr die Vulkanstraße in Richtung Landsberger Allee. Dabei soll er von der Fahrbahn abgekommen ...]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Beschimpft, behindert, selten gemeldet: Was Rettungskräfte im Einsatz wirklich erleben</title>
-      <link>https://marzahn-hellersdorf.com/beschimpft-behindert-selten-gemeldet-was-rettungskraefte-im-einsatz-wirklich-erleben/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16144808383516542061</guid>
-      <pubDate>Wed, 28 Oct 2026 09:40:31 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[... Mahlsdorf, Kaulsdorf, Biesdorf, Marzahn & Hellersdorf. Informationen ... Mahlsdorf (534) Marzahn (2495) Neubau (64) PKW (63) Polizei (1233) ...]]></description>
-    </item>
-    <item>
-      <title>[Fun] Nachdem er den Friedensnobelpreis...</title>
-      <link>https://debeste.de/632879/Nachdem-er-den-Friedensnobelpreis</link>
-      <guid isPermaLink="false">https://debeste.de/632879/Nachdem-er-den-Friedensnobelpreis</guid>
-      <pubDate>Wed, 28 Oct 2026 09:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Nachdem er den Friedensnobelpreis wieder nicht erhalten hat, beschimpft Trump Norwegen als "Drecksloch". Weil es dort so viel Erdöl und Erdgas gibt, muss Ministerpräsident Støre also mit seiner baldigen Entführung rechnen.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Spain train crash: 'At least 10 dead' in high-speed collision</title>
-      <link>https://www.thetimes.com/world/europe/article/spain-train-crash-madrid-latest-deaths-victims-807kwv23l</link>
-      <guid isPermaLink="false">https://www.thetimes.com/world/europe/article/spain-train-crash-madrid-latest-deaths-victims-807kwv23l</guid>
-      <pubDate>Wed, 28 Oct 2026 09:35:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Angreifer können Veeam-Backup-Server manipulieren und MFA deaktivieren</title>
-      <link>https://www.heise.de/news/Veeam-Backup-Server-manipulierbar-und-MFA-deaktivierbar-11502821.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502821</guid>
-      <pubDate>Wed, 28 Oct 2026 09:23:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Es sind wichtige Sicherheitsupdates für Veeam Backup & Replication und ONE erschienen. Bislang gibt es keine Hinweise auf laufende Attacken.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Wenn sie einen schlechten Tag haben...</title>
-      <link>https://debeste.de/632839/Wenn-sie-einen-schlechten-Tag-haben</link>
-      <guid isPermaLink="false">https://debeste.de/632839/Wenn-sie-einen-schlechten-Tag-haben</guid>
-      <pubDate>Wed, 28 Oct 2026 09:19:02 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Wenn sie einen schlechten Tag haben, dann denken sie an diese Beiden. Sie versuchten, Kraftstoff zu stehlen... aber stattdessen den Toilettentank abgelassen.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] E-Auto-Flaute in den USA: Während Europa zulegt, bricht der US-Markt ein</title>
-      <link>https://www.heise.de/news/BEV-Zulassungen-USA-fallen-mit-nur-6-Prozent-weit-hinter-China-und-EU-zurueck-11502669.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502669</guid>
-      <pubDate>Wed, 28 Oct 2026 09:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Im ersten Halbjahr 2026 sanken die US-Zulassungen von BEV um 22 Prozent, Europa legte um ein Drittel zu. China bleibt der mit Abstand größte Markt.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Google Genie 4: KI-Simulator für interaktive 3D-Umgebungen wird realistischer</title>
-      <link>https://www.heise.de/news/Google-Genie-4-KI-Simulator-fuer-interaktive-3D-Umgebungen-wird-realistischer-11502733.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502733</guid>
-      <pubDate>Wed, 28 Oct 2026 09:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Googles Genie 4 erzeugt interaktive KI-Welten mit Ton und Sprache. Gemini verbessert die Simulation, doch die Technologie bleibt experimentell.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Wealth Inequality in America drawn to scale</title>
-      <link>https://dreamagainusa.org/</link>
-      <guid isPermaLink="false">https://dreamagainusa.org/</guid>
-      <pubDate>Wed, 28 Oct 2026 08:48:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>[Fun] "Ein Haus in der Hölle für Perfektionisten"..</title>
-      <link>https://debeste.de/632985/Ein-Haus-in-der-H-lle-f-r-Perfektionisten</link>
-      <guid isPermaLink="false">https://debeste.de/632985/Ein-Haus-in-der-H-lle-f-r-Perfektionisten</guid>
-      <pubDate>Wed, 28 Oct 2026 08:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Ein Haus in der Hölle für Perfektionisten]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Cybergrooming: Es beginnt oft mit einer harmlosen Nachricht</title>
-      <link>https://www.heise.de/news/Cybergrooming-Es-beginnt-oft-mit-einer-harmlosen-Nachricht-11502695.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502695</guid>
-      <pubDate>Wed, 28 Oct 2026 08:34:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Sexuelle Übergriffe gegen Kinder und Jugendliche im Netz – das sogenannte Cybergrooming – nimmt zu. Wie Täter vorgehen und was dagegen unternommen werden kann.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Artificial Analysis v5.0: OpenAI dominiert auf einmal ALLES</title>
-      <link>https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</guid>
-      <pubDate>Wed, 28 Oct 2026 08:22:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Der neue Intelligence Index bewertet KI-Modelle mit überarbeiteten Benchmarks und Gewichtungen. OpenAI stellt drei der fünf bestplatzierten Modelle, Claude Opus 5.5 bleibt an der Spitze. Open Weights fallen zurück, während OpenAI beim Preis-Leistungs-Vergleich stark abschneidet. Private Testdaten erschweren Benchmar...]]></description>
-    </item>
-    <item>
-      <title>[Fun] "Urbane Tarnung"..</title>
-      <link>https://debeste.de/632984/Urbane-Tarnung</link>
-      <guid isPermaLink="false">https://debeste.de/632984/Urbane-Tarnung</guid>
-      <pubDate>Wed, 28 Oct 2026 08:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA["Urbane Tarnung"]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Studie: Europas digitale Abhängigkeit wächst</title>
-      <link>https://www.heise.de/news/Studie-Europas-digitale-Abhaengigkeit-waechst-11502673.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502673</guid>
-      <pubDate>Wed, 28 Oct 2026 08:09:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Betriebssysteme, Suchmaschinen, Cloud: Bei digitalen Plattformen ist Europa laut Studie fast vollständig von ausländischen Anbietern abhängig.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Umweltminister Schneider: Audi wettet „auf ein totes Pferd“</title>
-      <link>https://www.heise.de/news/Umweltminister-Schneider-Audi-wettet-auf-ein-totes-Pferd-11502541.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502541</guid>
-      <pubDate>Wed, 28 Oct 2026 08:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Auftritt von Audi-Chef Döllner im Wahlkampf des US-Präsidenten erregt seit Tagen die Gemüter. Nun gibt es auch grundsätzliche Kritik am geplanten Werk.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Angreifer nehmen Brotli-, Adobe-Commerce- und Magento-Lecks ins Visier</title>
-      <link>https://www.heise.de/news/Angreifer-nehmen-Brotli-Adobe-Commerce-und-Magento-Lecks-ins-Visier-11502623.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502623</guid>
-      <pubDate>Wed, 28 Oct 2026 08:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In freier Wildbahn wurden Angriffe auf kritische Sicherheitslücken in Brotli, Adobe Commerce und Magento beobachtet. Updates helfen.]]></description>
-    </item>
-    <item>
-      <title>[Games] SacriFire - Playtest starts on October 29</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60457</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60457</guid>
-      <pubDate>Wed, 28 Oct 2026 08:02:03 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[You can check out SacriFire tomorrow: Ready to step into Antioch? | SacriFire Sign up for the SacriFire Playtest on Steam.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] „Passwort“ Folge 69: Die Hütte brennt</title>
-      <link>https://www.heise.de/news/Passwort-Folge-69-Die-Huette-brennt-11483971.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11483971</guid>
-      <pubDate>Wed, 28 Oct 2026 08:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Podcast sieht sich einem Themenberg gegenüber. php2shell und eMudhra bekommen viel Raum, aber zuerst werden einige andere Themen aus deren Schatten gezogen.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Trump beschwert sich jetzt nicht nur darüber, dass er keinen Nobelpreis bekommen hat, sondern auch über den fehlenden Pulitzer-Preis. - „Ich habe all diese Kriege beendet, und den Pulitzer-Friedenspreis haben sie irgendeiner jungen Frau verliehen, von der noch nie jemand gehört hat“. - Ich warte nur darauf, dass er plötzlich den Darwin Award gewinnen will.</title>
-      <link>https://debeste.de/632970/Trump-beschwert-sich-jetzt-nicht-nur-dar-ber,-dass-er-keinen-Nobelpreis</link>
-      <guid isPermaLink="false">https://debeste.de/632970/Trump-beschwert-sich-jetzt-nicht-nur-dar-ber,-dass-er-keinen-Nobelpreis</guid>
-      <pubDate>Wed, 28 Oct 2026 07:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Games] Cyberpunk 2077 - Edgerunners 2 Update released</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60456</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60456</guid>
-      <pubDate>Wed, 28 Oct 2026 07:57:32 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Cyberpunk 2077 got a major update: Cyberpunk 2077 | Broken Dreams | Edgerunners 2 Update Launch Trailer Seen the anime? Play the update - if you’re ready… Dive back into Night City with the free Edgerunners 2 Update for Cyberpunk 2077, featuring content inspired by Cyberpunk: Edgerunners 2....]]></description>
-    </item>
-    <item>
-      <title>[Games] Three Kingdoms Ride to Conquest - Released</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60455</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60455</guid>
-      <pubDate>Wed, 28 Oct 2026 07:48:41 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The F2P/Gacha strategy RPG Three Kingdoms Ride to Conquest has been released: Three Kingdoms Ride to Conquest Uncover the fog of war across sprawling maps, explore uncharted territories, recruit troops and build your army, and seize cities. Make tense strategic decisions within turns limited by action points....]]></description>
-    </item>
-    <item>
-      <title>[Fun] Sind Sie der Meinung, Sind Sie der Meinung...</title>
-      <link>https://debeste.de/633130/Sind-Sie-der-Meinung,-Sind-Sie-der-Meinung</link>
-      <guid isPermaLink="false">https://debeste.de/633130/Sind-Sie-der-Meinung,-Sind-Sie-der-Meinung</guid>
-      <pubDate>Wed, 28 Oct 2026 07:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Sind Sie der Meinung, Sind Sie der Meinung, dass Kindergeld nur an Kinder gezahlt werden sollte, die in Deutschland leben?]]></description>
-    </item>
-    <item>
-      <title>[Games] Destined Dungeon Quest - Release delayed</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60454</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60454</guid>
-      <pubDate>Wed, 28 Oct 2026 07:25:03 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Destined Dungeon Quest will be released next week.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Kommentar: Photoshop per KI nachgebaut – Kopieren ist billig, Entscheiden nicht</title>
-      <link>https://www.heise.de/blog/Kommentar-Photoshop-per-KI-nachgebaut-Kopieren-ist-billig-Entscheiden-nicht-11495511.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11495511</guid>
-      <pubDate>Wed, 28 Oct 2026 07:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Entwickler baut Photoshop mit KI nach und erklärt die Softwareentwicklung für beendet. Das ist falsch, meint Golo Roden.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Operationstechnischer Assistent – Funktions-OP – Spätdienst – Berlin-Mahlsdorf (m/w/d)</title>
-      <link>https://www.europersonal.com/stelle/operationstechnischer-assistent-funktions-op-spaetdienst-berlin-mahlsdorf-m-w-d-e6a185bd9ee74be6817169faeec35089</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:254253835782648859</guid>
-      <pubDate>Wed, 28 Oct 2026 07:02:15 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Operationstechnischer Assistent – Funktions-OP – Spätdienst – Berlin-Mahlsdorf in Berlin: ab 35 €/Std., unbefristet und mit persönlicher Betreuung ...]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Pflegefachfrau (Minijob) – Pflege-Wohngruppe – Mahlsdorf (m/w/d)</title>
-      <link>https://www.europersonal.com/stelle/pflegefachfrau-minijob-pflege-wohngruppe-mahlsdorf-m-w-d-b4a43be42343405b94a3ee3580cc58fa</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:8925451384042254533</guid>
-      <pubDate>Wed, 28 Oct 2026 07:01:34 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Pflegefachfrau (Minijob) – Pflege-Wohngruppe – Mahlsdorf in Berlin: ab 26 €/Std., unbefristet und mit persönlicher Betreuung bei biac Medizin ...]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Proton-Angestellte sollen wegen KI-Nutzung erneut ins Bewerbungsgespräch</title>
-      <link>https://www.heise.de/news/Proton-Angestellte-sollen-wegen-KI-Nutzung-erneut-ins-Bewerbungsgespraech-11502535.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11502535</guid>
-      <pubDate>Wed, 28 Oct 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Beim Schweizer IT-Unternehmen Proton möchte man die KI-Nutzung vorantreiben. Dazu sollen die Angestellten jetzt in neuen Bewerbungsgesprächen befragt werden.]]></description>
-    </item>
-    <item>
-      <title>[Fun] Du hast nicht wieder das Handy mit gefressen?!?..</title>
-      <link>https://debeste.de/632932/Du-hast-nicht-wieder-das-Handy-mit-gefressen</link>
-      <guid isPermaLink="false">https://debeste.de/632932/Du-hast-nicht-wieder-das-Handy-mit-gefressen</guid>
-      <pubDate>Wed, 28 Oct 2026 06:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Du hast nicht wieder das Handy mit gefressen?!?]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Immobilienmakler Mahlsdorf - David Breuer Immobilien</title>
-      <link>https://www.david-breuer-immobilien.com/regionen/mahlsdorf</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3180022717128668676</guid>
-      <pubDate>Wed, 28 Oct 2026 06:46:32 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Willkommen in Mahlsdorf Mahlsdorf gilt als eine der kinderfreundlichsten Ecken Berlins – viel Grün, große Grundstücke, ruhige Straßen und trotzdem ...]]></description>
-    </item>
-    <item>
-      <title>[Fun] "Spider-Man auf dem russischen Dorf"..</title>
-      <link>https://debeste.de/633007/Spider-Man-auf-dem-russischen-Dorf</link>
-      <guid isPermaLink="false">https://debeste.de/633007/Spider-Man-auf-dem-russischen-Dorf</guid>
-      <pubDate>Wed, 28 Oct 2026 06:40:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Spider-Man auf dem russischen Dorf]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Monatelang hing über dem Neubauprojekt N48 in der Neuenhagener Straße in Mahlsdorf ...</title>
-      <link>https://www.facebook.com/mahlsdorflive/posts/monatelang-hing-%C3%BCber-dem-neubauprojekt-n48-in-der-neuenhagener-stra%C3%9Fe-in-mahlsdo/1716841983634860/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13270870981194468970</guid>
-      <pubDate>Wed, 28 Oct 2026 06:38:52 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Monatelang hing über dem Neubauprojekt N48 in der Neuenhagener Straße in Mahlsdorf ein großes Fragezeichen. War das Gebäude höher gebaut worden ...]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] php2shell aus Sicht eines Hosters: Ruhe bewahren, aber nicht verschlafen</title>
-      <link>https://www.heise.de/hintergrund/php2shell-aus-Sicht-eines-Hosters-Ruhe-bewahren-aber-nicht-verschlafen-11501861.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11501861</guid>
-      <pubDate>Wed, 28 Oct 2026 06:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die gravierenden php2shell-Sicherheitslücken zwangen Hostinganbieter zum Handeln. Das stellt die Update-Prozeduren auf die Probe – und die Kundenkommunikation.]]></description>
-    </item>
-    <item>
-      <title>[Finanzen &amp; Coins] Bitcoin nähert sich 81.000 US-Dollar – Tech-Rally stützt vor Fed-Entscheid</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-klettert-auf-fast-81000-dollar-techrally-stutzt-risikofreude-vor-fedzinsentscheid-3726998</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-klettert-auf-fast-81000-dollar-techrally-stutzt-risikofreude-vor-fedzinsentscheid-3726998</guid>
-      <pubDate>Wed, 28 Oct 2026 06:19:56 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Fun] Hier ist wohl jemand versackt...</title>
-      <link>https://debeste.de/632972/Hier-ist-wohl-jemand-versackt</link>
-      <guid isPermaLink="false">https://debeste.de/632972/Hier-ist-wohl-jemand-versackt</guid>
-      <pubDate>Wed, 28 Oct 2026 06:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Hier ist wohl jemand versackt...]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Unions Pokal-Klatsche in Köln: Systemversagen</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-union-debakel-in-koeln-analyse.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/fussball-dfb-pokal-union-debakel-in-koeln-analyse.html</guid>
-      <pubDate>Wed, 28 Oct 2026 06:10:00 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Nach dem bitteren 0:5 im Kölner Regen steht der 1. FC Union Berlin vor einem Rätsel: War der chancenlose Pokal-Auftritt nur ein temporärer Rückschritt oder offenbart er grundlegende Probleme?]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 06:01:20 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 11:36:36 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft erzielt zehn Milliarden Dollar Umsatz mit OpenAI</title>
+      <link>https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</guid>
+      <pubDate>Thu, 29 Oct 2026 09:58:14 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Microsoft erzielt im Quartal zehn Milliarden Dollar Umsatz mit OpenAI. Der Gesamtumsatz steigt auf 92,3 Milliarden Dollar, der Nettogewinn auf 36,6 Milliarden Dollar. Microsoft Cloud wächst um 30 Prozent, Azure um 48 Prozent. Die Zahl der täglichen Copilot-Nutzer steigt gegenüber dem Vorquartal um fast 50 Prozent. M...]]></description>
+    </item>
+    <item>
+      <title>Meta startet KI-Tamagotchi mit eigenem Tagebuch</title>
+      <link>https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</guid>
+      <pubDate>Thu, 29 Oct 2026 08:25:44 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Meta hat Waddle World für Android und iOS auf den Philippinen veröffentlicht. Ein virtuelles Haustier verwandelt Erzählungen in illustrierte Tagebucheinträge und verschickt Postkarten. Die kostenlose App richtet sich an Erwachsene und bietet kurze Minispiele. Das Tagebuch ist gegenüber anderen Nutzern standardmäßig ...]]></description>
+    </item>
+    <item>
+      <title>GitHub Copilot koordiniert jetzt KI-Agenten über mehrere Projekte</title>
+      <link>https://www.all-ai.de/news/news26/github-agenten-projekte</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/github-agenten-projekte</guid>
+      <pubDate>Thu, 29 Oct 2026 08:14:25 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Copilot-Projekte koordinieren parallele KI-Agenten über mehrere Repositories hinweg. Copilot Fusion wählt und kombiniert KI-Modelle von Anthropic und OpenAI. Fusion Max erreicht 60 Punkte im Coding Agent Index und kostet im Test 5,59 Dollar pro Aufgabe. GitHub-Enterprise-Kunden zahlen für verbrauchte KI-Credits stat...]]></description>
+    </item>
     <item>
       <title>ElevenLabs Cue bringt Untertitel im richtigen Moment</title>
       <link>https://www.all-ai.de/news/news26/elevenlabs-cue-untertitel</link>
@@ -52,15 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[In den USA liefern bereits rund 5.000 Roboter Bestellungen aus. In mehreren Städten werden die Maschinen angegriffen, in Chicago protestieren Anwohner gegen ihren Einsatz. Zwei Kunden werfen Coco und Serve vor, biometrische Daten ohne Zustimmung erfasst zu haben. Beide Unternehmen bestreiten die Vorwürfe. Block Club...]]></description>
-    </item>
-    <item>
-      <title>Artificial Analysis v5.0: OpenAI dominiert auf einmal ALLES</title>
-      <link>https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/artificial-analysis-5-openai-anthropic-openweight-1</guid>
-      <pubDate>Wed, 28 Oct 2026 08:22:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Der neue Intelligence Index bewertet KI-Modelle mit überarbeiteten Benchmarks und Gewichtungen. OpenAI stellt drei der fünf bestplatzierten Modelle, Claude Opus 5.5 bleibt an der Spitze. Open Weights fallen zurück, während OpenAI beim Preis-Leistungs-Vergleich stark abschneidet. Private Testdaten erschweren Benchmar...]]></description>
     </item>
   </channel>
 </rss>
