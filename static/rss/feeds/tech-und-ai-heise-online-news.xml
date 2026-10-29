@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 14:34:02 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 15:01:11 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>One UI 9: Diese Galaxy-Smartphones haben das Update in Deutschland erhalten</title>
+      <link>https://www.heise.de/news/One-UI-9-Diese-Galaxy-Smartphones-haben-das-Update-in-Deutschland-erhalten-11505063.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505063</guid>
+      <pubDate>Thu, 29 Oct 2026 14:31:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Samsung hat in Deutschland bereits 29 Galaxy-Modelle mit dem Update auf One UI 9 versorgt. Weitere dürften folgen.]]></description>
+    </item>
+    <item>
+      <title>Überlebt die App den Node-Drain? Kubernetes plant den Härtetest</title>
+      <link>https://www.heise.de/news/Ueberlebt-die-App-den-Node-Drain-Kubernetes-plant-den-Haertetest-11505071.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505071</guid>
+      <pubDate>Thu, 29 Oct 2026 14:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor Cluster-Upgrades müssen Admins Apps oft manuell auf Kompatibilität prüfen. Eine neue Kubernetes-Arbeitsgruppe entwickelt dafür standardisierte Tests.]]></description>
+    </item>
     <item>
       <title>Diverse kritische Schwachstellen in WatchGuard Fireware OS</title>
       <link>https://www.heise.de/news/Diverse-kritische-Schwachstellen-in-WatchGuard-Fireware-OS-11504873.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -252,15 +270,6 @@
       <description><![CDATA[Der iPhone-Konzern bringt Touch auf den Mac. Aber von einem vollen Bekenntnis dazu ist man noch weit entfernt, analysiert Malte Kirchner in Los Angeles.]]></description>
     </item>
     <item>
-      <title>#heiseshow: Apple-Experience, KI-Profit bleibt aus, Cookie-Banner</title>
-      <link>https://www.heise.de/news/heiseshow-Apple-Experience-KI-Profit-bleibt-aus-Cookie-Banner-11503402.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503402</guid>
-      <pubDate>Thu, 29 Oct 2026 05:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In der #heiseshow: Apple-Experience zeigt neue Macs, nur große Tech-Unternehmen profitieren von KI und EU möchte keine technische Lösung für Cookie-Banner.]]></description>
-    </item>
-    <item>
       <title>Donnerstag: Abgas-Skandal mit längerer Verjährung, MacBooks auch mit Touchscreen</title>
       <link>https://www.heise.de/news/Donnerstag-Abgas-Skandal-mit-laengerer-Verjaehrung-MacBooks-auch-mit-Touchscreen-11503921.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11503921</guid>
@@ -268,6 +277,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Dieselskandal-Verjährungsfrist in Österreich + Apples neue High-End-MacBooks + Microsoft-Wachstum dank KI-Cloud + Google-KI als Exploit-Experte + #heiseshow]]></description>
+    </item>
+    <item>
+      <title>#heiseshow: Apple-Experience, KI-Profit bleibt aus, Cookie-Banner</title>
+      <link>https://www.heise.de/news/heiseshow-Apple-Experience-KI-Profit-bleibt-aus-Cookie-Banner-11503402.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11503402</guid>
+      <pubDate>Thu, 29 Oct 2026 05:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[In der #heiseshow: Apple-Experience zeigt neue Macs, nur große Tech-Unternehmen profitieren von KI und EU möchte keine technische Lösung für Cookie-Banner.]]></description>
     </item>
     <item>
       <title>Microsoft mit erneut deutlich gesteigerten Einnahmen, Aktie macht kleinen Sprung</title>
@@ -367,51 +385,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Samsungs Mobile-Sparte reduziert die Produktionsmenge ihrer Mittelklassemodelle der Galaxy-A-Serie laut einem Bericht aus Südkorea um rund 20 Prozent.]]></description>
-    </item>
-    <item>
-      <title>Schick, leise, kräftig – nur das Falten hakt: Klapprad-E-Bike Fiido D11 im Test</title>
-      <link>https://www.heise.de/bestenlisten/testbericht/schick-leise-kraeftig-nur-das-falten-hakt-klapprad-e-bike-fiido-d11-im-test/sep96by?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503188</guid>
-      <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Akku in der Sattelstütze, hydraulische Bremsen, 19,5 kg: Das Klapprad-E-Bike Fiido D11 2025 kostet unter 1000 Euro. Wie gut ist es?]]></description>
-    </item>
-    <item>
-      <title>VW startet Demontage von verbrauchten Autos</title>
-      <link>https://www.heise.de/news/VW-startet-Demontage-von-verbrauchten-Autos-11503549.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503549</guid>
-      <pubDate>Wed, 28 Oct 2026 14:55:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Erst war das Zwickauer VW-Werk Vorreiter bei E-Autos, nun werden dort ältere Fahrzeuge zerlegt. Kann das die Zukunft des bedrohten Standorts sichern?]]></description>
-    </item>
-    <item>
-      <title>Schluss mit kaputten SSH-Sessions: Update für das moderne Terminal Ghostty</title>
-      <link>https://www.heise.de/news/Schluss-mit-kaputten-SSH-Sessions-Update-fuer-das-moderne-Terminal-Ghostty-11503392.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503392</guid>
-      <pubDate>Wed, 28 Oct 2026 14:48:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das Update für den Terminal-Emulator Ghostty senkt den RAM-Verbrauch, beschleunigt den Parser und bringt einen praktischen Wrapper für SSH-Verbindungen mit.]]></description>
-    </item>
-    <item>
-      <title>UEFI-Lücke: Kritischer Bug versteckt sich seit 16 Jahren in vielen Servern</title>
-      <link>https://www.heise.de/news/UEFI-Luecke-Kritischer-Bug-versteckt-sich-seit-16-Jahren-in-vielen-Servern-11503527.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503527</guid>
-      <pubDate>Wed, 28 Oct 2026 14:40:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Eine Lücke in der Codebasis der für das Booten von Netzwerkservern verantwortlichen UEFI-Firmware kann es Angreifern ermöglichen, Schadcode auszuführen.]]></description>
-    </item>
-    <item>
-      <title>Raspberry Pi: Hinweise auf neue Modelle Zero 3 W und 4 A mit Raspi-4-Technik</title>
-      <link>https://www.heise.de/news/Raspberry-Pi-Hinweise-auf-neue-Modelle-Zero-3-W-und-4-A-mit-Raspi-4-Technik-11503465.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503465</guid>
-      <pubDate>Wed, 28 Oct 2026 14:37:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Argusaugen haben Linux-Konfigurationsdateien für neue, abgespeckte Einplatinencomputer entdeckt: Raspberry Pi Zero 3 W und Raspberry Pi 4 Model A.]]></description>
     </item>
   </channel>
 </rss>

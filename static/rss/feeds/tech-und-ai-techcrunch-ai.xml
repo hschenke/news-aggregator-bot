@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 29 Oct 2026 14:34:02 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 15:01:11 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wabi, the AI agent that builds mini apps, now valued at $1.25B after latest round</title>
+      <link>https://techcrunch.com/2026/10/29/wabi-the-ai-agent-that-builds-mini-apps-now-valued-at-1-25b-after-latest-round/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3183066</guid>
+      <pubDate>Thu, 29 Oct 2026 14:35:26 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[On Thursday, AI app, Wabi, now describing itself as a "personal agent," said it has raised $55 million at a $1.25 billion valuation.]]></description>
+    </item>
     <item>
       <title>Deepgram acquires Pipecat-maker Daily to bolster its voice AI infrastructure</title>
       <link>https://techcrunch.com/2026/10/29/deepgram-acquires-pipecat-maker-daily-to-bolster-its-voice-ai-infrastructure/</link>
@@ -124,15 +133,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[South Korea’s financial institutions have been hit by another wave of cyberattacks, highlighting the growing risk of AI-driven hacking in Asia.]]></description>
-    </item>
-    <item>
-      <title>Voice AI in vogue: Nvidia releases new open transcription model</title>
-      <link>https://techcrunch.com/2026/10/28/voice-ai-in-vogue-nvidia-releases-new-open-transcription-model/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3182159</guid>
-      <pubDate>Wed, 28 Oct 2026 15:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Nvidia just released a free speech-to-text model that can transcribe up to 40 languages, but it only works on recordings, not live audio, so it’s a big step for meeting and medical transcription tools while still leaving real-time use to rivals like ElevenLabs.]]></description>
     </item>
   </channel>
 </rss>
