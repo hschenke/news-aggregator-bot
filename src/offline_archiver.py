@@ -653,19 +653,9 @@ def run_offline_archive_for_feeds(
         cleaned_count = storage.cleanup_offline_articles(max_age_days=OFFLINE_RETENTION_DAYS)
         _update_task_status(cleaned_articles=cleaned_count)
 
-        # 2. Bestehende Polizeimeldungen prüfen/reparieren (falls Bezirkszeile fehlte)
+        # 2. Bestehende URLs ermitteln, um bereits archivierte Artikel zu überspringen
         existing_articles = storage.get_offline_articles(limit=1000)
-        repaired_batch: list[OfflineArticle] = []
-        existing_urls: set[str] = set()
-        for ext_art in existing_articles:
-            repaired_art, was_repaired = repair_police_offline_article(ext_art, allow_network_lookup=True)
-            if was_repaired:
-                repaired_batch.append(repaired_art)
-            existing_urls.add(ext_art.url)
-
-        if repaired_batch:
-            storage.save_offline_articles(repaired_batch)
-            bump_offline_cache_version()
+        existing_urls: set[str] = {ext_art.url for ext_art in existing_articles}
 
         offline_feeds = get_offline_enabled_feeds(config=config)
         if target_feed_url:
