@@ -5,11 +5,38 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 10:34:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 11:28:00 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Lautstärkeknöpfe: So wandern sie beim iPhone Duo mit – und weitere Tricks</title>
+      <title>Niedergang von Stack Overflow: Moderation und KI als Ursachen</title>
+      <link>https://www.heise.de/news/Kaum-Fragen-veraltete-Antworten-Stack-Overflow-in-der-Krise-11505968.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505968</guid>
+      <pubDate>Fri, 30 Oct 2026 10:59:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Beteiligung auf Stack Overflow ist rapide gesunken. Schuld ist laut Community aber weniger die KI, sondern vielmehr die strenge Moderation.]]></description>
+    </item>
+    <item>
+      <title>OpenTelemetry friert seine Transformationssprache ein</title>
+      <link>https://www.heise.de/news/OpenTelemetry-Collector-Updates-zerlegen-keine-Filterregeln-mehr-11505793.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505793</guid>
+      <pubDate>Fri, 30 Oct 2026 10:43:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Schluss mit kaputten Collector-Pipelines nach Updates: Die OpenTelemetry Transformation Language (OTTL) ist in Version 1.0 stabil und rückwärtskompatibel.]]></description>
+    </item>
+    <item>
+      <title>Nach Cyberangriff: Uni Leipzig weiterhin offline</title>
+      <link>https://www.heise.de/news/Nach-Cyberangriff-Uni-Leipzig-weiterhin-offline-11506014.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506014</guid>
+      <pubDate>Fri, 30 Oct 2026 10:39:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zahlreiche IT-Dienste der Universität Leipzig sind auch Tage nach einem Cyberangriff nicht erreichbar. Wann sie wieder zur Verfügung stehen, ist unklar.]]></description>
+    </item>
+    <item>
+      <title>iPhone Duo: Trick lässt Lautstärkeknöpfe mitwandern – weitere Tipps</title>
       <link>https://www.heise.de/news/Lautstaerkeknoepfe-So-wandern-sie-beim-iPhone-Duo-mit-und-weitere-Tricks-11500253.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11500253</guid>
       <pubDate>Fri, 30 Oct 2026 10:12:00 GMT</pubDate>
@@ -673,51 +700,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Oracle hat mit dem Oktober-CPU auch Lücken in der E-Business-Suite geschlossen. Nun sehen IT-Forscher erste Angriffsversuche.]]></description>
-    </item>
-    <item>
-      <title>Artificial Analysis v5: KI-Modelle im neuen Benchmark-Test</title>
-      <link>https://www.heise.de/news/Artificial-Analysis-Index-v5-Mehr-geheime-KI-Benchmarks-11504417.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11504417</guid>
-      <pubDate>Thu, 29 Oct 2026 11:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Artificial Analysis hat seinen KI-Benchmark-Index aktualisiert. Version 5 enthält neue Tests und arbeitet erstmals mit 60 Prozent nicht öffentlichen Aufgaben.]]></description>
-    </item>
-    <item>
-      <title>Bausteine für die Entstehung des Lebens kamen wohl nicht von Kometen</title>
-      <link>https://www.heise.de/news/Bausteine-fuer-die-Entstehung-des-Lebens-kamen-wohl-nicht-von-Kometen-11504375.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11504375</guid>
-      <pubDate>Thu, 29 Oct 2026 11:05:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Seit einem Jahrhundert gelten Kometen als mögliche Quelle für die molekularen Bausteine, aus denen das Leben entstanden ist. Das muss wohl revidiert werden.]]></description>
-    </item>
-    <item>
-      <title>Gut getarnt: Automatisch startender Wurm bei GitHub ist schwer zu finden</title>
-      <link>https://www.heise.de/news/Angreifer-kapern-42-GitHub-Repositories-fuer-npm-Wurm-Kampagne-testmetest-11503164.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11503164</guid>
-      <pubDate>Thu, 29 Oct 2026 10:57:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[JFrog hat Schadcode in 42 GitHub-Repositories entdeckt. Dieser startet automatisch durch KI-Assistenten oder bei der Arbeit an Projekten.]]></description>
-    </item>
-    <item>
-      <title>The US added a record 20.2 GWh of battery storage in just 3 months</title>
-      <link>https://electrek.co/2026/08/31/the-us-added-a-record-20-2-gwh-of-battery-storage-in-just-3-months/</link>
-      <guid isPermaLink="false">https://electrek.co/2026/08/31/the-us-added-a-record-20-2-gwh-of-battery-storage-in-just-3-months/</guid>
-      <pubDate>Thu, 29 Oct 2026 10:44:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Chained PHP2Shell Exploit Roots 25 Servers, Including US Government Servers</title>
-      <link>https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers</link>
-      <guid isPermaLink="false">https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers</guid>
-      <pubDate>Thu, 29 Oct 2026 10:42:41 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
   </channel>
 </rss>

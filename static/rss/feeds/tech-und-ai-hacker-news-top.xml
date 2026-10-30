@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 10:34:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 11:28:00 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -76,24 +76,6 @@
       <link>https://publicpolicy.googleblog.com/2008/04/how-google-determines-names-for-bodies.html</link>
       <guid isPermaLink="false">https://publicpolicy.googleblog.com/2008/04/how-google-determines-names-for-bodies.html</guid>
       <pubDate>Thu, 29 Oct 2026 11:41:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The US added a record 20.2 GWh of battery storage in just 3 months</title>
-      <link>https://electrek.co/2026/08/31/the-us-added-a-record-20-2-gwh-of-battery-storage-in-just-3-months/</link>
-      <guid isPermaLink="false">https://electrek.co/2026/08/31/the-us-added-a-record-20-2-gwh-of-battery-storage-in-just-3-months/</guid>
-      <pubDate>Thu, 29 Oct 2026 10:44:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Chained PHP2Shell Exploit Roots 25 Servers, Including US Government Servers</title>
-      <link>https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers</link>
-      <guid isPermaLink="false">https://dreamgroup.com/blog/chained-php2shell-exploit-roots-25-servers</guid>
-      <pubDate>Thu, 29 Oct 2026 10:42:41 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

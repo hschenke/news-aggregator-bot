@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=debeste.de</link>
     <description>RSS-Feed für die Quelle 'debeste.de' (Kategorie: Fun).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 10:34:38 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 11:28:00 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-debestede.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -439,24 +439,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA["Gießkatze"]]></description>
-    </item>
-    <item>
-      <title>Stimmt, du hattest recht...</title>
-      <link>https://debeste.de/633176/Stimmt,-du-hattest-recht</link>
-      <guid isPermaLink="false">https://debeste.de/633176/Stimmt,-du-hattest-recht</guid>
-      <pubDate>Thu, 29 Oct 2026 11:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Stimmt, du hattest recht... Menschen landen tatsächlich nicht auf ihren Füßen.]]></description>
-    </item>
-    <item>
-      <title>Damals / Heute..</title>
-      <link>https://debeste.de/633312/Damals-Heute</link>
-      <guid isPermaLink="false">https://debeste.de/633312/Damals-Heute</guid>
-      <pubDate>Thu, 29 Oct 2026 10:59:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Damals / Heute]]></description>
     </item>
   </channel>
 </rss>
