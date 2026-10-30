@@ -121,15 +121,13 @@ def normalize_keywords(kw: Any) -> list[str]:
 def is_ad_item(
     title: str,
     summary: str = "",
-    custom_ad_keywords: list[str] | None = None,
     ad_patterns: list[str] | None = None,
 ) -> bool:
     """
     Prüft, ob ein Artikel Werbung, Anzeige, gesponsertes Angebot oder Deal ist.
     
     Verwendet ausschließlich dynamisch konfigurierte Regex-Muster (ad_patterns)
-    und Werbe-Keywords (custom_ad_keywords) aus den Einstellungen.
-    Keine fest im Quellcode kodierten Schlüsselwörter.
+    aus den Einstellungen. Keine fest im Quellcode kodierten Schlüsselwörter.
     """
     if ad_patterns is None:
         if DEFAULT_AD_PATTERNS:
@@ -139,8 +137,6 @@ def is_ad_item(
                 from src.sources_manager import load_settings
                 loaded_settings = load_settings()
                 ad_patterns = loaded_settings.get("ad_patterns", [])
-                if custom_ad_keywords is None:
-                    custom_ad_keywords = loaded_settings.get("ad_keywords", [])
             except Exception:
                 ad_patterns = []
 
@@ -156,26 +152,6 @@ def is_ad_item(
                     return True
             except re.error:
                 continue
-
-    if custom_ad_keywords:
-        for kw in custom_ad_keywords:
-            k = kw.strip().lower()
-            if not k:
-                continue
-            # Allgemeine Kennzeichnungen wie 'anzeige' oder 'werbung' dürfen nicht als einfache Substring-Suche
-            # im Fließtext (summary) matchen, da sie dort häufig in legitimem Kontext
-            # (z. B. 'Strafanzeige', redaktionelle Banner-Hinweise 'Quelle: Google Anzeige') vorkommen.
-            if k in ("anzeige", "werbung", "sponsored", "gesponsert"):
-                label_pat = rf"(?:^|\[|\()\s*{re.escape(k)}\s*(?:[:\-\\|•\]\)]|$)"
-                if re.search(label_pat, t_clean, re.IGNORECASE) or re.search(rf"^{re.escape(k)}\s*[:\-\\|•]", s_clean, re.IGNORECASE):
-                    return True
-            else:
-                try:
-                    pat = rf"\b{re.escape(k)}\b"
-                    if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
-                        return True
-                except re.error:
-                    continue
 
     return False
 

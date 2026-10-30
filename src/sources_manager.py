@@ -408,7 +408,7 @@ def save_settings(
 ) -> dict[str, Any]:
     """Speichert globale Einstellungen persistent in config/settings.yaml (ohne Prompt-Keys)
     und legt bei Bedarf einen Backup-Snapshot in der settings_backups-Tabelle ab."""
-    clean_settings = {k: v for k, v in settings.items() if k not in PROMPT_KEYS}
+    clean_settings = {k: v for k, v in settings.items() if k not in PROMPT_KEYS and k != "ad_keywords"}
     path = get_settings_path(config_path)
     path.parent.mkdir(parents=True, exist_ok=True)
     yaml_str = yaml.dump(clean_settings, allow_unicode=True, sort_keys=False, default_flow_style=False)
@@ -425,7 +425,7 @@ def save_settings(
                 settings_yaml=yaml_str,
                 label=backup_label,
                 filter_ads=bool(clean_settings.get("filter_ads", True)),
-                keywords_count=len(clean_settings.get("ad_keywords", [])),
+                keywords_count=0,
                 patterns_count=len(clean_settings.get("ad_patterns", [])),
             )
         except Exception as exc:

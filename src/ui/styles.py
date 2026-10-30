@@ -1083,10 +1083,10 @@ def apply_custom_styles() -> None:
         function handleClick(e) {
             var btn = e.target && e.target.closest ? e.target.closest("button") : null;
             if (!btn) return;
-            if (btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
+            if (btn.disabled || btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
             var khCheck = btn.closest("[class*='st-key-']");
             var kcCheck = khCheck ? khCheck.className : "";
-            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("btn_archive_cleanup_90d") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1 && kcCheck.indexOf("btn_create_settings_backup") === -1 && kcCheck.indexOf("btn_restore_sb_") === -1 && kcCheck.indexOf("btn_confirm_del_sb_") === -1) return;
+            if (kcCheck.indexOf("top_save_sources_btn") === -1 && kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("btn_archive_cleanup_90d") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1 && kcCheck.indexOf("btn_restore_sb_") === -1 && kcCheck.indexOf("btn_confirm_del_sb_") === -1) return;
 
             var keyHolder = btn.closest("[class*='st-key-']");
             var keyClass = keyHolder ? keyHolder.className : "";
@@ -1122,8 +1122,7 @@ def apply_custom_styles() -> None:
                 showActionOverlay("🔄 Aktualisiere Offline-Archiv...", "Synchronisiere Offline-Feeds und lade gespeicherte Artikel...");
             } else if (keyClass.indexOf("arch_toggle_off_") !== -1) {
                 showActionOverlay("⚙️ Aktualisiere Offline-Feed...", "Synchronisiere Feed-Einstellung und Offline-Archiv...");
-            } else if (keyClass.indexOf("btn_create_settings_backup") !== -1 || btnText.indexOf("backup erstellen") !== -1) {
-                showActionOverlay("💾 Erstelle Settings-Backup...", "Speichere Einstellungen in der Datenbank...");
+
             } else if (keyClass.indexOf("btn_restore_sb_") !== -1 || btnText.indexOf("laden") !== -1) {
                 showActionOverlay("🔄 Lade Settings-Backup...", "Stelle Einstellungen aus Backup wieder her...");
             } else if (keyClass.indexOf("btn_confirm_del_sb_") !== -1 || btnText.indexOf("unwiderruflich löschen") !== -1) {

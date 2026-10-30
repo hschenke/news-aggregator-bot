@@ -44,7 +44,7 @@ class TestSourcesManagement(unittest.TestCase):
             "settings": {
                 "language": "de",
                 "filter_ads": True,
-                "ad_keywords": ["heise-angebot", "anzeige"]
+                "ad_patterns": ["^heise-angebot:"]
             }
         }
 
@@ -173,7 +173,7 @@ class TestSourcesManagement(unittest.TestCase):
         update_settings(
             {
                 "filter_ads": False,
-                "ad_keywords": ["werbung", "deal"],
+                "ad_patterns": ["^werbung", "^deal"],
                 "max_article_age_weeks": 12,
                 "custom_prompt_directives": "Keine Filter anwenden."
             },
@@ -182,7 +182,7 @@ class TestSourcesManagement(unittest.TestCase):
         )
         s = self.config["settings"]
         self.assertFalse(s["filter_ads"])
-        self.assertEqual(s["ad_keywords"], ["werbung", "deal"])
+        self.assertEqual(s["ad_patterns"], ["^werbung", "^deal"])
         self.assertEqual(s["max_article_age_weeks"], 12)
         self.assertEqual(s["custom_prompt_directives"], "Keine Filter anwenden.")
 
@@ -232,7 +232,7 @@ class TestSourcesManagement(unittest.TestCase):
         self.assertIn("language", raw_settings)
         self.assertIn("archive_retention_days", raw_settings)
         self.assertIn("filter_ads", raw_settings)
-        self.assertIn("ad_keywords", raw_settings)
+        self.assertNotIn("ad_keywords", raw_settings)
         self.assertIn("ad_patterns", raw_settings)
         self.assertNotIn("custom_main_prompt", raw_settings, "settings.yaml darf keine Prompt-Definitionen enthalten!")
 

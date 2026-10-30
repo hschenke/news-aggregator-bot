@@ -206,7 +206,7 @@ class TestWebappMobileFeatures(unittest.TestCase):
         self.assertIn('inp_set_retention_days', manage_code)
         self.assertIn('inp_set_style', manage_code)
         self.assertIn('inp_set_filter_ads', manage_code)
-        self.assertIn('inp_set_ad_keywords', manage_code)
+        self.assertNotIn('inp_set_ad_keywords', manage_code)
         self.assertIn('inp_set_ad_patterns', manage_code)
 
         # 2. Vorschau-Tabs für sources.yaml und prompts.yaml sind entfernt

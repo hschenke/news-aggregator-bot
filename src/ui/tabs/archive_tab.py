@@ -279,31 +279,7 @@ def _render_settings_backups_block(working_config: dict[str, Any]) -> None:
     is_expanded = bool(st.session_state.get("settings_backups_expanded", False))
 
     with st.expander(f"📁 Gespeicherte Settings-Backups ({len(backups)} Versionen im Archiv)", expanded=is_expanded):
-        st.caption("Verwalte historische Snapshots deiner Einstellungen (Ad-Filter, Keywords, Patterns).")
-        col_sb1, col_sb2 = st.columns([3.2, 1.2], vertical_alignment="bottom")
-        with col_sb1:
-            manual_label = st.text_input(
-                "Notiz / Bezeichnung für neues Backup:",
-                placeholder="z. B. Stand vor Anpassung der Ad-Keywords",
-                key="inp_manual_backup_label",
-            )
-        with col_sb2:
-            if st.button("💾 Backup erstellen", key="btn_create_settings_backup", use_container_width=True):
-                curr_settings = working_config.get("settings", {})
-                clean = {k: v for k, v in curr_settings.items() if k not in PROMPT_KEYS}
-                yaml_str = yaml.dump(clean, allow_unicode=True, sort_keys=False, default_flow_style=False)
-                lbl = manual_label.strip() or "Manuelles Backup"
-                new_id = storage.save_settings_backup(
-                    settings_yaml=yaml_str,
-                    label=lbl,
-                    filter_ads=bool(clean.get("filter_ads", True)),
-                    keywords_count=len(clean.get("ad_keywords", [])),
-                    patterns_count=len(clean.get("ad_patterns", [])),
-                )
-                st.session_state["_reload_settings_backups"] = True
-                st.session_state["settings_backups_expanded"] = True
-                set_dismissible_notice("archive_notice", f"Settings-Backup #{new_id} ({lbl}) erfolgreich gespeichert!", icon="✅")
-                st.rerun()
+        st.caption("Verwalte historische Snapshots deiner Einstellungen (Ad-Filter, Patterns).")
 
         if not backups:
             st.info("Noch keine Settings-Backups in der Datenbank gespeichert.")

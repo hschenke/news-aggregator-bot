@@ -676,7 +676,6 @@ def run_offline_archive_for_feeds(
 
         settings = config.get("settings", {})
         filter_ads = bool(settings.get("filter_ads", True))
-        custom_ad_keywords = settings.get("ad_keywords", [])
         ad_patterns = settings.get("ad_patterns", [])
         max_age_hours_3m = float(OFFLINE_RETENTION_DAYS) * 24.0
 
@@ -693,7 +692,6 @@ def run_offline_archive_for_feeds(
                     include_keywords=feed_cfg.get("include_keywords"),
                     exclude_keywords=feed_cfg.get("exclude_keywords"),
                     filter_ads=filter_ads,
-                    custom_ad_keywords=custom_ad_keywords,
                     ad_patterns=ad_patterns,
                     max_age_hours=max_age_hours_3m,
                 )

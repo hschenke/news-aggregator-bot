@@ -117,6 +117,8 @@ def render_manage_tab(
                 help="Änderungen sichern" if has_unsaved_changes else "Alles aktuell.",
             ):
                 st.session_state["is_saving_sources"] = True
+                if "settings" in working_config and isinstance(working_config["settings"], dict):
+                    working_config["settings"].pop("ad_keywords", None)
                 save_sources(working_config)
                 if get_offline_enabled_feeds(working_config):
                     start_offline_archive_task(config=working_config)
@@ -127,10 +129,23 @@ def render_manage_tab(
                     commit_message="chore(config): update configuration and RSS feeds via web dashboard",
                     include_rss_feeds=True,
                 )
+                st.session_state["working_sources_config"] = load_sources()
                 st.session_state["has_unsaved_changes"] = False
                 st.session_state["is_saving_sources"] = False
+                keys_to_clear = [
+                    k for k in list(st.session_state.keys())
+                    if k.startswith(("ed_", "inp_set_", "inp_new_", "sel_ren_cat", "sel_new_feed_cat"))
+                ]
+                for k in keys_to_clear:
+                    del st.session_state[k]
+                st.session_state.pop("editing_feed_key", None)
+                st.session_state.pop("editing_feed_url", None)
+                st.session_state.pop("editing_feed_name", None)
+                st.session_state.pop("editing_feed_category", None)
+                st.session_state.pop("last_edited_category", None)
+                st.session_state.pop("last_saved_feed_key", None)
                 set_dismissible_notice("manage_notice", "Änderungen gespeichert & Hintergrund-Synchronisation gestartet!", icon="✅")
-                st.rerun()
+                embed_client_script("setTimeout(function(){ window.location.reload(); }, 60);")
         with col_st3:
             if has_unsaved_changes:
                 if st.button("↩️ Verwerfen", use_container_width=True, key="top_discard_sources_btn"):
@@ -420,23 +435,8 @@ def render_manage_tab(
         filter_ads_val = st.checkbox(
             "Ad-Filter aktiv (Ad-Artikel komplett herausfiltern)",
             value=bool(settings.get("filter_ads", True)),
-            help="Wenn aktiviert, werden erkannte Ad-Artikel sowie Artikel mit den unten genannten Keywords nicht in die Feeds übernommen.",
+            help="Wenn aktiviert, werden erkannte Ad-Artikel anhand der konfigurierten Ad-Patterns nicht in die Feeds übernommen.",
             key="inp_set_filter_ads",
-        )
-
-        curr_ad_kw = settings.get("ad_keywords", [])
-        if isinstance(curr_ad_kw, list):
-            ad_kw_initial = ", ".join(str(k) for k in curr_ad_kw)
-        else:
-            ad_kw_initial = str(curr_ad_kw or "")
-
-        ad_kw_val = st.text_area(
-            "Ad-Keywords (kommagetrennt oder zeilenweise):",
-            value=ad_kw_initial,
-            help="Optionale zusätzliche Schlüsselwörter. Hinweis: Patterns erfassen Werbe-Formulierungen bereits präzise per Regex.",
-            placeholder="Optional leer lassen, da Ad-Patterns bereits greifen",
-            key="inp_set_ad_keywords",
-            height=85,
         )
 
         curr_ad_pat = settings.get("ad_patterns", [])
@@ -451,7 +451,7 @@ def render_manage_tab(
             help="Reguläre Ausdrücke zur Erkennung von Ads. Jedes Muster in einer eigenen Zeile.",
             placeholder="z. B. ^(?:anzeige|werbung)\\s*[:\\-\\|•]",
             key="inp_set_ad_patterns",
-            height=120,
+            height=130,
         )
 
         if st.button("✔️ Einstellungen im Entwurf übernehmen", key="btn_apply_settings", use_container_width=True):
@@ -462,15 +462,7 @@ def render_manage_tab(
                 settings["summary_style"] = style_val.strip()
                 settings["filter_ads"] = bool(filter_ads_val)
                 settings.pop("strip_ads", None)
-
-                raw_kw_tokens = [k.strip() for k in ad_kw_val.replace("\n", ",").split(",") if k.strip()]
-                seen_kw = set()
-                parsed_ad_keywords = []
-                for token in raw_kw_tokens:
-                    if token.lower() not in seen_kw:
-                        seen_kw.add(token.lower())
-                        parsed_ad_keywords.append(token.lower())
-                settings["ad_keywords"] = parsed_ad_keywords
+                settings.pop("ad_keywords", None)
 
                 raw_pat_lines = [p.strip() for p in ad_pat_val.splitlines() if p.strip()]
                 seen_pat = set()

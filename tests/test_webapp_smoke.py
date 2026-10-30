@@ -151,5 +151,28 @@ class TestWebappSmoke(unittest.TestCase):
         self.assertIn("manage_notice", at.session_state)
 
 
+
+    def test_save_changes_button_execution(self):
+        """Verifies that clicking '💾 Jetzt sichern' in manage tab executes without exceptions."""
+        from unittest.mock import patch
+        from src.aggregator import load_sources
+        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at.session_state["authenticated"] = True
+        at.session_state["auth_role"] = "admin"
+        at.session_state["active_nav_tab"] = "manage"
+        at.session_state["has_unsaved_changes"] = True
+        at.session_state["working_sources_config"] = load_sources()
+        at.session_state["editing_feed_key"] = "testkey"
+        at.run()
+        self.assertFalse(at.exception)
+        save_btns = [b for b in at.button if b.key == "top_save_sources_btn"]
+        self.assertEqual(len(save_btns), 1)
+        with patch("src.ui.tabs.manage_tab.save_sources"),              patch("src.ui.background.run_in_background"):
+            save_btns[0].click().run()
+        self.assertFalse(at.exception, f"Save button threw exceptions: {at.exception}")
+        self.assertFalse(at.session_state["has_unsaved_changes"])
+        self.assertNotIn("editing_feed_key", at.session_state)
+        self.assertIn("manage_notice", at.session_state)
+
 if __name__ == "__main__":
     unittest.main()

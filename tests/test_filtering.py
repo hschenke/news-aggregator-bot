@@ -31,11 +31,11 @@ class TestFilteringAndScraping(unittest.TestCase):
         self.assertFalse(is_ad_item("Polizei nimmt Anzeige nach Diebstahl auf", "Zeugen gesucht."))
         self.assertFalse(is_ad_item("Google Gemini: Nur noch ein Modell für Gratis-Nutzer", "Text mit Quelle: Google Anzeige am Ende."))
 
-    def test_ad_detection_custom_keywords(self):
-        custom_kws = ["krypto-scam", "gewinnspiel", "black friday"]
-        self.assertTrue(is_ad_item("Großes Gewinnspiel gestartet", "Preise im Wert von...", custom_ad_keywords=custom_kws))
-        self.assertTrue(is_ad_item("Black Friday Angebote 2026", "Schnäppchen des Jahres", custom_ad_keywords=custom_kws))
-        self.assertFalse(is_ad_item("Wissenschaftliche Studie zu Schlaf", "Schlafforscher stellen Ergebnisse vor.", custom_ad_keywords=custom_kws))
+    def test_ad_detection_patterns(self):
+        patterns = [r"\bgewinnspiel\b", r"\bblack friday\b"]
+        self.assertTrue(is_ad_item("Großes Gewinnspiel gestartet", "Preise im Wert von...", ad_patterns=patterns))
+        self.assertTrue(is_ad_item("Black Friday Angebote 2026", "Schnäppchen des Jahres", ad_patterns=patterns))
+        self.assertFalse(is_ad_item("Wissenschaftliche Studie zu Schlaf", "Schlafforscher stellen Ergebnisse vor.", ad_patterns=patterns))
 
     def test_clean_html_text(self):
         raw = "<p>Hallo &amp; Willkommen bei <b>Berlin.de</b>!&nbsp;&quot;Test&quot;</p>"

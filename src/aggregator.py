@@ -104,7 +104,6 @@ def fetch_feed_items(
     include_keywords: list[str] | None = None,
     exclude_keywords: list[str] | None = None,
     filter_ads: bool = True,
-    custom_ad_keywords: list[str] | None = None,
     ad_patterns: list[str] | None = None,
     max_age_hours: float | None = DEFAULT_MAX_ARTICLE_AGE_HOURS,
     max_age_weeks: int | float | None = None,
@@ -212,7 +211,7 @@ def fetch_feed_items(
                 ).strip()
 
             # 1. Stufe: Werbe- und Anzeigen-Filter (Global & quellenspezifisch)
-            if filter_ads and is_ad_item(title, summary, custom_ad_keywords=custom_ad_keywords, ad_patterns=ad_patterns):
+            if filter_ads and is_ad_item(title, summary, ad_patterns=ad_patterns):
                 continue
 
             # 2. Stufe: Feed-spezifische Keyword-Filterung
@@ -285,7 +284,6 @@ def collect_all_news(
     config = load_sources(config_path)
     settings = config.get("settings", {})
     filter_ads = settings.get("filter_ads", True)
-    custom_ad_keywords = settings.get("ad_keywords", [])
     ad_patterns = settings.get("ad_patterns", [])
     max_age_hours = DEFAULT_MAX_ARTICLE_AGE_HOURS
 
@@ -324,7 +322,6 @@ def collect_all_news(
                 include_keywords=inc,
                 exclude_keywords=exc,
                 filter_ads=filter_ads,
-                custom_ad_keywords=custom_ad_keywords,
                 ad_patterns=ad_patterns,
                 max_age_hours=max_age_hours,
             )
