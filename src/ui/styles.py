@@ -1086,7 +1086,7 @@ def apply_custom_styles() -> None:
             if (btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
             var khCheck = btn.closest("[class*='st-key-']");
             var kcCheck = khCheck ? khCheck.className : "";
-            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1 && kcCheck.indexOf("btn_create_settings_backup") === -1 && kcCheck.indexOf("btn_restore_sb_") === -1 && kcCheck.indexOf("btn_confirm_del_sb_") === -1) return;
+            if (kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("btn_archive_cleanup_90d") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1 && kcCheck.indexOf("btn_create_settings_backup") === -1 && kcCheck.indexOf("btn_restore_sb_") === -1 && kcCheck.indexOf("btn_confirm_del_sb_") === -1) return;
 
             var keyHolder = btn.closest("[class*='st-key-']");
             var keyClass = keyHolder ? keyHolder.className : "";
@@ -1127,16 +1127,9 @@ def apply_custom_styles() -> None:
             } else if (keyClass.indexOf("btn_restore_sb_") !== -1 || btnText.indexOf("laden") !== -1) {
                 showActionOverlay("🔄 Lade Settings-Backup...", "Stelle Einstellungen aus Backup wieder her...");
             } else if (keyClass.indexOf("btn_confirm_del_sb_") !== -1 || btnText.indexOf("unwiderruflich löschen") !== -1) {
-                var card = btn.closest ? btn.closest("[data-testid='stVerticalBlockBorderWrapper']") : null;
-                if (!card && btn.parentElement) {
-                    card = btn.parentElement.closest ? btn.parentElement.closest("[data-testid='stVerticalBlockBorderWrapper']") : null;
-                }
-                if (card) {
-                    card.style.transition = "opacity 0.2s ease, transform 0.2s ease";
-                    card.style.opacity = "0";
-                    card.style.transform = "scale(0.98)";
-                    setTimeout(function() { card.style.display = "none"; }, 200);
-                }
+                showActionOverlay("🗑️ Lösche Settings-Backup...", "Entferne Backup aus der Datenbank...");
+            } else if (keyClass.indexOf("btn_archive_cleanup_90d") !== -1 || btnText.indexOf("bereinigen") !== -1) {
+                showActionOverlay("🧹 Bereinige Offline-Archiv...", "Entferne abgelaufene Artikel älter als 90 Tage...");
             }
         }
 

@@ -431,11 +431,10 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertNotIn("generate_offline_feed_pdf", archive_py)
         self.assertNotIn("application/pdf", archive_py)
 
-        # HTML open in browser tab & HTML download buttons present
-        self.assertIn("open_btn_", archive_py)
-        self.assertIn("dl_btn_", archive_py)
-        self.assertIn("window.open(url, \"_blank\"", archive_py)
-        self.assertIn("URL.createObjectURL(blob)", archive_py)
+        # HTML download present via native lazy st.download_button
+        self.assertIn("generate_offline_article_html", archive_py)
+        self.assertIn("generate_offline_feed_html", archive_py)
+        self.assertIn("st.download_button", archive_py)
 
         # Combined Sync & Refresh button + bottom collapsible management block
         self.assertIn("btn_archive_sync_refresh", archive_py)
