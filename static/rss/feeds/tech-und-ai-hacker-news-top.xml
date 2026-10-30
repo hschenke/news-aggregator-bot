@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:43:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -184,15 +184,6 @@
       <link>https://sidbala.com/h-264-is-magic/</link>
       <guid isPermaLink="false">https://sidbala.com/h-264-is-magic/</guid>
       <pubDate>Thu, 29 Oct 2026 15:53:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>LLM Voice</title>
-      <link>https://martinfowler.com/bliki/LLM-Voice.html</link>
-      <guid isPermaLink="false">https://martinfowler.com/bliki/LLM-Voice.html</guid>
-      <pubDate>Thu, 29 Oct 2026 14:57:55 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

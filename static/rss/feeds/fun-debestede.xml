@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=debeste.de</link>
     <description>RSS-Feed für die Quelle 'debeste.de' (Kategorie: Fun).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:43:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-debestede.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wir lieben es, wenn unsere Pläne funktionieren...</title>
+      <link>https://debeste.de/633564/Wir-lieben-es,-wenn-unsere-Pl-ne-funktionieren</link>
+      <guid isPermaLink="false">https://debeste.de/633564/Wir-lieben-es,-wenn-unsere-Pl-ne-funktionieren</guid>
+      <pubDate>Fri, 30 Oct 2026 15:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Wir lieben es, wenn unsere Pläne funktionieren.]]></description>
+    </item>
     <item>
       <title>Zum Mond geflogen: 5 Fotos geschossen..</title>
       <link>https://debeste.de/633740/Zum-Mond-geflogen-5-Fotos-geschossen</link>
@@ -432,15 +441,6 @@
       <description><![CDATA[Wenn ich meinem Kumpel was auf dem Handy zeige und plötzlich die Frontkamera angeht.]]></description>
     </item>
     <item>
-      <title>Ich habe zwei Probleme im Leben: Einschlafen fällt mir..</title>
-      <link>https://debeste.de/633229/Ich-habe-zwei-Probleme-im-Leben-Einschlafen-f-llt-mir</link>
-      <guid isPermaLink="false">https://debeste.de/633229/Ich-habe-zwei-Probleme-im-Leben-Einschlafen-f-llt-mir</guid>
-      <pubDate>Thu, 29 Oct 2026 16:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Ich habe zwei Probleme im Leben: Einschlafen fällt mir schwer. Aufstehen fällt mir schwer.]]></description>
-    </item>
-    <item>
       <title>Arbeitsschutz? Ach Meister, so 'nen neumodischen Kram gibt's bei uns nicht...</title>
       <link>https://debeste.de/633239/Arbeitsschutz-Ach-Meister,-so-nen-neumodischen-Kram-gibt-s-bei-uns-nicht</link>
       <guid isPermaLink="false">https://debeste.de/633239/Arbeitsschutz-Ach-Meister,-so-nen-neumodischen-Kram-gibt-s-bei-uns-nicht</guid>
@@ -448,15 +448,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Von 100 Euro Gehaltserhöhung landen bei vielen Arbeitnehmern..</title>
-      <link>https://debeste.de/633455/Von-100-Euro-Gehaltserh-hung-landen-bei-vielen-Arbeitnehmern</link>
-      <guid isPermaLink="false">https://debeste.de/633455/Von-100-Euro-Gehaltserh-hung-landen-bei-vielen-Arbeitnehmern</guid>
-      <pubDate>Thu, 29 Oct 2026 15:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Von 100 Euro Gehaltserhöhung landen bei vielen Arbeitnehmern nur 52 Euro auf dem Konto. Deutschland hat weltweit die zweithöchste Abgabenlast auf Arbeitseinkommen.]]></description>
     </item>
   </channel>
 </rss>

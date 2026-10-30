@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Hertha+Alert</link>
     <description>RSS-Feed für die Quelle 'Hertha Alert' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:43:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-hertha-alert.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -70,6 +70,15 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[Am Sonntag wird das Achtelfinale im DFB-Pokal ausgelost. Nach zwei Auswärtsreisen hofft Hertha BSC als letzter Berliner Klub auf ein Spiel im ...]]></description>
+    </item>
+    <item>
+      <title>Spitzenspiel in der 2. Liga! Der noch ungeschlagene Tabellenführer Hertha BSC reist ...</title>
+      <link>https://www.instagram.com/p/DfHdghBldlz/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10811167914648228653</guid>
+      <pubDate>Fri, 30 Oct 2026 12:03:51 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[BETZENBERG-KRACHER – HERTHA WILL DEN NÄCHSTEN DREIER! ⚪️ 1. FC KAISERSLAUTERN HERTHA BSC Samstag, 31. Oktober 2026]]></description>
     </item>
     <item>
       <title>Kaiserslautern vs. Hertha Tipp, KI Prognose &amp; Quoten 31.10.2026 – 2. Bundesliga</title>
@@ -178,15 +187,6 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[#DBLDW-Vorschau: Für den WAC kommt´s noch Hertha. Hinweis: Der DBLDW-Podcast ist im Rahmen einer Kooperation auf Sky Sport Austria zu sehen ...]]></description>
-    </item>
-    <item>
-      <title>Sa., 07.11., 20:15 Uhr: 2. Bundesliga Live: Hertha BSC - VfL Wolfsburg - RTL.de</title>
-      <link>https://www.rtl.de/video/sa-07-11-20-15-uhr-2-bundesliga-live-hertha-bsc-vfl-wolfsburg-6ae371c26d35e8927e0763f3.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3999360040990560267</guid>
-      <pubDate>Fri, 30 Oct 2026 07:22:43 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Sa., 07.11., 20:15 Uhr: 2. Bundesliga Live: Hertha BSC - VfL Wolfsburg ... Dieses Video ist in deinem Land leider nicht verfügbar.]]></description>
     </item>
   </channel>
 </rss>

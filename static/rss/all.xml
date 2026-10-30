@@ -5,9 +5,54 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app</link>
     <description>Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:43:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Fun] Wir lieben es, wenn unsere Pläne funktionieren...</title>
+      <link>https://debeste.de/633564/Wir-lieben-es,-wenn-unsere-Pl-ne-funktionieren</link>
+      <guid isPermaLink="false">https://debeste.de/633564/Wir-lieben-es,-wenn-unsere-Pl-ne-funktionieren</guid>
+      <pubDate>Fri, 30 Oct 2026 15:19:01 GMT</pubDate>
+      <category>Fun</category>
+      <source url="https://debeste.de/rss-main">debeste.de</source>
+      <description><![CDATA[Wir lieben es, wenn unsere Pläne funktionieren.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] City-E-Bike Veio Y1 ST im Test: günstiger &amp; guter Tiefeinsteiger mit Mittelmotor</title>
+      <link>https://www.heise.de/bestenlisten/testbericht/city-e-bike-veio-y1-st-im-test-guenstiger-und-guter-tiefeinsteiger-mit-mittelmotor/td4pxev?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506594</guid>
+      <pubDate>Fri, 30 Oct 2026 15:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ananda-Mittelmotor mit 70 Nm, 522 Wh und tiefer Einstieg: Das City-E-Bike Veio Y1 ST unterstützt angenehm natürlich und kostet unter 1300 Euro.]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Afrika-Cup-Wende: Was die Nations League damit zu tun hat</title>
+      <link>https://www.transfermarkt.de/afrika-cup-doch-weiter-alle-zwei-jahre-was-die-neue-nations-league-mit-der-wende-zu-tun-hat/view/news/489791</link>
+      <guid isPermaLink="false">https://www.transfermarkt.de/afrika-cup-doch-weiter-alle-zwei-jahre-was-die-neue-nations-league-mit-der-wende-zu-tun-hat/view/news/489791</guid>
+      <pubDate>Fri, 30 Oct 2026 14:49:31 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
+      <description><![CDATA[Der Afrika-Cup wird nun doch weiter alle zwei Jahre stattfinden. Das teilte Patrice Motsepe, Präsident des afrikanischen Fußballverbandes (CAF), mit. Das Exekutivkomitee korrigierte...]]></description>
+    </item>
+    <item>
+      <title>[Berlin] Geduldige Hertha zu Gast bei der besten Abwehr der Liga</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/10/hertha-kaiserslautern-2-bundesliga-gechter-abwehr.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/hertha-kaiserslautern-2-bundesliga-gechter-abwehr.html</guid>
+      <pubDate>Fri, 30 Oct 2026 14:43:37 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Beim Duell auf dem Betzenberg am Samstag (13 Uhr) treffen die beiden besten Abwehrreihen der Liga aufeinander - Hertha hat bislang acht Tore kassiert, Kaiserslautern sogar erst vier. Für die Berliner waren die letzten Spiele eine gute Übung vor dem Topspiel.]]></description>
+    </item>
+    <item>
+      <title>[Tech &amp; AI] Döllner unter Druck: Audi kämpft mit China-Krise und Trump-Auftritt</title>
+      <link>https://www.heise.de/news/Audi-macht-im-dritten-Vierteljahr-nur-minimalen-Gewinn-11506636.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506636</guid>
+      <pubDate>Fri, 30 Oct 2026 14:41:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Krise trifft Audi immer härter: Im dritten Quartal bleibt nur ein winziger Gewinn. Zugleich steht Unternehmenschef Döllner weiter unter Druck.]]></description>
+    </item>
     <item>
       <title>[Fun] Zum Mond geflogen: 5 Fotos geschossen..</title>
       <link>https://debeste.de/633740/Zum-Mond-geflogen-5-Fotos-geschossen</link>
@@ -16,15 +61,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[Zum Mond geflogen: 5 Fotos geschossen. - Ins Badezimmer gegangen: 105 Fotos geschossen.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Geduldige Hertha zu Gast bei der besten Abwehr der Liga</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/hertha-kaiserslautern-2-bundesliga-gechter-abwehr.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/hertha-kaiserslautern-2-bundesliga-gechter-abwehr.html</guid>
-      <pubDate>Fri, 30 Oct 2026 14:37:43 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Beim Duell auf dem Betzenberg am Samstag (13 Uhr) treffen die beiden besten Abwehrreihen der Liga aufeinander - Hertha hat bislang acht Tore kassiert, Kaiserslautern sogar erst vier. Die Für die Berliner waren die letzten Spiele eine gute Übung vor dem Topspiel.]]></description>
     </item>
     <item>
       <title>[Tech &amp; AI] Glasfaserausbau: Wohnungswirtschaft warnt vor Fehlregulierung</title>
@@ -421,6 +457,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Spitzenspiel in der 2. Liga! Der noch ungeschlagene Tabellenführer Hertha BSC reist ...</title>
+      <link>https://www.instagram.com/p/DfHdghBldlz/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:10811167914648228653</guid>
+      <pubDate>Fri, 30 Oct 2026 12:03:51 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[BETZENBERG-KRACHER – HERTHA WILL DEN NÄCHSTEN DREIER! ⚪️ 1. FC KAISERSLAUTERN HERTHA BSC Samstag, 31. Oktober 2026]]></description>
     </item>
     <item>
       <title>[Fun] Die Deutschen haben 2025 weniger gespart...</title>
@@ -882,15 +927,6 @@
       <description><![CDATA[Die USA wollen den brasilianischen Wahlverlierer Flávio Bolsonaro trotz seines Ausreiseverbots aufnehmen. Ab einem gewissen Vermögen sind kriminelle Migrant:innen anscheinend wieder erwünscht.]]></description>
     </item>
     <item>
-      <title>[Fußball] Cristiano Ronaldo hat nach Dreierpack 1.000-Tore-Marke im Visier</title>
-      <link>https://www.transfermarkt.de/ronaldo-hat-nach-dreierpack-1-000-tore-marke-im-visier-67-hattrick-seit-karrierebeginn/view/news/489760</link>
-      <guid isPermaLink="false">https://www.transfermarkt.de/ronaldo-hat-nach-dreierpack-1-000-tore-marke-im-visier-67-hattrick-seit-karrierebeginn/view/news/489760</guid>
-      <pubDate>Fri, 30 Oct 2026 07:56:10 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.transfermarkt.de/rss/news">Transfermarkt</source>
-      <description><![CDATA[Cristiano Ronaldo kommt seinem Traum von 1.000 Toren immer näher. Der 41-Jährige traf beim 5:3 (2:2)-Erfolg des Al-Nassr FC gegen Al Kholood dreimal. Es war der 67. Hattrick seiner...]]></description>
-    </item>
-    <item>
       <title>[Tech &amp; AI] Cisco-Firewalls und GitLab-Lücke werden angegriffen</title>
       <link>https://www.heise.de/news/Cisco-Firewalls-und-GitLab-Luecke-werden-angegriffen-11505669.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11505669</guid>
@@ -934,15 +970,6 @@
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>[Fußball] Sa., 07.11., 20:15 Uhr: 2. Bundesliga Live: Hertha BSC - VfL Wolfsburg - RTL.de</title>
-      <link>https://www.rtl.de/video/sa-07-11-20-15-uhr-2-bundesliga-live-hertha-bsc-vfl-wolfsburg-6ae371c26d35e8927e0763f3.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3999360040990560267</guid>
-      <pubDate>Fri, 30 Oct 2026 07:22:43 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Sa., 07.11., 20:15 Uhr: 2. Bundesliga Live: Hertha BSC - VfL Wolfsburg ... Dieses Video ist in deinem Land leider nicht verfügbar.]]></description>
     </item>
     <item>
       <title>[Fun] Ein toller Buchhalter.</title>
@@ -1710,15 +1737,6 @@
       <description><![CDATA[Dream is grounded in real physics and construction standards. Just as LLMs learn from text, Dream's world model is trained on more than 100 million square feet of building data gathered from permit archives across the United States.]]></description>
     </item>
     <item>
-      <title>[Fun] Ich habe zwei Probleme im Leben: Einschlafen fällt mir..</title>
-      <link>https://debeste.de/633229/Ich-habe-zwei-Probleme-im-Leben-Einschlafen-f-llt-mir</link>
-      <guid isPermaLink="false">https://debeste.de/633229/Ich-habe-zwei-Probleme-im-Leben-Einschlafen-f-llt-mir</guid>
-      <pubDate>Thu, 29 Oct 2026 16:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Ich habe zwei Probleme im Leben: Einschlafen fällt mir schwer. Aufstehen fällt mir schwer.]]></description>
-    </item>
-    <item>
       <title>[Games] Dark Messiah of Might &amp; Magic: Ubisoft erlaubt Fan-Neuauflage mit Koop - ComputerBase</title>
       <link>https://www.computerbase.de/forum/threads/dark-messiah-of-might-magic-ubisoft-erlaubt-fan-neuauflage-mit-koop.2281033/</link>
       <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2279817333492497310</guid>
@@ -1762,69 +1780,6 @@
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
       <description><![CDATA[Bewerben Sie sich für die Stelle als Nachhilfelehrer in Berlin-Mahlsdorf (m/w/d) bei Schülerhilfe GmbH & Co. KG in Berlin, Deutschland.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] OpenAI Astra wird zum neuen Hauptziel chinesischer KI-Anbieter</title>
-      <link>https://www.all-ai.de/news/news26/openai-astra-distllation</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-astra-distllation</guid>
-      <pubDate>Thu, 29 Oct 2026 15:20:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[DeepSeek und Moonshot AI sollen GPT-6 Astra zum Training neuer KI-Modelle genutzt haben. Anthropic verringerte den Abgriff von Claude-Reasoning nach eigenen Angaben um 90 bis 99 Prozent. OpenAI hatte bereits im Juli eine Moonshot zugerechnete Kampagne mit Aktivitäten bei mehr als 15.000 Nutzerkonten gestoppt. The Information: OpenAI’s Astra Model Becomes Top Distillation Target for China’s AI Labs OpenAI: Disrupting a coordinated model-distillation campaign Anthropic: Strengthening our defenses against distillation attacks OpenAI: GPT-6 Astra The Decoder: OpenAI Astra wird zum Hauptziel chinesischer Destillationsversuche GPT-6 Astra ist offenbar zum bevorzugten Ziel chinesischer KI-Unternehmen geworden, die Fähigkeiten westlicher Spitzenmodelle in eigene Modelle übertragen wollen. DeepSeek und Moonshot AI sollen Ausgaben des OpenAI-Modells beim Training von DeepSeek V4.1-Flash und Kimi K3.1 Pro genutzt haben. Anthropics Schutzmaßnahmen verändern das Ziel The Information berichtet unter Berufung auf Personen mit direkter Kenntnis, dass sich beide Unternehmen stark auf Astra-Ausgaben gestützt haben. Zuvor war Claude das wichtigste Ziel solcher Destillationsversuche. Neue Schutzmaß...]]></description>
-    </item>
-    <item>
-      <title>[Fun] Von 100 Euro Gehaltserhöhung landen bei vielen Arbeitnehmern..</title>
-      <link>https://debeste.de/633455/Von-100-Euro-Gehaltserh-hung-landen-bei-vielen-Arbeitnehmern</link>
-      <guid isPermaLink="false">https://debeste.de/633455/Von-100-Euro-Gehaltserh-hung-landen-bei-vielen-Arbeitnehmern</guid>
-      <pubDate>Thu, 29 Oct 2026 15:19:01 GMT</pubDate>
-      <category>Fun</category>
-      <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[Von 100 Euro Gehaltserhöhung landen bei vielen Arbeitnehmern nur 52 Euro auf dem Konto. Deutschland hat weltweit die zweithöchste Abgabenlast auf Arbeitseinkommen.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Union-Frauen: Darum läuft es nach dem Fehlstart wieder</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/10/union-berlin-frauen-gruende-fuer-erfolg-marie-louise-eta-bauerei.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/10/union-berlin-frauen-gruende-fuer-erfolg-marie-louise-eta-bauerei.html</guid>
-      <pubDate>Thu, 29 Oct 2026 15:02:40 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Vier Niederlagen zum Start, nun fünf Pflichtspiele ohne Niederlage: Unions Fußballerinnen haben den Fehlstart überwunden. Nun steht das Team vor einer historischen Pokalchance gegen den HSV. Ein Experte sieht drei Hauptgründe für den Aufschwung.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Sofa auf Stollenreifen: Das vollgefederte Fat-E-Bike Himiway D5 2.0 ST im Test</title>
-      <link>https://www.heise.de/bestenlisten/testbericht/sofa-auf-stollenreifen-das-vollgefederte-fat-e-bike-himiway-d5-20-st-im-test/erl3txm?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11504835</guid>
-      <pubDate>Thu, 29 Oct 2026 15:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Vollfederung, 4-Zoll-Reifen und ein umschaltbarer Sensor: Das Himiway D5 2.0 ST ist ein komfortables Fat-E-Bike mit tiefem Einstieg für 2599 Euro.]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] LLM Voice</title>
-      <link>https://martinfowler.com/bliki/LLM-Voice.html</link>
-      <guid isPermaLink="false">https://martinfowler.com/bliki/LLM-Voice.html</guid>
-      <pubDate>Thu, 29 Oct 2026 14:57:55 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>[Tech &amp; AI] Pandemien früh mit globalem Überwachungsnetz erkennen</title>
-      <link>https://www.heise.de/news/Pandemien-frueh-mit-globalem-Ueberwachungsnetz-erkennen-11504881.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11504881</guid>
-      <pubDate>Thu, 29 Oct 2026 14:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Corona-Pandemie zeigte: Die Welt war auf Pandemien nicht gut vorbereitet. Die WHO will das künftig mithilfe einer weltweiten Pandemiestrategie verbessern.]]></description>
-    </item>
-    <item>
-      <title>[Berlin] Online-Themenabend! Einbruch in die eigene Wohnung: Was jetzt zu tun ist und was man ...</title>
-      <link>https://marzahn-hellersdorf.com/online-themenabend-einbruch-in-die-eigene-wohnung-was-jetzt-zu-tun-ist-und-was-man-besser-laesst/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13744422524686188555</guid>
-      <pubDate>Thu, 29 Oct 2026 14:45:59 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[Ob Marzahn, Hellersdorf, Biesdorf, Kaulsdorf oder Mahlsdorf: Wir ... Mahlsdorf (534) Marzahn (2496) Neubau (64) PKW (63) Polizei (1235) RWH ...]]></description>
     </item>
   </channel>
 </rss>

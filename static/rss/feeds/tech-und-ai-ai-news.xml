@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 14:43:24 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -88,15 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI erhöht die Nutzungskontingente für Pro 100, Pro 200, Pro 500 und Business Premium. Die geplante Kürzung für Pro 200 entfällt. Dots behalten vorerst getrennte und erweiterte Limits. Plus und die GPT-6-Pro-Wochenlimits von Pro 100 und Pro 500 bleiben unverändert. Tibo Sottiaux auf X: Verdopplung der Nutzungslimits OpenAI: About ChatGPT Pro tiers OpenAI: ChatGPT Plans and Pricing OpenAI: Business Pricing OpenAI verdoppelt mit sofortiger Wirkung die Nutzungskontingente der Tarife Pro 100, Pro 200 und Pro 500 sowie von Business Premium. Für Abonnenten von Pro 200 fällt entsprechend die angekündigte Kürzung aus. Mehr Spielraum für Work, Codex und Dots OpenAI-Produktchef Tibo Sottiaux kündigte die Änderung am 29. Oktober 2026 auf X an. Pro 100 und Pro 500 erhalten doppelt so viel Nutzung für ChatGPT Work und Codex wie bisher. Bei Pro 200 wird die angekündigte Reduzierung zurückgenommen. Es entspricht damit dem höheren Kontingent, das bisher für bestimmte Bestandskunden galt. Twitter Beitrag - Cookies links unten aktivieren. Day 25/ We are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today. We heard your kind feedback and won’t be reduci...]]></description>
-    </item>
-    <item>
-      <title>OpenAI Astra wird zum neuen Hauptziel chinesischer KI-Anbieter</title>
-      <link>https://www.all-ai.de/news/news26/openai-astra-distllation</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-astra-distllation</guid>
-      <pubDate>Thu, 29 Oct 2026 15:20:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[DeepSeek und Moonshot AI sollen GPT-6 Astra zum Training neuer KI-Modelle genutzt haben. Anthropic verringerte den Abgriff von Claude-Reasoning nach eigenen Angaben um 90 bis 99 Prozent. OpenAI hatte bereits im Juli eine Moonshot zugerechnete Kampagne mit Aktivitäten bei mehr als 15.000 Nutzerkonten gestoppt. The Information: OpenAI’s Astra Model Becomes Top Distillation Target for China’s AI Labs OpenAI: Disrupting a coordinated model-distillation campaign Anthropic: Strengthening our defenses against distillation attacks OpenAI: GPT-6 Astra The Decoder: OpenAI Astra wird zum Hauptziel chinesischer Destillationsversuche GPT-6 Astra ist offenbar zum bevorzugten Ziel chinesischer KI-Unternehmen geworden, die Fähigkeiten westlicher Spitzenmodelle in eigene Modelle übertragen wollen. DeepSeek und Moonshot AI sollen Ausgaben des OpenAI-Modells beim Training von DeepSeek V4.1-Flash und Kimi K3.1 Pro genutzt haben. Anthropics Schutzmaßnahmen verändern das Ziel The Information berichtet unter Berufung auf Personen mit direkter Kenntnis, dass sich beide Unternehmen stark auf Astra-Ausgaben gestützt haben. Zuvor war Claude das wichtigste Ziel solcher Destillationsversuche. Neue Schutzmaß...]]></description>
     </item>
   </channel>
 </rss>
