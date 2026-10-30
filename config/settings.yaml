@@ -5,6 +5,7 @@ archive_retention_days: 8
 filter_ads: true
 ad_keywords: []
 ad_patterns:
+- ^heise+
 - '^heise-angebot:'
 - ^(?:anzeige|werbung|gesponsert|partnerangebot)\s*[:\-\|•]
 - \[(?:anzeige|werbung|sponsored|gesponsert|partnerangebot|advertorial)\]

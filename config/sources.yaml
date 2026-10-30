@@ -41,8 +41,6 @@ categories:
     url: https://news.ycombinator.com/rss
   - name: Heise Online News
     url: https://www.heise.de/rss/heise-atom.xml
-    exclude_keywords:
-    - heise+
   - name: Huggingface
     url: https://huggingface.co/blog/feed.xml
   - name: TechCrunch AI
