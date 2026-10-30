@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 06:01:04 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 10:33:34 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Meta Muse: Das völlig andere KI-Modell</title>
       <link>https://www.all-ai.de/news/beitrage2026/meta-muse-ki-sprache-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/meta-muse-ki-sprache-1</guid>
-      <pubDate>Thu, 29 Oct 2026 19:50:43 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:50:43 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Meta Muse antwortet laut AirOps erheblich kürzer und mit mehr Quellen als ChatGPT, Gemini und Google AI Mode. Listen, Tabellen und Rückfragen kommen in der Muse-Oberfläche wesentlich seltener vor. Der AA-PersonalityBench zeigt Muse Wonder als besonders freundlich, ausdrucksstark und praxisnah. Rang vier im Text Aren...]]></description>
@@ -21,7 +21,7 @@
       <title>Anthropic bringt Claude in 20 große Forschungsorganisationen</title>
       <link>https://www.all-ai.de/news/news26/anthropic-forschung-20</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-forschung-20</guid>
-      <pubDate>Thu, 29 Oct 2026 19:15:11 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:15:11 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic erweitert AI for Science um 20 Förderer, Institute und Forschungsgruppen. Die Partner erhalten kostenlose Claude-Credits für Projekte in Medizin, Biologie, Klima, Physik und Mathematik. Mehrere Vorhaben sollen offene Datensätze, Open-Source-Software und gemeinsame Standards hervorbringen. AI for Science ex...]]></description>
@@ -30,7 +30,7 @@
       <title>China soll Nvidia-Chef Jensen Huang ausgespäht haben</title>
       <link>https://www.all-ai.de/news/news26top/china-nvidia-huang-spionage</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/china-nvidia-huang-spionage</guid>
-      <pubDate>Thu, 29 Oct 2026 19:10:34 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:10:34 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[US-Geheimdienste halten die chinesische Megaspeed-Managerin Alice Huang für eine Informantin Pekings. Sie hatte geschäftlichen Zugang zu Nvidia-Chef Jensen Huang, der keine Sicherheitswarnung erhielt. Donald Trump kannte die Erkenntnisse, griff aber aus Sorge um Chipverkäufe und die Beziehungen zu China nicht ein. T...]]></description>
@@ -39,7 +39,7 @@
       <title>OpenAI baut die Regeln für ChatGPT grundlegend um</title>
       <link>https://www.all-ai.de/news/news26top/openai-chatgpt-regeln</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-regeln</guid>
-      <pubDate>Thu, 29 Oct 2026 18:01:07 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 19:01:07 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI ordnet die Model Spec um fünf Grundwerte neu. GPT soll Nutzerabsichten mithilfe von Anweisungen, Gesprächen und weiteren Kontextinformationen besser erkennen. Detaillierte Stilvorgaben entfallen größtenteils, während Regeln zu Aufsicht, Handlungsfreiheit und möglichen Folgen hinzukommen. An updated Model Spec...]]></description>
@@ -48,7 +48,7 @@
       <title>OpenAI verdoppelt die »Usage Limits« für alle Pro Abos</title>
       <link>https://www.all-ai.de/news/news26top/openai-chatgpt-doppelte-limits-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-doppelte-limits-1</guid>
-      <pubDate>Thu, 29 Oct 2026 17:20:45 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 18:20:45 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI erhöht die Nutzungskontingente für Pro 100, Pro 200, Pro 500 und Business Premium. Die geplante Kürzung für Pro 200 entfällt. Dots behalten vorerst getrennte und erweiterte Limits. Plus und die GPT-6-Pro-Wochenlimits von Pro 100 und Pro 500 bleiben unverändert. Tibo Sottiaux auf X: Verdopplung der Nutzungslim...]]></description>
@@ -57,37 +57,10 @@
       <title>OpenAI Astra wird zum neuen Hauptziel chinesischer KI-Anbieter</title>
       <link>https://www.all-ai.de/news/news26/openai-astra-distllation</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-astra-distllation</guid>
-      <pubDate>Thu, 29 Oct 2026 15:20:42 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 16:20:42 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[DeepSeek und Moonshot AI sollen GPT-6 Astra zum Training neuer KI-Modelle genutzt haben. Anthropic verringerte den Abgriff von Claude-Reasoning nach eigenen Angaben um 90 bis 99 Prozent. OpenAI hatte bereits im Juli eine Moonshot zugerechnete Kampagne mit Aktivitäten bei mehr als 15.000 Nutzerkonten gestoppt. The In...]]></description>
-    </item>
-    <item>
-      <title>Microsoft erzielt zehn Milliarden Dollar Umsatz mit OpenAI</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-openai-verbindung-umsatz</guid>
-      <pubDate>Thu, 29 Oct 2026 09:58:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Microsoft erzielt im Quartal zehn Milliarden Dollar Umsatz mit OpenAI. Der Gesamtumsatz steigt auf 92,3 Milliarden Dollar, der Nettogewinn auf 36,6 Milliarden Dollar. Microsoft Cloud wächst um 30 Prozent, Azure um 48 Prozent. Die Zahl der täglichen Copilot-Nutzer steigt gegenüber dem Vorquartal um fast 50 Prozent. M...]]></description>
-    </item>
-    <item>
-      <title>Meta startet KI-Tamagotchi mit eigenem Tagebuch</title>
-      <link>https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-ki-tamagotchi-start</guid>
-      <pubDate>Thu, 29 Oct 2026 08:25:44 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Meta hat Waddle World für Android und iOS auf den Philippinen veröffentlicht. Ein virtuelles Haustier verwandelt Erzählungen in illustrierte Tagebucheinträge und verschickt Postkarten. Die kostenlose App richtet sich an Erwachsene und bietet kurze Minispiele. Das Tagebuch ist gegenüber anderen Nutzern standardmäßig ...]]></description>
-    </item>
-    <item>
-      <title>GitHub Copilot koordiniert jetzt KI-Agenten über mehrere Projekte</title>
-      <link>https://www.all-ai.de/news/news26/github-agenten-projekte</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/github-agenten-projekte</guid>
-      <pubDate>Thu, 29 Oct 2026 08:14:25 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Copilot-Projekte koordinieren parallele KI-Agenten über mehrere Repositories hinweg. Copilot Fusion wählt und kombiniert KI-Modelle von Anthropic und OpenAI. Fusion Max erreicht 60 Punkte im Coding Agent Index und kostet im Test 5,59 Dollar pro Aufgabe. GitHub-Enterprise-Kunden zahlen für verbrauchte KI-Credits stat...]]></description>
     </item>
   </channel>
 </rss>

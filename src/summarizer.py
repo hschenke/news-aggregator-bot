@@ -140,28 +140,37 @@ def build_category_quicklinks(
 
 
 DEFAULT_MAIN_PROMPT_TEMPLATE = """Du bist ein professioneller News-Kurator und Redakteur für ein Daily News Briefing.
-Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, kompaktes und leicht lesbares Tages-Briefing auf {lang_name} zu erstellen.
+Deine Aufgabe ist es, aus den folgenden Roh-Nachrichten ein übersichtliches, kompaktes und faktenbasiertes Tages-Briefing auf {lang_name} zu erstellen.
 
 WICHTIGE FORMATIERUNGSRICHTLINIEN:
-1. KEIN "Executive Summary" und KEINE allgemeine Einleitung/Zusammenfassung vorweg! Starte direkt mit den Kategorien (z. B. "## 🤖 Tech & AI").
-2. INFOBOX GLEICH AM ANFANG JEDER KATEGORIE:
-   - Erstelle direkt unter jeder Kategorie-Überschrift (##) als Allererstes eine Infobox (Markdown Blockquote mit '>').
-   - Fasse darin alle wichtigsten News und Entwicklungen dieser Kategorie kurz, knapp und prägnant in 2 bis maximal 3 Sätzen zusammen.
-   - Format:
-     > 💡 **Kompakt:** <Kurze, knappe Zusammenfassung aller wichtigsten News dieser Kategorie>
-3. QUICKLINKS-ZEILE:
-   - Setze direkt nach der Infobox exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.
-4. DIE TOP 5 ARTIKEL PRO KATEGORIE:
-   - Wähle pro Kategorie maximal die TOP 5 wichtigsten und relevantesten Artikel aus.
-   - Bevorzuge dabei unbedingt Artikel, die vom Nutzer positiv bewertet / geliked wurden (mit '⭐ [NUTZER-FAVORIT / GELIKED]' markiert).
+1. KEINE ZUSAMMENFASSUNGEN:
+   - KEIN "Executive Summary", KEINE Einleitung und KEINE vorangestellte Gesamtzusammenfassung!
+   - KEINE Infobox und KEINE zusammenfassende Kompakt-Box pro Kategorie (KEIN '> 💡 Kompakt:' o. ä.)!
+   - Starte direkt mit der ersten Kategorie (z. B. "## 🤖 Tech & AI").
+2. STRUKTUR PRO KATEGORIE:
+   - Jede Kategorie beginnt mit ihrer Überschrift (z. B. "## 🤖 Tech & AI").
+   - Setze direkt unter die Kategorie-Überschrift exakt die vorgegebene Quicklinks-Zeile (Links zur Streamlit App & passenden Feeds) ein.
+   - Direkt unter der Quicklinks-Zeile folgen als Aufzählung die bis zu 5 wichtigsten und relevantesten Einträge dieser Kategorie.
+3. INHALT DER EINTRÄGE (KEIN SCHWURBELN, ECHTE FAKTEN):
+   - Verlinke den Titel jedes Eintrags direkt mit der Originalquelle als Markdown-Link.
+   - Nicht selber etwas dazuerfinden, spekulieren, interpretieren oder zusammenschwurbeln!
+   - Keine werblichen Floskeln, kein Marketing-Sprech und keine Meta-Einleitungen (wie z. B. "Dieser Beitrag thematisiert...", "Spannende Einblicke in...").
+   - Gib stattdessen den tatsächlichen sachlichen Inhalt des Artikels kurz und prägnant wieder: nenne die konkreten Fakten, Ereignisse, Zahlen oder Kernaussagen aus dem Inhalt in 1 bis maximal 2 klaren, präzisen Sätzen.
+   - Das Wort "TL;DR:" NICHT verwenden!
+   - Format für normale Nachrichtenartikel:
+     - **[Artikeltitel](Original-URL)**: <Tatsächlicher sachlicher Inhalt kurz und prägnant in 1-2 Sätzen>
+4. SPEZIALFÄLLE (WITZ / HUMOR / QUOTES):
+   - Spezialfälle wie Witze, Pointen, Cartoons oder Aphorismen (z. B. in der Kategorie Fun oder beim Witz des Tages) dürfen NIEMALS zusammengefasst, umschrieben oder erklärt werden!
+   - Stelle bei solchen Spezialfällen einfach den KOMPLETTEN Witz als vollständigen Text dar!
+   - Format für Witze:
+     - **[Artikeltitel](Original-URL)**:
+     <Vollständiger Witz-Text inklusive aller Dialoge und Pointe>
+5. AUSWAHL & NUTZER-FEEDBACK:
+   - Wähle pro Kategorie maximal die TOP 5 wichtigsten Einträge aus.
+   - Bevorzuge unbedingt Artikel, die vom Nutzer positiv bewertet / geliked wurden (mit '⭐ [NUTZER-FAVORIT / GELIKED]' markiert).
    - Artikel, die mit '⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED]' gekennzeichnet sind, sollen nach Möglichkeit ignoriert oder nur nachrangig berücksichtigt werden.
-   - Verlinke den Artikeltitel direkt mit der Originalquelle als Markdown-Link.
-   - Erstelle pro Artikel NUR EINE einzige kurze, prägnante Zusammenfassung (1 bis maximal 2 Sätze) direkt hinter dem verlinkten Titel.
-   - KEINE Kernaussage und KEINE Bedeutung generieren! Das Wort "TL;DR:" NICHT verwenden!
-   - Format:
-     - **[Artikeltitel](Original-URL)**: <Prägnante Zusammenfassung in 1-2 Sätzen>
-5. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und passenden Emojis.
-6. REDAKTIONELLE FILTER & ANWEISUNGEN:
+6. Verwende sauberes Markdown mit gut strukturierten Zwischenüberschriften (##) und passenden Emojis.
+7. REDAKTIONELLE FILTER & ANWEISUNGEN:
 {active_directives}
 
 Hier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:
@@ -212,10 +221,11 @@ def _clean_and_enhance_briefing(
     """
     Bereinigt das KI-Briefing:
     - Entfernt jegliches Executive Summary oder einleitende Vorab-Zusammenfassungen
-    - Entfernt das Wort 'TL;DR:' vor den Zusammenfassungen
-    - Stellt sicher, dass jede Kategorie als Infobox eine kurze Zusammenfassung und die Quicklinks enthält
-    - Begrenzt die Artikelanzahl pro Kategorie strikt auf die TOP 5
-    - Garantiert Leerzeilen nach Blockquotes, damit Markdown saubere HTML-Elemente erzeugt
+    - Entfernt jegliche Infoboxen oder Kompakt-Zusammenfassungs-Boxen (> 💡 Kompakt: etc.)
+    - Entfernt das Wort 'TL;DR:' vor den Einträgen
+    - Platziert direkt unter jeder Kategorie die Quicklinks-Zeile zur Streamlit-App & Feeds
+    - Begrenzt die Artikelanzahl pro Kategorie strikt auf maximal TOP 5
+    - Unterstützt vollständige Mehrzeilen-Texte für Spezialfälle (z. B. Witze & Dialoge)
     """
     text = _strip_executive_summaries(text)
     text = _strip_tldr_markers(text)
@@ -254,16 +264,15 @@ def _clean_and_enhance_briefing(
 
         # Erkennung von Quicklinks
         if current_cat and "Streamlit App" in stripped:
-            cat_links_inserted = True
-            clean_line = stripped if stripped.startswith(">") else f"> {stripped}"
-            processed_lines.append(clean_line)
-            processed_lines.append("")
+            if not cat_links_inserted:
+                clean_line = stripped if stripped.startswith(">") else f"> {stripped}"
+                processed_lines.append(clean_line)
+                processed_lines.append("")
+                cat_links_inserted = True
             continue
 
-        # Erkennung von Infoboxen (> ...)
-        if current_cat and stripped.startswith(">"):
-            processed_lines.append(stripped)
-            processed_lines.append("")
+        # Entfernung jeglicher Infoboxen / Kompakt-Boxen (> ...) vor den Artikeln
+        if current_cat and cat_item_count == 0 and stripped.startswith(">"):
             continue
 
         # Erkennung von Artikellistenpunkten (- oder *)
@@ -274,13 +283,14 @@ def _clean_and_enhance_briefing(
                 processed_lines.append(line)
             continue
 
-        # Fortsetzungszeilen von Artikeln (z.B. eingerückte Zeilen)
+        # Fortsetzungszeilen von Artikeln (z.B. eingerückte Zeilen oder Witz-Textzeilen)
         if current_cat and cat_item_count > 0:
             if cat_item_count <= max_items_per_category:
                 processed_lines.append(line)
             continue
 
-        processed_lines.append(line)
+        if not current_cat:
+            processed_lines.append(line)
 
     flush_quicklinks_if_needed()
 
@@ -357,13 +367,24 @@ def summarize_news_with_gemini(
                 return (priority, ts)
 
             sorted_items = sorted(items, key=briefing_sort_key, reverse=True)
+            is_cat_humor = any(term in cat.lower() for term in ["fun", "witz", "humor", "spass", "spaß"])
             for item in sorted_items:
                 fb = int(item.get("feedback") or 0)
                 fav_tag = " ⭐ [NUTZER-FAVORIT / GELIKED - BITTE BEVORZUGT BERÜCKSICHTIGEN]" if fb > 0 else ""
                 dislike_tag = " ⚠️ [VOM NUTZER ALS WENIGER RELEVANT / GEDISLIKED MARKIERT]" if fb < 0 else ""
-                context_lines.append(f"- **{item['title']}**{fav_tag}{dislike_tag} (Quelle: {item.get('source', 'Unbekannt')})")
+                source_name = item.get("source", "Unbekannt")
+                source_url = item.get("source_url", "")
+                is_item_joke = (
+                    is_cat_humor
+                    or any(term in str(source_name).lower() for term in ["witz", "joke", "debeste", "lach", "cartoon"])
+                    or any(term in str(source_url).lower() for term in ["witz", "joke", "debeste"])
+                    or any(term in str(item.get("title", "")).lower() for term in ["witz", "joke"])
+                )
+                joke_tag = " 🎭 [SPEZIALFALL: WITZ / HUMOR - DEN KOMPLETTEN WITZ VOLLSTÄNDIG ALS TEXT DARSTELLEN! KEINE ZUSAMMENFASSUNG, NICHT ERKLÄREN, NICHT KÜRZEN!]" if is_item_joke else ""
+                context_lines.append(f"- **{item['title']}**{fav_tag}{dislike_tag}{joke_tag} (Quelle: {source_name})")
                 if item.get("summary"):
-                    context_lines.append(f"  Auszug: {item['summary']}")
+                    label = "Kompletter Text / Pointe" if is_item_joke else "Tatsächlicher Inhalt"
+                    context_lines.append(f"  {label}: {item['summary']}")
                 context_lines.append(f"  Link: {item['link']}")
 
         context_data_str = "".join(context_lines)
@@ -437,17 +458,27 @@ def _generate_fallback_summary(
         sorted_items = sorted(items, key=briefing_sort_key, reverse=True)
         top_items = sorted_items[:5]
 
-        lines.append(f"> 💡 **Kompakt:** Die wichtigsten {len(top_items)} Meldungen der Kategorie '{cat}'.\n")
-
+        # WICHTIG: Keine Zusammenfassungs-Infobox mehr! Quicklinks direkt unterm Header:
         if cat in category_links:
             lines.append(category_links[cat] + "\n")
 
+        is_humor_cat = any(term in cat.lower() for term in ["fun", "witz", "humor", "spass", "spaß"])
         for item in top_items:
             title = item.get("title", "Kein Titel")
             link = item.get("link", "#")
             summary = item.get("summary", "")
             source = item.get("source", "")
-            if summary:
+            source_url = item.get("source_url", "")
+            is_joke = (
+                is_humor_cat
+                or any(term in str(source).lower() for term in ["witz", "joke", "debeste", "lach", "cartoon"])
+                or any(term in str(source_url).lower() for term in ["witz", "joke", "debeste"])
+                or any(term in str(title).lower() for term in ["witz", "joke"])
+            )
+            if is_joke and summary:
+                # Spezialfall: Witz vollständig als Text darstellen!
+                lines.append(f"- **[{title}]({link})**:\n{summary}")
+            elif summary:
                 lines.append(f"- **[{title}]({link})**: {summary}")
             elif source:
                 lines.append(f"- **[{title}]({link})** ({source})")

@@ -86,6 +86,14 @@ def _simple_markdown_fallback(md_text: str) -> str:
             html_lines.append(f"<li>{item_text}</li>")
             continue
 
+        if in_list and not stripped.startswith(("#", ">")):
+            item_text = _format_inline(stripped)
+            if html_lines and html_lines[-1].endswith("</li>"):
+                html_lines[-1] = html_lines[-1][:-5] + f"<br />{item_text}</li>"
+            else:
+                html_lines.append(f"<li>{item_text}</li>")
+            continue
+
         close_list()
         close_quote()
         html_lines.append(f"<p>{_format_inline(stripped)}</p>")
@@ -218,7 +226,7 @@ def markdown_to_html_email(markdown_content: str) -> str:
     """Wandelt einfaches Markdown in ein sauberes, responsives HTML-Email-Template mit Inline-Styles um."""
     try:
         import markdown
-        raw_body_html = markdown.markdown(markdown_content, extensions=["extra", "tables"])
+        raw_body_html = markdown.markdown(markdown_content, extensions=["extra", "tables", "nl2br"])
     except ImportError:
         raw_body_html = _simple_markdown_fallback(markdown_content)
 

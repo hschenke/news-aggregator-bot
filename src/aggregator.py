@@ -178,6 +178,13 @@ def fetch_feed_items(
 
             raw_summary = getattr(entry, "summary", "") or getattr(entry, "description", "")
             summary = clean_html_text(raw_summary)
+            if not summary and hasattr(entry, "content"):
+                try:
+                    c_list = getattr(entry, "content", [])
+                    if c_list and isinstance(c_list, list) and isinstance(c_list[0], dict):
+                        summary = clean_html_text(c_list[0].get("value", ""))
+                except Exception:
+                    pass
 
             # Bei Berliner Polizei den nachgeladenen Teaser einsetzen falls summary leer ist
             if (not summary or len(summary) < 5 or not summary.startswith("📍")):
@@ -218,8 +225,13 @@ def fetch_feed_items(
                 if not any(kw.lower() in search_corpus for kw in norm_inc):
                     continue
 
-            if len(summary) > 320:
-                summary = summary[:317] + "..."
+            is_humor_item = (
+                any(term in str(feed_url).lower() for term in ["witz", "joke", "debeste", "humor", "fun"])
+                or any(term in str(title).lower() for term in ["witz", "joke"])
+            )
+            max_summary_len = 2500 if is_humor_item else 1200
+            if len(summary) > max_summary_len:
+                summary = summary[: max_summary_len - 3] + "..."
 
             published = getattr(entry, "published", "") or getattr(entry, "updated", "")
             published_parsed = getattr(entry, "published_parsed", None) or getattr(entry, "updated_parsed", None)

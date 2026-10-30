@@ -12,7 +12,7 @@ from src.notifier import markdown_to_html_email
 
 
 class TestKiBriefingPrompt(unittest.TestCase):
-    def test_clean_and_enhance_briefing_caps_at_top_5(self):
+    def test_clean_and_enhance_briefing_removes_summary_and_caps_at_top_5(self):
         text = """## 🤖 Tech & AI
 > 💡 **Kompakt:** Die wichtigsten News zusammengefasst in zwei Sätzen.
 - **[A](http://a)**: Beschreibung 1
@@ -27,27 +27,65 @@ class TestKiBriefingPrompt(unittest.TestCase):
         result = _clean_and_enhance_briefing(text, cat_links)
 
         self.assertIn("## 🤖 Tech & AI", result)
-        self.assertIn("💡 **Kompakt:**", result)
+        # Keine Zusammenfassungs-Infobox mehr!
+        self.assertNotIn("💡 **Kompakt:**", result)
         self.assertIn("Streamlit App", result)
         self.assertIn("[A](http://a)", result)
         self.assertIn("[E](http://e)", result)
-        # Articles beyond Top 5 must be excluded
+        # Artikel über Top 5 hinaus werden ausgeschlossen
         self.assertNotIn("[F](http://f)", result)
         self.assertNotIn("[G](http://g)", result)
 
-    def test_fallback_summary_contains_infobox_and_top_5(self):
+    def test_clean_and_enhance_briefing_preserves_multiline_joke(self):
+        text = """## 😂 Fun
+> 🔗 [Streamlit App](http://app)
+- **[Witz des Tages](http://joke)**:
+Treffen sich zwei Blondinen.
+"Ich hatte gestern Führerscheinprüfung und bin durchgefallen."
+"Warum denn das?"
+"Naja, ich bin Landstraße gefahren..."
+"""
+        cat_links = {"Fun": "> 🔗 [Streamlit App](http://app)"}
+        result = _clean_and_enhance_briefing(text, cat_links)
+
+        self.assertIn("## 😂 Fun", result)
+        self.assertIn("[Witz des Tages](http://joke)", result)
+        self.assertIn("Treffen sich zwei Blondinen.", result)
+        self.assertIn("Führerscheinprüfung", result)
+
+    def test_fallback_summary_contains_no_infobox_and_renders_jokes_fully(self):
         news = {
+            "Fun": [
+                {
+                    "title": "Treffen sich zwei Blondinen",
+                    "link": "http://hahaha.de/123",
+                    "summary": "Treffen sich zwei Blondinen.\n\"Ich hatte gestern Führerscheinprüfung.\"",
+                    "source": "Witz des Tages",
+                }
+            ],
             "Berlin": [
                 {"title": f"Meldung {i}", "link": f"http://berlin.de/{i}", "summary": f"Text {i}"}
                 for i in range(1, 10)
             ]
         }
-        res = _generate_fallback_summary(news, category_links={"Berlin": "> 🔗 [Streamlit App](http://app)"})
+        res = _generate_fallback_summary(
+            news,
+            category_links={
+                "Fun": "> 🔗 [Streamlit App](http://app/fun)",
+                "Berlin": "> 🔗 [Streamlit App](http://app/berlin)",
+            }
+        )
         self.assertIn("## Berlin", res)
-        self.assertIn("> 💡 **Kompakt:**", res)
+        # Keine Zusammenfassungs-Infoboxen mehr
+        self.assertNotIn("> 💡 **Kompakt:**", res)
         self.assertIn("Meldung 1", res)
         self.assertIn("Meldung 5", res)
         self.assertNotIn("Meldung 6", res)
+
+        # Spezialfall Witz: vollständig als Text
+        self.assertIn("## Fun", res)
+        self.assertIn("Treffen sich zwei Blondinen", res)
+        self.assertIn("Führerscheinprüfung", res)
 
     def test_liked_articles_prioritized_in_briefing(self):
         # Meldung 9 ist geliked (feedback=1), Meldung 1 ist neutral, Meldung 2 ist disliked (feedback=-1)
@@ -67,21 +105,27 @@ class TestKiBriefingPrompt(unittest.TestCase):
         # Disliked comes last
         self.assertIn("Meldung 2 Disliked", lines[2])
 
-    def test_email_rendering_styles_infobox_distinctly(self):
+    def test_email_rendering_with_quicklinks_and_multiline_joke(self):
         md = """## 🤖 Tech & AI
-
-> 💡 **Kompakt:** KI-Trends von heute.
 
 > 🔗 [Streamlit App](http://app)
 
-- **[Titel 1](http://t1)**: News 1
+- **[Titel 1](http://t1)**: Tatsächlicher Inhalt der Meldung ohne Schwurbeln.
+
+## 😂 Fun
+
+> 🔗 [Streamlit App](http://app/fun)
+
+- **[Witz des Tages](http://joke)**:
+Treffen sich zwei Blondinen.
+"Ich hatte gestern Führerscheinprüfung."
 """
         html = markdown_to_html_email(md)
         self.assertIn("<!DOCTYPE html>", html)
-        self.assertIn("Kompakt:", html)
-        self.assertIn("#eff6ff", html)  # Infobox background color
-        self.assertIn("#2563eb", html)  # Infobox border accent
         self.assertIn("Streamlit App", html)
+        self.assertIn("Tatsächlicher Inhalt der Meldung", html)
+        self.assertIn("Treffen sich zwei Blondinen.", html)
+        self.assertIn("Führerscheinprüfung.", html)
 
     def test_gemini_models_and_fallback_order(self):
         """Prüft die verfügbaren Modelle (mit gemini-3.5-flash-lite als Standard) und die Fallback-Kette."""
