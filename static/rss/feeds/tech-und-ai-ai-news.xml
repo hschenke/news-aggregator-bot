@@ -5,50 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 30 Oct 2026 15:20:56 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 16:23:27 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Anthropic-Studie: KI-Agenten beeinflussen Expertenurteile in 86 Prozent der Fälle</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-studie-experten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-studie-experten</guid>
-      <pubDate>Fri, 30 Oct 2026 13:18:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Professionelle Analysten folgten bei 86 Prozent der untersuchten Entscheidungen der vorgegebenen Position von Claude Code. Selbst bei vorher festgelegter eigener Meinung wechselten viele Teilnehmer nach einem Widerspruch der KI ihre Position. Mehr als die Hälfte hielt die abschließende Empfehlung trotzdem eher für das eigene Urteil. Die KI-Unterstützung verkürzte zugleich die Arbeitszeit und ging mit deutlich weniger schweren Fehlern einher. Anthropic: How AI agents shape experts’ judgment calls Studie: Who’s Aligned to Whom? Al Jazeera: Experts defer to AI in decision-making, Anthropic study finds KI-Agenten übernehmen nicht nur Arbeit, sondern beeinflussen auch fachliche Entscheidungen. In einer Anthropic-Studie folgten professionelle Analysten bei 86 Prozent der untersuchten Entscheidungen der vorgegebenen Position von Claude Code. Eine Münze bestimmte die Haltung der KI Für die Studie bearbeiteten 50 Analysten eine statistische Aufgabe rund um eine erfundene landwirtschaftliche Genossenschaft. Sie sollten mit Claude Code prüfen, ob ein Beratungsprogramm die Produktivität steigert und ausgeweitet werden sollte. + Quelle: Anthropic Bei vier Analyseentscheidungen gab es jeweils...]]></description>
-    </item>
-    <item>
-      <title>Survival KI hilft offline in der Apokalypse</title>
-      <link>https://www.all-ai.de/news/news26top/survival-llm-ki-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/survival-llm-ki-start</guid>
-      <pubDate>Fri, 30 Oct 2026 12:54:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Survival LLM kombiniert einen lokalen Chatbot mit rund 1,5 Millionen Notfall-, Medizin- und Reparaturartikeln. Nemotron 3.5 Super und Qwen3.8 27B beantworteten im Projekttest 21 von 22 Notfallfragen im Kern richtig. Je nach Rechner lädt die Anwendung eines von vier KI-Modellen mit 6 bis 80 GByte herunter. Nach der Einrichtung arbeitet Survival LLM ohne Internet, Konto oder Cloud und zeigt die verwendeten Quellen. Survival LLM: Funktionen, Modelle und Notfalltest Survival LLM auf GitHub Quellen und Lizenzen der Offline-Bibliothek Survival LLM verpackt einen lokalen Chatbot und rund 1,5 Millionen Notfall-, Medizin- und Reparaturartikel für Situationen ohne Internet. Das kostenlose Open-Source-Projekt beantwortet Fragen auf dem eigenen Rechner, zeigt seine Fundstellen und sendet weder Prompts noch persönliche Dateien in die Cloud. 21 von 22 Notfallfragen richtig beantwortet Im Notfalltest des Projekts trafen Nemotron 3.5 Super und Qwen3.8 27B bei 21 von 22 Fragen die Kernaussage offizieller Empfehlungen. Nemotron erreichte 86 Prozent der vergebenen Punkte, Qwen 80 Prozent. Nemotron 3.5 Lightning kam auf 19 richtige Kernaussagen und 77 Prozent, lieferte aber eine potenziell schädlic...]]></description>
-    </item>
-    <item>
-      <title>GLM 5.3 knackt sechs Firefox-Versionen für 1.000 Dollar</title>
-      <link>https://www.all-ai.de/news/news26top/glm-5-3-firefox-angriff</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/glm-5-3-firefox-angriff</guid>
-      <pubDate>Fri, 30 Oct 2026 12:40:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GLM 5.3 entwickelte selbstständig Angriffe auf sechs Firefox-Versionen. Ein Besuch einer präparierten Webseite reichte aus, um eine lokale Datei auszulesen. Der schnellste erfolgreiche Versuch dauerte zwölf Stunden und kostete nach dem Aufbau der Testumgebung rund 1.000 Dollar. Firefox 159 schließt die zusätzlich genutzte Schwachstelle. Epoch AI: Open-weight AI models can exploit the patch gap Mozilla: Security Vulnerabilities fixed in Firefox 159 MDN: Firefox 159 release notes for developers Das frei verfügbare GLM 5.3 hat aus noch nicht ausgelieferten Sicherheitskorrekturen funktionierende Angriffe auf sechs Firefox-Versionen gebaut. In Tests von Epoch AI genügte der Besuch einer präparierten Webseite, damit eine lokale Datei vom Computer des Nutzers an den Angreifer ging. Ein Webseitenbesuch reichte für den Angriff Die Forscher gaben GLM 5.3 die jeweilige Firefox-Version, einige grundlegende Hilfsprogramme und nur Informationen, die zum Zeitpunkt der Veröffentlichung verfügbar waren. Danach arbeitete das Modell selbstständig. Es erkannte verdächtige Codeänderungen, wählte passende Schwachstellen und verband mehrere Angriffsschritte. Betroffen waren Firefox 156.0 bis 158.0.1, ...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT und Codex sollen sich bald ein Nutzungslimit teilen</title>
-      <link>https://www.all-ai.de/news/news26/chatgpt-codes-nutzungslimit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-codes-nutzungslimit</guid>
-      <pubDate>Fri, 30 Oct 2026 12:15:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ein versteckter Checkout-Hinweis kündigt ab Dezember ein gemeinsames Limit für ChatGPT und Codex an. Damit könnten Codex-Aufgaben künftig das verfügbare Kontingent für normale Chats verringern. Größe und betroffene Abos nennt der Hinweis nicht. Tibor Blaho auf X: Versteckter Hinweis auf gemeinsames Limit OpenAI: Using Codex with your ChatGPT plan All-AI.de: OpenAI verdoppelt die Usage Limits Im Checkout der ChatGPT-Web-App ist ein versteckter Hinweis auf eine weitreichende Änderung aufgetaucht. Ab Dezember soll die Nutzung eines Abos über ChatGPT und Codex hinweg einem gemeinsamen Limit unterliegen. Ein Kontingent für ChatGPT und Codex Tibor Blaho entdeckte die neue Formulierung. Sie spricht ausdrücklich von einem gemeinsamen Limit für die gesamte Nutzung von ChatGPT und Codex. Das reicht weiter als die derzeitige Regelung, bei der sich Codex, ChatGPT Work und einige weitere Funktionen ein Kontingent teilen. Twitter Beitrag - Cookies links unten aktivieren. ChatGPT web app now has a new hidden shared usage limit checkout disclaimer - "Starting in December, plan usage will have a shared limit across all of ChatGPT and Codex" https://t.co/fLvLpihIkP— Tibor Blaho (@btibor91) Octobe...]]></description>
-    </item>
     <item>
       <title>Meta Muse: Das völlig andere KI-Modell</title>
       <link>https://www.all-ai.de/news/beitrage2026/meta-muse-ki-sprache-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/meta-muse-ki-sprache-1</guid>
-      <pubDate>Thu, 29 Oct 2026 19:50:43 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:50:43 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Meta Muse antwortet laut AirOps erheblich kürzer und mit mehr Quellen als ChatGPT, Gemini und Google AI Mode. Listen, Tabellen und Rückfragen kommen in der Muse-Oberfläche wesentlich seltener vor. Der AA-PersonalityBench zeigt Muse Wonder als besonders freundlich, ausdrucksstark und praxisnah. Rang vier im Text Arena Leaderboard belegt, dass die eigenständige Schreibweise nicht auf Kosten der allgemeinen Qualität geht. Alexandr Wang: Muse is built different Simon Taylor: AirOps-Auswertung zu Meta Muse Artificial Analysis: AA-PersonalityBench Arena: Text Arena Leaderboard NSA, FBI und CISA: Warnung vor Distillation in China Meta Muse fühlt sich nicht wie der nächste Aufguss von ChatGPT, Claude oder Gemini an. Zwei aktuelle Auswertungen zeigen, dass Meta seinem KI-Modell eine ungewöhnlich eigenständige Stimme gegeben hat. Anzeige Kürzer, quellenreicher und ohne Rückfrage Eine AirOps-Auswertung von Antworten zwischen dem 23. und 27. Oktober 2026 macht den Unterschied greifbar. Muse lieferte im Schnitt 25 Quellen pro Antwort, ChatGPT nur sieben. Trotzdem kam Muse mit 777 Zeichen aus, während ChatGPT durchschnittlich 5.192 Zeichen benötigte. + Quelle: airops Auch typische KI-Gewohnhe...]]></description>
@@ -57,7 +21,7 @@
       <title>Anthropic bringt Claude in 20 große Forschungsorganisationen</title>
       <link>https://www.all-ai.de/news/news26/anthropic-forschung-20</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-forschung-20</guid>
-      <pubDate>Thu, 29 Oct 2026 19:15:11 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:15:11 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic erweitert AI for Science um 20 Förderer, Institute und Forschungsgruppen. Die Partner erhalten kostenlose Claude-Credits für Projekte in Medizin, Biologie, Klima, Physik und Mathematik. Mehrere Vorhaben sollen offene Datensätze, Open-Source-Software und gemeinsame Standards hervorbringen. AI for Science expands to foundations and research institutions Introducing Anthropic's AI for Science Program Previewing the Model Hardware Standard Anthropic weitet sein Programm »AI for Science« auf 20 Förderorganisationen, Forschungsinstitute und wissenschaftliche Projekte aus. Die Partner erhalten kostenlose Claude-Credits, die sie an Forscher verteilen oder direkt für ihre Arbeit einsetzen. Von einzelnen Forschern zu großen Instituten Anthropic startete das Programm im Mai 2025 und unterstützte zunächst einzelne Wissenschaftler. Inzwischen nutzen laut dem KI-Unternehmen Hunderte Projekte Claude in Biologie, Medizin, Physik, Chemie, Klimaforschung und Mathematik. Zu den neuen Partnern zählen die US National Science Foundation, die Sloan Foundation und die Simons Foundation. Auch bekannte Institute wie das Space Telescope Science Institute, das Wellcome Sanger Institute und das Eu...]]></description>
@@ -66,7 +30,7 @@
       <title>China soll Nvidia-Chef Jensen Huang ausgespäht haben</title>
       <link>https://www.all-ai.de/news/news26top/china-nvidia-huang-spionage</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/china-nvidia-huang-spionage</guid>
-      <pubDate>Thu, 29 Oct 2026 19:10:34 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 20:10:34 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[US-Geheimdienste halten die chinesische Megaspeed-Managerin Alice Huang für eine Informantin Pekings. Sie hatte geschäftlichen Zugang zu Nvidia-Chef Jensen Huang, der keine Sicherheitswarnung erhielt. Donald Trump kannte die Erkenntnisse, griff aber aus Sorge um Chipverkäufe und die Beziehungen zu China nicht ein. The New York Times: Nvidia Chief Seen as Target of Chinese Spy Plot The Guardian: Nvidia CEO reportedly targeted by Chinese spy Bloomberg Law: Nvidia’s Biggest Southeast Asia Buyer Faces Chip Smuggling Probe CNA: Probe on Nvidia exports Eine chinesische Managerin soll Informationen für Peking gesammelt und engen Zugang zu Nvidia-Chef Jensen Huang gehabt haben. US-Präsident Donald Trump kannte die Geheimdiensterkenntnisse demnach seit rund einem Jahr, ließ Huang jedoch nicht warnen. Geheimdienste beobachteten Nvidia-Kundin Nach Recherchen der »New York Times« geriet Alice Huang, auch Huang Le genannt, als Managerin des Singapurer Rechenzentrumsbetreibers Megaspeed ins Visier der US-Behörden. Die Ermittler verdächtigten das Unternehmen bereits, chinesischen Firmen Zugang zu beschränkten KI-Chips von Nvidia zu verschaffen. Bei der Überwachung kamen Geheimdienste zu dem Sc...]]></description>
@@ -75,7 +39,7 @@
       <title>OpenAI baut die Regeln für ChatGPT grundlegend um</title>
       <link>https://www.all-ai.de/news/news26top/openai-chatgpt-regeln</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-regeln</guid>
-      <pubDate>Thu, 29 Oct 2026 18:01:07 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 19:01:07 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI ordnet die Model Spec um fünf Grundwerte neu. GPT soll Nutzerabsichten mithilfe von Anweisungen, Gesprächen und weiteren Kontextinformationen besser erkennen. Detaillierte Stilvorgaben entfallen größtenteils, während Regeln zu Aufsicht, Handlungsfreiheit und möglichen Folgen hinzukommen. An updated Model Spec for more capable and beneficial AI OpenAI Model Spec vom 29. Oktober 2026 OpenAI hat seine öffentliche »Model Spec« neu geordnet. Künftig soll GPT Entscheidungen anhand von fünf Grundwerten treffen und dabei die Absicht des Nutzers stärker berücksichtigen, statt Anweisungen nur wörtlich abzuarbeiten. Nutzerabsicht steht an erster Stelle Die neue Struktur stellt die Treue zur menschlichen Absicht an die Spitze. Hinzu kommen Schadensvermeidung, Ehrlichkeit und Transparenz, menschliche Handlungsfreiheit sowie Fürsorge. OpenAI will damit erklärbar machen, warum ein KI-Modell bestimmte Grenzen einhält und wie es in Situationen entscheidet, für die keine passende Einzelregel existiert. Auch die Rangfolge von Anweisungen wurde überarbeitet. OpenAI setzt weiterhin die obersten Grenzen, danach folgen Vorgaben von Entwicklern und Nutzern. Gespräche, Erinnerungen und weitere Hi...]]></description>
@@ -84,7 +48,7 @@
       <title>OpenAI verdoppelt die »Usage Limits« für alle Pro Abos</title>
       <link>https://www.all-ai.de/news/news26top/openai-chatgpt-doppelte-limits-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-doppelte-limits-1</guid>
-      <pubDate>Thu, 29 Oct 2026 17:20:45 GMT</pubDate>
+      <pubDate>Thu, 29 Oct 2026 18:20:45 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI erhöht die Nutzungskontingente für Pro 100, Pro 200, Pro 500 und Business Premium. Die geplante Kürzung für Pro 200 entfällt. Dots behalten vorerst getrennte und erweiterte Limits. Plus und die GPT-6-Pro-Wochenlimits von Pro 100 und Pro 500 bleiben unverändert. Tibo Sottiaux auf X: Verdopplung der Nutzungslimits OpenAI: About ChatGPT Pro tiers OpenAI: ChatGPT Plans and Pricing OpenAI: Business Pricing OpenAI verdoppelt mit sofortiger Wirkung die Nutzungskontingente der Tarife Pro 100, Pro 200 und Pro 500 sowie von Business Premium. Für Abonnenten von Pro 200 fällt entsprechend die angekündigte Kürzung aus. Mehr Spielraum für Work, Codex und Dots OpenAI-Produktchef Tibo Sottiaux kündigte die Änderung am 29. Oktober 2026 auf X an. Pro 100 und Pro 500 erhalten doppelt so viel Nutzung für ChatGPT Work und Codex wie bisher. Bei Pro 200 wird die angekündigte Reduzierung zurückgenommen. Es entspricht damit dem höheren Kontingent, das bisher für bestimmte Bestandskunden galt. Twitter Beitrag - Cookies links unten aktivieren. Day 25/ We are doubling all usage limits for all Pro 100/200/500 tiers and Business Premium, effective today. We heard your kind feedback and won’t be reduci...]]></description>
