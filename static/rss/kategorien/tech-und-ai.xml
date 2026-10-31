@@ -5,9 +5,90 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sat, 31 Oct 2026 06:01:10 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 10:59:05 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Warum klingt Kimi fast wie Astra?</title>
+      <link>https://www.all-ai.de/news/news26/openai-anthropic-moonshot-astra-kimi</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-moonshot-astra-kimi</guid>
+      <pubDate>Sat, 31 Oct 2026 10:45:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Kimi K3.1 Pro und GPT-6 Astra zeigen im AA-PersonalityBench einen auffallend ähnlichen Antwortstil. Beide Modelle wirken wahrheitsorientiert, benennen Annahmen und nutzen vergleichsweise wenige Floskeln und Metaphern. Anthropic hatte Moonshot zuvor vorgeworfen, mehr als 3,4 Millionen Claude-Dialoge zur Entwicklung eigener Modelle abgegriffen zu haben. Die Ähnlichkeit ist kein Beweis für Astra-Distillation, macht einen Wechsel der Lernvorlage aber plausibel. Hugo Edwards: Kimi hat eine fast identische Persönlichkeit wie Astra Artificial Analysis: AA-PersonalityBench Anthropic: Detecting and preventing distillation attacks Reuters: Anthropics Schutz senkt abgegriffene Datenmenge um 90 bis 99 Prozent Moonshot AI: Kimi K3.1 Pro Tech Blog Kimi K3.1 Pro und OpenAIs GPT-6 Astra antworten erstaunlich ähnlich. Ein neuer Vergleich von Artificial Analysis stützt den Verdacht, dass Moonshot nach Anthropics Schutzmaßnahmen einen anderen »Lehrer« für sein KI-Modell gewählt haben könnte. Zwei Modelle mit auffallend ähnlichem Ton Im AA-PersonalityBench folgen die Profile von Kimi und Astra über acht Bereiche einer ähnlichen Grundform. Noch deutlicher wird die Nähe bei den einzelnen Merkmalen. B...]]></description>
+    </item>
+    <item>
+      <title>Neues MacBook Pro: Was sonst noch wichtig ist</title>
+      <link>https://www.heise.de/news/MacBook-Pro-mit-Touch-Fuenf-interessante-technische-Kleinigkeiten-11506972.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506972</guid>
+      <pubDate>Sat, 31 Oct 2026 10:26:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Auch wenn es auf den ersten Blick nicht so aussieht: Apple überholt das MacBook Pro kräftig. Hier eine Anzahl interessanter Neuerungen.]]></description>
+    </item>
+    <item>
+      <title>OpenAI will 30 Milliarden Dollar und bekommt 11</title>
+      <link>https://www.all-ai.de/news/news26/openai-finanzierung-probleme</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-finanzierung-probleme</guid>
+      <pubDate>Sat, 31 Oct 2026 10:22:21 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI hat bislang rund 11 Milliarden Dollar an Zusagen für seine neue Finanzierungsrunde erhalten. Ursprünglich wollte das KI-Unternehmen 30 Milliarden Dollar einsammeln. Die Bewertung liegt mit 1,25 Billionen Dollar unter dem angestrebten Wert. Anthropics geplanter Börsengang im November erhöht den Zeitdruck. Wall Street Journal: OpenAI Raises Less Than Half of $30 Billion Target in Latest Round Reuters: OpenAI seeks to accelerate fundraising ahead of Anthropic IPO OpenAI: Accelerating the next phase of AI Associated Press: Anthropic files for an IPO OpenAI hat für seine jüngste Finanzierungsrunde bislang nur rund 11 Milliarden Dollar an Zusagen erhalten. Das Wall Street Journal berichtet, dass das KI-Unternehmen ursprünglich 30 Milliarden Dollar einsammeln wollte. Bewertung fällt niedriger aus Die neue Finanzierung bewertet OpenAI mit 1,25 Billionen Dollar. Angestrebt waren zuvor 1,4 Billionen Dollar. Einige große Investoren halten sich zurück, nachdem schwache Quartalszahlen von Google, Amazon und Intel einen Ausverkauf bei Tech-Aktien ausgelöst hatten. OpenAI will das Volumen der Runde nun offenbar auf bis zu 20 Milliarden Dollar begrenzen. Dafür soll das KI-Unternehmen in ...]]></description>
+    </item>
+    <item>
+      <title>Bill Gates setzt bei Alzheimer auf KI, aber es gibt Probleme</title>
+      <link>https://www.all-ai.de/news/news26top/bill-gates-alzheimer</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/bill-gates-alzheimer</guid>
+      <pubDate>Sat, 31 Oct 2026 10:08:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Bill Gates setzt bei Alzheimer auf KI und leichter zugängliche Bluttests. KI-Modelle erkennen mögliche Warnzeichen in Sprache, Gesundheitsdaten und Hirnscans. Neue Tests und Therapien erreichen bisher nur wenige Patienten. Facharztmangel, Kosten und Bürokratie bremsen den medizinischen Fortschritt. Alzheimer’s tests and treatments are available right now Bill Gates über KI und Alzheimer-Forschung NIH-Forschungsbericht zu Alzheimer und Demenz 2026 FDA genehmigt ersten Alzheimer-Bluttest FDA genehmigt Leqembi-Startdosis für zu Hause Bill Gates sieht in KI und einfachen Bluttests eine Chance, Alzheimer früher zu erkennen und mehr Patienten zu behandeln. In einem neuen Beitrag warnt er jedoch, dass die medizinischen Fortschritte viele Betroffene noch nicht erreichen. KI erkennt Warnzeichen in Sprache und Hirnscans KI kann große Datenmengen auswerten und nach frühen Mustern suchen, die für einen Arzt schwer zu erkennen sind. Gates verweist unter anderem auf Forschung, die Veränderungen in der Sprache als mögliches Warnsignal nutzt. Der Forschungsbericht 2026 der US-Gesundheitsbehörde NIH zeigt weitere Ansätze. KI-Modelle analysieren Gesundheitsdaten, ärztliche Notizen und PET-Aufnahm...]]></description>
+    </item>
+    <item>
+      <title>US-Anwälte zu „Audio Intelligence“ auf der Apple Watch: Möglicherweise strafbar</title>
+      <link>https://www.heise.de/news/US-Anwaelte-zu-Audio-Intelligence-auf-der-Apple-Watch-Moeglicherweise-strafbar-11489722.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11489722</guid>
+      <pubDate>Sat, 31 Oct 2026 09:21:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples neue Funktionen „Live Rewind“ und „Siri Recap“ könnten unter US-Bundesstaatengesetze gegen das Abhören fallen. Rechtsgelehrte warnen.]]></description>
+    </item>
+    <item>
+      <title>KI verdrängt Fotostudios, Canon warnt vor Preisanstieg – News der Woche 44/2026</title>
+      <link>https://www.heise.de/news/KI-verdraengt-Fotostudios-Canon-warnt-vor-Preisanstieg-News-der-Woche-44-2026-11506308.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506308</guid>
+      <pubDate>Sat, 31 Oct 2026 09:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mode setzt auf KI-Fotografie, Studios schließen. Canon kündigt teurere Kameras an. LIFE kehrt zurück.]]></description>
+    </item>
+    <item>
+      <title>„Alarmstufe Rot“ wird 30: Warum der C&amp;C-Nachfolger bis heute Kult ist</title>
+      <link>https://www.heise.de/hintergrund/30-Jahre-Command-Conquer-Alarmstufe-Rot-Liebesgruesse-aus-Neu-Moskau-11504542.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504542</guid>
+      <pubDate>Sat, 31 Oct 2026 08:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mammutpanzer, Tesla-Spulen und alternative Weltgeschichte: „Command & Conquer: Alarmstufe Rot“ wird 30 Jahre alt.]]></description>
+    </item>
+    <item>
+      <title>Developer-Häppchen – dotnetup statt rustup, Node 27, Webframework in Rust</title>
+      <link>https://www.heise.de/news/Developer-Haeppchen-dotnetup-statt-rustup-Node-27-Webframework-in-Rust-11505731.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505731</guid>
+      <pubDate>Sat, 31 Oct 2026 07:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu dotnetup, PDFsharp, Node, VS Code, Rsbuild, JetBrains, Grafana, Wicket, WordPress und Topcoat.]]></description>
+    </item>
+    <item>
+      <title>Der aufmerksame Blick: Die Bilder der Woche 44</title>
+      <link>https://www.heise.de/news/Der-aufmerksame-Blick-Die-Bilder-der-Woche-44-11506218.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506218</guid>
+      <pubDate>Sat, 31 Oct 2026 07:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Sieben Fotos zeigen, wie sich reduzierte, aber eindrucksvolle Fotomotive inmitten der täglichen Bilderflut finden lassen.]]></description>
+    </item>
     <item>
       <title>Adobe-Konkurrenz? Das taugt KI-Klon PhotoCraft | c't uplink</title>
       <link>https://www.heise.de/news/Adobe-Konkurrenz-Das-taugt-KI-Klon-PhotoCraft-c-t-uplink-11505956.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -153,13 +234,13 @@
       <description><![CDATA[Comments]]></description>
     </item>
     <item>
-      <title>Top 10: Der beste GPS-Tracker für Hund &amp; Katze im Test – viel besser als Airtag</title>
+      <title>Top 10: GPS-Tracker für Hund &amp; Katze</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-gps-tracker-fuer-hund-und-katze-im-test-viel-besser-als-airtag/mqeplqh?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11506813</guid>
       <pubDate>Fri, 30 Oct 2026 19:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[GPS-Tracker helfen beim Aufspüren entlaufener Haustiere und kosten zwischen 22 und 90 Euro. Wir haben die Haustier-Finder getestet und zeigen die zehn besten.]]></description>
+      <description><![CDATA[GPS-Tracker helfen beim Aufspüren entlaufener Haustiere und kosten zwischen 22 und 90 Euro. Wir zeigen die zehn besten.]]></description>
     </item>
     <item>
       <title>Reddit verliert Googles Leser trotz millionenschwerem KI-Deal</title>
@@ -628,177 +709,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Eine Studie von Anthropic zeigt, dass Experten KI-Empfehlungen in 86 Prozent der Fälle übernehmen, oft ohne sich dessen bewusst zu sein.]]></description>
-    </item>
-    <item>
-      <title>Niedergang von Stack Overflow: Moderation und KI als Ursachen</title>
-      <link>https://www.heise.de/news/Kaum-Fragen-veraltete-Antworten-Stack-Overflow-in-der-Krise-11505968.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505968</guid>
-      <pubDate>Fri, 30 Oct 2026 10:59:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Beteiligung auf Stack Overflow ist rapide gesunken. Schuld ist laut Community aber weniger die KI, sondern vielmehr die strenge Moderation.]]></description>
-    </item>
-    <item>
-      <title>OpenTelemetry friert seine Transformationssprache ein</title>
-      <link>https://www.heise.de/news/OpenTelemetry-Collector-Updates-zerlegen-keine-Filterregeln-mehr-11505793.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505793</guid>
-      <pubDate>Fri, 30 Oct 2026 10:43:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Schluss mit kaputten Collector-Pipelines nach Updates: Die OpenTelemetry Transformation Language (OTTL) ist in Version 1.0 stabil und rückwärtskompatibel.]]></description>
-    </item>
-    <item>
-      <title>Nach Cyberangriff: Uni Leipzig weiterhin offline</title>
-      <link>https://www.heise.de/news/Nach-Cyberangriff-Uni-Leipzig-weiterhin-offline-11506014.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11506014</guid>
-      <pubDate>Fri, 30 Oct 2026 10:39:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zahlreiche IT-Dienste der Universität Leipzig sind auch Tage nach einem Cyberangriff nicht erreichbar. Wann sie wieder zur Verfügung stehen, ist unklar.]]></description>
-    </item>
-    <item>
-      <title>iPhone Duo: Trick lässt Lautstärkeknöpfe mitwandern – weitere Tipps</title>
-      <link>https://www.heise.de/news/Lautstaerkeknoepfe-So-wandern-sie-beim-iPhone-Duo-mit-und-weitere-Tricks-11500253.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11500253</guid>
-      <pubDate>Fri, 30 Oct 2026 10:12:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Apples Foldable kommt mit einer gewöhnungsbedürftigen Button-Anordnung. Bei der Lautstärke lässt sich Abhilfe schaffen. Auch andere versteckte Features helfen.]]></description>
-    </item>
-    <item>
-      <title>Azure's Weakest Link – Five Full Cross-Tenant Compromises</title>
-      <link>https://www.binarysecurity.no/posts/2026/10/one-root-case</link>
-      <guid isPermaLink="false">https://www.binarysecurity.no/posts/2026/10/one-root-case</guid>
-      <pubDate>Fri, 30 Oct 2026 10:06:15 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>OmniFocus und OmniOutliner: Apps spezifisch an das iPhone Duo angepasst</title>
-      <link>https://www.heise.de/news/OmniFocus-und-OmniOutliner-Apps-spezifisch-an-das-iPhone-Duo-angepasst-11495875.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11495875</guid>
-      <pubDate>Fri, 30 Oct 2026 09:36:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zwei traditionsreiche Apps der Omni Group sind bereit für Apples Foldable – und zeigen, was damit möglich ist.]]></description>
-    </item>
-    <item>
-      <title>WordPress: Exploit-Versuche beobachtet, Update stopft Schadcode-Lücke</title>
-      <link>https://www.heise.de/news/WordPress-Update-stopft-Schadcode-Luecke-Exploit-Versuche-beobachtet-11505811.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505811</guid>
-      <pubDate>Fri, 30 Oct 2026 09:27:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[WordPress-Updates stopfen mehrere Sicherheitslücken. Über eine lässt sich Schadcode einschleusen. Angriffsversuche laufen.]]></description>
-    </item>
-    <item>
-      <title>Android 17 QPR3 Beta 3: App-Sperre kehrt zurück</title>
-      <link>https://www.heise.de/news/Android-17-QPR3-Beta-3-App-Sperre-kehrt-zurueck-11505833.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505833</guid>
-      <pubDate>Fri, 30 Oct 2026 09:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Google verteilt die dritte Beta binnen eines Monats für das erst 2027 erwartete Update auf Android 17 QPR3. Neben vielen Bugfixes zieht die „App-Sperre“ ein.]]></description>
-    </item>
-    <item>
-      <title>EU-Kommission stoppt nationale Social-Media-Verbote für Kinder</title>
-      <link>https://www.heise.de/news/Social-Media-Verbot-Bruessel-bremst-nationale-Vorhaben-aus-11505859.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505859</guid>
-      <pubDate>Fri, 30 Oct 2026 08:54:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[EU-weites Tabu für TikTok und Co.? Die Verhandlungen auf europäischer Ebene könnten dauern. Die EU-Kommission stellt sich gegen nationale Übergangslösungen.]]></description>
-    </item>
-    <item>
-      <title>China nach absoluten Zahlen ganz vorn beim Schnellladenetz-Ausbau</title>
-      <link>https://www.heise.de/news/China-nach-absoluten-Zahlen-ganz-vorn-beim-Schnellladenetz-Ausbau-11505165.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505165</guid>
-      <pubDate>Fri, 30 Oct 2026 08:52:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die meisten neuen Schnelllader stellt zwar China auf – nicht nur absolut, sondern auch bezogen auf die Zahl der E-Autos. Die Zahl hat aber begrenzte Bedeutung.]]></description>
-    </item>
-    <item>
-      <title>Hands-on mit dem ersten Touch-MacBook Pro | Mac &amp; i-Podcast</title>
-      <link>https://www.heise.de/news/Hands-on-mit-dem-ersten-Touch-MacBook-Pro-Mac-i-Podcast-11505777.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505777</guid>
-      <pubDate>Fri, 30 Oct 2026 08:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Apple bringt Touch auf den Mac. Wie sich macOS mit dem Finger anfühlt, was das neue MacBook kann und wie sinnvoll das ist, besprechen wir in der neuen Folge.]]></description>
-    </item>
-    <item>
-      <title>Report: Cyberkriminelle nehmen Rechtssektor ins Visier</title>
-      <link>https://www.heise.de/news/Report-Cyberkriminelle-nehmen-Rechtssektor-ins-Visier-11505789.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505789</guid>
-      <pubDate>Fri, 30 Oct 2026 08:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Anwaltskanzleien verwahren vertrauliche Pläne und sensible Mandantendaten – und geraten damit stärker ins Visier Cyberkrimineller. Welche Methoden die nutzen.]]></description>
-    </item>
-    <item>
-      <title>Oracle will Geschäftsregeln vor eigenmächtigen KI-Agenten schützen</title>
-      <link>https://www.heise.de/news/Oracle-will-Geschaeftsregeln-vor-eigenmaechtigen-KI-Agenten-schuetzen-11505277.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505277</guid>
-      <pubDate>Fri, 30 Oct 2026 08:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Oracle stellt die Deep Trust AI Architecture vor. Sie soll Sicherheits- und Geschäftsregeln bei KI-Zugriffen auf Unternehmensdaten durchsetzen.]]></description>
-    </item>
-    <item>
-      <title>Cisco-Firewalls und GitLab-Lücke werden angegriffen</title>
-      <link>https://www.heise.de/news/Cisco-Firewalls-und-GitLab-Luecke-werden-angegriffen-11505669.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505669</guid>
-      <pubDate>Fri, 30 Oct 2026 07:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bösartige Akteure missbrauchen Schwachstellen in Ciscos SSL-VPN und GitLab. Updates stehen bereit, Admins sollten sie installieren.]]></description>
-    </item>
-    <item>
-      <title>Hinter kritischen GitLab-Lücken stecken Fehler in der Regex-Engine von Ruby</title>
-      <link>https://www.heise.de/news/Ruby-behebt-drei-kritische-Luecken-vor-denen-CVE-Scanner-nicht-warnen-11505663.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505663</guid>
-      <pubDate>Fri, 30 Oct 2026 07:43:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die kritischen GitLab-Lücken der letzten Wochen gehen auf drei jetzt behobene Fehler in Rubys Regex-Engine zurück. CVE-Scanner schlagen auf sie nicht an.]]></description>
-    </item>
-    <item>
-      <title>Nicht mehr die US-Regierung: Anthropic jetzt größter Kunde von SpaceX</title>
-      <link>https://www.heise.de/news/Nicht-mehr-die-US-Regierung-Anthropic-jetzt-groesster-Kunde-von-SpaceX-11505625.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505625</guid>
-      <pubDate>Fri, 30 Oct 2026 07:41:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Lange war die US-Regierung der größte Einzelkunde von SpaceX. Das ändert sich jetzt, wie die aktuellen Geschäftszahlen untermauern.]]></description>
-    </item>
-    <item>
-      <title>Backdoor in Claude Code for VS Code extension on the Cursor Marketplace</title>
-      <link>https://phorion.io/blog/offical-claude-code-vsx-compromise/</link>
-      <guid isPermaLink="false">https://phorion.io/blog/offical-claude-code-vsx-compromise/</guid>
-      <pubDate>Fri, 30 Oct 2026 07:09:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>„Dark Messiah“: Community Edition bringt Koop-Modus und Linux-Support</title>
-      <link>https://www.heise.de/news/Dark-Messiah-Community-Edition-bringt-Koop-Modus-und-Linux-Support-11505617.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505617</guid>
-      <pubDate>Fri, 30 Oct 2026 06:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Eine Fan-Mod bringt den Arkane-Klassiker „Dark Messiah of Might and Magic“ auf eine aktuelle Source-Engine – mit Ubisofts Segen und neuem Koop-Modus.]]></description>
-    </item>
-    <item>
-      <title>DirectX-Preview soll Speicherbedarf von Raytracing-Daten drastisch senken</title>
-      <link>https://www.heise.de/news/DirectX-Preview-soll-Speicherbedarf-von-Raytracing-Daten-drastisch-senken-11505569.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11505569</guid>
-      <pubDate>Fri, 30 Oct 2026 06:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Microsoft testet mit Agility SDK 1.722 Clustered Geometry und Partitioned TLAS für dynamische Raytracing-Geometrie. Spieler haben jedoch zunächst nichts davon.]]></description>
     </item>
   </channel>
 </rss>
