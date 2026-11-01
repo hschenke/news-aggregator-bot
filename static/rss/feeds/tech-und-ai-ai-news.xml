@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 01 Nov 2026 06:01:04 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 11:54:35 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT und Claude: Fünf neue KI-Slop-Anzeichen</title>
+      <link>https://www.all-ai.de/news/news26top/chatgpt-claude-ki-slop-merkmale</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-claude-ki-slop-merkmale</guid>
+      <pubDate>Sun, 01 Nov 2026 11:50:20 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Der Gedankenstrich taugt bei aktuellen Modellen kaum noch als KI-Merkmal. GPT-6 Astra verrät sich häufiger durch Korrekturformeln, Claude Opus 5.5 durch Bedeutungsbehauptungen und Kontraste. Für GPT-6.1 Sol fehlt bisher eine eigene Phrasenstudie. Bei deutschen Texten sind gleichförmiger Satzbau und wiederkehrende Dreierlisten zusätzliche Warnzeichen. Graphite: AI Tells Graphite: AI Tells – Opus 5.5 Update KI-Schreibranking: Welche KI klingt am wenigsten nach KI? AI-Linguistica: Tracing English interference in AI-generated German Der Gedankenstrich galt lange als Fingerabdruck von KI-Texten. Bei GPT-6 Astra, GPT-6.1 Sol und Claude Opus 5.5 hat sich das Bild gewandelt. Das Satzzeichen kommt teils seltener vor als bei Menschen, während neue Auffälligkeiten von starren Gegensätzen bis zu auffällig glatten Satzfolgen entstehen. 1. Astra korrigiert Aussagen auffällig oft GPT-6 Astra beschreibt ein Thema gern über eine Korrektur. In der englischen Graphite-Analyse kam »not simply« 157-mal und »rather than relying« 187-mal häufiger vor als in menschlichen Artikeln. Auf Deutsch entsprechen dem Formulierungen wie »nicht einfach« oder »anstatt sich auf … zu verlassen«. Anzeige 2. Opus 5.5 ...]]></description>
+    </item>
     <item>
       <title>OpenAI veröffentlicht GPT-6 Rosalind</title>
       <link>https://www.all-ai.de/news/news26top/openai-gpt-6-rosalind</link>
@@ -16,42 +25,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[OpenAI führt GPT-6 Rosalind Research für ausgewählte Forschungsorganisationen ein. Das KI-Modell unterstützt Arbeiten mit Genomen, Proteinen, Wirkstoffen und wissenschaftlicher Literatur. Der Zugang erfolgt über Work, Codex und nach gesonderter Freigabe über die API, aber nicht über den Chat-Tab. Enterprise-Kunden starten mit einer zweiwöchigen Admin-Vorschau. ChatGPT Enterprise and Edu Release Notes OpenAI Model Release Notes GPT-Rosalind for Life Sciences Research OpenAI API Changelog OpenAI bringt mit GPT-6 Rosalind Research ein neues KI-Modell für die Forschung in den Biowissenschaften auf den Markt. Der Zugang startet für eine begrenzte Zahl freigegebener Enterprise- und Business-Kunden in Work und Codex sowie nach einer zusätzlichen Freigabe über die API. Für biologische Forschung und Medikamentenentwicklung GPT-6 Rosalind Research verbindet die Fähigkeiten von GPT-6 mit spezialisierten Funktionen für biologische Forschung. Das Modell soll Wissenschaftler unter anderem bei Genom- und Sequenzanalysen, der Untersuchung von Proteinen, medizinischer Chemie, Literaturauswertungen und der Planung von Experimenten unterstützen. In Codex lässt sich das Modell mit dem Life Sciences...]]></description>
-    </item>
-    <item>
-      <title>Professor nennt Hausaufgaben und Onlineprüfungen wegen KI reine Zeitverschwendung</title>
-      <link>https://www.all-ai.de/news/news26/professor-ki-pruefung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/professor-ki-pruefung</guid>
-      <pubDate>Sat, 31 Oct 2026 10:59:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Richard Borcherds bewertet Hausaufgaben nur noch nach ihrer Abgabe. Wegen KI setzt der Berkeley-Professor für die eigentliche Note auf Prüfungen vor Ort. Eine Studie mit mehr als 500.000 Noten zeigt in KI-tauglichen Kursen einen deutlichen Anstieg der Bestnoten. KI-Erkennungsprogramme gelten Berkeley nicht als verlässlich genug. The Daily Californian: AI use leads UC Berkeley math professor to see no point in grading homework UC Berkeley: Artificial Intelligence and Grade Inflation TechRadar: Online exams are now a waste of time Der Mathematikprofessor Richard Borcherds bewertet Hausaufgaben nicht mehr nach richtigen Lösungen. An der University of California, Berkeley gibt es die Punkte schon für die Abgabe, während Präsenzprüfungen ohne elektronische Geräte über die eigentliche Note entscheiden. KI-Antworten fallen kaum noch auf Borcherds kann nach eigenen Angaben kaum noch unterscheiden, ob ein Student seine Lösung selbst geschrieben oder mit KI erstellt hat. Auffällige Fehler verrieten solche Antworten früher häufiger. Inzwischen liefern die Modelle deutlich bessere Ergebnisse. Eine Bewertung nach Richtigkeit schaffe deshalb den falschen Anreiz. Wer ehrlich ohne KI arbeitet, ...]]></description>
-    </item>
-    <item>
-      <title>Warum klingt Kimi fast wie Astra?</title>
-      <link>https://www.all-ai.de/news/news26/openai-anthropic-moonshot-astra-kimi</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-anthropic-moonshot-astra-kimi</guid>
-      <pubDate>Sat, 31 Oct 2026 10:45:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Kimi K3.1 Pro und GPT-6 Astra zeigen im AA-PersonalityBench einen auffallend ähnlichen Antwortstil. Beide Modelle wirken wahrheitsorientiert, benennen Annahmen und nutzen vergleichsweise wenige Floskeln und Metaphern. Anthropic hatte Moonshot zuvor vorgeworfen, mehr als 3,4 Millionen Claude-Dialoge zur Entwicklung eigener Modelle abgegriffen zu haben. Die Ähnlichkeit ist kein Beweis für Astra-Distillation, macht einen Wechsel der Lernvorlage aber plausibel. Hugo Edwards: Kimi hat eine fast identische Persönlichkeit wie Astra Artificial Analysis: AA-PersonalityBench Anthropic: Detecting and preventing distillation attacks Reuters: Anthropics Schutz senkt abgegriffene Datenmenge um 90 bis 99 Prozent Moonshot AI: Kimi K3.1 Pro Tech Blog Kimi K3.1 Pro und OpenAIs GPT-6 Astra antworten erstaunlich ähnlich. Ein neuer Vergleich von Artificial Analysis stützt den Verdacht, dass Moonshot nach Anthropics Schutzmaßnahmen einen anderen »Lehrer« für sein KI-Modell gewählt haben könnte. Zwei Modelle mit auffallend ähnlichem Ton Im AA-PersonalityBench folgen die Profile von Kimi und Astra über acht Bereiche einer ähnlichen Grundform. Noch deutlicher wird die Nähe bei den einzelnen Merkmalen. B...]]></description>
-    </item>
-    <item>
-      <title>OpenAI will 30 Milliarden Dollar und bekommt 11</title>
-      <link>https://www.all-ai.de/news/news26/openai-finanzierung-probleme</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-finanzierung-probleme</guid>
-      <pubDate>Sat, 31 Oct 2026 10:22:21 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI hat bislang rund 11 Milliarden Dollar an Zusagen für seine neue Finanzierungsrunde erhalten. Ursprünglich wollte das KI-Unternehmen 30 Milliarden Dollar einsammeln. Die Bewertung liegt mit 1,25 Billionen Dollar unter dem angestrebten Wert. Anthropics geplanter Börsengang im November erhöht den Zeitdruck. Wall Street Journal: OpenAI Raises Less Than Half of $30 Billion Target in Latest Round Reuters: OpenAI seeks to accelerate fundraising ahead of Anthropic IPO OpenAI: Accelerating the next phase of AI Associated Press: Anthropic files for an IPO OpenAI hat für seine jüngste Finanzierungsrunde bislang nur rund 11 Milliarden Dollar an Zusagen erhalten. Das Wall Street Journal berichtet, dass das KI-Unternehmen ursprünglich 30 Milliarden Dollar einsammeln wollte. Bewertung fällt niedriger aus Die neue Finanzierung bewertet OpenAI mit 1,25 Billionen Dollar. Angestrebt waren zuvor 1,4 Billionen Dollar. Einige große Investoren halten sich zurück, nachdem schwache Quartalszahlen von Google, Amazon und Intel einen Ausverkauf bei Tech-Aktien ausgelöst hatten. OpenAI will das Volumen der Runde nun offenbar auf bis zu 20 Milliarden Dollar begrenzen. Dafür soll das KI-Unternehmen in ...]]></description>
-    </item>
-    <item>
-      <title>Bill Gates setzt bei Alzheimer auf KI, aber es gibt Probleme</title>
-      <link>https://www.all-ai.de/news/news26top/bill-gates-alzheimer</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/bill-gates-alzheimer</guid>
-      <pubDate>Sat, 31 Oct 2026 10:08:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Bill Gates setzt bei Alzheimer auf KI und leichter zugängliche Bluttests. KI-Modelle erkennen mögliche Warnzeichen in Sprache, Gesundheitsdaten und Hirnscans. Neue Tests und Therapien erreichen bisher nur wenige Patienten. Facharztmangel, Kosten und Bürokratie bremsen den medizinischen Fortschritt. Alzheimer’s tests and treatments are available right now Bill Gates über KI und Alzheimer-Forschung NIH-Forschungsbericht zu Alzheimer und Demenz 2026 FDA genehmigt ersten Alzheimer-Bluttest FDA genehmigt Leqembi-Startdosis für zu Hause Bill Gates sieht in KI und einfachen Bluttests eine Chance, Alzheimer früher zu erkennen und mehr Patienten zu behandeln. In einem neuen Beitrag warnt er jedoch, dass die medizinischen Fortschritte viele Betroffene noch nicht erreichen. KI erkennt Warnzeichen in Sprache und Hirnscans KI kann große Datenmengen auswerten und nach frühen Mustern suchen, die für einen Arzt schwer zu erkennen sind. Gates verweist unter anderem auf Forschung, die Veränderungen in der Sprache als mögliches Warnsignal nutzt. Der Forschungsbericht 2026 der US-Gesundheitsbehörde NIH zeigt weitere Ansätze. KI-Modelle analysieren Gesundheitsdaten, ärztliche Notizen und PET-Aufnahm...]]></description>
     </item>
   </channel>
 </rss>
