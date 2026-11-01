@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 31 Oct 2026 10:59:05 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 06:01:04 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenAI veröffentlicht GPT-6 Rosalind</title>
+      <link>https://www.all-ai.de/news/news26top/openai-gpt-6-rosalind</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-gpt-6-rosalind</guid>
+      <pubDate>Sat, 31 Oct 2026 19:55:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI führt GPT-6 Rosalind Research für ausgewählte Forschungsorganisationen ein. Das KI-Modell unterstützt Arbeiten mit Genomen, Proteinen, Wirkstoffen und wissenschaftlicher Literatur. Der Zugang erfolgt über Work, Codex und nach gesonderter Freigabe über die API, aber nicht über den Chat-Tab. Enterprise-Kunden starten mit einer zweiwöchigen Admin-Vorschau. ChatGPT Enterprise and Edu Release Notes OpenAI Model Release Notes GPT-Rosalind for Life Sciences Research OpenAI API Changelog OpenAI bringt mit GPT-6 Rosalind Research ein neues KI-Modell für die Forschung in den Biowissenschaften auf den Markt. Der Zugang startet für eine begrenzte Zahl freigegebener Enterprise- und Business-Kunden in Work und Codex sowie nach einer zusätzlichen Freigabe über die API. Für biologische Forschung und Medikamentenentwicklung GPT-6 Rosalind Research verbindet die Fähigkeiten von GPT-6 mit spezialisierten Funktionen für biologische Forschung. Das Modell soll Wissenschaftler unter anderem bei Genom- und Sequenzanalysen, der Untersuchung von Proteinen, medizinischer Chemie, Literaturauswertungen und der Planung von Experimenten unterstützen. In Codex lässt sich das Modell mit dem Life Sciences...]]></description>
+    </item>
+    <item>
+      <title>Professor nennt Hausaufgaben und Onlineprüfungen wegen KI reine Zeitverschwendung</title>
+      <link>https://www.all-ai.de/news/news26/professor-ki-pruefung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/professor-ki-pruefung</guid>
+      <pubDate>Sat, 31 Oct 2026 10:59:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Richard Borcherds bewertet Hausaufgaben nur noch nach ihrer Abgabe. Wegen KI setzt der Berkeley-Professor für die eigentliche Note auf Prüfungen vor Ort. Eine Studie mit mehr als 500.000 Noten zeigt in KI-tauglichen Kursen einen deutlichen Anstieg der Bestnoten. KI-Erkennungsprogramme gelten Berkeley nicht als verlässlich genug. The Daily Californian: AI use leads UC Berkeley math professor to see no point in grading homework UC Berkeley: Artificial Intelligence and Grade Inflation TechRadar: Online exams are now a waste of time Der Mathematikprofessor Richard Borcherds bewertet Hausaufgaben nicht mehr nach richtigen Lösungen. An der University of California, Berkeley gibt es die Punkte schon für die Abgabe, während Präsenzprüfungen ohne elektronische Geräte über die eigentliche Note entscheiden. KI-Antworten fallen kaum noch auf Borcherds kann nach eigenen Angaben kaum noch unterscheiden, ob ein Student seine Lösung selbst geschrieben oder mit KI erstellt hat. Auffällige Fehler verrieten solche Antworten früher häufiger. Inzwischen liefern die Modelle deutlich bessere Ergebnisse. Eine Bewertung nach Richtigkeit schaffe deshalb den falschen Anreiz. Wer ehrlich ohne KI arbeitet, ...]]></description>
+    </item>
     <item>
       <title>Warum klingt Kimi fast wie Astra?</title>
       <link>https://www.all-ai.de/news/news26/openai-anthropic-moonshot-astra-kimi</link>
@@ -34,114 +52,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Bill Gates setzt bei Alzheimer auf KI und leichter zugängliche Bluttests. KI-Modelle erkennen mögliche Warnzeichen in Sprache, Gesundheitsdaten und Hirnscans. Neue Tests und Therapien erreichen bisher nur wenige Patienten. Facharztmangel, Kosten und Bürokratie bremsen den medizinischen Fortschritt. Alzheimer’s tests and treatments are available right now Bill Gates über KI und Alzheimer-Forschung NIH-Forschungsbericht zu Alzheimer und Demenz 2026 FDA genehmigt ersten Alzheimer-Bluttest FDA genehmigt Leqembi-Startdosis für zu Hause Bill Gates sieht in KI und einfachen Bluttests eine Chance, Alzheimer früher zu erkennen und mehr Patienten zu behandeln. In einem neuen Beitrag warnt er jedoch, dass die medizinischen Fortschritte viele Betroffene noch nicht erreichen. KI erkennt Warnzeichen in Sprache und Hirnscans KI kann große Datenmengen auswerten und nach frühen Mustern suchen, die für einen Arzt schwer zu erkennen sind. Gates verweist unter anderem auf Forschung, die Veränderungen in der Sprache als mögliches Warnsignal nutzt. Der Forschungsbericht 2026 der US-Gesundheitsbehörde NIH zeigt weitere Ansätze. KI-Modelle analysieren Gesundheitsdaten, ärztliche Notizen und PET-Aufnahm...]]></description>
-    </item>
-    <item>
-      <title>Reddit verliert Googles Leser trotz millionenschwerem KI-Deal</title>
-      <link>https://www.all-ai.de/news/news26top/reddit-google-leser-ki-deal</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/reddit-google-leser-ki-deal</guid>
-      <pubDate>Fri, 30 Oct 2026 18:43:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Reddit verlor im Oktober wöchentlich mehr als eine Million Verweise aus der Google-Suche. Google und OpenAI erhalten über Verträge Zugriff auf aktuelle Reddit-Inhalte für ihre KI-Produkte. Reddit testet Login-Schranken, um Nutzer direkter zu binden und unerlaubtes Scraping zu erschweren. Reddit: Ergebnisse des dritten Quartals 2026 Reuters: Reddit schließt Datenlizenzvertrag mit Google Reddit: Partnerschaft mit OpenAI Reddit: Börsenunterlagen zu Datenlizenzverträgen Reddit verliert jede Woche mehr als eine Million Verweise aus der Google-Suche. Obwohl Umsatz und Gewinn kräftig stiegen, brach die Aktie am Freitag zeitweise um rund 29 Prozent ein. Googles KI beantwortet Fragen, statt Leser zu schicken Im Oktober sank die Zahl der Suchverweise im Schnitt um mehr als eine Million pro Woche. Reddit-Chef Steve Huffman sieht den Hauptgrund in AI Overviews und AI Mode. Beide Funktionen beantworten Fragen direkt bei Google und verdrängen klassische Treffer weiter nach unten. Für Reddit trifft das ausgerechnet den wichtigsten Zugang für neue Nutzer. Von den 130,3 Millionen täglichen Nutzern im dritten Quartal kamen 76,8 Millionen ohne Anmeldung. In den USA sank die gesamte tägliche Nutzer...]]></description>
-    </item>
-    <item>
-      <title>Manipulierte Claude-Code-Erweiterung betrifft bis zu 5.000 Cursor-Nutzer</title>
-      <link>https://www.all-ai.de/news/news26/claude-code-cursor-manipulation</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-code-cursor-manipulation</guid>
-      <pubDate>Fri, 30 Oct 2026 18:42:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Eine manipulierte Claude-Code-Erweiterung war rund elf Stunden im Marktplatz von Cursor verfügbar. Bis zu 5.000 Nutzer könnten Version 2.1.313 erhalten haben. Der Schadcode sammelte Gerätedaten und versuchte, eine dauerhafte SSH-Hintertür einzurichten. Betroffene müssen mehr tun, als die Erweiterung nur zu deinstallieren. Cursor: Security notice zur manipulierten Claude-Code-Erweiterung Reuters: Bis zu 5.000 Cursor-Nutzer betroffen BleepingComputer: Claude-Code-Erweiterung installierte SSH-Hintertür Sophos: Analyse und Maßnahmen für betroffene Rechner Über den Erweiterungs-Marktplatz von Cursor ist eine manipulierte Version der Claude-Code-Erweiterung verbreitet worden. Bis zu 5.000 Nutzer könnten den Schadcode erhalten haben, der Daten sammelte und eine dauerhafte Hintertür einrichten sollte. Schadcode wollte Fernzugriff einrichten Betroffen ist »anthropic.claude-code« in Version 2.1.313 für Windows und macOS. Sie war am 29. Oktober 2026 zwischen etwa 10:27 Uhr und 21:35 Uhr deutscher Zeit im Marktplatz verfügbar. Anthropic hatte diese manipulierte Fassung nicht entwickelt. Nach Angaben von Cursor sammelte der eingeschleuste Code unter anderem den Nutzernamen, den Rechnernamen,...]]></description>
-    </item>
-    <item>
-      <title>Sam Altman: OpenAI steckt Hunderte Millionen in Mathematik</title>
-      <link>https://www.all-ai.de/news/beitrage2026/sam-altman-mathematik-forschung-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/sam-altman-mathematik-forschung-start</guid>
-      <pubDate>Fri, 30 Oct 2026 18:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Cheeky Pint Kurzfassung ▾ Quellen ▾ OpenAI hat laut Sam Altman mehrere Hundert Millionen Dollar für mathematische KI-Forschung ausgegeben. Ein Versuch zum Navier-Stokes-Problem kostete ungefähr zehn Millionen Dollar. Ein neues Modell löste an einem Wochenende schwierige Forschungsprobleme aus mehreren Fachgebieten. OpenAI verfügt über mehr Resultate als die rund 700 bereits veröffentlichten Beweise. YouTube-Video: Gespräch mit Sam Altman OpenAI hat für mathematische Forschung mit KI bereits mehrere Hundert Millionen Dollar an Rechenkosten eingesetzt. Sam Altman erklärte in einem ausführlichen Interview, dass das Unternehmen dabei weit mehr Ergebnisse erzielt habe als die rund 700 bereits veröffentlichten Beweise. Ein Beweis kostete rund zehn Millionen Dollar Besonders teuer war laut Altman die Arbeit an einem Beweis zum Navier-Stokes-Problem. Der Versuch habe ungefähr zehn Millionen Dollar oder etwas mehr gekostet. Dabei ging es nicht nur um einen einzelnen Beweis. OpenAI wollte herausfinden, wie sich Teams aus KI-Agenten für mathematische Forschung einsetzen lassen. Zu Beginn wusste das Unternehmen nach Altmans Darstellung noch nicht, welche Arbeitsweise am besten funktioniert....]]></description>
-    </item>
-    <item>
-      <title>Claude Ultra schafft das nervigste Nutzungslimit ab</title>
-      <link>https://www.all-ai.de/news/news26top/claude-ultra-abo-nutzungslimit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-ultra-abo-nutzungslimit</guid>
-      <pubDate>Fri, 30 Oct 2026 18:05:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic benennt Max 5x in Max und Max 20x in Ultra um. Verifizierte Ultra-Abonnenten können Claude künftig ohne Fünf-Stunden-Limit nutzen. Bei neueren Konten fällt die Sperre nach einer Prüfung weg. Die Preise und wöchentlichen Kontingente bleiben unverändert. Claude: Neue Namen und kein Fünf-Stunden-Limit für Ultra Claude: Preise und Tarife Claude Help Center: Nutzungslimits und Kontextlimits OpenAI Help Center: ChatGPT Pro-Tarife und erhöhte Kontingente Nachdem OpenAI bei mehreren Pro-Abos die Kontingente für Work und Codex verdoppelt hat, zieht Anthropic mit Änderungen an seinen Claude-Abos nach. Besonders die teuerste Stufe wird deutlich angenehmer, denn das bisherige Fünf-Stunden-Limit fällt weg. Claude Ultra läuft ohne Fünf-Stunden-Limit Der bisherige Max-20x-Tarif heißt künftig Ultra und kostet weiterhin 200 Dollar im Monat. Abonnenten können Claude damit nutzen, ohne nach einem ausgeschöpften Kontingent auf das nächste Fünf-Stunden-Fenster warten zu müssen. + Quelle: Anthropic Anthropic aktiviert die Änderung ab sofort für die meisten bestehenden Abonnenten. Neuere Konten behalten das Limit vorübergehend, bis Anthropic sie überprüft hat. Sobald die Sperre entfällt, inf...]]></description>
-    </item>
-    <item>
-      <title>OpenAI will gemeinsames robots.txt-Signal für KI-Training respektieren</title>
-      <link>https://www.all-ai.de/news/news26/openai-robot-txt-ki-training</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-robot-txt-ki-training</guid>
-      <pubDate>Fri, 30 Oct 2026 17:59:05 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI will künftig einen gemeinsamen Eintrag in robots.txt für KI-Training respektieren. Betreiber sollen damit mehreren KI-Anbietern auf einmal ihre Präferenz mitteilen können. Das Signal ergänzt bestehende Crawler-Regeln, ersetzt sie aber nicht. Die Umsetzung soll in den kommenden Monaten folgen. OpenAI: Making it easier for websites to express AI training preferences IETF Datatracker: Machine-Readable Training Preference Signal OpenAI: Übersicht der Crawler IETF Datatracker: A Vocabulary For Expressing AI Usage Preferences OpenAI will künftig ein gemeinsames Signal in der Datei »robots.txt« respektieren. Betreiber einer Website sollen damit mehreren KI-Anbietern gleichzeitig mitteilen können, ob ihre Inhalte für das Training generativer KI-Modelle genutzt werden dürfen. Die Unterstützung ist noch nicht aktiv. OpenAI plant die Umsetzung in den kommenden Monaten und will später technische Details veröffentlichen. Ein Eintrag soll mehrere KI-Anbieter erreichen Bisher müssen Betreiber einzelne Crawler wie GPTBot ansprechen und für jeden Anbieter eigene Regeln pflegen. Der neue Vorschlag verwendet stattdessen einen gemeinsamen Eintrag für den Zweck »KI-Training« und kombiniert ih...]]></description>
-    </item>
-    <item>
-      <title>Googles KI-Satellit dichtet erstmals im Weltall</title>
-      <link>https://www.all-ai.de/news/news26top/google-ki-weltall-start-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-ki-weltall-start-1</guid>
-      <pubDate>Fri, 30 Oct 2026 17:33:54 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Googles Suncatcher-Prototyp hat erstmals das KI-Modell Gemma 4 im Erdorbit ausgeführt. Für den ersten Test verfasste das Modell ein Haiku über das Weltall. Google untersucht nun den Einfluss von Strahlung, Temperaturschwankungen und der knappen Stromversorgung auf seine TPU-Hardware. 2027 sollen zwei weitere Satelliten per Laser zusammenarbeiten. Google’s first data center satellite is online and writing poetry Google’s Project Suncatcher prototype satellite is in orbit Behind Project Suncatcher, Google’s moonshot to put AI in space Exploring a space-based, scalable AI infrastructure system design Google thinks SpaceX’s Starship has to launch 1,800 times Google hat sein KI-Modell Gemma 4 erstmals auf einem Satelliten im Erdorbit arbeiten lassen. Der Prototyp des Projekts »Suncatcher« reagierte nach rund drei Wochen Inbetriebnahme auf Befehle vom Boden und verfasste ein Gedicht über das Weltall. Gemma 4 läuft nur wenige Minuten am Stück Der von »Planet« gebaute Satellit startete am 1. Oktober mit einer Falcon-9-Rakete von SpaceX. An Bord befindet sich Googles TPU-Hardware, die auch in irdischen Rechenzentren KI-Aufgaben verarbeitet. + Quelle: Google Für den ersten Prompt sollte G...]]></description>
-    </item>
-    <item>
-      <title>OpenRouter macht KI-Antworten schneller, aber etwas teurer</title>
-      <link>https://www.all-ai.de/news/news26/openrouter-ki-antworten-schneller</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openrouter-ki-antworten-schneller</guid>
-      <pubDate>Fri, 30 Oct 2026 17:25:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenRouter bewertet Anbieter künftig nach Preis, Geschwindigkeit, Zuverlässigkeit und Qualität. Im Test sank die Wartezeit bis zum ersten Token um 17 Prozent, während die Kosten pro Anfrage um sechs Prozent stiegen. Das neue Routing gilt automatisch, eine reine Preissortierung bleibt weiterhin möglich. OpenRouter: How we rebuilt provider routing for better, faster inference OpenRouter-Dokumentation: Provider Routing OpenRouter verteilt KI-Anfragen nicht mehr vorrangig an den günstigsten Anbieter. Der neue Standard berücksichtigt auch Geschwindigkeit, Ausfälle und die Qualität von Tool-Aufrufen. Nutzer müssen dafür nichts an ihrem Code ändern. Gute Antworten statt niedrigster Listenpreis Der Router berechnet für jede Anfrage, was eine brauchbare Antwort tatsächlich kostet. Dazu zählt neben dem Preis auch, wie lange ein Anbieter bis zum ersten Token braucht, wie schnell er die restliche Antwort ausgibt und wie oft Anfragen scheitern. Auch die realen Kosten fließen ein. OpenRouter berücksichtigt unter anderem das Verhältnis von Eingabe- und Ausgabe-Token sowie Treffer im Prompt-Cache. Dadurch kann ein Anbieter nicht mehr allein mit einem niedrigen Preis für Eingabe-Token einen groß...]]></description>
-    </item>
-    <item>
-      <title>OpenAI schützt sensible Firmendaten mit Private Intelligence</title>
-      <link>https://www.all-ai.de/news/news26/openai-privat-firmen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-privat-firmen</guid>
-      <pubDate>Fri, 30 Oct 2026 16:59:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI bündelt Datenschutzfunktionen für Unternehmen unter dem Namen Private Intelligence. Zero Data Retention begrenzt die Speicherung von Prompts und Antworten in geeigneten API-Abläufen. Private Inference soll Daten auch während der Verarbeitung durch Confidential Computing schützen. Firmen bestimmen, auf welche Daten und Funktionen ihre KI-Agenten zugreifen dürfen. OpenAI Private Intelligence OpenAI auf X: Private Intelligence ZDR with Private Safety Processing Interesse an OpenAI Private Intelligence registrieren OpenAI bündelt neue und bestehende Datenschutzfunktionen für Unternehmen unter dem Namen »Private Intelligence«. Firmen sollen damit auch vertrauliche Daten in den KI-Modellen und Agenten des Anbieters verarbeiten können, ohne OpenAI unnötigen Zugriff auf die Inhalte zu geben. Private Inference schützt Daten während der Verarbeitung Ein zentraler Bestandteil ist »Zero Data Retention« für geeignete API-Abläufe. OpenAI speichert dabei nach der Verarbeitung keine Prompts oder Antworten auf eigenen Servern. Für automatisierte Sicherheitsprüfungen können ausgewählte Datensätze verschlüsselt bis zu 30 Tage in einem Cloud-Speicher des Kunden liegen. + Quelle: OpenAI Die n...]]></description>
-    </item>
-    <item>
-      <title>Anthropic-Studie: KI-Agenten beeinflussen Expertenurteile in 86 Prozent der Fälle</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-studie-experten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-studie-experten</guid>
-      <pubDate>Fri, 30 Oct 2026 13:18:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Professionelle Analysten folgten bei 86 Prozent der untersuchten Entscheidungen der vorgegebenen Position von Claude Code. Selbst bei vorher festgelegter eigener Meinung wechselten viele Teilnehmer nach einem Widerspruch der KI ihre Position. Mehr als die Hälfte hielt die abschließende Empfehlung trotzdem eher für das eigene Urteil. Die KI-Unterstützung verkürzte zugleich die Arbeitszeit und ging mit deutlich weniger schweren Fehlern einher. Anthropic: How AI agents shape experts’ judgment calls Studie: Who’s Aligned to Whom? Al Jazeera: Experts defer to AI in decision-making, Anthropic study finds KI-Agenten übernehmen nicht nur Arbeit, sondern beeinflussen auch fachliche Entscheidungen. In einer Anthropic-Studie folgten professionelle Analysten bei 86 Prozent der untersuchten Entscheidungen der vorgegebenen Position von Claude Code. Eine Münze bestimmte die Haltung der KI Für die Studie bearbeiteten 50 Analysten eine statistische Aufgabe rund um eine erfundene landwirtschaftliche Genossenschaft. Sie sollten mit Claude Code prüfen, ob ein Beratungsprogramm die Produktivität steigert und ausgeweitet werden sollte. + Quelle: Anthropic Bei vier Analyseentscheidungen gab es jeweils...]]></description>
-    </item>
-    <item>
-      <title>Survival KI hilft offline in der Apokalypse</title>
-      <link>https://www.all-ai.de/news/news26top/survival-llm-ki-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/survival-llm-ki-start</guid>
-      <pubDate>Fri, 30 Oct 2026 12:54:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Survival LLM kombiniert einen lokalen Chatbot mit rund 1,5 Millionen Notfall-, Medizin- und Reparaturartikeln. Nemotron 3.5 Super und Qwen3.8 27B beantworteten im Projekttest 21 von 22 Notfallfragen im Kern richtig. Je nach Rechner lädt die Anwendung eines von vier KI-Modellen mit 6 bis 80 GByte herunter. Nach der Einrichtung arbeitet Survival LLM ohne Internet, Konto oder Cloud und zeigt die verwendeten Quellen. Survival LLM: Funktionen, Modelle und Notfalltest Survival LLM auf GitHub Quellen und Lizenzen der Offline-Bibliothek Survival LLM verpackt einen lokalen Chatbot und rund 1,5 Millionen Notfall-, Medizin- und Reparaturartikel für Situationen ohne Internet. Das kostenlose Open-Source-Projekt beantwortet Fragen auf dem eigenen Rechner, zeigt seine Fundstellen und sendet weder Prompts noch persönliche Dateien in die Cloud. 21 von 22 Notfallfragen richtig beantwortet Im Notfalltest des Projekts trafen Nemotron 3.5 Super und Qwen3.8 27B bei 21 von 22 Fragen die Kernaussage offizieller Empfehlungen. Nemotron erreichte 86 Prozent der vergebenen Punkte, Qwen 80 Prozent. Nemotron 3.5 Lightning kam auf 19 richtige Kernaussagen und 77 Prozent, lieferte aber eine potenziell schädlic...]]></description>
-    </item>
-    <item>
-      <title>GLM 5.3 knackt sechs Firefox-Versionen für 1.000 Dollar</title>
-      <link>https://www.all-ai.de/news/news26top/glm-5-3-firefox-angriff</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/glm-5-3-firefox-angriff</guid>
-      <pubDate>Fri, 30 Oct 2026 12:40:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GLM 5.3 entwickelte selbstständig Angriffe auf sechs Firefox-Versionen. Ein Besuch einer präparierten Webseite reichte aus, um eine lokale Datei auszulesen. Der schnellste erfolgreiche Versuch dauerte zwölf Stunden und kostete nach dem Aufbau der Testumgebung rund 1.000 Dollar. Firefox 159 schließt die zusätzlich genutzte Schwachstelle. Epoch AI: Open-weight AI models can exploit the patch gap Mozilla: Security Vulnerabilities fixed in Firefox 159 MDN: Firefox 159 release notes for developers Das frei verfügbare GLM 5.3 hat aus noch nicht ausgelieferten Sicherheitskorrekturen funktionierende Angriffe auf sechs Firefox-Versionen gebaut. In Tests von Epoch AI genügte der Besuch einer präparierten Webseite, damit eine lokale Datei vom Computer des Nutzers an den Angreifer ging. Ein Webseitenbesuch reichte für den Angriff Die Forscher gaben GLM 5.3 die jeweilige Firefox-Version, einige grundlegende Hilfsprogramme und nur Informationen, die zum Zeitpunkt der Veröffentlichung verfügbar waren. Danach arbeitete das Modell selbstständig. Es erkannte verdächtige Codeänderungen, wählte passende Schwachstellen und verband mehrere Angriffsschritte. Betroffen waren Firefox 156.0 bis 158.0.1, ...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT und Codex sollen sich bald ein Nutzungslimit teilen</title>
-      <link>https://www.all-ai.de/news/news26/chatgpt-codes-nutzungslimit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-codes-nutzungslimit</guid>
-      <pubDate>Fri, 30 Oct 2026 12:15:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ein versteckter Checkout-Hinweis kündigt ab Dezember ein gemeinsames Limit für ChatGPT und Codex an. Damit könnten Codex-Aufgaben künftig das verfügbare Kontingent für normale Chats verringern. Größe und betroffene Abos nennt der Hinweis nicht. Tibor Blaho auf X: Versteckter Hinweis auf gemeinsames Limit OpenAI: Using Codex with your ChatGPT plan All-AI.de: OpenAI verdoppelt die Usage Limits Im Checkout der ChatGPT-Web-App ist ein versteckter Hinweis auf eine weitreichende Änderung aufgetaucht. Ab Dezember soll die Nutzung eines Abos über ChatGPT und Codex hinweg einem gemeinsamen Limit unterliegen. Ein Kontingent für ChatGPT und Codex Tibor Blaho entdeckte die neue Formulierung. Sie spricht ausdrücklich von einem gemeinsamen Limit für die gesamte Nutzung von ChatGPT und Codex. Das reicht weiter als die derzeitige Regelung, bei der sich Codex, ChatGPT Work und einige weitere Funktionen ein Kontingent teilen. Twitter Beitrag - Cookies links unten aktivieren. ChatGPT web app now has a new hidden shared usage limit checkout disclaimer - "Starting in December, plan usage will have a shared limit across all of ChatGPT and Codex" https://t.co/fLvLpihIkP— Tibor Blaho (@btibor91) Octobe...]]></description>
     </item>
   </channel>
 </rss>
