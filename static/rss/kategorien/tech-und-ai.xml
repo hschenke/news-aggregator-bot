@@ -5,11 +5,128 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 11:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 13:39:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>BMW will ab 2027 teilautomatisiertes Fahren im Stadtverkehr anbieten</title>
+      <title>Handy weg im Restaurant – Pilotversuch auf Sardinien</title>
+      <link>https://www.heise.de/news/Handy-weg-im-Restaurant-Pilotversuch-auf-Sardinien-11508050.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11508050</guid>
+      <pubDate>Mon, 02 Nov 2026 13:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Man kennt die Szene: Am Nachbartisch im Restaurant ist eine Familie mit ihren elektronischen Geräten beschäftigt. In Italien will eine Initiative das ändern.]]></description>
+    </item>
+    <item>
+      <title>USA halten Prüfregeln für KI-Modelle unter Verschluss</title>
+      <link>https://www.heise.de/news/USA-halten-Pruefregeln-fuer-KI-Modelle-unter-Verschluss-11507982.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507982</guid>
+      <pubDate>Mon, 02 Nov 2026 13:16:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die Trump-Regierung gibt zentrale Unterlagen zu ihrem Prüfrahmen für leistungsfähige KI-Modelle nicht heraus. Bürgerrechtler klagen auf Transparenz.]]></description>
+    </item>
+    <item>
+      <title>40 Prozent der Belegschaft: VR-Krise erreicht Traditionsstudio Schell Games</title>
+      <link>https://www.heise.de/news/40-Prozent-der-Belegschaft-VR-Krise-erreicht-Traditionsstudio-Schell-Games-11507958.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507958</guid>
+      <pubDate>Mon, 02 Nov 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Studio hinter der „I Expect You To Die“-Reihe kam mehr als zwei Jahrzehnte ohne Kündigungen aus. Jetzt müssen große Teile der Belegschaft gehen.]]></description>
+    </item>
+    <item>
+      <title>Der teuerste Raspi wird noch teurer: 16-Gigabyte-Version kostet 385 US-Dollar</title>
+      <link>https://www.heise.de/news/Der-teuerste-Raspi-wird-noch-teurer-16-Gigabyte-Version-kostet-385-US-Dollar-11507912.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507912</guid>
+      <pubDate>Mon, 02 Nov 2026 12:55:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Hersteller hebt den Preis des Raspberry Pi 5 mit 16 GByte RAM von 305 auf 385 US-Dollar an; auch einige andere Raspis werden noch teurer.]]></description>
+    </item>
+    <item>
+      <title>Last night an AI agent performed brain surgery on a mouse</title>
+      <link>https://twitter.com/OcanaSantero/status/2115442964574908902</link>
+      <guid isPermaLink="false">https://twitter.com/OcanaSantero/status/2115442964574908902</guid>
+      <pubDate>Mon, 02 Nov 2026 12:50:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Nach gescheiterter Rettung: Weltraumteleskop Swift wird diese Woche abstürzen</title>
+      <link>https://www.heise.de/news/Wird-wohl-nicht-ganz-vergluehen-Absturz-des-Weltraumteleskops-Swift-diese-Woche-11507611.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507611</guid>
+      <pubDate>Mon, 02 Nov 2026 12:44:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Absturz des Neil Gehrels Swift Observatory steht unmittelbar bevor, das Gerät wird größtenteils verglühen. Teile könnten aber die Erdoberfläche erreichen.]]></description>
+    </item>
+    <item>
+      <title>Kühlschränke in Lebensmittelläden weiterer Länder geknackt</title>
+      <link>https://www.heise.de/news/Kuehlschraenke-in-Lebensmittellaeden-weiterer-Laender-geknackt-11507846.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507846</guid>
+      <pubDate>Mon, 02 Nov 2026 12:24:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vor Kurzem gab es Angriffe auf Kühlschränke französischer Supermärkte. Nun sind Läden in weiteren Ländern betroffen.]]></description>
+    </item>
+    <item>
+      <title>Never Complain, Never Explain</title>
+      <link>https://en.wikipedia.org/wiki/Never_complain,_never_explain</link>
+      <guid isPermaLink="false">https://en.wikipedia.org/wiki/Never_complain,_never_explain</guid>
+      <pubDate>Mon, 02 Nov 2026 11:55:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>KI-Agenten bauen Zivilisation in Minecraft auf und verlieren sich in Bürokratie</title>
+      <link>https://www.heise.de/news/KI-Agenten-bauen-Zivilisation-in-Minecraft-auf-und-verlieren-sich-in-Buerokratie-11507972.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507972</guid>
+      <pubDate>Mon, 02 Nov 2026 11:54:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zu viel Bürokratie? Damit haben nicht nur wir Menschen zu kämpfen, wie ein aktueller Versuch zeigt.]]></description>
+    </item>
+    <item>
+      <title>Digitalgipfel: Minister und Industrie hoffen auf KI</title>
+      <link>https://www.heise.de/news/Digitalgipfel-Minister-und-Industrie-hoffen-auf-KI-11507882.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507882</guid>
+      <pubDate>Mon, 02 Nov 2026 11:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Zum Auftakt des Digitalgipfels der Bundesregierung in Berlin fordert der Bundesdigitalminister mehr KI-Offenheit – von Gesellschaft wie Unternehmen.]]></description>
+    </item>
+    <item>
+      <title>Supermarket freezers across Europe hit by second suspected cyber-attack</title>
+      <link>https://www.theguardian.com/world/2026/nov/02/supermarket-freezers-across-europe-hit-by-second-suspected-cyber-attack</link>
+      <guid isPermaLink="false">https://www.theguardian.com/world/2026/nov/02/supermarket-freezers-across-europe-hit-by-second-suspected-cyber-attack</guid>
+      <pubDate>Mon, 02 Nov 2026 11:50:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Supermarket freezers in Belgium and Sweden hit by suspected cyber-attack</title>
+      <link>https://www.bbc.com/news/articles/cq1kd1nee80eo</link>
+      <guid isPermaLink="false">https://www.bbc.com/news/articles/cq1kd1nee80eo</guid>
+      <pubDate>Mon, 02 Nov 2026 11:48:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Face ID beim iPhone 18 Pro und 18 Pro Max: Probleme mit der Blickerkennung</title>
+      <link>https://www.heise.de/news/Face-ID-beim-iPhone-18-Pro-und-18-Pro-Max-Probleme-mit-der-Blickerkennung-11500219.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11500219</guid>
+      <pubDate>Mon, 02 Nov 2026 11:47:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples Face-ID-Sensorik ist beim iPhone 18 Pro und 18 Pro Max unter den Bildschirm gewandert. Das führte zu Beginn offenbar zu Schwierigkeiten.]]></description>
+    </item>
+    <item>
+      <title>BMW mit Fahrerassistenz: Autobahn, Land und Stadt ab 2027</title>
       <link>https://www.heise.de/news/BMW-will-ab-2027-teilautomatisiertes-Fahren-im-Stadtverkehr-anbieten-11507904.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11507904</guid>
       <pubDate>Mon, 02 Nov 2026 11:29:00 GMT</pubDate>
@@ -34,6 +151,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[C++26 wurde von den National Bodies bei der DIS-Wahl abgelehnt. Was das bedeutet und wie es weitergehen kann, beschreibt Andreas Fertig in seiner Analyse.]]></description>
+    </item>
+    <item>
+      <title>The future in old computer magazines (1984–2004)</title>
+      <link>https://tomorrowasusual.substack.com/p/blast-from-the-past-the-future-in</link>
+      <guid isPermaLink="false">https://tomorrowasusual.substack.com/p/blast-from-the-past-the-future-in</guid>
+      <pubDate>Mon, 02 Nov 2026 11:09:08 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>MacBook Pro mit PROLED-XDR-Display: Wie das leuchtende Apple-Logo funktioniert</title>
@@ -81,6 +207,15 @@
       <description><![CDATA[Das Veeam Management Pack für Microsoft System Center ist verwundbar. Abhilfe schafft ein Upgrade auf Version 13.1.]]></description>
     </item>
     <item>
+      <title>Show HN: I've updated my Linux System Call website and API</title>
+      <link>https://syscall.sh/</link>
+      <guid isPermaLink="false">https://syscall.sh/</guid>
+      <pubDate>Mon, 02 Nov 2026 09:29:16 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Neuer Benchmark zeigt die wahre Leistung von KI-Modellen</title>
       <link>https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</guid>
@@ -117,6 +252,15 @@
       <description><![CDATA[HackerTube zeigt 6.454 Videos, die Nutzer seit 2007 auf Hacker News empfohlen haben. Claude Code und Claude Opus 5.5 bauten die Seite laut Karpathy in rund zwei Stunden. Die Nutzung klappt ohne Konto, während Verlauf und Vorlieben im lokalen Browser bleiben. Andrej Karpathy: HackerTube HackerTube Andrej Karpathy auf X Diskussion auf Hacker News Andrej Karpathy hat mit HackerTube eine alternative Oberfläche für YouTube veröffentlicht. Statt persönlicher Nutzerdaten bestimmen 6.454 Videoempfehlungen aus der Hacker-News-Community, was im Feed erscheint. Nach Karpathys Angaben erledigten Claude Code und Claude Opus 5.5 den Großteil der Arbeit in rund zwei Stunden. + Quelle: hackertube.org Empfehlungen aus 39.834 Kommentaren Die Auswahl basiert auf 39.834 Hacker-News-Kommentaren seit 2007 und umfasst 150 Themen. Claude filterte dafür ein Archiv mit 43 Millionen Kommentaren, entfernte Spam und suchte nach wiederholt empfohlenen YouTube-Videos. HackerTube braucht weder Anmeldung noch Benutzerkonto. Wiedergabeverlauf, Likes und spätere Empfehlungen bleiben im lokalen Browser. Statt der hochgeladenen Vorschaubilder zeigt die Seite jeweils ein Bild aus der Mitte des Videos. Nutzer können ...]]></description>
     </item>
     <item>
+      <title>BioWare co-founder: game execs "have never made a game" and don't get it</title>
+      <link>https://www.pcgamer.com/gaming-industry/none-of-these-people-have-ever-made-a-game-bioware-co-founder-greg-zeschuk-says-of-game-industry-executives-they-just-dont-know-how-it-works/</link>
+      <guid isPermaLink="false">https://www.pcgamer.com/gaming-industry/none-of-these-people-have-ever-made-a-game-bioware-co-founder-greg-zeschuk-says-of-game-industry-executives-they-just-dont-know-how-it-works/</guid>
+      <pubDate>Mon, 02 Nov 2026 08:32:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Claude Code verweigert den Nachbau bekannter Spiele</title>
       <link>https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</guid>
@@ -144,6 +288,24 @@
       <description><![CDATA[Angreifer missbrauchen Lücken in veralteten Betriebssystemen oder als Zero-Day-Lücken in Drupal, Ivanti Connect Secure und Synology.]]></description>
     </item>
     <item>
+      <title>China's First Frontier AI Export Controls: Mofcom Announcement No. 48</title>
+      <link>https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/</link>
+      <guid isPermaLink="false">https://labs.cloudsecurityalliance.org/research/csa-research-note-china-ai-export-controls-announcement-48-2/</guid>
+      <pubDate>Mon, 02 Nov 2026 07:27:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: HackerHack – HackerBooks but for Posts Posted on HN</title>
+      <link>https://news.ycombinator.com/</link>
+      <guid isPermaLink="false">https://news.ycombinator.com/</guid>
+      <pubDate>Mon, 02 Nov 2026 06:59:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>KI-generierte Remixe: Spotify-Pläne verzögern sich wohl wegen der Künstler</title>
       <link>https://www.heise.de/news/KI-generierte-Remixe-Spotify-Plaene-verzoegern-sich-wohl-wegen-der-Kuenstler-11507459.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11507459</guid>
@@ -151,6 +313,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Im Mai hat Spotify angekündigt, dass man Songs bald von einer KI verändern lassen können soll. Der Widerstand aus der Musikbranche wurde womöglich unterschätzt.]]></description>
+    </item>
+    <item>
+      <title>From Charlemagne to the Kitchen Boy: Reading the Hamburg Rathaus</title>
+      <link>https://alsterrunde.com/from-charlemagne-to-the-kitchen-boy-reading-the-hamburg-rathaus/</link>
+      <guid isPermaLink="false">https://alsterrunde.com/from-charlemagne-to-the-kitchen-boy-reading-the-hamburg-rathaus/</guid>
+      <pubDate>Mon, 02 Nov 2026 06:39:42 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Absturz bis 2034: NASA prüft jetzt doch die Anhebung des Hubble-Orbits</title>
@@ -189,6 +360,15 @@
       <description><![CDATA[Angriffe auf Politiker-iPhones + Meta-Roboter für Haushaltsaufgaben + Sam Altmans Idee gegen Speicherkrise + Internetsteuer Frankreichs + Folgen der Zollreform]]></description>
     </item>
     <item>
+      <title>Show HN: Wikihack – HackerTube, but for Wikipedia articles mentioned on HN</title>
+      <link>https://wikihack.netlify.app</link>
+      <guid isPermaLink="false">https://wikihack.netlify.app</guid>
+      <pubDate>Mon, 02 Nov 2026 05:06:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Meta arbeitet offenbar mit chinesischer Hilfe an humanoidem Haushaltsroboter</title>
       <link>https://www.heise.de/news/Meta-arbeitet-offenbar-mit-chinesischer-Hilfe-an-humanoidem-Haushaltsroboter-11507414.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11507414</guid>
@@ -196,6 +376,42 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA['Max' heißt der Roboter in Menschengestalt, den Meta mit Unterstützung des chinesischen Start-ups Fourier entwickelt haben soll. Ein Verkauf ist nicht geplant.]]></description>
+    </item>
+    <item>
+      <title>F/OSS Comics #13: BSD Unix, Part 3 – The Beginning of BSD Unix</title>
+      <link>https://fosscomics.com/posts/13.%20BSD%20Unix%20Part%203%20-%20The%20Beginning%20of%20BSD%20Unix/</link>
+      <guid isPermaLink="false">https://fosscomics.com/posts/13.%20BSD%20Unix%20Part%203%20-%20The%20Beginning%20of%20BSD%20Unix/</guid>
+      <pubDate>Mon, 02 Nov 2026 01:59:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Bones may release proteins that slow aging and extend life span</title>
+      <link>https://www.science.org/content/article/bones-may-release-proteins-slow-aging-and-extend-life-span</link>
+      <guid isPermaLink="false">https://www.science.org/content/article/bones-may-release-proteins-slow-aging-and-extend-life-span</guid>
+      <pubDate>Mon, 02 Nov 2026 01:31:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Trigger.dev customer environment variables exposed</title>
+      <link>https://trigger.dev/blog/security-incident-nov-2026</link>
+      <guid isPermaLink="false">https://trigger.dev/blog/security-incident-nov-2026</guid>
+      <pubDate>Mon, 02 Nov 2026 01:09:16 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>OccupySaaS</title>
+      <link>https://occupysaas.com/</link>
+      <guid isPermaLink="false">https://occupysaas.com/</guid>
+      <pubDate>Mon, 02 Nov 2026 00:17:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>OpenAI might rebrand its data centers as ‘AI compute campuses’</title>
@@ -225,6 +441,15 @@
       <description><![CDATA[On Equity, we discuss why tech CEO statements can seem so tone deaf.]]></description>
     </item>
     <item>
+      <title>Ask HN: Which TV do you recommend for privacy?</title>
+      <link>https://news.ycombinator.com/item?id=50328896</link>
+      <guid isPermaLink="false">https://news.ycombinator.com/item?id=50328896</guid>
+      <pubDate>Sun, 01 Nov 2026 19:35:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Top 5: Der beste Rasentrimmer mit Akku im Test</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-5-der-beste-rasentrimmer-mit-akku-im-test-fuer-praezisen-randschnitt/hr3smgf?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11507296</guid>
@@ -232,6 +457,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Akku-Rasentrimmer kürzen Gras an Kanten, unter Hecken und rund ums Beet. Wir zeigen, worauf es bei den Gartenhelfern ankommt.]]></description>
+    </item>
+    <item>
+      <title>Show HN: HackerBooks – HackerTube, but for books mentioned on HN</title>
+      <link>https://hackerbooks.org</link>
+      <guid isPermaLink="false">https://hackerbooks.org</guid>
+      <pubDate>Sun, 01 Nov 2026 15:58:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>OpenAI-Chef Sam Altman findet DRAM in Privathand „schrecklich“</title>
@@ -268,33 +502,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Eine Domainsperre sorgt beim RIPE-Treffen für Diskussionen: Wie können sich Betreiber gegen erratische US-Sanktionen wappnen?]]></description>
-    </item>
-    <item>
-      <title>ChatGPT erlaubt und begrenzt gleichzeitig mehrere Abos</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-abos-switch-sperre</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-abos-switch-sperre</guid>
-      <pubDate>Sun, 01 Nov 2026 13:25:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Nutzer dürfen mehr als zwei ChatGPT-Konten besitzen und bis zu zwei gleichzeitig angemeldet lassen. Aktiv ist immer nur ein Konto, Chats, Dateien, Einstellungen und Abos bleiben getrennt. Das neue Geräte- und Kartenlimit betrifft die Zahl persönlicher Bezahlabos auf demselben Gerät oder derselben Kreditkarte. Free, Business, Enterprise und Edu zählen beim Gerätelimit nicht mit. Understanding card and device limits in ChatGPT Using multiple ChatGPT accounts on web and mobile Tibo Sottiaux: Day 26 – Account switching OpenAI führt für ChatGPT einen Kontowechsel ein. Nutzer können damit zwei Konten auf demselben Gerät angemeldet lassen und direkt zwischen ihnen wechseln. Gleichzeitig begrenzt OpenAI die Zahl persönlicher Bezahlabos pro Gerät und Kreditkarte. Zwei Konten ohne ständiges Abmelden Der Kontowechsel ist im Web bereits verfügbar und wird auf iOS und Android gerade verteilt. Die Desktop-App soll folgen. Mehr als zwei ChatGPT-Konten sind erlaubt, im Kontowechsel können jedoch höchstens zwei angemeldet bleiben. Aktiv ist jeweils eines. Chats, Dateien, Einstellungen und Abrechnung bleiben getrennt. Der Kontowechsel überträgt auch kein Abo. Wer auf beiden Konten einen persönlic...]]></description>
-    </item>
-    <item>
-      <title>GPT-6.2 Astra, Claude Fable 5.5 und Qwen 4 könnten diese Woche kommen</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-claude-qwen-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-claude-qwen-start</guid>
-      <pubDate>Sun, 01 Nov 2026 12:20:31 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT-6.2 Astra erscheint bereits in den Nutzungsdaten einzelner Codex-Konten. Qwen-Forscher Xudong Guo stellte Qwen 4 für die Woche ab dem 2. November in Aussicht. Claude Fable 5.5 gilt als mögliche Antwort von Anthropic, besitzt aber noch keinen Termin. Gemini 4 Carbon hat Claude Opus 5.5 im Intelligence Index v5 an der Spitze abgelöst. GPT-6.2 Astra in Codex-Nutzungsdaten OpenAI: So funktionieren banked Codex resets Artificial Analysis Intelligence Index v5 Qwen 4 laut Xudong Guo »next week« Anthropic reicht Unterlagen für Börsengang ein Die neue Woche könnte gleich drei große KI-Modelle bringen. Bei OpenAI und Qwen verdichten sich die Hinweise, während Anthropic vor seinem geplanten Börsengang ebenfalls unter Zugzwang steht. Alles was folgt sind aber Vermutungen! Anzeige GPT-6.2 Astra taucht in Nutzungsdaten auf Mehrere Codex-Nutzer sehen in ihrer Verbrauchsanalyse bereits die Bezeichnung »gpt-6.2-astra«. Die Modellauswahl zeigt dabei weiterhin GPT-6 Astra. Solche getrennten Einträge passen zu einem begrenzten Test vor einer breiteren Freigabe. + Quelle: X Eine Veröffentlichung am Montag wäre ein passender Höhepunkt für OpenAIs laufende Kalender-Challenge. Passend dazu wären a...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT und Claude: Fünf neue KI-Slop-Anzeichen</title>
-      <link>https://www.all-ai.de/news/news26top/chatgpt-claude-ki-slop-merkmale</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/chatgpt-claude-ki-slop-merkmale</guid>
-      <pubDate>Sun, 01 Nov 2026 11:50:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Der Gedankenstrich taugt bei aktuellen Modellen kaum noch als KI-Merkmal. GPT-6 Astra verrät sich häufiger durch Korrekturformeln, Claude Opus 5.5 durch Bedeutungsbehauptungen und Kontraste. Für GPT-6.1 Sol fehlt bisher eine eigene Phrasenstudie. Bei deutschen Texten sind gleichförmiger Satzbau und wiederkehrende Dreierlisten zusätzliche Warnzeichen. Graphite: AI Tells Graphite: AI Tells – Opus 5.5 Update KI-Schreibranking: Welche KI klingt am wenigsten nach KI? AI-Linguistica: Tracing English interference in AI-generated German Der Gedankenstrich galt lange als Fingerabdruck von KI-Texten. Bei GPT-6 Astra, GPT-6.1 Sol und Claude Opus 5.5 hat sich das Bild gewandelt. Das Satzzeichen kommt teils seltener vor als bei Menschen, während neue Auffälligkeiten von starren Gegensätzen bis zu auffällig glatten Satzfolgen entstehen. 1. Astra korrigiert Aussagen auffällig oft GPT-6 Astra beschreibt ein Thema gern über eine Korrektur. In der englischen Graphite-Analyse kam »not simply« 157-mal und »rather than relying« 187-mal häufiger vor als in menschlichen Artikeln. Auf Deutsch entsprechen dem Formulierungen wie »nicht einfach« oder »anstatt sich auf … zu verlassen«. Anzeige 2. Opus 5.5 ...]]></description>
     </item>
   </channel>
 </rss>

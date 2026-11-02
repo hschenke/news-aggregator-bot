@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Games' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 11:50:03 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 13:39:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/games.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -52,15 +52,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[... nor travelers venturing into the darkest swamps. Choose ... / Heroes of Might and Magic III / Fantasy-Brettspiele / Andere /]]></description>
-    </item>
-    <item>
-      <title>KI machts möglich: Neue Firmware-Hacks bringen Kameras (z.B. von Sony, Canon, Ricoh ...</title>
-      <link>https://www.slashcam.de/news/single/Neue-Firmware-Hacks-bringen-Kameras--z-B--von-Sony-20348.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3771810676234868520</guid>
-      <pubDate>Sun, 01 Nov 2026 12:22:32 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Der Fotograf und YouTuber Tony Northrup hat in seinem Video „I hacked my camera with AI (and so can you)“ auf eine inter. ... Magic Lantern Project.]]></description>
     </item>
   </channel>
 </rss>
