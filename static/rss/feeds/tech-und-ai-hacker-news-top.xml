@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 01 Nov 2026 11:54:35 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 06:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -49,132 +49,6 @@
       <link>https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</link>
       <guid isPermaLink="false">https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</guid>
       <pubDate>Sun, 01 Nov 2026 06:06:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Brazilian Court Sanctions Lawyers for Prompt Injection in Court Filing</title>
-      <link>https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing/</link>
-      <guid isPermaLink="false">https://jetstream.security/insights/brazilian-court-sanctions-prompt-injection-filing/</guid>
-      <pubDate>Sun, 01 Nov 2026 02:19:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Leaking Secrets from Air-Gap Computers by Spelling Radio Signals from RAM (2024)</title>
-      <link>https://arxiv.org/abs/2409.02292</link>
-      <guid isPermaLink="false">https://arxiv.org/abs/2409.02292</guid>
-      <pubDate>Sun, 01 Nov 2026 01:46:29 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Altoids Project</title>
-      <link>https://uvdn7.github.io/altoids-project/</link>
-      <guid isPermaLink="false">https://uvdn7.github.io/altoids-project/</guid>
-      <pubDate>Sat, 31 Oct 2026 22:54:55 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Memdoor: A team of 5 Qwen3.8-27B models beats Fable 5 on LiveCodeBench Hard</title>
-      <link>https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve</link>
-      <guid isPermaLink="false">https://github.com/guregodevo/memdoor/tree/main/examples/workflows/team-solve</guid>
-      <pubDate>Sat, 31 Oct 2026 22:46:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>An Italian farmer found some unknown seeds in his attic and planted them</title>
-      <link>https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/</link>
-      <guid isPermaLink="false">https://www.smithsonianmag.com/science-nature/italian-farmer-found-unknown-seeds-attic-with-nothing-lose-planted-them-result-biblical-180989644/</guid>
-      <pubDate>Sat, 31 Oct 2026 22:41:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>ChatGPT and Codex usage limits merging</title>
-      <link>https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits</link>
-      <guid isPermaLink="false">https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits</guid>
-      <pubDate>Sat, 31 Oct 2026 21:49:07 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Surviving "The Graduate"</title>
-      <link>https://www.newyorker.com/culture/the-weekend-essay/dustin-hoffman-on-surviving-the-graduate</link>
-      <guid isPermaLink="false">https://www.newyorker.com/culture/the-weekend-essay/dustin-hoffman-on-surviving-the-graduate</guid>
-      <pubDate>Sat, 31 Oct 2026 20:02:06 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>HackerTube: YouTube built from videos recommended by HN</title>
-      <link>https://karpathy.bearblog.dev/hacker-tube/</link>
-      <guid isPermaLink="false">https://karpathy.bearblog.dev/hacker-tube/</guid>
-      <pubDate>Sat, 31 Oct 2026 19:56:53 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>TCP Use-After-Free: CVE-2026-98432 / CVSS 9.8</title>
-      <link>https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf</link>
-      <guid isPermaLink="false">https://atlasum.net/blog/cve-2026-98432-linux-ipv4-tcp-uaf</guid>
-      <pubDate>Sat, 31 Oct 2026 19:16:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Electrification Could Cut Global Energy Use in Half</title>
-      <link>https://fullycharged.show/podcasts/podcast-361-why-electrification-could-cut-global-energy-use-in-half/</link>
-      <guid isPermaLink="false">https://fullycharged.show/podcasts/podcast-361-why-electrification-could-cut-global-energy-use-in-half/</guid>
-      <pubDate>Sat, 31 Oct 2026 19:13:34 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Duty of a Scholar</title>
-      <link>https://www.daemonology.net/blog/2026-10-31-The-Duty-of-a-Scholar.html</link>
-      <guid isPermaLink="false">https://www.daemonology.net/blog/2026-10-31-The-Duty-of-a-Scholar.html</guid>
-      <pubDate>Sat, 31 Oct 2026 19:07:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>It's the memory latency, stupid</title>
-      <link>https://pivotlake.io/blog/its-the-memory-latency-stupid/</link>
-      <guid isPermaLink="false">https://pivotlake.io/blog/its-the-memory-latency-stupid/</guid>
-      <pubDate>Sat, 31 Oct 2026 18:38:16 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The Ocean 'Was the Color of Chocolate.' Mexico Declares War on Seaweed.</title>
-      <link>https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html</link>
-      <guid isPermaLink="false">https://www.nytimes.com/2026/10/28/world/americas/mexico-seaweed-navy.html</guid>
-      <pubDate>Sat, 31 Oct 2026 13:41:18 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Jepsen: ParticleDB 1.1.4</title>
-      <link>https://jepsen.io/analyses/particledb-1.1.4</link>
-      <guid isPermaLink="false">https://jepsen.io/analyses/particledb-1.1.4</guid>
-      <pubDate>Sat, 31 Oct 2026 13:39:52 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

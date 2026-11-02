@@ -5,44 +5,26 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 01 Nov 2026 11:54:35 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 06:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’</title>
-      <link>https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3184023</guid>
-      <pubDate>Sat, 31 Oct 2026 21:41:00 GMT</pubDate>
+      <title>OpenAI might rebrand its data centers as ‘AI compute campuses’</title>
+      <link>https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3184048</guid>
+      <pubDate>Sun, 01 Nov 2026 21:55:23 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Apple's new CEO defended the company's current position in the AI landscape.]]></description>
+      <description><![CDATA[Data centers are deeply unpopular. But what if we called them something else?]]></description>
     </item>
     <item>
-      <title>4 days left: How TechCrunch Founder Summit helps you make more useful connections to scale</title>
-      <link>https://techcrunch.com/2026/10/31/4-days-left-how-techcrunch-founder-summit-helps-you-make-more-useful-connections-to-scale/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3184015</guid>
-      <pubDate>Sat, 31 Oct 2026 21:36:07 GMT</pubDate>
+      <title>AI can make tech CEOs’ lives easier. What about everyone else?</title>
+      <link>https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3184041</guid>
+      <pubDate>Sun, 01 Nov 2026 20:57:58 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[On November 4 at Boston’s SoWa Power Station, get ready for a full day packed with meaningful networking opportunities, actionable insights, and connections that could change the trajectory of your idea and startup. Register before all prices go up at the door.]]></description>
-    </item>
-    <item>
-      <title>Judge allows NAACP lawsuit over xAI data center pollution to move forward</title>
-      <link>https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3184013</guid>
-      <pubDate>Sat, 31 Oct 2026 21:17:03 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[An NAACP lawsuit accuses the SpaceX-owned AI company of violating the Clean Air Act.]]></description>
-    </item>
-    <item>
-      <title>OpenAI reportedly lowers funding target for new round</title>
-      <link>https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3184004</guid>
-      <pubDate>Sat, 31 Oct 2026 16:12:55 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[OpenAI’s latest funding round doesn't seem to be living up to expectations.]]></description>
+      <description><![CDATA[On Equity, we discuss why tech CEO statements can seem so tone deaf.]]></description>
     </item>
   </channel>
 </rss>
