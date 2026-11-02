@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 06:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 11:50:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Neuer Benchmark zeigt die wahre Leistung von KI-Modellen</title>
+      <link>https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</guid>
+      <pubDate>Mon, 02 Nov 2026 09:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Opus 5.5 führt den GDPx-Benchmark mit 12% an, kostet aber 51,41$ pro Aufgabe. Gemini 4 Carbon erreicht 10,9% und kostet mit 16,29$ deutlich weniger. GPT-6.1 Sol, DeepSeek 4.1 Flash und GPT-6 Luna fallen durch ihr gutes Preis-Leistungs-Verhältnis auf. Grok 4.7, Kimi K3, Qwen 3.8 Max und GLM 5.3 bleiben deutlich hinter der Spitze. GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains GDPx Leaderboard SemiAnalysis: Vorstellung von GDPx auf X Selbst die besten KI-Modelle scheitern an einem Großteil anspruchsvoller Aufgaben aus Forschung, Entwicklung und Wirtschaft. Im neuen GDPx-Benchmark erreicht der Sieger Claude Opus 5.5 gerade einmal 12% und kostet pro Aufgabe mehr als 50$. Anzeige Claude Opus 5.5 führt zu einem hohen Preis SemiAnalysis hat für GDPx Aufgaben aus elf Bereichen zusammengestellt. Dazu gehören Chipdesign, Cybersecurity, Biologie, Softwareentwicklung, Materialwissenschaft, Hardwaredesign, Finanzwesen und Recht. Die Modelle arbeiten dabei bis zu acht Stunden in realistischen Arbeitsumgebungen und müssen selbst Informationen finden, Entscheidungen treffen und Ergebnisse abliefern. Claude Opus 5.5 führt mit 12% und kostet im Durchschnitt 51...]]></description>
+    </item>
+    <item>
+      <title>HackerTube: Karpathy baut YouTube-Alternative in zwei Stunden</title>
+      <link>https://www.all-ai.de/news/news26top/karpathy-hackertube-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/karpathy-hackertube-start</guid>
+      <pubDate>Mon, 02 Nov 2026 08:33:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[HackerTube zeigt 6.454 Videos, die Nutzer seit 2007 auf Hacker News empfohlen haben. Claude Code und Claude Opus 5.5 bauten die Seite laut Karpathy in rund zwei Stunden. Die Nutzung klappt ohne Konto, während Verlauf und Vorlieben im lokalen Browser bleiben. Andrej Karpathy: HackerTube HackerTube Andrej Karpathy auf X Diskussion auf Hacker News Andrej Karpathy hat mit HackerTube eine alternative Oberfläche für YouTube veröffentlicht. Statt persönlicher Nutzerdaten bestimmen 6.454 Videoempfehlungen aus der Hacker-News-Community, was im Feed erscheint. Nach Karpathys Angaben erledigten Claude Code und Claude Opus 5.5 den Großteil der Arbeit in rund zwei Stunden. + Quelle: hackertube.org Empfehlungen aus 39.834 Kommentaren Die Auswahl basiert auf 39.834 Hacker-News-Kommentaren seit 2007 und umfasst 150 Themen. Claude filterte dafür ein Archiv mit 43 Millionen Kommentaren, entfernte Spam und suchte nach wiederholt empfohlenen YouTube-Videos. HackerTube braucht weder Anmeldung noch Benutzerkonto. Wiedergabeverlauf, Likes und spätere Empfehlungen bleiben im lokalen Browser. Statt der hochgeladenen Vorschaubilder zeigt die Seite jeweils ein Bild aus der Mitte des Videos. Nutzer können ...]]></description>
+    </item>
+    <item>
+      <title>Claude Code verweigert den Nachbau bekannter Spiele</title>
+      <link>https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</guid>
+      <pubDate>Mon, 02 Nov 2026 08:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic untersagt Claude Code die Rekonstruktion konkreter existierender Spiele. Eigene Games und Projekte mit eigenen Entwürfen sollen erlaubt bleiben. Entwickler melden trotzdem Ablehnungen bei regulären Aufträgen und Reverse Engineering. Die Regel reagiert auf wachsende Sorgen kleiner Studios vor schnellen KI-Kopien. Game Developer: Anthropic tells Claude to stop remaking video games GitHub: Neue Spiele-Regel blockiert professionelle Entwicklungsarbeit GitHub: Opus 5.5 verweigert harmlose Gespräche über Lernvideos VGC: ReVamp-Entwickler sagt öffentlichen Spieletest ab Anthropic schränkt die Spieleentwicklung mit Claude Code ein. Der Programmierassistent soll keine bekannten Games mehr rekonstruieren, selbst wenn Nutzer der Kopie einen neuen Namen geben. Zwei Sätze ziehen eine neue Grenze Die neue Regel steckt im System-Prompt von Claude Code für Claude Opus 5.5. Erlaubt bleiben eigene Spiele, Entwürfe des Nutzers und Projekte, die sich allgemein an einem Genre orientieren. Bei der Rekonstruktion eines bestimmten existierenden Titels soll Claude Code die Arbeit verweigern. Anthropic-Mitarbeiter Addy Osmani bestätigte die Änderung. Das KI-Unternehmen will damit verhindern, da...]]></description>
+    </item>
+    <item>
+      <title>Der erste Mensch ist dank KI unsterblich</title>
+      <link>https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</guid>
+      <pubDate>Mon, 02 Nov 2026 07:59:56 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ray Kurzweil hat mit Praxis AI den digitalen Doppelgänger RAI entwickelt. Die KI lernt aus elf Büchern und zahlreichen Aufnahmen und speichert Erinnerungen aus Gesprächen. RAI soll Kurzweils Denkweise bewahren und auch nach seinem Tod weiterlernen. Rund 200 Freunde und Familienmitglieder testen den digitalen Doppelgänger bereits. The Information: Can AI Help Ray Kurzweil Cheat Death? Kurzweil Technologies: Ray Kurzweil Unveils RAI AI for Good: Ray Kurzweil presents RAI Boston Magazine: Kurzweil über KI und ein längeres Leben NQ Brief: Kurzweils KI-Abbild wird von 200 Personen getestet Ray Kurzweil hat mit »RAI« einen digitalen Doppelgänger erschaffen, der sein Wissen, seine Stimme und seine Denkweise bewahren soll. Das KI-Abbild könnte den 78-jährigen Erfinder überleben und sich auch nach seinem Tod weiterentwickeln. RAI lernt aus Kurzweils Lebenswerk Rund 200 Freunde und Familienmitglieder testen RAI derzeit vor einer geplanten Veröffentlichung. Die KI erscheint im Browser als dreidimensionales Abbild von Kurzweil und antwortet mit einer Stimme, die seiner eigenen ähnelt. Praxis AI entwickelte RAI auf Basis eines KI-Modells von Google. Als Wissensgrundlage dienen elf Bücher, Vi...]]></description>
+    </item>
     <item>
       <title>ChatGPT erlaubt und begrenzt gleichzeitig mehrere Abos</title>
       <link>https://www.all-ai.de/news/news26top/chatgpt-abos-switch-sperre</link>

@@ -5,53 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 06:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 11:50:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Norway makes shithouses great again</title>
-      <link>https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/</link>
-      <guid isPermaLink="false">https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/</guid>
-      <pubDate>Sun, 01 Nov 2026 10:47:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Domain hacks with unusual Unicode characters (2018)</title>
-      <link>https://xn--69f31l4t57c0mag4b613h.xn--7uh4898msjaso/🆆🆃🅵/</link>
-      <guid isPermaLink="false">https://xn--69f31l4t57c0mag4b613h.xn--7uh4898msjaso/🆆🆃🅵/</guid>
-      <pubDate>Sun, 01 Nov 2026 10:44:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>A tiny Pacific country rolls out universal basic income</title>
-      <link>https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income</link>
-      <guid isPermaLink="false">https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income</guid>
-      <pubDate>Sun, 01 Nov 2026 10:05:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Pac-Man's Siren Call</title>
-      <link>https://unsung.aresluna.org/pac-mans-siren-call/</link>
-      <guid isPermaLink="false">https://unsung.aresluna.org/pac-mans-siren-call/</guid>
-      <pubDate>Sun, 01 Nov 2026 06:29:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The AI cost of JavaScript frameworks</title>
-      <link>https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</link>
-      <guid isPermaLink="false">https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</guid>
-      <pubDate>Sun, 01 Nov 2026 06:06:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>

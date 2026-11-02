@@ -5,9 +5,171 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 06:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 11:50:03 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BMW will ab 2027 teilautomatisiertes Fahren im Stadtverkehr anbieten</title>
+      <link>https://www.heise.de/news/BMW-will-ab-2027-teilautomatisiertes-Fahren-im-Stadtverkehr-anbieten-11507904.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507904</guid>
+      <pubDate>Mon, 02 Nov 2026 11:29:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[BMW will ab 2027 in Deutschland auch im Stadtverkehr teilautomatisiertes Fahren ermöglichen und einige Modelle mit Assistenzfunktionen ausstatten.]]></description>
+    </item>
+    <item>
+      <title>Der Traktor, den Landwirte selbst reparieren können, wird zum Verkaufserfolg</title>
+      <link>https://www.heise.de/news/Respekt-fuer-Recht-auf-Reparatur-Ursa-Traktoren-aus-Kanada-verkaufen-sich-gut-11507647.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507647</guid>
+      <pubDate>Mon, 02 Nov 2026 11:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Ursa AG baut in Alberta weitgehend elektronikfreie Traktoren, die Eigenreparaturen nicht aktiv verhindern. Die Nachfrage übersteigt die Produktion deutlich.]]></description>
+    </item>
+    <item>
+      <title>Analyse: Bei C++ ist das Undenkbare geschehen – C++26 wurde abgelehnt</title>
+      <link>https://www.heise.de/blog/Analyse-C-26-abgelehnt-war-es-das-oder-geht-es-weiter-11507334.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507334</guid>
+      <pubDate>Mon, 02 Nov 2026 11:10:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[C++26 wurde von den National Bodies bei der DIS-Wahl abgelehnt. Was das bedeutet und wie es weitergehen kann, beschreibt Andreas Fertig in seiner Analyse.]]></description>
+    </item>
+    <item>
+      <title>MacBook Pro mit PROLED-XDR-Display: Wie das leuchtende Apple-Logo funktioniert</title>
+      <link>https://www.heise.de/news/MacBook-Pro-mit-PROLED-XDR-Display-Wie-das-leuchtende-Apple-Logo-funktioniert-11505501.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11505501</guid>
+      <pubDate>Mon, 02 Nov 2026 11:05:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apples erster Touchscreen-Mac ist auch von weitem gut erkennbar: Das Apple-Logo hat wieder Licht. Die technischen Hintergründe.]]></description>
+    </item>
+    <item>
+      <title>Apple kauft agentisches Datenanalyseunternehmen Ascend.io</title>
+      <link>https://www.heise.de/news/Apple-kauft-agentisches-Datenanalyseunternehmen-Ascend-io-11506976.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506976</guid>
+      <pubDate>Mon, 02 Nov 2026 10:33:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apple hat wieder bei einer kleineren Firma zugeschlagen: Ascend.io arbeitete an Software, die mit KI-Agenten-Hilfe Business-Infos auswertete.]]></description>
+    </item>
+    <item>
+      <title>NAND-Hersteller: „Rache“ an Apple genommen?</title>
+      <link>https://www.heise.de/news/NAND-Hersteller-Rache-an-Apple-genommen-11506968.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11506968</guid>
+      <pubDate>Mon, 02 Nov 2026 10:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Apple verhandelte einst hart um die günstigsten NAND-Tarife. Doch mittlerweile hat der Konzern dank des KI-Booms nicht mehr die Oberhand, so ein Bericht.]]></description>
+    </item>
+    <item>
+      <title>Sicherheitslücken in Progress WS_FTP ermöglichen Kompromittierung</title>
+      <link>https://www.heise.de/news/Sicherheitsluecken-in-Progress-WS-FTP-ermoeglichen-Kompromittierung-11507580.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507580</guid>
+      <pubDate>Mon, 02 Nov 2026 09:44:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Progress meldet mehrere kritische Sicherheitslücken in WS_FTP. Admins sollten zügig Aktualisierungen anwenden.]]></description>
+    </item>
+    <item>
+      <title>Veeam Management Pack: Sicherheitslücken ermöglichen Codeausführung</title>
+      <link>https://www.heise.de/news/Schadcode-Sicherheitsluecken-bedrohen-Veeam-Management-Pack-11507704.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507704</guid>
+      <pubDate>Mon, 02 Nov 2026 09:32:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Veeam Management Pack für Microsoft System Center ist verwundbar. Abhilfe schafft ein Upgrade auf Version 13.1.]]></description>
+    </item>
+    <item>
+      <title>Neuer Benchmark zeigt die wahre Leistung von KI-Modellen</title>
+      <link>https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</guid>
+      <pubDate>Mon, 02 Nov 2026 09:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Opus 5.5 führt den GDPx-Benchmark mit 12% an, kostet aber 51,41$ pro Aufgabe. Gemini 4 Carbon erreicht 10,9% und kostet mit 16,29$ deutlich weniger. GPT-6.1 Sol, DeepSeek 4.1 Flash und GPT-6 Luna fallen durch ihr gutes Preis-Leistungs-Verhältnis auf. Grok 4.7, Kimi K3, Qwen 3.8 Max und GLM 5.3 bleiben deutlich hinter der Spitze. GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains GDPx Leaderboard SemiAnalysis: Vorstellung von GDPx auf X Selbst die besten KI-Modelle scheitern an einem Großteil anspruchsvoller Aufgaben aus Forschung, Entwicklung und Wirtschaft. Im neuen GDPx-Benchmark erreicht der Sieger Claude Opus 5.5 gerade einmal 12% und kostet pro Aufgabe mehr als 50$. Anzeige Claude Opus 5.5 führt zu einem hohen Preis SemiAnalysis hat für GDPx Aufgaben aus elf Bereichen zusammengestellt. Dazu gehören Chipdesign, Cybersecurity, Biologie, Softwareentwicklung, Materialwissenschaft, Hardwaredesign, Finanzwesen und Recht. Die Modelle arbeiten dabei bis zu acht Stunden in realistischen Arbeitsumgebungen und müssen selbst Informationen finden, Entscheidungen treffen und Ergebnisse abliefern. Claude Opus 5.5 führt mit 12% und kostet im Durchschnitt 51...]]></description>
+    </item>
+    <item>
+      <title>Youtuber 3D-druckt kleinen propanbetriebenen EDF-Afterburner</title>
+      <link>https://www.heise.de/news/Youtuber-3D-druckt-kleinen-propanbetriebenen-EDF-Afterburner-11507595.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507595</guid>
+      <pubDate>Mon, 02 Nov 2026 09:14:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Luftfahrtingenieur und Youtuber Michael Rechtin hat den Schub eines EDF-Triebwerks mit einem 3D-gedruckten Nachbrenner nahezu verdoppeln können.]]></description>
+    </item>
+    <item>
+      <title>Google bestätigt Googlebook-2-in-1 mit abnehmbarer Tastatur</title>
+      <link>https://www.heise.de/news/Google-bestaetigt-Googlebook-2-in-1-mit-abnehmbarer-Tastatur-11507615.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507615</guid>
+      <pubDate>Mon, 02 Nov 2026 09:06:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nach klassischen Notebooks auf Android-Basis kommen demnächst Googlebook-Detachables. Eines der ersten Modelle könnte von Lenovo kommen.]]></description>
+    </item>
+    <item>
+      <title>HackerTube: Karpathy baut YouTube-Alternative in zwei Stunden</title>
+      <link>https://www.all-ai.de/news/news26top/karpathy-hackertube-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/karpathy-hackertube-start</guid>
+      <pubDate>Mon, 02 Nov 2026 08:33:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[HackerTube zeigt 6.454 Videos, die Nutzer seit 2007 auf Hacker News empfohlen haben. Claude Code und Claude Opus 5.5 bauten die Seite laut Karpathy in rund zwei Stunden. Die Nutzung klappt ohne Konto, während Verlauf und Vorlieben im lokalen Browser bleiben. Andrej Karpathy: HackerTube HackerTube Andrej Karpathy auf X Diskussion auf Hacker News Andrej Karpathy hat mit HackerTube eine alternative Oberfläche für YouTube veröffentlicht. Statt persönlicher Nutzerdaten bestimmen 6.454 Videoempfehlungen aus der Hacker-News-Community, was im Feed erscheint. Nach Karpathys Angaben erledigten Claude Code und Claude Opus 5.5 den Großteil der Arbeit in rund zwei Stunden. + Quelle: hackertube.org Empfehlungen aus 39.834 Kommentaren Die Auswahl basiert auf 39.834 Hacker-News-Kommentaren seit 2007 und umfasst 150 Themen. Claude filterte dafür ein Archiv mit 43 Millionen Kommentaren, entfernte Spam und suchte nach wiederholt empfohlenen YouTube-Videos. HackerTube braucht weder Anmeldung noch Benutzerkonto. Wiedergabeverlauf, Likes und spätere Empfehlungen bleiben im lokalen Browser. Statt der hochgeladenen Vorschaubilder zeigt die Seite jeweils ein Bild aus der Mitte des Videos. Nutzer können ...]]></description>
+    </item>
+    <item>
+      <title>Claude Code verweigert den Nachbau bekannter Spiele</title>
+      <link>https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</guid>
+      <pubDate>Mon, 02 Nov 2026 08:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic untersagt Claude Code die Rekonstruktion konkreter existierender Spiele. Eigene Games und Projekte mit eigenen Entwürfen sollen erlaubt bleiben. Entwickler melden trotzdem Ablehnungen bei regulären Aufträgen und Reverse Engineering. Die Regel reagiert auf wachsende Sorgen kleiner Studios vor schnellen KI-Kopien. Game Developer: Anthropic tells Claude to stop remaking video games GitHub: Neue Spiele-Regel blockiert professionelle Entwicklungsarbeit GitHub: Opus 5.5 verweigert harmlose Gespräche über Lernvideos VGC: ReVamp-Entwickler sagt öffentlichen Spieletest ab Anthropic schränkt die Spieleentwicklung mit Claude Code ein. Der Programmierassistent soll keine bekannten Games mehr rekonstruieren, selbst wenn Nutzer der Kopie einen neuen Namen geben. Zwei Sätze ziehen eine neue Grenze Die neue Regel steckt im System-Prompt von Claude Code für Claude Opus 5.5. Erlaubt bleiben eigene Spiele, Entwürfe des Nutzers und Projekte, die sich allgemein an einem Genre orientieren. Bei der Rekonstruktion eines bestimmten existierenden Titels soll Claude Code die Arbeit verweigern. Anthropic-Mitarbeiter Addy Osmani bestätigte die Änderung. Das KI-Unternehmen will damit verhindern, da...]]></description>
+    </item>
+    <item>
+      <title>Der erste Mensch ist dank KI unsterblich</title>
+      <link>https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</guid>
+      <pubDate>Mon, 02 Nov 2026 07:59:56 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ray Kurzweil hat mit Praxis AI den digitalen Doppelgänger RAI entwickelt. Die KI lernt aus elf Büchern und zahlreichen Aufnahmen und speichert Erinnerungen aus Gesprächen. RAI soll Kurzweils Denkweise bewahren und auch nach seinem Tod weiterlernen. Rund 200 Freunde und Familienmitglieder testen den digitalen Doppelgänger bereits. The Information: Can AI Help Ray Kurzweil Cheat Death? Kurzweil Technologies: Ray Kurzweil Unveils RAI AI for Good: Ray Kurzweil presents RAI Boston Magazine: Kurzweil über KI und ein längeres Leben NQ Brief: Kurzweils KI-Abbild wird von 200 Personen getestet Ray Kurzweil hat mit »RAI« einen digitalen Doppelgänger erschaffen, der sein Wissen, seine Stimme und seine Denkweise bewahren soll. Das KI-Abbild könnte den 78-jährigen Erfinder überleben und sich auch nach seinem Tod weiterentwickeln. RAI lernt aus Kurzweils Lebenswerk Rund 200 Freunde und Familienmitglieder testen RAI derzeit vor einer geplanten Veröffentlichung. Die KI erscheint im Browser als dreidimensionales Abbild von Kurzweil und antwortet mit einer Stimme, die seiner eigenen ähnelt. Praxis AI entwickelte RAI auf Basis eines KI-Modells von Google. Als Wissensgrundlage dienen elf Bücher, Vi...]]></description>
+    </item>
+    <item>
+      <title>Attacken auf Lücken in Drupal, Ivanti Connect Secure und Synology laufen</title>
+      <link>https://www.heise.de/news/Schwachstellen-in-Drupal-Ivanti-Connect-Secure-und-Synology-angegriffen-11507497.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507497</guid>
+      <pubDate>Mon, 02 Nov 2026 07:45:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Angreifer missbrauchen Lücken in veralteten Betriebssystemen oder als Zero-Day-Lücken in Drupal, Ivanti Connect Secure und Synology.]]></description>
+    </item>
+    <item>
+      <title>KI-generierte Remixe: Spotify-Pläne verzögern sich wohl wegen der Künstler</title>
+      <link>https://www.heise.de/news/KI-generierte-Remixe-Spotify-Plaene-verzoegern-sich-wohl-wegen-der-Kuenstler-11507459.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507459</guid>
+      <pubDate>Mon, 02 Nov 2026 06:54:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Im Mai hat Spotify angekündigt, dass man Songs bald von einer KI verändern lassen können soll. Der Widerstand aus der Musikbranche wurde womöglich unterschätzt.]]></description>
+    </item>
+    <item>
+      <title>Absturz bis 2034: NASA prüft jetzt doch die Anhebung des Hubble-Orbits</title>
+      <link>https://www.heise.de/news/Absturz-bis-2034-NASA-prueft-jetzt-doch-die-Anhebung-des-Hubble-Orbits-11507444.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11507444</guid>
+      <pubDate>Mon, 02 Nov 2026 06:13:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Widerstand der Erdatmosphäre lässt das Weltraumteleskop Hubble immer weiter absinken. Nun will die NASA prüfen, ob sich ein Absturz noch hinauszögern lässt.]]></description>
+    </item>
+    <item>
+      <title>Die Hupe: Wie der Irankrieg die Spritpreise und den E-Auto-Markt beeinflusst</title>
+      <link>https://www.heise.de/meinung/Die-Hupe-Folge-78-Irankrise-Leapmotor-B03X-und-Ferrari-12Cilindri-Manuale-11504947.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11504947</guid>
+      <pubDate>Mon, 02 Nov 2026 06:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wie lange wird uns die Irankrise noch beschäftigen und kann ich elektrisch ausweichen? Außerdem: Leapmotor B03X und Ferrari 12Cilindri Manuale (Simulazione).]]></description>
+    </item>
     <item>
       <title>Apps für Notfall-Warnungen in Ukraine und Russland geknackt</title>
       <link>https://www.heise.de/news/Apps-fuer-Notfall-Warnungen-in-Ukraine-und-Russland-geknackt-11507440.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -133,78 +295,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Der Gedankenstrich taugt bei aktuellen Modellen kaum noch als KI-Merkmal. GPT-6 Astra verrät sich häufiger durch Korrekturformeln, Claude Opus 5.5 durch Bedeutungsbehauptungen und Kontraste. Für GPT-6.1 Sol fehlt bisher eine eigene Phrasenstudie. Bei deutschen Texten sind gleichförmiger Satzbau und wiederkehrende Dreierlisten zusätzliche Warnzeichen. Graphite: AI Tells Graphite: AI Tells – Opus 5.5 Update KI-Schreibranking: Welche KI klingt am wenigsten nach KI? AI-Linguistica: Tracing English interference in AI-generated German Der Gedankenstrich galt lange als Fingerabdruck von KI-Texten. Bei GPT-6 Astra, GPT-6.1 Sol und Claude Opus 5.5 hat sich das Bild gewandelt. Das Satzzeichen kommt teils seltener vor als bei Menschen, während neue Auffälligkeiten von starren Gegensätzen bis zu auffällig glatten Satzfolgen entstehen. 1. Astra korrigiert Aussagen auffällig oft GPT-6 Astra beschreibt ein Thema gern über eine Korrektur. In der englischen Graphite-Analyse kam »not simply« 157-mal und »rather than relying« 187-mal häufiger vor als in menschlichen Artikeln. Auf Deutsch entsprechen dem Formulierungen wie »nicht einfach« oder »anstatt sich auf … zu verlassen«. Anzeige 2. Opus 5.5 ...]]></description>
-    </item>
-    <item>
-      <title>FAQ: Warum es neue Gebühren für Importe gibt, und was sie bringen sollen</title>
-      <link>https://www.heise.de/news/FAQ-Warum-es-neue-Gebuehren-fuer-Importe-gibt-und-was-sie-bringen-sollen-11507280.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11507280</guid>
-      <pubDate>Sun, 01 Nov 2026 11:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Waren von Shein, Temu oder AliExpress sind in der EU beliebt. Nun wird für die Einfuhr von Produkten eine neue Gebühr fällig. Was bedeutet das für Verbraucher?]]></description>
-    </item>
-    <item>
-      <title>FBI: Nordkorea steckt hinter Milliarden-Kryptodiebstahl bei Binance</title>
-      <link>https://www.heise.de/news/FBI-Nordkorea-steckt-hinter-Milliarden-Kryptodiebstahl-bei-Binance-11507160.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11507160</guid>
-      <pubDate>Sun, 01 Nov 2026 10:52:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das FBI macht die nordkoreanische Gruppe TraderTraitor für den milliardenschweren Hackerangriff auf Binance verantwortlich.]]></description>
-    </item>
-    <item>
-      <title>Norway makes shithouses great again</title>
-      <link>https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/</link>
-      <guid isPermaLink="false">https://www.visitnorway.com/plan-your-trip/travel-tips-a-z/norwegian-scenic-routes/worlds-best-toilets/</guid>
-      <pubDate>Sun, 01 Nov 2026 10:47:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Domain hacks with unusual Unicode characters (2018)</title>
-      <link>https://xn--69f31l4t57c0mag4b613h.xn--7uh4898msjaso/🆆🆃🅵/</link>
-      <guid isPermaLink="false">https://xn--69f31l4t57c0mag4b613h.xn--7uh4898msjaso/🆆🆃🅵/</guid>
-      <pubDate>Sun, 01 Nov 2026 10:44:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>A tiny Pacific country rolls out universal basic income</title>
-      <link>https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income</link>
-      <guid isPermaLink="false">https://www.economist.com/asia/2026/10/29/a-tiny-pacific-country-rolls-out-universal-basic-income</guid>
-      <pubDate>Sun, 01 Nov 2026 10:05:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Missing Link: Invertierte Maussteuerung – sind die 1990er schuld?</title>
-      <link>https://www.heise.de/hintergrund/Missing-Link-Umgepolt-Bin-ich-der-einzige-Gamer-der-die-Y-Achse-invertiert-11497274.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11497274</guid>
-      <pubDate>Sun, 01 Nov 2026 07:12:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Maus nach vorn, Blick nach unten: Manche steuern Ego-Shooter wie ein Flugzeug. Doch die Gen Z lacht sich darüber kaputt.]]></description>
-    </item>
-    <item>
-      <title>Pac-Man's Siren Call</title>
-      <link>https://unsung.aresluna.org/pac-mans-siren-call/</link>
-      <guid isPermaLink="false">https://unsung.aresluna.org/pac-mans-siren-call/</guid>
-      <pubDate>Sun, 01 Nov 2026 06:29:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The AI cost of JavaScript frameworks</title>
-      <link>https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</link>
-      <guid isPermaLink="false">https://nolanlawson.com/2026/10/28/the-ai-cost-of-javascript-frameworks/</guid>
-      <pubDate>Sun, 01 Nov 2026 06:06:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
     </item>
   </channel>
 </rss>
