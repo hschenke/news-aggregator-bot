@@ -153,6 +153,9 @@ WICHTIGE FORMATIERUNGSRICHTLINIEN:
    - Direkt unter der Quicklinks-Zeile folgen als Aufzählung die bis zu 5 wichtigsten und relevantesten Einträge dieser Kategorie.
 3. INHALT DER EINTRÄGE (KEIN SCHWURBELN, ECHTE FAKTEN):
    - Verlinke den Titel jedes Eintrags direkt mit der Originalquelle als Markdown-Link.
+   - WICHTIG ZU DEN LINKS:
+     - Übernimm die Original-URL aus dem Feld 'Link:' immer exakt 1:1 unverändert als Ziel des Markdown-Links.
+     - Kürze niemals die URL und hänge NIEMALS Bindestriche (-) oder sonstige Satzzeichen an das Ende der URL an!
    - Nicht selber etwas dazuerfinden, spekulieren, interpretieren oder zusammenschwurbeln!
    - Keine werblichen Floskeln, kein Marketing-Sprech und keine Meta-Einleitungen (wie z. B. "Dieser Beitrag thematisiert...", "Spannende Einblicke in...").
    - Gib stattdessen den tatsächlichen sachlichen Inhalt des Artikels kurz und prägnant wieder: nenne die konkreten Fakten, Ereignisse, Zahlen oder Kernaussagen aus dem Inhalt in 1 bis maximal 2 klaren, präzisen Sätzen.
@@ -213,22 +216,53 @@ def _match_category_name(raw_title: str, available_categories: list[str]) -> str
     return None
 
 
+def _sanitize_briefing_urls(
+    text: str,
+    known_urls_map: dict[str, str] | None = None,
+) -> str:
+    """
+    Bereinigt alle Markdown-Links in einem Text:
+    - Entfernt störende Bindestriche (-) oder Satzzeichen am Ende der URLs.
+    - Gleicht die URL gegen bekannte Original-URLs aus den Feeds ab, falls vorhanden.
+    """
+    from src.filters import sanitize_markdown_url
+
+    def _replace_link(match: re.Match) -> str:
+        title = match.group(1)
+        raw_url = match.group(2)
+        cleaned_url = sanitize_markdown_url(raw_url)
+        if known_urls_map:
+            canonical = (
+                known_urls_map.get(cleaned_url)
+                or known_urls_map.get(cleaned_url.rstrip("/"))
+                or known_urls_map.get(cleaned_url.rstrip("-/"))
+            )
+            if canonical:
+                cleaned_url = canonical
+        return f"[{title}]({cleaned_url})"
+
+    return re.sub(r"\[([^\]]+)\]\((https?://[^\s\)]+)\)", _replace_link, text)
+
+
 def _clean_and_enhance_briefing(
     text: str,
     category_links: dict[str, str],
     max_items_per_category: int = 5,
+    known_urls_map: dict[str, str] | None = None,
 ) -> str:
     """
     Bereinigt das KI-Briefing:
     - Entfernt jegliches Executive Summary oder einleitende Vorab-Zusammenfassungen
     - Entfernt jegliche Infoboxen oder Kompakt-Zusammenfassungs-Boxen (> 💡 Kompakt: etc.)
     - Entfernt das Wort 'TL;DR:' vor den Einträgen
+    - Bereinigt alle Markdown-Links (entfernt nachgestellte Bindestriche/Satzzeichen und gleicht mit Original-URLs ab)
     - Platziert direkt unter jeder Kategorie die Quicklinks-Zeile zur Streamlit-App & Feeds
     - Begrenzt die Artikelanzahl pro Kategorie strikt auf maximal TOP 5
     - Unterstützt vollständige Mehrzeilen-Texte für Spezialfälle (z. B. Witze & Dialoge)
     """
     text = _strip_executive_summaries(text)
     text = _strip_tldr_markers(text)
+    text = _sanitize_briefing_urls(text, known_urls_map)
 
     lines = text.split("\n")
     processed_lines: list[str] = []
@@ -401,6 +435,15 @@ def summarize_news_with_gemini(
         else:
             prompt += f"\n\nHier sind die aktuellen Roh-Nachrichten nach Kategorien gegliedert:\n{context_data_str}\n"
 
+        known_urls_map: dict[str, str] = {}
+        for items_list in categorized_news.values():
+            for it in items_list:
+                it_link = (it.get("link") or "").strip()
+                if it_link:
+                    known_urls_map[it_link] = it_link
+                    known_urls_map[it_link.rstrip("/")] = it_link
+                    known_urls_map[it_link.rstrip("-/")] = it_link
+
         preferred_model = model or os.getenv("GEMINI_MODEL") or settings.get("gemini_model")
         candidate_models = get_candidate_models(preferred_model)
 
@@ -420,7 +463,11 @@ def summarize_news_with_gemini(
                 if response and response.text:
                     logger.info("✅ Modell %s hat erfolgreich geantwortet (%d Zeichen).", model_name, len(response.text))
                     print(f"      -> Modell {model_name} erfolgreich: {len(response.text)} Zeichen generiert.", flush=True)
-                    cleaned_result = _clean_and_enhance_briefing(response.text, category_links)
+                    cleaned_result = _clean_and_enhance_briefing(
+                        response.text,
+                        category_links,
+                        known_urls_map=known_urls_map,
+                    )
                     return cleaned_result
             except Exception as model_err:
                 logger.warning("Modell %s temporär nicht erreichbar (%s). Versuche Alternative...", model_name, model_err)

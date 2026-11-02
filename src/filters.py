@@ -76,6 +76,33 @@ def unwrap_and_clean_url(url: str) -> str:
     return url
 
 
+def sanitize_markdown_url(url: str) -> str:
+    """
+    Entfernt störende nachgestellte Bindestriche (-), Satzzeichen oder Whitespace
+    aus einer URL (verhindert 404-Fehler durch LLM-Tokenisierungsartefakte wie '.../slug-').
+    """
+    if not url:
+        return ""
+    cleaned = url.strip()
+    # 1. Nachgestellte Bindestriche, Whitespace oder Satzzeichen am Gesamtende entfernen
+    cleaned = re.sub(r"[\s\-.,;:!]+$", "", cleaned)
+    # 2. Falls ein Query- oder Fragmentteil existiert, auch den Pfad vor dem '?' oder '#' bereinigen
+    try:
+        parsed = urllib.parse.urlsplit(cleaned)
+        clean_path = re.sub(r"\-+$", "", parsed.path)
+        if clean_path != parsed.path:
+            cleaned = urllib.parse.urlunsplit((
+                parsed.scheme,
+                parsed.netloc,
+                clean_path,
+                parsed.query,
+                parsed.fragment,
+            ))
+    except Exception:
+        pass
+    return cleaned
+
+
 def get_canonical_url(url: str) -> str:
     """Normalisiert URLs für die Duplikatsprüfung (entfernt Tracking-Parameter wie utm_*, fbclid)."""
     url = unwrap_and_clean_url(url)

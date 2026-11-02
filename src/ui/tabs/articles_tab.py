@@ -367,66 +367,75 @@ def render_articles_tab(
 
                 with st.expander(f"📡 **{feed_name}** ({len(f_items)} Artikel)", expanded=feed_is_open):
                     st.html(f'<div id="anchor-feed-{feed_slug}" style="height:0; margin:0; padding:0;"></div>')
-                    cols = st.columns(2)
-                    for idx, item in enumerate(visible_items):
-                        with cols[idx % 2]:
-                            with st.container(border=True):
-                                item_url = (item.get("link") or "").strip()
-                                clean_title = clean_html_text(item.get("title", "Kein Titel"))
-                                clean_summary = format_summary_html(item.get("summary", ""))
-                                pdate = format_article_date(item)
-                                date_str = (
-                                    f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>"
-                                    if pdate
-                                    else ""
-                                )
-                                summary_str = (
-                                    f"<div style='font-size:0.88rem; line-height:1.45; margin-bottom:0.75rem;'>{clean_summary}</div>"
-                                    if clean_summary
-                                    else "<div style='margin-bottom:0.5rem;'></div>"
-                                )
-                                st.markdown(
-                                    f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
-                                    unsafe_allow_html=True,
-                                )
-
-                                cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
-                                default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
-                                item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{feed_slug}_{idx}"
-                                fb_key = f"fb_{item_url_hash}"
-                                read_key = f"read_{item_url_hash}"
-                                if fb_key in rendered_element_keys:
-                                    dup_cnt = 1
-                                    while f"{fb_key}_{dup_cnt}" in rendered_element_keys:
-                                        dup_cnt += 1
-                                    fb_key = f"{fb_key}_{dup_cnt}"
-                                rendered_element_keys.add(fb_key)
-                                if read_key in rendered_element_keys:
-                                    dup_cnt = 1
-                                    while f"{read_key}_{dup_cnt}" in rendered_element_keys:
-                                        dup_cnt += 1
-                                    read_key = f"{read_key}_{dup_cnt}"
-                                rendered_element_keys.add(read_key)
-
-                                col_fb, col_read = st.columns([1, 1], vertical_alignment="center", wrap=False)
-                                with col_fb:
-                                    st.feedback(
-                                        "thumbs",
-                                        key=fb_key,
-                                        default=default_fb,
-                                        on_change=on_article_feedback_change,
-                                        args=(item_url, fb_key, clean_title),
+                    # 2-Spalten Grid zeilenweise (Row-by-Row) aufbauen:
+                    # Verhindert, dass auf mobilen Geräten oder beim Entfernen gelesener Artikel
+                    # gerade und ungerade Artikel in zwei getrennte Spalten-Container wandern
+                    # und dadurch beim Nachrücken wild die Spalten bzw. Reihenfolge tauschen.
+                    for row_start in range(0, len(visible_items), 2):
+                        row_cols = st.columns(2)
+                        for col_offset in range(2):
+                            idx = row_start + col_offset
+                            if idx >= len(visible_items):
+                                break
+                            item = visible_items[idx]
+                            with row_cols[col_offset]:
+                                with st.container(border=True):
+                                    item_url = (item.get("link") or "").strip()
+                                    clean_title = clean_html_text(item.get("title", "Kein Titel"))
+                                    clean_summary = format_summary_html(item.get("summary", ""))
+                                    pdate = format_article_date(item)
+                                    date_str = (
+                                        f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.2rem; margin-bottom:0.35rem;'>🕒 {pdate}</div>"
+                                        if pdate
+                                        else ""
                                     )
-                                with col_read:
-                                    st.button(
-                                        "",
-                                        icon=":material/check:",
-                                        key=read_key,
-                                        type="tertiary",
-                                        help="Artikel als gelesen markieren & archivieren",
-                                        on_click=on_article_read_and_archive,
-                                        args=(item, category, feed_name),
+                                    summary_str = (
+                                        f"<div style='font-size:0.88rem; line-height:1.45; margin-bottom:0.75rem;'>{clean_summary}</div>"
+                                        if clean_summary
+                                        else "<div style='margin-bottom:0.5rem;'></div>"
                                     )
+                                    st.markdown(
+                                        f"**[{clean_title}]({item['link']})**\n\n{date_str}{summary_str}",
+                                        unsafe_allow_html=True,
+                                    )
+
+                                    cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
+                                    default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
+                                    item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{feed_slug}_{idx}"
+                                    fb_key = f"fb_{item_url_hash}"
+                                    read_key = f"read_{item_url_hash}"
+                                    if fb_key in rendered_element_keys:
+                                        dup_cnt = 1
+                                        while f"{fb_key}_{dup_cnt}" in rendered_element_keys:
+                                            dup_cnt += 1
+                                        fb_key = f"{fb_key}_{dup_cnt}"
+                                    rendered_element_keys.add(fb_key)
+                                    if read_key in rendered_element_keys:
+                                        dup_cnt = 1
+                                        while f"{read_key}_{dup_cnt}" in rendered_element_keys:
+                                            dup_cnt += 1
+                                        read_key = f"{read_key}_{dup_cnt}"
+                                    rendered_element_keys.add(read_key)
+
+                                    col_fb, col_read = st.columns([1, 1], vertical_alignment="center", wrap=False)
+                                    with col_fb:
+                                        st.feedback(
+                                            "thumbs",
+                                            key=fb_key,
+                                            default=default_fb,
+                                            on_change=on_article_feedback_change,
+                                            args=(item_url, fb_key, clean_title),
+                                        )
+                                    with col_read:
+                                        st.button(
+                                            "",
+                                            icon=":material/check:",
+                                            key=read_key,
+                                            type="tertiary",
+                                            help="Artikel als gelesen markieren & archivieren",
+                                            on_click=on_article_read_and_archive,
+                                            args=(item, category, feed_name),
+                                        )
 
                     if len(f_items) > len(visible_items):
                         remaining_count = len(f_items) - len(visible_items)

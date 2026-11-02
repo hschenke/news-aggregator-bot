@@ -620,7 +620,8 @@ def extract_briefing_articles(
         if link_match:
             raw_title, raw_url, rest = link_match.groups()
             clean_title = html.unescape(raw_title.strip().strip("*").strip("_").strip())
-            clean_url = raw_url.strip()
+            from src.filters import sanitize_markdown_url
+            clean_url = sanitize_markdown_url(raw_url)
 
             if _is_internal_or_app_link(clean_url, clean_title):
                 current_article = None
@@ -663,7 +664,9 @@ def extract_briefing_articles(
                         flags=re.DOTALL | re.IGNORECASE,
                     )
                     if a_match:
-                        url, title_html, rest_html = a_match.groups()
+                        raw_url, title_html, rest_html = a_match.groups()
+                        from src.filters import sanitize_markdown_url
+                        url = sanitize_markdown_url(raw_url)
                         title_clean = html.unescape(re.sub(r"<[^>]+>", "", title_html).strip())
                         summary_clean = html.unescape(re.sub(r"<[^>]+>", "", rest_html).strip())
                         summary_clean = re.sub(r"^[:–—\-]\s*", "", summary_clean).strip()
@@ -747,12 +750,26 @@ def export_briefing_rss(
         pass
 
     def _find_article_meta(url: str) -> dict[str, Any] | None:
-        meta = metadata_lookup.get(url) or metadata_lookup.get(url.rstrip("/"))
+        from src.filters import sanitize_markdown_url
+        clean_u = sanitize_markdown_url(url)
+        meta = (
+            metadata_lookup.get(url)
+            or metadata_lookup.get(clean_u)
+            or metadata_lookup.get(url.rstrip("/"))
+            or metadata_lookup.get(clean_u.rstrip("/"))
+            or metadata_lookup.get(url.rstrip("-/"))
+        )
         if meta:
             return meta
         if storage_inst:
             try:
-                db_art = storage_inst.get_article(url) or storage_inst.get_article(url.rstrip("/"))
+                db_art = (
+                    storage_inst.get_article(url)
+                    or storage_inst.get_article(clean_u)
+                    or storage_inst.get_article(url.rstrip("/"))
+                    or storage_inst.get_article(clean_u.rstrip("/"))
+                    or storage_inst.get_article(url.rstrip("-/"))
+                )
                 if db_art:
                     return {
                         "source": db_art.source,

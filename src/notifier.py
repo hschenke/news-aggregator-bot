@@ -46,8 +46,11 @@ def _simple_markdown_fallback(md_text: str) -> str:
             in_quote = False
 
     def _format_inline(text: str) -> str:
+        from src.filters import sanitize_markdown_url
         text = re.sub(r"\*\*(.*?)\*\*", r"<strong>\1</strong>", text)
-        text = re.sub(r"\[(.*?)\]\((.*?)\)", r'<a href="\2">\1</a>', text)
+        def _fmt_link(m: re.Match) -> str:
+            return f'<a href="{sanitize_markdown_url(m.group(2))}">{m.group(1)}</a>'
+        text = re.sub(r"\[(.*?)\]\((.*?)\)", _fmt_link, text)
         return text
 
     for line in lines:
@@ -201,12 +204,19 @@ def inline_email_styles(html: str) -> str:
 
     # 7. Verbleibende <a>-Tags (z. B. in Listen)
     def style_a(match):
+        from src.filters import sanitize_markdown_url
         full_tag = match.group(0)
+        def _replace_href(m: re.Match) -> str:
+            pre = m.group(1)
+            clean_u = sanitize_markdown_url(m.group(2))
+            post = m.group(3)
+            return rf'<a {pre}href="{clean_u}"{post} target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-family: {font_stack};">'
+
         if 'style="' in full_tag:
-            return full_tag
+            return re.sub(r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>', lambda m: f'<a {m.group(1)}href="{sanitize_markdown_url(m.group(2))}"{m.group(3)}>', full_tag)
         return re.sub(
             r'<a\s+([^>]*?)href="([^"]+)"([^>]*)>',
-            rf'<a \1href="\2"\3 target="_blank" style="color: #2563eb; text-decoration: none; font-weight: 600; font-family: {font_stack};">',
+            _replace_href,
             full_tag,
         )
     html = re.sub(r'<a\s+[^>]*>.*?</a>', style_a, html, flags=re.DOTALL)
@@ -224,6 +234,9 @@ def inline_email_styles(html: str) -> str:
 
 def markdown_to_html_email(markdown_content: str) -> str:
     """Wandelt einfaches Markdown in ein sauberes, responsives HTML-Email-Template mit Inline-Styles um."""
+    from src.summarizer import _sanitize_briefing_urls
+    markdown_content = _sanitize_briefing_urls(markdown_content)
+
     try:
         import markdown
         raw_body_html = markdown.markdown(markdown_content, extensions=["extra", "tables", "nl2br"])

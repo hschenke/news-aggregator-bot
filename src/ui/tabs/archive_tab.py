@@ -497,74 +497,80 @@ def render_archive_tab(
                     curr_limit = int(st.session_state.get(limit_key, DEFAULT_ARCHIVE_PAGE_SIZE))
                     visible_articles = feed_articles if q_norm else feed_articles[:curr_limit]
 
-                    cols = st.columns(2)
-                    for idx, art in enumerate(visible_articles):
-                        art_hash = hashlib.md5(art.url.encode("utf-8")).hexdigest()[:10]
-                        art_slug = _slugify_filename(art.title, fallback=f"artikel_{idx}")
-                        pub_str = format_local_dt(art.timestamp) if art.timestamp else art.published
-                        img_cnt = len(art.images)
-                        char_cnt = len(art.content_text or "")
+                    # 2-Spalten Grid zeilenweise (Row-by-Row) aufbauen
+                    for row_start in range(0, len(visible_articles), 2):
+                        row_cols = st.columns(2)
+                        for col_offset in range(2):
+                            idx = row_start + col_offset
+                            if idx >= len(visible_articles):
+                                break
+                            art = visible_articles[idx]
+                            art_hash = hashlib.md5(art.url.encode("utf-8")).hexdigest()[:10]
+                            art_slug = _slugify_filename(art.title, fallback=f"artikel_{idx}")
+                            pub_str = format_local_dt(art.timestamp) if art.timestamp else art.published
+                            img_cnt = len(art.images)
+                            char_cnt = len(art.content_text or "")
 
-                        with cols[idx % 2]:
-                            with st.container(border=True):
-                                clean_title = html.escape(art.title)
-                                safe_link = html.escape(art.url)
-                                meta_parts = [f"🕒 {html.escape(pub_str)}"] if pub_str else []
-                                if img_cnt > 0:
-                                    meta_parts.append(f"🖼️ {img_cnt} Bild(er)")
-                                meta_parts.append(f"📝 {char_cnt} Zeichen")
-                                meta_line = " · ".join(meta_parts)
+                            with row_cols[col_offset]:
+                                with st.container(border=True):
+                                    clean_title = html.escape(art.title)
+                                    safe_link = html.escape(art.url)
+                                    meta_parts = [f"🕒 {html.escape(pub_str)}"] if pub_str else []
+                                    if img_cnt > 0:
+                                        meta_parts.append(f"🖼️ {img_cnt} Bild(er)")
+                                    meta_parts.append(f"📝 {char_cnt} Zeichen")
+                                    meta_line = " · ".join(meta_parts)
 
-                                st.markdown(
-                                    f"**[{clean_title}]({safe_link})**\n\n"
-                                    f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.15rem; margin-bottom:0.4rem;'>{meta_line}</div>",
-                                    unsafe_allow_html=True,
-                                )
-
-                                with st.expander("📖 Gespeichertes Webseiten-Abbild anzeigen (Text & Bilder)", expanded=False):
-                                    if art.images:
-                                        img_cols = st.columns(min(len(art.images), 2))
-                                        for i_idx, img_entry in enumerate(art.images):
-                                            if isinstance(img_entry, dict):
-                                                b64 = img_entry.get("data_b64", "")
-                                                mime = img_entry.get("mime_type", "image/jpeg")
-                                                data_uri = f"data:{mime};base64,{b64}" if b64 else ""
-                                            else:
-                                                data_uri = str(img_entry)
-                                            if data_uri:
-                                                with img_cols[i_idx % len(img_cols)]:
-                                                    st.markdown(
-                                                        f'<img src="{data_uri}" style="max-width:100%; border-radius:8px; margin-bottom:6px;" alt="Archivbild {i_idx + 1}" />',
-                                                        unsafe_allow_html=True,
-                                                    )
-                                    if art.content_text:
-                                        for paragraph in art.content_text.split("\n\n"):
-                                            p_clean = paragraph.strip()
-                                            if p_clean:
-                                                st.markdown(p_clean)
-                                    else:
-                                        st.caption("Kein Textinhalt gespeichert.")
-
-                                col_act_dl, col_act_del = st.columns([4.2, 0.8], vertical_alignment="center")
-                                with col_act_dl:
-                                    st.download_button(
-                                        "⬇️ HTML-Download",
-                                        data=lambda a=art: generate_offline_article_html(a),
-                                        file_name=f"artikel_{art_slug}.html",
-                                        mime="text/html",
-                                        key=f"dl_art_{art_hash}_{idx}",
-                                        help="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen",
+                                    st.markdown(
+                                        f"**[{clean_title}]({safe_link})**\n\n"
+                                        f"<div style='font-size:0.8rem; color:#64748b; margin-top:0.15rem; margin-bottom:0.4rem;'>{meta_line}</div>",
+                                        unsafe_allow_html=True,
                                     )
-                                with col_act_del:
-                                    st.button(
-                                        "",
-                                        icon=":material/delete:",
-                                        key=f"read_del_arch_{art_hash}_{idx}",
-                                        type="tertiary",
-                                        help="Diesen Offline-Artikel aus dem Archiv entfernen",
-                                        on_click=on_delete_offline_article,
-                                        args=(art.url, category, feed_name),
-                                    )
+
+                                    with st.expander("📖 Gespeichertes Webseiten-Abbild anzeigen (Text & Bilder)", expanded=False):
+                                        if art.images:
+                                            img_cols = st.columns(min(len(art.images), 2))
+                                            for i_idx, img_entry in enumerate(art.images):
+                                                if isinstance(img_entry, dict):
+                                                    b64 = img_entry.get("data_b64", "")
+                                                    mime = img_entry.get("mime_type", "image/jpeg")
+                                                    data_uri = f"data:{mime};base64,{b64}" if b64 else ""
+                                                else:
+                                                    data_uri = str(img_entry)
+                                                if data_uri:
+                                                    with img_cols[i_idx % len(img_cols)]:
+                                                        st.markdown(
+                                                            f'<img src="{data_uri}" style="max-width:100%; border-radius:8px; margin-bottom:6px;" alt="Archivbild {i_idx + 1}" />',
+                                                            unsafe_allow_html=True,
+                                                        )
+                                        if art.content_text:
+                                            for paragraph in art.content_text.split("\n\n"):
+                                                p_clean = paragraph.strip()
+                                                if p_clean:
+                                                    st.markdown(p_clean)
+                                        else:
+                                            st.caption("Kein Textinhalt gespeichert.")
+
+                                    col_act_dl, col_act_del = st.columns([4.2, 0.8], vertical_alignment="center")
+                                    with col_act_dl:
+                                        st.download_button(
+                                            "⬇️ HTML-Download",
+                                            data=lambda a=art: generate_offline_article_html(a),
+                                            file_name=f"artikel_{art_slug}.html",
+                                            mime="text/html",
+                                            key=f"dl_art_{art_hash}_{idx}",
+                                            help="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen",
+                                        )
+                                    with col_act_del:
+                                        st.button(
+                                            "",
+                                            icon=":material/delete:",
+                                            key=f"read_del_arch_{art_hash}_{idx}",
+                                            type="tertiary",
+                                            help="Diesen Offline-Artikel aus dem Archiv entfernen",
+                                            on_click=on_delete_offline_article,
+                                            args=(art.url, category, feed_name),
+                                        )
 
                     if len(feed_articles) > len(visible_articles):
                         rem = len(feed_articles) - len(visible_articles)
