@@ -44,10 +44,19 @@ MAX_TEXT_CHARS_PER_ARTICLE: int = 25_000
 BROWSER_HEADERS: dict[str, str] = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-        "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+        "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
     ),
-    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
     "Accept-Language": "de-DE,de;q=0.9,en-US;q=0.8,en;q=0.7",
+    "Sec-Ch-Ua": '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "cross-site",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1",
+    "Referer": "https://www.google.com/",
 }
 
 _BOILERPLATE_SHORT_TEXTS: set[str] = {
@@ -162,13 +171,59 @@ def _format_inline_html(escaped_text: str) -> str:
     return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped_text)
 
 
+def extract_json_ld_article_text(raw_html: str) -> str:
+    """
+    Extrahiert redaktionellen Volltext (articleBody / description) aus
+    Schema.org JSON-LD-Metadaten (z. B. NewsArticle, Article, BlogPosting, @graph).
+    """
+    if not raw_html:
+        return ""
+    ld_matches = re.findall(
+        r'<script[^>]+type=[\'"]application/ld\+json[\'"][^>]*>(.*?)</script>',
+        raw_html,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    candidates: list[str] = []
+    for raw_block in ld_matches:
+        try:
+            data = json.loads(raw_block.strip(), strict=False)
+            items = data if isinstance(data, list) else [data]
+            for item in items:
+                if not isinstance(item, dict):
+                    continue
+                graph = item.get("@graph")
+                sub_items = graph if (isinstance(graph, list) and graph) else [item]
+                for sub in sub_items:
+                    if not isinstance(sub, dict):
+                        continue
+                    t = str(sub.get("@type", "")).lower()
+                    if any(art_t in t for art_t in ("article", "newsarticle", "blogposting", "reportagenewsarticle", "realestatelisting", "webpage")):
+                        body = str(sub.get("articleBody") or "").strip()
+                        if body and len(body) >= 50:
+                            candidates.append(html.unescape(body))
+                        desc = str(sub.get("description") or "").strip()
+                        if desc and len(desc) >= 80:
+                            candidates.append(html.unescape(desc))
+        except Exception:
+            continue
+
+    if candidates:
+        candidates.sort(key=len, reverse=True)
+        return candidates[0].strip()
+    return ""
+
+
 def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
     """
     Extrahiert lesbare Textabsätze, Orts-/Bezirkszeilen (z. B. bei Berliner Polizeimeldungen)
-    und Zwischenüberschriften aus einer HTML-Seite ohne Skripte, Styles, Navigation oder Footer.
+    und Zwischenüberschriften aus einer HTML-Seite mit robuster Multi-Scope-Suche
+    (JSON-LD, <main>, <article>, Inhaltscontainer) ohne störende Navigation oder Footer.
     """
     if not raw_html:
         return []
+
+    # 1. Prüfe Schema.org JSON-LD auf redaktionellen Volltext (z. B. rbb24, Zeit, Heise)
+    ld_full_text = extract_json_ld_article_text(raw_html)
 
     # Expliziten Ereignisort (z. B. Berliner Polizeimeldungen: <p class="polizeimeldung" title="Ereignisort">Marzahn-Hellersdorf</p>) merken
     explicit_district = ""
@@ -176,107 +231,140 @@ def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
     if m_dist:
         explicit_district = clean_html_text(m_dist.group(1)).strip()
 
-    # Entferne nicht-redaktionelle Blöcke
+    # Entferne nicht-redaktionelle Blöcke & Modale
     cleaned = re.sub(
-        r"<(script|style|noscript|svg|iframe|nav|footer|header|aside|form)[^>]*>.*?</\1>",
+        r"<(script|style|noscript|svg|iframe|nav|footer|header|aside|form|dialog|button)[^>]*>.*?</\1>",
         " ",
         raw_html,
         flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(r"<!--.*?-->", " ", cleaned, flags=re.DOTALL)
 
-    # Bevorzuge <article> oder <main>, falls vorhanden
-    article_match = re.search(r"<article[^>]*>(.*?)</article>", cleaned, flags=re.IGNORECASE | re.DOTALL)
-    main_match = re.search(r"<main[^>]*>(.*?)</main>", cleaned, flags=re.IGNORECASE | re.DOTALL)
-    target_html = (
-        article_match.group(1)
-        if article_match and len(article_match.group(1)) > 200
-        else (main_match.group(1) if main_match and len(main_match.group(1)) > 200 else cleaned)
-    )
+    # 2. Multi-Scope Kandidatensammlung für maximale Extraktionstiefe
+    candidate_scopes: list[str] = []
 
-    blocks = re.findall(
-        r"<(h[23]|p|blockquote|li)(\s+[^>]*)?>(.*?)</\1>",
-        target_html,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
+    # Scope A: <main> Tag
+    for m_main in re.finditer(r"<main[^>]*>(.*?)</main>", cleaned, flags=re.IGNORECASE | re.DOTALL):
+        candidate_scopes.append(m_main.group(1))
 
-    paragraphs: list[str] = []
-    seen_texts: set[str] = set()
-    total_chars = 0
+    # Scope B: Alle <article> Blöcke zusammengefasst
+    art_matches = [m.group(1) for m in re.finditer(r"<article[^>]*>(.*?)</article>", cleaned, flags=re.IGNORECASE | re.DOTALL)]
+    if art_matches:
+        candidate_scopes.append("\n".join(art_matches))
 
-    def _append_unique(val: str) -> None:
-        nonlocal total_chars
-        val_clean = val.strip()
-        if not val_clean:
-            return
-        norm = val_clean.lower()
-        if norm in seen_texts:
-            return
-        seen_texts.add(norm)
-        paragraphs.append(val_clean)
-        total_chars += len(val_clean)
+    # Scope C: Klassische Inhalts-Container (CMS / Portale / Immobilien / Sport)
+    for c_pattern in [
+        r'<div[^>]+class=[\'"][^\'"]*(?:article-body|story-body|entry-content|post-content|article__body|news-text|content-area|article-content|expose-detail|property-description)[^\'"]*[\'"][^>]*>(.*?)</div>',
+        r'<(?:div|section)[^>]+role=[\'"](?:main|article)[\'"][^>]*>(.*?)</(?:div|section)>',
+    ]:
+        for m_cont in re.finditer(c_pattern, cleaned, flags=re.IGNORECASE | re.DOTALL):
+            candidate_scopes.append(m_cont.group(1))
 
-    for tag, attrs_raw, inner in blocks:
-        attrs = (attrs_raw or "").lower()
-        tag_low = tag.lower()
+    # Scope D: Gesamtes bereinigtes Dokument als Fallback
+    candidate_scopes.append(cleaned)
 
-        # Spezialfall Berliner Polizeimeldungen: <p><strong>Nr. 1396</strong><br />In der vergangenen Nacht...</p>
-        m_nr_html = re.match(
-            r"^\s*<(?:strong|b)>\s*(Nr\.\s*\d+)\s*</(?:strong|b)>\s*(?:<br\s*/?>)?\s*(.+)$",
-            inner,
+    best_paragraphs: list[str] = []
+    best_char_count: int = 0
+
+    for scope_html in candidate_scopes:
+        blocks = re.findall(
+            r"<(h[23]|p|blockquote|li|dd|dt)(\s+[^>]*)?>(.*?)</\1>",
+            scope_html,
             flags=re.IGNORECASE | re.DOTALL,
         )
-        if m_nr_html:
-            nr_text = clean_html_text(m_nr_html.group(1)).strip()
-            body_text = clean_html_text(m_nr_html.group(2)).strip()
-            if nr_text:
-                _append_unique(f"**{nr_text}**")
-            if body_text:
-                _append_unique(body_text)
+        paragraphs: list[str] = []
+        seen_texts: set[str] = set()
+        total_chars = 0
+
+        def _append_unique(val: str) -> None:
+            nonlocal total_chars
+            val_clean = val.strip()
+            if not val_clean:
+                return
+            norm = val_clean.lower()
+            if norm in seen_texts:
+                return
+            seen_texts.add(norm)
+            paragraphs.append(val_clean)
+            total_chars += len(val_clean)
+
+        for tag, attrs_raw, inner in blocks:
+            attrs = (attrs_raw or "").lower()
+            tag_low = tag.lower()
+
+            # Spezialfall Berliner Polizeimeldungen: <p><strong>Nr. 1396</strong><br />In der vergangenen Nacht...</p>
+            m_nr_html = re.match(
+                r"^\s*<(?:strong|b)>\s*(Nr\.\s*\d+)\s*</(?:strong|b)>\s*(?:<br\s*/?>)?\s*(.+)$",
+                inner,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+            if m_nr_html:
+                nr_text = clean_html_text(m_nr_html.group(1)).strip()
+                body_text = clean_html_text(m_nr_html.group(2)).strip()
+                if nr_text:
+                    _append_unique(f"**{nr_text}**")
+                if body_text:
+                    _append_unique(body_text)
+                if total_chars >= MAX_TEXT_CHARS_PER_ARTICLE:
+                    break
+                continue
+
+            text = clean_html_text(inner)
+            if not text:
+                continue
+
+            # Prüfe, ob es sich um eine Metazeile/Ortsangabe handelt (z. B. class="polizeimeldung" oder title="Ereignisort")
+            is_special_meta = any(
+                k in attrs for k in ("polizeimeldung", "ereignisort", "subline", "subtitle", "lead", "ort")
+            ) or (paragraphs and paragraphs[-1].lower().startswith("polizeimeldung vom"))
+
+            if not is_special_meta:
+                if tag_low in ("p", "dd") and (len(text) < 20 or text.lower() in _BOILERPLATE_SHORT_TEXTS):
+                    continue
+                if tag_low == "li" and len(text) < 30:
+                    continue
+
+            # Falls Text mit "Nr. 1234 <Satz>" beginnt, Nummer als eigene fettgedruckte Zeile abtrennen
+            m_nr_plain = re.match(r"^(Nr\.\s*\d+)\s+(.{15,})$", text)
+            if m_nr_plain:
+                _append_unique(f"**{m_nr_plain.group(1).strip()}**")
+                _append_unique(m_nr_plain.group(2).strip())
+            elif tag_low in ("h2", "h3"):
+                _append_unique(f"### {text}")
+            elif tag_low == "dt":
+                _append_unique(f"**{text}**")
+            else:
+                _append_unique(text)
+
             if total_chars >= MAX_TEXT_CHARS_PER_ARTICLE:
                 break
-            continue
 
-        text = clean_html_text(inner)
-        if not text:
-            continue
+        if total_chars > best_char_count:
+            best_char_count = total_chars
+            best_paragraphs = paragraphs
 
-        # Prüfe, ob es sich um eine Metazeile/Ortsangabe handelt (z. B. class="polizeimeldung" oder title="Ereignisort")
-        is_special_meta = any(
-            k in attrs for k in ("polizeimeldung", "ereignisort", "subline", "subtitle", "lead", "ort")
-        ) or (paragraphs and paragraphs[-1].lower().startswith("polizeimeldung vom"))
-
-        if not is_special_meta:
-            if tag_low == "p" and (len(text) < 20 or text.lower() in _BOILERPLATE_SHORT_TEXTS):
-                continue
-            if tag_low == "li" and len(text) < 35:
-                continue
-
-        # Falls Text mit "Nr. 1234 <Satz>" beginnt, Nummer als eigene fettgedruckte Zeile abtrennen
-        m_nr_plain = re.match(r"^(Nr\.\s*\d+)\s+(.{15,})$", text)
-        if m_nr_plain:
-            _append_unique(f"**{m_nr_plain.group(1).strip()}**")
-            _append_unique(m_nr_plain.group(2).strip())
-        elif tag_low in ("h2", "h3"):
-            _append_unique(f"### {text}")
-        else:
-            _append_unique(text)
-
-        if total_chars >= MAX_TEXT_CHARS_PER_ARTICLE:
-            break
+    # Falls Schema.org JSON-LD Text länger oder gehaltvoller ist als der gefundene HTML-Score:
+    if ld_full_text and (len(ld_full_text) > best_char_count or best_char_count < 80):
+        ld_paragraphs: list[str] = []
+        for raw_p in re.split(r"\n{1,2}", ld_full_text):
+            p_clean = clean_html_text(raw_p).strip()
+            if p_clean and len(p_clean) >= 20 and p_clean.lower() not in _BOILERPLATE_SHORT_TEXTS:
+                ld_paragraphs.append(p_clean)
+        if ld_paragraphs and sum(len(p) for p in ld_paragraphs) > best_char_count:
+            best_paragraphs = ld_paragraphs
 
     # Sicherstellen, dass ein gefundener Ereignisort (z. B. "Marzahn-Hellersdorf") garantiert nach "Polizeimeldung vom ..." steht
-    if explicit_district and explicit_district.lower() not in seen_texts:
+    if explicit_district and explicit_district.lower() not in [p.lower() for p in best_paragraphs]:
         inserted = False
-        for i, p in enumerate(paragraphs):
+        for i, p in enumerate(best_paragraphs):
             if p.lower().startswith("polizeimeldung vom"):
-                paragraphs.insert(i + 1, explicit_district)
+                best_paragraphs.insert(i + 1, explicit_district)
                 inserted = True
                 break
         if not inserted:
-            paragraphs.insert(0, explicit_district)
+            best_paragraphs.insert(0, explicit_district)
 
-    return paragraphs
+    return best_paragraphs
 
 
 def repair_police_offline_article(
@@ -399,22 +487,28 @@ def _extract_candidate_image_urls(raw_html: str, base_url: str, max_images: int 
             if m:
                 _add_candidate(m.group(1), "Titelbild")
 
-    # 2. Bilder im Hauptbereich (<article> / <main> / <body>)
-    article_match = re.search(r"<article[^>]*>(.*?)</article>", raw_html, flags=re.IGNORECASE | re.DOTALL)
-    main_match = re.search(r"<main[^>]*>(.*?)</main>", raw_html, flags=re.IGNORECASE | re.DOTALL)
-    scope_html = (
-        article_match.group(1)
-        if article_match
-        else (main_match.group(1) if main_match else raw_html)
-    )
+    # 2. Schema.org JSON-LD Bilder
+    for ld_img_m in re.finditer(r'[\'"]image[\'"]\s*:\s*(?:[\'"]([^\'"]+)[\'"]|\[\s*[\'"]([^\'"]+)[\'"])', raw_html, flags=re.IGNORECASE):
+        img_candidate = ld_img_m.group(1) or ld_img_m.group(2)
+        if img_candidate:
+            _add_candidate(img_candidate, "Artikelbild")
 
-    for img_tag in re.findall(r"<img[^>]+>", scope_html, flags=re.IGNORECASE):
-        if len(candidates) >= max_images:
-            break
-        src_m = re.search(r'(?:data-src|src)=[\'"]([^\'"]+)[\'"]', img_tag, flags=re.IGNORECASE)
-        alt_m = re.search(r'alt=[\'"]([^\'"]*)[\'"]', img_tag, flags=re.IGNORECASE)
-        if src_m:
-            _add_candidate(src_m.group(1), alt_m.group(1) if alt_m else "")
+    # 3. Bilder in Content-Bereichen (<main>, <article>, content-divs & body)
+    search_scopes: list[str] = []
+    for m in re.finditer(r"<main[^>]*>(.*?)</main>", raw_html, flags=re.IGNORECASE | re.DOTALL):
+        search_scopes.append(m.group(1))
+    for m in re.finditer(r"<article[^>]*>(.*?)</article>", raw_html, flags=re.IGNORECASE | re.DOTALL):
+        search_scopes.append(m.group(1))
+    search_scopes.append(raw_html)
+
+    for scope in search_scopes:
+        for img_tag in re.findall(r"<img[^>]+>", scope, flags=re.IGNORECASE):
+            if len(candidates) >= max_images:
+                break
+            src_m = re.search(r'(?:data-src|data-original|src)=[\'"]([^\'"]+)[\'"]', img_tag, flags=re.IGNORECASE)
+            alt_m = re.search(r'alt=[\'"]([^\'"]*)[\'"]', img_tag, flags=re.IGNORECASE)
+            if src_m:
+                _add_candidate(src_m.group(1), alt_m.group(1) if alt_m else "")
 
     return candidates
 
@@ -838,8 +932,33 @@ def sync_offline_archive_now(
 
 
 # ---------------------------------------------------------------------------
-# HTML EXPORT FÜR EINZELNE ARTIKEL UND KOMPLETTE FEEDS
+# TEXT & HTML EXPORT FÜR EINZELNE ARTIKEL UND KOMPLETTE FEEDS
 # ---------------------------------------------------------------------------
+
+def generate_offline_article_text(article: OfflineArticle | dict[str, Any]) -> str:
+    """
+    Erzeugt eine saubere, strukturierte Textdatei (.txt) mit Metadaten und Volltext des Artikels.
+    """
+    art = OfflineArticle.from_dict(article) if not isinstance(article, OfflineArticle) else article
+    lines: list[str] = [
+        f"Titel: {art.title}",
+        f"Quelle: {art.feed_name or 'Unbekannt'} ({art.category or 'Allgemein'})",
+    ]
+    date_str = art.published or (art.created_at[:19].replace("T", " ") if art.created_at else "")
+    if date_str:
+        lines.append(f"Datum: {date_str}")
+    if art.url and art.url != "#":
+        lines.append(f"Original-URL: {art.url}")
+    lines.append("-" * 60)
+    lines.append("")
+
+    if art.content_text and art.content_text.strip():
+        lines.append(art.content_text.strip())
+    else:
+        lines.append("(Kein Textinhalt gespeichert)")
+
+    return "\n".join(lines) + "\n"
+
 
 def generate_offline_article_html(article: OfflineArticle | dict[str, Any]) -> str:
     """

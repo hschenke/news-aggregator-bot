@@ -7,6 +7,7 @@ and collapsible management & settings-backups blocks at the bottom of the page.
 
 from __future__ import annotations
 
+import base64
 import hashlib
 import functools
 import html
@@ -31,6 +32,7 @@ from src.aggregator import (
 from src.models import OfflineArticle
 from src.offline_archiver import (
     generate_offline_article_html,
+    generate_offline_article_text,
     generate_offline_feed_html,
     get_offline_cache_version,
     get_offline_task_status,
@@ -52,6 +54,76 @@ def _slugify_filename(value: str, fallback: str = "offline-archiv") -> str:
     cleaned = re.sub(r"[^a-zA-Z0-9äöüÄÖÜß_-]+", "_", (value or "").strip())
     cleaned = re.sub(r"_+", "_", cleaned).strip("_")
     return (cleaned[:60] or fallback).lower()
+
+
+def _render_feed_open_browser_button(
+    feed_name: str,
+    articles: list[OfflineArticle],
+    feed_hash: str,
+) -> None:
+    """
+    Rendert einen clientseitigen Button, der das vollständige Feed-Archiv-HTML
+    sofort über eine Blob-URL in einem neuen Browser-Tab öffnet (ohne Rerun oder Popup-Sperre).
+    """
+    feed_html_doc = generate_offline_feed_html(feed_name, articles)
+    b64_html = base64.b64encode(feed_html_doc.encode("utf-8")).decode("ascii")
+    btn_id = f"open_feed_tab_{feed_hash}"
+
+    st.html(
+        f"""
+        <style>
+            .arch-open-tab-btn {{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                min-height: 2.375rem;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                line-height: 1.6;
+                border-radius: 0.5rem;
+                border: 1px solid rgba(49, 51, 63, 0.2);
+                background-color: transparent;
+                color: inherit;
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.15s ease-in-out;
+                box-sizing: border-box;
+                font-family: inherit;
+            }}
+            .arch-open-tab-btn:hover {{
+                border-color: #2563eb;
+                color: #2563eb;
+                background-color: rgba(37, 99, 235, 0.08);
+            }}
+        </style>
+        <button id="{btn_id}" type="button" class="arch-open-tab-btn" title="Gesamtes Feed-Abbild direkt in einem neuen Browser-Tab anzeigen">
+            ↗️ Im neuen Tab anzeigen
+        </button>
+        <script>
+        (function() {{
+            var btn = document.getElementById("{btn_id}");
+            if (btn) {{
+                btn.onclick = function(e) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var binStr = atob("{b64_html}");
+                    var len = binStr.length;
+                    var bytes = new Uint8Array(len);
+                    for (var i = 0; i < len; i++) {{
+                        bytes[i] = binStr.charCodeAt(i);
+                    }}
+                    var blob = new Blob([bytes], {{ type: "text/html;charset=utf-8" }});
+                    var url = URL.createObjectURL(blob);
+                    window.open(url, "_blank", "noopener");
+                }};
+            }}
+        }})();
+        </script>
+        """,
+        unsafe_allow_javascript=True,
+    )
 
 
 def _load_cached_offline_articles() -> list[OfflineArticle]:
@@ -478,7 +550,7 @@ def render_archive_tab(
                 feed_open = is_filtering or (feed_name in persisted_feeds) or len(feeds_in_cat) == 1
 
                 with st.expander(f"📡 **{feed_name}** ({len(feed_articles)} Artikel)", expanded=feed_open):
-                    col_fh1, col_fh2 = st.columns([4.2, 1.0], vertical_alignment="center")
+                    col_fh1, col_fh2, col_fh3 = st.columns([2.3, 2.1, 0.9], vertical_alignment="center")
                     with col_fh1:
                         st.download_button(
                             f"⬇️ Feed-Archiv herunterladen ({len(feed_articles)} Artikel)",
@@ -487,8 +559,15 @@ def render_archive_tab(
                             mime="text/html",
                             key=f"dl_feed_{feed_hash}",
                             help="Gesamtes Feed-Abbild als eigenständige HTML-Datei herunterladen",
+                            use_container_width=True,
                         )
                     with col_fh2:
+                        _render_feed_open_browser_button(
+                            feed_name=feed_name,
+                            articles=feed_articles,
+                            feed_hash=feed_hash,
+                        )
+                    with col_fh3:
                         st.button(
                             "🗑️ Feed leeren",
                             key=f"del_all_feed_{feed_hash}",
@@ -533,7 +612,7 @@ def render_archive_tab(
                                         unsafe_allow_html=True,
                                     )
 
-                                    with st.expander("📖 Gespeichertes Webseiten-Abbild anzeigen (Text & Bilder)", expanded=False):
+                                    with st.expander("📖 Gespeichertes anzeigen", expanded=False):
                                         if art.images:
                                             img_cols = st.columns(min(len(art.images), 2))
                                             for i_idx, img_entry in enumerate(art.images):
@@ -560,12 +639,12 @@ def render_archive_tab(
                                     col_act_dl, col_act_del = st.columns([4.2, 0.8], vertical_alignment="center")
                                     with col_act_dl:
                                         st.download_button(
-                                            "⬇️ HTML-Download",
-                                            data=lambda a=art: generate_offline_article_html(a),
-                                            file_name=f"artikel_{art_slug}.html",
-                                            mime="text/html",
+                                            "⬇️ Download als Text",
+                                            data=lambda a=art: generate_offline_article_text(a),
+                                            file_name=f"artikel_{art_slug}.txt",
+                                            mime="text/plain",
                                             key=f"dl_art_{art_hash}_{idx}",
-                                            help="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen",
+                                            help="Diesen Offline-Artikel als lesbare Textdatei (.txt) herunterladen",
                                         )
                                     with col_act_del:
                                         st.button(

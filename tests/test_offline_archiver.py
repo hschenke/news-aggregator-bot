@@ -27,7 +27,9 @@ from src.models import OfflineArticle
 from src.offline_archiver import (
     _extract_article_paragraphs_from_html,
     fetch_article_snapshot,
+    extract_json_ld_article_text,
     generate_offline_article_html,
+    generate_offline_article_text,
     generate_offline_feed_html,
     get_offline_task_status,
     is_safe_external_url,
@@ -435,6 +437,10 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("generate_offline_article_html", archive_py)
         self.assertIn("generate_offline_feed_html", archive_py)
         self.assertIn("st.download_button", archive_py)
+        self.assertIn("generate_offline_article_text", archive_py)
+        self.assertIn("open_feed_tab_", archive_py)
+        self.assertIn("📖 Gespeichertes anzeigen", archive_py)
+        self.assertIn("⬇️ Download als Text", archive_py)
 
         # Combined Sync & Refresh button + bottom collapsible management block
         self.assertIn("btn_archive_sync_refresh", archive_py)
@@ -455,6 +461,56 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("inp_new_feed_offline", manage_py)
         self.assertIn("ed_offline_", manage_py)
 
+
+
+    def test_generate_offline_article_text(self) -> None:
+        """generate_offline_article_text must create structured UTF-8 plain text."""
+        art = OfflineArticle(
+            url="https://example.com/test-article",
+            title="Test Artikel Text Download",
+            feed_name="Mein Feed",
+            feed_url="https://example.com/rss",
+            category="Technologie",
+            published="03.11.2026, 10:00 Uhr",
+            content_text="Absatz eins des Artikels.\n\nAbsatz zwei mit weiteren Fakten.",
+        )
+        txt = generate_offline_article_text(art)
+        self.assertIn("Titel: Test Artikel Text Download", txt)
+        self.assertIn("Quelle: Mein Feed (Technologie)", txt)
+        self.assertIn("Original-URL: https://example.com/test-article", txt)
+        self.assertIn("Absatz eins des Artikels.", txt)
+        self.assertIn("Absatz zwei mit weiteren Fakten.", txt)
+
+    def test_json_ld_and_multiscope_extraction(self) -> None:
+        """Scraper must prioritize JSON-LD articleBody and <main> over empty <article> teasers."""
+        html_sample = """
+        <html>
+        <head>
+          <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "Fabi, Ferrari und Pfiffe",
+            "articleBody": "Absatz eins aus JSON-LD mit reichlich Text.\n\nAbsatz zwei aus JSON-LD mit weiteren Details."
+          }
+          </script>
+        </head>
+        <body>
+          <article>
+            <span>Teaser ohne Paragraphen</span>
+          </article>
+          <main>
+            <p>Absatz im Main-Bereich.</p>
+          </main>
+        </body>
+        </html>
+        """
+        ld_text = extract_json_ld_article_text(html_sample)
+        self.assertIn("Absatz eins aus JSON-LD", ld_text)
+
+        paragraphs = _extract_article_paragraphs_from_html(html_sample)
+        self.assertGreaterEqual(len(paragraphs), 1)
+        self.assertIn("Absatz eins aus JSON-LD mit reichlich Text.", paragraphs[0])
 
 if __name__ == "__main__":
     unittest.main()
