@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 03 Nov 2026 06:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 12:53:16 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT-6 Astra verbessert Qwen um bis zu 508%</title>
+      <link>https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</guid>
+      <pubDate>Tue, 03 Nov 2026 08:30:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[GPT-6 Astra bearbeitete rund 0,016% der Gewichte von Qwen3.5-0.8B. Das Ergebnis in MATH-500 stieg von 7,9% auf 48,1%. Der Eingriff reduzierte Wiederholungsschleifen und half dem Modell, mehr Antworten zu beenden. Bei Gemma 3 270M brachte derselbe Ansatz kaum eine Verbesserung. Sparks of Weight-Space Programming Rikiya Takehis Ankündigung auf X Vollständige Versuchsprotokolle auf GitHub Bearbeitetes Qwen3.5-0.8B auf Hugging Face Externer Audit der Gewichtsänderungen Forscher des MIT CSAIL haben GPT-6 Astra die Gewichte von Qwen3.5-0.8B bearbeiten lassen. Der Eingriff erfasste dabei nur rund 0,016% der Gewichte und steigerte das Ergebnis trotzdem im Mathematik-Benchmark MATH-500 von 7,9% auf 48,1%. Also um über 508,9%. Astra stoppt Qwens Reasoning-Schleifen Qwen3.5-0.8B geriet bei längeren Rechenaufgaben häufig in Wiederholungsschleifen. Das Modell schrieb dann immer weiter, kam aber zu keinem Ergebnis. Astra durfte Qwen mit Übungsaufgaben untersuchen und dafür bis zu 50 Testläufe ausführen. Ein Training fand dabei nicht statt. Vor dem Eingriff erreichten 93 von 100 Antworten im MATH-500-Test die Höchstlänge von 32.768 Tokens. Danach geschah das noch bei 33 von 100 Antworten. Qwen...]]></description>
+    </item>
+    <item>
+      <title>New York Times verklagt Brave wegen KI-Geschäft mit Artikeln</title>
+      <link>https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</guid>
+      <pubDate>Tue, 03 Nov 2026 08:20:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Die New York Times und drei weitere US-Zeitungen haben Brave in Manhattan verklagt. Sie werfen Brave vor, Artikel für KI-Antworten und eine kostenpflichtige Search API zu kopieren. Die Klagen richten sich außerdem gegen eine Funktion zum Umgehen von Paywalls und Braves Werbemodell. Die Verlage verlangen Schadenersatz und eine dauerhafte Unterlassungsverfügung. TechCrunch: New York Times and other outlets sue web browser Brave over alleged content scraping Copyright Now: The New York Times v. Brave Software Copyright Now: Daily News, Chicago Tribune and Orlando Sentinel v. Brave Software Brave: Brave AI und Search API Brave: Search API Die New York Times und drei weitere US-Zeitungen haben Brave am 2. November 2026 vor einem Bundesgericht in Manhattan verklagt. Sie werfen dem Browser-Anbieter vor, geschützte Artikel zu kopieren, für KI-Antworten zu nutzen und über eine API an KI-Unternehmen weiterzugeben. Anzeige Zwei Klagen richten sich gegen Brave Die New York Times reichte eine eigene Klage ein. In einem zweiten Verfahren gehen die Daily News, die Chicago Tribune und der Orlando Sentinel gegen Brave vor. Beide Klagen nennen Anthropic, Perplexity, Mistral, xAI und Cohere als Ku...]]></description>
+    </item>
     <item>
       <title>ElevenLabs »Chimera« Tutorial: Beste Video-KI trifft beste Audio-KI</title>
       <link>https://www.all-ai.de/tutorials/tutorials-ki/elevenlabs-seedance-eleven-4-tutorial-1</link>
@@ -88,42 +106,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic verzwölffachte seinen Quartalsumsatz auf fast 17 Milliarden$. 17,5 Milliarden$ Betriebskosten führten zurück ins operative Minus, der Nettoverlust erreichte 23,3 Milliarden$. Die langfristigen Verpflichtungen für Rechenkapazität und Infrastruktur summieren sich auf 895,4 Milliarden$. Japanische Anleger sollen beim Börsengang Aktien im Wert von bis zu 3,5 Milliarden$ kaufen. Bloomberg: Anthropics Quartalsumsatz erreicht fast 17 Milliarden$ The Information: Anthropic rutscht operativ zurück ins Minus Anthropic hat im dritten Quartal knapp 17 Milliarden $ umgesetzt. Das waren zwölfmal so viel wie ein Jahr zuvor. Kurz vor dem geplanten Börsengang meldet das KI-Unternehmen dennoch einen Nettoverlust von 23,3 Milliarden $. Rechenkapazität kostet Anthropic Milliarden Die Betriebskosten erreichten 17,5 Milliarden $ und lagen damit über dem Quartalsumsatz. Im Vorquartal hatte Anthropic operativ noch einen Gewinn erzielt. Der Abstand zwischen dem operativen Minus von rund 500 Millionen $ und dem Nettoverlust zeigt, dass weitere Finanz- und Bilanzposten das Ergebnis stark belasteten. Zu den aktuellen Ausgaben gehörten 5 Milliarden $ für kurzfristig gesicherte Rechenkapazität. Wei...]]></description>
-    </item>
-    <item>
-      <title>Neuer Benchmark zeigt die wahre Leistung von KI-Modellen</title>
-      <link>https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/benchmark-neu-opus-sol-gemini</guid>
-      <pubDate>Mon, 02 Nov 2026 09:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Opus 5.5 führt den GDPx-Benchmark mit 12% an, kostet aber 51,41$ pro Aufgabe. Gemini 4 Carbon erreicht 10,9% und kostet mit 16,29$ deutlich weniger. GPT-6.1 Sol, DeepSeek 4.1 Flash und GPT-6 Luna fallen durch ihr gutes Preis-Leistungs-Verhältnis auf. Grok 4.7, Kimi K3, Qwen 3.8 Max und GLM 5.3 bleiben deutlich hinter der Spitze. GDPx: Measuring Frontier Model Capabilities Across the Most Valuable Domains GDPx Leaderboard SemiAnalysis: Vorstellung von GDPx auf X Selbst die besten KI-Modelle scheitern an einem Großteil anspruchsvoller Aufgaben aus Forschung, Entwicklung und Wirtschaft. Im neuen GDPx-Benchmark erreicht der Sieger Claude Opus 5.5 gerade einmal 12% und kostet pro Aufgabe mehr als 50$. Anzeige Claude Opus 5.5 führt zu einem hohen Preis SemiAnalysis hat für GDPx Aufgaben aus elf Bereichen zusammengestellt. Dazu gehören Chipdesign, Cybersecurity, Biologie, Softwareentwicklung, Materialwissenschaft, Hardwaredesign, Finanzwesen und Recht. Die Modelle arbeiten dabei bis zu acht Stunden in realistischen Arbeitsumgebungen und müssen selbst Informationen finden, Entscheidungen treffen und Ergebnisse abliefern. Claude Opus 5.5 führt mit 12% und kostet im Durchschnitt 51...]]></description>
-    </item>
-    <item>
-      <title>HackerTube: Karpathy baut YouTube-Alternative in zwei Stunden</title>
-      <link>https://www.all-ai.de/news/news26top/karpathy-hackertube-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/karpathy-hackertube-start</guid>
-      <pubDate>Mon, 02 Nov 2026 08:33:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[HackerTube zeigt 6.454 Videos, die Nutzer seit 2007 auf Hacker News empfohlen haben. Claude Code und Claude Opus 5.5 bauten die Seite laut Karpathy in rund zwei Stunden. Die Nutzung klappt ohne Konto, während Verlauf und Vorlieben im lokalen Browser bleiben. Andrej Karpathy: HackerTube HackerTube Andrej Karpathy auf X Diskussion auf Hacker News Andrej Karpathy hat mit HackerTube eine alternative Oberfläche für YouTube veröffentlicht. Statt persönlicher Nutzerdaten bestimmen 6.454 Videoempfehlungen aus der Hacker-News-Community, was im Feed erscheint. Nach Karpathys Angaben erledigten Claude Code und Claude Opus 5.5 den Großteil der Arbeit in rund zwei Stunden. + Quelle: hackertube.org Empfehlungen aus 39.834 Kommentaren Die Auswahl basiert auf 39.834 Hacker-News-Kommentaren seit 2007 und umfasst 150 Themen. Claude filterte dafür ein Archiv mit 43 Millionen Kommentaren, entfernte Spam und suchte nach wiederholt empfohlenen YouTube-Videos. HackerTube braucht weder Anmeldung noch Benutzerkonto. Wiedergabeverlauf, Likes und spätere Empfehlungen bleiben im lokalen Browser. Statt der hochgeladenen Vorschaubilder zeigt die Seite jeweils ein Bild aus der Mitte des Videos. Nutzer können ...]]></description>
-    </item>
-    <item>
-      <title>Claude Code verweigert den Nachbau bekannter Spiele</title>
-      <link>https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-code-nachbau-blockade</guid>
-      <pubDate>Mon, 02 Nov 2026 08:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic untersagt Claude Code die Rekonstruktion konkreter existierender Spiele. Eigene Games und Projekte mit eigenen Entwürfen sollen erlaubt bleiben. Entwickler melden trotzdem Ablehnungen bei regulären Aufträgen und Reverse Engineering. Die Regel reagiert auf wachsende Sorgen kleiner Studios vor schnellen KI-Kopien. Game Developer: Anthropic tells Claude to stop remaking video games GitHub: Neue Spiele-Regel blockiert professionelle Entwicklungsarbeit GitHub: Opus 5.5 verweigert harmlose Gespräche über Lernvideos VGC: ReVamp-Entwickler sagt öffentlichen Spieletest ab Anthropic schränkt die Spieleentwicklung mit Claude Code ein. Der Programmierassistent soll keine bekannten Games mehr rekonstruieren, selbst wenn Nutzer der Kopie einen neuen Namen geben. Zwei Sätze ziehen eine neue Grenze Die neue Regel steckt im System-Prompt von Claude Code für Claude Opus 5.5. Erlaubt bleiben eigene Spiele, Entwürfe des Nutzers und Projekte, die sich allgemein an einem Genre orientieren. Bei der Rekonstruktion eines bestimmten existierenden Titels soll Claude Code die Arbeit verweigern. Anthropic-Mitarbeiter Addy Osmani bestätigte die Änderung. Das KI-Unternehmen will damit verhindern, da...]]></description>
-    </item>
-    <item>
-      <title>Der erste Mensch ist dank KI unsterblich</title>
-      <link>https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/kurzweil-unsterblich-ki</guid>
-      <pubDate>Mon, 02 Nov 2026 07:59:56 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Ray Kurzweil hat mit Praxis AI den digitalen Doppelgänger RAI entwickelt. Die KI lernt aus elf Büchern und zahlreichen Aufnahmen und speichert Erinnerungen aus Gesprächen. RAI soll Kurzweils Denkweise bewahren und auch nach seinem Tod weiterlernen. Rund 200 Freunde und Familienmitglieder testen den digitalen Doppelgänger bereits. The Information: Can AI Help Ray Kurzweil Cheat Death? Kurzweil Technologies: Ray Kurzweil Unveils RAI AI for Good: Ray Kurzweil presents RAI Boston Magazine: Kurzweil über KI und ein längeres Leben NQ Brief: Kurzweils KI-Abbild wird von 200 Personen getestet Ray Kurzweil hat mit »RAI« einen digitalen Doppelgänger erschaffen, der sein Wissen, seine Stimme und seine Denkweise bewahren soll. Das KI-Abbild könnte den 78-jährigen Erfinder überleben und sich auch nach seinem Tod weiterentwickeln. RAI lernt aus Kurzweils Lebenswerk Rund 200 Freunde und Familienmitglieder testen RAI derzeit vor einer geplanten Veröffentlichung. Die KI erscheint im Browser als dreidimensionales Abbild von Kurzweil und antwortet mit einer Stimme, die seiner eigenen ähnelt. Praxis AI entwickelte RAI auf Basis eines KI-Modells von Google. Als Wissensgrundlage dienen elf Bücher, Vi...]]></description>
     </item>
   </channel>
 </rss>
