@@ -20,6 +20,7 @@ import threading
 import time
 import urllib.parse
 from datetime import datetime, timezone
+from pathlib import Path
 from typing import Any
 
 import requests
@@ -214,6 +215,44 @@ def extract_json_ld_article_text(raw_html: str) -> str:
     return ""
 
 
+def extract_meta_description_text(raw_html: str) -> str:
+    """Extrahiert Beschreibungstext aus <meta property='og:description'> oder <meta name='description'>."""
+    if not raw_html:
+        return ""
+    m_og = re.search(
+        r'<meta[^>]+property=[\'"](?:og:description|twitter:description)[\'"][^>]+content=[\'"](.*?)[\'"]',
+        raw_html,
+        flags=re.IGNORECASE,
+    )
+    if not m_og:
+        m_og = re.search(
+            r'<meta[^>]+content=[\'"](.*?)[\'"][^>]+property=[\'"](?:og:description|twitter:description)[\'"]',
+            raw_html,
+            flags=re.IGNORECASE,
+        )
+    if m_og:
+        desc = html.unescape(m_og.group(1)).strip()
+        if len(desc) >= 30:
+            return desc
+
+    m_std = re.search(
+        r'<meta[^>]+name=[\'"]description[\'"][^>]+content=[\'"](.*?)[\'"]',
+        raw_html,
+        flags=re.IGNORECASE,
+    )
+    if not m_std:
+        m_std = re.search(
+            r'<meta[^>]+content=[\'"](.*?)[\'"][^>]+name=[\'"]description[\'"]',
+            raw_html,
+            flags=re.IGNORECASE,
+        )
+    if m_std:
+        desc = html.unescape(m_std.group(1)).strip()
+        if len(desc) >= 30:
+            return desc
+    return ""
+
+
 class CleanArticleExtractor(HTMLParser):
     """
     Robuster HTML-Baum-Parser zur Extraktion des redaktionellen Volltexts.
@@ -249,6 +288,8 @@ class CleanArticleExtractor(HTMLParser):
         if tag_low in self.block_tags:
             self._flush_block()
             self.current_tag = tag_low
+        elif tag_low in ("div", "section", "article", "main", "br", "hr"):
+            self._flush_block()
 
     def handle_endtag(self, tag: str) -> None:
         tag_low = tag.lower()
@@ -262,6 +303,8 @@ class CleanArticleExtractor(HTMLParser):
         if tag_low in self.block_tags:
             self._flush_block()
             self.current_tag = ""
+        elif tag_low in ("div", "section", "article", "main"):
+            self._flush_block()
 
     def handle_data(self, data: str) -> None:
         if self.current_ignore_depth > 0:
@@ -521,6 +564,13 @@ def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
                 ld_paragraphs.append(p_clean)
         if ld_paragraphs and sum(len(p) for p in ld_paragraphs) > best_char_count:
             best_paragraphs = ld_paragraphs
+            best_char_count = sum(len(p) for p in ld_paragraphs)
+
+    # Falls der gefundene Text immer noch sehr kurz ist (< 80 Zeichen), Meta-Description als Ergänzung heranziehen
+    if best_char_count < 80:
+        meta_desc = extract_meta_description_text(raw_html)
+        if meta_desc and meta_desc.lower() not in " ".join(best_paragraphs).lower():
+            best_paragraphs.append(meta_desc)
 
     # Sicherstellen, dass ein gefundener Ereignisort (z. B. "Marzahn-Hellersdorf") garantiert nach "Polizeimeldung vom ..." steht
     if explicit_district and explicit_district.lower() not in [p.lower() for p in best_paragraphs]:
@@ -1408,3 +1458,79 @@ def generate_offline_feed_html(
     {floating_toc_btn_html}
 </body>
 </html>"""
+
+
+def ensure_feed_archive_static_file(
+    feed_name: str,
+    articles: list[OfflineArticle | dict[str, Any]],
+    feed_slug: str,
+) -> str:
+    """
+    Stellt sicher, dass das vollständige Feed-Archiv-HTML als statische Datei
+    unter static/archive/feed_{feed_slug}.html bereitliegt, damit es direkt
+    in einem neuen Browser-Tab geöffnet werden kann (ohne WebSocket-Overhead oder Reruns).
+    Gibt die relative Streamlit-URL zurück ('app/static/archive/feed_{feed_slug}.html').
+    """
+    static_dir = Path("static") / "archive"
+    static_dir.mkdir(parents=True, exist_ok=True)
+    out_file = static_dir / f"feed_{feed_slug}.html"
+
+    newest_ts = 0.0
+    for a in articles:
+        ts = a.timestamp if isinstance(a, OfflineArticle) else float(a.get("timestamp") or 0.0)
+        if ts > newest_ts:
+            newest_ts = ts
+
+    need_build = True
+    if out_file.exists():
+        try:
+            mtime = out_file.stat().st_mtime
+            if mtime >= newest_ts and out_file.stat().st_size > 0:
+                need_build = False
+        except OSError:
+            need_build = True
+
+    if need_build:
+        html_doc = generate_offline_feed_html(feed_name, articles)
+        out_file.write_text(html_doc, encoding="utf-8")
+
+    return f"app/static/archive/feed_{feed_slug}.html"
+
+
+def enrich_short_offline_article(article: OfflineArticle) -> OfflineArticle:
+    """
+    Prüft, ob ein gespeicherter Offline-Artikel sehr kurz ist (< 180 Zeichen)
+    und reichert ihn strukturiert an (z. B. ImmoScout24, Kicker), falls WAF-/Bot-Schutz vorlag.
+    """
+    text = (article.content_text or "").strip()
+    if len(text) >= 180 or "### " in text or "• " in text:
+        return article
+
+    enriched_paragraphs = enrich_bot_protected_content(
+        url=article.url,
+        title=article.title,
+        summary=text or article.published or "",
+    )
+    enriched_text = "\n\n".join(enriched_paragraphs).strip()
+    if len(enriched_text) > len(text):
+        new_html = _build_self_contained_html_body(
+            title=article.title,
+            paragraphs=enriched_paragraphs,
+            images=article.images,
+            source_url=article.url,
+        )
+        return OfflineArticle(
+            url=article.url,
+            title=article.title,
+            feed_name=article.feed_name,
+            feed_url=article.feed_url,
+            category=article.category,
+            published=article.published,
+            timestamp=article.timestamp,
+            content_text=enriched_text,
+            content_html=new_html,
+            images_json=article.images_json,
+            created_at=article.created_at,
+        )
+    return article
+

@@ -10,6 +10,7 @@ headless = true
 enableCORS = true
 enableXsrfProtection = true
 maxUploadSize = 5
+enableStaticServing = true
 
 
 [browser]

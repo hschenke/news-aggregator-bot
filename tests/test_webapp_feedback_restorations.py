@@ -195,6 +195,9 @@ class TestWebappFeedbackRestorations(unittest.TestCase):
         # Concise text in feedly_tab
         self.assertIn("RSS 2.0 XML-Feeds für Feedly, Inoreader und alle Newsreader.", self.feedly_tab_py)
         self.assertIn("Feeds erfolgreich neu generiert.", self.feedly_tab_py)
+        self.assertNotIn("RSS Exposure", self.webapp_py)
+        self.assertIn("render_feedly_tab(news_data, working_config, is_admin=is_admin)", self.webapp_py)
+        self.assertIn("if not is_admin:", self.feedly_tab_py)
 
 
 if __name__ == "__main__":

@@ -520,32 +520,16 @@ with tab_articles:
     render_articles_tab(news_data, working_config)
 
 with tab_ki:
-    if is_admin:
-        render_ki_tab(news_data, is_admin=True)
-    else:
-        st.subheader("🧠 KI-Briefing")
-        st.info("🔒 Das KI-Briefing und die Generierung stehen nach der Administrator-Anmeldung in der linken Leiste bereit.")
+    render_ki_tab(news_data, is_admin=is_admin)
 
 with tab_manage:
-    if is_admin:
-        render_manage_tab(working_config, is_admin=True)
-    else:
-        st.subheader("⚙️ Quellen & Feeds verwalten")
-        st.info("🔒 Die Verwaltung von Quellen und Einstellungen erfordert Administrator-Rechte. Bitte melde dich in der linken Navigationsleiste an.")
+    render_manage_tab(working_config, is_admin=is_admin)
 
 with tab_archive:
-    if is_admin:
-        render_archive_tab(working_config, is_admin=True)
-    else:
-        st.subheader("📦 Offline-Archiv")
-        st.info("🔒 Das Offline-Archiv ist im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
+    render_archive_tab(working_config, is_admin=is_admin)
 
 with tab_feedly:
-    if is_admin:
-        render_feedly_tab(news_data, working_config, is_admin=True)
-    else:
-        st.subheader("📡 RSS Exposure")
-        st.info("🔒 Die RSS-Feeds und Feedly-Integration sind im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
+    render_feedly_tab(news_data, working_config, is_admin=is_admin)
 
 # Release loading overlay and re-enable action buttons on render completion
 release_action_overlay()

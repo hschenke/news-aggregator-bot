@@ -48,7 +48,9 @@ def get_current_role() -> str:
         return ROLE_GUEST
 
     # 1. Already in session state
-    if st.session_state.get("auth_role") == ROLE_ADMIN:
+    if st.session_state.get("auth_role") == ROLE_ADMIN or st.session_state.get("authenticated") is True:
+        st.session_state["authenticated"] = True
+        st.session_state["auth_role"] = ROLE_ADMIN
         return ROLE_ADMIN
 
     # 2. Check Request Header Cookies (st.context.cookies)

@@ -32,6 +32,10 @@ def render_feedly_tab(
     st.subheader("📡 RSS Feeds")
     st.caption("RSS 2.0 XML-Feeds für Feedly, Inoreader und alle Newsreader.")
 
+    if not is_admin:
+        st.info("🔒 Die RSS-Feeds und Feedly-Integration sind im Administrator-Modus verfügbar. Bitte melde dich in der linken Navigationsleiste an.")
+        return
+
     if st.session_state.get("feedly_notice"):
         render_dismissible_notice(st.session_state["feedly_notice"], notice_key="feedly_notice", icon="📡")
 

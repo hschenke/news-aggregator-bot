@@ -28,6 +28,8 @@ from src.offline_archiver import (
     CleanArticleExtractor,
     _extract_article_paragraphs_from_html,
     enrich_bot_protected_content,
+    enrich_short_offline_article,
+    ensure_feed_archive_static_file,
     extract_json_ld_article_text,
     fetch_article_snapshot,
     generate_offline_article_html,
@@ -436,14 +438,16 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertNotIn("generate_offline_feed_pdf", archive_py)
         self.assertNotIn("application/pdf", archive_py)
 
-        # HTML download present via native lazy st.download_button
+        # HTML download present via native lazy st.download_button and static new-tab link
         self.assertIn("generate_offline_article_html", archive_py)
         self.assertIn("generate_offline_feed_html", archive_py)
         self.assertIn("st.download_button", archive_py)
         self.assertIn("generate_offline_article_text", archive_py)
-        self.assertIn("open_feed_tab_", archive_py)
+        self.assertIn("ensure_feed_archive_static_file", archive_py)
+        self.assertIn("↗️ Im neuen Tab anzeigen", archive_py)
         self.assertIn("📖 Gespeichertes anzeigen", archive_py)
         self.assertIn("⬇️ Download", archive_py)
+        self.assertIn('on_click="ignore"', archive_py)
 
         # Combined Sync & Refresh button + bottom collapsible management block
         self.assertIn("btn_archive_sync_refresh", archive_py)
@@ -585,6 +589,58 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("• Einbauküche", full_text)
         self.assertIn("Schlussabsatz mit abschließenden Informationen.", full_text)
         self.assertGreater(len(paragraphs), 5)
+
+    def test_ensure_feed_archive_static_file(self) -> None:
+        """ensure_feed_archive_static_file must create a valid static HTML file and return app/static/archive/... URL."""
+        art = OfflineArticle(
+            url="https://example.com/art-static-test",
+            title="Static File Test",
+            feed_name="Berlin News",
+            feed_url="https://example.com/rss",
+            category="Berlin",
+            published="03.11.2026, 12:00 Uhr",
+            timestamp=time.time(),
+            content_text="Ein Testartikel für die statische Ablage.",
+        )
+        url = ensure_feed_archive_static_file("Berlin News", [art], "berlin_news")
+        self.assertEqual(url, "app/static/archive/feed_berlin_news.html")
+
+        static_file = Path("static") / "archive" / "feed_berlin_news.html"
+        self.assertTrue(static_file.exists())
+        content = static_file.read_text(encoding="utf-8")
+        self.assertIn("Static File Test", content)
+        self.assertIn("Berlin News", content)
+
+    def test_enrich_short_offline_article(self) -> None:
+        """enrich_short_offline_article must expand short snippets for WAF-protected domains."""
+        # Short ImmoScout24 snippet from old scrape
+        art_immo = OfflineArticle(
+            url="https://www.immobilienscout24.de/expose/987654321",
+            title="2-Zimmer Wohnung 850 € zur Miete in Mahlsdorf",
+            feed_name="Immo Feed",
+            feed_url="https://example.com/rss",
+            category="Wohnen",
+            published="02.11.2026, 08:00 Uhr",
+            content_text="Wohnung zur Miete: 2 Zimmer - 65 qm - Scout-ID: 987654321",
+        )
+        enriched = enrich_short_offline_article(art_immo)
+        self.assertIn("Immobiliendetails", enriched.content_text)
+        self.assertIn("2 Zimmer", enriched.content_text)
+        self.assertIn("65 m²", enriched.content_text)
+        self.assertIn("850 €", enriched.content_text)
+
+        # Normal article with already comprehensive text should remain unchanged
+        art_normal = OfflineArticle(
+            url="https://example.com/long-article",
+            title="Langer Artikel",
+            feed_name="Standard Feed",
+            feed_url="https://example.com/rss",
+            category="Nachrichten",
+            published="03.11.2026, 09:00 Uhr",
+            content_text="A" * 300,
+        )
+        not_changed = enrich_short_offline_article(art_normal)
+        self.assertEqual(not_changed.content_text, "A" * 300)
 
 
 if __name__ == "__main__":

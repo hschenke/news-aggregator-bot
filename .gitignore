@@ -13,3 +13,4 @@ tests/preview_*.png
 screen_*.png
 *.db
 *.sqlite3
+static/archive/*.html
