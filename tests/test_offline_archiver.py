@@ -440,7 +440,7 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         self.assertIn("generate_offline_article_text", archive_py)
         self.assertIn("open_feed_tab_", archive_py)
         self.assertIn("📖 Gespeichertes anzeigen", archive_py)
-        self.assertIn("⬇️ Download als Text", archive_py)
+        self.assertIn("⬇️ Download", archive_py)
 
         # Combined Sync & Refresh button + bottom collapsible management block
         self.assertIn("btn_archive_sync_refresh", archive_py)

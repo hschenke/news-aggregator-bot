@@ -639,12 +639,12 @@ def render_archive_tab(
                                     col_act_dl, col_act_del = st.columns([4.2, 0.8], vertical_alignment="center")
                                     with col_act_dl:
                                         st.download_button(
-                                            "⬇️ Download als Text",
-                                            data=lambda a=art: generate_offline_article_text(a),
-                                            file_name=f"artikel_{art_slug}.txt",
-                                            mime="text/plain",
+                                            "⬇️ Download",
+                                            data=lambda a=art: generate_offline_article_html(a),
+                                            file_name=f"artikel_{art_slug}.html",
+                                            mime="text/html",
                                             key=f"dl_art_{art_hash}_{idx}",
-                                            help="Diesen Offline-Artikel als lesbare Textdatei (.txt) herunterladen",
+                                            help="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen",
                                         )
                                     with col_act_del:
                                         st.button(
