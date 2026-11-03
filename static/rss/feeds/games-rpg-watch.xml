@@ -5,17 +5,62 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 02 Nov 2026 13:39:08 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 06:01:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Passion - Released into Early Access</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60492</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60492</guid>
-      <pubDate>Sun, 01 Nov 2026 21:45:47 GMT</pubDate>
+      <title>Genshin Impact - Valeriy Trailer</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60498</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60498</guid>
+      <pubDate>Mon, 02 Nov 2026 14:35:31 GMT</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The J-RPG Passion has been released into Early Access: Passion A story-driven 16-bit-style JRPG blending noir mystery, comedy, horror, and psychedelic weirdness. Investigate a strange town, explore dangerous dungeons, and master tactical ATB-inspired combat where timing, status effects, and preparation matter....]]></description>
+      <description><![CDATA[Valeriy is an upcoming playable character in Genshin Impact: Character Trailer - "Valeriy: Order in Practice"]]></description>
+    </item>
+    <item>
+      <title>Phantom Blade Zero - Over 4 Million Copies sold</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60497</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60497</guid>
+      <pubDate>Mon, 02 Nov 2026 14:25:32 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPG Site reports that Phantom Blade Zero has already sold over 4 million copies.]]></description>
+    </item>
+    <item>
+      <title>Rogue Trader - RPGWatch Review</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60496</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60496</guid>
+      <pubDate>Mon, 02 Nov 2026 14:21:28 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Forgottenlor reviewed Warhammer 40,000: Rogue Trader. Link to article]]></description>
+    </item>
+    <item>
+      <title>RPGFan - RPGs coming this Week</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60495</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60495</guid>
+      <pubDate>Mon, 02 Nov 2026 14:18:48 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGFan presents some upcoming RPGs.]]></description>
+    </item>
+    <item>
+      <title>RPGamer - News Round-Up</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60494</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60494</guid>
+      <pubDate>Mon, 02 Nov 2026 14:17:17 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGamer sums up last week's RPG news.]]></description>
+    </item>
+    <item>
+      <title>General News - F-Stop is now playable</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60493</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60493</guid>
+      <pubDate>Mon, 02 Nov 2026 14:09:32 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Kotaku reports that a cancelled prequel to Valve's Portal is now playable: Valve's Cancelled Portal Prequel F-Stop Has Leaked Three separate Valve leaks have been combined into a fully playable version of the cancelled 2007 game F-Stop F-Stop, Valve’s cancelled 2007 Portal prequel, has leaked online–and yes, it’s fully playable....]]></description>
     </item>
   </channel>
 </rss>
