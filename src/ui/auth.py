@@ -111,7 +111,7 @@ def login_admin(password: str) -> bool:
                 }} catch(e) {{}}
             }})();
             """)
-        logger.info("Admin login successful.")
+        logger.debug("Admin login successful.")
         return True
 
     logger.warning("Failed admin login attempt.")
@@ -146,7 +146,7 @@ def logout_admin() -> None:
         }} catch(e) {{}}
     }})();
     """)
-    logger.info("Admin logged out.")
+    logger.debug("Admin logged out.")
 
 
 def render_sidebar_auth(is_admin: bool) -> None:

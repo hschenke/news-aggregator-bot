@@ -41,14 +41,16 @@ def render_feedly_tab(
         or ""
     ).rstrip("/")
 
-    # Export / build feeds
-    briefing_md = st.session_state.get("cached_summary", "")
-    rss_registry = export_all_rss_feeds(
-        news_data,
-        config=working_config,
-        base_url=app_base_url,
-        briefing_markdown=briefing_md,
-    )
+    # Export / build feeds (gecached im session_state, um Festplatten-I/O bei jedem Rerun zu vermeiden)
+    if "cached_rss_registry" not in st.session_state:
+        briefing_md = st.session_state.get("cached_summary", "")
+        st.session_state["cached_rss_registry"] = export_all_rss_feeds(
+            news_data,
+            config=working_config,
+            base_url=app_base_url,
+            briefing_markdown=briefing_md,
+        )
+    rss_registry = st.session_state["cached_rss_registry"]
 
     # Admin controls
     if is_admin:
@@ -63,6 +65,7 @@ def render_feedly_tab(
                 with st.spinner("Generiere alle RSS-Feeds neu..."):
                     st.cache_data.clear()
                     st.session_state.pop("cached_news_data", None)
+                    st.session_state.pop("cached_rss_registry", None)
                     st.session_state["is_refreshing_rss"] = False
                     set_dismissible_notice("feedly_notice", "Feeds erfolgreich neu generiert.", icon="📡")
                     st.rerun()

@@ -317,12 +317,12 @@ def purge_jsdelivr_cache(
             timeout=timeout,
         )
         if post_resp.status_code in [200, 201, 202]:
-            logger.info("⚡ [CDN] jsDelivr Batch-Purge erfolgreich angestoßen (%d Pfade, Status %d).", len(formatted_paths), post_resp.status_code)
+            logger.debug("⚡ [CDN] jsDelivr Batch-Purge erfolgreich angestoßen (%d Pfade, Status %d).", len(formatted_paths), post_resp.status_code)
         else:
-            logger.warning("jsDelivr Batch-Purge antwortete mit Status %d: %s", post_resp.status_code, post_resp.text)
+            logger.error("jsDelivr Batch-Purge antwortete mit Status %d: %s", post_resp.status_code, post_resp.text)
             results["errors"].append(f"Status {post_resp.status_code}")
     except Exception as e_post:
-        logger.warning("jsDelivr Batch-Purge fehlgeschlagen: %s", e_post)
+        logger.error("jsDelivr Batch-Purge fehlgeschlagen: %s", e_post, exc_info=True)
         results["errors"].append(str(e_post))
 
     # 2. Sofortige synchrone Edge-Invalidierung für briefing.xml & all.xml
@@ -331,7 +331,7 @@ def purge_jsdelivr_cache(
         try:
             get_resp = requests.get(key_url, headers={"User-Agent": "NewsBot-CDN-Purge/1.0"}, timeout=timeout)
             if get_resp.status_code in [200, 201, 202]:
-                logger.info("⚡ [CDN] jsDelivr Edge-Cache für %s synchron geleert.", key_file)
+                logger.debug("⚡ [CDN] jsDelivr Edge-Cache für %s synchron geleert.", key_file)
             else:
                 logger.debug("jsDelivr Synchron-Purge für %s: Status %d", key_file, get_resp.status_code)
         except Exception as e_get:

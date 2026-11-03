@@ -58,17 +58,16 @@ def get_storage(prefer_turso: bool = True, db_path: str | Path | None = None) ->
 
     if prefer_turso and turso_url and turso_key:
         try:
-            logger.info("Turso-Zugangsdaten erkannt. Versuche Verbindung zu Turso Cloud...")
             turso_storage = TursoStorage(database_url=turso_url, auth_token=turso_key)
             turso_storage.init_db()
-            logger.info("Erfolgreich mit Turso Cloud-Datenbank verbunden.")
             _STORAGE_INSTANCE = turso_storage
             return _STORAGE_INSTANCE
         except Exception as exc:
-            logger.warning(
+            logger.error(
                 "Turso-Verbindung konnte nicht initialisiert werden (%s). "
                 "Automatischer Fallback auf lokale SQLite-Datenbank.",
-                exc
+                exc,
+                exc_info=True,
             )
 
     logger.debug("Nutze lokale SQLite-Speicherung.")

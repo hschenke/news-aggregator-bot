@@ -26,11 +26,24 @@ SECONDS_PER_DAY: int = 86400
 SECONDS_PER_WEEK: int = 7 * 24 * 60 * 60  # 604_800 Sekunden pro Woche
 
 
-@functools.lru_cache(maxsize=2048)
+@functools.lru_cache(maxsize=256)
+def _compile_pattern(pat: str) -> re.Pattern | None:
+    """Kompiliert ein Regex-Muster mit LRU-Caching für maximale Parsing-Geschwindigkeit."""
+    try:
+        return re.compile(pat, re.IGNORECASE)
+    except re.error:
+        return None
+
+
+@functools.lru_cache(maxsize=4096)
 def clean_html_text(text: str) -> str:
     """Bereinigt HTML-Tags (z. B. <b>, <i>, <a>), unescaped Entities (&amp;, &quot;) und normalisiert Whitespace."""
     if not text:
         return ""
+    if "<" not in text and "&" not in text and "\xa0" not in text:
+        if "  " not in text and "\n" not in text and "\t" not in text:
+            return text.strip()
+
     # Zweifaches Unescaping für doppelt kodierte HTML-Entities
     cleaned = html.unescape(text)
     if any(entity in cleaned for entity in ["&lt;", "&gt;", "&amp;", "&quot;", "&#"]):
@@ -174,11 +187,9 @@ def is_ad_item(
         for pat in ad_patterns:
             if not pat:
                 continue
-            try:
-                if re.search(pat, t_clean, re.IGNORECASE) or re.search(pat, s_clean, re.IGNORECASE):
-                    return True
-            except re.error:
-                continue
+            rx = _compile_pattern(pat)
+            if rx and (rx.search(t_clean) or rx.search(s_clean)):
+                return True
 
     return False
 

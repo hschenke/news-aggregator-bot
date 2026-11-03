@@ -126,29 +126,12 @@ def get_news_data(force_live_fetch: bool = False) -> dict[str, list[dict[str, An
                     data[cat].append(art.to_dict())
 
                 if any(data.values()):
-                    duration = time.perf_counter() - t_start
-                    total_articles = sum(len(v) for v in data.values())
-                    logger.info(
-                        "Loaded %d articles across %d categories from database in %.2fs.",
-                        total_articles,
-                        len(data),
-                        duration,
-                    )
                     return data
         except Exception as exc:
-            logger.warning("Database load failed (%s). Ingesting live RSS feeds...", exc)
+            logger.error("Database load failed (%s). Ingesting live RSS feeds...", exc, exc_info=True)
 
-    logger.info("Ingesting configured RSS feeds live...")
+    logger.debug("Ingesting configured RSS feeds live...")
     data = collect_all_news(export_rss=True, save_to_db=True)
     # Strictly filter to 24 hours
     data = filter_news_data_by_age(data, max_age_hours=DEFAULT_MAX_ARTICLE_AGE_HOURS)
-
-    duration = time.perf_counter() - t_start
-    total_articles = sum(len(v) for v in data.values())
-    logger.info(
-        "Ingested %d articles across %d categories in %.2fs.",
-        total_articles,
-        len(data),
-        duration,
-    )
     return data

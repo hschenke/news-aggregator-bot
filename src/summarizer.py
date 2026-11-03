@@ -377,7 +377,7 @@ def summarize_news_with_gemini(
 
     active_key = api_key or get_configured_api_key()
     if not active_key or active_key.startswith("your_"):
-        logger.info("Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung.")
+        logger.debug("Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung.")
         print("[Hinweis] Kein gültiger GEMINI_API_KEY gefunden. Erzeuge Standard-Zusammenfassung...")
         return _generate_fallback_summary(categorized_news, category_links=category_links)
 
@@ -450,7 +450,7 @@ def summarize_news_with_gemini(
         last_error = None
         for model_name in candidate_models:
             try:
-                logger.info("Generiere mit KI-Modell: %s", model_name)
+                logger.debug("Generiere mit KI-Modell: %s", model_name)
                 print(f"      -> Generiere mit Modell: {model_name}...", flush=True)
                 try:
                     chat = client.chats.create(model=model_name)
@@ -461,7 +461,7 @@ def summarize_news_with_gemini(
                         contents=prompt,
                     )
                 if response and response.text:
-                    logger.info("✅ Modell %s hat erfolgreich geantwortet (%d Zeichen).", model_name, len(response.text))
+                    logger.debug("✅ Modell %s hat erfolgreich geantwortet (%d Zeichen).", model_name, len(response.text))
                     print(f"      -> Modell {model_name} erfolgreich: {len(response.text)} Zeichen generiert.", flush=True)
                     cleaned_result = _clean_and_enhance_briefing(
                         response.text,
@@ -470,7 +470,7 @@ def summarize_news_with_gemini(
                     )
                     return cleaned_result
             except Exception as model_err:
-                logger.warning("Modell %s temporär nicht erreichbar (%s). Versuche Alternative...", model_name, model_err)
+                logger.error("Modell %s temporär nicht erreichbar (%s). Versuche Alternative...", model_name, model_err)
                 print(f"      [Warnung] Modell {model_name} temporär nicht erreichbar ({model_err}). Versuche Alternative...", flush=True)
                 last_error = model_err
 

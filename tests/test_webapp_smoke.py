@@ -1,6 +1,7 @@
 """
 End-to-End Smoke Tests für streamlit_app.py und src/webapp.py unter Verwendung von Streamlits offiziellem AppTest Framework.
 Prüft das fehlerfreie Rendern der Webanwendung inklusive Deeplinks und verhindert NameError / Syntaxfehler.
+Nutzt isolierte Mock-News-Daten im Session State, um Live-Netzwerkzugriffe und Feed-Überschreibungen zu verhindern.
 """
 
 import unittest
@@ -9,12 +10,46 @@ from streamlit.testing.v1 import AppTest
 
 APP_PATH = str(Path(__file__).resolve().parent.parent / "streamlit_app.py")
 
+MOCK_SMOKE_NEWS = {
+    "Tech & AI": [
+        {
+            "title": "Smoke Test News",
+            "link": "https://example.com/smoke-1",
+            "summary": "Smoke summary",
+            "source": "Heise Online News",
+            "category": "Tech & AI",
+            "timestamp": 1728000000.0,
+            "feedback": 0,
+        }
+    ],
+    "Fun": [
+        {
+            "title": "Fun Joke",
+            "link": "https://example.com/joke-1",
+            "summary": "Joke summary",
+            "source": "Witz des Tages",
+            "category": "Fun",
+            "timestamp": 1728000000.0,
+            "feedback": 0,
+        }
+    ],
+}
+
 
 class TestWebappSmoke(unittest.TestCase):
 
+    def _create_app_test(self) -> AppTest:
+        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at.session_state["cached_news_data"] = MOCK_SMOKE_NEWS
+        at.session_state["cached_rss_registry"] = {
+            "all": {"url": "https://example.com/all.xml", "item_count": 2},
+            "briefing": {"url": "https://example.com/briefing.xml", "item_count": 1},
+        }
+        return at
+
     def test_app_renders_without_exception(self):
         """Prüft, dass die Streamlit App beim Standardaufruf ohne Exception durchläuft."""
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.run()
         if at.exception:
             error_msgs = [f"{exc.type}: {exc.value}" for exc in at.exception]
@@ -22,12 +57,14 @@ class TestWebappSmoke(unittest.TestCase):
 
     def test_app_renders_with_deeplinks(self):
         """Prüft, dass Deeplinks (Kategorie + Feed) ohne Exception durchlaufen."""
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.query_params["category"] = "Fun"
         at.query_params["feed"] = "Witz des Tages"
         at.run()
         if at.exception:
             error_msgs = [f"{exc.type}: {exc.value}" for exc in at.exception]
+            self.fail(f"Streamlit Deeplinks warfen Exceptions: {error_msgs}")
+
     def test_get_news_data_fast_db_load(self):
         """Prüft, dass get_news_data bei vorhandenen Artikeln in der DB schnell lädt ohne collect_all_news aufzurufen."""
         from unittest.mock import patch, MagicMock
@@ -92,7 +129,7 @@ class TestWebappSmoke(unittest.TestCase):
 
     def test_authenticated_app_renders(self):
         """Prüft das fehlerfreie Rendern des Dashboards im authentifizierten Zustand."""
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.session_state["authenticated"] = True
         at.session_state["auth_role"] = "admin"
         at.run()
@@ -103,14 +140,13 @@ class TestWebappSmoke(unittest.TestCase):
 
     def test_logged_out_state_shows_login_form(self):
         """Prüft, dass bei logged_out=True das Login-Formular gerendert und Auto-Logins ignoriert werden."""
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.session_state["logged_out"] = True
         at.session_state["authenticated"] = False
         at.run()
         if at.exception:
             error_msgs = [f"{exc.type}: {exc.value}" for exc in at.exception]
             self.fail(f"Logout-Zustand warf Exceptions: {error_msgs}")
-        # Prüfen, dass das Passwort-Feld gerendert wird
         password_inputs = [inp for inp in at.text_input if "Passwort" in (inp.label or "")]
         self.assertTrue(len(password_inputs) > 0, "Login-Formular sollte nach Logout angezeigt werden")
 
@@ -135,7 +171,7 @@ class TestWebappSmoke(unittest.TestCase):
     def test_discard_changes_button_execution(self):
         """Verifies that clicking '↩️ Verwerfen' in manage tab executes without NameError or exceptions."""
         from src.aggregator import load_sources
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.session_state["authenticated"] = True
         at.session_state["auth_role"] = "admin"
         at.session_state["active_nav_tab"] = "manage"
@@ -150,13 +186,11 @@ class TestWebappSmoke(unittest.TestCase):
         self.assertFalse(at.session_state["has_unsaved_changes"])
         self.assertIn("manage_notice", at.session_state)
 
-
-
     def test_save_changes_button_execution(self):
         """Verifies that clicking '💾 Jetzt sichern' in manage tab executes without exceptions."""
         from unittest.mock import patch
         from src.aggregator import load_sources
-        at = AppTest.from_file(APP_PATH, default_timeout=30)
+        at = self._create_app_test()
         at.session_state["authenticated"] = True
         at.session_state["auth_role"] = "admin"
         at.session_state["active_nav_tab"] = "manage"
@@ -167,12 +201,13 @@ class TestWebappSmoke(unittest.TestCase):
         self.assertFalse(at.exception)
         save_btns = [b for b in at.button if b.key == "top_save_sources_btn"]
         self.assertEqual(len(save_btns), 1)
-        with patch("src.ui.tabs.manage_tab.save_sources"),              patch("src.ui.background.run_in_background"):
+        with patch("src.ui.tabs.manage_tab.save_sources"), patch("src.ui.background.run_in_background"):
             save_btns[0].click().run()
         self.assertFalse(at.exception, f"Save button threw exceptions: {at.exception}")
         self.assertFalse(at.session_state["has_unsaved_changes"])
         self.assertNotIn("editing_feed_key", at.session_state)
         self.assertIn("manage_notice", at.session_state)
+
 
 if __name__ == "__main__":
     unittest.main()

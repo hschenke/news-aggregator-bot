@@ -13,9 +13,9 @@ if sys.stdout and hasattr(sys.stdout, "reconfigure"):
 if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", line_buffering=True)
 
-# Konfiguriere Streamlit Konsole Logging (Manage App) auf INFO
+# Konfiguriere Streamlit Konsole Logging auf ERROR (nur noch Fehler protokollieren)
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.ERROR,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     datefmt="%H:%M:%S",
     stream=sys.stdout,

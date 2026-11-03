@@ -21,7 +21,7 @@ def run_in_background(task_fn: Any, *args: Any, **kwargs: Any) -> threading.Thre
         try:
             task_fn(*args, **kwargs)
         except Exception as exc:
-            logger.warning("Background storage task failed: %s", exc)
+            logger.error("Background storage task failed: %s", exc, exc_info=True)
 
     thread = threading.Thread(target=_worker, daemon=True)
     thread.start()
@@ -33,8 +33,6 @@ def persist_read_and_archive_async(article: Article | dict[str, Any] | str) -> t
     def _task() -> None:
         storage = get_storage()
         storage.archive_article(article)
-        link = article if isinstance(article, str) else article.get("link", "")
-        logger.info("Archived read article in background: %s", link)
 
     return run_in_background(_task)
 
@@ -44,7 +42,6 @@ def persist_feedback_async(url: str, feedback: int, title: str = "") -> threadin
     def _task() -> None:
         storage = get_storage()
         storage.set_feedback(url, feedback, title)
-        logger.info("Persisted user feedback (%d) in background for %s", feedback, url)
 
     return run_in_background(_task)
 
@@ -54,7 +51,5 @@ def persist_bookmark_async(url: str, is_bookmarked: bool) -> threading.Thread:
     def _task() -> None:
         storage = get_storage()
         storage.set_bookmark(url, is_bookmarked)
-        logger.info("Persisted bookmark state (%s) in background for %s", is_bookmarked, url)
 
     return run_in_background(_task)
-

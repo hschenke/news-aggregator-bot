@@ -8,10 +8,16 @@ from __future__ import annotations
 
 import re
 import hashlib
+import functools
 import time
 from typing import Any
 
 import streamlit as st
+
+@functools.lru_cache(maxsize=4096)
+def _fast_url_hash(url: str) -> str:
+    """Berechnet einen stabilen 12-stelligen Hash für Widget-Keys mit Caching."""
+    return hashlib.md5(url.encode("utf-8")).hexdigest()[:12]
 
 from src.models import Article
 from src.aggregator import (
@@ -401,7 +407,7 @@ def render_articles_tab(
 
                                     cur_fb = st.session_state.get("feedback_map", {}).get(item_url, item.get("feedback", 0))
                                     default_fb = 1 if cur_fb == 1 else (0 if cur_fb == -1 else None)
-                                    item_url_hash = hashlib.md5(item_url.encode("utf-8")).hexdigest()[:12] if item_url else f"item_{feed_slug}_{idx}"
+                                    item_url_hash = _fast_url_hash(item_url) if item_url else f"item_{feed_slug}_{idx}"
                                     fb_key = f"fb_{item_url_hash}"
                                     read_key = f"read_{item_url_hash}"
                                     if fb_key in rendered_element_keys:

@@ -21,9 +21,9 @@ project_root = Path(__file__).resolve().parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-# Standardisiertes Streamlit-Logging (stdout, englische Log-Meldungen)
+# Standardisiertes Streamlit-Logging auf ERROR (Fehlerfall)
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.ERROR,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
     datefmt="%H:%M:%S",
     stream=sys.stdout,
@@ -203,9 +203,9 @@ def get_sources_config() -> dict[str, Any]:
         return {}
 
 
-# Gespeicherten Stand laden und Arbeitsentwurf im session_state verwalten
-saved_sources_config = get_sources_config()
+# Gespeicherten Stand nur laden, falls noch nicht im session_state vorhanden
 if "working_sources_config" not in st.session_state:
+    saved_sources_config = get_sources_config()
     st.session_state["working_sources_config"] = copy.deepcopy(saved_sources_config)
     st.session_state["last_loaded_saved_config"] = copy.deepcopy(saved_sources_config)
     st.session_state["has_unsaved_changes"] = False
@@ -397,12 +397,14 @@ embed_client_script(f"""
 def get_effective_last_update_ts(pool_data: dict[str, list[dict[str, Any]]]) -> float | None:
     """
     Ermittelt den verbindlichen, aktuellsten Zeitstempel des Datenbestands.
-    Berücksichtigt manuellen Refresh, Metadaten in der Datenbank, den morgendlichen
-    GitHub-Actions-Digest-Run (neuestes Briefing) sowie die neuesten Artikel-Timestamps.
+    Wird für maximale UI-Performance im session_state gecached und nur bei Bedarf aktualisiert.
     """
     manual_ts = st.session_state.get("last_refresh_timestamp")
     if manual_ts:
         return float(manual_ts)
+
+    if "_cached_effective_update_ts" in st.session_state:
+        return st.session_state["_cached_effective_update_ts"]
 
     best_ts: float | None = None
     try:
@@ -411,7 +413,6 @@ def get_effective_last_update_ts(pool_data: dict[str, list[dict[str, Any]]]) -> 
         if val:
             best_ts = float(val)
 
-        # Prüfen, ob das neueste KI-Briefing (z. B. morgendlicher GitHub Actions Run) neuer ist
         latest_briefing = storage.get_latest_briefing()
         if latest_briefing and latest_briefing.get("created_at"):
             b_iso = str(latest_briefing["created_at"])
@@ -419,20 +420,17 @@ def get_effective_last_update_ts(pool_data: dict[str, list[dict[str, Any]]]) -> 
             b_ts = b_dt.timestamp()
             if best_ts is None or b_ts > best_ts:
                 best_ts = b_ts
-                # Einmalig in Metadaten sichern für schnelle Folgezugriffe
-                try:
-                    storage.set_metadata("last_feed_refresh_time", str(b_ts))
-                except Exception:
-                    pass
     except Exception as exc:
         logger.debug("Fehler beim Ermitteln des Speicher-Timestamps: %s", exc)
 
-    # Vergleich mit dem neuesten Artikel-Timestamp im Pool
     pool = pool_data or st.session_state.get("cached_news_data", {})
     if pool:
         max_art_ts = max((art.get("timestamp", 0.0) for arts in pool.values() for art in arts), default=0.0)
         if max_art_ts > 0.0 and (best_ts is None or max_art_ts > best_ts):
             best_ts = max_art_ts
+
+    if best_ts is not None:
+        st.session_state["_cached_effective_update_ts"] = best_ts
 
     return best_ts
 
@@ -454,14 +452,16 @@ if is_admin:
         help="Liest alle RSS-Feeds ein und aktualisiert die Datenbank.",
         use_container_width=True,
     ):
-        logger.info("Live feed refresh requested. Clearing cache and fetching feeds...")
         st.cache_data.clear()
         st.session_state.pop("cached_news_data", None)
+        st.session_state.pop("cached_rss_registry", None)
+        st.session_state.pop("_cached_effective_update_ts", None)
         with st.spinner("Lese alle RSS-Feeds aus dem Internet ein..."):
             fresh_news = get_news_data(force_live_fetch=True)
             st.session_state["cached_news_data"] = fresh_news
             now_ts = time.time()
             st.session_state["last_refresh_timestamp"] = now_ts
+            st.session_state["_cached_effective_update_ts"] = now_ts
             try:
                 get_storage().set_metadata("last_feed_refresh_time", str(now_ts))
             except Exception:

@@ -19,7 +19,7 @@ from src.notifier import dispatch_digest
 from src.rss_generator import export_briefing_rss
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.ERROR,
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%H:%M:%S",
 )
@@ -27,7 +27,6 @@ logger = logging.getLogger(__name__)
 
 
 def run_pipeline() -> None:
-    logger.info("News Aggregator Bot: Pipeline gestartet.")
     print("=" * 60, flush=True)
     print("🤖 News Aggregator Bot: Pipeline gestartet...", flush=True)
     print("=" * 60, flush=True)

@@ -47,36 +47,34 @@ class TestPoliceTeasersAndPool(unittest.TestCase):
         mock_get.assert_not_called()
 
     def test_pool_state_tracking(self):
+        import tempfile
+        from pathlib import Path
         test_news = {
             "Berlin": [
                 {"title": "Meldung 1", "link": "https://example.com/1"},
                 {"title": "Meldung 2", "link": "https://example.com/2"}
             ]
         }
-        test_path = "output/test_pool_state_tmp.json"
-        
-        # Initialer Save
-        save_pool_state(test_news, state_path=test_path)
-        
-        # Bei unverändertem Pool gibt es 0 neue Artikel
-        new_count = get_new_articles_count(test_news, state_path=test_path)
-        self.assertEqual(new_count, 0)
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            test_path = str(Path(tmp_dir) / "pool_state_tmp.json")
+            
+            # Initialer Save
+            save_pool_state(test_news, state_path=test_path)
+            
+            # Bei unverändertem Pool gibt es 0 neue Artikel
+            new_count = get_new_articles_count(test_news, state_path=test_path)
+            self.assertEqual(new_count, 0)
 
-        # Ein neuer Artikel kommt hinzu
-        test_news_updated = {
-            "Berlin": [
-                {"title": "Meldung 1", "link": "https://example.com/1"},
-                {"title": "Meldung 2", "link": "https://example.com/2"},
-                {"title": "Meldung 3", "link": "https://example.com/3"}
-            ]
-        }
-        new_count_updated = get_new_articles_count(test_news_updated, state_path=test_path)
-        self.assertEqual(new_count_updated, 1)
-
-        # Aufräumen
-        import os
-        if os.path.exists(test_path):
-            os.remove(test_path)
+            # Ein neuer Artikel kommt hinzu
+            test_news_updated = {
+                "Berlin": [
+                    {"title": "Meldung 1", "link": "https://example.com/1"},
+                    {"title": "Meldung 2", "link": "https://example.com/2"},
+                    {"title": "Meldung 3", "link": "https://example.com/3"}
+                ]
+            }
+            new_count_updated = get_new_articles_count(test_news_updated, state_path=test_path)
+            self.assertEqual(new_count_updated, 1)
 
 
 if __name__ == "__main__":

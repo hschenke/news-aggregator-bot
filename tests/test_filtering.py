@@ -220,7 +220,7 @@ class TestFilteringAndScraping(unittest.TestCase):
 
     def test_sources_yaml_settings_contain_archive_retention_days(self):
         from src.aggregator import load_sources
-        config = load_sources("config/sources.yaml")
+        config = load_sources()
         settings = config.get("settings", {})
         self.assertIn("archive_retention_days", settings)
         self.assertIsInstance(settings["archive_retention_days"], int)

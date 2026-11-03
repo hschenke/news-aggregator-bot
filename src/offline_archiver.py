@@ -772,7 +772,7 @@ def run_offline_archive_for_feeds(
             current_article="",
             last_run_at=now_iso,
         )
-        logger.info(
+        logger.debug(
             "Offline-Archivierung abgeschlossen: %d neue Artikel gespeichert, %d veraltete (>3M) entfernt.",
             saved_total,
             cleaned_count,
@@ -783,7 +783,7 @@ def run_offline_archive_for_feeds(
             "feeds_processed": len(offline_feeds),
         }
     except Exception as exc:
-        logger.warning("Fehler im Offline-Archivierungs-Task: %s", exc)
+        logger.error("Fehler im Offline-Archivierungs-Task: %s", exc, exc_info=True)
         _update_task_status(
             is_running=False,
             current_feed="",
@@ -803,7 +803,7 @@ def start_offline_archive_task(
     """
     with _TASK_LOCK:
         if _TASK_STATUS.get("is_running"):
-            logger.info("Offline-Archivierungs-Task läuft bereits im Hintergrund.")
+            logger.debug("Offline-Archivierungs-Task läuft bereits im Hintergrund.")
             return None
         _TASK_STATUS["is_running"] = True
 

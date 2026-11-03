@@ -442,12 +442,12 @@ def send_email_via_resend(html_content: str, subject: str | None = None) -> bool
     email_from = os.getenv("EMAIL_FROM", "News Bot <onboarding@resend.dev>")
     
     if not api_key or api_key.startswith("re_your_"):
-        logger.info("Kein gültiger RESEND_API_KEY vorhanden. E-Mail Versand übersprungen.")
+        logger.debug("Kein gültiger RESEND_API_KEY vorhanden. E-Mail Versand übersprungen.")
         print("[Hinweis] Kein gültiger RESEND_API_KEY vorhanden. E-Mail Versand übersprungen.")
         return False
 
     if not email_to or "@example.com" in email_to:
-        logger.info("Kein gültiger EMAIL_TO Empfänger eingetragen.")
+        logger.debug("Kein gültiger EMAIL_TO Empfänger eingetragen.")
         print("[Hinweis] Kein gültiger EMAIL_TO Empfänger eingetragen.")
         return False
 
@@ -471,7 +471,7 @@ def send_email_via_resend(html_content: str, subject: str | None = None) -> bool
         )
 
         if response.status_code in [200, 201]:
-            logger.info("E-Mail erfolgreich via Resend versendet an %s", email_to)
+            logger.debug("E-Mail erfolgreich via Resend versendet an %s", email_to)
             print(f"🚀 E-Mail erfolgreich via Resend versendet an {email_to}!")
             return True
         else:
@@ -493,7 +493,7 @@ def send_email_via_smtp(html_content: str, subject: str | None = None) -> bool:
     email_to = os.getenv("EMAIL_TO")
 
     if not all([smtp_host, smtp_user, smtp_pass, email_to]) or "@example.com" in email_to:
-        logger.info("Unvollständige SMTP-Zugangsdaten in .env.")
+        logger.debug("Unvollständige SMTP-Zugangsdaten in .env.")
         print("[Hinweis] Unvollständige SMTP-Zugangsdaten in .env.")
         return False
 
@@ -511,7 +511,7 @@ def send_email_via_smtp(html_content: str, subject: str | None = None) -> bool:
             server.starttls()
             server.login(smtp_user, smtp_pass)
             server.sendmail(smtp_user, email_to, msg.as_string())
-        logger.info("E-Mail erfolgreich via SMTP versendet an %s", email_to)
+        logger.debug("E-Mail erfolgreich via SMTP versendet an %s", email_to)
         print(f"🚀 E-Mail erfolgreich via SMTP versendet an {email_to}!")
         return True
     except (smtplib.SMTPException, OSError) as exc:
@@ -534,5 +534,5 @@ def dispatch_digest(markdown_summary: str) -> None:
     elif provider == "smtp":
         send_email_via_smtp(html)
     else:
-        logger.info("Unbekannter EMAIL_PROVIDER '%s'. Nur lokale Vorschau gespeichert.", provider)
+        logger.debug("Unbekannter EMAIL_PROVIDER '%s'. Nur lokale Vorschau gespeichert.", provider)
         print(f"[Info] Unbekannter EMAIL_PROVIDER '{provider}'. Nur lokale Vorschau gespeichert.")

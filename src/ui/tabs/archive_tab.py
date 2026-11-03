@@ -8,11 +8,17 @@ and collapsible management & settings-backups blocks at the bottom of the page.
 from __future__ import annotations
 
 import hashlib
+import functools
 import html
 import logging
 import re
 import time
 from typing import Any
+
+@functools.lru_cache(maxsize=4096)
+def _fast_hash(val: str, length: int = 8) -> str:
+    """Berechnet einen gecachten MD5-Hex-Präfix für stabile UI-Keys."""
+    return hashlib.md5(val.encode("utf-8")).hexdigest()[:length]
 
 import streamlit as st
 import yaml
@@ -249,7 +255,7 @@ def _render_archive_management_block(
                 f_name = feed.get("name", "Unbenannt")
                 f_url = feed.get("url", "")
                 f_off = bool(feed.get("offline_download", False))
-                f_hash = hashlib.md5(f_url.encode("utf-8")).hexdigest()[:8]
+                f_hash = _fast_hash(f_url, 8)
 
                 c_qf1, c_qf2 = st.columns([2.8, 1.2], vertical_alignment="center")
                 with c_qf1:
@@ -467,7 +473,7 @@ def render_archive_tab(
                 feed_articles = feeds_in_cat[feed_name]
                 feed_articles.sort(key=lambda a: a.timestamp if a.timestamp > 0 else 0.0, reverse=True)
 
-                feed_hash = hashlib.md5(f"{category}_{feed_name}".encode("utf-8")).hexdigest()[:8]
+                feed_hash = _fast_hash(f"{category}_{feed_name}", 8)
                 feed_slug = _slugify_filename(feed_name, fallback="feed")
                 feed_open = is_filtering or (feed_name in persisted_feeds) or len(feeds_in_cat) == 1
 
@@ -505,7 +511,7 @@ def render_archive_tab(
                             if idx >= len(visible_articles):
                                 break
                             art = visible_articles[idx]
-                            art_hash = hashlib.md5(art.url.encode("utf-8")).hexdigest()[:10]
+                            art_hash = _fast_hash(art.url, 10)
                             art_slug = _slugify_filename(art.title, fallback=f"artikel_{idx}")
                             pub_str = format_local_dt(art.timestamp) if art.timestamp else art.published
                             img_cnt = len(art.images)
