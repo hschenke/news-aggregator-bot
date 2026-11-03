@@ -1083,7 +1083,7 @@ def apply_custom_styles() -> None:
         function handleClick(e) {
             var btn = e.target && e.target.closest ? e.target.closest("button") : null;
             if (!btn) return;
-            if (btn.disabled || btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn")) return;
+            if (btn.disabled || btn.classList.contains("disabled-nav-btn") || btn.classList.contains("arch-html-btn") || btn.classList.contains("arch-open-tab-btn") || btn.classList.contains("arch-art-dl-btn")) return;
             var khCheck = btn.closest("[class*='st-key-']");
             var kcCheck = khCheck ? khCheck.className : "";
             if (kcCheck.indexOf("top_save_sources_btn") === -1 && kcCheck.indexOf("btn_generate_briefing") === -1 && kcCheck.indexOf("sb_btn_refresh_feeds") === -1 && kcCheck.indexOf("btn_refresh_rss") === -1 && kcCheck.indexOf("btn_push_rss_cdn") === -1 && kcCheck.indexOf("btn_archive_sync_refresh") === -1 && kcCheck.indexOf("btn_archive_cleanup_90d") === -1 && kcCheck.indexOf("arch_toggle_off_") === -1 && kcCheck.indexOf("btn_restore_sb_") === -1 && kcCheck.indexOf("btn_confirm_del_sb_") === -1) return;

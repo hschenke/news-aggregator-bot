@@ -56,18 +56,21 @@ def _slugify_filename(value: str, fallback: str = "offline-archiv") -> str:
     return (cleaned[:60] or fallback).lower()
 
 
-def _render_feed_open_browser_button(
+def _render_feed_download_button(
     feed_name: str,
     articles: list[OfflineArticle],
+    file_name: str,
     feed_hash: str,
 ) -> None:
     """
-    Rendert einen clientseitigen Button, der das vollständige Feed-Archiv-HTML
-    sofort über eine Blob-URL in einem neuen Browser-Tab öffnet (ohne Rerun oder Popup-Sperre).
+    Rendert einen clientseitigen Download-Button für das gesamte Feed-Archiv.
+    Lädt das vollständige HTML-Dokument über eine Blob-URL im Browser herunter,
+    ohne einen Streamlit-Rerun oder ein Neuladen der Seite auszulösen (verhindert den Loop-Bug).
     """
     feed_html_doc = generate_offline_feed_html(feed_name, articles)
     b64_html = base64.b64encode(feed_html_doc.encode("utf-8")).decode("ascii")
-    btn_id = f"open_feed_tab_{feed_hash}"
+    safe_file = html.escape(file_name)
+    btn_id = f"dl_feed_btn_{feed_hash}"
 
     st.html(
         f"""
@@ -91,6 +94,7 @@ def _render_feed_open_browser_button(
                 transition: all 0.15s ease-in-out;
                 box-sizing: border-box;
                 font-family: inherit;
+                user-select: none;
             }}
             .arch-open-tab-btn:hover {{
                 border-color: #2563eb;
@@ -98,6 +102,55 @@ def _render_feed_open_browser_button(
                 background-color: rgba(37, 99, 235, 0.08);
             }}
         </style>
+        <button id="{btn_id}" type="button" class="arch-open-tab-btn" title="Gesamtes Feed-Abbild als eigenständige HTML-Datei herunterladen">
+            ⬇️ Feed-Archiv herunterladen ({len(articles)} Artikel)
+        </button>
+        <script>
+        (function() {{
+            var btn = document.getElementById("{btn_id}");
+            if (btn) {{
+                btn.onclick = function(e) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var binStr = atob("{b64_html}");
+                    var len = binStr.length;
+                    var bytes = new Uint8Array(len);
+                    for (var i = 0; i < len; i++) {{
+                        bytes[i] = binStr.charCodeAt(i);
+                    }}
+                    var blob = new Blob([bytes], {{ type: "text/html;charset=utf-8" }});
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.href = url;
+                    a.download = "{safe_file}";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    setTimeout(function() {{ URL.revokeObjectURL(url); }}, 60000);
+                }};
+            }}
+        }})();
+        </script>
+        """,
+        unsafe_allow_javascript=True,
+    )
+
+
+def _render_feed_open_browser_button(
+    feed_name: str,
+    articles: list[OfflineArticle],
+    feed_hash: str,
+) -> None:
+    """
+    Rendert einen clientseitigen Button, der das vollständige Feed-Archiv-HTML
+    sofort über eine Blob-URL in einem neuen Browser-Tab öffnet (ohne Rerun oder Popup-Sperre).
+    """
+    feed_html_doc = generate_offline_feed_html(feed_name, articles)
+    b64_html = base64.b64encode(feed_html_doc.encode("utf-8")).decode("ascii")
+    btn_id = f"open_feed_tab_{feed_hash}"
+
+    st.html(
+        f"""
         <button id="{btn_id}" type="button" class="arch-open-tab-btn" title="Gesamtes Feed-Abbild direkt in einem neuen Browser-Tab anzeigen">
             ↗️ Im neuen Tab anzeigen
         </button>
@@ -117,6 +170,86 @@ def _render_feed_open_browser_button(
                     var blob = new Blob([bytes], {{ type: "text/html;charset=utf-8" }});
                     var url = URL.createObjectURL(blob);
                     window.open(url, "_blank", "noopener");
+                }};
+            }}
+        }})();
+        </script>
+        """,
+        unsafe_allow_javascript=True,
+    )
+
+
+def _render_article_download_button(
+    art: OfflineArticle,
+    file_name: str,
+    btn_id_suffix: str,
+) -> None:
+    """
+    Rendert einen clientseitigen Download-Button für einen einzelnen Offline-Artikel.
+    Lädt das vollständige HTML-Dokument über eine Blob-URL im Browser herunter,
+    ohne einen Streamlit-Rerun oder ein Neuladen der Seite auszulösen (verhindert den Loop-Bug).
+    """
+    art_html_doc = generate_offline_article_html(art)
+    b64_html = base64.b64encode(art_html_doc.encode("utf-8")).decode("ascii")
+    safe_file = html.escape(file_name)
+    btn_id = f"dl_art_btn_{btn_id_suffix}"
+
+    st.html(
+        f"""
+        <style>
+            .arch-art-dl-btn {{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.35rem;
+                width: 100%;
+                min-height: 2.375rem;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+                line-height: 1.6;
+                border-radius: 0.5rem;
+                border: 1px solid rgba(49, 51, 63, 0.2);
+                background-color: transparent;
+                color: inherit;
+                cursor: pointer;
+                text-decoration: none;
+                transition: all 0.15s ease-in-out;
+                box-sizing: border-box;
+                font-family: inherit;
+                user-select: none;
+            }}
+            .arch-art-dl-btn:hover {{
+                border-color: #2563eb;
+                color: #2563eb;
+                background-color: rgba(37, 99, 235, 0.08);
+            }}
+        </style>
+        <button id="{btn_id}" type="button" class="arch-art-dl-btn" title="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen">
+            ⬇️ Download
+        </button>
+        <script>
+        (function() {{
+            var btn = document.getElementById("{btn_id}");
+            if (btn) {{
+                btn.onclick = function(e) {{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    var binStr = atob("{b64_html}");
+                    var len = binStr.length;
+                    var bytes = new Uint8Array(len);
+                    for (var i = 0; i < len; i++) {{
+                        bytes[i] = binStr.charCodeAt(i);
+                    }}
+                    var blob = new Blob([bytes], {{ type: "text/html;charset=utf-8" }});
+                    var url = URL.createObjectURL(blob);
+                    var a = document.createElement("a");
+                    a.href = url;
+                    a.download = "{safe_file}";
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    setTimeout(function() {{ URL.revokeObjectURL(url); }}, 60000);
                 }};
             }}
         }})();
@@ -552,14 +685,11 @@ def render_archive_tab(
                 with st.expander(f"📡 **{feed_name}** ({len(feed_articles)} Artikel)", expanded=feed_open):
                     col_fh1, col_fh2, col_fh3 = st.columns([2.3, 2.1, 0.9], vertical_alignment="center")
                     with col_fh1:
-                        st.download_button(
-                            f"⬇️ Feed-Archiv herunterladen ({len(feed_articles)} Artikel)",
-                            data=lambda f_n=feed_name, f_a=feed_articles: generate_offline_feed_html(f_n, f_a),
+                        _render_feed_download_button(
+                            feed_name=feed_name,
+                            articles=feed_articles,
                             file_name=f"offline_feed_{feed_slug}.html",
-                            mime="text/html",
-                            key=f"dl_feed_{feed_hash}",
-                            help="Gesamtes Feed-Abbild als eigenständige HTML-Datei herunterladen",
-                            use_container_width=True,
+                            feed_hash=feed_hash,
                         )
                     with col_fh2:
                         _render_feed_open_browser_button(
@@ -638,13 +768,10 @@ def render_archive_tab(
 
                                     col_act_dl, col_act_del = st.columns([4.2, 0.8], vertical_alignment="center")
                                     with col_act_dl:
-                                        st.download_button(
-                                            "⬇️ Download",
-                                            data=lambda a=art: generate_offline_article_html(a),
+                                        _render_article_download_button(
+                                            art=art,
                                             file_name=f"artikel_{art_slug}.html",
-                                            mime="text/html",
-                                            key=f"dl_art_{art_hash}_{idx}",
-                                            help="Diesen Offline-Artikel als eigenständige HTML-Datei herunterladen",
+                                            btn_id_suffix=f"{art_hash}_{idx}",
                                         )
                                     with col_act_del:
                                         st.button(

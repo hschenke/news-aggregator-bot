@@ -25,13 +25,16 @@ from PIL import Image
 
 from src.models import OfflineArticle
 from src.offline_archiver import (
+    CleanArticleExtractor,
     _extract_article_paragraphs_from_html,
-    fetch_article_snapshot,
+    enrich_bot_protected_content,
     extract_json_ld_article_text,
+    fetch_article_snapshot,
     generate_offline_article_html,
     generate_offline_article_text,
     generate_offline_feed_html,
     get_offline_task_status,
+    is_bot_challenge_response,
     is_safe_external_url,
     repair_police_offline_article,
     run_offline_archive_for_feeds,
@@ -511,6 +514,78 @@ class TestOfflineArchiverFeature(unittest.TestCase):
         paragraphs = _extract_article_paragraphs_from_html(html_sample)
         self.assertGreaterEqual(len(paragraphs), 1)
         self.assertIn("Absatz eins aus JSON-LD mit reichlich Text.", paragraphs[0])
+
+    def test_bot_challenge_detection_and_enrichment(self) -> None:
+        """Verifies bot challenge detection and structured enrichment for protected real estate and sport portals."""
+        # WAF status and challenge markers
+        self.assertTrue(is_bot_challenge_response(401, ""))
+        self.assertTrue(is_bot_challenge_response(403, ""))
+        self.assertTrue(is_bot_challenge_response(200, "<html><title>Ich bin kein Roboter</title></html>"))
+        self.assertTrue(is_bot_challenge_response(200, "<p id='cmsg'>Please enable JS and disable any ad blocker</p>"))
+        self.assertTrue(is_bot_challenge_response(200, "", {"x-datadome": "protected"}))
+        self.assertFalse(is_bot_challenge_response(200, "<html><body><article><p>Normaler Artikeltext</p></article></body></html>"))
+
+        # Real Estate enrichment (ImmoScout24)
+        immo_url = "https://www.immobilienscout24.de/expose/172270323"
+        immo_title = "3-Zimmer Etagenwohnung 1.032 € zur Miete Mahlsdorf, Berlin - ImmoScout24"
+        immo_snippet = "Etagenwohnung (Wohnung/Miete): 3 Zimmer - 86 qm - Hönower Straße 184, 12623 Berlin, Mahlsdorf (Hellersdorf) bei ImmobilienScout24 (Scout-ID: 172270323)"
+        immo_blocks = enrich_bot_protected_content(immo_url, immo_title, immo_snippet)
+        immo_text = "\n\n".join(immo_blocks)
+
+        self.assertIn("Immobiliendetails", immo_text)
+        self.assertIn("3 Zimmer", immo_text)
+        self.assertIn("86 m²", immo_text)
+        self.assertIn("1.032 €", immo_text)
+        self.assertIn("172270323", immo_text)
+        self.assertIn("immobilienscout24.de", immo_text)
+
+        # Sports enrichment (Kicker)
+        kicker_url = "https://www.kicker.de/ama-500984047/spielinfo"
+        kicker_title = "1. Eintracht Spandau : | 18. Spieltag | U15 (w) Bezirksklasse Berlin Staffel 2 2026/27 - Kicker"
+        kicker_snippet = "BSV Eintracht Mahlsdorf - 1. Eintracht Spandau: Infos, Statistik und Bilanz zum Spiel vom 18. Spieltag der U15 (w) Bezirksklasse Berlin Staffel 2 ..."
+        kicker_blocks = enrich_bot_protected_content(kicker_url, kicker_title, kicker_snippet)
+        kicker_text = "\n\n".join(kicker_blocks)
+
+        self.assertIn("Spielinfo & Spieldaten", kicker_text)
+        self.assertIn("18. Spieltag", kicker_text)
+        self.assertIn("Bezirksklasse", kicker_text)
+        self.assertIn("500984047", kicker_text)
+        self.assertIn("kicker.de", kicker_text)
+
+    def test_clean_article_extractor_nested_elements_and_specs(self) -> None:
+        """CleanArticleExtractor must capture nested tags, bullet lists and short specs without cutting off."""
+        nested_html = """
+        <div class="main-content">
+          <p>Erster einleitender Paragraph mit wichtigem Hintergrund.</p>
+          <div class="specs-wrapper">
+            <div class="row">
+              <p>Wohnfläche: 92 m²</p>
+              <p>Zimmer: 3.5</p>
+            </div>
+            <ul>
+              <li>Balkon</li>
+              <li>Einbauküche</li>
+              <li>Gartenanteil</li>
+            </ul>
+          </div>
+          <table>
+            <tr><th>Team</th><th>Tore</th></tr>
+            <tr><td>Mahlsdorf</td><td>3</td></tr>
+            <tr><td>Spandau</td><td>1</td></tr>
+          </table>
+          <p>Schlussabsatz mit abschließenden Informationen.</p>
+        </div>
+        """
+        paragraphs = _extract_article_paragraphs_from_html(nested_html)
+        full_text = "\n\n".join(paragraphs)
+
+        self.assertIn("Erster einleitender Paragraph", full_text)
+        self.assertIn("Wohnfläche: 92 m²", full_text)
+        self.assertIn("• Balkon", full_text)
+        self.assertIn("• Einbauküche", full_text)
+        self.assertIn("Schlussabsatz mit abschließenden Informationen.", full_text)
+        self.assertGreater(len(paragraphs), 5)
+
 
 if __name__ == "__main__":
     unittest.main()

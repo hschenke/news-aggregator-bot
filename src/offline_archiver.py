@@ -9,6 +9,7 @@ import base64
 import concurrent.futures
 import copy
 import html
+from html.parser import HTMLParser
 import io
 import ipaddress
 import json
@@ -213,11 +214,250 @@ def extract_json_ld_article_text(raw_html: str) -> str:
     return ""
 
 
+class CleanArticleExtractor(HTMLParser):
+    """
+    Robuster HTML-Baum-Parser zur Extraktion des redaktionellen Volltexts.
+    Navigiert beliebige geschachtelte Tags sauber, ohne durch vorzeitiges Schließen
+    von </div>-Elementen abgeschnitten zu werden.
+    Erfasst Zwischenüberschriften (h2-h6), Fließtext (p, blockquote), Listen (li),
+    Definitionslisten (dt, dd) und Tabellenzeilen (tr, th, td).
+    """
+    def __init__(self) -> None:
+        super().__init__()
+        self.ignore_tags: set[str] = {
+            "h1", "script", "style", "noscript", "svg", "iframe",
+            "nav", "footer", "header", "aside", "form", "dialog", "button", "select"
+        }
+        self.block_tags: set[str] = {
+            "p", "h2", "h3", "h4", "h5", "h6",
+            "li", "dt", "dd", "blockquote", "tr"
+        }
+        self.current_ignore_depth: int = 0
+        self.current_block: list[str] = []
+        self.paragraphs: list[str] = []
+        self.current_tag: str = ""
+        self.seen_texts: set[str] = set()
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        tag_low = tag.lower()
+        if tag_low in self.ignore_tags:
+            self.current_ignore_depth += 1
+            return
+        if self.current_ignore_depth > 0:
+            return
+
+        if tag_low in self.block_tags:
+            self._flush_block()
+            self.current_tag = tag_low
+
+    def handle_endtag(self, tag: str) -> None:
+        tag_low = tag.lower()
+        if tag_low in self.ignore_tags:
+            if self.current_ignore_depth > 0:
+                self.current_ignore_depth -= 1
+            return
+        if self.current_ignore_depth > 0:
+            return
+
+        if tag_low in self.block_tags:
+            self._flush_block()
+            self.current_tag = ""
+
+    def handle_data(self, data: str) -> None:
+        if self.current_ignore_depth > 0:
+            return
+        cleaned = data.strip()
+        if cleaned:
+            self.current_block.append(cleaned)
+
+    def _flush_block(self) -> None:
+        if not self.current_block:
+            return
+        text = " ".join(self.current_block).strip()
+        self.current_block = []
+        if len(text) < 3:
+            return
+        norm = text.lower()
+        if norm in _BOILERPLATE_SHORT_TEXTS or norm in self.seen_texts:
+            return
+        self.seen_texts.add(norm)
+
+        # Spezialfall Nr. XXXX in Berliner Polizeimeldungen
+        m_nr = re.match(r"^(Nr\.\s*\d+)\s*(.*)$", text, flags=re.IGNORECASE)
+        if m_nr:
+            nr_part = m_nr.group(1).strip()
+            rest = m_nr.group(2).strip()
+            self.paragraphs.append(f"**{nr_part}**")
+            if rest:
+                self.paragraphs.append(rest)
+            return
+
+        # Formatierung nach HTML-Semantik
+        if self.current_tag in ("h2", "h3"):
+            self.paragraphs.append(f"### {text}")
+        elif self.current_tag in ("h4", "h5", "h6"):
+            self.paragraphs.append(f"**{text}**")
+        elif self.current_tag == "li":
+            self.paragraphs.append(f"• {text}")
+        elif self.current_tag == "dt":
+            self.paragraphs.append(f"**{text}**")
+        else:
+            self.paragraphs.append(text)
+
+
+def is_bot_challenge_response(
+    status_code: int,
+    raw_html: str,
+    headers: dict[str, str] | None = None,
+) -> bool:
+    """
+    Erkennt zuverlässig, ob eine Webseiten-Antwort eine WAF-Blockade,
+    ein Captcha oder eine Bot-Schutzseite (DataDome, Cloudflare, AWS WAF etc.) ist.
+    """
+    if status_code in (401, 403, 429, 503):
+        return True
+    if headers:
+        low_headers = {str(k).lower(): str(v).lower() for k, v in headers.items()}
+        if "x-datadome" in low_headers and "protected" in low_headers["x-datadome"]:
+            return True
+        if "cf-mitigated" in low_headers:
+            return True
+    if not raw_html:
+        return False
+    low_body = raw_html[:4000].lower()
+    challenge_indicators = (
+        "ich bin kein roboter",
+        "please enable js and disable any ad blocker",
+        "challenges.cloudflare.com",
+        "captcha-delivery.com",
+        "edge.sdk.awswaf.com",
+        "just a moment...",
+        "<title>kicker.de</title>",
+        "wir überprüfen schnell, dass du kein roboter",
+        "security service to protect itself from online attacks",
+        "attention required! | cloudflare",
+        "waf protection",
+        "bot detection",
+    )
+    return any(marker in low_body for marker in challenge_indicators)
+
+
+def enrich_bot_protected_content(
+    url: str,
+    title: str,
+    summary: str,
+) -> list[str]:
+    """
+    Erstellt ein reichhaltiges, strukturiertes Faktenblatt für Webseiten,
+    die durch Anti-Bot-/WAF-Systeme (z. B. DataDome, Cloudflare, AWS WAF) blockiert werden,
+    basierend auf Titel, URL-Pfadsegmenten und Feed-Zusammenfassung.
+    """
+    clean_url = url.strip()
+    clean_title = html.unescape((title or "Artikel").strip())
+    clean_sum = clean_html_text(summary).strip().rstrip(". ")
+
+    parsed = urllib.parse.urlparse(clean_url)
+    domain = (parsed.hostname or "").lower()
+    if domain.startswith("www."):
+        domain = domain[4:]
+
+    paragraphs: list[str] = []
+
+    # 1. ImmobilienScout24 & Immowelt
+    if "immobilienscout24" in domain or "immowelt" in domain:
+        paragraphs.append(f"### 🏠 Immobiliendetails: {clean_title}")
+        full_haystack = f"{clean_title} | {clean_sum}"
+
+        m_zim = re.search(r"(\d+(?:[.,]\d+)?)\s*[- ]*(?:Zimmer|Zi\.?)", full_haystack, flags=re.IGNORECASE)
+        m_flaeche = re.search(r"(\d+(?:[.,]\d+)?)\s*(?:qm|m²|m2)", full_haystack, flags=re.IGNORECASE)
+        m_preis = re.search(r"(\d[\d.,]*\s*€|\d[\d.,]*\s*EUR)", full_haystack, flags=re.IGNORECASE)
+        m_id = re.search(r"(?:expose|id)[:/ ]*(\d+)", clean_url + " " + full_haystack, flags=re.IGNORECASE)
+        m_adr = re.search(
+            r"(?:[-–—:]\s*)([A-ZÄÖÜa-zäöüß0-9\s.,-]+(?:straße|str\.|weg|platz|allee|damm|zeile|pfad)[^,]*,\s*\d{5}\s+[^,(]+)",
+            full_haystack,
+            flags=re.IGNORECASE,
+        )
+
+        facts: list[str] = []
+        if m_zim:
+            facts.append(f"• **Zimmeranzahl:** {m_zim.group(1)} Zimmer")
+        if m_flaeche:
+            facts.append(f"• **Wohnfläche:** {m_flaeche.group(1)} m²")
+        if m_preis:
+            facts.append(f"• **Preis / Miete:** {m_preis.group(1)}")
+        if m_adr:
+            facts.append(f"• **Adresse / Lage:** {m_adr.group(1).strip()}")
+        elif "mahlsdorf" in full_haystack.lower():
+            facts.append("• **Lage:** Berlin-Mahlsdorf")
+        if m_id:
+            facts.append(f"• **Scout-ID / Expose-Nr.:** `{m_id.group(1)}`")
+        facts.append(f"• **Portal:** {domain}")
+
+        if facts:
+            paragraphs.append("Überblick der Objektdaten:")
+            paragraphs.extend(facts)
+
+        if clean_sum and clean_sum != clean_title:
+            paragraphs.append(f"**Beschreibung & Teaser:**\n{clean_sum}")
+
+    # 2. Kicker & Sport
+    elif "kicker.de" in domain or "fussball.de" in domain or "dfb.de" in domain:
+        paragraphs.append(f"### ⚽ Spielinfo & Spieldaten: {clean_title}")
+        full_haystack = f"{clean_title} | {clean_sum}"
+
+        m_spt = re.search(r"(\d+\.\s*Spieltag)", full_haystack, flags=re.IGNORECASE)
+        m_liga = re.search(
+            r"\|\s*([^|]+?(?:liga|klasse|staffel|pokal|bezirksklasse|verbandsliga)[^|]*?)(?:\s*20\d\d/\d\d)?\s*[-|]",
+            full_haystack,
+            flags=re.IGNORECASE,
+        )
+        m_saison = re.search(r"(20\d\d/\d\d)", full_haystack)
+        m_match = re.search(
+            r"([A-Za-z0-9ÄÖÜäöüß. ]+)\s*[-:]\s*([A-Za-z0-9ÄÖÜäöüß. ]+)(?:[:|]|\s+Infos)",
+            clean_sum or clean_title,
+        )
+        m_mid = re.search(r"ama-(\d+)", clean_url)
+
+        facts: list[str] = []
+        if m_match and len(m_match.group(1).strip()) > 3 and len(m_match.group(2).strip()) > 3:
+            facts.append(f"• **Begegnung:** {m_match.group(1).strip()} vs. {m_match.group(2).strip()}")
+        if m_spt:
+            facts.append(f"• **Runde / Spieltag:** {m_spt.group(1)}")
+        if m_liga:
+            facts.append(f"• **Wettbewerb:** {m_liga.group(1).strip()}")
+        if m_saison:
+            facts.append(f"• **Saison:** {m_saison.group(1)}")
+        if m_mid:
+            facts.append(f"• **Kicker Match-ID:** `{m_mid.group(1)}`")
+        facts.append(f"• **Quelle:** {domain}")
+
+        if facts:
+            paragraphs.append("Match-Details:")
+            paragraphs.extend(facts)
+
+        if clean_sum:
+            paragraphs.append(f"**Zusammenfassung:**\n{clean_sum}")
+
+    # 3. Allgemeiner Fallback
+    else:
+        paragraphs.append(f"### 📄 {clean_title}")
+        if clean_sum and clean_sum != clean_title:
+            paragraphs.append(clean_sum)
+        if domain:
+            paragraphs.append(f"• **Quelle / Domain:** {domain}")
+        paragraphs.append(f"• **Original-Link:** {clean_url}")
+
+    paragraphs.append(
+        "ℹ️ *Hinweis: Die Quellseite verwendet serverseitigen Bot-/WAF-Schutz. Die relevanten Kenndaten wurden strukturiert aus den Metadaten archiviert.*"
+    )
+    return paragraphs
+
+
 def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
     """
     Extrahiert lesbare Textabsätze, Orts-/Bezirkszeilen (z. B. bei Berliner Polizeimeldungen)
     und Zwischenüberschriften aus einer HTML-Seite mit robuster Multi-Scope-Suche
-    (JSON-LD, <main>, <article>, Inhaltscontainer) ohne störende Navigation oder Footer.
+    (JSON-LD, <main>, <article>, bereinigter Gesamt-DOM) ohne störende Navigation oder Footer.
     """
     if not raw_html:
         return []
@@ -231,19 +471,19 @@ def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
     if m_dist:
         explicit_district = clean_html_text(m_dist.group(1)).strip()
 
-    # Entferne nicht-redaktionelle Blöcke & Modale
+    # Entferne nicht-redaktionelle Blöcke & Modale vorab
     cleaned = re.sub(
-        r"<(script|style|noscript|svg|iframe|nav|footer|header|aside|form|dialog|button)[^>]*>.*?</\1>",
+        r"<(script|style|noscript|svg|iframe|nav|footer|header|aside|form|dialog|button|select)[^>]*>.*?</\1>",
         " ",
         raw_html,
         flags=re.IGNORECASE | re.DOTALL,
     )
     cleaned = re.sub(r"<!--.*?-->", " ", cleaned, flags=re.DOTALL)
 
-    # 2. Multi-Scope Kandidatensammlung für maximale Extraktionstiefe
+    # 2. Multi-Scope Kandidatensammlung via sauberem HTML-Tree Parser
     candidate_scopes: list[str] = []
 
-    # Scope A: <main> Tag
+    # Scope A: <main> Tag falls vorhanden
     for m_main in re.finditer(r"<main[^>]*>(.*?)</main>", cleaned, flags=re.IGNORECASE | re.DOTALL):
         candidate_scopes.append(m_main.group(1))
 
@@ -252,103 +492,32 @@ def _extract_article_paragraphs_from_html(raw_html: str) -> list[str]:
     if art_matches:
         candidate_scopes.append("\n".join(art_matches))
 
-    # Scope C: Klassische Inhalts-Container (CMS / Portale / Immobilien / Sport)
-    for c_pattern in [
-        r'<div[^>]+class=[\'"][^\'"]*(?:article-body|story-body|entry-content|post-content|article__body|news-text|content-area|article-content|expose-detail|property-description)[^\'"]*[\'"][^>]*>(.*?)</div>',
-        r'<(?:div|section)[^>]+role=[\'"](?:main|article)[\'"][^>]*>(.*?)</(?:div|section)>',
-    ]:
-        for m_cont in re.finditer(c_pattern, cleaned, flags=re.IGNORECASE | re.DOTALL):
-            candidate_scopes.append(m_cont.group(1))
-
-    # Scope D: Gesamtes bereinigtes Dokument als Fallback
+    # Scope C: Bereinigter Gesamt-DOM als Fallback
     candidate_scopes.append(cleaned)
 
     best_paragraphs: list[str] = []
     best_char_count: int = 0
 
     for scope_html in candidate_scopes:
-        blocks = re.findall(
-            r"<(h[23]|p|blockquote|li|dd|dt)(\s+[^>]*)?>(.*?)</\1>",
-            scope_html,
-            flags=re.IGNORECASE | re.DOTALL,
-        )
-        paragraphs: list[str] = []
-        seen_texts: set[str] = set()
-        total_chars = 0
+        extractor = CleanArticleExtractor()
+        try:
+            extractor.feed(scope_html)
+            extractor._flush_block()
+            p_list = extractor.paragraphs
+        except Exception:
+            continue
 
-        def _append_unique(val: str) -> None:
-            nonlocal total_chars
-            val_clean = val.strip()
-            if not val_clean:
-                return
-            norm = val_clean.lower()
-            if norm in seen_texts:
-                return
-            seen_texts.add(norm)
-            paragraphs.append(val_clean)
-            total_chars += len(val_clean)
-
-        for tag, attrs_raw, inner in blocks:
-            attrs = (attrs_raw or "").lower()
-            tag_low = tag.lower()
-
-            # Spezialfall Berliner Polizeimeldungen: <p><strong>Nr. 1396</strong><br />In der vergangenen Nacht...</p>
-            m_nr_html = re.match(
-                r"^\s*<(?:strong|b)>\s*(Nr\.\s*\d+)\s*</(?:strong|b)>\s*(?:<br\s*/?>)?\s*(.+)$",
-                inner,
-                flags=re.IGNORECASE | re.DOTALL,
-            )
-            if m_nr_html:
-                nr_text = clean_html_text(m_nr_html.group(1)).strip()
-                body_text = clean_html_text(m_nr_html.group(2)).strip()
-                if nr_text:
-                    _append_unique(f"**{nr_text}**")
-                if body_text:
-                    _append_unique(body_text)
-                if total_chars >= MAX_TEXT_CHARS_PER_ARTICLE:
-                    break
-                continue
-
-            text = clean_html_text(inner)
-            if not text:
-                continue
-
-            # Prüfe, ob es sich um eine Metazeile/Ortsangabe handelt (z. B. class="polizeimeldung" oder title="Ereignisort")
-            is_special_meta = any(
-                k in attrs for k in ("polizeimeldung", "ereignisort", "subline", "subtitle", "lead", "ort")
-            ) or (paragraphs and paragraphs[-1].lower().startswith("polizeimeldung vom"))
-
-            if not is_special_meta:
-                if tag_low in ("p", "dd") and (len(text) < 20 or text.lower() in _BOILERPLATE_SHORT_TEXTS):
-                    continue
-                if tag_low == "li" and len(text) < 30:
-                    continue
-
-            # Falls Text mit "Nr. 1234 <Satz>" beginnt, Nummer als eigene fettgedruckte Zeile abtrennen
-            m_nr_plain = re.match(r"^(Nr\.\s*\d+)\s+(.{15,})$", text)
-            if m_nr_plain:
-                _append_unique(f"**{m_nr_plain.group(1).strip()}**")
-                _append_unique(m_nr_plain.group(2).strip())
-            elif tag_low in ("h2", "h3"):
-                _append_unique(f"### {text}")
-            elif tag_low == "dt":
-                _append_unique(f"**{text}**")
-            else:
-                _append_unique(text)
-
-            if total_chars >= MAX_TEXT_CHARS_PER_ARTICLE:
-                break
-
+        total_chars = sum(len(p) for p in p_list)
         if total_chars > best_char_count:
             best_char_count = total_chars
-            best_paragraphs = paragraphs
+            best_paragraphs = p_list
 
     # Falls Schema.org JSON-LD Text länger oder gehaltvoller ist als der gefundene HTML-Score:
     if ld_full_text and (len(ld_full_text) > best_char_count or best_char_count < 80):
         ld_paragraphs: list[str] = []
         for raw_p in re.split(r"\n{1,2}", ld_full_text):
             p_clean = clean_html_text(raw_p).strip()
-            if p_clean and len(p_clean) >= 20 and p_clean.lower() not in _BOILERPLATE_SHORT_TEXTS:
+            if p_clean and len(p_clean) >= 15 and p_clean.lower() not in _BOILERPLATE_SHORT_TEXTS:
                 ld_paragraphs.append(p_clean)
         if ld_paragraphs and sum(len(p) for p in ld_paragraphs) > best_char_count:
             best_paragraphs = ld_paragraphs
@@ -643,13 +812,14 @@ def fetch_article_snapshot(
     - Volltext (content_text)
     - Komprimierte Base64-Bilder (images)
     - Selbstständiges HTML-Abbild (content_html)
-    Nutzt bei nicht erreichbaren Seiten oder WAF-Sperren automatisch den RSS-Teaser als Fallback.
+    Erkennt serverseitigen Bot-/WAF-Schutz (DataDome, Cloudflare, AWS WAF etc.)
+    und bereitet strukturierte Metadaten & Faktenblätter auf.
     """
     clean_url = unwrap_and_clean_url(url)
     fallback_text = clean_html_text(fallback_summary)
 
     if not is_safe_external_url(clean_url):
-        paragraphs = [fallback_text] if fallback_text else []
+        paragraphs = enrich_bot_protected_content(clean_url, title, fallback_summary)
         text_out = "\n\n".join(paragraphs)
         html_out = _build_self_contained_html_body(title or "Artikel", paragraphs, [], clean_url)
         return {
@@ -662,41 +832,47 @@ def fetch_article_snapshot(
     raw_html = ""
     final_url = clean_url
     images: list[dict[str, Any]] = []
+    paragraphs: list[str] = []
 
     try:
         with requests.Session() as session:
             resp = session.get(clean_url, headers=BROWSER_HEADERS, timeout=timeout, stream=True)
             final_url = str(resp.url or clean_url)
-            if resp.status_code == 200:
-                raw_bytes = b""
-                for chunk in resp.iter_content(chunk_size=16384):
-                    raw_bytes += chunk
-                    if len(raw_bytes) >= MAX_HTML_BYTES:
-                        break
-                encoding = resp.encoding or "utf-8"
-                raw_html = raw_bytes.decode(encoding, errors="replace")
 
-            paragraphs = _extract_article_paragraphs_from_html(raw_html)
-            if not paragraphs and fallback_text:
-                paragraphs = [fallback_text]
-            elif fallback_text and sum(len(p) for p in paragraphs) < len(fallback_text):
-                paragraphs.insert(0, fallback_text)
+            raw_bytes = b""
+            for chunk in resp.iter_content(chunk_size=16384):
+                raw_bytes += chunk
+                if len(raw_bytes) >= MAX_HTML_BYTES:
+                    break
+            encoding = resp.encoding or "utf-8"
+            raw_html = raw_bytes.decode(encoding, errors="replace")
 
-            if download_images and raw_html:
-                img_candidates = _extract_candidate_image_urls(raw_html, final_url, max_images=MAX_IMAGES_PER_ARTICLE)
-                for img_url, alt_txt in img_candidates:
-                    img_obj = _download_and_compress_image(img_url, alt_txt, session=session, timeout=timeout)
-                    if img_obj:
-                        images.append(img_obj)
+            # Prüfe, ob eine WAF-/Bot-Schutzseite (401, 403, Captcha) vorliegt
+            headers_dict = dict(resp.headers) if hasattr(resp, "headers") else {}
+            is_challenge = is_bot_challenge_response(resp.status_code, raw_html, headers_dict)
+
+            if is_challenge:
+                paragraphs = enrich_bot_protected_content(final_url, title, fallback_summary)
+            else:
+                paragraphs = _extract_article_paragraphs_from_html(raw_html)
+                # Falls Extraktion leer oder auffallend kurz ist, strukturierte Metadaten nutzen
+                if not paragraphs or sum(len(p) for p in paragraphs) < 50:
+                    paragraphs = enrich_bot_protected_content(final_url, title, fallback_summary)
+
+                if download_images and raw_html:
+                    img_candidates = _extract_candidate_image_urls(raw_html, final_url, max_images=MAX_IMAGES_PER_ARTICLE)
+                    for img_url, alt_txt in img_candidates:
+                        img_obj = _download_and_compress_image(img_url, alt_txt, session=session, timeout=timeout)
+                        if img_obj:
+                            images.append(img_obj)
     except Exception as exc:
         logger.debug("Snapshot-Abruf für %s nutzte Fallback (%s)", clean_url, exc)
-        paragraphs = [fallback_text] if fallback_text else []
+        paragraphs = enrich_bot_protected_content(final_url, title, fallback_summary)
+
+    if not paragraphs:
+        paragraphs = [fallback_text] if fallback_text else [title or "Kein Inhalt"]
 
     content_text = "\n\n".join(paragraphs).strip()
-    if not content_text and fallback_text:
-        content_text = fallback_text
-        paragraphs = [fallback_text]
-
     content_html = _build_self_contained_html_body(
         title=title or "Artikel",
         paragraphs=paragraphs,
