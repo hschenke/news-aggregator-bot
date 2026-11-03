@@ -5,14 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 03 Nov 2026 12:53:16 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:39:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GPT-6 Astra verbessert Qwen um bis zu 508%</title>
       <link>https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</guid>
-      <pubDate>Tue, 03 Nov 2026 08:30:13 GMT</pubDate>
+      <pubDate>Tue, 03 Nov 2026 09:30:13 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT-6 Astra bearbeitete rund 0,016% der Gewichte von Qwen3.5-0.8B. Das Ergebnis in MATH-500 stieg von 7,9% auf 48,1%. Der Eingriff reduzierte Wiederholungsschleifen und half dem Modell, mehr Antworten zu beenden. Bei Gemma 3 270M brachte derselbe Ansatz kaum eine Verbesserung. Sparks of Weight-Space Programming Rikiya Takehis Ankündigung auf X Vollständige Versuchsprotokolle auf GitHub Bearbeitetes Qwen3.5-0.8B auf Hugging Face Externer Audit der Gewichtsänderungen Forscher des MIT CSAIL haben GPT-6 Astra die Gewichte von Qwen3.5-0.8B bearbeiten lassen. Der Eingriff erfasste dabei nur rund 0,016% der Gewichte und steigerte das Ergebnis trotzdem im Mathematik-Benchmark MATH-500 von 7,9% auf 48,1%. Also um über 508,9%. Astra stoppt Qwens Reasoning-Schleifen Qwen3.5-0.8B geriet bei längeren Rechenaufgaben häufig in Wiederholungsschleifen. Das Modell schrieb dann immer weiter, kam aber zu keinem Ergebnis. Astra durfte Qwen mit Übungsaufgaben untersuchen und dafür bis zu 50 Testläufe ausführen. Ein Training fand dabei nicht statt. Vor dem Eingriff erreichten 93 von 100 Antworten im MATH-500-Test die Höchstlänge von 32.768 Tokens. Danach geschah das noch bei 33 von 100 Antworten. Qwen...]]></description>
@@ -21,7 +21,7 @@
       <title>New York Times verklagt Brave wegen KI-Geschäft mit Artikeln</title>
       <link>https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</guid>
-      <pubDate>Tue, 03 Nov 2026 08:20:13 GMT</pubDate>
+      <pubDate>Tue, 03 Nov 2026 09:20:13 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Die New York Times und drei weitere US-Zeitungen haben Brave in Manhattan verklagt. Sie werfen Brave vor, Artikel für KI-Antworten und eine kostenpflichtige Search API zu kopieren. Die Klagen richten sich außerdem gegen eine Funktion zum Umgehen von Paywalls und Braves Werbemodell. Die Verlage verlangen Schadenersatz und eine dauerhafte Unterlassungsverfügung. TechCrunch: New York Times and other outlets sue web browser Brave over alleged content scraping Copyright Now: The New York Times v. Brave Software Copyright Now: Daily News, Chicago Tribune and Orlando Sentinel v. Brave Software Brave: Brave AI und Search API Brave: Search API Die New York Times und drei weitere US-Zeitungen haben Brave am 2. November 2026 vor einem Bundesgericht in Manhattan verklagt. Sie werfen dem Browser-Anbieter vor, geschützte Artikel zu kopieren, für KI-Antworten zu nutzen und über eine API an KI-Unternehmen weiterzugeben. Anzeige Zwei Klagen richten sich gegen Brave Die New York Times reichte eine eigene Klage ein. In einem zweiten Verfahren gehen die Daily News, die Chicago Tribune und der Orlando Sentinel gegen Brave vor. Beide Klagen nennen Anthropic, Perplexity, Mistral, xAI und Cohere als Ku...]]></description>
@@ -30,82 +30,10 @@
       <title>ElevenLabs »Chimera« Tutorial: Beste Video-KI trifft beste Audio-KI</title>
       <link>https://www.all-ai.de/tutorials/tutorials-ki/elevenlabs-seedance-eleven-4-tutorial-1</link>
       <guid isPermaLink="false">https://www.all-ai.de/tutorials/tutorials-ki/elevenlabs-seedance-eleven-4-tutorial-1</guid>
-      <pubDate>Mon, 02 Nov 2026 21:20:00 GMT</pubDate>
+      <pubDate>Mon, 02 Nov 2026 22:20:00 +0100</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT Images 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ Mit Chimera in ElevenCreative machst du aus einem Bild und Sprache einen sprechenden Videoclip. Fünf Beispiele zeigen dir den Einstieg, geflüsterte Drohungen, verschiedene Stimmen, eine Kamerafahrt und den Audio-Upload. Du gibst die Darbietung über Eleven v4 vor und beschreibst die Inszenierung für Seedance 2.5 im Video-Prompt. Für die Videogenerierung brauchst du ein kostenpflichtiges Abo und Credits. ElevenCreative: Chimera-Ankündigung und Anleitung ElevenLabs: Introducing Chimera ElevenLabs: Audio-Tags für Eleven v4 und eigene Regieanweisungen ElevenLabs: Aktuelle Abos, Credits und Einführungsangebote ElevenLabs: Image & Video, Zugang und Abrechnung Mit Chimera in ElevenLabs kannst du nun endlich das beste Videomodell »Seedance 2.5« mit dem besten Sprachmodell »Eleven v.4« verwenden. Der große Vorteil dabei ist, dass du Menschen oder Charakteren so immer die gleiche Stimme geben kannst. Anhand von drei Beispielen zeige ich dir, wie einfach das ist. Kategorie: Video und Audio KI ElevenLabs Chimera MEDIUM Level Dauer ~ 10 Min. Kosten Abo erforderlich Software Browser Das bekommst du in diesem Tutorial: Einführung in "Chimera" 3 P...]]></description>
-    </item>
-    <item>
-      <title>Deutschland bleiben nur 18 Monate für die KI-Aufholjagd</title>
-      <link>https://www.all-ai.de/news/news26/deutschland-ki-aufholen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/deutschland-ki-aufholen</guid>
-      <pubDate>Mon, 02 Nov 2026 17:43:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Die Bundesregierung will Deutschland bis 2030 zur KI-Nation machen. In den kommenden zwölf bis 18 Monaten sollen wichtige Entscheidungen fallen. Bis 2030 sollen 80% der Großunternehmen, 55% der kleineren und mittleren Unternehmen sowie 90% der Bundesbehörden KI einsetzen. Die Zahl der KI-Startups soll sich verdreifachen. Bundesdigitalministerium: Digital-Gipfel 2026 Bundesdigitalministerium: Programm des Digital-Gipfels 2026 Tagesschau: Ist der KI-Zug für Deutschland abgefahren? Bitkom: Künstliche Intelligenz in Deutschland 2025 Die Bundesregierung will Deutschland bis 2030 zur »KI-Nation« machen. Ein Bericht der KI-Taskforce warnt, dass die kommenden zwölf bis 18 Monate darüber entscheiden, ob der Abstand zu den USA und China weiter wächst. KI soll in Unternehmen zum Alltag werden Die Regierung setzt konkrete Ziele für Wirtschaft und Verwaltung. Bis 2030 sollen mindestens 80% der Großunternehmen und 55% der kleinen und mittleren Unternehmen KI einsetzen. Mehr als 10% der deutschen Wirtschaftsleistung sollen dann auf KI beruhen. Die Zahl der KI-Startups soll sich im gleichen Zeitraum verdreifachen. Zum Vergleich: In einer Bitkom-Umfrage aus dem Jahr 2025 gaben 36% der befragten ...]]></description>
-    </item>
-    <item>
-      <title>Minecraft-Experiment: Nach Verlusten flüchten sich KI-Agenten in Bürokratie</title>
-      <link>https://www.all-ai.de/news/news26/minecraft-ki-agenten-test</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/minecraft-ki-agenten-test</guid>
-      <pubDate>Mon, 02 Nov 2026 17:25:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[50 GPT-6.1-Sol-Agenten sollten in Minecraft eine florierende Zivilisation aufbauen. Nach 22 Todesfällen in der ersten Nacht wurden sie dauerhaft vorsichtiger und führten Regeln, Rationslisten und feste Rollen ein. In Bed Wars und Mindustry setzte sich GPT mit einer aggressiveren und stärker automatisierten Strategie gegen Claude durch. Die Forscher haben die Testumgebungen als Open Source veröffentlicht. YC Labs: Agents in Games GitHub: Minecraft Agent Harness GitHub: Multi-Agent Mindustry 50 KI-Agenten sollten in Minecraft eine florierende Zivilisation aufbauen. Nach einer tödlichen ersten Nacht versteckten sie sich jedoch in Unterkünften und organisierten ihren Alltag mit Regeln, Zuständigkeiten und Lebensmittelprotokollen. »Vorsicht« wird zum Dauerzustand YC Labs und Olam Labs ließen 50 Instanzen von GPT-6.1 Sol drei Stunden lang gemeinsam in einer Minecraft-Welt arbeiten. In der ersten Nacht starben 22 Agenten. Das entsprach fast zwei Dritteln der insgesamt 34 Todesfälle. Der Tod kostete die Agenten lediglich ihre gesammelte Ausrüstung, trotzdem prägte das Erlebnis ihr weiteres Verhalten. Sie gaben Erkundungen und Bauvorhaben auf, blieben nachts in beleuchteten Schutzräumen ...]]></description>
-    </item>
-    <item>
-      <title>Aramco kauft 49% von Humain und investiert Milliarden in KI</title>
-      <link>https://www.all-ai.de/news/news26/aramco-humain-ki</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/aramco-humain-ki</guid>
-      <pubDate>Mon, 02 Nov 2026 17:19:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Aramco übernimmt 49% von Humain und bringt 2026 rund 2,6 Milliarden$ sowie KI- und Rechenressourcen ein. Der saudische Investmentfonds PIF behält mit 51% die Mehrheit. Humain baut Rechenzentren, Cloud-Dienste, das arabisch ausgerichtete KI-Modell ALLaM und Anwendungen für Unternehmen. Bis 2030 plant Humain KI-Rechenzentren mit insgesamt 3 Gigawatt Leistung. Aramco: PIF und Aramco schließen Humain-Transaktion ab PIF: Humain im Portfolio des Staatsfonds Humain IQ: KI-Angebote für Unternehmen Humain Core: Rechenzentrumsplattform AP: Nvidia liefert 18.000 KI-Chips für Humain Der saudische Ölkonzern Aramco übernimmt 49% des KI-Unternehmens Humain. Dafür bringt Aramco im Jahr 2026 rund 9,9 Milliarden Saudi-Riyal, umgerechnet 2,6 Milliarden $, sowie eigene KI-, Rechen- und Digitalressourcen ein. Saudi-Arabiens KI-Konzern bekommt einen zweiten Eigentümer Der staatliche Investmentfonds PIF behält mit 51% die Kontrolle über Humain. Das 2025 gegründete Unternehmen bündelt Saudi-Arabiens KI-Geschäft von Rechenzentren über Cloud-Dienste bis zu eigenen KI-Modellen und Anwendungen. Humain will bis 2030 Rechenzentren mit insgesamt 3 Gigawatt Leistung aufbauen. Zu Humains Partnern zählen unter a...]]></description>
-    </item>
-    <item>
-      <title>Marvell kauft Lumentum für 115 Milliarden $</title>
-      <link>https://www.all-ai.de/news/news26/marvell-lementum-kauf</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/marvell-lementum-kauf</guid>
-      <pubDate>Mon, 02 Nov 2026 17:15:20 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Marvell übernimmt Lumentum in einem Aktiendeal mit einem Unternehmenswert von 115 Milliarden $. Lumentum liefert Laser und optische Komponenten für schnelle Verbindungen in KI-Rechenzentren. Die Lumentum-Aktionäre sollen 33% des gemeinsamen Unternehmens halten. Der Abschluss ist nach Genehmigung durch Aktionäre und Behörden für die erste Hälfte 2028 geplant. Marvell und Lumentum: Ankündigung der Übernahme Marvell: Pflichtmitteilung zur Fusionsvereinbarung Reuters: Marvell kauft Lumentum für 115 Milliarden $ Golem: Marvell gibt 115 Milliarden $ für KI-Laserexperten aus Marvell übernimmt den Optikspezialisten Lumentum. Der Unternehmenswert von 115 Milliarden $ macht den Kauf zu einer der größten Übernahmen der Tech-Branche. Licht ersetzt Kupfer im KI-Rechenzentrum Lumentum entwickelt Laser, optische Transceiver und weitere Bauteile, die Daten als Lichtsignale übertragen. Diese Technik gewinnt in großen KI-Rechenzentren an Bedeutung, weil Kupferverbindungen bei steigenden Datenmengen an Grenzen bei Reichweite und Stromverbrauch stoßen. Marvell liefert unter anderem speziell entwickelte KI-Chips, Signalprozessoren und Netzwerktechnik. Durch Lumentum erhält der Konzern direkten Zugri...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT vereint Chat und Work in einer Oberfläche</title>
-      <link>https://www.all-ai.de/news/news26/chatgpt-work-eins</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-work-eins</guid>
-      <pubDate>Mon, 02 Nov 2026 17:02:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI führt die Bereiche Chat und Work in ChatGPT zusammen. Eine kleine Nutzergruppe testet die neue Oberfläche zuerst. Codex bleibt getrennt, greift aber auf dasselbe Token-Kontingent zu. OpenAI: ChatGPT Work and Codex OpenAI will in der ChatGPT-Desktop-App die Bereiche Chat und Work zusammenführen. Ausgewählte Nutzer testen die neue Oberfläche zuerst, bevor sie breiter erscheint. Ein Ort für Ideen und fertige Ergebnisse Nutzer sollen künftig in einem Chat von einer ersten Idee bis zum fertigen Ergebnis arbeiten. Dateien und Plugins lassen sich einbinden, während ChatGPT etwa Webseiten oder Präsentationen erstellt und Aufgaben im Browser übernimmt. Codex bleibt als eigener Bereich in der Desktop-App erhalten. Gleichzeitig ändert OpenAI die Abrechnung der Nutzung. ChatGPT und Codex greifen künftig auf dasselbe Token-Kontingent zu. Nach Angaben des Unternehmens betrifft das die meisten Nutzer kaum. Je nach Modell und Nutzung kann das Limit jedoch früher erreicht sein. Anthropic hatte Chat und Cowork bei Claude bereits im September in einer gemeinsamen Oberfläche gebündelt. Anzeige]]></description>
-    </item>
-    <item>
-      <title>Anthropic erwartet bald dramatisch beschleunigten KI-Fortschritt</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-fortschritt-beschleunigung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-fortschritt-beschleunigung</guid>
-      <pubDate>Mon, 02 Nov 2026 16:58:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic erwartet, dass kommende KI-Modelle bald die eigene Schwelle für dramatisch beschleunigten KI-Fortschritt erreichen. Gemeint ist eine Verdopplung des Entwicklungstempos, die wesentlich auf automatisierter KI-Forschung beruht. Aktuelle Modelle liegen laut Anthropic noch darunter, während interne Daten bereits eine deutliche Beschleunigung zeigen. Das Unternehmen erwägt bei Bedarf verzögerte Veröffentlichungen und einen begrenzten Modellzugang. Anthropic: Geänderter Börsenprospekt vom 2. November 2026 Anthropic: Responsible Scaling Policy Version 3.4 Anthropic: Risk Report August 2026 Anthropic: When AI builds itself Associated Press: AI's recursive self-improvement erklärt Anthropic rechnet damit, dass kommende KI-Modelle schon bald eine selbstverstärkende Beschleunigung der KI-Entwicklung auslösen könnten. Das geht aus einer am 2. November 2026 eingereichten Ergänzung des US-Börsenprospekts hervor. Was die Schwelle bedeutet Anthropics Responsible Scaling Policy setzt für die »selbstverstärkende Beschleunigung« eine hohe Hürde. Die gesamten Fähigkeiten von KI-Modellen müssten sich doppelt so schnell entwickeln wie erwartet und schneller als in jeder längeren Vergleichsph...]]></description>
-    </item>
-    <item>
-      <title>OpenAI drosselt Rechenzentren, wenn das Stromnetz an seine Grenze kommt</title>
-      <link>https://www.all-ai.de/news/news26/openai-rechenzentren-drosselung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-rechenzentren-drosselung</guid>
-      <pubDate>Mon, 02 Nov 2026 16:52:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI startet mit »Grid Protectors« ein US-weites Programm für flexible Rechenzentren. Bei Engpässen sollen künftige Standorte ihren Stromverbrauch senken. Project Camellia in Georgia kann bis zu 1.000 Megawatt Leistung freigeben. OpenAI will die eigenen Strom- und Infrastrukturkosten vollständig tragen. OpenAI: Introducing the Grid Protectors Program Georgia Power: Contract with OpenAI approved OpenAI startet mit »Grid Protectors« ein landesweites Programm für seine künftigen Rechenzentren in den USA. Bei Hitzewellen, Kälteeinbrüchen und anderen Engpässen sollen die Standorte ihren Stromverbrauch senken und so Haushalten sowie anderen Unternehmen Vorrang lassen. Georgia liefert das Modell für weitere Standorte Den Anfang macht der geplante Campus Project Camellia im Effingham County im US-Bundesstaat Georgia. Der Standort soll bis zu 3.200 Megawatt Strom beziehen. In einer Vereinbarung über 25 Jahre darf der Versorger Georgia Power die gelieferte Leistung in Zeiten hoher Nachfrage um bis zu 1.000 Megawatt reduzieren. Diese sogenannte flexible Demand Response entspricht laut OpenAI dem durchschnittlichen Stromverbrauch von rund 700.000 US-Haushalten. Der Campus soll seine Reche...]]></description>
-    </item>
-    <item>
-      <title>Anthropic wächst rasant ... ins Minus</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-wachstum-minus</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-wachstum-minus</guid>
-      <pubDate>Mon, 02 Nov 2026 16:42:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropic verzwölffachte seinen Quartalsumsatz auf fast 17 Milliarden$. 17,5 Milliarden$ Betriebskosten führten zurück ins operative Minus, der Nettoverlust erreichte 23,3 Milliarden$. Die langfristigen Verpflichtungen für Rechenkapazität und Infrastruktur summieren sich auf 895,4 Milliarden$. Japanische Anleger sollen beim Börsengang Aktien im Wert von bis zu 3,5 Milliarden$ kaufen. Bloomberg: Anthropics Quartalsumsatz erreicht fast 17 Milliarden$ The Information: Anthropic rutscht operativ zurück ins Minus Anthropic hat im dritten Quartal knapp 17 Milliarden $ umgesetzt. Das waren zwölfmal so viel wie ein Jahr zuvor. Kurz vor dem geplanten Börsengang meldet das KI-Unternehmen dennoch einen Nettoverlust von 23,3 Milliarden $. Rechenkapazität kostet Anthropic Milliarden Die Betriebskosten erreichten 17,5 Milliarden $ und lagen damit über dem Quartalsumsatz. Im Vorquartal hatte Anthropic operativ noch einen Gewinn erzielt. Der Abstand zwischen dem operativen Minus von rund 500 Millionen $ und dem Nettoverlust zeigt, dass weitere Finanz- und Bilanzposten das Ergebnis stark belasteten. Zu den aktuellen Ausgaben gehörten 5 Milliarden $ für kurzfristig gesicherte Rechenkapazität. Wei...]]></description>
     </item>
   </channel>
 </rss>
