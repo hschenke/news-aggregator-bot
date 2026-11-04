@@ -5,23 +5,32 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 04 Nov 2026 07:43:49 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 07:44:42 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GPT-6 Astra entwirft komplettes Codex-Gerät in 1 Woche</title>
+      <link>https://www.all-ai.de/news/news26/gpt-6-astra-codex-hardware</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gpt-6-astra-codex-hardware</guid>
+      <pubDate>Wed, 04 Nov 2026 06:03:11 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[GPT-6 Astra entwarf ein komplettes Gerät für Gespräche mit Codex. Zwei Mitarbeiter erreichten in weniger als einer Woche ein fertiges Design, die ersten Prototypen entstanden binnen eines Monats. Ein internes Modell von OpenAI erzielte bei BenchCAD 2.0 im Mittel 0,88 Punkte gegenüber 0,59 Punkten für Astra. OpenAI startet außerdem eine Forschungskooperation mit Mazda zu Fahrzeugdesign und Simulationen. OpenAI: Accelerating engineering for the physical world BenchCAD: Introducing BenchCAD 2.0 OpenAI hat GPT-6 Astra ein komplettes Gerät für Gespräche mit Codex entwerfen lassen. Zwei Mitarbeiter begleiteten das Nebenprojekt und erreichten in weniger als einer Woche ein fertiges Design, ein Auftragsfertiger produzierte die ersten Prototypen binnen eines Monats. Von der Platine bis zur Benutzeroberfläche Astra gestaltete das Gehäuse und dessen innere Halterungen, wählte elektronische Bauteile aus und entwarf die Leiterplatte. Das KI-Modell entwickelte außerdem die Benutzeroberfläche, die Firmware und die Anbindung an Codex. Direkte menschliche Änderungen am Entwurf gab es während des Experiments laut OpenAI nicht. Für die Fertigung reichte das Ergebnis allein jedoch noch nicht aus. D...]]></description>
+    </item>
     <item>
       <title>OpenAI: So viel besser sind die internen Modelle</title>
       <link>https://www.all-ai.de/news/news26top/openai-intern-modelle</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-intern-modelle</guid>
-      <pubDate>Tue, 03 Nov 2026 22:00:15 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 21:00:15 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAIs internes Modell erreicht auf BenchCAD 2.0 einen Wert von 0,875. GPT-6 Astra kommt auf höchster Thinking-Stufe auf 0,594. Auch bei offenen Mathematikproblemen liegt das interne Modell klar vorn. OpenAI gewinnt durch das Zurückhalten seiner besten Modelle einen eigenen technischen Vorsprung. OpenAI: Accelerating engineering for the physical world OpenAI: On the Navier-Stokes Millennium Prize Problem OpenAI: GPT-6 Astra OpenAI: Introducing GPT-6 Sol and Luna OpenAI hat mit GPT-6 Astra in weniger als einer Woche ein vollständiges Hardware-Gerät entworfen. Fast nebenbei zeigt das KI-Unternehmen, wie weit seine neueren internen Modelle dem bereits sehr starken Astra voraus sind. Anzeige Ein internes Modell setzt sich deutlich ab Zwei Mitarbeiter entwickelten den Prototyp mit Astra als Nebenprojekt. Das KI-Modell entwarf Gehäuse, Platine, Benutzeroberfläche und die Anbindung an Codex. Ein Auftragsfertiger baute innerhalb eines Monats eine kleine Serie. Spannender ist der Vergleich auf BenchCAD 2.0. Der Benchmark prüft, wie gut ein KI-Modell 3D-Bauteile und Baugruppen rekonstruiert sowie Verbindungen auf Leiterplatten erkennt. Astra erreicht auf seiner höchsten Thinking-Stufe 0,...]]></description>
+      <description><![CDATA[OpenAIs internes Modell erreicht auf BenchCAD 2.0 einen Wert von 0,875. GPT-6 Astra kommt auf höchster Thinking-Stufe auf 0,594. Auch bei offenen Mathematikproblemen liegt das interne Modell klar vorn. OpenAI gewinnt durch das Zurückhalten seiner besten Modelle einen eigenen technischen Vorsprung. OpenAI: Accelerating engineering for the physical world OpenAI: On the Navier-Stokes Millennium Prize Problem OpenAI: GPT-6 Astra OpenAI: Introducing GPT-6 Sol and Luna OpenAI hat mit GPT-6 Astra in weniger als einer Woche ein vollständiges Hardware-Gerät entworfen. Viel interessanter an der Meldung ist aber ein Benchmark, der zeigt, wie viel stärker die internen Modelle sind. Anzeige Ein internes Modell setzt sich deutlich ab Im ersten Vergleich geht es um den BenchCAD 2.0. Der Benchmark prüft, wie gut ein KI-Modell 3D-Bauteile und Baugruppen rekonstruiert sowie Verbindungen auf Leiterplatten erkennt. Astra erreicht auf seiner höchsten Thinking-Stufe 0,594 Punkte. Ein neueres internes Modell kommt auf 0,875 Punkte. Das sind 0,281 Punkte oder rund 47% mehr. + Quelle: OpenAI Der Vorsprung fällt besonders auf, weil Astra selbst zur Spitzengruppe gehört. OpenAI verlangt über die API 10$ j...]]></description>
     </item>
     <item>
       <title>Anthropic entlarvt heimlich ausgetauschte KI-Modelle</title>
       <link>https://www.all-ai.de/news/news26/anthropic-ki-modelle-austausch</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-ki-modelle-austausch</guid>
-      <pubDate>Tue, 03 Nov 2026 21:34:52 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 20:34:52 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[FlashProve belegt kryptografisch, welches KI-Modell eine Antwort erzeugt hat. Im Test mit Llama 4 Maverick erreichte eine Nvidia H100 rund 110 Token pro Sekunde. Ein Nachweis ist 18,78 MB groß und lässt sich in 17 bis 21 Sekunden auf einer CPU prüfen. Der offene Forschungsprototyp ist auf 1.024 Token und bestimmte Modellberechnungen beschränkt. Anthropic: Progress on provable inference for large language models FlashProve: Technischer Bericht GitHub: anthropics/FlashProve Anthropic hat mit FlashProve einen Open-Source-Prototyp veröffentlicht, der die Herkunft von KI-Antworten kryptografisch belegt. Nutzer sollen damit prüfen können, ob tatsächlich das versprochene KI-Modell geantwortet hat, ohne dessen geheime Modellgewichte zu kennen. FlashProve prüft ein Modell mit 400 Milliarden Parametern Ein Anbieter legt zuerst einen digitalen Fingerabdruck seiner Modellgewichte fest. Anschließend erstellt FlashProve zu einer Antwort einen zkSNARK-Nachweis. Dieser bestätigt, dass die festgelegten Modellgewichte den vorliegenden Text erzeugt haben. Manipulierte Antworten oder ein heimlich ausgetauschtes Modell fallen bei der Prüfung durch. Anthropic testete das Verfahren mit der 4-Bit-Versi...]]></description>
@@ -30,7 +39,7 @@
       <title>Neuer Chip braucht bei KI-Erkennung 98% weniger Energie</title>
       <link>https://www.all-ai.de/news/news26/ki-chip-weniger-energie</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-chip-weniger-energie</guid>
-      <pubDate>Tue, 03 Nov 2026 20:43:47 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 19:43:47 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Aisin und die Universität Tohoku haben einen 16-Nanometer-KI-Chip mit 32MB STT-MRAM entwickelt. Bei der getesteten Objekterkennung benötigt der Prototyp 98% weniger Energie als das Vergleichssystem. Vom Einschalten bis zum ersten Ergebnis vergehen 124,2 Millisekunden. Aisin nennt Autos, Roboter, Industrieanlagen und Sensorgeräte als mögliche Einsatzgebiete. Universität Tohoku: 16-nm-KI-SoC mit 32MB STT-MRAM Aisin und Universität Tohoku: Gemeinsame technische Mitteilung IEEE A-SSCC 2026: Paper 1014 Aisin: Frühere Präsentation des MRAM-Demonstrationschips The Register: Einordnung des Aisin-Chips Der Toyota-Zulieferer Aisin und die Universität Tohoku haben einen KI-Chip mit integriertem Magnetspeicher entwickelt. Der Prototyp benötigt bei der Objekterkennung 98% weniger Energie als das getestete Vergleichssystem und startet erheblich schneller. MRAM spart lange Datenwege Der Chip enthält 32MB STT-MRAM. Dieser Speicher behält Daten auch ohne Strom und liegt direkt neben den Recheneinheiten. Darin stecken sowohl die Startdaten des Betriebssystems als auch die Gewichte des KI-Modells. Externe SSDs und DRAM sind für den getesteten Ablauf deshalb nicht nötig. Aisin und die Universität f...]]></description>
@@ -39,7 +48,7 @@
       <title>KI-Agenten übernehmen die Suche nach Signalen von Aliens</title>
       <link>https://www.all-ai.de/news/news26/ki-agenten-nvidia-aliens</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-agenten-nvidia-aliens</guid>
-      <pubDate>Tue, 03 Nov 2026 19:01:47 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 18:01:47 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[KI-Agenten steuern am Allen Telescope Array die Antennen und werten Messdaten während der Beobachtung aus. Nvidia Holoscan verarbeitet dabei bis zu 2,4 Terabit pro Sekunde auf RTX Pro 6000 Blackwell-Grafikkarten. Bei einem Praxistest erkannte die KI einen Pulsar im Krebsnebel in Echtzeit, aber kein außerirdisches Signal. Als Nächstes prüft das Team offene KI-Modelle wie Nvidia Nemotron für Observatorien mit lokaler Datenverarbeitung. Nvidia: Agentic AI Joins the Search for Extraterrestrial Signals Breakthrough Listen and NVIDIA SETI Institute: Echtzeitsuche mit Nvidia IGX Thor Nvidia DAQIRI Nvidia: How SETI Uses AI to Search for Intelligent Alien Life Am »Allen Telescope Array« in Nordkalifornien steuern KI-Agenten jetzt Radioteleskope und werten deren Daten während der Beobachtung aus. Forscher von Breakthrough Listen und dem SETI Institute wollen dadurch schneller auf mögliche Signale außerirdischer Technik reagieren. Ein Auftrag ersetzt viele Arbeitsschritte Ein Forscher kann per natürlicher Sprache ein Beobachtungsziel vorgeben. Die KI-Agenten richten daraufhin die Antennen aus, kalibrieren die Instrumente, erkennen Fehler im Datenstrom und erstellen eine Auswertung. Nvidias...]]></description>
@@ -48,7 +57,7 @@
       <title>GPT-6 Astra verbessert Qwen um bis zu 508%</title>
       <link>https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</guid>
-      <pubDate>Tue, 03 Nov 2026 09:30:13 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 08:30:13 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT-6 Astra bearbeitete rund 0,016% der Gewichte von Qwen3.5-0.8B. Das Ergebnis in MATH-500 stieg von 7,9% auf 48,1%. Der Eingriff reduzierte Wiederholungsschleifen und half dem Modell, mehr Antworten zu beenden. Bei Gemma 3 270M brachte derselbe Ansatz kaum eine Verbesserung. Sparks of Weight-Space Programming Rikiya Takehis Ankündigung auf X Vollständige Versuchsprotokolle auf GitHub Bearbeitetes Qwen3.5-0.8B auf Hugging Face Externer Audit der Gewichtsänderungen Forscher des MIT CSAIL haben GPT-6 Astra die Gewichte von Qwen3.5-0.8B bearbeiten lassen. Der Eingriff erfasste dabei nur rund 0,016% der Gewichte und steigerte das Ergebnis trotzdem im Mathematik-Benchmark MATH-500 von 7,9% auf 48,1%. Also um über 508,9%. Astra stoppt Qwens Reasoning-Schleifen Qwen3.5-0.8B geriet bei längeren Rechenaufgaben häufig in Wiederholungsschleifen. Das Modell schrieb dann immer weiter, kam aber zu keinem Ergebnis. Astra durfte Qwen mit Übungsaufgaben untersuchen und dafür bis zu 50 Testläufe ausführen. Ein Training fand dabei nicht statt. Vor dem Eingriff erreichten 93 von 100 Antworten im MATH-500-Test die Höchstlänge von 32.768 Tokens. Danach geschah das noch bei 33 von 100 Antworten. Qwen...]]></description>
@@ -57,7 +66,7 @@
       <title>New York Times verklagt Brave wegen KI-Geschäft mit Artikeln</title>
       <link>https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</link>
       <guid isPermaLink="false">https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</guid>
-      <pubDate>Tue, 03 Nov 2026 09:20:13 +0100</pubDate>
+      <pubDate>Tue, 03 Nov 2026 08:20:13 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Die New York Times und drei weitere US-Zeitungen haben Brave in Manhattan verklagt. Sie werfen Brave vor, Artikel für KI-Antworten und eine kostenpflichtige Search API zu kopieren. Die Klagen richten sich außerdem gegen eine Funktion zum Umgehen von Paywalls und Braves Werbemodell. Die Verlage verlangen Schadenersatz und eine dauerhafte Unterlassungsverfügung. TechCrunch: New York Times and other outlets sue web browser Brave over alleged content scraping Copyright Now: The New York Times v. Brave Software Copyright Now: Daily News, Chicago Tribune and Orlando Sentinel v. Brave Software Brave: Brave AI und Search API Brave: Search API Die New York Times und drei weitere US-Zeitungen haben Brave am 2. November 2026 vor einem Bundesgericht in Manhattan verklagt. Sie werfen dem Browser-Anbieter vor, geschützte Artikel zu kopieren, für KI-Antworten zu nutzen und über eine API an KI-Unternehmen weiterzugeben. Anzeige Zwei Klagen richten sich gegen Brave Die New York Times reichte eine eigene Klage ein. In einem zweiten Verfahren gehen die Daily News, die Chicago Tribune und der Orlando Sentinel gegen Brave vor. Beide Klagen nennen Anthropic, Perplexity, Mistral, xAI und Cohere als Ku...]]></description>
