@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 04 Nov 2026 07:44:42 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 13:05:55 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KI-Studien sind nach kurzer Zeit »falsch«.</title>
+      <link>https://www.all-ai.de/news/news26top/ki-studien-fehler</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/ki-studien-fehler</guid>
+      <pubDate>Wed, 04 Nov 2026 12:25:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Zwei Stanford-Forscher prüfen 50 bekannte KI-Befunde mit 20 neueren Modellen erneut. 22 Effekte sind weitgehend verschwunden, 17 haben sich abgeschwächt, acht bestehen fort und drei sind stärker geworden. Erfundene Literaturangaben werden bei mehreren Modellen seltener, einzelne Modelle zeigen weiterhin hohe Fehlerraten. Übermäßige Zustimmung, politische Tendenzen und die Bevorzugung eigener Antworten bleiben bestehen oder verstärken sich. Owen Queen und James Zou: The shelf life of LLM findings, 2. November 2026 Alte Studien prägen bis heute das Bild von KI. Die Stanford-Forscher Owen Queen und James Zou haben deshalb 50 viel zitierte Studien mit neueren Modellen erneut getestet und geprüft, welche Aussagen noch gelten. Bei 39 fiel der untersuchte Effekt deutlich schwächer aus oder war weitgehend verschwunden. Dieselben Tests mit neueren Modellen Die Idee hinter »The shelf life of LLM findings« ist, frühere Versuche unter möglichst gleichen Bedingungen zu wiederholen. So lässt sich etwa prüfen, ob heutige Modelle noch genauso oft Quellen erfinden oder dem Nutzer nach dem Mund reden wie ihre Vorgänger. Dafür überprüften die Forscher zunächst die ursprünglichen Ergebnisse mit den...]]></description>
+    </item>
+    <item>
+      <title>Lindy AI im Überblick: Was der KI-Kollege erledigt und was er kostet</title>
+      <link>https://www.all-ai.de/tools/ki-top-tools100/lindy-ai-ki-kollege-ueberblick</link>
+      <guid isPermaLink="false">https://www.all-ai.de/tools/ki-top-tools100/lindy-ai-ki-kollege-ueberblick</guid>
+      <pubDate>Wed, 04 Nov 2026 09:50:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[GPT Image 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) Lindy – Produktübersicht und Anwendungsbeispiele Lindy – Aktuelle Tarife und Testbedingungen Lindy – Dokumentation zu Funktionen, Einrichtung und Abrechnung Lindy – Sicherheits- und Datenschutzangaben Trustpilot – Nutzerberichte zu Lindy Lindy arbeitet als KI-Kollege in Slack, E-Mail, SMS und am Telefon. Der Nutzer übergibt eine Aufgabe in Alltagssprache, während Lindy Informationen aus verbundenen Diensten holt und die Arbeit dort erledigt. Mit »Lindy Apps« baut der Dienst inzwischen sogar interne Anwendungen auf Basis vorhandener Unternehmensdaten. Lindy AI No-Code KI-Agenten 8.5 Score Preis-Modell Abo pro Nutzer Plattform Browser, Slack, iMessage Sprache EN, DE Status Etabliert, häufige Updates Gratis Testen? 7 Tage Test umsonst Letztes Update 11/2026 Tool kostenlos ausprobieren Klick führt direkt zum Anbieter, Affliatelink 01. Anwendungsbeispiel Aus verstreuten Geschäftszahlen wird die Montagspräsentation Am Sonnt...]]></description>
+    </item>
+    <item>
+      <title>Tencent veröffentlicht mit Hy4 eines der besten Open Weight Modelle</title>
+      <link>https://www.all-ai.de/news/news26/tencent-hy4-openweight-release</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/tencent-hy4-openweight-release</guid>
+      <pubDate>Wed, 04 Nov 2026 07:45:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Tencent veröffentlicht Hy4 mit Bildverständnis und Computerbedienung. Das KI-Modell legt bei Programmierung, Wissensarbeit und langen Abläufen deutlich zu. Hy4 verarbeitet bis zu 1.048.576 Token und kostet regulär 2,501$ pro Million Ausgabetoken. Die Modellgewichte und eine ausführliche System Card sollen folgen. Tencent Hy: Introducing Hy4 OpenRouter: Tencent Hy4 Tencent: Hy4 preview Tencent veröffentlicht mit Hy4 die fertige Fassung seines neuen KI-Modells für Programmierung, Recherche und lange Arbeitsabläufe. Gegenüber Hy4 preview legt das Modell deutlich zu und kann erstmals Bilder auswerten sowie grafische Oberflächen bedienen. Hy4 macht bei Code und Agenten den größten Sprung In Tencents Vergleichstabelle erreicht Hy4 im Terminal-Bench 4.0 einen Wert von 44,4. Die Preview kam auf 26,3. GPT-6.1 Sol liegt mit 55,5 davor, während Kimi K3.1 Pro und Claude Opus 5.5 jeweils rund 66 Punkte schaffen. Hy4 macht also viel Boden gut, setzt bei praktischen Terminal-Aufgaben aber keinen neuen Bestwert. + Quelle: Tencent Bei mehrstufiger Wissensarbeit sieht es besser aus. Im APEX-Agents v1.1 erzielt Hy4 75,2 Punkte und führt das gezeigte Vergleichsfeld an. Der Test umfasst professionel...]]></description>
+    </item>
     <item>
       <title>GPT-6 Astra entwirft komplettes Codex-Gerät in 1 Woche</title>
       <link>https://www.all-ai.de/news/news26/gpt-6-astra-codex-hardware</link>
@@ -52,24 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[KI-Agenten steuern am Allen Telescope Array die Antennen und werten Messdaten während der Beobachtung aus. Nvidia Holoscan verarbeitet dabei bis zu 2,4 Terabit pro Sekunde auf RTX Pro 6000 Blackwell-Grafikkarten. Bei einem Praxistest erkannte die KI einen Pulsar im Krebsnebel in Echtzeit, aber kein außerirdisches Signal. Als Nächstes prüft das Team offene KI-Modelle wie Nvidia Nemotron für Observatorien mit lokaler Datenverarbeitung. Nvidia: Agentic AI Joins the Search for Extraterrestrial Signals Breakthrough Listen and NVIDIA SETI Institute: Echtzeitsuche mit Nvidia IGX Thor Nvidia DAQIRI Nvidia: How SETI Uses AI to Search for Intelligent Alien Life Am »Allen Telescope Array« in Nordkalifornien steuern KI-Agenten jetzt Radioteleskope und werten deren Daten während der Beobachtung aus. Forscher von Breakthrough Listen und dem SETI Institute wollen dadurch schneller auf mögliche Signale außerirdischer Technik reagieren. Ein Auftrag ersetzt viele Arbeitsschritte Ein Forscher kann per natürlicher Sprache ein Beobachtungsziel vorgeben. Die KI-Agenten richten daraufhin die Antennen aus, kalibrieren die Instrumente, erkennen Fehler im Datenstrom und erstellen eine Auswertung. Nvidias...]]></description>
-    </item>
-    <item>
-      <title>GPT-6 Astra verbessert Qwen um bis zu 508%</title>
-      <link>https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-gpt-astra-qwen-verbesserung</guid>
-      <pubDate>Tue, 03 Nov 2026 08:30:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT-6 Astra bearbeitete rund 0,016% der Gewichte von Qwen3.5-0.8B. Das Ergebnis in MATH-500 stieg von 7,9% auf 48,1%. Der Eingriff reduzierte Wiederholungsschleifen und half dem Modell, mehr Antworten zu beenden. Bei Gemma 3 270M brachte derselbe Ansatz kaum eine Verbesserung. Sparks of Weight-Space Programming Rikiya Takehis Ankündigung auf X Vollständige Versuchsprotokolle auf GitHub Bearbeitetes Qwen3.5-0.8B auf Hugging Face Externer Audit der Gewichtsänderungen Forscher des MIT CSAIL haben GPT-6 Astra die Gewichte von Qwen3.5-0.8B bearbeiten lassen. Der Eingriff erfasste dabei nur rund 0,016% der Gewichte und steigerte das Ergebnis trotzdem im Mathematik-Benchmark MATH-500 von 7,9% auf 48,1%. Also um über 508,9%. Astra stoppt Qwens Reasoning-Schleifen Qwen3.5-0.8B geriet bei längeren Rechenaufgaben häufig in Wiederholungsschleifen. Das Modell schrieb dann immer weiter, kam aber zu keinem Ergebnis. Astra durfte Qwen mit Übungsaufgaben untersuchen und dafür bis zu 50 Testläufe ausführen. Ein Training fand dabei nicht statt. Vor dem Eingriff erreichten 93 von 100 Antworten im MATH-500-Test die Höchstlänge von 32.768 Tokens. Danach geschah das noch bei 33 von 100 Antworten. Qwen...]]></description>
-    </item>
-    <item>
-      <title>New York Times verklagt Brave wegen KI-Geschäft mit Artikeln</title>
-      <link>https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/new-yorks-times-brave-klage</guid>
-      <pubDate>Tue, 03 Nov 2026 08:20:13 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Die New York Times und drei weitere US-Zeitungen haben Brave in Manhattan verklagt. Sie werfen Brave vor, Artikel für KI-Antworten und eine kostenpflichtige Search API zu kopieren. Die Klagen richten sich außerdem gegen eine Funktion zum Umgehen von Paywalls und Braves Werbemodell. Die Verlage verlangen Schadenersatz und eine dauerhafte Unterlassungsverfügung. TechCrunch: New York Times and other outlets sue web browser Brave over alleged content scraping Copyright Now: The New York Times v. Brave Software Copyright Now: Daily News, Chicago Tribune and Orlando Sentinel v. Brave Software Brave: Brave AI und Search API Brave: Search API Die New York Times und drei weitere US-Zeitungen haben Brave am 2. November 2026 vor einem Bundesgericht in Manhattan verklagt. Sie werfen dem Browser-Anbieter vor, geschützte Artikel zu kopieren, für KI-Antworten zu nutzen und über eine API an KI-Unternehmen weiterzugeben. Anzeige Zwei Klagen richten sich gegen Brave Die New York Times reichte eine eigene Klage ein. In einem zweiten Verfahren gehen die Daily News, die Chicago Tribune und der Orlando Sentinel gegen Brave vor. Beide Klagen nennen Anthropic, Perplexity, Mistral, xAI und Cohere als Ku...]]></description>
     </item>
   </channel>
 </rss>
