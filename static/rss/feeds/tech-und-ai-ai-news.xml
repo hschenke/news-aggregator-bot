@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 13:19:34 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dein Arbeitgeber sieht, ob KI für persönliche Anfragen genutzt wurde</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-claude-arbeit-privat</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-arbeit-privat</guid>
+      <pubDate>Thu, 05 Nov 2026 08:18:50 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Enterprise zählt persönliche oder themenfremde Sitzungen samt Kosten als »Ineffizienzen«. Private Gespräche erscheinen ohne Namen, Gesprächsinhalte oder Einzelsitzungen. Weitere Ansichten zeigen Arbeitsergebnisse, Aufgaben und die jeweiligen Kosten. Smart Reports müssen vom Owner aktiviert werden, für reguläre Arbeitssitzungen lässt sich zusätzlich eine Namensanzeige freischalten. Anthropic: Get started with smart reports Anthropic: Smart reports, surveys, and pooled group budgets for Claude Enterprise Wer Claude über den Firmenzugang nutzt, hinterlässt auch mit privaten Fragen Spuren in der Teamstatistik. Die Smart Reports für Claude Enterprise zeigen Admins, wie viele Sitzungen als persönlich oder themenfremd gelten und welche Kosten sie verursachen. Private Anfragen landen unter »Ineffizienzen« Diese Gespräche landen in der Kategorie »Ineffizienzen«. Eine Beispielauswertung zählt 18 persönliche oder themenfremde Sitzungen von 14 Nutzern für 217$. Daneben stehen 115 abgebrochene oder erfolglose Arbeitssitzungen von 30 Nutzern für 106$. + Quelle: Anthropic Als privat erkannte Gespräche erscheinen ausschließlich als zusammengefasste Werte, ohne Namen, einzelne Sitzungen o...]]></description>
+    </item>
+    <item>
+      <title>OpenAI findet 948 Sicherheitslücken zu vollen Linux-Rechten</title>
+      <link>https://www.all-ai.de/news/news26top/openai-linux-ki-sicherheit-1</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-linux-ki-sicherheit-1</guid>
+      <pubDate>Thu, 05 Nov 2026 08:05:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI ließ KI-Agenten 948 Linux-Sicherheitslücken bis zu vollen Administratorrechten ausnutzen. Der Durchlauf kostete rund 1,2 Millionen $ an API-Guthaben. Die Angriffe setzen bereits lokalen Zugriff mit einfachen Benutzerrechten voraus. Die KI lieferte Korrekturvorschläge, die Sicherheitsforscher vor der Weitergabe an die Linux-Entwickler prüften. OpenAI: A thousand fewer paths to root, 4. November 2026 Linux-Kernel-Dokumentation: Security bugs OpenAI hat mit KI-Agenten 948 Sicherheitslücken im Linux-Kernel aufgespürt und erfolgreich ausgenutzt. Über diese Lücken konnten die Agenten aus einem normalen Benutzerkonto volle Administratorrechte erlangen. Die automatisierte Untersuchung kostete rund 1,2 Millionen $ an API-Guthaben. Anzeige Vom Verdacht zum funktionierenden Angriff Der Linux-Kernel bildet die Grundlage vieler Server, Android-Geräte und Cloud-Dienste. Für die Untersuchung Mitte Oktober setzte OpenAI ein noch unveröffentlichtes, auf Cybersicherheit spezialisiertes KI-Modell ein. Die Agenten meldeten zunächst 2.308 Verdachtsfälle und konnten 1.724 Sicherheitslücken in abgeschotteten Testumgebungen reproduzieren. Anschließend prüften sie, welche Lücken sich für Angriffe...]]></description>
+    </item>
+    <item>
+      <title>ChatGPT Image 2.6 bekommt GIFs, ist aber schlechter?</title>
+      <link>https://www.all-ai.de/news/news26top/openai-chatgpt-images-2-6-gif-bench</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-images-2-6-gif-bench</guid>
+      <pubDate>Thu, 05 Nov 2026 07:05:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[GPT Image 2.6 erstellt animierte GIFs in ChatGPT und über die API. In Arena liegt Sunburst bei der Wartezeit fast auf dem halben Wert seines Vorgängers. Die getesteten Medium-Varianten bleiben in beiden Arena-Ranglisten hinter ihren jeweiligen 2.5-Vorgängern. Das Update kommt weltweit in alle Tarifstufen von ChatGPT und Codex, die API wird separat nach Verbrauch abgerechnet. OpenAI: Introducing Images 2.6 OpenAI: ChatGPT Images 2.6 System Card OpenAI API: Preise für Bildgenerierung Arena: Text-to-Image-Rangliste Arena: Image-Edit-Rangliste OpenAI ergänzt GPT Image 2.6 um animierte GIFs. Außerdem erzeugen die neuen Varianten »Sunburst« und »Flare« Bilder deutlich schneller. In den Arena-Ranglisten liegen ihre jeweiligen Vorgänger bei der Bildqualität allerdings weiterhin vorne. Anzeige GIFs aus Prompts und Skizzen Das größte neue Feature bringt Bewegung in die Bilder. Nutzer können per Prompt kurze GIF-Animationen erstellen, etwa ein winkendes Maskottchen. Auch einfache Skizzen lassen sich in animierte Figuren verwandeln. OpenAI zeigt beispielsweise, wie aus einer auf Papier gezeichneten Eule eine bewegte Figur entsteht. Die GIF-Erstellung steht sowohl in ChatGPT als auch über di...]]></description>
+    </item>
     <item>
       <title>Higgsfield im Überblick: Was das KI-Influencer-Studio kann und was es wirklich kostet</title>
       <link>https://www.all-ai.de/tools/ki-top-tools100/higgsfield-uebersicht-test</link>
@@ -16,15 +43,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT Image 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) Higgsfield – Hilfecenter zu Modellen, Funktionen und Abrechnung Higgsfield – aktuelle deutsche Tarife und Leistungsvergleich Higgsfield – Nutzungsbedingungen zu Abos, Credits und Unlimited Trustpilot – aktuelle Nutzererfahrungen zu Higgsfield Higgsfield – Unternehmensdaten und Finanzierungsrunde mit 5,4 Mrd.$ Bewertung Higgsfield ist die unangefochtene Nr. 1 für die Bild- und Videogenerierung. Die Plattform verbindet die besten KI-Modelle mit zahlreichen einfachen und nützlichen Funktionen. Daraus ergeben sich zwei Zielgruppen. Zum einen Menschen, die Zugriff auf alle Bild- und Videomodelle möchten, zum anderen Content Creator. Letztere können damit sehr einfach virale Trends oder Marketingkampagnen erschaffen. Higgsfield KI-Plattform für Bilder & Videos 9.0 Score Preis-Modell Abo mit Credits und zusätzlichen Nutzungskontingenten Plattform Browser und API Sprache DE, EN Status Etabliert, häufige Updates Gratis Testen?...]]></description>
-    </item>
-    <item>
-      <title>GPT Images 2.6 überrascht mit einer Funktion</title>
-      <link>https://www.all-ai.de/news/news26/openai-chatgpt-images-2-6-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/openai-chatgpt-images-2-6-start</guid>
-      <pubDate>Wed, 04 Nov 2026 20:33:15 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Images 2.6 bringt eine GIF-Funktion in ChatGPT. Animationen entstehen aus Textprompts oder hochgeladenen Fotos und lassen sich nachträglich bearbeiten. Der berichtete Rollout umfasst ChatGPT und Codex im Web sowie in den Apps. The Verge: ChatGPT will now make you animated GIFs OpenAI: GPT Image 2.6 in der API-Spezifikation zur Bildbearbeitung ChatGPT bekommt mit GPT Images 2.6 eine neue Funktion für animierte GIFs. Das Bildmodell war zuvor bereits in OpenAIs technischer Dokumentation aufgetaucht. Jetzt berichtet The Verge über den beginnenden Rollout. Anzeige Aus einer Beschreibung wird eine Animation Nutzer können ein GIF per Textprompt erstellen oder ein eigenes Foto als Vorlage hochladen. Anschließend lassen sich die Abspielgeschwindigkeit verändern und einzelne Frames bearbeiten. So kann der Nutzer die Animation direkt in ChatGPT anpassen. Als Beispiel zeigte OpenAI eine tanzende Katze. ChatGPT erzeugt dafür mehrere Einzelbilder und setzt sie zu einem GIF zusammen. + Quelle: theverge GPT Images 2.6 soll außerdem die Erstellung gewöhnlicher Bilder beschleunigen. Das Update wird schrittweise für alle ChatGPT- und Codex-Nutzer im Web sowie in den Desktop- und Mobil-Apps aus...]]></description>
     </item>
     <item>
       <title>OpenAI will Pierre übernehmen und Codex weiter ausbauen</title>
@@ -61,42 +79,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT Image 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) ElevenLabs: Produktübersicht ElevenLabs: Preise und Tarife ElevenLabs: ElevenCreative Dokumentation ElevenLabs: Eleven v4 und Eleven v4 Turbo ElevenLabs: 22-Milliarden-$-Unternehmensbewertung ElevenLabs erzeugt Stimmen aus Text, klont Sprecher und übersetzt Videos in andere Sprachen. Besonders auffällig ist Eleven v4, das Emotion, Tempo und mehrere Sprecher in über 90 Sprachen steuern kann. Darüber hinaus ist ElevenLabs aber mittlerweile deutlich mehr als »nur« Sprache. ElevenLabs KI-Audio & Voice Agents 9.5 Score Preis-Modell Gratis-Tarif, Abos und Enterprise Plattform Browser, iOS, Android und API Sprache Über 90 mit Eleven v4 Status Etabliert, häufige Updates Gratis Testen? Ja, mit 10.000 Credits pro Monat Letztes Update 11/2026 Tool kostenlos ausprobieren Klick führt direkt zum Anbieter, Affliatelink 01. Anwendungsbeispiel Die eigene Stimme wird zum Hörspielsprecher Ein Nutzer kann seine eigene Stimme klonen und d...]]></description>
-    </item>
-    <item>
-      <title>KI-Studien sind nach kurzer Zeit »falsch«.</title>
-      <link>https://www.all-ai.de/news/news26top/ki-studien-fehler</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/ki-studien-fehler</guid>
-      <pubDate>Wed, 04 Nov 2026 12:25:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Zwei Stanford-Forscher prüfen 50 bekannte KI-Befunde mit 20 neueren Modellen erneut. 22 Effekte sind weitgehend verschwunden, 17 haben sich abgeschwächt, acht bestehen fort und drei sind stärker geworden. Erfundene Literaturangaben werden bei mehreren Modellen seltener, einzelne Modelle zeigen weiterhin hohe Fehlerraten. Übermäßige Zustimmung, politische Tendenzen und die Bevorzugung eigener Antworten bleiben bestehen oder verstärken sich. Owen Queen und James Zou: The shelf life of LLM findings, 2. November 2026 Alte Studien prägen bis heute das Bild von KI. Die Stanford-Forscher Owen Queen und James Zou haben deshalb 50 viel zitierte Studien mit neueren Modellen erneut getestet und geprüft, welche Aussagen noch gelten. Bei 39 fiel der untersuchte Effekt deutlich schwächer aus oder war weitgehend verschwunden. Dieselben Tests mit neueren Modellen Die Idee hinter »The shelf life of LLM findings« ist, frühere Versuche unter möglichst gleichen Bedingungen zu wiederholen. So lässt sich etwa prüfen, ob heutige Modelle noch genauso oft Quellen erfinden oder dem Nutzer nach dem Mund reden wie ihre Vorgänger. Dafür überprüften die Forscher zunächst die ursprünglichen Ergebnisse mit den...]]></description>
-    </item>
-    <item>
-      <title>Lindy AI im Überblick: Was der KI-Kollege erledigt und was er kostet</title>
-      <link>https://www.all-ai.de/tools/ki-top-tools100/lindy-ai-ki-kollege-ueberblick</link>
-      <guid isPermaLink="false">https://www.all-ai.de/tools/ki-top-tools100/lindy-ai-ki-kollege-ueberblick</guid>
-      <pubDate>Wed, 04 Nov 2026 09:50:28 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Image 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) Lindy – Produktübersicht und Anwendungsbeispiele Lindy – Aktuelle Tarife und Testbedingungen Lindy – Dokumentation zu Funktionen, Einrichtung und Abrechnung Lindy – Sicherheits- und Datenschutzangaben Trustpilot – Nutzerberichte zu Lindy Lindy arbeitet als KI-Kollege in Slack, E-Mail, SMS und am Telefon. Der Nutzer übergibt eine Aufgabe in Alltagssprache, während Lindy Informationen aus verbundenen Diensten holt und die Arbeit dort erledigt. Mit »Lindy Apps« baut der Dienst inzwischen sogar interne Anwendungen auf Basis vorhandener Unternehmensdaten. Lindy AI No-Code KI-Agenten 8.5 Score Preis-Modell Abo pro Nutzer Plattform Browser, Slack, iMessage Sprache EN, DE Status Etabliert, häufige Updates Gratis Testen? 7 Tage Test umsonst Letztes Update 11/2026 Tool kostenlos ausprobieren Klick führt direkt zum Anbieter, Affliatelink 01. Anwendungsbeispiel Aus verstreuten Geschäftszahlen wird die Montagspräsentation Am Sonnt...]]></description>
-    </item>
-    <item>
-      <title>Tencent veröffentlicht mit Hy4 eines der besten Open Weight Modelle</title>
-      <link>https://www.all-ai.de/news/news26/tencent-hy4-openweight-release</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/tencent-hy4-openweight-release</guid>
-      <pubDate>Wed, 04 Nov 2026 07:45:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Tencent veröffentlicht Hy4 mit Bildverständnis und Computerbedienung. Das KI-Modell legt bei Programmierung, Wissensarbeit und langen Abläufen deutlich zu. Hy4 verarbeitet bis zu 1.048.576 Token und kostet regulär 2,501$ pro Million Ausgabetoken. Die Modellgewichte und eine ausführliche System Card sollen folgen. Tencent Hy: Introducing Hy4 OpenRouter: Tencent Hy4 Tencent: Hy4 preview Tencent veröffentlicht mit Hy4 die fertige Fassung seines neuen KI-Modells für Programmierung, Recherche und lange Arbeitsabläufe. Gegenüber Hy4 preview legt das Modell deutlich zu und kann erstmals Bilder auswerten sowie grafische Oberflächen bedienen. Hy4 macht bei Code und Agenten den größten Sprung In Tencents Vergleichstabelle erreicht Hy4 im Terminal-Bench 4.0 einen Wert von 44,4. Die Preview kam auf 26,3. GPT-6.1 Sol liegt mit 55,5 davor, während Kimi K3.1 Pro und Claude Opus 5.5 jeweils rund 66 Punkte schaffen. Hy4 macht also viel Boden gut, setzt bei praktischen Terminal-Aufgaben aber keinen neuen Bestwert. + Quelle: Tencent Bei mehrstufiger Wissensarbeit sieht es besser aus. Im APEX-Agents v1.1 erzielt Hy4 75,2 Punkte und führt das gezeigte Vergleichsfeld an. Der Test umfasst professionel...]]></description>
-    </item>
-    <item>
-      <title>GPT-6 Astra entwirft komplettes Codex-Gerät in 1 Woche</title>
-      <link>https://www.all-ai.de/news/news26/gpt-6-astra-codex-hardware</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gpt-6-astra-codex-hardware</guid>
-      <pubDate>Wed, 04 Nov 2026 06:03:11 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT-6 Astra entwarf ein komplettes Gerät für Gespräche mit Codex. Zwei Mitarbeiter erreichten in weniger als einer Woche ein fertiges Design, die ersten Prototypen entstanden binnen eines Monats. Ein internes Modell von OpenAI erzielte bei BenchCAD 2.0 im Mittel 0,88 Punkte gegenüber 0,59 Punkten für Astra. OpenAI startet außerdem eine Forschungskooperation mit Mazda zu Fahrzeugdesign und Simulationen. OpenAI: Accelerating engineering for the physical world BenchCAD: Introducing BenchCAD 2.0 OpenAI hat GPT-6 Astra ein komplettes Gerät für Gespräche mit Codex entwerfen lassen. Zwei Mitarbeiter begleiteten das Nebenprojekt und erreichten in weniger als einer Woche ein fertiges Design, ein Auftragsfertiger produzierte die ersten Prototypen binnen eines Monats. Von der Platine bis zur Benutzeroberfläche Astra gestaltete das Gehäuse und dessen innere Halterungen, wählte elektronische Bauteile aus und entwarf die Leiterplatte. Das KI-Modell entwickelte außerdem die Benutzeroberfläche, die Firmware und die Anbindung an Codex. Direkte menschliche Änderungen am Entwurf gab es während des Experiments laut OpenAI nicht. Für die Fertigung reichte das Ergebnis allein jedoch noch nicht aus. D...]]></description>
     </item>
   </channel>
 </rss>

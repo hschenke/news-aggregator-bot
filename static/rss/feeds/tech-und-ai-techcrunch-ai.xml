@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 13:19:34 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A YC startup is putting $1M behind five unsolved materials science problems for AI</title>
+      <link>https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185211</guid>
+      <pubDate>Thu, 05 Nov 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Discovered Materials, a months-old YC startup that uses AI to find chip materials, is offering $200,000 for each solution to five open materials science problems.]]></description>
+    </item>
+    <item>
+      <title>Agility is the first pure humanoid robot company on the stock market. Are you buying?</title>
+      <link>https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185147</guid>
+      <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Agility arrives on the Nasdaq today as the first publicly-traded pure-play humanoid robotics company.]]></description>
+    </item>
     <item>
       <title>Apple is reportedly cutting budgets for its internal AI usage</title>
       <link>https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/</link>
@@ -115,15 +133,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Politicians on the left, like NYC mayor Zohran Mamdani and former FTC chair Lina Khan, accused Google of acting as an unregulated monopoly.]]></description>
-    </item>
-    <item>
-      <title>TechCrunch Founder Summit 2026: Doors open at 9 a.m. ET in Boston</title>
-      <link>https://techcrunch.com/2026/11/04/techcrunch-founder-summit-2026-todays-the-day/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185013</guid>
-      <pubDate>Wed, 04 Nov 2026 13:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Today is the day to join TechCrunch Founder Summit 2026 in Boston's SoWa Power Station. Register now to join this founder-focused conference today.]]></description>
     </item>
   </channel>
 </rss>
