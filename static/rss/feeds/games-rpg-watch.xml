@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 04 Nov 2026 13:05:55 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rogue Trader - The Processional of the Damned DLC launches on December 8</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60512</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60512</guid>
+      <pubDate>Wed, 04 Nov 2026 15:51:51 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Processional of the Damned DLC launches on December 8: Warhammer 40,000: Rogue Trader - Official 'Processional of the Damned' DLC Release Date Trailer]]></description>
+    </item>
     <item>
       <title>Shadows of the Dungeon - Kickstarter starts on November 9</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60511</link>
@@ -61,15 +70,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Genshin Impact Version 7.2 has been released: Character Trailer - "Mitya: Everything's in Order"]]></description>
-    </item>
-    <item>
-      <title>Elder Scrolls VI: Sentinel - Title Reveal</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60505</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60505</guid>
-      <pubDate>Tue, 03 Nov 2026 14:43:40 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Elder Scrolls VI is called Sentinel: The Elder Scrolls 6: Sentinel – Official Title and Logo Reveal The full title of the next Elder Scrolls game is The Elder Scrolls VI: Sentinel.]]></description>
     </item>
   </channel>
 </rss>
