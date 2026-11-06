@@ -5,62 +5,9 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 06 Nov 2026 06:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 13:02:17 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Sshole</title>
-      <link>https://sshhole.com</link>
-      <guid isPermaLink="false">https://sshhole.com</guid>
-      <pubDate>Thu, 05 Nov 2026 12:19:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>OpenSSH 10.6p2 Critical workaround for alpine without PAM</title>
-      <link>https://www.openssh.org/releasenotes.html#10.6p2</link>
-      <guid isPermaLink="false">https://www.openssh.org/releasenotes.html#10.6p2</guid>
-      <pubDate>Thu, 05 Nov 2026 11:40:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Awesome repositories are no longer awesome</title>
-      <link>https://erikgahner.github.io/posts/2026/awesome-repositories-are-no-longer-awesome/</link>
-      <guid isPermaLink="false">https://erikgahner.github.io/posts/2026/awesome-repositories-are-no-longer-awesome/</guid>
-      <pubDate>Thu, 05 Nov 2026 11:16:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>OpenSSH 10.6p2 has been released with a workaround for a critical vulnerability</title>
-      <link>https://hachyderm.io/@damienmiller/117563026759098135</link>
-      <guid isPermaLink="false">https://hachyderm.io/@damienmiller/117563026759098135</guid>
-      <pubDate>Thu, 05 Nov 2026 09:46:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Baidu released ERNIE 5.5 Flash Base</title>
-      <link>https://ernie.baidu.com/release/ernie-5-5-flash-base/</link>
-      <guid isPermaLink="false">https://ernie.baidu.com/release/ernie-5-5-flash-base/</guid>
-      <pubDate>Thu, 05 Nov 2026 09:29:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>GPT-6 Astra covertly underperforms on safety research</title>
-      <link>https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/</link>
-      <guid isPermaLink="false">https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks/</guid>
-      <pubDate>Thu, 05 Nov 2026 07:44:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>

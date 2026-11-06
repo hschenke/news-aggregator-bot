@@ -5,9 +5,36 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 06 Nov 2026 06:01:07 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 13:02:17 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic »Model 4«: Doppeltes Tempo bei KI-Fortschritt erreicht</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-model4-metris-bericht</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-model4-metris-bericht</guid>
+      <pubDate>Fri, 06 Nov 2026 09:10:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropics Benchmark-Fortschritt hat sich seit Oktober 2025 auf geschätzt das 1,9-Fache beschleunigt. Neuere unveröffentlichte Modelle erhöhen die Schätzung gegenüber den zuvor genannten 1,7. METR schätzt den KI-Anteil an der aktuellen Beschleunigung auf ungefähr 80%, mit erheblicher Unsicherheit. Die Prüfer sehen das Risiko einer weiteren Beschleunigung, während Anthropic viele zentrale Belege zurückhält. METR: Independent Assessment of AI R&D Acceleration at Anthropic in October 2026 (5. November 2026) Anthropic schafft bei klar überprüfbaren KI-Aufgaben inzwischen ungefähr zwei Jahre Fortschritt in einem Jahr. Die Prüforganisation METR führt einen Großteil der aktuellen Beschleunigung auf den KI-Einsatz in der Forschung zurück und hat dafür auch Daten unveröffentlichter Modelle wie »Model 4« ausgewertet. Unveröffentlichte Modelle verändern das Bild Der Bericht vom 5. November beziffert das gestiegene Fortschrittstempo seit Oktober 2025 auf das 1,9-Fache. METR analysierte von Anthropic bereitgestellte Benchmark-Daten. Grundlage ist AECI, ein Index aus mehreren Benchmarks. + Quelle: Metre Anthropics Dokumentation zu Haiku 5.5 hatte noch das 1,7-Fache genannt. Den Unterschied er...]]></description>
+    </item>
+    <item>
+      <title>KI-Ausverkauf kostet die US-Börse 3,2 Billionen Dollar</title>
+      <link>https://www.all-ai.de/news/news26/ki-ausverkauf-boerse-wahlen-us</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-ausverkauf-boerse-wahlen-us</guid>
+      <pubDate>Fri, 06 Nov 2026 08:50:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Der US-Aktienmarkt verliert am 5. November 3,2 Billionen$ an Börsenwert. Nach dem Wahlsieg der Demokraten fürchten Anleger strengere Regeln für KI-Rechenzentren. Rund drei Viertel der US-Wähler lehnen ein neues Rechenzentrum in ihrer Gemeinde ab. Nvidia, AMD und Anbieter von KI-Rechenleistung verzeichnen deutliche Kursverluste. Reuters über MarketScreener: Investors wipe $2.5 trillion off Nasdaq as blue tsunami prompts AI fears (5. November 2026) Associated Press: Data centers took a beating in the midterm elections. A reckoning may be ahead for tech giants (6. November 2026) Die Angst vor strengeren Regeln für KI-Rechenzentren hat einen Ausverkauf an der Wall Street ausgelöst. Am 5. November verlor der US-Aktienmarkt laut Financial Times 3,2 Billionen $ an Börsenwert, nachdem die Demokraten die US-Zwischenwahlen deutlich gewonnen hatten. US-Wähler stellen sich gegen den Rechenzentren-Boom Bei der Wahl am 3. November eroberten die Demokraten beide Kammern des Kongresses. Auch in wichtigen Bundesstaaten wie Texas und Ohio gewannen Gouverneurskandidaten, die den Bau neuer Rechenzentren stärker einschränken wollen. In Texas kündigte die künftige Gouverneurin Gina Hinojosa an, Geneh...]]></description>
+    </item>
+    <item>
+      <title>Thinking Machines veröffentlicht Inkling 2 Small</title>
+      <link>https://www.all-ai.de/news/news26/thinking-machines-inkling-2-small-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/thinking-machines-inkling-2-small-start</guid>
+      <pubDate>Fri, 06 Nov 2026 07:44:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Inkling 2 Small steigt im Intelligence Index von Artificial Analysis von 13 auf 31 Punkte. Bei durchschnittlich 1,18$ pro Benchmark-Aufgabe ist es günstiger als einige Konkurrenten, OpenAI bietet im Vergleich aber mehr Leistung fürs Geld. Das Modell verarbeitet Text und Bilder und lässt sich auf Tinker ausprobieren und nachtrainieren. Die vollständigen Modellgewichte sollen kommende Woche nach Sicherheitstests unter Apache 2.0 erscheinen. Thinking Machines – Introducing Inkling 2 Small, 5. November 2026 Artificial Analysis – Inkling 2 Small, Leistung und Kosten Artificial Analysis – Intelligence Index und Kostenvergleich; mit den bereitgestellten Diagrammen vom 5. November 2026 abgeglichen Thinking Machines bringt mit Inkling 2 Small ein neues KI-Modell für Coding, Bildverständnis und Büroaufgaben. Im Vergleich zum Vorgänger verbessert es sich deutlich und soll kommende Woche mit Open Weights erscheinen. Ordentliches Ergebnis bei Artificial Analysis Im Intelligence Index von Artificial Analysis erreicht Inkling 2 Small 31 Punkte. Der Vorgänger Inkling Small kommt auf 13. Damit liegt das neue Modell auf dem Niveau von Gemini 3.8 Flash, vor Mistral Large 4 mit 26 Punkten und Muse ...]]></description>
+    </item>
     <item>
       <title>Make.com im Überblick: Was die Automatisierung-Plattform erledigt und was sie kostet</title>
       <link>https://www.all-ai.de/tools/ki-top-tools100/make-com-automatisierung-test</link>
@@ -43,33 +70,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[iFLYTEK zeigte seine Tongchuang AI Blackboard auf der WAIC 2026 in Shanghai. Die Tafel verbindet Kreideschrift mit interaktiven Funktionsgraphen und drehbaren 3D-Modellen. Deutsche Schulen nutzen ebenfalls digitale Tafeln, ihre technische Ausstattung unterscheidet sich jedoch erheblich. Für die gezeigte Ausführung gibt es keinen öffentlichen Listenpreis. iFLYTEK: Tongchuang AI Blackboard auf der WAIC 2026, 17. Juli 2026 iFLYTEK: KI-Tafel auf der 88. chinesischen Bildungsmesse, 31. Oktober 2026 iFLYTEK: Offizielle Produktseite der Tongchuang AI Blackboard Bitkom: Lehrerbefragung zu KI und Schulausstattung, 9. Oktober 2024 Bitkom: Schule und KI – große Chancen, ungleiche Voraussetzungen, 5. August 2026 Ein Lehrer schreibt eine Formel an die Tafel, daneben erscheint der passende Funktionsgraph. Die »Tongchuang AI Blackboard« verbindet vertrautes Schreiben mit interaktiven Grafiken und drehbaren 3D-Modellen. Auf der KI-Messe WAIC 2026 in Shanghai zeigte der Hersteller, wie das im Unterricht aussehen kann. Aus der Handschrift wird ein interaktives Modell Die Tafel kombiniert einen Hauptbildschirm mit zwei seitlichen Schreibflächen. Lehrer können weiterhin mit Kreide schreiben. Die ha...]]></description>
-    </item>
-    <item>
-      <title>Dein Arbeitgeber sieht, ob KI für persönliche Anfragen genutzt wurde</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-claude-arbeit-privat</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-arbeit-privat</guid>
-      <pubDate>Thu, 05 Nov 2026 08:18:50 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Enterprise zählt persönliche oder themenfremde Sitzungen samt Kosten als »Ineffizienzen«. Private Gespräche erscheinen ohne Namen, Gesprächsinhalte oder Einzelsitzungen. Weitere Ansichten zeigen Arbeitsergebnisse, Aufgaben und die jeweiligen Kosten. Smart Reports müssen vom Owner aktiviert werden, für reguläre Arbeitssitzungen lässt sich zusätzlich eine Namensanzeige freischalten. Anthropic: Get started with smart reports Anthropic: Smart reports, surveys, and pooled group budgets for Claude Enterprise Wer Claude über den Firmenzugang nutzt, hinterlässt auch mit privaten Fragen Spuren in der Teamstatistik. Die Smart Reports für Claude Enterprise zeigen Admins, wie viele Sitzungen als persönlich oder themenfremd gelten und welche Kosten sie verursachen. Private Anfragen landen unter »Ineffizienzen« Diese Gespräche landen in der Kategorie »Ineffizienzen«. Eine Beispielauswertung zählt 18 persönliche oder themenfremde Sitzungen von 14 Nutzern für 217$. Daneben stehen 115 abgebrochene oder erfolglose Arbeitssitzungen von 30 Nutzern für 106$. + Quelle: Anthropic Als privat erkannte Gespräche erscheinen ausschließlich als zusammengefasste Werte, ohne Namen, einzelne Sitzungen o...]]></description>
-    </item>
-    <item>
-      <title>OpenAI findet 948 Sicherheitslücken zu vollen Linux-Rechten</title>
-      <link>https://www.all-ai.de/news/news26top/openai-linux-ki-sicherheit-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-linux-ki-sicherheit-1</guid>
-      <pubDate>Thu, 05 Nov 2026 08:05:33 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[OpenAI ließ KI-Agenten 948 Linux-Sicherheitslücken bis zu vollen Administratorrechten ausnutzen. Der Durchlauf kostete rund 1,2 Millionen $ an API-Guthaben. Die Angriffe setzen bereits lokalen Zugriff mit einfachen Benutzerrechten voraus. Die KI lieferte Korrekturvorschläge, die Sicherheitsforscher vor der Weitergabe an die Linux-Entwickler prüften. OpenAI: A thousand fewer paths to root, 4. November 2026 Linux-Kernel-Dokumentation: Security bugs OpenAI hat mit KI-Agenten 948 Sicherheitslücken im Linux-Kernel aufgespürt und erfolgreich ausgenutzt. Über diese Lücken konnten die Agenten aus einem normalen Benutzerkonto volle Administratorrechte erlangen. Die automatisierte Untersuchung kostete rund 1,2 Millionen $ an API-Guthaben. Anzeige Vom Verdacht zum funktionierenden Angriff Der Linux-Kernel bildet die Grundlage vieler Server, Android-Geräte und Cloud-Dienste. Für die Untersuchung Mitte Oktober setzte OpenAI ein noch unveröffentlichtes, auf Cybersicherheit spezialisiertes KI-Modell ein. Die Agenten meldeten zunächst 2.308 Verdachtsfälle und konnten 1.724 Sicherheitslücken in abgeschotteten Testumgebungen reproduzieren. Anschließend prüften sie, welche Lücken sich für Angriffe...]]></description>
-    </item>
-    <item>
-      <title>ChatGPT Image 2.6 bekommt GIFs, ist aber schlechter?</title>
-      <link>https://www.all-ai.de/news/news26top/openai-chatgpt-images-2-6-gif-bench</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-chatgpt-images-2-6-gif-bench</guid>
-      <pubDate>Thu, 05 Nov 2026 07:05:36 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Image 2.6 erstellt animierte GIFs in ChatGPT und über die API. In Arena liegt Sunburst bei der Wartezeit fast auf dem halben Wert seines Vorgängers. Die getesteten Medium-Varianten bleiben in beiden Arena-Ranglisten hinter ihren jeweiligen 2.5-Vorgängern. Das Update kommt weltweit in alle Tarifstufen von ChatGPT und Codex, die API wird separat nach Verbrauch abgerechnet. OpenAI: Introducing Images 2.6 OpenAI: ChatGPT Images 2.6 System Card OpenAI API: Preise für Bildgenerierung Arena: Text-to-Image-Rangliste Arena: Image-Edit-Rangliste OpenAI ergänzt GPT Image 2.6 um animierte GIFs. Außerdem erzeugen die neuen Varianten »Sunburst« und »Flare« Bilder deutlich schneller. In den Arena-Ranglisten liegen ihre jeweiligen Vorgänger bei der Bildqualität allerdings weiterhin vorne. Anzeige GIFs aus Prompts und Skizzen Das größte neue Feature bringt Bewegung in die Bilder. Nutzer können per Prompt kurze GIF-Animationen erstellen, etwa ein winkendes Maskottchen. Auch einfache Skizzen lassen sich in animierte Figuren verwandeln. OpenAI zeigt beispielsweise, wie aus einer auf Papier gezeichneten Eule eine bewegte Figur entsteht. Die GIF-Erstellung steht sowohl in ChatGPT als auch über di...]]></description>
     </item>
   </channel>
 </rss>
