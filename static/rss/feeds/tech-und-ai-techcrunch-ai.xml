@@ -5,17 +5,107 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 13:19:34 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 06:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A YC startup is putting $1M behind five unsolved materials science problems for AI</title>
+      <title>Airbnb says it’s launching an AI travel agent in the first half of 2027</title>
+      <link>https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185656</guid>
+      <pubDate>Thu, 05 Nov 2026 22:40:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Airbnb says its upcoming AI agent will help travelers plan trips, compare options, manage bookings, and get assistance throughout their stay.]]></description>
+    </item>
+    <item>
+      <title>Meta says US users can now video chat with their Muse AI avatar</title>
+      <link>https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185610</guid>
+      <pubDate>Thu, 05 Nov 2026 19:48:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Meta's AI agent can now take calls as a customizable animated avatar, ahead of the launch of a Tamagotchi-like wearable designed to bring Muse to life.]]></description>
+    </item>
+    <item>
+      <title>Meta warns that election backlash against data centers could make AI expansion harder</title>
+      <link>https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185548</guid>
+      <pubDate>Thu, 05 Nov 2026 19:12:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Meta warns that growing political opposition to data centers could threaten future AI investments, as communities push back against massive infrastructure projects.]]></description>
+    </item>
+    <item>
+      <title>OpenAI released a new cybersecurity model. Is that enough?</title>
+      <link>https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185414</guid>
+      <pubDate>Thu, 05 Nov 2026 19:06:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[OpenAI's newest cybersecurity model comes out as AI labs face scrutiny of their work to protect digital infrastructure.]]></description>
+    </item>
+    <item>
+      <title>OpenAI president Greg Brockman says company could be IPO ready in 2027</title>
+      <link>https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185500</guid>
+      <pubDate>Thu, 05 Nov 2026 18:02:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Speaking at a Wall Street Journal tech conference on Wednesday, the executive touted how the company had been gaining ground in the enterprise market, where rival Anthropic had already successfully made inroads.]]></description>
+    </item>
+    <item>
+      <title>Claude can now analyze your spending with its new Personal Finance tool</title>
+      <link>https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185468</guid>
+      <pubDate>Thu, 05 Nov 2026 18:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[With Personal Finance in Claude, users can connect their bank and card accounts through Plaid and ask questions about their finances.]]></description>
+    </item>
+    <item>
+      <title>Axiom Math wants to keep AI slop out of mathematics</title>
+      <link>https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185344</guid>
+      <pubDate>Thu, 05 Nov 2026 16:16:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[As AI floods math with unchecked proofs, Axiom Math is betting on verification. The startup’s AI agents just formally verified the Stacks Project, one of the field’s biggest libraries.]]></description>
+    </item>
+    <item>
+      <title>Dropbox acquires Tigris Data for $350M to bolster its AI infrastructure</title>
+      <link>https://techcrunch.com/2026/11/05/dropbox-acquires-tigris-data-for-350m-to-bolster-its-ai-iinfrastructure/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185428</guid>
+      <pubDate>Thu, 05 Nov 2026 15:19:05 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The deal is expected to support the development of DBX Agent Cloud, a new storage platform aimed at developers building AI models and agents.]]></description>
+    </item>
+    <item>
+      <title>Aina’s smart ring has a screen, a joystick, and a mic so you can talk to AI agents</title>
+      <link>https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185356</guid>
+      <pubDate>Thu, 05 Nov 2026 14:42:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Aina's ring can also take calls and help you dictate notes on your Mac.]]></description>
+    </item>
+    <item>
+      <title>Box taps Nvidia’s Nemotron for new agent-first content retrieval system</title>
+      <link>https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185377</guid>
+      <pubDate>Thu, 05 Nov 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The system can supposedly answer queries four times faster, with 20% fewer errors and 90% fewer tokens used.]]></description>
+    </item>
+    <item>
+      <title>A YC startup is putting $1M behind 5 unsolved materials science problems for AI</title>
       <link>https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3185211</guid>
       <pubDate>Thu, 05 Nov 2026 13:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Discovered Materials, a months-old YC startup that uses AI to find chip materials, is offering $200,000 for each solution to five open materials science problems.]]></description>
+      <description><![CDATA[While frontier AI models have solved a remarkable series of outstanding mathematics problems and made progress in the life sciences, they have yet to truly plumb the complex physics in advanced materials.]]></description>
     </item>
     <item>
       <title>Agility is the first pure humanoid robot company on the stock market. Are you buying?</title>
@@ -24,115 +114,7 @@
       <pubDate>Thu, 05 Nov 2026 12:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Agility arrives on the Nasdaq today as the first publicly-traded pure-play humanoid robotics company.]]></description>
-    </item>
-    <item>
-      <title>Apple is reportedly cutting budgets for its internal AI usage</title>
-      <link>https://techcrunch.com/2026/11/04/apple-is-reportedly-cutting-budgets-for-its-internal-ai-usage/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185305</guid>
-      <pubDate>Thu, 05 Nov 2026 01:26:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The company is said to be significantly dropping the amount it's spending on AI for its engineering teams.]]></description>
-    </item>
-    <item>
-      <title>After the midterms, a bigger clash over data centers could be coming</title>
-      <link>https://techcrunch.com/2026/11/04/after-the-midterms-a-bigger-clash-over-data-centers-could-be-coming/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185307</guid>
-      <pubDate>Thu, 05 Nov 2026 01:02:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Data center opposition crossed party lines in Tuesday’s midterms.]]></description>
-    </item>
-    <item>
-      <title>AI PACs spent millions trying to shape Congress — here’s how they fared</title>
-      <link>https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185268</guid>
-      <pubDate>Wed, 04 Nov 2026 22:45:09 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[AI industry PACs spent millions influencing the 2026 midterms, with mixed results. Political groups are already looking toward the next election cycle.]]></description>
-    </item>
-    <item>
-      <title>Nothing CEO says company’s mysterious AI-first device is dropping next month</title>
-      <link>https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185172</guid>
-      <pubDate>Wed, 04 Nov 2026 22:13:16 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[While it's not yet clear what kind of product the smartphone startup is cooking up, Nothing's CEO said the product is designed to leverage AI for productivity gains.]]></description>
-    </item>
-    <item>
-      <title>Almost no one uses AI agents to book their Uber, company says</title>
-      <link>https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185205</guid>
-      <pubDate>Wed, 04 Nov 2026 21:56:01 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[During its busiest week last quarter, Uber said only four people booked a ride using an AI agent.]]></description>
-    </item>
-    <item>
-      <title>OpenAI is already trying to shape the 2028 election</title>
-      <link>https://techcrunch.com/2026/11/04/openai-is-already-trying-to-shape-the-2028-election/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185152</guid>
-      <pubDate>Wed, 04 Nov 2026 21:25:44 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[OpenAI’s Chris Lehane wants AI to define the 2028 election, proposing a new social contract that could benefit Americans while also advancing the AI giant’s own business interests.]]></description>
-    </item>
-    <item>
-      <title>Meta acquires AI coding startup Conductor</title>
-      <link>https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185181</guid>
-      <pubDate>Wed, 04 Nov 2026 21:10:56 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The startup allows software engineers to deploy teams of agents to work on various aspects of a project simultaneously.]]></description>
-    </item>
-    <item>
-      <title>Open source AI is booming. Hugging Face explains who profits.</title>
-      <link>https://techcrunch.com/video/open-source-ai-is-booming-hugging-face-explains-who-profits/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_video&amp;p=3185186</guid>
-      <pubDate>Wed, 04 Nov 2026 19:30:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up? On this episode of […]]]></description>
-    </item>
-    <item>
-      <title>DuckDuckGo pitches itself to schools amid backlash over Google’s AI policy</title>
-      <link>https://techcrunch.com/2026/11/04/duckduckgo-pitches-itself-to-schools-amid-backlash-over-googles-ai-policy/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185129</guid>
-      <pubDate>Wed, 04 Nov 2026 19:29:52 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[DuckDuckGo is courting schools frustrated by Google's AI restrictions, pointing educators to its search engine and options to disable AI features.]]></description>
-    </item>
-    <item>
-      <title>Building on open source AI? Hugging Face’s policy chief on the costs, risks, and trade-offs</title>
-      <link>https://techcrunch.com/podcast/building-on-open-source-ai-hugging-faces-policy-chief-on-the-costs-risks-and-trade-offs/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?post_type=tc_podcast&amp;p=3185167</guid>
-      <pubDate>Wed, 04 Nov 2026 18:44:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Open source models are becoming more mainstream as enterprises, governments and startups alike rely on the promise of lower costs, more control, and more flexibility. But as increasingly capable models become more freely available, how do companies capture value? And with Chinese open models gaining ground, can American players keep up? On this episode of […]]]></description>
-    </item>
-    <item>
-      <title>I tried Apple’s Siri Recaps. They’re surprisingly useful — and a little unsettling</title>
-      <link>https://techcrunch.com/2026/11/04/i-tried-apples-siri-recaps-theyre-surprisingly-useful-and-a-little-unsettling/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185071</guid>
-      <pubDate>Wed, 04 Nov 2026 16:51:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Apple's AI-powered Siri Recaps won me over in just one day, despite my privacy reservations. But there's still room for improvement.]]></description>
-    </item>
-    <item>
-      <title>Google faces backlash for plan that would turn off Search for schools that restrict AI</title>
-      <link>https://techcrunch.com/2026/11/04/google-faces-backlash-for-plan-that-would-turn-off-search-for-schools-that-restrict-ai/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185072</guid>
-      <pubDate>Wed, 04 Nov 2026 16:17:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Politicians on the left, like NYC mayor Zohran Mamdani and former FTC chair Lina Khan, accused Google of acting as an unregulated monopoly.]]></description>
+      <description><![CDATA[Agility arrives on the Nasdaq today as the first publicly traded pure-play humanoid robotics company.]]></description>
     </item>
   </channel>
 </rss>

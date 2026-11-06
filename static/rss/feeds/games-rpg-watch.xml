@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 13:19:34 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 06:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tales of Eternia Remastered - Review</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60519</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60519</guid>
+      <pubDate>Thu, 05 Nov 2026 16:04:44 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[RPGamer reviewed Tales of Eternia Remastered: Tales of Eternia Remastered Review Everything’s Easy Breezy! I am no stranger to the Tales series, and for those who don’t know, Eternia is a favourite of mine. I had the pleasure of playing it for the first time when I was in the UK visiting some RPGamer staff....]]></description>
+    </item>
+    <item>
+      <title>General News - Fate of the Galaxy released</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60518</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60518</guid>
+      <pubDate>Thu, 05 Nov 2026 14:08:58 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The free Star Wars fan space sim Fate of the Galaxy has been released: FATE OF THE GALAXY: RELEASE TRAILER]]></description>
+    </item>
     <item>
       <title>Wartales - Knights of Fardensa on December 9</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60517</link>
@@ -34,33 +52,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[RPG Site reports that the indie-title Queen's Domain sold 100K copies in just 5 days.]]></description>
-    </item>
-    <item>
-      <title>Underkeep - Release Day</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60514</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60514</guid>
-      <pubDate>Thu, 05 Nov 2026 05:57:13 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The dungeon crawler Underkeep will be released today: Underkeep - Official Trailer! Explore a dangerous fantasy world in this role-playing dungeon crawler with tactical, turn-based combat. Assemble a party of adventurers, upgrade your gear, and explore a fully handcrafted world....]]></description>
-    </item>
-    <item>
-      <title>The Unremembered - Release Day</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60513</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60513</guid>
-      <pubDate>Thu, 05 Nov 2026 05:52:36 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The roguelite The Unremembered will be released today: The Unremembered - Gameplay Trailer The noon bell hasn't rung. The king died without an heir. You're a wandering sellsword. Swipe left or right through a dark fantasy roguelite. Take a house's coin, buy a tavern rumor, or nurse an old wound for a day....]]></description>
-    </item>
-    <item>
-      <title>Rogue Trader - The Processional of the Damned DLC launches on December 8</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60512</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60512</guid>
-      <pubDate>Wed, 04 Nov 2026 15:51:51 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Processional of the Damned DLC launches on December 8: Warhammer 40,000: Rogue Trader - Official 'Processional of the Damned' DLC Release Date Trailer]]></description>
     </item>
   </channel>
 </rss>

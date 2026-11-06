@@ -5,23 +5,14 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 05 Nov 2026 13:19:34 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 06:01:07 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>A Closer Look at Phonon TTS. Launching High-Quality On-Device Speech That Tops the Benchmarks.</title>
-      <link>https://huggingface.co/blog/phonon-tts</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/phonon-tts</guid>
-      <pubDate>Thu, 05 Nov 2026 00:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Dharma Field Extractor: Any Document In, Structured Fields in JSON Out</title>
-      <link>https://huggingface.co/blog/Dharma-AI/dharma-field-extractor</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/Dharma-AI/dharma-field-extractor</guid>
-      <pubDate>Wed, 04 Nov 2026 17:50:10 GMT</pubDate>
+      <title>New NVIDIA Cosmos 3 Open Models for Interactive World Simulation</title>
+      <link>https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/cosmos-interactive-world-simulation</guid>
+      <pubDate>Thu, 05 Nov 2026 19:35:16 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>
