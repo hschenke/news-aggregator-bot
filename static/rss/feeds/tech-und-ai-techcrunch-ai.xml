@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 07 Nov 2026 06:01:04 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 11:48:32 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -97,15 +97,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Physicl is trying to solve the sim-to-real gap with a pipeline originally built to market goods online.]]></description>
-    </item>
-    <item>
-      <title>Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M</title>
-      <link>https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3185713</guid>
-      <pubDate>Fri, 06 Nov 2026 06:28:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Clutch, backed by Lightspeed and SignalFire, was last valued at $85 million, according to a source.]]></description>
     </item>
   </channel>
 </rss>

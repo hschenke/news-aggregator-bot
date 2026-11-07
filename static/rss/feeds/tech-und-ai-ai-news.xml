@@ -5,9 +5,18 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 07 Nov 2026 06:01:04 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 11:48:32 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anthropic zeigt, wie Tübinger Forscher mit Claude arbeiten</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</guid>
+      <pubDate>Sat, 07 Nov 2026 09:30:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Tübinger Forscher setzen Claude ein, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. ModelSMC vergleicht die Vorschläge mit zehn Spannungsaufzeichnungen aus der Großhirnrinde von Mäusen. In neun von zehn Durchläufen liegt eine Gruppe von Modellen mit einem zusätzlichen Kaliumkanal vorn. Wenn passende Modelle unterschiedliche Vorhersagen machen, können die Forscher sie in einem neuen Experiment prüfen. Anthropic: Teaching AI to build scientific models (6. November 2026) Wahl et al.: A Probabilistic Framework for LLM-Based Model Discovery (ICML 2026) Wahl et al.: Hodgkin-Huxley-Versuch und ergänzende Auswertung Tübinger Forscher haben Claude eingesetzt, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. In einem Gastbeitrag bei Anthropic vom 6. November erklären Jakob Macke, Daniel Gedon und Stefan Wahl, warum sie mehrere Erklärungen parallel verfolgen. Die drei forschen an der Universität Tübingen und am ELLIS Institute Tübingen. Ein Kaliumkanal fällt in mehreren Durchläufen auf Das Team testete sein Verfahren »ModelSMC« mit zehn Spannungsaufzeichnungen von Nervenzellen aus der Großhirnrinde von Mäusen. Als Ausgangspunkt dien...]]></description>
+    </item>
     <item>
       <title>n8n im Überblick: Automatisierung, KI und Kosten</title>
       <link>https://www.all-ai.de/tools/ki-top-tools100/n8n-ki-automatisierung-test</link>
@@ -34,33 +43,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Meta verteilt spezialisierte KI-Modelle mit Fähigkeiten aus Muse Wonder an Nutzer von Muse und Meta AI. Active Memory soll relevante Informationen aus früheren Gesprächen besser nutzen. Muse erreicht im Gedächtnistest 90% statt bisher 76% und soll Aufgaben bei Hindernissen häufiger abschließen. Meta AI soll komplexe Fragen besser strukturieren und Richtungswechsel im Gespräch leichter verarbeiten. Meta AI Research: Bringing Specialized Models to Muse and Meta AI, 6. November 2026 Meta AI Research: Muse Wonder – A Frontier Model For Personal & Professional AI Agents, 12. Oktober 2026 Meta bringt ein besseres Gedächtnis und mehr Ausdauer bei Aufgaben in Muse und Meta AI. Dafür verteilt das Unternehmen spezialisierte Versionen bestehender KI-Modelle, die mithilfe von Muse Wonder trainiert wurden. Wichtige Details aus früheren Chats nutzen Mit »Active Memory« sollen beide Assistenten Informationen aus früheren Gesprächen dann aufgreifen, wenn sie für eine neue Aufgabe relevant werden. Die Modelle lernen dabei, dauerhafte Angaben von vorübergehenden Informationen zu unterscheiden und veraltete Details zu vergessen. Im Gedächtnistest »Active Memory Eval« nutzt das aktuelle Muse-Modell...]]></description>
-    </item>
-    <item>
-      <title>Anthropic »Model 4«: Doppeltes Tempo bei KI-Fortschritt erreicht</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-model4-metris-bericht</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-model4-metris-bericht</guid>
-      <pubDate>Fri, 06 Nov 2026 09:10:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Anthropics Benchmark-Fortschritt hat sich seit Oktober 2025 auf geschätzt das 1,9-Fache beschleunigt. Neuere unveröffentlichte Modelle erhöhen die Schätzung gegenüber den zuvor genannten 1,7. METR schätzt den KI-Anteil an der aktuellen Beschleunigung auf ungefähr 80%, mit erheblicher Unsicherheit. Die Prüfer sehen das Risiko einer weiteren Beschleunigung, während Anthropic viele zentrale Belege zurückhält. METR: Independent Assessment of AI R&D Acceleration at Anthropic in October 2026 (5. November 2026) Anthropic schafft bei klar überprüfbaren KI-Aufgaben inzwischen ungefähr zwei Jahre Fortschritt in einem Jahr. Die Prüforganisation METR führt einen Großteil der aktuellen Beschleunigung auf den KI-Einsatz in der Forschung zurück und hat dafür auch Daten unveröffentlichter Modelle wie »Model 4« ausgewertet. Unveröffentlichte Modelle verändern das Bild Der Bericht vom 5. November beziffert das gestiegene Fortschrittstempo seit Oktober 2025 auf das 1,9-Fache. METR analysierte von Anthropic bereitgestellte Benchmark-Daten. Grundlage ist AECI, ein Index aus mehreren Benchmarks. + Quelle: Metre Anthropics Dokumentation zu Haiku 5.5 hatte noch das 1,7-Fache genannt. Den Unterschied er...]]></description>
-    </item>
-    <item>
-      <title>KI-Ausverkauf kostet die US-Börse 3,2 Billionen Dollar</title>
-      <link>https://www.all-ai.de/news/news26/ki-ausverkauf-boerse-wahlen-us</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-ausverkauf-boerse-wahlen-us</guid>
-      <pubDate>Fri, 06 Nov 2026 08:50:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Der US-Aktienmarkt verliert am 5. November 3,2 Billionen$ an Börsenwert. Nach dem Wahlsieg der Demokraten fürchten Anleger strengere Regeln für KI-Rechenzentren. Rund drei Viertel der US-Wähler lehnen ein neues Rechenzentrum in ihrer Gemeinde ab. Nvidia, AMD und Anbieter von KI-Rechenleistung verzeichnen deutliche Kursverluste. Reuters über MarketScreener: Investors wipe $2.5 trillion off Nasdaq as blue tsunami prompts AI fears (5. November 2026) Associated Press: Data centers took a beating in the midterm elections. A reckoning may be ahead for tech giants (6. November 2026) Die Angst vor strengeren Regeln für KI-Rechenzentren hat einen Ausverkauf an der Wall Street ausgelöst. Am 5. November verlor der US-Aktienmarkt laut Financial Times 3,2 Billionen $ an Börsenwert, nachdem die Demokraten die US-Zwischenwahlen deutlich gewonnen hatten. US-Wähler stellen sich gegen den Rechenzentren-Boom Bei der Wahl am 3. November eroberten die Demokraten beide Kammern des Kongresses. Auch in wichtigen Bundesstaaten wie Texas und Ohio gewannen Gouverneurskandidaten, die den Bau neuer Rechenzentren stärker einschränken wollen. In Texas kündigte die künftige Gouverneurin Gina Hinojosa an, Geneh...]]></description>
-    </item>
-    <item>
-      <title>Thinking Machines veröffentlicht Inkling 2 Small</title>
-      <link>https://www.all-ai.de/news/news26/thinking-machines-inkling-2-small-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/thinking-machines-inkling-2-small-start</guid>
-      <pubDate>Fri, 06 Nov 2026 07:44:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Inkling 2 Small steigt im Intelligence Index von Artificial Analysis von 13 auf 31 Punkte. Bei durchschnittlich 1,18$ pro Benchmark-Aufgabe ist es günstiger als einige Konkurrenten, OpenAI bietet im Vergleich aber mehr Leistung fürs Geld. Das Modell verarbeitet Text und Bilder und lässt sich auf Tinker ausprobieren und nachtrainieren. Die vollständigen Modellgewichte sollen kommende Woche nach Sicherheitstests unter Apache 2.0 erscheinen. Thinking Machines – Introducing Inkling 2 Small, 5. November 2026 Artificial Analysis – Inkling 2 Small, Leistung und Kosten Artificial Analysis – Intelligence Index und Kostenvergleich; mit den bereitgestellten Diagrammen vom 5. November 2026 abgeglichen Thinking Machines bringt mit Inkling 2 Small ein neues KI-Modell für Coding, Bildverständnis und Büroaufgaben. Im Vergleich zum Vorgänger verbessert es sich deutlich und soll kommende Woche mit Open Weights erscheinen. Ordentliches Ergebnis bei Artificial Analysis Im Intelligence Index von Artificial Analysis erreicht Inkling 2 Small 31 Punkte. Der Vorgänger Inkling Small kommt auf 13. Damit liegt das neue Modell auf dem Niveau von Gemini 3.8 Flash, vor Mistral Large 4 mit 26 Punkten und Muse ...]]></description>
     </item>
   </channel>
 </rss>
