@@ -93,6 +93,13 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
    # Optional: Cloud-Datenbank (Turso LibSQL / Cloud SQLite)
    TURSO_URL = "libsql://deine-db-name.turso.io"
    TURSO_KEY = "ey..."
+
+   # Optional: Automatischer GitHub-Sync & Actions-Trigger im Feed-Dashboard
+   # Fine-Grained Personal Access Token (github_pat_...)
+   # Berechtigungen: Contents (Read and write) & Actions (Read and write)
+   GITHUB_TOKEN = "github_pat_..."
+   GITHUB_REPO = "dein-github-name/news-aggregator-bot"
+   GITHUB_BRANCH = "main"
    ```
 5. Klicke auf **Deploy!**
 6. Nach ca. 1-2 Minuten ist deine Web-App live unter einer URL wie `https://dein-news-bot.streamlit.app` erreichbar.

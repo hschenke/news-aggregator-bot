@@ -9,6 +9,8 @@ on:
       - 'config/settings.yaml'
       - 'config/prompts.yaml'
   workflow_dispatch:
+  repository_dispatch:
+    types: [update-rss-feeds]
 
 jobs:
   update-rss:

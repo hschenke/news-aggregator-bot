@@ -232,18 +232,34 @@ def sync_sources_to_github(
 
 
 def trigger_rss_update_workflow() -> dict[str, Any]:
-    """Triggert den GitHub Actions Workflow zur vollautomatischen RSS-Feed-Generierung via repository_dispatch."""
+    """Triggert den GitHub Actions Workflow zur RSS-Feed-Generierung via workflow_dispatch oder repository_dispatch."""
     gh_cfg = get_github_sync_config()
     token = gh_cfg["token"]
     if not token or token.startswith("your_"):
         return {"success": False, "error": "Kein GITHUB_TOKEN hinterlegt."}
 
     repo = gh_cfg["repo"]
+    branch = gh_cfg["branch"]
     headers = {
         "Authorization": f"Bearer {token}",
         "Accept": "application/vnd.github.v3+json",
         "X-GitHub-Api-Version": "2022-11-28",
     }
+
+    # 1. Bevorzugt: workflow_dispatch auf update_rss.yaml (Standard für Fine-Grained Token mit Actions:write)
+    try:
+        wf_res = requests.post(
+            f"https://api.github.com/repos/{repo}/actions/workflows/update_rss.yaml/dispatches",
+            headers=headers,
+            json={"ref": branch},
+            timeout=10,
+        )
+        if wf_res.status_code in [200, 204]:
+            return {"success": True, "method": "workflow_dispatch"}
+    except Exception as e_wf:
+        logger.debug("workflow_dispatch fehlgeschlagen, versuche repository_dispatch: %s", e_wf)
+
+    # 2. Fallback: repository_dispatch
     payload = {
         "event_type": "update-rss-feeds",
         "client_payload": {"triggered_by": "streamlit_dashboard"}
@@ -256,7 +272,7 @@ def trigger_rss_update_workflow() -> dict[str, Any]:
             timeout=10
         )
         if res.status_code in [200, 204]:
-            return {"success": True}
+            return {"success": True, "method": "repository_dispatch"}
         return {"success": False, "error": f"Status {res.status_code}: {res.text}"}
     except Exception as e:
         return {"success": False, "error": str(e)}
