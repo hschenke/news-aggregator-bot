@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 07 Nov 2026 11:48:32 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OpenArt im Überblick: KI-Bilder, Videos und eigene Figuren aus einem Abo</title>
+      <link>https://www.all-ai.de/tools/ki-top-tools100/openart-ki-bilder-videos-test</link>
+      <guid isPermaLink="false">https://www.all-ai.de/tools/ki-top-tools100/openart-ki-bilder-videos-test</guid>
+      <pubDate>Sun, 08 Nov 2026 05:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[GPT Image 2.6 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) OpenArt – Produktübersicht OpenArt – aktuelle Preise und Tarifleistungen OpenArt – Nutzungsbedingungen, Stand 30.07.2026 OpenArt – Gründer und Unternehmen Trustpilot – aktuelle Nutzererfahrungen zu OpenArt OpenArt erstellt Bilder, Videos und Musik mit KI und bündelt dafür Modelle verschiedener Anbieter in einem Konto. Besonders interessant ist die Verbindung aus gespeicherten Figuren und einem Regiemodus, mit dem Nutzer mehrteilige Videos per Chat gestalten. OpenArt Bilder & Video KI 8.5 Score Preis-Modell Abo-Modelle Plattform Browser/Webapp Sprache Englisch Status Etabliert, häufige Updates Gratis Testen? Ja, begrenzt Letztes Update Nov. 2026 Tool ausprobieren, Rabatt prüfen Klick führt direkt zum Anbieter, Affliatelink 01. Einfache Bedienung Viele Funktionen und ein KI-Agent Mit der Zeit werden Multiplattformen oft unübersichtlich. OpenArt hat dafür einen Agenten-Modus eingeführt, bei dem man einfach erklärt, was m...]]></description>
+    </item>
+    <item>
+      <title>Anthropic vs. Kahn: Klage wegen der 5x- und 20x-Werbung geht weiter</title>
+      <link>https://www.all-ai.de/news/news26top/claude-max-werbung-sammelklage</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/claude-max-werbung-sammelklage</guid>
+      <pubDate>Sat, 07 Nov 2026 15:28:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Ein US-Bundesrichter lässt zentrale Ansprüche einer geplanten Sammelklage gegen Anthropic weiterlaufen. Die Faktoren 5x und 20x galten bei den früheren Claude-Max-Abos jeweils für fünf Stunden. Die Kläger errechneten für Sonnet 4 deutlich geringere Faktoren beim Wochenlimit. Anthropic nennt bei den heutigen Tarifen Max und Ultra die Zeiträume direkt auf der Preisseite. US-Bundesgericht, Kahn v. Anthropic, Beschluss vom 6. November 2026 (PDF) Courthouse News Service zum Gerichtsbeschluss Anthropic, aktuelle Claude-Tarife und Nutzungsgrenzen Anthropic, Wechsel von Max 20x zu Ultra The Next Web zur Tarifumstellung Ende Oktober Anthropic muss sich in den USA weiter gegen eine geplante Sammelklage zu seinen früheren Claude-Max-Abos verteidigen. Bundesrichter Alex G. Tse entschied am 6. November, dass die Werbung mit dem Fünf- oder Zwanzigfachen der Pro-Nutzung Kunden in die Irre führen konnte. Zwei Klicks bis zur Erklärung Anthropic verlangte für Max 5x monatlich 100$, für Max 20x waren es 200$. Wer jeden Monat zahlt, durfte die beworbene Mehrnutzung nach Ansicht des Richters auf den ganzen Monat beziehen. Auf der Verkaufsseite stand ein allgemeiner Hinweis auf Nutzungslimits. Dass s...]]></description>
+    </item>
     <item>
       <title>Anthropic zeigt, wie Tübinger Forscher mit Claude arbeiten</title>
       <link>https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</link>
@@ -16,33 +34,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Tübinger Forscher setzen Claude ein, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. ModelSMC vergleicht die Vorschläge mit zehn Spannungsaufzeichnungen aus der Großhirnrinde von Mäusen. In neun von zehn Durchläufen liegt eine Gruppe von Modellen mit einem zusätzlichen Kaliumkanal vorn. Wenn passende Modelle unterschiedliche Vorhersagen machen, können die Forscher sie in einem neuen Experiment prüfen. Anthropic: Teaching AI to build scientific models (6. November 2026) Wahl et al.: A Probabilistic Framework for LLM-Based Model Discovery (ICML 2026) Wahl et al.: Hodgkin-Huxley-Versuch und ergänzende Auswertung Tübinger Forscher haben Claude eingesetzt, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. In einem Gastbeitrag bei Anthropic vom 6. November erklären Jakob Macke, Daniel Gedon und Stefan Wahl, warum sie mehrere Erklärungen parallel verfolgen. Die drei forschen an der Universität Tübingen und am ELLIS Institute Tübingen. Ein Kaliumkanal fällt in mehreren Durchläufen auf Das Team testete sein Verfahren »ModelSMC« mit zehn Spannungsaufzeichnungen von Nervenzellen aus der Großhirnrinde von Mäusen. Als Ausgangspunkt dien...]]></description>
-    </item>
-    <item>
-      <title>n8n im Überblick: Automatisierung, KI und Kosten</title>
-      <link>https://www.all-ai.de/tools/ki-top-tools100/n8n-ki-automatisierung-test</link>
-      <guid isPermaLink="false">https://www.all-ai.de/tools/ki-top-tools100/n8n-ki-automatisierung-test</guid>
-      <pubDate>Sat, 07 Nov 2026 05:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Image 2.5 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) n8n – Tarife, Ausführungen und KI-Abrechnung n8n-Dokumentation – Funktionen und Verfügbarkeit von n8n Assistant n8n – Community-Lizenz und Abgrenzung zu Open Source n8n – Unternehmen, Investoren und Bewertung G2 – Nutzererfahrungen zu n8n n8n verbindet Apps und übernimmt wiederkehrende Aufgaben, vom Ablegen einer Rechnung bis zum persönlichen KI-Assistenten. Der Nutzer baut die Abläufe aus verbundenen Bausteinen und kann dabei feste Regeln mit KI kombinieren. Eine kostenlose Community Edition läuft auf dem eigenen Rechner oder Server. n8n Automatisierungsplattform mit KI-Funktionen 9.0 Score Preis-Modell Gratis-Tarif und Abos Plattform Cloud-Abo oder Eigenbetrieb Sprache EN Status Etabliert, häufige Updates Gratis Testen? Kostenlos auf eigener Hardware Letztes Update 11/2026 Zur Cloudversion Klick führt direkt zum Anbieter, Affliatelink 01. Anwendungsbeispiel Eine Sprachnachricht wird zum Termin und zur Aufgabe Ein Nu...]]></description>
-    </item>
-    <item>
-      <title>Perplexity Teammates arbeiten 24 Stunden am Tag für Dich</title>
-      <link>https://www.all-ai.de/news/news26/perplexity-teammates-24-stunden</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/perplexity-teammates-24-stunden</guid>
-      <pubDate>Fri, 06 Nov 2026 18:58:57 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Perplexity Teammates übernehmen laufende Projekte und verfolgen Aufgaben ohne ständig neue Aufträge weiter. Die KI-Agenten merken sich Ziele, Dateien und Rückmeldungen und arbeiten über Slack mit Kollegen zusammen. Zum Start sind sie für einzelne Max-Abonnenten im Browser verfügbar, eine iOS-Version soll folgen. Max kostet 200$ im Monat oder 2.000$ im Jahr und enthält monatlich 10.000 Computer-Credits. Perplexity: Teammates are agents for complex, ongoing work Perplexity Help Center: Dokumentationsübersicht mit Teammates-Zugang als Forschungsvorschau für einzelne Max-Abonnenten Perplexity Help Center: Perplexity Max, Preise und Abrechnung Perplexity Help Center: How credits work on Perplexity Perplexity hat mit »Teammates« KI-Agenten für laufende Büroarbeit gestartet. Sie planen Aufgaben, verfolgen Veränderungen und legen fertige Ergebnisse zur Prüfung vor, ohne für jeden Schritt einen neuen Auftrag zu brauchen. Der Zugang startet für Max-Abonnenten im Browser. KI-Agenten behalten Projekte im Blick Teammates bauen auf Perplexity Computer auf, das mehrstufige Aufgaben mit verschiedenen KI-Modellen erledigt. Ein Teammate koordiniert solche Aufgaben und weitere Teammates. Projektzi...]]></description>
-    </item>
-    <item>
-      <title>Meta AI und Muse bekommen ein Elefanten-Gedächtnis</title>
-      <link>https://www.all-ai.de/news/news26/meta-ai-muse-elefant-neu</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/meta-ai-muse-elefant-neu</guid>
-      <pubDate>Fri, 06 Nov 2026 18:32:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Meta verteilt spezialisierte KI-Modelle mit Fähigkeiten aus Muse Wonder an Nutzer von Muse und Meta AI. Active Memory soll relevante Informationen aus früheren Gesprächen besser nutzen. Muse erreicht im Gedächtnistest 90% statt bisher 76% und soll Aufgaben bei Hindernissen häufiger abschließen. Meta AI soll komplexe Fragen besser strukturieren und Richtungswechsel im Gespräch leichter verarbeiten. Meta AI Research: Bringing Specialized Models to Muse and Meta AI, 6. November 2026 Meta AI Research: Muse Wonder – A Frontier Model For Personal & Professional AI Agents, 12. Oktober 2026 Meta bringt ein besseres Gedächtnis und mehr Ausdauer bei Aufgaben in Muse und Meta AI. Dafür verteilt das Unternehmen spezialisierte Versionen bestehender KI-Modelle, die mithilfe von Muse Wonder trainiert wurden. Wichtige Details aus früheren Chats nutzen Mit »Active Memory« sollen beide Assistenten Informationen aus früheren Gesprächen dann aufgreifen, wenn sie für eine neue Aufgabe relevant werden. Die Modelle lernen dabei, dauerhafte Angaben von vorübergehenden Informationen zu unterscheiden und veraltete Details zu vergessen. Im Gedächtnistest »Active Memory Eval« nutzt das aktuelle Muse-Modell...]]></description>
     </item>
   </channel>
 </rss>
