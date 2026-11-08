@@ -5,17 +5,53 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:00:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Top 10: Das beste Heizkörperthermostat im Test – Testsieger heizt ohne Cloud</title>
+      <title>Sorgen um Weihnachtsgeschäft wegen teurer Elektronik</title>
+      <link>https://www.heise.de/news/Sorgen-um-Weihnachtsgeschaeft-wegen-teurer-Elektronik-11516579.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516579</guid>
+      <pubDate>Sun, 08 Nov 2026 11:02:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Teure Speicherchips trüben das Festgeschäft: Weil gedrosselte Produktion auf weltweiten KI-Boom trifft, sind Preise für Laptops, Handys und Hardware hoch.]]></description>
+    </item>
+    <item>
+      <title>Mobilfunk-Resilienz nach Blackout: 72-Stunden-Puffer kostet Milliarden</title>
+      <link>https://www.heise.de/news/Mobilfunk-Resilienz-nach-Blackout-72-Stunden-Puffer-kostet-Milliarden-11516559.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516559</guid>
+      <pubDate>Sun, 08 Nov 2026 09:55:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Forscher beziffern die Kosten für eine 3-tägige Notstromabdeckung aller Mobilfunkmasten auf bis zu elf Milliarden Euro pro Jahr. Sie verweisen auf Alternativen.]]></description>
+    </item>
+    <item>
+      <title>Missing Link: Wenn die KI zuhört, wo Menschen es nicht mehr tun</title>
+      <link>https://www.heise.de/hintergrund/Missing-Link-Wenn-die-KI-zuhoert-wo-Menschen-es-nicht-mehr-tun-11516378.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516378</guid>
+      <pubDate>Sun, 08 Nov 2026 07:12:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vier Menschen, vier KI-Partner: Die Doku „Finding Connection“ zeigt, was Companion-Apps über eine Gesellschaft verraten, in der kaum noch jemand zuhört.]]></description>
+    </item>
+    <item>
+      <title>Wie Betreiber von Rechenzentren Angaben zum Energiebedarf verstecken</title>
+      <link>https://www.heise.de/news/Intransparente-Rechenzentren-Versteckspiel-beim-Energiehunger-11516418.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516418</guid>
+      <pubDate>Sun, 08 Nov 2026 06:14:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Energieeffizienzgesetz verlangt Offenheit von Rechenzentren-Betreibern. Doch Recherchen zeigen, dass viele den Strom- und Wasserverbrauch geheim halten.]]></description>
+    </item>
+    <item>
+      <title>Top 10: Das beste Heizkörperthermostat im Test</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-heizkoerperthermostat-im-test-testsieger-heizt-ohne-cloud/1e43f3r?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11516316</guid>
       <pubDate>Sat, 07 Nov 2026 19:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Smarte Heizkörperthermostate senken Heizkosten und steigern den Komfort. Unser Testsieger läuft sogar komplett ohne Cloud. Die besten Modelle ab 45 Euro.]]></description>
+      <description><![CDATA[Smarte Heizkörperthermostate senken Heizkosten und steigern den Komfort. Unser Testsieger läuft komplett ohne Cloud.]]></description>
     </item>
     <item>
       <title>Sabotage an Kühlsystemen: Warum deutsche Geheimdienste nun eingeschaltet sind</title>
@@ -52,69 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Der Vzmore AX9 Max kombiniert den Ryzen AI 9 HX 470 mit starker iGPU, moderner Ausstattung und effizienter Kühlung. Im Test überzeugt vieles, aber nicht alles.]]></description>
-    </item>
-    <item>
-      <title>Drohnen-Vorfall in Leipzig: BKA fahndet mit KI-Bild</title>
-      <link>https://www.heise.de/news/BKA-fahndet-nach-Drohnen-Vorfall-in-Leipzig-mit-KI-Bild-11516328.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516328</guid>
-      <pubDate>Sat, 07 Nov 2026 11:37:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Nachdem im August am Flughafen Leipzig/Halle eine Drohne mit Sprengstoff gefunden wurde, fahndet das BKA nun mit KI-Bildern von Verdächtigen.]]></description>
-    </item>
-    <item>
-      <title>Protest gegen Microsoft-Rechenzentrum in Amsterdam – viele Festnahmen</title>
-      <link>https://www.heise.de/news/Protest-gegen-Microsoft-Rechenzentrum-in-Amsterdam-viele-Festnahmen-11516304.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516304</guid>
-      <pubDate>Sat, 07 Nov 2026 10:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Hunderte dringen auf die Baustelle eines Microsoft-Rechenzentrums in Amsterdam vor, die Polizei nimmt bis zu 200 Menschen fest. Was trieb die beiden Gruppen an?]]></description>
-    </item>
-    <item>
-      <title>Kameramarkt wächst, Canon und Nikon updaten – Fotonews der Woche 45/2026</title>
-      <link>https://www.heise.de/news/Kameramarkt-waechst-Canon-und-Nikon-updaten-Fotonews-der-Woche-45-2026-11515640.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515640</guid>
-      <pubDate>Sat, 07 Nov 2026 09:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kameraverkäufe steigen weltweit, Canon und Nikon bringen Firmware-Updates, Sony World Photography Awards ehren James Barnor.]]></description>
-    </item>
-    <item>
-      <title>NVKE: Nvidia bringt eigene Kubernetes Engine als Preview</title>
-      <link>https://www.heise.de/news/NVKE-Nvidia-bringt-eigene-Kubernetes-Engine-als-Preview-11515947.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515947</guid>
-      <pubDate>Sat, 07 Nov 2026 08:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Nvidias NVKE sollen Betreiber von GPU-Rechenzentren Managed Kubernetes anbieten können. Die Preview lässt sich jetzt ausprobieren.]]></description>
-    </item>
-    <item>
-      <title>Sichere Architektur für KI-Agenten im Backoffice</title>
-      <link>https://www.heise.de/hintergrund/Sichere-Architektur-fuer-KI-Agenten-im-Backoffice-11514414.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11514414</guid>
-      <pubDate>Sat, 07 Nov 2026 07:21:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[KI-Agenten lassen sich nur sicher in Systeme einbinden, wenn die Architektur für eine Trennung von Daten und Handlungen sorgt.]]></description>
-    </item>
-    <item>
-      <title>Developer-Häppchen: JetBrains ohne eMudhra-Lücke, Ruby nativ in C, VS Code 1.145</title>
-      <link>https://www.heise.de/news/Developer-Haeppchen-JetBrains-ohne-eMudhra-Luecke-Ruby-nativ-in-C-VS-Code-1-145-11512904.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11512904</guid>
-      <pubDate>Sat, 07 Nov 2026 07:17:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu BoxLang AI, VS Code, Google DevFest, JetBrains, Apache Spark, Devart, Laravel und Spinel.]]></description>
-    </item>
-    <item>
-      <title>Nebel, Stille und grafische Kraft: Die Bilder der Woche 45</title>
-      <link>https://www.heise.de/news/Nebel-Stille-und-grafische-Kraft-Die-Bilder-der-Woche-45-11515024.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515024</guid>
-      <pubDate>Sat, 07 Nov 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Herbstliche Momente, ruhige Landschaften und starke Linien zeichnen die Aufnahmen dieser Woche aus.]]></description>
     </item>
   </channel>
 </rss>

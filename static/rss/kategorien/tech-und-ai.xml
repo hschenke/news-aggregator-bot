@@ -5,9 +5,108 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:00:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Person of Interest</title>
+      <link>https://krthr.co/person-of-interest/</link>
+      <guid isPermaLink="false">https://krthr.co/person-of-interest/</guid>
+      <pubDate>Sun, 08 Nov 2026 11:23:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Sorgen um Weihnachtsgeschäft wegen teurer Elektronik</title>
+      <link>https://www.heise.de/news/Sorgen-um-Weihnachtsgeschaeft-wegen-teurer-Elektronik-11516579.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516579</guid>
+      <pubDate>Sun, 08 Nov 2026 11:02:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Teure Speicherchips trüben das Festgeschäft: Weil gedrosselte Produktion auf weltweiten KI-Boom trifft, sind Preise für Laptops, Handys und Hardware hoch.]]></description>
+    </item>
+    <item>
+      <title>Petered (what happens after the Peter Principle)</title>
+      <link>https://aworkinglibrary.com/writing/petered</link>
+      <guid isPermaLink="false">https://aworkinglibrary.com/writing/petered</guid>
+      <pubDate>Sun, 08 Nov 2026 10:56:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>JIT bitmap text rendering for microcontrollers</title>
+      <link>https://linebender.org/blog/jit-bitmap-text/</link>
+      <guid isPermaLink="false">https://linebender.org/blog/jit-bitmap-text/</guid>
+      <pubDate>Sun, 08 Nov 2026 10:42:15 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU</title>
+      <link>https://github.com/synchopate/llama-modchip</link>
+      <guid isPermaLink="false">https://github.com/synchopate/llama-modchip</guid>
+      <pubDate>Sun, 08 Nov 2026 10:22:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>GitHub Down Again?</title>
+      <link>https://github.com/torvalds/linux</link>
+      <guid isPermaLink="false">https://github.com/torvalds/linux</guid>
+      <pubDate>Sun, 08 Nov 2026 09:56:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Mobilfunk-Resilienz nach Blackout: 72-Stunden-Puffer kostet Milliarden</title>
+      <link>https://www.heise.de/news/Mobilfunk-Resilienz-nach-Blackout-72-Stunden-Puffer-kostet-Milliarden-11516559.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516559</guid>
+      <pubDate>Sun, 08 Nov 2026 09:55:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Forscher beziffern die Kosten für eine 3-tägige Notstromabdeckung aller Mobilfunkmasten auf bis zu elf Milliarden Euro pro Jahr. Sie verweisen auf Alternativen.]]></description>
+    </item>
+    <item>
+      <title>Agent memory needs its OpenTelemetry moment</title>
+      <link>https://www.lorekit.io/blog/open-agent-memory-format</link>
+      <guid isPermaLink="false">https://www.lorekit.io/blog/open-agent-memory-format</guid>
+      <pubDate>Sun, 08 Nov 2026 08:40:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Missing Link: Wenn die KI zuhört, wo Menschen es nicht mehr tun</title>
+      <link>https://www.heise.de/hintergrund/Missing-Link-Wenn-die-KI-zuhoert-wo-Menschen-es-nicht-mehr-tun-11516378.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516378</guid>
+      <pubDate>Sun, 08 Nov 2026 07:12:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Vier Menschen, vier KI-Partner: Die Doku „Finding Connection“ zeigt, was Companion-Apps über eine Gesellschaft verraten, in der kaum noch jemand zuhört.]]></description>
+    </item>
+    <item>
+      <title>WaveDudeNext 2D Wave Simulator</title>
+      <link>https://github.com/graealex/WaveDudeNext</link>
+      <guid isPermaLink="false">https://github.com/graealex/WaveDudeNext</guid>
+      <pubDate>Sun, 08 Nov 2026 07:09:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Wie Betreiber von Rechenzentren Angaben zum Energiebedarf verstecken</title>
+      <link>https://www.heise.de/news/Intransparente-Rechenzentren-Versteckspiel-beim-Energiehunger-11516418.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11516418</guid>
+      <pubDate>Sun, 08 Nov 2026 06:14:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Energieeffizienzgesetz verlangt Offenheit von Rechenzentren-Betreibern. Doch Recherchen zeigen, dass viele den Strom- und Wasserverbrauch geheim halten.]]></description>
+    </item>
     <item>
       <title>OpenArt im Überblick: KI-Bilder, Videos und eigene Figuren aus einem Abo</title>
       <link>https://www.all-ai.de/tools/ki-top-tools100/openart-ki-bilder-videos-test</link>
@@ -16,6 +115,69 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[GPT Image 2.6 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) OpenArt – Produktübersicht OpenArt – aktuelle Preise und Tarifleistungen OpenArt – Nutzungsbedingungen, Stand 30.07.2026 OpenArt – Gründer und Unternehmen Trustpilot – aktuelle Nutzererfahrungen zu OpenArt OpenArt erstellt Bilder, Videos und Musik mit KI und bündelt dafür Modelle verschiedener Anbieter in einem Konto. Besonders interessant ist die Verbindung aus gespeicherten Figuren und einem Regiemodus, mit dem Nutzer mehrteilige Videos per Chat gestalten. OpenArt Bilder & Video KI 8.5 Score Preis-Modell Abo-Modelle Plattform Browser/Webapp Sprache Englisch Status Etabliert, häufige Updates Gratis Testen? Ja, begrenzt Letztes Update Nov. 2026 Tool ausprobieren, Rabatt prüfen Klick führt direkt zum Anbieter, Affliatelink 01. Einfache Bedienung Viele Funktionen und ein KI-Agent Mit der Zeit werden Multiplattformen oft unübersichtlich. OpenArt hat dafür einen Agenten-Modus eingeführt, bei dem man einfach erklärt, was m...]]></description>
+    </item>
+    <item>
+      <title>Kirlian Photography: Building Your Own Equipment</title>
+      <link>https://imagesco.com/articles/kirlian/kirlian-photography.html</link>
+      <guid isPermaLink="false">https://imagesco.com/articles/kirlian/kirlian-photography.html</guid>
+      <pubDate>Sun, 08 Nov 2026 04:14:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>ISponsorBlockTV: SponsorBlock client for all YouTube TV clients</title>
+      <link>https://github.com/dmunozv04/isponsorblocktv</link>
+      <guid isPermaLink="false">https://github.com/dmunozv04/isponsorblocktv</guid>
+      <pubDate>Sun, 08 Nov 2026 03:47:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Goodbye Claude, Hello Pi</title>
+      <link>https://caleb.software/posts/claude-to-pi.html</link>
+      <guid isPermaLink="false">https://caleb.software/posts/claude-to-pi.html</guid>
+      <pubDate>Sun, 08 Nov 2026 03:11:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Consumer brain wave headsets threaten privacy</title>
+      <link>https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F</link>
+      <guid isPermaLink="false">https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F</guid>
+      <pubDate>Sun, 08 Nov 2026 02:02:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>ZapFast: A fast, native WhatsApp client in Rust and egui</title>
+      <link>https://github.com/crmne/zapfast</link>
+      <guid isPermaLink="false">https://github.com/crmne/zapfast</guid>
+      <pubDate>Sun, 08 Nov 2026 02:02:27 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>GitHub New pull request overview page in public preview</title>
+      <link>https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/</link>
+      <guid isPermaLink="false">https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/</guid>
+      <pubDate>Sat, 07 Nov 2026 23:09:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Making any integer with four 2s (2025)</title>
+      <link>https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/</link>
+      <guid isPermaLink="false">https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/</guid>
+      <pubDate>Sat, 07 Nov 2026 22:38:58 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>After the midterms, things are looking rocky for Elon Musk and data centers</title>
@@ -36,13 +198,40 @@
       <description><![CDATA[A memo circulated earlier this year reportedly claimed that China’s Ministry of State Security recruited a female technology executive to spy on Nvidia's CEO.]]></description>
     </item>
     <item>
-      <title>Top 10: Das beste Heizkörperthermostat im Test – Testsieger heizt ohne Cloud</title>
+      <title>Claude Code's "Don't Ask Again" exposes passwords in 1,122 public GitHub files</title>
+      <link>https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again</link>
+      <guid isPermaLink="false">https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again</guid>
+      <pubDate>Sat, 07 Nov 2026 20:45:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Top 10: Das beste Heizkörperthermostat im Test</title>
       <link>https://www.heise.de/bestenlisten/testsieger/top-10-das-beste-heizkoerperthermostat-im-test-testsieger-heizt-ohne-cloud/1e43f3r?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11516316</guid>
       <pubDate>Sat, 07 Nov 2026 19:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Smarte Heizkörperthermostate senken Heizkosten und steigern den Komfort. Unser Testsieger läuft sogar komplett ohne Cloud. Die besten Modelle ab 45 Euro.]]></description>
+      <description><![CDATA[Smarte Heizkörperthermostate senken Heizkosten und steigern den Komfort. Unser Testsieger läuft komplett ohne Cloud.]]></description>
+    </item>
+    <item>
+      <title>What I run on my $10 USD OpenStick homelab</title>
+      <link>https://blog.bosscher.ch/posts/openstick/</link>
+      <guid isPermaLink="false">https://blog.bosscher.ch/posts/openstick/</guid>
+      <pubDate>Sat, 07 Nov 2026 18:12:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>The end of Microsoft Research's AI Frontiers group</title>
+      <link>https://hunch.net/?p=13764006</link>
+      <guid isPermaLink="false">https://hunch.net/?p=13764006</guid>
+      <pubDate>Sat, 07 Nov 2026 18:02:17 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>Sabotage an Kühlsystemen: Warum deutsche Geheimdienste nun eingeschaltet sind</title>
@@ -54,6 +243,15 @@
       <description><![CDATA[Nach Angriffen auf Kühlsysteme in Supermärkten europaweit ermitteln nun auch Verfassungsschutz und BND. Die Täter nutzen Schwachstellen in Fernwartungszugängen.]]></description>
     </item>
     <item>
+      <title>Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller</title>
+      <link>https://github.com/hedgerow-dev/coldframe</link>
+      <guid isPermaLink="false">https://github.com/hedgerow-dev/coldframe</guid>
+      <pubDate>Sat, 07 Nov 2026 17:27:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
       <title>Brenner-Basistunnel: Cyberangriff auf Baufirma</title>
       <link>https://www.heise.de/news/Brenner-Basistunnel-Cyberangriff-auf-Baufirma-11516406.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
       <guid isPermaLink="false">http://heise.de/-11516406</guid>
@@ -61,6 +259,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Unbekannte Täter griffen auf Daten der österreichisch-italienischen Baugesellschaft zu, die aus dem Internet erreichbar waren.]]></description>
+    </item>
+    <item>
+      <title>MaxxBench – "Nice DeepSWE score. But is it true?"</title>
+      <link>https://maxxbench.unlap.ai/research/why-maxxbench/</link>
+      <guid isPermaLink="false">https://maxxbench.unlap.ai/research/why-maxxbench/</guid>
+      <pubDate>Sat, 07 Nov 2026 17:19:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>WTF: WTF: Pilot zeichnet Artwork im Stil von GTA 6 mit Flightradar</title>
@@ -90,76 +297,13 @@
       <description><![CDATA[Der Vzmore AX9 Max kombiniert den Ryzen AI 9 HX 470 mit starker iGPU, moderner Ausstattung und effizienter Kühlung. Im Test überzeugt vieles, aber nicht alles.]]></description>
     </item>
     <item>
-      <title>Drohnen-Vorfall in Leipzig: BKA fahndet mit KI-Bild</title>
-      <link>https://www.heise.de/news/BKA-fahndet-nach-Drohnen-Vorfall-in-Leipzig-mit-KI-Bild-11516328.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516328</guid>
-      <pubDate>Sat, 07 Nov 2026 11:37:00 GMT</pubDate>
+      <title>The $8 Linux Computer (2022)</title>
+      <link>http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html</link>
+      <guid isPermaLink="false">http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html</guid>
+      <pubDate>Sat, 07 Nov 2026 14:00:20 GMT</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Nachdem im August am Flughafen Leipzig/Halle eine Drohne mit Sprengstoff gefunden wurde, fahndet das BKA nun mit KI-Bildern von Verdächtigen.]]></description>
-    </item>
-    <item>
-      <title>Protest gegen Microsoft-Rechenzentrum in Amsterdam – viele Festnahmen</title>
-      <link>https://www.heise.de/news/Protest-gegen-Microsoft-Rechenzentrum-in-Amsterdam-viele-Festnahmen-11516304.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516304</guid>
-      <pubDate>Sat, 07 Nov 2026 10:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Hunderte dringen auf die Baustelle eines Microsoft-Rechenzentrums in Amsterdam vor, die Polizei nimmt bis zu 200 Menschen fest. Was trieb die beiden Gruppen an?]]></description>
-    </item>
-    <item>
-      <title>Anthropic zeigt, wie Tübinger Forscher mit Claude arbeiten</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</guid>
-      <pubDate>Sat, 07 Nov 2026 09:30:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Tübinger Forscher setzen Claude ein, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. ModelSMC vergleicht die Vorschläge mit zehn Spannungsaufzeichnungen aus der Großhirnrinde von Mäusen. In neun von zehn Durchläufen liegt eine Gruppe von Modellen mit einem zusätzlichen Kaliumkanal vorn. Wenn passende Modelle unterschiedliche Vorhersagen machen, können die Forscher sie in einem neuen Experiment prüfen. Anthropic: Teaching AI to build scientific models (6. November 2026) Wahl et al.: A Probabilistic Framework for LLM-Based Model Discovery (ICML 2026) Wahl et al.: Hodgkin-Huxley-Versuch und ergänzende Auswertung Tübinger Forscher haben Claude eingesetzt, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. In einem Gastbeitrag bei Anthropic vom 6. November erklären Jakob Macke, Daniel Gedon und Stefan Wahl, warum sie mehrere Erklärungen parallel verfolgen. Die drei forschen an der Universität Tübingen und am ELLIS Institute Tübingen. Ein Kaliumkanal fällt in mehreren Durchläufen auf Das Team testete sein Verfahren »ModelSMC« mit zehn Spannungsaufzeichnungen von Nervenzellen aus der Großhirnrinde von Mäusen. Als Ausgangspunkt dien...]]></description>
-    </item>
-    <item>
-      <title>Kameramarkt wächst, Canon und Nikon updaten – Fotonews der Woche 45/2026</title>
-      <link>https://www.heise.de/news/Kameramarkt-waechst-Canon-und-Nikon-updaten-Fotonews-der-Woche-45-2026-11515640.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515640</guid>
-      <pubDate>Sat, 07 Nov 2026 09:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kameraverkäufe steigen weltweit, Canon und Nikon bringen Firmware-Updates, Sony World Photography Awards ehren James Barnor.]]></description>
-    </item>
-    <item>
-      <title>NVKE: Nvidia bringt eigene Kubernetes Engine als Preview</title>
-      <link>https://www.heise.de/news/NVKE-Nvidia-bringt-eigene-Kubernetes-Engine-als-Preview-11515947.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515947</guid>
-      <pubDate>Sat, 07 Nov 2026 08:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mit Nvidias NVKE sollen Betreiber von GPU-Rechenzentren Managed Kubernetes anbieten können. Die Preview lässt sich jetzt ausprobieren.]]></description>
-    </item>
-    <item>
-      <title>Sichere Architektur für KI-Agenten im Backoffice</title>
-      <link>https://www.heise.de/hintergrund/Sichere-Architektur-fuer-KI-Agenten-im-Backoffice-11514414.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11514414</guid>
-      <pubDate>Sat, 07 Nov 2026 07:21:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[KI-Agenten lassen sich nur sicher in Systeme einbinden, wenn die Architektur für eine Trennung von Daten und Handlungen sorgt.]]></description>
-    </item>
-    <item>
-      <title>Developer-Häppchen: JetBrains ohne eMudhra-Lücke, Ruby nativ in C, VS Code 1.145</title>
-      <link>https://www.heise.de/news/Developer-Haeppchen-JetBrains-ohne-eMudhra-Luecke-Ruby-nativ-in-C-VS-Code-1-145-11512904.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11512904</guid>
-      <pubDate>Sat, 07 Nov 2026 07:17:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu BoxLang AI, VS Code, Google DevFest, JetBrains, Apache Spark, Devart, Laravel und Spinel.]]></description>
-    </item>
-    <item>
-      <title>Nebel, Stille und grafische Kraft: Die Bilder der Woche 45</title>
-      <link>https://www.heise.de/news/Nebel-Stille-und-grafische-Kraft-Die-Bilder-der-Woche-45-11515024.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11515024</guid>
-      <pubDate>Sat, 07 Nov 2026 07:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Herbstliche Momente, ruhige Landschaften und starke Linien zeichnen die Aufnahmen dieser Woche aus.]]></description>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
   </channel>
 </rss>

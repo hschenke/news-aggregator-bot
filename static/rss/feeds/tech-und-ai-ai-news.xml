@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 12:00:14 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -25,15 +25,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Ein US-Bundesrichter lässt zentrale Ansprüche einer geplanten Sammelklage gegen Anthropic weiterlaufen. Die Faktoren 5x und 20x galten bei den früheren Claude-Max-Abos jeweils für fünf Stunden. Die Kläger errechneten für Sonnet 4 deutlich geringere Faktoren beim Wochenlimit. Anthropic nennt bei den heutigen Tarifen Max und Ultra die Zeiträume direkt auf der Preisseite. US-Bundesgericht, Kahn v. Anthropic, Beschluss vom 6. November 2026 (PDF) Courthouse News Service zum Gerichtsbeschluss Anthropic, aktuelle Claude-Tarife und Nutzungsgrenzen Anthropic, Wechsel von Max 20x zu Ultra The Next Web zur Tarifumstellung Ende Oktober Anthropic muss sich in den USA weiter gegen eine geplante Sammelklage zu seinen früheren Claude-Max-Abos verteidigen. Bundesrichter Alex G. Tse entschied am 6. November, dass die Werbung mit dem Fünf- oder Zwanzigfachen der Pro-Nutzung Kunden in die Irre führen konnte. Zwei Klicks bis zur Erklärung Anthropic verlangte für Max 5x monatlich 100$, für Max 20x waren es 200$. Wer jeden Monat zahlt, durfte die beworbene Mehrnutzung nach Ansicht des Richters auf den ganzen Monat beziehen. Auf der Verkaufsseite stand ein allgemeiner Hinweis auf Nutzungslimits. Dass s...]]></description>
-    </item>
-    <item>
-      <title>Anthropic zeigt, wie Tübinger Forscher mit Claude arbeiten</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-tuebingen-forschung</guid>
-      <pubDate>Sat, 07 Nov 2026 09:30:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Tübinger Forscher setzen Claude ein, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. ModelSMC vergleicht die Vorschläge mit zehn Spannungsaufzeichnungen aus der Großhirnrinde von Mäusen. In neun von zehn Durchläufen liegt eine Gruppe von Modellen mit einem zusätzlichen Kaliumkanal vorn. Wenn passende Modelle unterschiedliche Vorhersagen machen, können die Forscher sie in einem neuen Experiment prüfen. Anthropic: Teaching AI to build scientific models (6. November 2026) Wahl et al.: A Probabilistic Framework for LLM-Based Model Discovery (ICML 2026) Wahl et al.: Hodgkin-Huxley-Versuch und ergänzende Auswertung Tübinger Forscher haben Claude eingesetzt, um ein Modell für die elektrischen Signale von Nervenzellen zu überarbeiten. In einem Gastbeitrag bei Anthropic vom 6. November erklären Jakob Macke, Daniel Gedon und Stefan Wahl, warum sie mehrere Erklärungen parallel verfolgen. Die drei forschen an der Universität Tübingen und am ELLIS Institute Tübingen. Ein Kaliumkanal fällt in mehreren Durchläufen auf Das Team testete sein Verfahren »ModelSMC« mit zehn Spannungsaufzeichnungen von Nervenzellen aus der Großhirnrinde von Mäusen. Als Ausgangspunkt dien...]]></description>
     </item>
   </channel>
 </rss>
