@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 09 Nov 2026 06:01:09 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 11:01:24 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,60 +13,6 @@
       <link>https://krthr.co/person-of-interest/</link>
       <guid isPermaLink="false">https://krthr.co/person-of-interest/</guid>
       <pubDate>Sun, 08 Nov 2026 11:23:28 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Petered (what happens after the Peter Principle)</title>
-      <link>https://aworkinglibrary.com/writing/petered</link>
-      <guid isPermaLink="false">https://aworkinglibrary.com/writing/petered</guid>
-      <pubDate>Sun, 08 Nov 2026 10:56:43 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>JIT bitmap text rendering for microcontrollers</title>
-      <link>https://linebender.org/blog/jit-bitmap-text/</link>
-      <guid isPermaLink="false">https://linebender.org/blog/jit-bitmap-text/</guid>
-      <pubDate>Sun, 08 Nov 2026 10:42:15 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU</title>
-      <link>https://github.com/synchopate/llama-modchip</link>
-      <guid isPermaLink="false">https://github.com/synchopate/llama-modchip</guid>
-      <pubDate>Sun, 08 Nov 2026 10:22:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>GitHub Down Again?</title>
-      <link>https://github.com/torvalds/linux</link>
-      <guid isPermaLink="false">https://github.com/torvalds/linux</guid>
-      <pubDate>Sun, 08 Nov 2026 09:56:07 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Agent memory needs its OpenTelemetry moment</title>
-      <link>https://www.lorekit.io/blog/open-agent-memory-format</link>
-      <guid isPermaLink="false">https://www.lorekit.io/blog/open-agent-memory-format</guid>
-      <pubDate>Sun, 08 Nov 2026 08:40:23 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>WaveDudeNext 2D Wave Simulator</title>
-      <link>https://github.com/graealex/WaveDudeNext</link>
-      <guid isPermaLink="false">https://github.com/graealex/WaveDudeNext</guid>
-      <pubDate>Sun, 08 Nov 2026 07:09:02 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
