@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sun, 08 Nov 2026 12:00:14 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 09 Nov 2026 06:01:09 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -67,123 +67,6 @@
       <link>https://github.com/graealex/WaveDudeNext</link>
       <guid isPermaLink="false">https://github.com/graealex/WaveDudeNext</guid>
       <pubDate>Sun, 08 Nov 2026 07:09:02 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Kirlian Photography: Building Your Own Equipment</title>
-      <link>https://imagesco.com/articles/kirlian/kirlian-photography.html</link>
-      <guid isPermaLink="false">https://imagesco.com/articles/kirlian/kirlian-photography.html</guid>
-      <pubDate>Sun, 08 Nov 2026 04:14:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>ISponsorBlockTV: SponsorBlock client for all YouTube TV clients</title>
-      <link>https://github.com/dmunozv04/isponsorblocktv</link>
-      <guid isPermaLink="false">https://github.com/dmunozv04/isponsorblocktv</guid>
-      <pubDate>Sun, 08 Nov 2026 03:47:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Goodbye Claude, Hello Pi</title>
-      <link>https://caleb.software/posts/claude-to-pi.html</link>
-      <guid isPermaLink="false">https://caleb.software/posts/claude-to-pi.html</guid>
-      <pubDate>Sun, 08 Nov 2026 03:11:48 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Consumer brain wave headsets threaten privacy</title>
-      <link>https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F</link>
-      <guid isPermaLink="false">https://www.science.org/content/article/wearable-device-makers-are-harvesting-brain-data-train-ai-without-telling-users?referrer=https%3A%2F%2Fwww.google.com%2F</guid>
-      <pubDate>Sun, 08 Nov 2026 02:02:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>ZapFast: A fast, native WhatsApp client in Rust and egui</title>
-      <link>https://github.com/crmne/zapfast</link>
-      <guid isPermaLink="false">https://github.com/crmne/zapfast</guid>
-      <pubDate>Sun, 08 Nov 2026 02:02:27 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>GitHub New pull request overview page in public preview</title>
-      <link>https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/</link>
-      <guid isPermaLink="false">https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/</guid>
-      <pubDate>Sat, 07 Nov 2026 23:09:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Making any integer with four 2s (2025)</title>
-      <link>https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/</link>
-      <guid isPermaLink="false">https://eli.thegreenplace.net/2025/making-any-integer-with-four-2s/</guid>
-      <pubDate>Sat, 07 Nov 2026 22:38:58 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Claude Code's "Don't Ask Again" exposes passwords in 1,122 public GitHub files</title>
-      <link>https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again</link>
-      <guid isPermaLink="false">https://apiiro.com/blog/coding-agents-leaking-secrets-github-dont-ask-again</guid>
-      <pubDate>Sat, 07 Nov 2026 20:45:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>What I run on my $10 USD OpenStick homelab</title>
-      <link>https://blog.bosscher.ch/posts/openstick/</link>
-      <guid isPermaLink="false">https://blog.bosscher.ch/posts/openstick/</guid>
-      <pubDate>Sat, 07 Nov 2026 18:12:12 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The end of Microsoft Research's AI Frontiers group</title>
-      <link>https://hunch.net/?p=13764006</link>
-      <guid isPermaLink="false">https://hunch.net/?p=13764006</guid>
-      <pubDate>Sat, 07 Nov 2026 18:02:17 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Show HN: Coldframe, a honeypot that poses as a supermarket fridge controller</title>
-      <link>https://github.com/hedgerow-dev/coldframe</link>
-      <guid isPermaLink="false">https://github.com/hedgerow-dev/coldframe</guid>
-      <pubDate>Sat, 07 Nov 2026 17:27:30 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>MaxxBench – "Nice DeepSWE score. But is it true?"</title>
-      <link>https://maxxbench.unlap.ai/research/why-maxxbench/</link>
-      <guid isPermaLink="false">https://maxxbench.unlap.ai/research/why-maxxbench/</guid>
-      <pubDate>Sat, 07 Nov 2026 17:19:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>The $8 Linux Computer (2022)</title>
-      <link>http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html</link>
-      <guid isPermaLink="false">http://thelittleengineerthatcould.blogspot.com/2022/12/the-8-linux-computer.html</guid>
-      <pubDate>Sat, 07 Nov 2026 14:00:20 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>
