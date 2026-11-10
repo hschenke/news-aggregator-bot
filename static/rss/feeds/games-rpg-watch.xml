@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Mon, 09 Nov 2026 14:02:26 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 06:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shadows of the Dungeon - Kickstarter live</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60546</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60546</guid>
+      <pubDate>Mon, 09 Nov 2026 15:33:31 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The Kickstarter campaign for Shadows of the Dungeon has started: Shadows of the Dungeon - Kickstarter Trailer (5.5e Dungeon Crawler RPG) Shadows of the Dungeon is a first-person dungeon crawler built on the 5.5e rules (SRD 5.2.1). You lead a party of four to six prisoners through the depths of Torment Keep, fight in real time with pause, and switch between grid steps and free movement whenever you like....]]></description>
+    </item>
+    <item>
+      <title>Sea of Remnants - Closed Beta on December 3</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60545</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60545</guid>
+      <pubDate>Mon, 09 Nov 2026 14:09:21 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[The adventure RPG Sea of Remnants has been announced for 2027 - a closed beta starts on December 3: Sea of Remnants - Official 'Embers' Dawnbreaker Closed Beta Release Date Trailer Don't miss the 'Embers' Dawnbreaker Closed Beta Release Date Trailer for Sea of Remnants, an upcoming action-adventure pirate game developed by Joker Studio....]]></description>
+    </item>
     <item>
       <title>RPGFan - RPGs coming this Week</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60544</link>
@@ -43,15 +61,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[The adventure RPG Dreadmore will be released into Early Access today: Dreadmore Dreadmore is a dark first-person fishing adventure game set in a submerged world, rotting from a past catastrophe. Fish in murky waters, upgrade your boat, craft survival gear, and fight monstrous creatures that lurk under the water and on the land....]]></description>
-    </item>
-    <item>
-      <title>Waywardens - Demo available</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60540</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60540</guid>
-      <pubDate>Sun, 08 Nov 2026 19:57:18 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[A demo for the roguelike Waywardens is available: Waywardens Demo Trailer - Available on Steam Lead three heroes with one shared deck in a dark fantasy tactical roguelite. Play each card as an action or a chess-inspired move. Read enemy attacks, break their formation and turn a desperate hand into a winning plan....]]></description>
     </item>
   </channel>
 </rss>

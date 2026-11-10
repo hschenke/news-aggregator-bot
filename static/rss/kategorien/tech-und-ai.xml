@@ -5,17 +5,539 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Tech &amp; AI' aus dem News Aggregator Bot.</description>
     <language>de</language>
-    <lastBuildDate>Mon, 09 Nov 2026 14:02:26 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 06:01:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/tech-und-ai.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Automattic debuts a platform to deploy vibe coding apps amid a changing internet</title>
+      <title>Dienstag: Klage wegen EU-Grenzkontrollsystem, Anthropic kauft Gasgeneratoren</title>
+      <link>https://www.heise.de/news/Dienstag-Klage-wegen-EU-Grenzkontrollsystem-Anthropic-kauft-Gasgeneratoren-11518084.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518084</guid>
+      <pubDate>Tue, 10 Nov 2026 05:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[EU verklagt Firmenkonsortium + Anthropic sichert sich Gasturbinen + Frankreich beschuldigt Iran + NASA sucht Astronauten + Outlook streikt bei bestimmten Mails]]></description>
+    </item>
+    <item>
+      <title>Anthropic Claude Fable 5.2 ist günstiger, aber Tempo kostet extra</title>
+      <link>https://www.heise.de/news/Anthropic-Claude-Fable-5-2-ist-guenstiger-aber-Tempo-kostet-extra-11518102.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518102</guid>
+      <pubDate>Tue, 10 Nov 2026 04:45:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Anthropic veröffentlicht Claude Fable 5.2 und Claude Mythos 5.2 veröffentlicht. Wer schnellere Ausgaben wünscht, darf das Doppelte zahlen.]]></description>
+    </item>
+    <item>
+      <title>Uber vermittelt nun auch Parkplätze in Nordamerika</title>
+      <link>https://www.heise.de/news/Uber-vermittelt-nun-auch-Parkplaetze-in-Nordamerika-11518088.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518088</guid>
+      <pubDate>Tue, 10 Nov 2026 04:15:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit Ubers App lassen sich nun auch Parkplätze im Voraus buchen und bezahlen. Vorerst in den USA, bald auch in Kanada.]]></description>
+    </item>
+    <item>
+      <title>Ultorg: The User Interface for Relational Databases</title>
+      <link>https://www.ultorg.com/</link>
+      <guid isPermaLink="false">https://www.ultorg.com/</guid>
+      <pubDate>Tue, 10 Nov 2026 03:59:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>CoreWeave bond yield tops 16% as AI credit stress rises</title>
+      <link>https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html</link>
+      <guid isPermaLink="false">https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html</guid>
+      <pubDate>Tue, 10 Nov 2026 03:20:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Formalizing CPython</title>
+      <link>https://broyojo.com/python-formalization/</link>
+      <guid isPermaLink="false">https://broyojo.com/python-formalization/</guid>
+      <pubDate>Tue, 10 Nov 2026 01:56:48 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Anthropic reportedly plans to move forward with IPO plans</title>
+      <link>https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186715</guid>
+      <pubDate>Tue, 10 Nov 2026 01:27:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The AI company is expected to set its valuation range this week, the Wall Street Journal reported.]]></description>
+    </item>
+    <item>
+      <title>Locating the source of a mysterious beep</title>
+      <link>https://simonwillison.net/2026/Nov/9/mysterious-beeps/</link>
+      <guid isPermaLink="false">https://simonwillison.net/2026/Nov/9/mysterious-beeps/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:10:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Horible public key tricks</title>
+      <link>https://maurycyz.com/projects/badcert/</link>
+      <guid isPermaLink="false">https://maurycyz.com/projects/badcert/</guid>
+      <pubDate>Tue, 10 Nov 2026 00:07:17 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang reportedly engaged a PR firm with a history of handling high-profile sex scandals a year ago</title>
+      <link>https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186628</guid>
+      <pubDate>Mon, 09 Nov 2026 23:28:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The PR firm was enlisted shortly after an October 2025 New York Times report described Alice Huang's business dealings with Jensen Huang, Wired reported.]]></description>
+    </item>
+    <item>
+      <title>Fable 5.2 one-shotted my nephew's dream game</title>
+      <link>https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game</link>
+      <guid isPermaLink="false">https://notesbylex.com/fable-5-2-one-shotted-my-nephews-dream-game</guid>
+      <pubDate>Mon, 09 Nov 2026 23:08:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Exact – a new cross platform UI framework</title>
+      <link>https://github.com/expo/exact</link>
+      <guid isPermaLink="false">https://github.com/expo/exact</guid>
+      <pubDate>Mon, 09 Nov 2026 22:59:13 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>A short seller flagged Nvidia CEO’s ties to a suspected Chinese spy six months before the scandal</title>
+      <link>https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186581</guid>
+      <pubDate>Mon, 09 Nov 2026 22:46:09 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Six months before Nvidia's spy scandal erupted, Culper Research was already questioning Jensen Huang's unusually close relationship with a Chinese executive.]]></description>
+    </item>
+    <item>
+      <title>The race is on to sue Nvidia</title>
+      <link>https://techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186479</guid>
+      <pubDate>Mon, 09 Nov 2026 22:23:42 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Nvidia’s stock slid more than 4% after its board opened an investigation into Jensen Huang’s relationship with a suspected Chinese spy, and one securities law expert says the company’s earlier insistence that it was all “normal” could turn into a very expensive problem.]]></description>
+    </item>
+    <item>
+      <title>TPU 8tx and TPU 8i Max</title>
+      <link>https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/</link>
+      <guid isPermaLink="false">https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/</guid>
+      <pubDate>Mon, 09 Nov 2026 21:56:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Grenzkontrollsystem: EU verklagt Konsortium um IBM</title>
+      <link>https://www.heise.de/news/Grenzkontrollsystem-EU-verklagt-Konsortium-um-IBM-11518072.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518072</guid>
+      <pubDate>Mon, 09 Nov 2026 21:35:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wegen wiederholter Verzögerungen bei der Entwicklung des europäischen Ein- und Ausreisesystems (EES) reicht die EU in Estland Klage gegen IBM und Partner ein.]]></description>
+    </item>
+    <item>
+      <title>Milliarden-Deal für Gasturbinen: Anthropic sichert sich Energiekapazitäten</title>
+      <link>https://www.heise.de/news/Milliarden-Deal-fuer-Gasturbinen-Anthropic-sichert-sich-Energiekapazitaeten-11518056.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518056</guid>
+      <pubDate>Mon, 09 Nov 2026 20:13:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Angesichts des rasant steigenden Energiebedarfs für KI-Infrastruktur investiert der Claude-Entwickler erstmals direkt in Anlagen zur Stromerzeugung.]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang pulls out of ElevenLabs Summit amid Nvidia controversy</title>
+      <link>https://techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186477</guid>
+      <pubDate>Mon, 09 Nov 2026 20:09:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The Nvidia CEO also pulled out of an Anthropic event earlier.]]></description>
+    </item>
+    <item>
+      <title>Claude Fable 5.2 scores 65 on Artificial Analysis, highest so far</title>
+      <link>https://artificialanalysis.ai/models/claude-fable-5-2</link>
+      <guid isPermaLink="false">https://artificialanalysis.ai/models/claude-fable-5-2</guid>
+      <pubDate>Mon, 09 Nov 2026 20:04:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>USPS now offers official ZIP Code boundary polygons</title>
+      <link>https://postalpro.usps.com/zcb</link>
+      <guid isPermaLink="false">https://postalpro.usps.com/zcb</guid>
+      <pubDate>Mon, 09 Nov 2026 19:58:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Parking-app convenience fees in 312 U.S. cities (median $0.35 per session)</title>
+      <link>https://parkgraph.com/parking-app-fees</link>
+      <guid isPermaLink="false">https://parkgraph.com/parking-app-fees</guid>
+      <pubDate>Mon, 09 Nov 2026 19:55:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Claude Mythos und Fable 5.2: Das beste KI-Modell aller Zeiten</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-claude-mythos-fable-5-2-release</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-claude-mythos-fable-5-2-release</guid>
+      <pubDate>Mon, 09 Nov 2026 19:29:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Fable 5.2 liegt in Anthropics Tests beim Programmieren und bei fachübergreifenden Wissensfragen vor GPT-6 Astra. Rund 1.000 Fable-Agenten haben den Beweis von Fermats letztem Satz in 30 Stunden in die prüfbare Sprache Lean übertragen. Fable 5.2 startet mit Schutzfiltern und niedrigeren API-Preisen, während der direkte Zugang zu Mythos 5.2 geprüften Organisationen vorbehalten ist. Anthropic · Claude Fable 5.2 und Mythos 5.2 (mitgelieferte Textfassung und Grafiken) Anthropic · Vorstellung und API-Preise von Claude Fable 5.1 Anthropic · Die erste Formalisierung von Fermats letztem Satz in Lean Anthropic bringt dasselbe KI-Modell wie bisher unter zwei Namen heraus. Claude Fable 5.2 kommt mit Schutzfiltern für IT-Sicherheit und Biologie in die Claude-Apps, während geprüfte Organisationen Claude Mythos 5.2 mit weniger Einschränkungen bekommen. Anzeige Fable 5.2 alleine auf Rang 1 Claude Fable 5.1 führte bei seinem Start den Intelligence Index von Artificial Analysis an. In der aktuellen Rangliste liegt es mit 49 Punkten deutlich hinter Opus 5.5 mit 59 Punkten und kostet pro Eingabe- und Ausgabe-Token jeweils das Zweieinhalbfache. Fable 5.2 holt die Führung zurück und setzt sich...]]></description>
+    </item>
+    <item>
+      <title>Anthropic releases new Mythos and Fable models amid RSI concerns</title>
+      <link>https://techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186369</guid>
+      <pubDate>Mon, 09 Nov 2026 19:24:51 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Anthropic says the new models "show improvements in areas like coding, reasoning, and vision," as well as in communicating more clearly with users.]]></description>
+    </item>
+    <item>
+      <title>Top 10: Speicher für Balkonkraftwerk im Test</title>
+      <link>https://www.heise.de/bestenlisten/testsieger/top-10-speicher-fuer-balkonkraftwerk-im-test-ohne-cloud-lokal-steuerbar/9g7b03h?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517844</guid>
+      <pubDate>Mon, 09 Nov 2026 19:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Wir zeigen die besten Speicher für Balkonkraftwerke. Viele Modelle lassen sich inzwischen lokal via Home Assistant ansteuern.]]></description>
+    </item>
+    <item>
+      <title>ElevenLabs lässt KI-Agenten zum Wunschtermin zurückrufen</title>
+      <link>https://www.all-ai.de/news/news26top/elevenlabs-ki-anrufe-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/elevenlabs-ki-anrufe-start</guid>
+      <pubDate>Mon, 09 Nov 2026 18:57:55 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[ElevenLabs startet den Campaign Manager für Telefon- und WhatsApp-Kampagnen. KI-Agenten können nach einem verpassten Anruf erneut wählen oder zum vereinbarten Zeitpunkt zurückrufen. Unternehmen legen Anrufzeiten und Limits fest und sehen, welche Fälle ein Mitarbeiter prüfen soll. E-Mail und SMS sollen als weitere Kanäle folgen. ElevenLabs – Ankündigung des ElevenAgents Campaign Manager ElevenLabs-Dokumentation – Campaigns ElevenLabs startet den ElevenAgents Campaign Manager. Mithilfe dieser Funktion können KI-Agenten Kunden anrufen und Folgegespräche führen, bis beispielsweise ein Termin bestätigt wurde, das Limit für Anrufversuche erreicht ist oder der Kunde keine weiteren Anrufe wünscht. Anzeige Der Agent knüpft beim Rückruf ans vorige Gespräch an Springt die Mailbox an, kann der Campaign Manager einen weiteren Versuch einplanen. Bittet ein Kunde um einen Rückruf am Donnerstag um 16 Uhr, ruft der Agent zum gewünschten Zeitpunkt an. Dabei kann er die Zusammenfassung des vorigen Gesprächs nutzen. Nennt der Kunde einen anderen Ansprechpartner, kann der Agent die neue Nummer wählen. Für jede Kampagne legt das Unternehmen fest, an welchen Tagen und zu welchen Uhrzeiten der Agent an...]]></description>
+    </item>
+    <item>
+      <title>Show HN: Someone Was Here – Find out who used your Mac while you were away</title>
+      <link>https://someonewashere.app/</link>
+      <guid isPermaLink="false">https://someonewashere.app/</guid>
+      <pubDate>Mon, 09 Nov 2026 18:50:56 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>E-means: Outperforming k-means in one-tenth the epochs</title>
+      <link>https://e-means.github.io/</link>
+      <guid isPermaLink="false">https://e-means.github.io/</guid>
+      <pubDate>Mon, 09 Nov 2026 18:45:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: MeowDisplay Is iPhone Mirroring, but in Reverse</title>
+      <link>https://meowdisplay.app/</link>
+      <guid isPermaLink="false">https://meowdisplay.app/</guid>
+      <pubDate>Mon, 09 Nov 2026 18:39:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Muse Ember: Meta veröffentlicht das beste günstige KI-Modell</title>
+      <link>https://www.all-ai.de/news/news26top/meta-muse-ember-klein-stark-release</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/meta-muse-ember-klein-stark-release</guid>
+      <pubDate>Mon, 09 Nov 2026 18:30:33 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Muse Ember und Claude Haiku 5.5 erzielen im Intelligence Index je 36 Punkte. Eine Testaufgabe kostet mit Ember im Schnitt 0,14$ und mit Haiku 0,41$. Ember schneidet bei Geschäftsabläufen gut ab und lässt im Wissenstest viele Fragen unbeantwortet. Meta bietet das Modell über Muse Code und die Meta Model API an. Meta: Introducing Our Smallest, Most Efficient Model: Muse Ember Artificial Analysis: Muse Ember im Modellvergleich Artificial Analysis Intelligence Index v5.0.1 Artificial Analysis: Die zwei Auswertungen von AutomationBench-AA Artificial Analysis: Coding Agent Benchmarks Meta hat mit Muse Ember ein günstiges KI-Modell für Aufgaben veröffentlicht, die KI-Agenten immer wieder erledigen. Im Intelligence Index von Artificial Analysis erreicht es denselben Wert wie Claude Haiku 5.5, kostet pro Testaufgabe aber nur rund ein Drittel. Anzeige 36 Punkte für 14 Cent pro Aufgabe Muse Ember und Claude Haiku 5.5 kommen auf der höchsten Thinking-Stufe auf je 36 Punkte. Artificial Analysis veranschlagt im Schnitt 0,14$ pro Testaufgabe für Ember und 0,41$ für Haiku. Unter den getesteten Modellen mit mindestens 36 Punkten ist Ember damit das günstigste. GPT-6 Luna liegt mit 0,15$ pro Aufg...]]></description>
+    </item>
+    <item>
+      <title>The first 300-millimeter power silicon carbide (SiC) wafer</title>
+      <link>https://www.infineon.com/press-release/2026/infpr202611-028</link>
+      <guid isPermaLink="false">https://www.infineon.com/press-release/2026/infpr202611-028</guid>
+      <pubDate>Mon, 09 Nov 2026 18:25:01 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Google Gemini routes personal Drive files and emails to human annotators</title>
+      <link>https://github.com/thisisme6598/gemini_files/</link>
+      <guid isPermaLink="false">https://github.com/thisisme6598/gemini_files/</guid>
+      <pubDate>Mon, 09 Nov 2026 18:24:38 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Die NASA sucht Astronauten für künftige Mondmissionen</title>
+      <link>https://www.heise.de/news/Die-NASA-sucht-Astronauten-fuer-kuenftige-Mondmissionen-11518006.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11518006</guid>
+      <pubDate>Mon, 09 Nov 2026 18:10:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Die NASA sucht Besatzungen für künftige Mondlandungen und die Mondbasis. Daneben dürfen sich acht Unternehmen um neue Mondflüge bewerben.]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny</title>
+      <link>https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186336</guid>
+      <pubDate>Mon, 09 Nov 2026 18:09:52 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Jensen Huang’s alleged affair with a suspected Chinese spy threatens to complicate Nvidia’s lobbying efforts to loosen U.S. chip export restrictions and maintain access to China’s lucrative AI market.]]></description>
+    </item>
+    <item>
+      <title>Claude Fable 5.2 and Mythos 5.2</title>
+      <link>https://www.anthropic.com/claude-fable-and-mythos-5-2</link>
+      <guid isPermaLink="false">https://www.anthropic.com/claude-fable-and-mythos-5-2</guid>
+      <pubDate>Mon, 09 Nov 2026 18:01:10 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Meta releases Muse Ember, a new lightweight model for agent execution</title>
+      <link>https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186298</guid>
+      <pubDate>Mon, 09 Nov 2026 18:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[At 10 cents per million input tokens, Ember is significantly cheaper than frontier competitors like Haiku and Luna.]]></description>
+    </item>
+    <item>
+      <title>Muse Ember: Our smallest, most efficient model</title>
+      <link>https://research.meta.ai/blog/muse-ember</link>
+      <guid isPermaLink="false">https://research.meta.ai/blog/muse-ember</guid>
+      <pubDate>Mon, 09 Nov 2026 17:58:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Every satellite that passed over any place this week, and its photos</title>
+      <link>https://www.watched.earth</link>
+      <guid isPermaLink="false">https://www.watched.earth</guid>
+      <pubDate>Mon, 09 Nov 2026 17:51:31 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Microsoft prüft Rechenzentrumsverträge und lehnt ab</title>
+      <link>https://www.heise.de/news/Microsoft-laesst-Rechenzentrumsvertrag-mit-Oracle-auslaufen-11517608.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517608</guid>
+      <pubDate>Mon, 09 Nov 2026 17:30:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Microsoft lässt Insiderinformationen zufolge einige Rechenzentrumsverträge auslaufen, darunter einen Mietvertrag mit Oracle.]]></description>
+    </item>
+    <item>
+      <title>Frankreich: Iran steckt hinter Cyberangriffen auf Kühlsysteme</title>
+      <link>https://www.heise.de/news/Frankreich-Iran-steckt-hinter-Cyberangriffen-auf-Kuehlsysteme-11517966.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517966</guid>
+      <pubDate>Mon, 09 Nov 2026 17:19:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Für die Sabotage von Kühlsystemen in mehreren europäischen Ländern ist nach Erkenntnissen der französischen Regierung der Iran verantwortlich.]]></description>
+    </item>
+    <item>
+      <title>Telekom rüstet KI-Fabrik in München nach, Gigafactory bleibt Option</title>
+      <link>https://www.heise.de/news/Telekom-ruestet-KI-Fabrik-in-Muenchen-nach-Gigafactory-bleibt-Option-11517926.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517926</guid>
+      <pubDate>Mon, 09 Nov 2026 17:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Mit viel Politprominenz hat die Telekom am Montag den Startschuss für ihre „KI-Fabrik 2.0“ gegeben. Zu einer möglichen Gigafactory blieb Tim Höttges vage.]]></description>
+    </item>
+    <item>
+      <title>Y/N (YC S23) is hiring a growth lead to distribute superhuman A.I. storytelling</title>
+      <link>https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer</link>
+      <guid isPermaLink="false">https://www.ycombinator.com/companies/yn/jobs/TjDn3YZ-founding-growth-marketer</guid>
+      <pubDate>Mon, 09 Nov 2026 17:00:06 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Spanien erwägt vorübergehende TikTok-Sperrung wegen Missbrauchsvideos</title>
+      <link>https://www.heise.de/news/Spanien-erwaegt-voruebergehende-TikTok-Sperrung-wegen-Missbrauchsvideos-11517940.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517940</guid>
+      <pubDate>Mon, 09 Nov 2026 17:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nach einer Recherche über mutmaßlichen sexuellen Kindesmissbrauch auf TikTok erwägt Spaniens Regierung eine vorübergehende Sperrung der Plattform.]]></description>
+    </item>
+    <item>
+      <title>Anthropic joins AI’s natural gas frenzy, buys $3.4B worth of turbines</title>
+      <link>https://techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186273</guid>
+      <pubDate>Mon, 09 Nov 2026 16:56:54 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Anthropic bought billions of dollars' worth of natural gas turbines in a deal that could give it buyer's remorse.]]></description>
+    </item>
+    <item>
+      <title>Apple will angeblich Aktionstaste und Kamerasteuerung beim iPhone verschmelzen</title>
+      <link>https://www.heise.de/news/Apple-will-angeblich-Aktionstaste-und-Kamerasteuerung-beim-iPhone-verschmelzen-11517906.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517906</guid>
+      <pubDate>Mon, 09 Nov 2026 16:38:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das iPhone Duo verzichtet auf die Aktionstaste. Laut einem Leaker will Apple sie ab Herbst 2027 mit der Kamerasteuerung zu einer Taste verschmelzen.]]></description>
+    </item>
+    <item>
+      <title>Medium’s new TK app brings AI assistance directly into the writing process</title>
+      <link>https://techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3186240</guid>
+      <pubDate>Mon, 09 Nov 2026 16:12:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Medium's new writing app embraces AI-assisted writing, despite growing controversy over the technology's role in publishing.]]></description>
+    </item>
+    <item>
+      <title>Payments Canada announces launch of Canada's Real-Time Rail (RTR) payment system</title>
+      <link>https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy</link>
+      <guid isPermaLink="false">https://www.payments.ca/canada-launches-real-time-rail-bringing-247-payment-infrastructure-national-economy</guid>
+      <pubDate>Mon, 09 Nov 2026 16:00:45 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Drama Ads: Dramatische Werbespots am fließenden Band</title>
+      <link>https://www.all-ai.de/news/news26/drama-werbespots-higgsfield-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/drama-werbespots-higgsfield-start</guid>
+      <pubDate>Mon, 09 Nov 2026 15:58:41 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Higgsfield erstellt mit Drama Ads Werbevideos, in denen das Produkt die Handlung wendet. Das Ads Studio bietet acht Videostile und 44 Vorlagen im Hochformat. Die Funktion lässt sich auch aus Claude und ChatGPT starten. Das Video kostet je nach Auflösung 3 bis 16 Credits pro Sekunde. Higgsfield: Ankündigung, Vorlagen und Preise der Micro Drama Ads Higgsfield Ads Studio Ein Rivale sabotiert den großen Auftritt, dann rettet ausgerechnet das beworbene Produkt die Lage. Mit Drama Ads macht Higgsfield aus solchen Geschichten Werbespots. Die Funktion ist seit dem 6. November im Ads Studio verfügbar und erstellt aus einer Idee oder einem Skript ein geschnittenes Video mit Ton. Quelle: Higgsfield Ein Produkt, 44 Handlungsvorlagen Im Ads Studio beschreibt der Nutzer den Spot im Chat und wählt einen Stil, ein Produkt und einen Avatar. Wer denselben Avatar für mehrere Spots verwendet, kann eine ganze Reihe mit derselben Hauptfigur drehen lassen. + Zum Start stehen acht Videostile und 44 Handlungsvorlagen zur Wahl. Die Vorlagen sind im Hochformat 9:16 angelegt und lassen sich über »Recreate« mit dem eigenen Produkt neu umsetzen. Im Stil »Micro drama« sehen die Szenen wie gedreht aus, im Stil...]]></description>
+    </item>
+    <item>
+      <title>EU-Förderbank: Zehn Milliarden Euro für Europas Tech-Unternehmen</title>
+      <link>https://www.heise.de/news/EU-Foerderbank-Zehn-Milliarden-Euro-fuer-Europas-Tech-Unternehmen-11517852.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517852</guid>
+      <pubDate>Mon, 09 Nov 2026 15:56:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Milliardeninvestitionen sollen Europas Tech-Firmen wachsen lassen. Dafür tun sich private Investoren mit EU-Institutionen und Mitgliedsländern zusammen.]]></description>
+    </item>
+    <item>
+      <title>Outlook.com: Die Mail ist echt – und sie kommt trotzdem nicht an</title>
+      <link>https://www.heise.de/news/Outlook-com-Die-Mail-ist-echt-und-sie-kommt-trotzdem-nicht-an-11517776.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517776</guid>
+      <pubDate>Mon, 09 Nov 2026 15:46:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Outlook.com lehnt derzeit E-Mails kleiner Absender ohne DMARC-Eintrag ab – selbst wenn SPF und DKIM stimmen.]]></description>
+    </item>
+    <item>
+      <title>Bundeskartellamt startet Marktbefragung zu Googles Autodiensten</title>
+      <link>https://www.heise.de/news/Bundeskartellamt-startet-Marktbefragung-zu-Googles-Autodiensten-11517806.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517806</guid>
+      <pubDate>Mon, 09 Nov 2026 15:41:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das Bundeskartellamt startet eine Marktbefragung zu Googles Kartendiensten im Automobilbereich und prüft mögliche Wettbewerbsbeschränkungen.]]></description>
+    </item>
+    <item>
+      <title>Neue Gallium- und Germanium-Materialien für Leistungshalbleiter reifen heran</title>
+      <link>https://www.heise.de/news/Neue-Gallium-und-Germanium-Materialien-fuer-Leistungshalbleiter-reifen-heran-11517812.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517812</guid>
+      <pubDate>Mon, 09 Nov 2026 15:38:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Halbleiter aus Gallium(III)-oxid und Germanium(IV)-oxid versprechen Vorteile gegenüber solchen aus Galliumnitrid (GaN) oder Siliziumkarbid (SiC).]]></description>
+    </item>
+    <item>
+      <title>On Being an Engineer in 2026</title>
+      <link>https://twitter.com/shaharglazner/status/2119796029256032278</link>
+      <guid isPermaLink="false">https://twitter.com/shaharglazner/status/2119796029256032278</guid>
+      <pubDate>Mon, 09 Nov 2026 15:07:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Nemotron-Personas-Finance-Japan: A Synthetic Dataset Capturing Japan's Demographics and Financial Context</title>
+      <link>https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/nemotron-personas-finance-japan</guid>
+      <pubDate>Mon, 09 Nov 2026 15:05:57 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Saugroboter Eufy C30 Edge im Test: Kleine Station, fairer Preis, große Leistung</title>
+      <link>https://www.heise.de/bestenlisten/testbericht/saugroboter-eufy-c30-edge-im-test-kleine-station-fairer-preis-grosse-leistung/34bhq0b?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11517690</guid>
+      <pubDate>Mon, 09 Nov 2026 15:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Der Eufy C30 Edge kombiniert eine kompakte Station mit ausfahrbarem Wischmopp und Matter. Bei Kabeln und eingetrockneten Flecken zeigt er Schwächen.]]></description>
+    </item>
+    <item>
+      <title>Google stellt zwei neue TPU-Chips für KI-Agenten vor</title>
+      <link>https://www.all-ai.de/news/news26/google-tpu-neu</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-tpu-neu</guid>
+      <pubDate>Mon, 09 Nov 2026 14:42:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google ergänzt seine achte TPU-Generation um den TPU 8tx und den TPU 8i Max. Der TPU 8tx schützt sensible Daten und Modellgewichte während der Verarbeitung. Der TPU 8i Max kombiniert zwei Chips und verdoppelt gegenüber dem TPU 8i die Speicherbandbreite. Google – Ankündigung von TPU 8tx und TPU 8i Max Google Cloud – Technische Details zu TPU 8t und TPU 8i Google erweitert seine achte Generation von KI-Beschleunigern um TPU 8tx und TPU 8i Max. Der 8tx schützt vertrauliche Daten während der Verarbeitung, der 8i Max ist auf Aufgaben mit langen Kontexten ausgelegt, etwa wenn KI-Agenten eine ganze Codebasis durchsuchen oder stundenlange Videos auswerten. Anzeige TPU 8tx schützt Daten während der Berechnung Für den TPU 8tx kombiniert Google den Chip des TPU 8t mit AMD-Epyc-Prozessoren der fünften Generation. Die Hardware schirmt sensible Daten und Modellgewichte auch während der Berechnung ab. Das ist etwa für Behörden und Unternehmen gedacht, die KI-Modelle mit vertraulichen Unterlagen nutzen oder mit eigenen Daten nachtrainieren wollen. Google übernimmt außerdem das Boardfly-Netzwerk des TPU 8i. Es verkürzt die Wege zwischen den Chips. Laut Google sinkt die Verzögerung bei der Verarb...]]></description>
+    </item>
+    <item>
+      <title>Semi-transparent, colored cadmium telluride photovoltaic panels in agrivoltaics</title>
+      <link>https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/</link>
+      <guid isPermaLink="false">https://www.anthropocenemagazine.org/2026/10/magenta-solar-panels-may-be-agrivoltaics-cleverest-trick-yet/</guid>
+      <pubDate>Mon, 09 Nov 2026 14:31:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Gehirndaten von Neurotech-Nutzern werden heimlich für KI-Training genutzt</title>
+      <link>https://www.heise.de/news/Gehirndaten-von-Neurotech-Nutzern-werden-heimlich-fuer-KI-Training-genutzt-11513876.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11513876</guid>
+      <pubDate>Mon, 09 Nov 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Eine Recherche zeigt: Gehirnaktivitäten von Neurotech-Nutzern werden ohne deren Wissen für das Training von KIs verwendet.]]></description>
+    </item>
+    <item>
+      <title>KI-Update kompakt: Rechenzentren, Propaganda, Siri AI, Minecraft</title>
+      <link>https://www.heise.de/news/KI-Update-kompakt-Rechenzentren-Propaganda-Siri-AI-Minecraft-11515563.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11515563</guid>
+      <pubDate>Mon, 09 Nov 2026 14:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Das „KI-Update“ liefert drei mal pro Woche eine Zusammenfassung der wichtigsten KI-Entwicklungen.]]></description>
+    </item>
+    <item>
+      <title>Automattic debuts a platform to deploy vibe-coding apps amid a changing internet</title>
       <link>https://techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet/</link>
       <guid isPermaLink="false">https://techcrunch.com/?p=3186097</guid>
       <pubDate>Mon, 09 Nov 2026 14:00:00 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Automattic aims to compete with likes of Lovable with Spacefast]]></description>
+      <description><![CDATA[Automattic aims to compete with the likes of Lovable with Spacefast.]]></description>
     </item>
     <item>
       <title>Ausprobiert: Mithörfunktionen Siri Recap und Live Rewind auf der Apple Watch</title>
@@ -79,6 +601,15 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Wer mit KI-Coding-Agenten arbeitet, kann Zugangsdaten in öffentliche Repositories ausleiten. Schuld ist eine Komfortfunktion.]]></description>
+    </item>
+    <item>
+      <title>Foldable Flight: The Best Paper Airplanes</title>
+      <link>https://www.foldableflight.com</link>
+      <guid isPermaLink="false">https://www.foldableflight.com</guid>
+      <pubDate>Mon, 09 Nov 2026 12:19:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
     </item>
     <item>
       <title>ByteDance veröffentlicht mit Seedream 5.5 sein bisher bestes Bildmodell</title>
@@ -286,141 +817,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[Die russische Statistikbehörde muss infolge eines Cyberangriffs eine Datenveröffentlichung verschieben. Für Aufsehen sorgen angeblich entwendete Verlustzahlen.]]></description>
-    </item>
-    <item>
-      <title>Digitale Bildungsangebote zu DDR, Mauerbau und Mauerfall</title>
-      <link>https://www.heise.de/hintergrund/Digitale-Bildungsangebote-zu-DDR-Mauerbau-und-Mauerfall-11507665.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11507665</guid>
-      <pubDate>Mon, 09 Nov 2026 05:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Zeitzeugenberichte, Videos, Graphic Novel, 360-Grad-Rundgänge, AR-Apps & Co.: ein Überblick über digitale Angebote, die die deutsche Teilung thematisieren.]]></description>
-    </item>
-    <item>
-      <title>Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s “about a 50-50”</title>
-      <link>https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3186150</guid>
-      <pubDate>Mon, 09 Nov 2026 05:26:29 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[Nvidia’s board is investigating Jensen Huang over his relationship with a suspected Chinese spy, and Yale’s Jeffrey Sonnenfeld thinks it’s roughly a coin flip whether Huang stays on as CEO.]]></description>
-    </item>
-    <item>
-      <title>Montag: Reaktor für Atommüll-Recycling, Untersuchung von Nvidia-Chef nach Affäre</title>
-      <link>https://www.heise.de/news/Montag-Reaktor-fuer-Atommuell-Recycling-Untersuchung-von-Nvidia-Chef-nach-Affaere-11516797.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516797</guid>
-      <pubDate>Mon, 09 Nov 2026 05:15:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Atomreaktor ohne Endlager + Huang-Affäre mit möglicher Spionin + Geheimdienste prüfen Kühl-Attacken + Rechenzentren mit wenig Transparenz + Doku über KI-Partner]]></description>
-    </item>
-    <item>
-      <title>Magnific (Freepic) im Überblick: Kombination aus KI und Bibliothek</title>
-      <link>https://www.all-ai.de/tools/ki-top-tools100/magnific-freepic-ki-test</link>
-      <guid isPermaLink="false">https://www.all-ai.de/tools/ki-top-tools100/magnific-freepic-ki-test</guid>
-      <pubDate>Mon, 09 Nov 2026 05:00:10 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[GPT Image 2.6 Inhaltsverzeichnis ▾ Ressourcen ▾ 0. Steckbrief & Daten 1. Coole Funktion 2. Hauptfunktionen 3. Vorteile & Nachteile 4. Praxis Usecases 5. Preise & Abos 6. Alternativen & Vergleich 7. Anbieter Informationen 8. Fazit & Bewertung 9. Häufige Fragen (FAQ) Magnific – offizielle Kreativplattform und Funktionsübersicht Magnific – aktuelle Preise und Tarifleistungen Magnific One – Draft, Brand Kit und Bildbearbeitung Magnific – Fair Use Policy für Unlimited Trustpilot – aktuelle Nutzererfahrungen mit Magnific Magnific vereint KI-Bilder, Videos, Audio und eine große Stock-Bibliothek in einem Angebot. Hinter dem Namen steckt seit April 2026 die frühere Kreativplattform Freepik, deren Funktionen weit über den bekannten Magnific Upscaler hinausgehen. Besonders interessant ist die Möglichkeit, aus einem eigenen Foto mehrere Werbemotive und anschließend einen kurzen Clip zu entwickeln. + Magnific Bilder & Video KI 8.5 Score Preis-Modell Abo-Modelle Plattform Browser Sprache Englisch Status Etabliert, häufige Updates Gratis Testen? Ja, begrenzt Letztes Update Nov. 2026 20% Rabatt mit Code: GMRP2204ABR749 Klick führt direkt zum Anbieter, Affliatelink 01. Coole Funktion Aus einer K...]]></description>
-    </item>
-    <item>
-      <title>Jensen Huang gesteht Affäre ein, Nvidia beginnt Untersuchung</title>
-      <link>https://www.heise.de/news/Jensen-Huang-gesteht-Affaere-ein-Nvidia-beginnt-Untersuchung-11516757.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516757</guid>
-      <pubDate>Sun, 08 Nov 2026 22:06:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das Board von Nvidia hat mit externer Unterstützung eine Untersuchung gegen seinen CEO eingeleitet. Es geht um Verbindungen zu chinesischen Geheimdiensten.]]></description>
-    </item>
-    <item>
-      <title>Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy</title>
-      <link>https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3186128</guid>
-      <pubDate>Sun, 08 Nov 2026 21:00:11 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[In a memo to the company, Huang admitted that he had an affair.]]></description>
-    </item>
-    <item>
-      <title>KI »Miracle« bearbeitet und verändert Videos in Echtzeit</title>
-      <link>https://www.all-ai.de/news/news26/ki-miracle-higgsfield</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-miracle-higgsfield</guid>
-      <pubDate>Sun, 08 Nov 2026 19:55:04 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Higgsfield Kurzfassung ▾ Quellen ▾ Higgsfield Miracle soll Änderungen an einem Video schon beim Abspielen anzeigen. Dafür zerlegt Miracle den Clip in Ebenen, sodass sich etwa ein Auto gezielt umfärben lässt. Higgsfield testet Miracle mit ausgewählten Partnern und nimmt Anmeldungen für die Warteliste entgegen. Higgsfield Miracle – Produktseite und Warteliste Higgsfield – Ankündigung von Miracle auf X Higgsfield – So funktioniert die Anbindung über MCP Higgsfield hat Miracle vorgestellt, ein KI-Tool für die Nachbearbeitung von Videos. Wer etwa die Farbe eines Autos ändern will, soll den Wunsch eintippen und das Ergebnis sehen, während der Clip weiterläuft. So ließen sich Varianten direkt in der laufenden Aufnahme ausprobieren. Quelle: Higgsfield Miracle zerlegt den Clip in Ebenen Higgsfield teilt das Video dafür in getrennt bearbeitbare Ebenen auf. Wird ein Auto in einer Straßenszene umgefärbt, sollen sich Kamera und Umgebung wie in der ursprünglichen Aufnahme weiterbewegen. Auch die Lichtstimmung soll sich ändern lassen. Wer eine Szene etwa in die Abendsonne verlegt, soll sehen, wie sich die Schatten an das neue Licht anpassen. Higgsfield arbeitet außerdem daran, Gegenstände zu e...]]></description>
-    </item>
-    <item>
-      <title>Top 10: Der beste Mini-PC mit Windows 11</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-der-beste-mini-pc-mit-windows-11-ueber-80-modelle-im-test/6cybv8w?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516617</guid>
-      <pubDate>Sun, 08 Nov 2026 19:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Mini-PCs sind kompakt und ideal für Office bis Gaming. Wir zeigen die besten Modelle aller Preisklassen aus über 80 Tests.]]></description>
-    </item>
-    <item>
-      <title>TSMC könnte mit „3D DRAM“ ins Speichergeschäft einsteigen</title>
-      <link>https://www.heise.de/news/TSMC-koennte-mit-3D-DRAM-ins-Speichergeschaeft-einsteigen-11516713.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516713</guid>
-      <pubDate>Sun, 08 Nov 2026 17:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Statt nur Auftragsfertigung für andere soll TSMC einem Bericht zufolge auch eigene Chips planen. Und zwar mit dem lange erhofften 3D-DRAM.]]></description>
-    </item>
-    <item>
-      <title>Neuer Reaktortyp soll Atommüll wiederverwerten</title>
-      <link>https://www.heise.de/news/Strom-aus-Atommuell-TU-Dresden-plant-Forschungsreaktor-11516673.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516673</guid>
-      <pubDate>Sun, 08 Nov 2026 16:30:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ein Forschungsreaktor der TU Dresden soll abgebrannte Brennelemente direkt nutzen und die Suche nach einem Endlager erübrigen.]]></description>
-    </item>
-    <item>
-      <title>Jensen Huang soll Beziehung zu chinesischer Spionin gehabt haben</title>
-      <link>https://www.heise.de/news/Jensen-Huang-soll-Beziehung-zu-chinesischer-Spionin-gehabt-haben-11516677.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516677</guid>
-      <pubDate>Sun, 08 Nov 2026 15:40:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[US-Berichte legen nahe, dass Jensen Huang einer Spionin nahestand, deren Arbeitgeber Exportbeschränkungen unterlaufen haben soll.]]></description>
-    </item>
-    <item>
-      <title>Der Nvidia-Krimi und Jensen Huang</title>
-      <link>https://www.all-ai.de/news/news26top/nvidia-jensen-huang-topstory</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/nvidia-jensen-huang-topstory</guid>
-      <pubDate>Sun, 08 Nov 2026 15:22:37 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Trump soll früh vom Spionageverdacht erfahren haben, während Jensen Huang laut New York Times keine offizielle Warnung bekam. Nvidia spricht von üblichem Kundenkontakt, drei US-Ausschussvorsitzende wollen Huang dazu befragen. Die Financial Times berichtet, dass US-Beamte in einem Memo von einer möglichen Liebesbeziehung ausgehen. Madison Huang sagt ihre Südkorea-Reise aus familiären Gründen ab, wie Yonhap unter Berufung auf Quellen berichtet. The New York Times – Nvidia Chief, Jensen Huang, Is Seen as Target of Chinese Spy Plot Bloomberg – Nvidia’s Huang Defends Megaspeed Ties as US Probes China Spying Allegations US-Repräsentantenhaus – Einladung an Jensen Huang zur vertraulichen Befragung Financial Times – US believes Nvidia’s Huang had romantic relationship with alleged Chinese spy Yonhap – Madison Huang sagt Südkorea-Reise und Treffen mit Vizepremier ab Donald Trump soll seit rund einem Jahr von einem Spionageverdacht im Umfeld von Jensen Huang gewusst haben. Der Nvidia-Chef selbst habe keine offizielle Warnung erhalten. Das berichtete die New York Times am 29. Oktober und machte damit einen Fall öffentlich, der zunächst mit dem Verdacht auf Chip-Schmuggel begonnen hatte. Ak...]]></description>
-    </item>
-    <item>
-      <title>Nvidia-Fracht im Millionenwert verschwindet auf dem Weg nach Texas</title>
-      <link>https://www.all-ai.de/news/news26/nvidia-hardware-weg</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-hardware-weg</guid>
-      <pubDate>Sun, 08 Nov 2026 15:07:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Sechs Paletten Nvidia-Hardware im Wert von 11,4 Millionen $ sollten von Oakland nach Fort Worth in Texas. Die Spur des Lkw endet nach mehreren Stopps in Kalifornien. Mehr als zwei Monate nach der Abholung hat die Polizei weder eine Festnahme noch einen Fund der Ware gemeldet. Bei einem anderen Diebstahl in Kalifornien erbeuteten Diebe zwei Auflieger mit rund 18 Tonnen Sand. The Mercury News – Police investigating $11.4 million Nvidia cargo theft in California (Nachdruck) Ars Technica – Nvidia hardware worth $11.4M vanished between Oakland and Texas ABC News – $11.4M shipment of Nvidia cargo stolen in California heist WIRED – Thieves Stole ‘Nvidia’ Trailers. They Got 20 Tons of Sand Sechs Paletten Nvidia-Hardware im Wert von 11,4 Millionen $ gingen in einem Lkw mit dem Logo eines Lebensmitteltransporteurs auf die Reise. Das Ziel war Fort Worth in Texas. Mehr als zwei Monate nach der Abholung hat die Polizei weder eine Festnahme noch einen Fund der Ware gemeldet. Anzeige Die Spur endet noch in Kalifornien Am 29. August holte der Lkw die Paletten wie vorgesehen in Oakland ab. Erst Anfang September fiel dem Käufer auf, dass die Lieferung fehlte. Bei der Polizei ging die Anzeige am 1...]]></description>
-    </item>
-    <item>
-      <title>Top 10: Die beste Smartwatch für Damen</title>
-      <link>https://www.heise.de/bestenlisten/testsieger/top-10-die-beste-smartwatch-fuer-damen-im-test-huawei-vor-apple-und-garmin/776dwe5?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11516589</guid>
-      <pubDate>Sun, 08 Nov 2026 15:00:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Viele Hersteller bieten Smartwatches mit kompaktem Design für schmale Handgelenke an. Wir zeigen die besten Modelle.]]></description>
-    </item>
-    <item>
-      <title>Ein neues KI-Modell flucht über eigene Fehler mit »f*ck«</title>
-      <link>https://www.all-ai.de/news/news26/ki-modell-inkling-fluchen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/ki-modell-inkling-fluchen</guid>
-      <pubDate>Sun, 08 Nov 2026 14:52:11 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Vals AI fand »fuck« oder Varianten davon in 50 von 2.655 Testläufen mit Inkling 2 Small. Zwei Läufe mit Wiederholungsschleifen lieferten 241 von 316 Treffern. Unter 100 Schritten gab es keinen Treffer, ab 500 Schritten waren es 29 von 370 Läufen. Bei 96% der gescheiterten Läufe tauchte das Wort nicht auf. Vals AI – Inkling 2 Small: An Inkling of Profanity Thinking Machines Lab – Inkling 2 Small Model Card Das neue KI-Modell »Inkling 2 Small« von Thinking Machines schreibt in seinen internen Arbeitsschritten gelegentlich »fuck«. Vals AI fand das Wort oder Varianten wie »fucking« in 50 von 2.655 Testläufen. In kurzen Läufen blieb die Suche ohne Treffer. In zwei langen Läufen geriet das Modell in eine Schleife. Anzeige 185 Treffer bei einer einzigen Aufgabe Inkling 2 Small sollte die Umlaufbahn eines Asteroiden berechnen. In einem einzigen Beitrag mit mehr als 500.000 Zeichen wiederholte das Modell dieselben wenigen Sätze. Auch in den nächsten 37 Schritten drehte es sich im Kreis, bis sein Kontextfenster voll war. Allein dieser Lauf brachte es auf 185 Treffer. Weitere 56 kamen bei der Reparatur eines Programms zur Risikobewertung hinzu. Zusammen machen diese zwei Läufe gut drei Vie...]]></description>
     </item>
   </channel>
 </rss>
