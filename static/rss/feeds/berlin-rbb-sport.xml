@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
     <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 06:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 13:36:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Berlinerin Sabine Kost beim SwimRun: "Es ist nicht immer schön"</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/11/berlinerin-sabine-kost-betreibt-ausdauersport-swimrun.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/berlinerin-sabine-kost-betreibt-ausdauersport-swimrun.html</guid>
+      <pubDate>Tue, 10 Nov 2026 12:54:16 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[Die 54-jährige Juristin Sabine Kost war gerade erst bei der WM im SwimRun. Mehr als 13 Stunden lang musste sie dort abwechselnd schwimmen und laufen. Ein auch spaßbefreiter Sport.]]></description>
+    </item>
+    <item>
+      <title>Berliner Paralympics-Siegerin Liebhardt mit 44 Jahren gestorben</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/11/paralympics-siegerin-liebhardt-gestorben-berlin.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/paralympics-siegerin-liebhardt-gestorben-berlin.html</guid>
+      <pubDate>Tue, 10 Nov 2026 10:40:15 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
+      <description><![CDATA[]]></description>
+    </item>
     <item>
       <title>Union-Boss in der Kritik: Horst Heldt kämpft um das Vertrauen</title>
       <link>https://www.rbb24.de/sport/beitrag/2026/11/fussball-bundesliga-union-berlin-manager-horst-heldt-lustrinelli.html</link>
@@ -25,15 +43,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[Im Sommer wurde Eisbären-Architekt Peter John Lee Berater beim Deutschen Eishockey Bund – und machte mit André Rankel prompt eine zweite Berliner Legende zum Bundestrainer. Ein Interview über den Auswahlprozess, Rankels Debüt und die Heim-WM 2027.]]></description>
-    </item>
-    <item>
-      <title>Nach Unions Niederlage in Freiburg: Rönnow und die Einsamkeit des Torhüters</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/11/fussball-bundesliga-sc-freiburg-1-fc-union-berlin-analyse-statistiken.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/fussball-bundesliga-sc-freiburg-1-fc-union-berlin-analyse-statistiken.html</guid>
-      <pubDate>Mon, 09 Nov 2026 07:44:25 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Frederik Rönnow hält Union Berlin in Freiburg lange im Spiel. Doch seine Mitspieler lassen den Torhüter immer wieder im Stich. Nach der Niederlage schlägt der Däne Alarm.]]></description>
     </item>
   </channel>
 </rss>

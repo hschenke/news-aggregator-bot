@@ -5,9 +5,27 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 06:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 13:36:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cyberattacks threaten to make open-source AI a little less open, Hugging Face exec warns</title>
+      <link>https://techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185992</guid>
+      <pubDate>Tue, 10 Nov 2026 13:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Hugging Face executive Irene Solaiman warns that growing cyberattacks on open AI platforms could force tighter security restrictions, threatening the accessibility that makes open-source communities valuable to developers worldwide.]]></description>
+    </item>
+    <item>
+      <title>Otter AI can now follow conversations across 30+ languages</title>
+      <link>https://techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3185546</guid>
+      <pubDate>Tue, 10 Nov 2026 07:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Otter AI just added support for 27 languages and revealed an upcoming feature that can follow along if speakers switch between languages.]]></description>
+    </item>
     <item>
       <title>Anthropic reportedly plans to move forward with IPO plans</title>
       <link>https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/</link>

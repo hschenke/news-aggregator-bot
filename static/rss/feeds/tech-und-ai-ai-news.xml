@@ -5,9 +5,45 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 06:01:13 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 13:36:13 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Fable 5.2: Diese 5 Sachen ändern sich beim Prompting</title>
+      <link>https://www.all-ai.de/tutorials/tutorials-ki/claude-fable-5-2-promting-leitfaden</link>
+      <guid isPermaLink="false">https://www.all-ai.de/tutorials/tutorials-ki/claude-fable-5-2-promting-leitfaden</guid>
+      <pubDate>Tue, 10 Nov 2026 12:53:49 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Fable 5.2 reagiert ab der Thinking-Stufe »medium« anders auf die Bitte, direkt zu antworten, als Fable 5.1. Ein Satz im Prompt kann Claude dazu bringen, beim Einbau einer Funktion auch vorhandenen Code umzubauen. Wer Claude programmieren und testen lässt, kann vorab sagen, welche Fehler es selbst prüfen darf und wann es einen zweiten Agenten einsetzen soll. Eine Vorgabe für Opus 5.5 kann Fable 5.2 davon abhalten, eigene frühere Fehler anzusprechen. Anthropic – Claude Fable 5.2 and Mythos 5.2 Claude Platform Docs – Prompting Claude Fable 5.2 Claude Platform Docs – Prompting Claude Opus 5.5 Anthropic hat Claude Fable 5.2 vorgestellt und für sein bisher stärkstes allgemein verfügbares KI-Modell einen neuen Prompting-Leitfaden veröffentlicht. Anzeige Tipp 1: Thinking-Stufe einstellen Bei Fable 5.1 konntest du für eine einfache Frage dazuschreiben »Antworte direkt, ohne lange nachzudenken«. Damit konnte das Modell nicht nur schneller, sondern direkt antworten. Fable 5.2 denkt ab der Stufe »medium« trotz dieser Anweisung immer nach. Anthropic empfiehlt »high« als Ausgangspunkt. Braucht Claude für einfache Fragen zu lange, probier »medium« aus. Soll die Antwort kürzer sein, schr...]]></description>
+    </item>
+    <item>
+      <title>Anthropic Aktie soll zwischen 70$ und 78$ kosten</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-aktie-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-aktie-start</guid>
+      <pubDate>Tue, 10 Nov 2026 11:52:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic hat die Roadshow für seinen geplanten Börsengang gestartet. 825 Millionen Aktien sollen je 70$ bis 78$ kosten. Mit den von Anthropic angebotenen Aktien könnte Anthropic vor Gebühren bis zu 62,5 Milliarden $ einnehmen. Anthropic meldet den Start der Roadshow Anthropic meldet die Einreichung des Formulars S-1 bei der SEC Der Claude-Entwickler Anthropic stellt seinen geplanten Börsengang bei Investoren vor. Die Aktie soll bei der Ausgabe zwischen 70$ und 78$ kosten und an der Nasdaq unter dem Kürzel »ANT« gehandelt werden. Anzeige Anthropic könnte gut 62 Milliarden $ einnehmen Von den 825 Millionen angebotenen Aktien verkauft Anthropic rund 801,4 Millionen selbst. Das könnte dem Unternehmen vor Gebühren 56,1 bis 62,5 Milliarden $ einbringen. Den Erlös aus den übrigen Aktien erhalten die Altaktionäre, die sie verkaufen. Die beteiligten Banken sollen 30 Tage Zeit bekommen, um bis zu 123,75 Millionen weitere Aktien zu kaufen. Die Registrierung bei der US-Börsenaufsicht muss noch wirksam werden. Insgesamt ergäbe sich somit ein Börsenwert zwischen 1,24 und 1,38 Billionen $. Die Spekulationen lagen deutlich höher, nämlich zwischen 1,5 und 2 Billionen $.]]></description>
+    </item>
+    <item>
+      <title>Claude entwirft drei funktionierende Elektronik-Prototypen</title>
+      <link>https://www.all-ai.de/news/news26/claude-elektronik-entwurf</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-elektronik-entwurf</guid>
+      <pubDate>Tue, 10 Nov 2026 09:45:36 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claude Fable 5.2 entwarf die Elektronik, die Gehäuse und die Firmware für drei Geräte. Diode Computers baute und testete die Prototypen, die ohne Änderungen an den Schaltungen funktionierten. Im internen Platinen-Benchmark von Diode erreichte das Modell 69% gegenüber 25% für Fable 5. Prüfungen für einen Einsatz als Serienprodukt stehen noch aus. Anthropic – Testing Claude on real-world electronics design Anthropic – Claude Fable 5.2 and Mythos 5.2 Claude Fable 5.2 hat eine USB-Freisprecheinrichtung, eine Sprachassistenten-Box und ein tragbares digitales Haustier entworfen. Für den Versuch von Anthropic reichten kurze Beschreibungen der Geräte als Ausgangspunkt. Ingenieure von Diode Computers bauten und testeten die Prototypen, die laut dem Forschungsbericht vom 9. November auf Anhieb ohne Änderungen an den Schaltungen funktionierten. Anzeige Claude plante die Platinen und schrieb die Firmware Das KI-Modell wählte die Bauteile aus, zeichnete die Schaltpläne und legte fest, wie die Bauteile auf den Platinen sitzen und über Kupferbahnen miteinander verbunden sind. Außerdem entwarf Claude Gehäuse für den 3D-Druck und schrieb die Firmware, die die Geräte steuert. Jede Platine war inn...]]></description>
+    </item>
+    <item>
+      <title>OpenAI baut einen »Not-Aus« für seine KI-Forschung</title>
+      <link>https://www.all-ai.de/news/news26top/openai-not-aus-stopp</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/openai-not-aus-stopp</guid>
+      <pubDate>Tue, 10 Nov 2026 09:30:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[OpenAI Kurzfassung ▾ Quellen ▾ OpenAI setzt den Control Room bereits in seiner KI-Forschung ein. Nach einem Stoppbefehl kann der betroffene Auftrag spätestens nach 35 Sekunden keine neuen Modellausgaben mehr abrufen. Andere Forschungsaufträge können dasselbe Modell weiter nutzen. Fällt der Control Room aus, verweigert die Rechensoftware bei den fortschrittlichsten Forschungsmodellen die Ausgabe. OpenAI: Control Room OpenAI Newsroom: Safety OpenAI: How we detect frontier model misalignment OpenAI hat am 9. November den Control Room vorgestellt, eine zentrale Schaltstelle für interne KI-Experimente. Gibt ein Forscher oder die automatische Überwachung den Stoppbefehl, soll der betroffene Forschungsauftrag spätestens 35 Sekunden später keine neuen Modellausgaben mehr erhalten. OpenAI setzt den Control Room bereits in seiner Forschungsinfrastruktur ein. Anzeige Ein Stoppbefehl gilt für einen einzelnen Auftrag Beim Start bekommt jeder Forschungsauftrag eine Kennung. Mit ihr fragt der Auftrag über eine spezielle Software neue Modellausgaben an. Die Software prüft die Freigabe beim Control Room und weist Anfragen für gesperrte Aufträge ab. So kann ein einzelner Auftrag den Zugang zum Mo...]]></description>
+    </item>
     <item>
       <title>Claude Mythos und Fable 5.2: Das beste KI-Modell aller Zeiten</title>
       <link>https://www.all-ai.de/news/news26top/anthropic-claude-mythos-fable-5-2-release</link>
@@ -52,33 +88,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Google ergänzt seine achte TPU-Generation um den TPU 8tx und den TPU 8i Max. Der TPU 8tx schützt sensible Daten und Modellgewichte während der Verarbeitung. Der TPU 8i Max kombiniert zwei Chips und verdoppelt gegenüber dem TPU 8i die Speicherbandbreite. Google – Ankündigung von TPU 8tx und TPU 8i Max Google Cloud – Technische Details zu TPU 8t und TPU 8i Google erweitert seine achte Generation von KI-Beschleunigern um TPU 8tx und TPU 8i Max. Der 8tx schützt vertrauliche Daten während der Verarbeitung, der 8i Max ist auf Aufgaben mit langen Kontexten ausgelegt, etwa wenn KI-Agenten eine ganze Codebasis durchsuchen oder stundenlange Videos auswerten. Anzeige TPU 8tx schützt Daten während der Berechnung Für den TPU 8tx kombiniert Google den Chip des TPU 8t mit AMD-Epyc-Prozessoren der fünften Generation. Die Hardware schirmt sensible Daten und Modellgewichte auch während der Berechnung ab. Das ist etwa für Behörden und Unternehmen gedacht, die KI-Modelle mit vertraulichen Unterlagen nutzen oder mit eigenen Daten nachtrainieren wollen. Google übernimmt außerdem das Boardfly-Netzwerk des TPU 8i. Es verkürzt die Wege zwischen den Chips. Laut Google sinkt die Verzögerung bei der Verarb...]]></description>
-    </item>
-    <item>
-      <title>Gemini 4 Krypton taucht mit beeindruckenden Demos auf</title>
-      <link>https://www.all-ai.de/news/news26/gemini-4-krypton-exlusiv</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/gemini-4-krypton-exlusiv</guid>
-      <pubDate>Mon, 09 Nov 2026 12:46:42 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Unter dem Namen Gemini Krypton kursieren erste Programmierdemos. Ein Tester berichtet, dass Krypton eine Anime-Szene in rund 39 Minuten aus Code erstellt hat. Google hat bisher keinen Zugang zu Krypton angekündigt. Gemini Omni 1.2 Flash führt die Text-to-Video Arena an und kostet bei 720p weniger pro Sekunde als Seedance 2.5. Chetaslua – Krypton im Vergleich mit Carbon und Argon Chetaslua – Anime-Demo aus Code Google – Vorstellung von Gemini 4 Carbon Arena – Rangliste für Videos aus Text Auf Gemini 4 Argon und Carbon folgt schon der nächste Name. Unter »Gemini Krypton« kursieren erste Programmierdemos, darunter eine Anime-Szene, die das KI-Modell mit einer einzigen Anweisung komplett in Code umgesetzt haben soll. Anzeige Krypton programmiert fast 40 Minuten für eine Anime-Szene Der Name Krypton tauchte am Sonntagabend auf X als Bezeichnung für einen internen Entwicklungsstand auf. Am Montag zeigte der Tester Chetaslua einen Vergleich mit Gemini 4 Carbon und Argon. Für dieselbe Aufgabe habe »krypton-a« ungefähr doppelt so lange gebraucht und doppelt so viel Code geschrieben. Die Vermutung ist, dass es sich um ein größeres, teureres Model handeln könnte. Twitter Beitrag - Cookies ...]]></description>
-    </item>
-    <item>
-      <title>Microsoft-Chef Nadella denkt über 20 Millionen KI-Agenten nach</title>
-      <link>https://www.all-ai.de/news/news26/microsoft-nadella-ki-agenten</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/microsoft-nadella-ki-agenten</guid>
-      <pubDate>Mon, 09 Nov 2026 12:38:07 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Microsoft-Chef Satya Nadella sprach im Juni darüber, wie rund 200.000 Mitarbeiter mit zwei oder 20 Millionen KI-Agenten zusammenarbeiten könnten. Im November macht der Ausschnitt aus dem Gespräch mit Reid Hoffman erneut die Runde. Nadella beschreibt am Beispiel von 100 Programmieragenten, wie schnell die Arbeit mit KI-Agenten unübersichtlich wird. Für Microsofts freiwilliges Ausstiegsangebot an rund 60.000 Mitarbeiter erwartet der Konzern eine Teilnahme von weniger als 5%. Possible – Transkript des Gesprächs mit Satya Nadella Windows Latest – Erneut verbreiteter Ausschnitt und Datum der Originalfolge Microsoft – Funktionen von Agent 365 Microsoft – Ankündigung des freiwilligen Ausstiegsangebots Fortune – Zahl der Berechtigten und erwartete Teilnahme Ein Ausschnitt aus einem Gespräch mit Microsoft-Chef Satya Nadella macht im November erneut die Runde. Darin spielt er durch, wie rund 200.000 Mitarbeiter mit zwei oder sogar 20 Millionen KI-Agenten zusammenarbeiten könnten. Das Gespräch mit LinkedIn-Mitgründer Reid Hoffman erschien bereits am 5. Juni 2026. Anzeige Schon 100 KI-Agenten sind schwer zu überblicken Für Nadella zeigt sich das Problem schon beim Programmieren. Im Intervie...]]></description>
-    </item>
-    <item>
-      <title>ByteDance veröffentlicht mit Seedream 5.5 sein bisher bestes Bildmodell</title>
-      <link>https://www.all-ai.de/news/news26/byte-dance-seedream-5-5-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/byte-dance-seedream-5-5-start</guid>
-      <pubDate>Mon, 09 Nov 2026 11:59:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[ByteDance stellt Seedream 5.5 mit fotorealistischeren Bildern und lesbarerer Kleinschrift vor. Die Quote schwerer Schriftfehler sank im Herstellertest von 2,8% auf 0,4%. Eine Demo zeigt 100 aufeinanderfolgende Änderungen an einem Porträt. Seedream 5.5 kann Motive mit vollständig oder teilweise transparentem Hintergrund ausgeben. ByteDance Seed – Vorstellung von Seedream 5.5, Herstellerbeispiele und Benchmarks ByteDance Seed – Modellseite mit Beispielen für Bearbeitung, Transparenz und Fotorealismus BytePlus Lumina – Seedream 5.5 ByteDance hat Seedream 5.5 vorgestellt. Das neue KI-Modell erzeugt fotorealistischere Bilder und macht kleine Schrift besser lesbar. Bei wiederholten Änderungen soll es außerdem verhindern, dass Farben und Details in anderen Bildbereichen von Runde zu Runde abweichen. Anzeige Natürlichere Fotos und lesbare Kleinschrift Seedream 5.5 soll Haut, Stoffe und Licht natürlicher darstellen als Seedream 5.0 Pro. In den Beispielporträts sind feine Härchen im Gegenlicht und Stofffalten im Schatten zu erkennen. Auch Alltagsszenen profitieren von solchen Details, etwa wenn sich das Licht in den Gläsern einer dunklen Bar spiegelt. + Quelle: ByteDance Bei Schrift geht ...]]></description>
     </item>
   </channel>
 </rss>
