@@ -1,13 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — AI News (Tech &amp; AI)</title>
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anleger wollen mehr Anthropic-Aktien, als angeboten werden</title>
+      <link>https://www.all-ai.de/news/news26/anthropic-aktien-angebot-nachfrage</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-aktien-angebot-nachfrage</guid>
+      <pubDate>Wed, 11 Nov 2026 15:28:56 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Laut Bloomberg haben Investoren ein Mehrfaches der angebotenen Anthropic-Aktien geordert. Anthropic plant ein öffentliches Angebot von 825 Millionen Aktien zu je 70$ bis 78$. Sieben Unternehmen wollen parallel Aktien für insgesamt 26 Milliarden $ kaufen. Bloomberg über die mehrfache Überzeichnung Investing.com gibt die Bloomberg-Meldung frei zugänglich wieder CNBC über die Nachfrage institutioneller Anleger, Transkript ab 4:10 Vorläufiger Börsenprospekt von Anthropic vom 10. November SpaceX meldet den Abschluss seines Börsengangs bei der SEC Investoren haben für Anthropics Börsengang laut Bloomberg bereits ein Mehrfaches der angebotenen Aktien geordert. Auch CNBC berichtet unter Berufung auf eigene Quellen, dass die Nachfrage großer Anleger das Angebot schon zu Beginn der Investorenrunde überstieg. Wie groß der Abstand zwischen Angebot und Nachfrage ist, beziffert Bloomberg nicht. Anzeige Bis zu 64,35 Milliarden $ für 825 Millionen Aktien Der Claude-Entwickler hat am 10. November begonnen, seinen Börsengang bei Investoren vorzustellen. Der vorläufige Börsenprospekt sieht 825 Millionen Aktien zu je 70$ bis 78$ vor. Am oberen Ende der Preisspanne hätte das öffentliche Angebot ein ...]]></description>
+    </item>
+    <item>
+      <title>Grok Build Skandal: Mehr als 35.000 Apps waren ohne Anmeldung zugänglich</title>
+      <link>https://www.all-ai.de/news/news26top/grok-build-apps-sicherheit</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/grok-build-apps-sicherheit</guid>
+      <pubDate>Wed, 11 Nov 2026 15:13:22 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Claroc konnte 35.578 mit Grok Build erstellte Apps ohne Anmeldung öffnen. Einige Apps enthielten vertrauliche Geschäftsdaten, Passwörter oder Informationen über Patienten und Mitarbeiter. Beim Veröffentlichen war im Testkonto die Freigabe für jeden mit Link vorausgewählt. SpaceXSI nahm 24 Apps von Mitarbeitern des Unternehmens und von X vom Netz. Claroc Research: GhostShares 2 SpaceXSI: Grok Build on web and mobile Ars Technica: Nachprüfung der 24 Apps und Stellungnahme des Unternehmens Ein vertrauliches Werbeangebot für eine US-Behörde und Laborwerte eines Intensivpatienten waren über Apps zugänglich, die Nutzer mit Grok Build erstellt hatten. Die Sicherheitsforscher von Claroc konnten 35.578 Apps ohne Anmeldung öffnen. Darunter waren 24 Apps von Mitarbeitern des Grok-Anbieters SpaceXSI und der Plattform X. Anzeige Vertrauliche Daten hinter Freigabelinks Von den rund 37.600 erreichbaren Apps in der Untersuchung ließen sich knapp 95% ohne Anmeldung öffnen. Viele waren Spiele, Rechner oder einfache Webseiten. Die Forscher fanden aber auch interne Daten von 30 weiteren Organisationen, darunter Personallisten einer Krankenhausgruppe und Passwörter in einer App zur Zeiterfassung. Mi...]]></description>
+    </item>
+    <item>
+      <title>Google DeepMind prüft »Signals« Verschlüsselung bis zum Maschinencode</title>
+      <link>https://www.all-ai.de/news/news26/google-deepmind-signal-messenger-kontrolle</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-deepmind-signal-messenger-kontrolle</guid>
+      <pubDate>Wed, 11 Nov 2026 15:08:43 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google DeepMind hat mit AlphaProof Code Sicherheitseigenschaften von Signals Verschlüsselung am kompilierten Code bewiesen. Die Beweise gelten für ein ARM-Linux-Testprogramm mit der unveränderten Signal-Bibliothek und betreffen Einzelchats. KI-Agenten erzeugten rund 6,5 Millionen Zeilen Beweiscode, die der Beweisassistent Lean prüfte. Die Spezifikationen und Beweise sind auf GitHub als Open Source verfügbar. Google DeepMind – Ankündigung von AlphaProof Code AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level Google DeepMind – Spezifikationen und Lean-Beweise auf GitHub Google DeepMind hat mit dem neuen Verfahren AlphaProof Code zentrale Sicherheitseigenschaften der Verschlüsselung vom Messenger »Signal« mathematisch nachgewiesen. Die Beweise reichen bis zum Maschinencode, also zu den Befehlen, die der Prozessor ausführt. Anzeige Was DeepMind für Signal bewiesen hat Die Forscher haben die unveränderte Signal-Bibliothek »libsignal« in ein kleines Testprogramm eingebunden und für ARM-Prozessoren unter Linux kompiliert. Die Beweise decken ab, wie zwei Teilnehmer eine verschlüsselte Unterhaltung beginnen und Nachrichten ver- und entschlüsseln. Unter den geprüften B...]]></description>
+    </item>
     <item>
       <title>Gemini 4 Carbon oder Argon? Sieben Tipps zum neuen Modell</title>
       <link>https://www.all-ai.de/tutorials/tutorials-ki/gemini-4-carbon-argon-tipps-1</link>
@@ -124,24 +151,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Google Kurzfassung ▾ Quellen ▾ Google DeepMind gibt Gemini Robotics 2.5 schrittweise für seine Robotikpartner frei. Im Pilotversuch bei Mercedes-Benz sortierte Apptroniks Apollo 2 Autoteile mit 96% Erfolgsquote. In DeepMinds Tests packte das Modell Gebäck zuverlässiger ein und konnte erstmals eine Hose falten. Gemini 4 Argon erzeugte simulierte Trainingsdaten, die Gemini Robotics 2.5 bei Aufgaben in ungewohnten Umgebungen halfen. Google Developers Blog – Gemini 4 Argon for Robotics Apptronik – Apptronik and Mercedes-Benz Enter Commercial Agreement Google DeepMind stellt mit Gemini Robotics 2.5 ein neues KI-Modell vor, das Kamerabilder und Anweisungen in Roboterbewegungen übersetzt. Im Pilotversuch bei Mercedes-Benz erreichte der humanoide Roboter Apollo 2 beim Sortieren von Autoteilen laut DeepMind eine Erfolgsquote von 96%. Anzeige Apollo 2 greift in die Teilekiste An laufenden Produktionslinien in Sindelfingen und im ungarischen Kecskemét holte der Roboter von Apptronik Metallhalterungen aus Vorratskisten. Er legte sie in der Reihenfolge in Ablagen, in der sie später am Band gebraucht wurden. Dabei behielt Gemini Robotics ER den Ablauf im Blick, während Gemini Robotics 2.5 Arm...]]></description>
-    </item>
-    <item>
-      <title>MiniMax H3-Image: Lokal, 4k Bilder, Open Weights</title>
-      <link>https://www.all-ai.de/news/news26top/minimax-h3-image-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/minimax-h3-image-start</guid>
-      <pubDate>Tue, 10 Nov 2026 15:03:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[MiniMax H3-Image erstellt Bilder aus Text und nutzt bei der Bildbearbeitung bis zu 16 Vorlagen. MiniMax nennt 10 bis 20 Sekunden für ein quadratisches 4K-Bild. In der API gilt bis zum 17. November ein Startrabatt für Bilder ab 16,6 Megapixeln. MiniMax hat die Veröffentlichung der Modellgewichte auf Hugging Face angekündigt. MiniMax auf X (Ankündigung im Redaktionsbriefing) MiniMax API-Dokumentation zur Bildgenerierung (Chinesisch) MiniMax API-Dokumentation zur Bildgenerierung (Englisch) MiniMax API-Preise für Bilder und Startrabatt MiniMax H3-Image auf Hugging Face (angekündigtes Repository) MiniMax stellt mit H3-Image einen KI-Bildgenerator vor, der auf dem im Sommer veröffentlichten H3-Modell aufbaut. Er erstellt Bilder aus Text und bearbeitet vorhandene Bilder mit bis zu 16 Referenzen. MiniMax stellt die Modellgewichte unter seiner Community License auf Hugging Face bereit. Anzeige 4K-Bilder in 10 bis 20 Sekunden Für ein quadratisches Bild mit 4096 × 4096 Pixeln gibt MiniMax 10 bis 20 Sekunden an. Das Modell erzeugt diese Auflösung direkt. In der API steht die Einstellung »4K« für die Fläche des Bildes. Wer das Seitenverhältnis auf 16:9 stellt, erhält deshalb ein breiteres Bi...]]></description>
-    </item>
-    <item>
-      <title>Claude Fable 5.2: Diese 5 Sachen ändern sich beim Prompting</title>
-      <link>https://www.all-ai.de/tutorials/tutorials-ki/claude-fable-5-2-promting-leitfaden</link>
-      <guid isPermaLink="false">https://www.all-ai.de/tutorials/tutorials-ki/claude-fable-5-2-promting-leitfaden</guid>
-      <pubDate>Tue, 10 Nov 2026 12:53:49 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claude Fable 5.2 reagiert ab der Thinking-Stufe »medium« anders auf die Bitte, direkt zu antworten, als Fable 5.1. Ein Satz im Prompt kann Claude dazu bringen, beim Einbau einer Funktion auch vorhandenen Code umzubauen. Wer Claude programmieren und testen lässt, kann vorab sagen, welche Fehler es selbst prüfen darf und wann es einen zweiten Agenten einsetzen soll. Eine Vorgabe für Opus 5.5 kann Fable 5.2 davon abhalten, eigene frühere Fehler anzusprechen. Anthropic – Claude Fable 5.2 and Mythos 5.2 Claude Platform Docs – Prompting Claude Fable 5.2 Claude Platform Docs – Prompting Claude Opus 5.5 Anthropic hat Claude Fable 5.2 vorgestellt und für sein bisher stärkstes allgemein verfügbares KI-Modell einen neuen Prompting-Leitfaden veröffentlicht. Anzeige Tipp 1: Thinking-Stufe einstellen Bei Fable 5.1 konntest du für eine einfache Frage dazuschreiben »Antworte direkt, ohne lange nachzudenken«. Damit konnte das Modell nicht nur schneller, sondern direkt antworten. Fable 5.2 denkt ab der Stufe »medium« trotz dieser Anweisung immer nach. Anthropic empfiehlt »high« als Ausgangspunkt. Braucht Claude für einfache Fragen zu lange, probier »medium« aus. Soll die Antwort kürzer sein, schr...]]></description>
     </item>
   </channel>
 </rss>

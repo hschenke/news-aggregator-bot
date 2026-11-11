@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Hacker News (Top) (Tech &amp; AI)</title>
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -166,15 +166,6 @@
       <link>https://neil.fraser.name/news/2026/11/10/</link>
       <guid isPermaLink="false">https://neil.fraser.name/news/2026/11/10/</guid>
       <pubDate>Tue, 10 Nov 2026 16:37:44 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Smart home devices should work without the internet</title>
-      <link>https://docodethatmatters.com/home-automation-overnight-success/</link>
-      <guid isPermaLink="false">https://docodethatmatters.com/home-automation-overnight-success/</guid>
-      <pubDate>Tue, 10 Nov 2026 15:25:20 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

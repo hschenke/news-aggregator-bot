@@ -1,36 +1,36 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Finanzen &amp; Coins</title>
     <link>https://news-bot.streamlit.app/?category=Finanzen+%26+Coins</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Finanzen &amp; Coins' aus dem News Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/kategorien/finanzen-und-coins.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>XRP: 266 Angriffe pro Minute</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/xrp-266-angriffe-pro-minute-3762592</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-266-angriffe-pro-minute-3762592</guid>
+      <pubDate>Wed, 11 Nov 2026 15:32:48 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>Bitcoin, Ethereum, Solana: 6,3 Milliarden Verlust – und der Käufer macht weiter</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-63-milliarden-verlust--und-der-kaufer-macht-weiter-3762564</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-63-milliarden-verlust--und-der-kaufer-macht-weiter-3762564</guid>
+      <pubDate>Wed, 11 Nov 2026 15:25:32 GMT</pubDate>
+      <category>Finanzen &amp; Coins</category>
+      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
+      <description><![CDATA[]]></description>
+    </item>
     <item>
       <title>Bitcoin fällt unter 74.000 US-Dollar – Inflationsdaten befeuern Zinsangst</title>
       <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-74000-usdollar-heise-usinflationsdaten-schuren-zinserhohungsspekulationen-3760998</link>
       <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-74000-usdollar-heise-usinflationsdaten-schuren-zinserhohungsspekulationen-3760998</guid>
       <pubDate>Wed, 11 Nov 2026 06:31:13 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Bitcoin, Ethereum, Solana: 8 Milliarden Dollar – Firmen ziehen die Reißleine</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-8-milliarden-dollar--firmen-ziehen-die-reisleine-3759920</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-8-milliarden-dollar--firmen-ziehen-die-reisleine-3759920</guid>
-      <pubDate>Tue, 10 Nov 2026 15:27:51 GMT</pubDate>
-      <category>Finanzen &amp; Coins</category>
-      <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>XRP: Jetzt tickt die Uhr bis 2028</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/xrp-jetzt-tickt-die-uhr-bis-2028-3759911</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-jetzt-tickt-die-uhr-bis-2028-3759911</guid>
-      <pubDate>Tue, 10 Nov 2026 15:24:59 GMT</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
       <description><![CDATA[]]></description>

@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Rbb Sport (Berlin)</title>
     <link>https://news-bot.streamlit.app/?category=Berlin&amp;feed=Rbb+Sport</link>
     <description>RSS-Feed für die Quelle 'Rbb Sport' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/berlin-rbb-sport.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -61,15 +61,6 @@
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
       <description><![CDATA[]]></description>
-    </item>
-    <item>
-      <title>Berlinerin Sabine Kost beim SwimRun: "Es ist nicht immer schön"</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/11/berlinerin-sabine-kost-betreibt-ausdauersport-swimrun.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/berlinerin-sabine-kost-betreibt-ausdauersport-swimrun.html</guid>
-      <pubDate>Tue, 10 Nov 2026 12:54:16 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[Die 54-jährige Juristin Sabine Kost war gerade erst bei der WM im SwimRun. Mehr als 13 Stunden lang musste sie dort abwechselnd schwimmen und laufen. Ein auch spaßbefreiter Sport.]]></description>
     </item>
   </channel>
 </rss>

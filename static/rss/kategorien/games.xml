@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Games</title>
     <link>https://news-bot.streamlit.app/?category=Games</link>
     <description>Aggregierte Nachrichten für die Kategorie 'Games' aus dem News Bot.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/kategorien/games.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -70,51 +70,6 @@
       <category>Games</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
       <description><![CDATA[Building on Ann Masten's idea of resilience as "ordinary magic," Al-Arjani's work suggests this magic can survive total devastation, offering hope and ...]]></description>
-    </item>
-    <item>
-      <title>Jetzt -25% sichern! - Die Magic World Vienna wird zur Bühne des Staunens | krone.at</title>
-      <link>https://www.krone.at/4368926</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:7910920420975030800</guid>
-      <pubDate>Tue, 10 Nov 2026 15:33:29 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Juliana Chen (CAN) - Weltmeisterin der Manipulation Lucca Lucian (AUT) - Weltmeister der Mentalmagie Anca Lucian (ROM) - Weltmeisterin der ...]]></description>
-    </item>
-    <item>
-      <title>Heroes of Might and Magic III - Naval Battles Erweiterung (DE) - World of Dice</title>
-      <link>https://worldofdice.de/products/heroes-of-might-and-magic-iii-naval-battles-erweiterung-de</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:11511828514556305303</guid>
-      <pubDate>Tue, 10 Nov 2026 15:04:57 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Mehr Taktik für Heroes of Might and Magic III: Naval Battles mit 2 Neopren-Kampfmatten, Seekampf, Kreaturenbanken und verstärkten Fähigkeiten.]]></description>
-    </item>
-    <item>
-      <title>Heroes of Might &amp; Magic III Stronghold Erweiterung DE | World of Dice</title>
-      <link>https://worldofdice.de/products/heroes-of-might-and-magic-iii-stronghold-erweiterung-de</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4689835599867561146</guid>
-      <pubDate>Tue, 10 Nov 2026 15:04:56 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Heroes of Might and Magic III - Stronghold Erweiterung (DE). Die Barbaren von Krewlod rufen zum Krieg! Crag Hack und Yog führen die ...]]></description>
-    </item>
-    <item>
-      <title>Heroes of Might &amp; Magic III Cove Erweiterung DE | World of Dice</title>
-      <link>https://worldofdice.de/products/heroes-of-might-and-magic-iii-cove-erweiterung-de</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:18029229268364456447</guid>
-      <pubDate>Tue, 10 Nov 2026 15:04:56 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Setze mit der Cove-Erweiterung die Segel! Piraten, Meerwesen, Inseln und Strudel erweitern Heroes of Might and Magic III.]]></description>
-    </item>
-    <item>
-      <title>Heroes of Might &amp; Magic III Conflux Erweiterung DE - World of Dice</title>
-      <link>https://worldofdice.de/products/heroes-of-might-and-magic-iii-conflux-erweiterung-de</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2906417550746233662</guid>
-      <pubDate>Tue, 10 Nov 2026 15:04:55 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
-      <description><![CDATA[Heroes of Might and Magic III - Conflux Erweiterung (DE). Feuer, Wasser, Luft und Erde folgen deinem Ruf! Mit Conflux entfesselst du die Mächte ...]]></description>
     </item>
   </channel>
 </rss>

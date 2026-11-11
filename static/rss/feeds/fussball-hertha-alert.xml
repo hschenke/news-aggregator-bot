@@ -1,13 +1,31 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Hertha Alert (Fußball)</title>
     <link>https://news-bot.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Hertha+Alert</link>
     <description>RSS-Feed für die Quelle 'Hertha Alert' (Kategorie: Fußball).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/fussball-hertha-alert.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Virtual Bundesliga Showdown-Finale in Berlin - Hertha BSC</title>
+      <link>https://www.herthabsc.com/de/nachrichten/2026/11/esports-showdown-berlin-2627</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4663570187019210585</guid>
+      <pubDate>Wed, 11 Nov 2026 14:09:24 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[Rund um das Offline-Event am 14. November stehen viele Highlights auf dem Programm.]]></description>
+    </item>
+    <item>
+      <title>So kämpft Hertha-Trainer Leitl gegen den Schlendrian - BZ-BERLIN.de</title>
+      <link>https://www.bz-berlin.de/berlin-sport/hertha-bsc/hertha-bsc-so-kaempft-hertha-trainer-leitl-gegen-den-schlendrian-6af469ea50175c81de7a1acb</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13211847448646311010</guid>
+      <pubDate>Wed, 11 Nov 2026 13:20:54 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[Hertha BSC trainiert in der Länderspielpause mit maximalem Einsatz. Stefan Leitl verschärft das Tempo und stimmt den Spitzenreiter auf Cottbus ...]]></description>
+    </item>
     <item>
       <title>„Er ist einfach eine Maschine“: Deyovaisio Zeefuik ist bei Hertha BSC der Mann für ...</title>
       <link>https://www.tagesspiegel.de/sport/er-ist-einfach-eine-maschine-deyovaisio-zeefuik-ist-bei-hertha-bsc-der-mann-fur-besondere-aufgaben-14995970.html</link>
@@ -34,6 +52,15 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[Am morgigen Donnerstag, 12. November 2026, empfängt der Aufsteiger aus der Regionalliga Nordost um 18.30 Uhr Hertha BSC II auf dem Kunstrasenplatz des ...]]></description>
+    </item>
+    <item>
+      <title>Die Spiele der Anderen - Karlsruher SC - Forum | Seite 2752 - Transfermarkt</title>
+      <link>https://www.transfermarkt.de/die-spiele-der-anderen/thread/forum/37/thread_id/190699/page/2752</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16798497688945301606</guid>
+      <pubDate>Wed, 11 Nov 2026 12:28:07 GMT</pubDate>
+      <category>Fußball</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
+      <description><![CDATA[Auch seine Freundin jetzt wieder nach dem Hertha-Spiel. Aber es ändert sich nichts. Wie viele Spieler reden erst gar nicht darüber? 2x lesenswert.]]></description>
     </item>
     <item>
       <title>Rückrunden-Dauerkarten Verkaufsinfo - Karlsruher SC</title>
@@ -160,33 +187,6 @@
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
       <description><![CDATA[Energie Cottbus testet in der Länderspielpause gegen den FC Erzgebirge Aue. Im Vorjahr gab es noch enge Duelle, nun trennen zwei Ligen die beiden ...]]></description>
-    </item>
-    <item>
-      <title>DFB-Pokalspiel in Oldenburg: Verkehr am Marschweg bei Partie SSV Jeddeloh II gegen ...</title>
-      <link>https://www.nwzonline.de/lokales/oldenburg/dfb-pokalspiel-in-oldenburg-verkehr-am-marschweg-bei-partie-ssv-jeddeloh-ii-gegen-hertha-bsc-ZRDW3EWGAJSPCXYTUAY6JDXPKU.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2768160917880091239</guid>
-      <pubDate>Tue, 10 Nov 2026 23:19:26 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[... Hertha BSC ausgesperrt. Ansturm von 10.000 Zuschauern. ﻿Marschweg für Autos zum Pokalspiel Jeddeloh-Hertha gesperrt. Bei großem Andrang auf das ...]]></description>
-    </item>
-    <item>
-      <title>Hat das Wunderkind seine Karriere zerstört? So läuft es für Moukoko in der Türkei - 90min</title>
-      <link>https://www.90min.de/hat-das-wunderkind-seine-karriere-zerstort-so-lauft-es-fur-moukoko-in-der-turkei</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:6461435567196319956</guid>
-      <pubDate>Tue, 10 Nov 2026 20:44:04 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Im November 2020 feierte Youssoufa Moukoko beim 5:2-Auswärtssieg von Borussia Dortmund bei Hertha BSC sein Bundesliga-Debüt. Der Angreifer war zu ...]]></description>
-    </item>
-    <item>
-      <title>Erfolgreiche Phase mit Hertha: Thorsteinssons neues Glück im dritten Anlauf</title>
-      <link>https://www.fussballdaten.de/news/erfolgreiche-phase-hertha-thorsteinssons-neues-glueck-dritten-anlauf/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14240907340297817</guid>
-      <pubDate>Tue, 10 Nov 2026 20:05:32 GMT</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[Hertha: Dieser Spieler macht auf sich aufmerksam"Neue Nummer, neues Glück." Jon Dagur Thorsteinsson startet bei Hertha BSC endlich durch und ...]]></description>
     </item>
   </channel>
 </rss>
