@@ -1,5 +1,5 @@
 """
-Quellen & Feeds verwalten tab module for News Aggregator Bot UI.
+Quellen & Feeds verwalten tab module for News Bot UI.
 Provides management of categories, feeds, global settings, database purge, and configuration persistence.
 """
 

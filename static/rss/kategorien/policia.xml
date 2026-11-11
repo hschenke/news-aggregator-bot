@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Policia</title>
-    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Policia</link>
-    <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Aggregator Bot.</description>
+    <link>https://news-bot.streamlit.app/?category=Policia</link>
+    <description>Aggregierte Nachrichten für die Kategorie 'Policia' aus dem News Bot.</description>
     <language>de</language>
     <lastBuildDate>Wed, 30 Sep 2026 09:22:07 GMT</lastBuildDate>
-    <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
+    <generator>News Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/kategorien/policia.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Autofahrerin bei Verkehrsunfall lebensbedrohlich verletzt</title>
       <link>https://www.berlin.de/polizei/polizeimeldungen/pressemitteilung.1718519.php</link>

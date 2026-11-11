@@ -1,3 +1,3 @@
 """
-UI Package für den News Aggregator Bot.
+UI Package für den News Bot.
 """

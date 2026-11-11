@@ -1,6 +1,6 @@
 """
 Root Entry Point für Streamlit Community Cloud.
-Führt die News-Aggregator Web-App aus src/webapp.py aus.
+Führt die News-Bot Web-App aus src/webapp.py aus.
 """
 import sys
 import logging

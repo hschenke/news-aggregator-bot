@@ -1,5 +1,5 @@
 """
-Authentication and session management for News Aggregator Bot UI.
+Authentication and session management for News Bot UI.
 Provides dual-role access:
 1. Guest / Reader: Can view the 24h articles tab directly (e.g. from daily email digest).
 2. Administrator: Full access unlocked via sidebar password login.

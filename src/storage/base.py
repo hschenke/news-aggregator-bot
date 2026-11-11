@@ -1,5 +1,5 @@
 """
-Basis-Klasse, Schnittstellen und Konfiguration für das Storage-System des News Aggregator Bots.
+Basis-Klasse, Schnittstellen und Konfiguration für das Storage-System des News Bots.
 Enthält gemeinsame Schemadefinitionen, SQL-Templates und performante Row-Mapper für SQLite & Turso.
 """
 

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Finanzen - News (Finanzen &amp; Coins)</title>
-    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Finanzen+%26+Coins&amp;feed=Finanzen+-+News</link>
+    <link>https://news-bot.streamlit.app/?category=Finanzen+%26+Coins&amp;feed=Finanzen+-+News</link>
     <description>RSS-Feed für die Quelle 'Finanzen - News' (Kategorie: Finanzen &amp; Coins).</description>
     <language>de</language>
     <lastBuildDate>Wed, 30 Sep 2026 13:46:39 GMT</lastBuildDate>
-    <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/finanzen-und-coins-finanzen---news.xml" rel="self" type="application/rss+xml" />
+    <generator>News Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/finanzen-und-coins-finanzen---news.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Boeing-Aktie höher: Flugzeugbauer sticht Northrop bei neuem Kampfjet-Auftrag aus</title>
       <link>https://www.finanzen.net/nachricht/aktien/durchgesetzt-boeing-aktie-hoeher-flugzeugbauer-sticht-northrop-bei-neuem-kampfjet-auftrag-aus-15959990</link>

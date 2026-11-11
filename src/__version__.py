@@ -1,5 +1,5 @@
 """
-Zentrales Versionsmodul für den News Aggregator Bot.
+Zentrales Versionsmodul für den News Bot.
 Ermittelt die Version dynamisch aus Git-Tags oder nutzt den statischen Release-Fallback.
 """
 

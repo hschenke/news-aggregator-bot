@@ -1,5 +1,5 @@
 """
-Modul zur Erzeugung und Bereitstellung von RSS 2.0 Feeds für den News Aggregator Bot.
+Modul zur Erzeugung und Bereitstellung von RSS 2.0 Feeds für den News Bot.
 Ermöglicht das Bereitstellen von:
 - Gesamt-Feed (alle aggregierten Artikel über alle Kategorien)
 - Kategorie-Feeds (für jede einzelne Kategorie)
@@ -163,7 +163,7 @@ def generate_rss_xml(
     <description>{safe_desc}</description>
     <language>{safe_lang}</language>
     <lastBuildDate>{now_rfc}</lastBuildDate>
-    <generator>News Aggregator Bot RSS Engine</generator>{atom_link_tag}
+    <generator>News Bot RSS Engine</generator>{atom_link_tag}
 {items_block}
   </channel>
 </rss>
@@ -231,7 +231,7 @@ def _resolve_feed_urls(
             base_url = get_streamlit_app_url()
     clean_base_url = (base_url or "").rstrip("/")
 
-    repo = "hschenke/news-aggregator-bot"
+    repo = "hschenke/news-bot"
     branch = "main"
     try:
         from src.aggregator import get_github_sync_config
@@ -286,7 +286,7 @@ def _export_category_feeds(
         cat_xml = generate_rss_xml(
             title=f"News Bot — {cat_name}",
             link=cat_app_view_url,
-            description=f"Aggregierte Nachrichten für die Kategorie '{cat_name}' aus dem News Aggregator Bot.",
+            description=f"Aggregierte Nachrichten für die Kategorie '{cat_name}' aus dem News Bot.",
             items=cat_items,
             self_url=cat_cdn_url,
             category_name=cat_name,
@@ -410,7 +410,7 @@ def _export_global_feed(
     all_xml = generate_rss_xml(
         title="News Bot — Alle Nachrichten (Gesamt-Feed)",
         link=base_url,
-        description="Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Aggregator Bot.",
+        description="Alle aggregierten Nachrichten aus sämtlichen Kategorien und Quellen im News Bot.",
         items=global_items,
         self_url=all_cdn_url,
     )
@@ -701,7 +701,7 @@ def export_briefing_rss(
     rss_root = get_static_rss_dir()
     briefing_file_path = target_file if target_file is not None else (rss_root / "briefing.xml")
 
-    repo = "hschenke/news-aggregator-bot"
+    repo = "hschenke/news-bot"
     branch = "main"
     try:
         from src.aggregator import get_github_sync_config
@@ -867,7 +867,7 @@ def export_briefing_rss(
             "published": format_rfc822(datetime.now(timezone.utc)),
             "summary": briefing_html,
             "category": "KI-Briefing",
-            "source": "News Aggregator Bot AI",
+            "source": "News Bot AI",
             "source_url": base_url,
         })
 

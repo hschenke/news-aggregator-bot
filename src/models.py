@@ -1,5 +1,5 @@
 """
-Strukturierte, unveränderliche Datenmodelle für den News Aggregator Bot.
+Strukturierte, unveränderliche Datenmodelle für den News Bot.
 Bietet Typsicherheit, Validierung und vollständige Mapping-Abwärtskompatibilität.
 """
 

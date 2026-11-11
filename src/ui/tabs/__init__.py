@@ -1,3 +1,3 @@
 """
-UI Tab Modules für den News Aggregator Bot.
+UI Tab Modules für den News Bot.
 """

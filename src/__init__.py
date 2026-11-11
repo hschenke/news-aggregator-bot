@@ -1,10 +1,11 @@
 """
-News Aggregator Bot Package
+News Bot Package
 """
 
 from src.models import Article
 from src.__version__ import __version__, get_app_version
 from src.exceptions import (
+    NewsBotError,
     NewsAggregatorError,
     ConfigurationError,
     FeedFetchError,
@@ -24,6 +25,7 @@ __all__ = [
     "Article",
     "__version__",
     "get_app_version",
+    "NewsBotError",
     "NewsAggregatorError",
     "ConfigurationError",
     "FeedFetchError",

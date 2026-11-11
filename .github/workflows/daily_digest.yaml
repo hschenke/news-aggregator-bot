@@ -30,7 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements-bot.txt
 
-      - name: 🚀 News Aggregator ausführen
+      - name: 🚀 News Bot ausführen
         env:
           PYTHONUNBUFFERED: "1"
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -44,7 +44,7 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASS: ${{ secrets.SMTP_PASS }}
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
-          STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app' }}
+          STREAMLIT_APP_URL: ${{ secrets.STREAMLIT_APP_URL || 'https://news-bot.streamlit.app' }}
           TURSO_URL: ${{ secrets.TURSO_URL }}
           TURSO_KEY: ${{ secrets.TURSO_KEY }}
           TURSO_TIMEOUT: "30.0"

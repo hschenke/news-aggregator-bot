@@ -1,5 +1,5 @@
 """
-Articles tab module for News Aggregator Bot UI.
+Articles tab module for News Bot UI.
 Renders active articles limited to the last 24 hours with search, category filtering,
 direct non-blocking feedback and archiving, and responsive mobile-first layouts.
 """

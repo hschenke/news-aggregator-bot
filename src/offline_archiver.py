@@ -1,6 +1,6 @@
 """
 Offline-Archivierung, Webseiten-Snapshot-Extraktion (Text, HTML & Bilder),
-nicht-blockierender Hintergrund-Worker und HTML-Export für den News Aggregator Bot.
+nicht-blockierender Hintergrund-Worker und HTML-Export für den News Bot.
 """
 
 from __future__ import annotations

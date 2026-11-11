@@ -60,7 +60,7 @@ def get_prompts_path(config_path: str = "config/prompts.yaml") -> Path:
 def get_github_sync_config() -> dict[str, str]:
     """Liest GitHub Sync Konfiguration aus Umgebungsvariablen oder Streamlit Secrets."""
     token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
-    repo = os.getenv("GITHUB_REPO", "hschenke/news-aggregator-bot")
+    repo = os.getenv("GITHUB_REPO", "hschenke/news-bot")
     branch = os.getenv("GITHUB_BRANCH", "main")
 
     if not token and ("STREAMLIT_SERVER_PORT" in os.environ or "streamlit" in sys.modules):
@@ -80,7 +80,7 @@ def get_github_sync_config() -> dict[str, str]:
 
     return {
         "token": (token or "").strip(),
-        "repo": (repo or "hschenke/news-aggregator-bot").strip(),
+        "repo": (repo or "hschenke/news-bot").strip(),
         "branch": (branch or "main").strip(),
     }
 
@@ -291,7 +291,7 @@ def purge_jsdelivr_cache(
     Invalidierung für die primären Feeds (briefing.xml, all.xml).
     """
     gh_cfg = get_github_sync_config()
-    target_repo = repo or gh_cfg.get("repo") or "hschenke/news-aggregator-bot"
+    target_repo = repo or gh_cfg.get("repo") or "hschenke/news-bot"
     target_branch = branch or gh_cfg.get("branch") or "main"
 
     formatted_paths: list[str] = []

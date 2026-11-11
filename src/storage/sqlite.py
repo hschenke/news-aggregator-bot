@@ -1,5 +1,5 @@
 """
-Lokales SQLite-Backend für den News Aggregator Bot.
+Lokales SQLite-Backend für den News Bot.
 Performant, thread-sicher und schlank unter Verwendung der Standardbibliothek.
 """
 

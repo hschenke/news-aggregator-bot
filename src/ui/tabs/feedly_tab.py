@@ -1,5 +1,5 @@
 """
-Feedly & RSS Exposure tab module for News Aggregator Bot UI.
+Feedly & RSS Exposure tab module for News Bot UI.
 Provides streamlined access to the two core RSS feeds:
 1. Gesamt-Feed (all.xml)
 2. KI-Briefing Feed (briefing.xml)

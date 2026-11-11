@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Joscha (Fun)</title>
-    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fun&amp;feed=Joscha</link>
+    <link>https://news-bot.streamlit.app/?category=Fun&amp;feed=Joscha</link>
     <description>RSS-Feed für die Quelle 'Joscha' (Kategorie: Fun).</description>
     <language>de</language>
     <lastBuildDate>Thu, 01 Oct 2026 11:46:19 GMT</lastBuildDate>
-    <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fun-joscha.xml" rel="self" type="application/rss+xml" />
+    <generator>News Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/fun-joscha.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NICHTLUSTIG-Cartoon: KAROLIN</title>
       <link>https://joscha.com/nichtlustig/260928/</link>

@@ -52,7 +52,7 @@ def extract_police_teaser(url: str, session: requests.Session | None = None) -> 
             r = s.get(
                 url,
                 timeout=8.0,
-                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsAggregatorBot/1.0"}
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) NewsBot/1.0"}
             )
             if r.status_code == 200:
                 district = ""

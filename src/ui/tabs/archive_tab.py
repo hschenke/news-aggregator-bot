@@ -1,5 +1,5 @@
 """
-Offline-Archiv tab module for News Aggregator Bot UI.
+Offline-Archiv tab module for News Bot UI.
 Renders archived webpage snapshots (text & images) with fast caching,
 3-month (90 days) retention, lazy HTML export via st.download_button,
 and collapsible management & settings-backups blocks at the bottom of the page.

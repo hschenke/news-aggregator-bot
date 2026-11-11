@@ -1,5 +1,5 @@
 """
-KI Briefing tab module for News Aggregator Bot UI.
+KI Briefing tab module for News Bot UI.
 Renders AI-curated daily briefings and provides generation triggers and prompt configuration for administrators.
 """
 

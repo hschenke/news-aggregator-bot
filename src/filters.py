@@ -1,5 +1,5 @@
 """
-Filter-, Bereinigungs- und Zeitprüfungs-Funktionen für den News Aggregator Bot.
+Filter-, Bereinigungs- und Zeitprüfungs-Funktionen für den News Bot.
 """
 
 from __future__ import annotations

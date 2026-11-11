@@ -403,7 +403,7 @@ def markdown_to_html_email(markdown_content: str) -> str:
         <![endif]-->
         <div class="container" style="max-width: 680px; width: 100%; margin: 0 auto; background-color: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04); border: 1px solid #e2e8f0; text-align: left;">
           <div class="header" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); background-color: #0f172a; color: #ffffff !important; padding: 32px 36px; text-align: left; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-            <h1 style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25;">⚡ News Aggregator Bot</h1>
+            <h1 style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff !important; margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.25;">⚡ News Bot</h1>
             <p style="font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #94a3b8 !important; margin: 0; font-size: 14px; font-weight: 500;">Tages-Briefing für den {current_date}</p>
           </div>
           <div class="content" style="padding: 36px 36px 44px 36px; background-color: #ffffff; border-bottom-left-radius: 16px; border-bottom-right-radius: 16px;">

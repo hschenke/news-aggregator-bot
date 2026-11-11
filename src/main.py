@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 def run_pipeline() -> None:
     print("=" * 60, flush=True)
-    print("🤖 News Aggregator Bot: Pipeline gestartet...", flush=True)
+    print("🤖 News Bot: Pipeline gestartet...", flush=True)
     print("=" * 60, flush=True)
 
     # 1. Schritt: News aggregieren (save_to_db=False vermeidet redundantes Doppelspeichern vor Schritt 4)

@@ -1,5 +1,5 @@
 """
-News Aggregator Bot Web-App.
+News Bot Web-App.
 Modular entry point for dashboard, 24h news stream, AI briefings, offline archive, RSS exposure, and feed management.
 """
 
@@ -83,7 +83,7 @@ from src.ui.tabs.archive_tab import render_archive_tab
 
 # Page Configuration
 st.set_page_config(
-    page_title="News Aggregator Bot | AI Briefing",
+    page_title="News Bot | AI Briefing",
     page_icon="📰",
     layout="wide",
     initial_sidebar_state="auto",

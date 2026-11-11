@@ -1,5 +1,5 @@
 """
-UI Styles and client-side CSS module for News Aggregator Bot.
+UI Styles and client-side CSS module for News Bot.
 Encapsulates all layout, responsive design, anti-stale optimizations, and typography rules.
 """
 

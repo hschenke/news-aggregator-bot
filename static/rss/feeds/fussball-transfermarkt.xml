@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Transfermarkt (Fußball)</title>
-    <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Transfermarkt</link>
+    <link>https://news-bot.streamlit.app/?category=Fu%C3%9Fball&amp;feed=Transfermarkt</link>
     <description>RSS-Feed für die Quelle 'Transfermarkt' (Kategorie: Fußball).</description>
     <language>de</language>
     <lastBuildDate>Wed, 11 Nov 2026 12:49:03 GMT</lastBuildDate>
-    <generator>News Aggregator Bot RSS Engine</generator>
-    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
+    <generator>News Bot RSS Engine</generator>
+    <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/fussball-transfermarkt.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. FC Köln: Allofs-Brüder mit Lob an Said und Malek El Mala</title>
       <link>https://www.transfermarkt.de/allofs-bruder-mit-lob-und-mahnung-an-el-malas-ex-kolner-trafen-zweimal-in-koproduktion/view/news/490439</link>

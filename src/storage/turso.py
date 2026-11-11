@@ -1,5 +1,5 @@
 """
-Turso / LibSQL Cloud-Backend für den News Aggregator Bot via HTTPS Hrana v2 Pipeline.
+Turso / LibSQL Cloud-Backend für den News Bot via HTTPS Hrana v2 Pipeline.
 Performant, schlank und ohne native C-Extensions (Python 3.10-3.14+).
 """
 
@@ -49,7 +49,7 @@ class TursoStorage(StorageBackend):
         self._session.headers.update({
             "Authorization": f"Bearer {self._auth_token}",
             "Content-Type": "application/json",
-            "User-Agent": "NewsAggregatorBot/1.0",
+            "User-Agent": "NewsBot/1.0",
         })
 
     @staticmethod

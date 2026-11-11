@@ -1,5 +1,5 @@
 """
-Session state, constants, and data loading module for News Aggregator Bot UI.
+Session state, constants, and data loading module for News Bot UI.
 """
 
 from __future__ import annotations

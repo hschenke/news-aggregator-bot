@@ -82,7 +82,7 @@ def get_streamlit_app_url(config_path: str = "config/settings.yaml") -> str:
         except Exception:
             pass
 
-    return "https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app"
+    return "https://news-bot.streamlit.app"
 
 
 def build_category_quicklinks(

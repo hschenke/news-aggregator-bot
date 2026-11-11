@@ -1,5 +1,5 @@
 """
-News Aggregator Orchestrator für den News Aggregator Bot.
+News Orchestrator für den News Bot.
 Sammelt und verarbeitet Nachrichten aus konfigurierten RSS/Atom-Quellen,
 orchestriert Filterung, Deduplizierung, paralleles Parsing und Static Feed Exports.
 
@@ -25,7 +25,7 @@ import feedparser
 import requests  # Erforderlich für Abwärtskompatibilität und Test-Mocking
 
 from src.models import Article
-from src.exceptions import NewsAggregatorError, ConfigurationError, FeedFetchError
+from src.exceptions import NewsBotError, NewsAggregatorError, ConfigurationError, FeedFetchError
 
 # Re-Exports aus Submodulen für 100% Abwärtskompatibilität
 from src.filters import (
@@ -576,6 +576,7 @@ __all__ = [
     "update_settings",
     "get_offline_enabled_feeds",
     # Exceptions
+    "NewsBotError",
     "NewsAggregatorError",
     "ConfigurationError",
     "FeedFetchError",

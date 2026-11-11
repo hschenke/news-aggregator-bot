@@ -1,35 +1,39 @@
 """
-Zentral definierte Exception-Hierarchie für den News Aggregator Bot.
+Zentral definierte Exception-Hierarchie für den News Bot.
 Ermöglicht präzise Fehlerbehandlung ohne Exceptions unbemerkt zu verschlucken.
 """
 
 
-class NewsAggregatorError(Exception):
-    """Basisklasse für alle anwendungsbezogenen Fehler im News Aggregator Bot."""
+class NewsBotError(Exception):
+    """Basisklasse für alle anwendungsbezogenen Fehler im News Bot."""
     pass
 
 
-class ConfigurationError(NewsAggregatorError):
+# Abwärtskompatibler Alias für bestehende Aufrufer und Tests
+NewsAggregatorError = NewsBotError
+
+
+class ConfigurationError(NewsBotError):
     """Fehler in der Konfiguration (z. B. ungültige YAML-Konfiguration oder fehlende Secrets)."""
     pass
 
 
-class FeedFetchError(NewsAggregatorError):
+class FeedFetchError(NewsBotError):
     """Fehler beim HTTP-Abruf oder Parsing eines externen RSS-Feeds."""
     pass
 
 
-class NotificationError(NewsAggregatorError):
+class NotificationError(NewsBotError):
     """Fehler bei der Benachrichtigung (SMTP oder Resend API)."""
     pass
 
 
-class SummarizationError(NewsAggregatorError):
+class SummarizationError(NewsBotError):
     """Fehler bei der KI-Zusammenfassung via Gemini LLM."""
     pass
 
 
-class StorageError(NewsAggregatorError):
+class StorageError(NewsBotError):
     """Basisklasse für Speicher- und Datenbankfehler."""
     pass
 
@@ -37,3 +41,4 @@ class StorageError(NewsAggregatorError):
 class StorageConnectionError(StorageError):
     """Fehler beim Verbindungsaufbau zur Datenbank (z. B. Turso Cloud DB)."""
     pass
+

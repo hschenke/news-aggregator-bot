@@ -1,5 +1,5 @@
 """
-Storage- und Datenbankpaket für den News Aggregator Bot.
+Storage- und Datenbankpaket für den News Bot.
 Bietet ein einheitliches Repository-Interface (StorageBackend) mit zwei Implementierungen:
 1. TursoStorage: Cloud-basierte LibSQL-Datenbank via HTTPS v2 Pipeline (Zero heavy dependencies).
 2. SqliteStorage: Lokale SQLite-Datenbank (Standardbibliothek) als robuster Offline-/Entwicklungs-Fallback.

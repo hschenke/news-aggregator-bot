@@ -1,4 +1,4 @@
-# 📰 News Aggregator Bot
+# 📰 News Bot
 
 Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugten Quellen (RSS, Blogs, News-Feeds) aggregiert, mit einem LLM (Google Gemini) intelligent zusammenfasst und dir bereitstellt:
 1. **Weg A:** Vollautomatisch als **formatierte tägliche E-Mail** (jeden Morgen via GitHub Actions).
@@ -78,7 +78,7 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
 1. Gehe auf **[share.streamlit.io](https://share.streamlit.io/)** und melde dich mit deinem GitHub-Konto an.
 2. Klicke auf **"Create app"** (bzw. "Deploy an app").
 3. Wähle dein Repository aus:
-   - **Repository:** `dein-github-name/news-aggregator-bot`
+   - **Repository:** `dein-github-name/news-bot`
    - **Branch:** `main`
    - **Main file path:** `streamlit_app.py`
 4. Klicke auf **Advanced settings** (oder nach Deployment unter App Settings > Secrets):
@@ -98,7 +98,7 @@ Ein autonomer, KI-gestützter News-Kurator, der Nachrichten aus deinen bevorzugt
    # Fine-Grained Personal Access Token (github_pat_...)
    # Berechtigungen: Contents (Read and write) & Actions (Read and write)
    GITHUB_TOKEN = "github_pat_..."
-   GITHUB_REPO = "dein-github-name/news-aggregator-bot"
+   GITHUB_REPO = "dein-github-name/news-bot"
    GITHUB_BRANCH = "main"
    ```
 5. Klicke auf **Deploy!**
@@ -125,8 +125,8 @@ Um Artikel, Historie, KI-Briefings und Interaktionen (Like/Dislike, Lesezeichen)
 
 Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS 2.0 Feeds** über ein weltweites CDN (jsDelivr / GitHub) bereit – 24/7 online, ohne Standby oder Ladezeiten:
 
-- **🌟 Gesamt-Feed**: Alle aggregierten, werbefreien Artikel aus allen Kategorien chronologisch (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/all.xml`).
-- **✨ KI-Briefing Feed**: Das tägliche, kuratierte Gemini KI-Briefing als RSS-Post für deinen Reader (`https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/briefing.xml`).
+- **🌟 Gesamt-Feed**: Alle aggregierten, werbefreien Artikel aus allen Kategorien chronologisch (`https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/all.xml`).
+- **✨ KI-Briefing Feed**: Das tägliche, kuratierte Gemini KI-Briefing als RSS-Post für deinen Reader (`https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/briefing.xml`).
 - **📁 Kategorie-Feeds**: Für jedes Thema ein eigener Feed (z. B. `Tech & AI`, `Finanzen`, `Games` unter `.../static/rss/kategorien/<slug>.xml`).
 - **📡 Quell-Feeds**: Jeder Quell-Feed separat aufbereitet (`.../static/rss/feeds/<slug>.xml`).
 
@@ -136,7 +136,7 @@ Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS
 > - **Feed-spezifische Keyword-Filter**: Einzelne Feeds können nach Keywords gefiltert werden (z. B. bei den *Berliner Polizeimeldungen* nur Einsätze aus `Mahlsdorf`). Inklusive automatischer HTML-Teaser-Anreicherung bei Feeds mit leeren Beschreibungen.
 
 #### Aufruf & Nutzung:
-1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?page=rss` auf.
+1. Öffne den Tab **"📡 Eigene RSS-Feeds"** im Dashboard oder rufe direkt die URL `https://news-bot.streamlit.app/?page=rss` auf.
 2. Kopiere die gewünschte CDN-URL oder klicke auf **"➕ 1-Click Abo"**, um den Feed direkt in deinem RSS-Reader (z. B. **NetNewsWire**, **Feedly**, **Apple News**, **Inoreader**, **Thunderbird**, **Outlook**) einzubinden.
 3. Jeder Feed kann zusätzlich als `.xml`-Datei heruntergeladen oder per Live-Code-Vorschau inspiziert werden.
 
@@ -147,7 +147,7 @@ Alle aggregierten Nachrichten stehen als standardkonforme, hochperformante **RSS
 
 
 ```text
-news-aggregator-bot/
+news-bot/
 ├── .github/
 │   └── workflows/
 │       ├── daily_digest.yaml      # Weg A: Automatischer Cloud-Cronjob
