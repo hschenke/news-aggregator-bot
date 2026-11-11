@@ -5,7 +5,7 @@
     <link>https://news-aggregator-bot-sdfgedfwcu7yr9gzikr8q8.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Tue, 10 Nov 2026 13:36:13 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 06:01:29 GMT</lastBuildDate>
     <generator>News Aggregator Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-aggregator-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -61,24 +61,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[C4G reviewed Queen's Domain: I Played Queen's Domain - My Brutally Honest Review]]></description>
-    </item>
-    <item>
-      <title>Shadows of the Dungeon - Kickstarter live</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60546</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60546</guid>
-      <pubDate>Mon, 09 Nov 2026 15:33:31 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The Kickstarter campaign for Shadows of the Dungeon has started: Shadows of the Dungeon - Kickstarter Trailer (5.5e Dungeon Crawler RPG) Shadows of the Dungeon is a first-person dungeon crawler built on the 5.5e rules (SRD 5.2.1). You lead a party of four to six prisoners through the depths of Torment Keep, fight in real time with pause, and switch between grid steps and free movement whenever you like....]]></description>
-    </item>
-    <item>
-      <title>Sea of Remnants - Closed Beta on December 3</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60545</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60545</guid>
-      <pubDate>Mon, 09 Nov 2026 14:09:21 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[The adventure RPG Sea of Remnants has been announced for 2027 - a closed beta starts on December 3: Sea of Remnants - Official 'Embers' Dawnbreaker Closed Beta Release Date Trailer Don't miss the 'Embers' Dawnbreaker Closed Beta Release Date Trailer for Sea of Remnants, an upcoming action-adventure pirate game developed by Joker Studio....]]></description>
     </item>
   </channel>
 </rss>
