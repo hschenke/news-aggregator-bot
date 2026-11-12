@@ -5,9 +5,18 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 07:26:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 13:52:12 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition</title>
+      <link>https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3187646</guid>
+      <pubDate>Thu, 12 Nov 2026 13:26:25 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[The startups work across the deep tech sector, including healthcare, fintech, energy, semiconductors, and AI. All nine are looking to enter the US.]]></description>
+    </item>
     <item>
       <title>Who could replace Jensen Huang? A highly unscientific list of possible successors</title>
       <link>https://techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors/</link>
@@ -133,15 +142,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[Like the end-to-end models trained to drive cars, AI agents are probabilistic systems operating in unpredictable environments.]]></description>
-    </item>
-    <item>
-      <title>Nvidia’s crisis has corporate governance experts reaching for the popcorn</title>
-      <link>https://techcrunch.com/2026/11/10/nvidias-crisis-has-corporate-governance-experts-reaching-for-the-popcorn/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3187258</guid>
-      <pubDate>Wed, 11 Nov 2026 07:30:51 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The governance experts we talked to say nobody has seen anything like what's unfolding right now.]]></description>
     </item>
   </channel>
 </rss>

@@ -5,9 +5,17 @@
     <link>https://news-bot.streamlit.app/?category=Berlin&amp;feed=Polizeimeldungen+Berlin</link>
     <description>RSS-Feed für die Quelle 'Polizeimeldungen Berlin' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 07:26:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 13:52:12 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/berlin-polizeimeldungen-berlin.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Mann auf Parkplatz angefahren – Zeuginnen und Zeugen gesucht</title>
+      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1738688.php</link>
+      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1738688.php</guid>
+      <pubDate>Thu, 12 Nov 2026 13:20:16 GMT</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
+      <description><![CDATA[📍 **Marzahn-Hellersdorf** – Die Polizei Berlin sucht Zeuginnen und Zeugen zu einer Verkehrsunfallflucht, die sich am Dienstag, dem 10. November 2026, gegen 10:50 Uhr in Hellersdorf ereignete. Dort wurde auf einem Edeka-Parkplatz in der Riesaer Straße ein 75-jähriger Fußgänger von einem bisher unbekannten Autofahrer angefahr...]]></description>
+    </item>
   </channel>
 </rss>

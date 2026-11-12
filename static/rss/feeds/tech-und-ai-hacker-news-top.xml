@@ -5,26 +5,9 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 07:26:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 13:52:12 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Tinfoil (YC P25) is hiring an applied AI security engineer in San Francisco</title>
-      <link>https://news.ycombinator.com/item?id=50452404</link>
-      <guid isPermaLink="false">https://news.ycombinator.com/item?id=50452404</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:35 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Using voltage glitching to unleash the A100 in my mining card</title>
-      <link>https://blog.kate.land/posts/using-voltage-glitching-to-unlock-the-a100/</link>
-      <guid isPermaLink="false">https://blog.kate.land/posts/using-voltage-glitching-to-unlock-the-a100/</guid>
-      <pubDate>Wed, 11 Nov 2026 10:48:40 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
+
   </channel>
 </rss>
