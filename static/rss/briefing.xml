@@ -1,93 +1,93 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News Bot — Tägliches KI-Briefing</title>
     <link>https://news-bot.streamlit.app/?tab=ki</link>
     <description>Die von der Gemini KI kuratierten Top-Nachrichten aus allen Kategorien.</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 12:49:20 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 07:26:24 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/briefing.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Berlin] Sperrmüll bequem vor der Haustür abladen - Lokalzeitung für Marzahn-Hellersdorf</title>
-      <link>https://www.die-hellersdorfer.berlin/2026/11/11/sperrm%C3%BCll-bequem-vor-der-haust%C3%BCr-abladen/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:17084123170807469183</guid>
-      <pubDate>Wed, 11 Nov 2026 06:56:01 +0000</pubDate>
+      <title>[Berlin] Gleisarbeiten bei Neuenhagen: Ab Freitagabend keine S5 und Bahnübergang Hauptstraße gesperrt</title>
+      <link>https://marzahn-hellersdorf.com/gleisarbeiten-bei-neuenhagen-ab-freitagabend-keine-s5-und-bahnuebergang-hauptstrasse-gesperrt/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2889672615036698644</guid>
+      <pubDate>Thu, 12 Nov 2026 02:24:54 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Gefährliche Stoffe müssen zu den BSR-Höfen wie der Rahnsdorfer Straße in Mahlsdorf oder dem Nordring in Marzahn gebracht werden.</p>]]></description>
+      <description><![CDATA[<p>Wegen Gleisarbeiten fährt ab Freitagabend keine S5 zwischen bestimmten Abschnitten, und der Bahnübergang Hauptstraße wird gesperrt; Reisende müssen in Mahlsdorf in Busse umsteigen.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Aalzucht abgesagt: Wie geht's weiter mit dem Rechenzentrum in Mahlsdorf?</title>
-      <link>https://alles-mahlsdorf.de/aalzucht-abgesagt-wie-gehts-weiter-mit-dem-rechenzentrum-in-mahlsdorf/</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:707091020234237298</guid>
-      <pubDate>Tue, 10 Nov 2026 18:03:50 +0000</pubDate>
+      <title>[Berlin] UNSERE POKALREISE BIS JETZT! Am Sonntag wartet mit Eintracht Mahlsdorf im ... - Instagram</title>
+      <link>https://www.instagram.com/p/DfnD_arALm9/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3058668710197404678</guid>
+      <pubDate>Wed, 11 Nov 2026 18:18:07 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
-      <description><![CDATA[<p>Der Betreiber Penta Infra hat Details zu seinen Plänen mitgeteilt und bestätigt, dass der Standort erhalten bleibt.</p>]]></description>
+      <description><![CDATA[<p>Im Achtelfinale des Berliner Landespokals kommt es zum Duell mit dem Oberligisten Eintracht Mahlsdorf.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Zigarettenautomat aufgesprengt – mehrere Fahrzeuge beschädigt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1737843.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1737843.php</guid>
-      <pubDate>Wed, 11 Nov 2026 10:15:09 +0000</pubDate>
+      <title>[Berlin] BSV Eintracht Mahlsdorf vs. Anker Wismar | NOFV-Oberliga Nord | 13. Spieltag - Berlin.de</title>
+      <link>https://www.berlin.de/en/tickets/sport/bsv-eintracht-mahlsdorf-vs-anker-wismar-nofv-oberliga-nord-13-spieltag-be94de00-7504-4148-9ee6-704a41246a34/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:16531639616941709221</guid>
+      <pubDate>Wed, 11 Nov 2026 18:13:45 +0000</pubDate>
       <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[<p>In Marzahn-Hellersdorf kam es in der vergangenen Nacht zu einer lauten Sprengung eines Zigarettenautomaten an der Landsberger Allee.</p>]]></description>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[<p>Am Sportplatz Am Rosenhag findet das NOFV-Oberliga-Nord-Spiel zwischen dem BSV Eintracht Mahlsdorf und Anker Wismar statt.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Ex-Eisbären-Coach Aubin: "Berliner Kabine ist voller Gewinner"</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/11/eishockey-del-eisbaeren-berlin-interview-serge-aubin-meister-titel-chl-bern.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/eishockey-del-eisbaeren-berlin-interview-serge-aubin-meister-titel-chl-bern.html</guid>
-      <pubDate>Wed, 11 Nov 2026 05:33:06 +0000</pubDate>
+      <title>[Berlin] Parteien-Hickhack in Marzahn-Hellersdorf: Wie geht es mit der politischen Verantwortung für ...</title>
+      <link>https://alles-mahlsdorf.de/parteien-hickhack-in-marzahn-hellersdorf-wie-geht-es-mit-der-politischen-verantwortung-fuer-mahlsdorf-weiter/</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2638214937144639038</guid>
+      <pubDate>Wed, 11 Nov 2026 18:01:53 +0000</pubDate>
+      <category>Berlin</category>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/5122145494998449956">Mahlsdorf</source>
+      <description><![CDATA[<p>In Marzahn-Hellersdorf gibt es politische Diskussionen darüber, wer künftig die politische Verantwortung für den Bezirk und insbesondere für Mahlsdorf übernimmt.</p>]]></description>
+    </item>
+    <item>
+      <title>[Berlin] DHB-Pokal: Füchse schlagen Potsdam und stehen im Viertelfinale</title>
+      <link>https://www.rbb24.de/sport/beitrag/2026/11/handball-dhb-pokal-achtelfinale-vfl-potsdam-fuechse-berlin-spielbericht.html</link>
+      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/handball-dhb-pokal-achtelfinale-vfl-potsdam-fuechse-berlin-spielbericht.html</guid>
+      <pubDate>Wed, 11 Nov 2026 20:59:48 +0000</pubDate>
       <category>Berlin</category>
       <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Der frühere Cheftrainer spricht im Interview über seine erfolgreiche Amtszeit mit fünf Deutschen Meisterschaften und seinen Nachfolger Éric Dubois.</p>]]></description>
+      <description><![CDATA[<p>Die Füchse Berlin haben das Achtelfinale des DHB-Pokals gegen den VfL Potsdam gewonnen und ziehen damit ins Viertelfinale ein.</p>]]></description>
     </item>
     <item>
-      <title>[Berlin] Eiskunstlauf: Hase/Volodin geben Einblicke in ihre neuen Programme</title>
-      <link>https://www.rbb24.de/sport/beitrag/2026/11/eiskunstlauf-paarlauf-minerva-hase-nikita-volodin-skate-america-grand-prix-kurzprogramm-kuer.html</link>
-      <guid isPermaLink="false">https://www.rbb24.de/sport/beitrag/2026/11/eiskunstlauf-paarlauf-minerva-hase-nikita-volodin-skate-america-grand-prix-kurzprogramm-kuer.html</guid>
-      <pubDate>Wed, 11 Nov 2026 05:26:05 +0000</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.rbb24.de/sport/index.xml/feed=rss.xml">Rbb Sport</source>
-      <description><![CDATA[<p>Das Weltmeister-Paar präsentiert bei Skate America eine vom Mauerfall inspirierte Kür und ein neues Programm.</p>]]></description>
-    </item>
-    <item>
-      <title>[Finanzen &amp; Coins] Bitcoin fällt unter 74.000 US-Dollar – Inflationsdaten befeuern Zinsangst</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-74000-usdollar-heise-usinflationsdaten-schuren-zinserhohungsspekulationen-3760998</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-rutscht-unter-74000-usdollar-heise-usinflationsdaten-schuren-zinserhohungsspekulationen-3760998</guid>
-      <pubDate>Wed, 11 Nov 2026 06:31:13 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] Bitcoin gibt auf 73.600 USD nach – Strategy-Aktie nach MSCI-Indexausschluss unter Druck</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-gibt-auf-73600-usd-nach--strategyaktie-nach-msciindexausschluss-unter-druck-3763333</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-gibt-auf-73600-usd-nach--strategyaktie-nach-msciindexausschluss-unter-druck-3763333</guid>
+      <pubDate>Thu, 12 Nov 2026 06:41:22 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Neue US-Inflationsdaten schüren Spekulationen über mögliche Zinserhöhungen und drücken den Kurs unter die Marke von 74.000 US-Dollar.</p>]]></description>
+      <description><![CDATA[<p>Der Bitcoin-Kurs ist auf 73.600 US-Dollar gesunken, während die Aktie von Strategy nach einem Ausschluss aus dem MSCI-Index stark unter Druck geraten ist.</p>]]></description>
     </item>
     <item>
-      <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: 8 Milliarden Dollar – Firmen ziehen die Reisleine</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-8-milliarden-dollar--firmen-ziehen-die-reisleine-3759920</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-8-milliarden-dollar--firmen-ziehen-die-reisleine-3759920</guid>
-      <pubDate>Tue, 10 Nov 2026 15:27:51 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] XRP: 266 Angriffe pro Minute</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/xrp-266-angriffe-pro-minute-3762592</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-266-angriffe-pro-minute-3762592</guid>
+      <pubDate>Wed, 11 Nov 2026 15:32:48 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Unternehmen ziehen sich im großen Stil aus Kryptowährungen zurück und liquidieren Positionen im Volumen von rund 8 Milliarden Dollar.</p>]]></description>
+      <description><![CDATA[<p>Im Netzwerk rund um XRP wurden in Spitzenzeiten 266 Angriffe pro Minute verzeichnet.</p>]]></description>
     </item>
     <item>
-      <title>[Finanzen &amp; Coins] XRP: Jetzt tickt die Uhr bis 2028</title>
-      <link>https://de.investing.com/news/cryptocurrency-news/xrp-jetzt-tickt-die-uhr-bis-2028-3759911</link>
-      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/xrp-jetzt-tickt-die-uhr-bis-2028-3759911</guid>
-      <pubDate>Tue, 10 Nov 2026 15:24:59 +0000</pubDate>
+      <title>[Finanzen &amp; Coins] Bitcoin, Ethereum, Solana: 6,3 Milliarden Verlust – und der Käufer macht weiter</title>
+      <link>https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-63-milliarden-verlust--und-der-kaufer-macht-weiter-3762564</link>
+      <guid isPermaLink="false">https://de.investing.com/news/cryptocurrency-news/bitcoin-ethereum-solana-63-milliarden-verlust--und-der-kaufer-macht-weiter-3762564</guid>
+      <pubDate>Wed, 11 Nov 2026 15:25:32 +0000</pubDate>
       <category>Finanzen &amp; Coins</category>
       <source url="https://de.investing.com/rss/news_301.rss">Investing de</source>
-      <description><![CDATA[<p>Für XRP rücken wichtige Fristen und Entwicklungen im Hinblick auf das Jahr 2028 in den Fokus der Anleger.</p>]]></description>
+      <description><![CDATA[<p>Trotz hoher Verluste von insgesamt 6,3 Milliarden US-Dollar bei Kryptowährungen wie Bitcoin, Ethereum und Solana setzt ein großer Investor seine Käufe fort.</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Sonntagmorgens. Der Vater will die Mutter</title>
-      <link>https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</link>
-      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/kinder/13599/sonntagmorgens-der-vater-will-die-mutter.html</guid>
-      <pubDate>Wed, 11 Nov 2026 00:00:00 +0000</pubDate>
+      <title>[Fun] Ein Mann geht mit seinem 8-jährigen Sohn</title>
+      <link>https://www.hahaha.de/witze/menschen/kinder/13996/ein-mann-geht-mit-seinem-8-jaehrigen-sohn.html</link>
+      <guid isPermaLink="false">https://www.hahaha.de/witze/menschen/kinder/13996/ein-mann-geht-mit-seinem-8-jaehrigen-sohn.html</guid>
+      <pubDate>Thu, 12 Nov 2026 00:00:00 +0000</pubDate>
       <category>Fun</category>
       <source url="https://www.hahaha.de/witze/witzdestages.xml">Witz des Tages</source>
-      <description><![CDATA[<p>Sonntagmorgens. Der Vater will die Mutter besteigen, aber wohin mit dem fünfjährigen Sohn? Kurzerhand schickt der Vater ihn auf den Balkon: "Schau mal, was da so los ist und erzähl es uns." Der Vater ist gerade voll bei der Sache, als der Kleine ruft: "Schmidts haben sich ein neues Auto gekauft, einen Golf!" Keuchend antwortet der Vater: "Super, weiterschauen!" Zwei Minuten später meldet sich der Junior erneut: "Meiers bekommen gerade Besuch aus Freiburg!" Der Vater stöhnt: "O.k., beobachte weiter das Geschehen!" Nach weiteren drei Minuten verkündet der Kleine: "Die Meiers poppen gerade!" Der Vater: "Wie kommst du denn darauf?" - "Naja, die haben ihren Sohn auch gerade auf den Balkon geschickt."</p>]]></description>
+      <description><![CDATA[<p>Ein Mann geht mit seinem 8-jährigen Sohn in eine Drogerie. Als sie am Stand mit den Kondomen vorbeikommen fragt der Junge: "Was ist das Papa?" Der Vater antwortet daraufhin wahrheitsgemäß: "Das sind Kondome, mein Sohn. Männer benutzen diese um sicheren Sex zu haben." "Ah, ich verstehe", sagt darauf der Sohn "ich habe davon in der Schule gehört." Er schaut sich das Display genauer an und nimmt einen 3er Pack in die Hand. "Warum sind da 3 Stück in einer Packung?" Der Vater daraufhin: "Diese sind für Teenager, einen für Freitag, einen für Samstag und einen für Sonntag." "Cool!" sagt der Junge. Dann bemerkt er einen 6er Pack und fragt: "Und wofür sind die?" "Diese sind für Studenten", sagt der Vater, "2 für Freitag, 2 für Samstag und 2 für Sonntag." "WOW, und für wen sind diese?" fragt der Junge und hält dem Vater eine 12er Packung hin. Mit einem Seufzen sagt darauf der Vater: "Diese sind für verheiratete Männer. Einen für Januar, einen für Februar, einen für März..."</p>]]></description>
     </item>
     <item>
       <title>[Fun] Winziges Beuteltier aus dem Zoo in Perth hilft, seine..</title>
@@ -99,94 +99,94 @@
       <description><![CDATA[<p>Winziges Beuteltier aus dem Zoo in Perth hilft, seine bedrohte Art zu retten. Die Weibchen hatten absolut kein Interesse an ihm - er war ihnen zu klein und roch offenbar nicht gerade betörend. Die Pfleger nutzten das auf recht ungewöhnliche Art aus: Bei den Zuchtversuchen ließen sie die Weibchen zuerst ihn treffen und erst danach die größeren Männchen. Durch diesen Kontrast wirkten die Nachfolger plötzlich viel attraktiver, und die Weibchen ließen sich bereitwilliger auf die Paarung ein. Er wurde zwar selbst kein Vater, verhalf aber anderen dazu. Ein echter Held - wenn auch ohne Nachwuchs!</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Letzten Samstag war ich im Rathaus auf einer Hochzeit..</title>
-      <link>https://debeste.de/636518/Letzten-Samstag-war-ich-im-Rathaus-auf-einer-Hochzeit</link>
-      <guid isPermaLink="false">https://debeste.de/636518/Letzten-Samstag-war-ich-im-Rathaus-auf-einer-Hochzeit</guid>
-      <pubDate>Wed, 11 Nov 2026 00:29:01 +0000</pubDate>
+      <title>[Fun] "Catherine Zeta-Jones, Monica Bellucci und Penélope Cruz in.."</title>
+      <link>https://debeste.de/636902/Catherine-Zeta-Jones,-Monica-Bellucci-und-Pen-lope-Cruz-in</link>
+      <guid isPermaLink="false">https://debeste.de/636902/Catherine-Zeta-Jones,-Monica-Bellucci-und-Pen-lope-Cruz-in</guid>
+      <pubDate>Thu, 12 Nov 2026 06:40:01 +0000</pubDate>
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Letzten Samstag war ich im Rathaus auf einer Hochzeit. Als der Bürgermeister sagte: „Wenn es jemanden gibt, der gegen diese Ehe ist, soll er sich jetzt äußern oder für immer schweigen.“ Da stand hinten eine schwangere Frau auf und ging mit einem 3-jährigen Kind den Mittelgang entlang. Der Bräutigam schwitzte, die Braut fiel in Ohnmacht. Alle Herzen klopften wie wild. Vor dem Bürgermeister angekommen, sagte sie: „Wenn man hinten steht, kann man nicht gut hören.“</p>]]></description>
+      <description><![CDATA[<p>„Catherine Zeta-Jones, Monica Bellucci und Penélope Cruz in den 90er-Jahren“ „Denkt daran: Das war noch vor der Zeit der Filter…“</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Millionenverluste auf Staatskosten: AfD will, dass Minister..</title>
-      <link>https://debeste.de/636668/Millionenverluste-auf-Staatskosten-AfD-will,-dass-Minister</link>
-      <guid isPermaLink="false">https://debeste.de/636668/Millionenverluste-auf-Staatskosten-AfD-will,-dass-Minister</guid>
-      <pubDate>Wed, 11 Nov 2026 11:59:01 +0000</pubDate>
+      <title>[Fun] "Die Treue einer Frau wird auf die Probe gestellt, wenn ihr.."</title>
+      <link>https://debeste.de/636864/Die-Treue-einer-Frau-wird-auf-die-Probe-gestellt,-wenn-ihr</link>
+      <guid isPermaLink="false">https://debeste.de/636864/Die-Treue-einer-Frau-wird-auf-die-Probe-gestellt,-wenn-ihr</guid>
+      <pubDate>Thu, 12 Nov 2026 05:59:01 +0000</pubDate>
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Millionenverluste auf Staatskosten: AfD will, dass Minister bei grob fahrlässigen Amtspflichtverletzungen persönlich zur Rechenschaft gezogen werden!</p>]]></description>
+      <description><![CDATA[<p>„Die Treue einer Frau wird auf die Probe gestellt, wenn ihr Mann nichts hat. Die Treue eines Mannes wird auf die Probe gestellt, wenn er alles hat.“</p>]]></description>
     </item>
     <item>
-      <title>[Fun] Mega-Schachzug von Ulrich Siegmund: Durch seine..</title>
-      <link>https://debeste.de/636439/Mega-Schachzug-von-Ulrich-Siegmund-Durch-seine</link>
-      <guid isPermaLink="false">https://debeste.de/636439/Mega-Schachzug-von-Ulrich-Siegmund-Durch-seine</guid>
-      <pubDate>Tue, 10 Nov 2026 20:59:01 +0000</pubDate>
+      <title>[Fun] Online-Petition: 464.670 Unterschriften und eine klare Forderung..</title>
+      <link>https://debeste.de/636675/Online-Petition-464-670-Unterschriften-und-eine-klare-Forderung</link>
+      <guid isPermaLink="false">https://debeste.de/636675/Online-Petition-464-670-Unterschriften-und-eine-klare-Forderung</guid>
+      <pubDate>Wed, 11 Nov 2026 18:59:01 +0000</pubDate>
       <category>Fun</category>
       <source url="https://debeste.de/rss-main">debeste.de</source>
-      <description><![CDATA[<p>Mega-Schachzug von Ulrich Siegmund: Durch seine Bereitschaft auch im dritten Wahlgang anzutreten macht er es Eva von Angern von der Linkspartei unmöglich, im dritten Wahlgang Ministerpräsidentin zu werden. Zudem zwingt er die CDU im Saal zu bleiben, da sonst die reinen Stimmen der AfD ausreichen um Siegmund zu Ministerpräsidenten zu machen. Mit dieser Taktik zerstört er CDU und Linkspartei gleichzeitig!</p>]]></description>
+      <description><![CDATA[<p>Online-Petition: 464.670 Unterschriften und eine klare Forderung: Friedrich Merz soll sein Amt als Bundeskanzler sofort niederlegen!</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] „Er ist einfach eine Maschine“: Deyovaisio Zeefuik ist bei Hertha BSC der Mann für ...</title>
-      <link>https://www.tagesspiegel.de/sport/er-ist-einfach-eine-maschine-deyovaisio-zeefuik-ist-bei-hertha-bsc-der-mann-fur-besondere-aufgaben-14995970.html</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:18120158626766085189</guid>
-      <pubDate>Wed, 11 Nov 2026 12:43:48 +0000</pubDate>
+      <title>[Fußball] Peter Neururer: „Hertha steigt auf“ – wohl kein Derby gegen Union | Sport | BILD.de</title>
+      <link>https://www.bild.de/sport/fussball/peter-neururer-hertha-steigt-auf-wohl-kein-derby-gegen-union-6af553f7c45061d752ba70f6</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:13865433043759412779</guid>
+      <pubDate>Thu, 12 Nov 2026 06:32:44 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Deyovaisio Zeefuik sorgt bei Hertha BSC mit kommissarischen Glanzleistungen und kompromisslosem Einsatz für Aufsehen.</p>]]></description>
+      <description><![CDATA[<p>Trainerlegende Peter Neururer sieht Hertha BSC als klaren Favoriten für den Bundesliga-Aufstieg und bezweifelt das Zustandekommen eines Stadtderbys gegen Union.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Eindrücke vom Schenckendorffplatz - Hertha BSC</title>
-      <link>https://www.herthabsc.com/de/galerie/2627/training/training-11.11.26-2627</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:4829420630385364860</guid>
-      <pubDate>Wed, 11 Nov 2026 12:42:32 +0000</pubDate>
+      <title>[Fußball] Ranking-Gewinner: Hertha ist jetzt viertbester Klub in Europa - Berliner Kurier</title>
+      <link>https://www.berliner-kurier.de/article/ranking-gewinner-Hertha-ist-jetzt-viertbester-klub-in-europa-10587631</link>
+      <guid isPermaLink="false">https://www.berliner-kurier.de/article/ranking-gewinner-Hertha-ist-jetzt-viertbester-klub-in-europa-10587631</guid>
+      <pubDate>Thu, 12 Nov 2026 07:26:23 +0000</pubDate>
+      <category>Fußball</category>
+      <source url="https://news-bot.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Laut einer KI-Berechnung ungeschlagener Klubs in Europa belegt Hertha BSC nun den vierten Platz von insgesamt 37 Vereinen.</p>]]></description>
+    </item>
+    <item>
+      <title>[Fußball] Wer überträgt Bayern gegen Hertha? DFB-Pokal Achtelfinale live bei RTL</title>
+      <link>https://www.fussballnationalmannschaft.net/dfb-pokal-achtelfinale-bayern-hertha-uebertragung-rtl-free-tv-123331800.html</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:3335022725478138737</guid>
+      <pubDate>Thu, 12 Nov 2026 03:20:57 +0000</pubDate>
       <category>Fußball</category>
       <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Die Mannschaft von Hertha BSC absolviert auch während der spielfreien Woche intensive Trainingseinheiten auf dem Rasen.</p>]]></description>
+      <description><![CDATA[<p>Das DFB-Pokal-Achtelfinale zwischen dem FC Bayern München und Hertha BSC findet am Dienstag, 1. Dezember 2026, statt und wird live und im Free-TV bei RTL übertragen.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] RSV Eintracht 1949 nutzt Pokalpause für Test gegen Hertha BSC II - FuPa</title>
-      <link>https://www.fupa.net/news/rsv-eintracht-1949-nutzt-pokalpause-fuer-test-gegen-hertha-bsc-ii-3231188</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2772862512142350401</guid>
-      <pubDate>Wed, 11 Nov 2026 12:36:34 +0000</pubDate>
+      <title>[Fußball] DFB-Pokal: SSV Jeddeloh scheitert an Hertha BSC Berlin - NWZ</title>
+      <link>https://www.nwzonline.de/sport/regional/dfb-pokal-ssv-jeddeloh-scheitert-an-hertha-bsc-berlin-LGQC7R4JRLBRE4YQQ2OPTPBKUE</link>
+      <guid isPermaLink="false">https://www.nwzonline.de/sport/regional/dfb-pokal-ssv-jeddeloh-scheitert-an-hertha-bsc-berlin-LGQC7R4JRLBRE4YQQ2OPTPBKUE</guid>
+      <pubDate>Thu, 12 Nov 2026 07:26:23 +0000</pubDate>
       <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Der Regionalliga-Aufsteiger empfängt Hertha BSC II zu einem Testspiel während der aktuellen Pokalpause.</p>]]></description>
+      <source url="https://news-bot.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Vor rund 10.000 Fans im Marschwegstadion musste sich der SSV Jeddeloh im DFB-Pokal gegen Hertha BSC Berlin geschlagen geben.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Hertha gegen Union Berlin in der nächsten Saison? "Glaube ich nicht dran" - Tipico</title>
-      <link>https://www.tipico.de/wett-tipps/sportwetten-news/hertha-gegen-union-berlin-in-der-naechsten-saison-glaube-ich-nicht-dran</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:5256262350091853294</guid>
-      <pubDate>Wed, 11 Nov 2026 08:49:33 +0000</pubDate>
+      <title>[Fußball] Tolga Cigerci aus Nordenham verlässt wohl Hertha BSC - NWZ</title>
+      <link>https://www.nwzonline.de/sport/regional/tolga-cigerci-aus-nordenham-verlaesst-wohl-hertha-bsc-B2XQJSBD6G4LKCQXGKBGJB3GZI</link>
+      <guid isPermaLink="false">https://www.nwzonline.de/sport/regional/tolga-cigerci-aus-nordenham-verlaesst-wohl-hertha-bsc-B2XQJSBD6G4LKCQXGKBGJB3GZI</guid>
+      <pubDate>Thu, 12 Nov 2026 07:26:24 +0000</pubDate>
       <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Peter Neururer äußert sich in einer Talkshow skeptisch über ein mögliches Berliner Bundesliga-Derby in der kommenden Spielzeit.</p>]]></description>
+      <source url="https://news-bot.streamlit.app">KI-Briefing</source>
+      <description><![CDATA[<p>Der gebürtige Nordenhamer Tolga Cigerci steht Medienberichten zufolge vor einem Abschied von Hertha BSC.</p>]]></description>
     </item>
     <item>
-      <title>[Fußball] Trainer-Legende Neururer: „Ich glaube nicht an ein Derby!“ - Berliner Kurier</title>
-      <link>https://www.berliner-kurier.de/article/trainer-legende-neururer-ich-glaube-nicht-an-ein-derby-10585328</link>
-      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:14630798732328489121</guid>
-      <pubDate>Wed, 11 Nov 2026 07:44:17 +0000</pubDate>
-      <category>Fußball</category>
-      <source url="https://www.google.de/alerts/feeds/04536167566068725751/1980631152170714655">Hertha Alert</source>
-      <description><![CDATA[<p>Ex-Trainer Peter Neururer prognostiziert zwar den Hertha-Aufstieg, rechnet jedoch kurzfristig nicht mit einem Duell gegen Union.</p>]]></description>
-    </item>
-    <item>
-      <title>[Games] Queen's Domain - Review @ RPGFan</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60557</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60557</guid>
-      <pubDate>Wed, 11 Nov 2026 09:31:22 +0000</pubDate>
+      <title>[Games] MASHLE: MAGIC AND MUSCLES Staffel 3 gibt mit Trailer &amp; Visual Starttermin bekannt</title>
+      <link>https://www.crunchyroll.com/de/news/latest/2026/11/11/mashle-magic-and-muscles-staffel-3-release-date-trailer-visual</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:2171885474732737385</guid>
+      <pubDate>Wed, 11 Nov 2026 14:11:53 +0000</pubDate>
       <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>RPGFan hat FromSoftwares Entwicklung und den anhaltenden Erfolg des Souls-Franchise bis hin zu *Elden Ring* analysiert.</p>]]></description>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[<p>Die dritte Staffel von "Mashle: Magic and Muscles" (Tri-Magicathlon Divine Visionary Final Exam Arc) startet offiziell am 9. Januar 2027.</p>]]></description>
     </item>
     <item>
-      <title>[Games] The Legend of Heroes: Trails beyond the Horizon II - Announced for September 2027</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60556</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60556</guid>
-      <pubDate>Wed, 11 Nov 2026 08:44:40 +0000</pubDate>
+      <title>[Games] Burger King Italien bringt ein offizielles Magic: The Gathering-Menü mit Deckboxen im ...</title>
+      <link>https://de.ign.com/magic-the-gathering-6/157156/burger-king-italien-bringt-ein-offizielles-magic-the-gathering-menu-mit-deckboxen-im-whopper-design</link>
+      <guid isPermaLink="false">tag:google.com,2013:googlealerts/feed:15565175170428955980</guid>
+      <pubDate>Wed, 11 Nov 2026 16:04:00 +0000</pubDate>
       <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Die japanische Version von *The Legend of Heroes: Trails beyond the Horizon II* wurde offiziell für September 2027 angekündigt.</p>]]></description>
+      <source url="https://www.google.de/alerts/feeds/04536167566068725751/6987430504538823876">Might &amp; Magic Alert</source>
+      <description><![CDATA[<p>Burger King in Italien führt ein spezielles Magic: The Gathering-Menü ein, das exklusive Deckboxen im Whopper-Design enthält.</p>]]></description>
     </item>
     <item>
       <title>[Games] WendyQuest - Released</title>
@@ -195,70 +195,70 @@
       <pubDate>Wed, 11 Nov 2026 08:12:31 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Das kostenlose 2D-Abenteuer-JRPG *WendyQuest* ist ab sofort auf Steam mit pixelart und rundenbasiertem Kampfsystem verfügbar.</p>]]></description>
+      <description><![CDATA[<p>Das kostenlose 2D-Abenteuer-Rollenspiel "WendyQuest: Legend of the Four Corner Stones" von Wendy's ist ab sofort auf Steam erhältlich.</p>]]></description>
     </item>
     <item>
-      <title>[Games] The Outer Worlds 2 - Side Effects Guaranteed DLC Preview</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60554</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60554</guid>
-      <pubDate>Wed, 11 Nov 2026 07:31:31 +0000</pubDate>
+      <title>[Games] The Legend of Heroes: Trails beyond the Horizon II - Announced for September 2027</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60556</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60556</guid>
+      <pubDate>Wed, 11 Nov 2026 08:44:40 +0000</pubDate>
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[<p>Mortismal Gaming liefert eine ausführliche Vorschau auf den kommenden DLC *Side Effects Guaranteed* zu *The Outer Worlds 2*.</p>]]></description>
+      <description><![CDATA[<p>Die japanische Version von "The Legend of Heroes: Trails beyond the Horizon II" wurde offiziell für September 2027 angekündigt.</p>]]></description>
     </item>
     <item>
       <title>[Games] Honkai: Star Rail - Version 4.7 released</title>
-      <link>https://rpgwatch.com/sub/newsbit?rwsiteid=1&amp;newsbit=60553</link>
-      <guid isPermaLink="false">https://rpgwatch.com/sub/newsbit?rwsiteid=1&amp;newsbit=60553</guid>
-      <pubDate>Wed, 11 Nov 2026 12:49:20 +0000</pubDate>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60553</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60553</guid>
+      <pubDate>Wed, 11 Nov 2026 07:26:26 +0000</pubDate>
       <category>Games</category>
-      <source url="https://news-bot.streamlit.app">KI-Briefing</source>
-      <description><![CDATA[<p>HoYoverse hat Version 4.7 von *Honkai: Star Rail* veröffentlicht und Einblicke in kommende Events gegeben.</p>]]></description>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[<p>HoYoverse hat das Update auf Version 4.7 für das Rollenspiel "Honkai: Star Rail" veröffentlicht.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Gemini Robotics 2.5 sortiert Metallteile bei Mercedes-Benz mit 96 Prozent Erfolg</title>
-      <link>https://www.heise.de/news/Gemini-Robotics-2-5-sortiert-Metallteile-bei-Mercedes-Benz-mit-96-Prozent-Erfolg-11520722.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11520722</guid>
-      <pubDate>Wed, 11 Nov 2026 12:42:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Münchner Start-up Agile Robots erhält 500 Millionen Dollar</title>
+      <link>https://www.heise.de/news/Muenchner-Start-up-Agile-Robots-erhaelt-500-Millionen-Dollar-11521653.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11521653</guid>
+      <pubDate>Thu, 12 Nov 2026 07:06:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Google hat Gemini Robotics 2.5 vorgestellt, das in einem Pilotversuch bei Mercedes-Benz Autoteile mit einer Erfolgsquote von 96 Prozent sortierte.</p>]]></description>
+      <description><![CDATA[<p>Das deutsche Robotik-Unternehmen Agile Robots hat in einer neuen Finanzierungsrunde 500 Millionen US-Dollar eingesammelt und wird nun mit 8,5 Milliarden Dollar bewertet.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Nighthawk r3: IBMs neuer Quantenprozessor mit 520 Qubits</title>
-      <link>https://www.heise.de/news/IBM-praesentiert-naechste-Generation-seines-Quantenchips-Nighthawk-11520831.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11520831</guid>
-      <pubDate>Wed, 11 Nov 2026 12:00:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Krebs bald Geschichte? Was Anthropic-Chef Dario Amodei KI zutraut</title>
+      <link>https://www.all-ai.de/news/news26top/anthropic-dario-amodei-zukunft-krebs</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-dario-amodei-zukunft-krebs</guid>
+      <pubDate>Wed, 11 Nov 2026 15:52:24 +0000</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>IBM hat auf einer Entwicklerkonferenz den neuen Quantenchip Nighthawk mit 520 Qubits präsentiert, der kommerzielle Anwendungen beschleunigen soll.</p>]]></description>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[<p>Anthropic-Chef Dario Amodei hält es für möglich, dass schwerwiegende Krankheiten wie Krebs und Alzheimer durch KI in weniger als zehn Jahren überwunden werden könnten.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Digital Fairness Act: EU-Offensive gegen Abo-Fallen, Lootboxen und Dark Patterns</title>
-      <link>https://www.heise.de/news/Digital-Fairness-Act-EU-Offensive-gegen-Abo-Fallen-Lootboxen-und-Dark-Patterns-11520754.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11520754</guid>
-      <pubDate>Wed, 11 Nov 2026 11:45:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Gemini Decision 1 bewertet bis zu 1.000 Fragen auf einmal</title>
+      <link>https://www.all-ai.de/news/news26top/google-gemini-decision-1-release</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-gemini-decision-1-release</guid>
+      <pubDate>Wed, 11 Nov 2026 18:54:59 +0000</pubDate>
       <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Die EU-Kommission plant mit dem Digital Fairness Act strengere Verbraucherschutzregeln gegen manipulative Desings, Abo-Fallen und Lootboxen.</p>]]></description>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[<p>Google hat mit Gemini Decision 1 ein neues Modell vorgestellt, das über eine API bis zu 1.000 Fragen zu einer Eingabe in einem Durchlauf bewertet und Wahrscheinlichkeiten liefert.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] Satelliteninternet zum Mitnehmen: Starlink Mini 2 mit austauschbarem Akku</title>
-      <link>https://www.heise.de/news/Satelliteninternet-zum-Mitnehmen-Starlink-Mini-2-mit-austauschbarem-Akku-11520446.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11520446</guid>
-      <pubDate>Wed, 11 Nov 2026 09:37:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Stoppen und kappen: CrowdStrike stellt KI-Killswitch vor</title>
+      <link>https://www.heise.de/news/Stoppen-und-kappen-CrowdStrike-stellt-KI-Killswitch-vor-11521224.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11521224</guid>
+      <pubDate>Thu, 12 Nov 2026 07:00:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>SpaceX hat die Starlink Mini 2 angekündigt, die dank eines integrierten, austauschbaren Akkus komplett mobil ohne externe Stromzufuhr betrieben werden kann.</p>]]></description>
+      <description><![CDATA[<p>Auf der Hausmesse Fal.Con hat CrowdStrike einen Notabschalter (Killswitch) für autonome KI-Agenten innerhalb seiner Falcon-Guardian-Plattform präsentiert.</p>]]></description>
     </item>
     <item>
-      <title>[Tech &amp; AI] OpenAI: 10 Milliarden US-Dollar Umsatz, 11 Milliarden US-Dollar Verlust</title>
-      <link>https://www.heise.de/news/OpenAI-Umsatz-zuletzt-stark-gewachsen-Milliardenverluste-noch-leicht-11520086.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11520086</guid>
-      <pubDate>Wed, 11 Nov 2026 06:17:00 +0000</pubDate>
+      <title>[Tech &amp; AI] Serviceroboter Workerbot9 soll künftig Pflegepersonal in der Charité entlasten</title>
+      <link>https://www.heise.de/news/Serviceroboter-Workerbot9-soll-kuenftig-Pflegepersonal-in-der-Charite-entlasten-11521531.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11521531</guid>
+      <pubDate>Wed, 11 Nov 2026 18:19:00 +0000</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[<p>Aktuellen Zahlen zufolge verzeichnet OpenAI zwar ein starkes Umsatzwachstum auf 10 Milliarden US-Dollar, schreibt gleichzeitig aber weiterhin immaterielle Milliardenverluste.</p>]]></description>
+      <description><![CDATA[<p>An der Berliner Charité soll der Roboter Workerbot9 künftig Materialbestände prüfen und Patienten unterhalten, um das Pflegepersonal zu entlasten.</p>]]></description>
     </item>
   </channel>
 </rss>

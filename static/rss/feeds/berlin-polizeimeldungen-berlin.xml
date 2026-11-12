@@ -5,26 +5,9 @@
     <link>https://news-bot.streamlit.app/?category=Berlin&amp;feed=Polizeimeldungen+Berlin</link>
     <description>RSS-Feed für die Quelle 'Polizeimeldungen Berlin' (Kategorie: Berlin).</description>
     <language>de</language>
-    <lastBuildDate>Wed, 11 Nov 2026 15:46:46 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 07:26:09 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/berlin-polizeimeldungen-berlin.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Zigarettenautomat aufgesprengt – mehrere Fahrzeuge beschädigt</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1737843.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1737843.php</guid>
-      <pubDate>Wed, 11 Nov 2026 10:15:09 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Marzahn-Hellersdorf** – In der vergangenen Nacht kam es in Marzahn zu einem schweren Diebstahl aus einem Zigarettenautomaten. Nach bisherigen Erkenntnissen hatte ein Anwohner gegen 23 Uhr Polizeikräfte zur Landsberger Allee gerufen, nachdem er einen lauten Knall wahrgenommen hatte. Die alarmierten Einsatzkräfte stellten...]]></description>
-    </item>
-    <item>
-      <title>Zwei verletzte Seniorinnen nach Stürzen im Bus – Zeuginnen und Zeugen gesucht</title>
-      <link>https://www.berlin.de/polizei/polizeimeldungen/2026/pressemitteilung.1737653.php</link>
-      <guid isPermaLink="false">/polizei/polizeimeldungen/2026/pressemitteilung.1737653.php</guid>
-      <pubDate>Tue, 10 Nov 2026 15:51:06 GMT</pubDate>
-      <category>Berlin</category>
-      <source url="https://www.berlin.de/polizei/polizeimeldungen/index.php/rss">Polizeimeldungen Berlin</source>
-      <description><![CDATA[📍 **Marzahn-Hellersdorf** – Die Polizei Berlin sucht Zeuginnen und Zeugen zu einer Verkehrsunfallflucht, die sich gestern Nachmittag in Marzahn ereignete. Gegen 16:40 Uhr soll ein unbekannter Fahrzeugführer mit einem Auto plötzlich aus dem stockenden Verkehr auf der Rhinstraße auf die Busspur gefahren sein, weshalb der Fahr...]]></description>
-    </item>
+
   </channel>
 </rss>
