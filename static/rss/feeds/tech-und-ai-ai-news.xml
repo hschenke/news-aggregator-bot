@@ -5,9 +5,45 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Thu, 12 Nov 2026 13:52:12 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 06:01:14 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>n8n Nod: Der erste KI-Agent für den eigenen Rechner</title>
+      <link>https://www.all-ai.de/news/news26top/n8n-nod-ki-agent-deutschland</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/n8n-nod-ki-agent-deutschland</guid>
+      <pubDate>Thu, 12 Nov 2026 18:51:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Mit Nod startet n8n Labs eine experimentelle Vorschau für einen persönlichen KI-Agenten auf dem eigenen Rechner. Nod arbeitet in Apps und Webseiten und fragt bei Schritten außerhalb der erteilten Freigabe nach. In den simulierten Aufgaben von n8n erreichte Nod mit GPT-6.1 Sol eine Erfolgsquote von 98%. Die App ist kostenlos und Open Source. Je nach gewähltem KI-Anbieter fallen Nutzungskosten an. n8n-Blog · Ankündigung von Nod Nod · Funktionen, Plattformen und Kosten Nod · Benchmarks und Testmethoden GitHub · Quellcode und Apache-2.0-Lizenz Grok Bot und Metas Muse Bot bekommen Konkurrenz aus Berlin. n8n Labs hat Nod als experimentelle Vorschau veröffentlicht. Der persönliche KI-Agent öffnet Apps und Webseiten, um Rechnungen einzusammeln, Kundengespräche vorzubereiten oder ein Abo zu kündigen. Nod arbeitet im eigenen Browser Ein Selbstständiger kann Nod zum Beispiel bitten, die Rechnungen des letzten Monats aus mehreren Lieferantenportalen herunterzuladen. Der Agent öffnet die Seiten in seinem eigenen Browser und legt die Dateien auf dem Rechner ab. Für wiederkehrende Aufgaben lässt sich ein Zeitplan einrichten, etwa um eine Preisseite regelmäßig zu prüfen. Nod prüft geplante Akti...]]></description>
+    </item>
+    <item>
+      <title>Google veröffentlicht Gemini 4 Hydrogen</title>
+      <link>https://www.all-ai.de/news/news26top/google-gemini-4-hydrogen</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-gemini-4-hydrogen</guid>
+      <pubDate>Thu, 12 Nov 2026 18:28:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google bringt Gemini 4 Hydrogen weltweit in die Suche und die Gemini-App. In Googles Terminal-Bench-4.1-Vergleich steigt das Ergebnis von 18,2% bei Gemini 3.8 Flash auf 57% bei Hydrogen. Die Gemini API bietet einen kostenlosen Tarif. Im bezahlten Standardtarif kostet Hydrogen 1,50$ pro Million Eingabe-Token und 7,50$ pro Million Ausgabe-Token. Google DeepMind – Introducing Gemini 4 Hydrogen (bereitgestellte Fassung mit Benchmark-Grafiken) Google – Google Search gets a major upgrade with Gemini 4 Hydrogen (bereitgestellte Fassung) Google AI Studio – Gemini Developer API Pricing Artificial Analysis – Intelligence Index 5.0.1 und Methodik Artificial Analysis – AutomationBench-AA und Methodik Google DeepMind bringt Gemini 4 Hydrogen weltweit in die Gemini-App und in die Google-Suche. Das neue KI-Modell ist auf schnelle Programmieraufgaben und mehrstufige Arbeitsabläufe ausgelegt. Entwickler können es auch im kostenlosen Tarif der Gemini API nutzen. Anzeige Hydrogen erreicht 54 Punkte bei Artificial Analysis Im Intelligence Index 5.0.1 von Artificial Analysis erreicht Gemini 4 Hydrogen in der Standardeinstellung »High« 51 Punkte. Gemini 4 Argon kommt auf 50 Punkte, Gemini 3.8 Flash a...]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang tritt als Nvidia-Chef zurück</title>
+      <link>https://www.all-ai.de/news/news26/nvidia-huang-ruecktrit</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-huang-ruecktrit</guid>
+      <pubDate>Thu, 12 Nov 2026 14:43:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Jensen Huang tritt mit sofortiger Wirkung als Nvidia-Chef zurück und verlässt den Verwaltungsrat. Finanzchefin Colette Kress übernimmt vorläufig, während der Verwaltungsrat nach einem dauerhaften Nachfolger sucht. Nvidia veröffentlicht die nächsten Quartalszahlen wie geplant am 17. November. Nvidia | Mitteilung zum Führungswechsel GlobeNewswire via StreetInsider | Verbreitete Nvidia-Mitteilung zum Führungswechsel Nvidia | Verwaltungsrat kündigt unabhängige Untersuchung an Associated Press | Rücktritt und Übergabe an Colette Kress Jensen Huang tritt mit sofortiger Wirkung als CEO und Präsident von Nvidia zurück. Der Mitgründer verlässt nach 33 Jahren an der Spitze auch den Verwaltungsrat. Sein Rücktritt folgt wenige Tage auf die Ankündigung einer unabhängigen Untersuchung zu Berichten, wonach ein ausländischer Geheimdienst Huang ins Visier genommen haben soll. Anzeige Colette Kress übernimmt vorläufig Colette Kress leitet Nvidia übergangsweise und bleibt zugleich Finanzchefin. Diesen Posten hat sie seit 2013 inne. Der Verwaltungsrat sucht innerhalb und außerhalb des Unternehmens nach einem dauerhaften Nachfolger für Huang. Harvey C. Jones übernimmt als erster Vorsitzender die Lei...]]></description>
+    </item>
+    <item>
+      <title>Google bringt Gemini-Brillen mit jeder Menge KI ab 395 Dollar</title>
+      <link>https://www.all-ai.de/news/news26top/google-ki-brillen-start</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-ki-brillen-start</guid>
+      <pubDate>Thu, 12 Nov 2026 14:30:32 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Google Kurzfassung ▾ Quellen ▾ Die KI-Brillen von Google und Samsung sind ab 395$ vorbestellbar. Der reguläre Verkauf startet am 10. Dezember. Gemini gibt Antworten über Lautsprecher in den Brillenbügeln aus. Eine LED zeigt Aufnahmen für die Galerie an. Wird sie abgedeckt, soll die Brille die Aufnahme blockieren. Google · See our intelligent eyewear lineup and pre-order your pair Google · Designing for privacy on intelligent eyewear Warby Parker · Quartalsmitteilung mit dem Vorbestelltermin Google · Vorstellung der Audiobrillen mit Android XR Google und Samsung bringen ihre ersten KI-Brillen mit Gemini in den Handel. Die Modelle von Warby Parker und Gentle Monster lassen sich seit dem 12. November vorbestellen, der reguläre Verkauf startet am 10. Dezember. Eine LED an der Vorderseite soll Umstehende auf Fotos und Videos aufmerksam machen. Anzeige Zwei Kollektionen und kein Display Warby Parker bietet drei Gestelle ab 395$ an, jeweils als normale Brille oder als Sonnenbrille. Gentle Monster startet in den USA und Südkorea mit sechs Designs ab 449$. Für die meisten Gestelle von Gentle Monster gibt es Gläser mit Sehstärke, auch Warby Parker bietet Korrekturgläser an. Einen Startter...]]></description>
+    </item>
     <item>
       <title>Deutsche Privatanleger können jetzt Anthropic-Aktien zeichnen</title>
       <link>https://www.all-ai.de/news/news26/anthropic-aktie-kauf-deutschland</link>
@@ -25,78 +61,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Nvidias Verwaltungsrat berät über die Zukunft von Gründer und CEO Jensen Huang. Eine unabhängige Untersuchung prüft den möglichen Spionagefall rund um Huangs Kontakte zu einer früheren Managerin des Nvidia-Kunden Megaspeed. Colette Kress käme für eine Übergangslösung infrage. Ian Buck und Arm-Chef Rene Haas werden ebenfalls als mögliche Nachfolger gehandelt. Reuters | Verwaltungsrat berät über Huangs Zukunft Nvidia | Huangs Schreiben an die Belegschaft und verlinkte Mitteilungen des Verwaltungsrats Associated Press | Ermittlungen zu Megaspeed und Reaktion aus Peking Reuters | Mögliche Nachfolger für Jensen Huang US-Repräsentantenhaus | Einladung zur vertraulichen Befragung am 18. November Nvidias Verwaltungsrat hat laut Reuters am Mittwochabend in Kalifornien über Jensen Huangs Zukunft beraten. Das Wall Street Journal hatte zuvor berichtet, das Gremium bereite die Absetzung des Nvidia-Chefs vor. Anzeige Warum Nvidia den Fall untersucht Huang räumte am Sonntag in einer Nachricht an die Belegschaft eine außereheliche Beziehung ein. Einen Namen nannte er darin nicht. Im Zentrum der Berichte steht Alice Huang, eine frühere Managerin des Nvidia-Kunden Megaspeed aus Singapur, die US-G...]]></description>
-    </item>
-    <item>
-      <title>Higgsfield mit dem größten Rabatt des Jahres auf Monats- und Jahrespläne</title>
-      <link>https://www.all-ai.de/news/news26/higgsfield-abos-sparen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/higgsfield-abos-sparen</guid>
-      <pubDate>Wed, 11 Nov 2026 21:05:05 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Higgsfield startet seine größte Rabattaktion des Jahres für Plus und Ultra. Plus kostet zunächst 47€ im Monatsabo oder rechnerisch 35€ pro Monat bei jährlicher Abrechnung. Ultra mit monatlich 9.000 Credits kostet im Jahresabo insgesamt 1.800€, entsprechend 150€ pro Monat und rund 61% Rabatt. Die Unlimited-Extras für Seedance 2.5 und Bildmodelle laufen je nach Tarif sieben bis 60 Tage. Higgsfield kündigt seine größte Rabattaktion des Jahres an Dealroom: Umsatzhochrechnung und Einordnung durch Higgsfield-Chef Alex Mashrabov All-AI: Higgsfield im Überblick mit Funktionen, Preisen und Test Higgsfield startet seine 11.11-Aktion und bewirbt sie als größten Rabatt des Jahres. Die KI-Plattform für Bilder und Videos senkt die Preise für Plus und Ultra und legt zeitlich begrenzte Unlimited-Angebote für Seedance 2.5 und mehrere Bildmodelle dazu. Ich bin selbst auch bereits im Ultra-Abo und habe daher zwei persönliche Anmerkungen zum Artikel beigesteuert. Das Angebot gilt nur 3 Tage und ist mit einem Klick auf diesen Link* oder Grafik freigeschaltet: Anzeige Monatsabo oder Jahresabo macht einen Unterschied Bei monatlicher Abrechnung kostet Plus zunächst 47€ statt 59€ (20% Rabatt), Ultra mit...]]></description>
-    </item>
-    <item>
-      <title>Grok Bot 1.0: xAI veröffentlicht den besseren Mitarbeiter</title>
-      <link>https://www.all-ai.de/news/news26top/grok-bot-1-0-release</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/grok-bot-1-0-release</guid>
-      <pubDate>Wed, 11 Nov 2026 19:47:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Grok Bot 1.0 lässt sich gemeinsam von ganzen Teams verwenden. Der KI-Kollege erkennt anstehende Aufgaben und bietet selbst seine Hilfe an. Bots arbeiten in Slack, Microsoft Teams sowie Videokonferenzen und können Aufgaben untereinander weitergeben. Riskante Aktionen erfordern weiterhin eine Freigabe durch den Nutzer. xAI: Introducing Grok Bot 1.0 xAI Docs: Team Bots xAI Docs: When Your Bot Takes Initiative xAI Docs: Add a Bot to Your Meetings xAI: Grok Bot und Preise xAI macht aus Grok Bot einen KI-Kollegen für ganze Teams. Version 1.0 lässt sich in Slack, Microsoft Teams und Videokonferenzen einbinden, erkennt anstehende Aufgaben und bietet selbst an, sie zu übernehmen. Twitter Beitrag - Cookies links unten aktivieren. Introducing Grok Bot 1.0. AI teammates that work alongside your whole team. Share Bots, collaborate with them in Slack and Teams, invite them to meetings, and watch them learn and become more helpful. https://t.co/7569CZRc9G— Grok Bot (@bot) November 11, 2026 Ein Bot arbeitet mit dem ganzen Team Team Bots stehen mehreren Mitarbeitern gemeinsam zur Verfügung. Jeder Nutzer führt dabei einen privaten Chat mit dem Bot. Erkenntnisse für das ganze Team landen erst nach...]]></description>
-    </item>
-    <item>
-      <title>Gemini Decision 1 bewertet bis zu 1.000 Fragen auf einmal</title>
-      <link>https://www.all-ai.de/news/news26top/google-gemini-decision-1-release</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-gemini-decision-1-release</guid>
-      <pubDate>Wed, 11 Nov 2026 18:54:59 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Gemini Decision 1 bewertet bis zu 1.000 Fragen zu einer gemeinsamen Eingabe und liefert Wahrscheinlichkeiten sowie Konfidenzwerte. Das Modell verarbeitet Text, Bilder, Audio, Video und PDFs mit bis zu 256.000 Token Kontext. In Googles Vergleich führt Gemini Decision 1 bei sieben von neun Benchmarks. Eine Million Eingabe-Token kostet 0,10$, für Ausgabe-Token berechnet Google nichts. Google AI Studio: Gemini Decision 1 Google AI Studio: Decisions API Google ergänzt Gemini um ein Modell für schnelle Entscheidungen. Gemini Decision 1 bewertet über die neue Decisions API bis zu 1.000 Fragen zu einer gemeinsamen Eingabe und liefert Wahrscheinlichkeiten für die möglichen Antworten. Anzeige Was ein Entscheidungsmodell bringt Ein Entscheidungsmodell wählt zwischen vorher festgelegten Antworten. Es erkennt beispielsweise, ob eine Kundenanfrage dringend ist, welche Abteilung zuständig ist oder welches KI-Modell die Anfrage bearbeiten soll. Der große Vorteil liegt in der direkten Bewertung. Gemini Decision 1 berechnet die Antwortmöglichkeiten in einem Durchlauf, ohne einen Antworttext Token für Token zu erzeugen. Das spart Wartezeit und Rechenkosten bei Aufgaben, die sich ständig wiederhole...]]></description>
-    </item>
-    <item>
-      <title>Krebs bald Geschichte? Was Anthropic-Chef Dario Amodei KI zutraut</title>
-      <link>https://www.all-ai.de/news/news26top/anthropic-dario-amodei-zukunft-krebs</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/anthropic-dario-amodei-zukunft-krebs</guid>
-      <pubDate>Wed, 11 Nov 2026 15:52:24 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Dario Amodei glaubt, dass KI helfen könnte, Krebs, Alzheimer, Herzkrankheiten und psychische Erkrankungen in weniger als zehn Jahren zu überwinden. Bei Anthropic soll Claude Mythos den Code für Claude in drei Tagen auf AMD-Chips zum Laufen gebracht haben. Vor Anlegern warnt Amodei auch vor dem Missbrauch leistungsfähiger KI und wirbt für begrenzten Zugang zu besonders riskanten Modellen. Anthropic – offizielle Anlegerseite mit Roadshow-Video und Quartalszahlen Anthropic IPO – YouTube-Mitschnitt, Amodeis Medizinprognose ab 40:37 Dario Amodei – Machines of Loving Grace, Oktober 2024 Anthropic – Project Glasswing und der begrenzte Zugang zu Claude Mythos Preview SEC – Anthropics aktualisierter Börsenprospekt vom 10. November 2026 Dario Amodei hält es für möglich, dass Krebs, Alzheimer, Herzkrankheiten und psychische Erkrankungen in weniger als zehn Jahren der Vergangenheit angehören. Mit dieser Prognose schließt der Anthropic-Chef das Video ab, mit dem sein Unternehmen seit dem 10. November bei Anlegern für den geplanten Börsengang wirbt. Was Amodei der KI in der Medizin zutraut Schon 2024 schrieb Amodei in seinem Essay »Machines of Loving Grace«, dass KI den biologischen Fortschri...]]></description>
-    </item>
-    <item>
-      <title>Helsing stellt Clarity vor und macht Palantir endlich Konkurrenz</title>
-      <link>https://www.all-ai.de/news/news26top/helsing-clarity-palantir-konkurrenz</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/helsing-clarity-palantir-konkurrenz</guid>
-      <pubDate>Wed, 11 Nov 2026 15:47:14 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Helsing hat die militärische KI-Plattform Clarity in Berlin vorgestellt. KI-Agenten sollen Satellitenbilder, Sensordaten und Berichte zu einem Lagebild zusammenführen. Ein Bediener muss die Weitergabe an ein Waffensystem freigeben. Die Streitkräfte sollen Clarity auf eigener Infrastruktur betreiben. Helsing – Pressemitteilung zu Clarity NCIA – NATO beschafft Maven Smart System von Palantir Helsing hat in Berlin die militärische KI-Plattform Clarity vorgestellt. Sie soll aus Satellitenbildern, Sensordaten und Berichten ein aktuelles Lagebild erstellen. Helsing entwickelt Clarity in Europa und sieht vor, dass Streitkräfte die Plattform auf ihrer eigenen Infrastruktur betreiben. Anzeige KI-Agenten werten mehrere Quellen gleichzeitig aus Ein Satellitenbild zeigt, wie ein Ort zu einem bestimmten Zeitpunkt aussah. Ein Bericht kann ergänzen, was dort inzwischen passiert ist. Clarity soll solche Informationen zusammenführen, damit ein Stab die Quellen gemeinsam auswerten kann. Dazu zählen auch öffentlich zugängliche Quellen. Dafür arbeiten spezialisierte KI-Agenten parallel. Sie sichten unterschiedliche Daten und bereiten ihre Ergebnisse zur Prüfung auf. Helsing trainiert die zugrunde l...]]></description>
-    </item>
-    <item>
-      <title>Anleger wollen mehr Anthropic-Aktien, als angeboten werden</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-aktien-angebot-nachfrage</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-aktien-angebot-nachfrage</guid>
-      <pubDate>Wed, 11 Nov 2026 15:28:56 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Laut Bloomberg haben Investoren ein Mehrfaches der angebotenen Anthropic-Aktien geordert. Anthropic plant ein öffentliches Angebot von 825 Millionen Aktien zu je 70$ bis 78$. Sieben Unternehmen wollen parallel Aktien für insgesamt 26 Milliarden $ kaufen. Bloomberg über die mehrfache Überzeichnung Investing.com gibt die Bloomberg-Meldung frei zugänglich wieder CNBC über die Nachfrage institutioneller Anleger, Transkript ab 4:10 Vorläufiger Börsenprospekt von Anthropic vom 10. November SpaceX meldet den Abschluss seines Börsengangs bei der SEC Investoren haben für Anthropics Börsengang laut Bloomberg bereits ein Mehrfaches der angebotenen Aktien geordert. Auch CNBC berichtet unter Berufung auf eigene Quellen, dass die Nachfrage großer Anleger das Angebot schon zu Beginn der Investorenrunde überstieg. Wie groß der Abstand zwischen Angebot und Nachfrage ist, beziffert Bloomberg nicht. Anzeige Bis zu 64,35 Milliarden $ für 825 Millionen Aktien Der Claude-Entwickler hat am 10. November begonnen, seinen Börsengang bei Investoren vorzustellen. Der vorläufige Börsenprospekt sieht 825 Millionen Aktien zu je 70$ bis 78$ vor. Am oberen Ende der Preisspanne hätte das öffentliche Angebot ein ...]]></description>
-    </item>
-    <item>
-      <title>Grok Build Skandal: Mehr als 35.000 Apps waren ohne Anmeldung zugänglich</title>
-      <link>https://www.all-ai.de/news/news26top/grok-build-apps-sicherheit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/grok-build-apps-sicherheit</guid>
-      <pubDate>Wed, 11 Nov 2026 15:13:22 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Claroc konnte 35.578 mit Grok Build erstellte Apps ohne Anmeldung öffnen. Einige Apps enthielten vertrauliche Geschäftsdaten, Passwörter oder Informationen über Patienten und Mitarbeiter. Beim Veröffentlichen war im Testkonto die Freigabe für jeden mit Link vorausgewählt. SpaceXSI nahm 24 Apps von Mitarbeitern des Unternehmens und von X vom Netz. Claroc Research: GhostShares 2 SpaceXSI: Grok Build on web and mobile Ars Technica: Nachprüfung der 24 Apps und Stellungnahme des Unternehmens Ein vertrauliches Werbeangebot für eine US-Behörde und Laborwerte eines Intensivpatienten waren über Apps zugänglich, die Nutzer mit Grok Build erstellt hatten. Die Sicherheitsforscher von Claroc konnten 35.578 Apps ohne Anmeldung öffnen. Darunter waren 24 Apps von Mitarbeitern des Grok-Anbieters SpaceXSI und der Plattform X. Anzeige Vertrauliche Daten hinter Freigabelinks Von den rund 37.600 erreichbaren Apps in der Untersuchung ließen sich knapp 95% ohne Anmeldung öffnen. Viele waren Spiele, Rechner oder einfache Webseiten. Die Forscher fanden aber auch interne Daten von 30 weiteren Organisationen, darunter Personallisten einer Krankenhausgruppe und Passwörter in einer App zur Zeiterfassung. Mi...]]></description>
-    </item>
-    <item>
-      <title>Google DeepMind prüft »Signals« Verschlüsselung bis zum Maschinencode</title>
-      <link>https://www.all-ai.de/news/news26/google-deepmind-signal-messenger-kontrolle</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/google-deepmind-signal-messenger-kontrolle</guid>
-      <pubDate>Wed, 11 Nov 2026 15:08:43 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google DeepMind hat mit AlphaProof Code Sicherheitseigenschaften von Signals Verschlüsselung am kompilierten Code bewiesen. Die Beweise gelten für ein ARM-Linux-Testprogramm mit der unveränderten Signal-Bibliothek und betreffen Einzelchats. KI-Agenten erzeugten rund 6,5 Millionen Zeilen Beweiscode, die der Beweisassistent Lean prüfte. Die Spezifikationen und Beweise sind auf GitHub als Open Source verfügbar. Google DeepMind – Ankündigung von AlphaProof Code AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level Google DeepMind – Spezifikationen und Lean-Beweise auf GitHub Google DeepMind hat mit dem neuen Verfahren AlphaProof Code zentrale Sicherheitseigenschaften der Verschlüsselung vom Messenger »Signal« mathematisch nachgewiesen. Die Beweise reichen bis zum Maschinencode, also zu den Befehlen, die der Prozessor ausführt. Anzeige Was DeepMind für Signal bewiesen hat Die Forscher haben die unveränderte Signal-Bibliothek »libsignal« in ein kleines Testprogramm eingebunden und für ARM-Prozessoren unter Linux kompiliert. Die Beweise decken ab, wie zwei Teilnehmer eine verschlüsselte Unterhaltung beginnen und Nachrichten ver- und entschlüsseln. Unter den geprüften B...]]></description>
     </item>
   </channel>
 </rss>
