@@ -5,9 +5,27 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=TechCrunch+AI</link>
     <description>RSS-Feed für die Quelle 'TechCrunch AI' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 06:01:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-techcrunch-ai.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Israel’s VCs see opportunity for challengers in Nvidia’s turmoil</title>
+      <link>https://techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3187846</guid>
+      <pubDate>Fri, 13 Nov 2026 12:52:19 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Given Nvidia’s stronghold on AI and its importance in Israel, many in the country's startup ecosystem are worried about the impact of his departure.]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang didn’t show confidence in his successor, report says</title>
+      <link>https://techcrunch.com/2026/11/13/jensen-huang-didnt-show-confidence-in-his-successor-report-says/</link>
+      <guid isPermaLink="false">https://techcrunch.com/?p=3188240</guid>
+      <pubDate>Fri, 13 Nov 2026 12:28:23 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
+      <description><![CDATA[Huang described Kress as a "deer in the headlights" during a meeting in summer.]]></description>
+    </item>
     <item>
       <title>Democrats launch Nvidia investigation, write scathing letter on Huang’s ‘scheme’ with Trump</title>
       <link>https://techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump/</link>
@@ -169,15 +187,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
       <description><![CDATA[This is Fireworks' second data breach in as many months.]]></description>
-    </item>
-    <item>
-      <title>Nine Korean startups vie for a spot in Disrupt 2027’s Startup Battlefield 200 competition</title>
-      <link>https://techcrunch.com/2026/11/12/nine-korean-startups-vie-for-a-spot-in-disrupt-2027s-startup-battlefield-200-competition/</link>
-      <guid isPermaLink="false">https://techcrunch.com/?p=3187646</guid>
-      <pubDate>Thu, 12 Nov 2026 13:26:25 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://techcrunch.com/category/artificial-intelligence/feed/">TechCrunch AI</source>
-      <description><![CDATA[The startups work across the deep tech sector, including healthcare, fintech, energy, semiconductors, and AI. All nine are looking to enter the U.S.]]></description>
     </item>
   </channel>
 </rss>

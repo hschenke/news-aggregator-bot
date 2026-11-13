@@ -5,7 +5,7 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 06:01:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -238,24 +238,6 @@
       <link>https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f</link>
       <guid isPermaLink="false">https://apnews.com/article/nvidia-megaspeed-china-singapore-huang-5403f152a601cf82ce939f1d24fffa0f</guid>
       <pubDate>Thu, 12 Nov 2026 13:52:29 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Adapting CPython for Yk</title>
-      <link>https://tratt.net/laurie/blog/2026/adapting_cpython_for_yk.html</link>
-      <guid isPermaLink="false">https://tratt.net/laurie/blog/2026/adapting_cpython_for_yk.html</guid>
-      <pubDate>Thu, 12 Nov 2026 12:51:38 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
-      <description><![CDATA[Comments]]></description>
-    </item>
-    <item>
-      <title>Anthropic IPO</title>
-      <link>https://ipo.anthropic.com/us/</link>
-      <guid isPermaLink="false">https://ipo.anthropic.com/us/</guid>
-      <pubDate>Thu, 12 Nov 2026 11:46:41 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
       <description><![CDATA[Comments]]></description>

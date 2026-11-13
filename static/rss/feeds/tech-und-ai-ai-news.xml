@@ -5,9 +5,18 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 06:01:14 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Claude Meetings erstellt Dokumente und Whiteboards direkt in Videokonferenzen</title>
+      <link>https://www.all-ai.de/news/news26/claude-meetings-video-konferenz</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/claude-meetings-video-konferenz</guid>
+      <pubDate>Fri, 13 Nov 2026 07:22:46 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Anthropic führt Claude Meetings als Beta für Team und Enterprise ein. Claude kann in Google Meet Fragen beantworten und während des Gesprächs Dokumente und Whiteboards erstellen. Interne Teilnehmer finden Mitschrift, Aufgaben und Entwürfe auf einer Meeting-Seite in Claude. Die Erstellung von Dokumenten und Whiteboards im Meeting ist bis zum 10. Februar 2027 kostenlos. Anthropic: Introducing Claude Meetings Anthropic: Introducing Claude Meetings (verifizierte Sprachversion) Claude Help Center: Use Claude Meetings Anthropic rollt Claude Meetings als Beta für Team und Enterprise aus. Zum Start funktioniert die Beta ausschließlich mit Google Meet, weitere Videoplattformen sollen folgen. Claude erscheint als sichtbarer Teilnehmer und kann während des Gesprächs Dokumente und Whiteboards erstellen, an denen das Team direkt weiterarbeitet. Vom Gespräch zum ersten Entwurf Wenn ein Team über die Aufgaben für einen Projektstart spricht, kann Claude daraus auf Zuruf einen Entwurf für den Projektplan machen. Während das Gespräch weitergeht, können eingeladene Teilnehmer aus der Organisation den Plan auf der Meeting-Seite in Claude bearbeiten. Fragen nimmt Claude per Sprache oder im Meet-Chat...]]></description>
+    </item>
     <item>
       <title>n8n Nod: Der erste KI-Agent für den eigenen Rechner</title>
       <link>https://www.all-ai.de/news/news26top/n8n-nod-ki-agent-deutschland</link>
@@ -52,15 +61,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Privatanleger in Deutschland können über teilnehmende Broker Anthropic-Aktien zeichnen. Anthropic peilt 70$ bis 78$ je Aktie an. Der europäische Prospekt nennt 120$ als Obergrenze. Der endgültige Preis soll am 18. November feststehen. Der Nasdaq-Handel unter »ANT« soll am 19. November beginnen. Anthropic erzielte im dritten Quartal 17 Milliarden $ Umsatz und verbuchte 23,3 Milliarden $ Nettoverlust. Anthropic – Europäische IPO-Seite und FAQ (bereitgestellter Seitentext) Anthropic – Gründerbrief (Auszug im bereitgestellten Seitentext) SEC – Aktualisierter US-Börsenprospekt vom 10. November 2026 Anthropic – Teilnehmende Broker und Vertriebsstellen Scalable Capital – Start der Zeichnung für Privatanleger Anthropic öffnet seinen geplanten Börsengang für Privatanleger in Deutschland und weiteren europäischen Ländern. Scalable Capital nimmt bereits Zeichnungsaufträge an, auch Trade Republic, ING, Deutsche Bank und Revolut gehört zu den teilnehmenden Brokern. Der Handel an der US-Börse Nasdaq soll am 19. November 2026 unter dem Kürzel »ANT« beginnen. Anzeige Was eine Anthropic-Aktie kosten soll Anthropic rechnet mit 70$ bis 78$ pro Aktie. Den endgültigen Ausgabepreis will das Unternehm...]]></description>
-    </item>
-    <item>
-      <title>Was passiert mit Jensen Huang und Nvidia?</title>
-      <link>https://www.all-ai.de/news/beitrage2026/nvidia-jensen-huang-zukunft-1</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/beitrage2026/nvidia-jensen-huang-zukunft-1</guid>
-      <pubDate>Thu, 12 Nov 2026 07:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Nvidias Verwaltungsrat berät über die Zukunft von Gründer und CEO Jensen Huang. Eine unabhängige Untersuchung prüft den möglichen Spionagefall rund um Huangs Kontakte zu einer früheren Managerin des Nvidia-Kunden Megaspeed. Colette Kress käme für eine Übergangslösung infrage. Ian Buck und Arm-Chef Rene Haas werden ebenfalls als mögliche Nachfolger gehandelt. Reuters | Verwaltungsrat berät über Huangs Zukunft Nvidia | Huangs Schreiben an die Belegschaft und verlinkte Mitteilungen des Verwaltungsrats Associated Press | Ermittlungen zu Megaspeed und Reaktion aus Peking Reuters | Mögliche Nachfolger für Jensen Huang US-Repräsentantenhaus | Einladung zur vertraulichen Befragung am 18. November Nvidias Verwaltungsrat hat laut Reuters am Mittwochabend in Kalifornien über Jensen Huangs Zukunft beraten. Das Wall Street Journal hatte zuvor berichtet, das Gremium bereite die Absetzung des Nvidia-Chefs vor. Anzeige Warum Nvidia den Fall untersucht Huang räumte am Sonntag in einer Nachricht an die Belegschaft eine außereheliche Beziehung ein. Einen Namen nannte er darin nicht. Im Zentrum der Berichte steht Alice Huang, eine frühere Managerin des Nvidia-Kunden Megaspeed aus Singapur, die US-G...]]></description>
     </item>
   </channel>
 </rss>
