@@ -5,9 +5,215 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Hacker+News+%28Top%29</link>
     <description>RSS-Feed für die Quelle 'Hacker News (Top)' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 14 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 12:18:05 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-hacker-news-top.xml" rel="self" type="application/rss+xml" />
-
+    <item>
+      <title>Monkey Island: all 13 versions side by side</title>
+      <link>https://monkeyisland.pages.dev/</link>
+      <guid isPermaLink="false">https://monkeyisland.pages.dev/</guid>
+      <pubDate>Sat, 14 Nov 2026 04:23:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs</title>
+      <link>https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus</link>
+      <guid isPermaLink="false">https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus</guid>
+      <pubDate>Sat, 14 Nov 2026 02:52:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Ggml v1.0.0</title>
+      <link>https://github.com/ggml-org/ggml/releases/tag/v1.0.0</link>
+      <guid isPermaLink="false">https://github.com/ggml-org/ggml/releases/tag/v1.0.0</guid>
+      <pubDate>Sat, 14 Nov 2026 02:28:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Elephants found to be increasingly isolated leading to fractured social networks</title>
+      <link>https://today.ucsd.edu/story/elephants-found-to-be-increasingly-isolated-leading-to-fractured-social-networks</link>
+      <guid isPermaLink="false">https://today.ucsd.edu/story/elephants-found-to-be-increasingly-isolated-leading-to-fractured-social-networks</guid>
+      <pubDate>Sat, 14 Nov 2026 02:02:42 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Amtrak booking system experiencing major issues amid nationwide FAA ground stop</title>
+      <link>https://www.fox5dc.com/news/amtrak-outage-ticket-booking-faa-ground-stop-november-13-2026</link>
+      <guid isPermaLink="false">https://www.fox5dc.com/news/amtrak-outage-ticket-booking-faa-ground-stop-november-13-2026</guid>
+      <pubDate>Sat, 14 Nov 2026 00:52:29 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Unsloth Qwen3.8-27B Quantizations – Dynamic v3.1 Update</title>
+      <link>https://unsloth.ai/docs/models/qwen3.8</link>
+      <guid isPermaLink="false">https://unsloth.ai/docs/models/qwen3.8</guid>
+      <pubDate>Sat, 14 Nov 2026 00:06:04 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>What happened to 3Com?</title>
+      <link>https://dfarq.homeip.net/what-happened-to-3com/</link>
+      <guid isPermaLink="false">https://dfarq.homeip.net/what-happened-to-3com/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:48:59 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Live map of U.S. flights during tonight's FAA nationwide ground stop</title>
+      <link>https://grounds.top/</link>
+      <guid isPermaLink="false">https://grounds.top/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:17:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Terminal borders that don't cost a cell</title>
+      <link>https://www.joshka.net/cell-borders/</link>
+      <guid isPermaLink="false">https://www.joshka.net/cell-borders/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:06:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>How Not to Build a Music Player</title>
+      <link>https://alichraghi.github.io/blog/how-not-to-build-a-music-player/</link>
+      <guid isPermaLink="false">https://alichraghi.github.io/blog/how-not-to-build-a-music-player/</guid>
+      <pubDate>Fri, 13 Nov 2026 23:04:30 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Live airband on all frequencies from KORS. Victoria, CA also ground stopped</title>
+      <link>https://orcasairband.com/</link>
+      <guid isPermaLink="false">https://orcasairband.com/</guid>
+      <pubDate>Fri, 13 Nov 2026 22:04:24 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>FAA issues national ground stop – lifted 4.5 hours later</title>
+      <link>https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247</link>
+      <guid isPermaLink="false">https://www.nbcnews.com/news/us-news/faa-orders-nationwide-ground-stop-departing-flights-reasons-safety-rcna609247</guid>
+      <pubDate>Fri, 13 Nov 2026 21:05:53 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Autonomous (YC F25) is hiring MTS to build AI agents that manage your wealth</title>
+      <link>https://atg.science/careers</link>
+      <guid isPermaLink="false">https://atg.science/careers</guid>
+      <pubDate>Fri, 13 Nov 2026 21:01:11 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Live-migration support in FreeBSD and bhyve coming</title>
+      <link>https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc/</link>
+      <guid isPermaLink="false">https://gyptazy.com/blog/freebsd-bhyve-live-migration-support-rfc/</guid>
+      <pubDate>Fri, 13 Nov 2026 19:58:42 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Found: A protein that drives ageing without unleashing inflammation</title>
+      <link>https://www.nature.com/articles/d41586-026-03638-3</link>
+      <guid isPermaLink="false">https://www.nature.com/articles/d41586-026-03638-3</guid>
+      <pubDate>Fri, 13 Nov 2026 19:25:21 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Perplexity Decider v1.3: Training, eval, and use cases</title>
+      <link>https://www.perplexity.ai/hub/blog/perplexity-decider</link>
+      <guid isPermaLink="false">https://www.perplexity.ai/hub/blog/perplexity-decider</guid>
+      <pubDate>Fri, 13 Nov 2026 19:24:47 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>FM-1 Workbench</title>
+      <link>https://open.m-vave.com/fm1-workbench</link>
+      <guid isPermaLink="false">https://open.m-vave.com/fm1-workbench</guid>
+      <pubDate>Fri, 13 Nov 2026 19:14:02 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Show HN: Isometric SF – A pixel-art map of the SF Bay Area</title>
+      <link>https://isometricsf.com/</link>
+      <guid isPermaLink="false">https://isometricsf.com/</guid>
+      <pubDate>Fri, 13 Nov 2026 17:58:37 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>After 600 experiments, here's what I discovered about JEPA world models</title>
+      <link>https://haddyalchaer.com/jepa</link>
+      <guid isPermaLink="false">https://haddyalchaer.com/jepa</guid>
+      <pubDate>Fri, 13 Nov 2026 17:55:28 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Jonathan Blow – If AI solved coding, why is my software still the same? [video]</title>
+      <link>https://www.youtube.com/watch?v=IRK8h67ol7Q</link>
+      <guid isPermaLink="false">https://www.youtube.com/watch?v=IRK8h67ol7Q</guid>
+      <pubDate>Fri, 13 Nov 2026 15:08:44 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Minnesota guitarist's "palmfrets" invention strikes a new chord</title>
+      <link>https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord</link>
+      <guid isPermaLink="false">https://www.echopress.com/business/minnesota-guitarists-invention-strikes-a-new-chord</guid>
+      <pubDate>Fri, 13 Nov 2026 15:08:07 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>A technical vision for the Haskell ecosystem</title>
+      <link>https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078</link>
+      <guid isPermaLink="false">https://discourse.haskell.org/t/a-technical-vision-for-the-haskell-ecosystem/15078</guid>
+      <pubDate>Fri, 13 Nov 2026 14:43:12 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
+    <item>
+      <title>Lonewolf 0.3 – A standalone XMPP server written in Rust</title>
+      <link>https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0</link>
+      <guid isPermaLink="false">https://github.com/lonewolf-im/lonewolf/releases/tag/v0.3.0</guid>
+      <pubDate>Fri, 13 Nov 2026 14:28:40 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://news.ycombinator.com/rss">Hacker News (Top)</source>
+      <description><![CDATA[Comments]]></description>
+    </item>
   </channel>
 </rss>

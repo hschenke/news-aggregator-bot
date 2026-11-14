@@ -5,9 +5,63 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Heise+Online+News</link>
     <description>RSS-Feed für die Quelle 'Heise Online News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Sat, 14 Nov 2026 06:01:08 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 12:18:05 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-heise-online-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nvidia-Angestellte wollen Jensen Huang zurück</title>
+      <link>https://www.heise.de/news/Nvidia-Angestellte-wollen-Jensen-Huang-zurueck-11525279.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11525279</guid>
+      <pubDate>Sat, 14 Nov 2026 11:42:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Nachdem eine dritte Affäre des vormaligen Nvidia-Chefs Jensen Huang bekannt wurde, setzt der Fallout ein. Trotzdem wollen manche, dass er wiederkehrt.]]></description>
+    </item>
+    <item>
+      <title>Microsoft-Ausfall: Woran es lag und wer besonders litt</title>
+      <link>https://www.heise.de/news/Microsoft-Ausfall-Woran-es-lag-und-wer-besonders-litt-11525257.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11525257</guid>
+      <pubDate>Sat, 14 Nov 2026 10:26:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Keine KI, keine Cyberattacke, soweit Microsofts erste Erklärung. Bei kritischen Strukturen in Deutschland waren die Auswirkungen gering.]]></description>
+    </item>
+    <item>
+      <title>Adobe, VSCO und Hyänen – die Fotonews der Woche 46/2026</title>
+      <link>https://www.heise.de/news/Adobe-VSCO-und-Hyaenen-die-Fotonews-der-Woche-46-2026-11524154.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11524154</guid>
+      <pubDate>Sat, 14 Nov 2026 09:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Adobe zeigt die KI-Zukunft, VSCO verspricht Datenschutz, südkoreanische Fotografen fordern Ermittlungen und Netflix würdigt Avedon.]]></description>
+    </item>
+    <item>
+      <title>Polarlicht bis Porträt: Licht und Himmel in den Bildern der Woche 46</title>
+      <link>https://www.heise.de/news/Polarlicht-bis-Portraet-Licht-und-Himmel-in-den-Bildern-der-Woche-46-11522926.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11522926</guid>
+      <pubDate>Sat, 14 Nov 2026 08:00:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Dramatische Himmel, stille Momente und starke Kontraste: Sieben Aufnahmen zwischen Naturschauspiel und präziser Beobachtung.]]></description>
+    </item>
+    <item>
+      <title>Developer-Häppchen: Kiro schickt Bots los, Rider durchleuchtet Godot-Szenen</title>
+      <link>https://www.heise.de/news/Developer-Haeppchen-Kiro-schickt-Bots-los-Rider-durchleuchtet-Godot-Szenen-11523808.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11523808</guid>
+      <pubDate>Sat, 14 Nov 2026 07:17:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[Kleine, aber interessante Meldungshäppchen vom News-Buffet zu Apache Storm, Lima, PhpStorm, AWS Kiro, ReSharper, Laravel, Node.js, Spring AI und Rider.]]></description>
+    </item>
+    <item>
+      <title>AWS Emulator im Detail: Die ganze Cloud auf dem eigenen Rechner?</title>
+      <link>https://www.heise.de/news/AWS-Emulator-im-Detail-Die-ganze-Cloud-auf-dem-eigenen-Rechner-11524450.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
+      <guid isPermaLink="false">http://heise.de/-11524450</guid>
+      <pubDate>Sat, 14 Nov 2026 06:32:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
+      <description><![CDATA[AWS-Anwendungen ohne Cloud-Konto und Gebühren lokal testen: Wie der neue, kontroverse AWS Emulator unter der Haube funktioniert und was er leistet.]]></description>
+    </item>
     <item>
       <title>Blende zu, KI an – wohin entwickelt sich die Smartphone-Fotografie? | c’t uplink</title>
       <link>https://www.heise.de/news/Blende-zu-KI-an-wohin-entwickelt-sich-die-Smartphone-Fotografie-c-t-uplink-11524072.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
@@ -223,168 +277,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
       <description><![CDATA[EA hat zum 35. Geburtstag von „Wing Commander 2“ gleich mehreren Teilen der Weltraum-Saga eine Überarbeitung spendiert. Wir spendieren ein Quiz.]]></description>
-    </item>
-    <item>
-      <title>Supermarkt-Angriffe: Danfoss-Kühlsteuerungen blieben trotz Updates angreifbar</title>
-      <link>https://www.heise.de/news/Supermarkt-Angriffe-Danfoss-Kuehlsteuerungen-blieben-trotz-Updates-angreifbar-11524376.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524376</guid>
-      <pubDate>Fri, 13 Nov 2026 12:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Offenbar enthielten die seit August als angreifbar geltenden Kühlgerätesteuerungen „AK-SM 800A“ des Herstellers Danfoss weitere kritische Sicherheitslücken.]]></description>
-    </item>
-    <item>
-      <title>DHL: Paketpreise für Privatkunden steigen 2027 – vor allem in der Filiale</title>
-      <link>https://www.heise.de/news/DHL-Paketpreise-fuer-Privatkunden-steigen-2027-vor-allem-in-der-Filiale-11524318.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524318</guid>
-      <pubDate>Fri, 13 Nov 2026 11:54:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Deutsche Post erhöht zum 1. Januar 2027 die Paketpreise für Privatkunden. Vor allem in der Filiale wird es teurer, online bleiben viele Preise stabil.]]></description>
-    </item>
-    <item>
-      <title>Weltraumteleskop Euclid legt 1,7 Petabyte Himmelsdaten offen auf den Tisch</title>
-      <link>https://www.heise.de/news/Euclid-gibt-Daten-zu-900-Millionen-Galaxien-frei-fuer-die-groesste-3D-Karte-11524042.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524042</guid>
-      <pubDate>Fri, 13 Nov 2026 11:35:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Euclid soll das Universum erforschen und dafür die bislang größte dreidimensionale Karte des Kosmos erstellen. Nun gibt es einen ersten großen Datensatz.]]></description>
-    </item>
-    <item>
-      <title>Südkorea: Google entfernt Koordinaten aus Maps und Earth</title>
-      <link>https://www.heise.de/news/Google-erfuellt-erste-Auflage-fuer-Kartenexport-nach-Suedkorea-11524232.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524232</guid>
-      <pubDate>Fri, 13 Nov 2026 11:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Google hat eine erste Sicherheitsauflage Südkoreas erfüllt und Koordinaten aus Maps und Earth entfernt. Die Navigation könnte bald möglich werden.]]></description>
-    </item>
-    <item>
-      <title>Fernzugriff ohne Terminal-Zwang: Pangolin zieht in den Linux-Tray</title>
-      <link>https://www.heise.de/news/Fernzugriff-ohne-Terminal-Zwang-Pangolin-zieht-in-den-Linux-Tray-11524014.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524014</guid>
-      <pubDate>Fri, 13 Nov 2026 10:57:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Nicht mehr nur per Kommandozeile: Für die Fernzugriffsplattform Pangolin gibt es jetzt einen Linux-Desktop-Client mit Tray-Menü und GUI-Einstellungen.]]></description>
-    </item>
-    <item>
-      <title>Claude zockt GTA 4 und andere Games: Wie sich der KI-Agent dabei anstellt</title>
-      <link>https://www.heise.de/news/Claude-zockt-GTA-4-und-andere-Games-Wie-sich-der-KI-Agent-dabei-anstellt-11524224.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524224</guid>
-      <pubDate>Fri, 13 Nov 2026 10:52:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Wie schlagen sich Agenten wie Claude in einem Videospiel? Das zeigt ein Entwickler, indem er die Künstliche Intelligenz unter anderem GTA 4 spielen lässt.]]></description>
-    </item>
-    <item>
-      <title>Microsoft-Cloud-Ausfall: E-Mail-Zugriff läuft wieder an</title>
-      <link>https://www.heise.de/news/Microsoft-Cloud-Ausfall-E-Mails-weiterhin-nicht-zugreifbar-11524008.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11524008</guid>
-      <pubDate>Fri, 13 Nov 2026 10:44:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Der Ausfall der Microsoft-365-Dienste dauert an. Microsoft verteilt Lösungen in der Infrastruktur. Sie scheinen Wirkung zu zeigen.]]></description>
-    </item>
-    <item>
-      <title>Teardown des MacBook Pro mit PROLED-XDR-Display: Teilweise besser reparierbar</title>
-      <link>https://www.heise.de/news/Teardown-des-MacBook-Pro-mit-PROLED-XDR-Display-Teilweise-besser-reparierbar-11522824.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11522824</guid>
-      <pubDate>Fri, 13 Nov 2026 10:29:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das MacBook Pro mit OLED und Touch stammt von seinem Vorgänger ab, macht aber einiges anders, wie der Teardown von iFixit zeigt.]]></description>
-    </item>
-    <item>
-      <title>Indische iPhone-Fabrik: Drei Todesfälle bei Lieferanten</title>
-      <link>https://www.heise.de/news/Indische-iPhone-Fabrik-Drei-Todesfaelle-bei-Lieferanten-11522802.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11522802</guid>
-      <pubDate>Fri, 13 Nov 2026 10:20:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Bei Reparaturen an Wasserfiltern kam es in Hosur zu einem Unglück. Apple prüft, was die Gründe waren. Es ist nicht der erste Vorfall in der iPhone-Fabrik.]]></description>
-    </item>
-    <item>
-      <title>Gebärdensprache bei Apple TV: Streamingdienst startet neues Feature</title>
-      <link>https://www.heise.de/news/Gebaerdensprache-bei-Apple-TV-Streamingdienst-startet-neues-Feature-11522982.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11522982</guid>
-      <pubDate>Fri, 13 Nov 2026 09:25:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Apple beginnt mit einem ersten Film einen neuen Service: Inhalte von Apple TV kommen künftig mit zuschaltbaren Gebärden. Los geht's mit „Being Heumann“.]]></description>
-    </item>
-    <item>
-      <title>Neue Supernova in Galaxie NGC 1433 wird noch mehrere Tage lang heller</title>
-      <link>https://www.heise.de/news/Neue-Supernova-in-Galaxie-NGC-1433-wird-noch-mehrere-Tage-lang-heller-11523840.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523840</guid>
-      <pubDate>Fri, 13 Nov 2026 09:04:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[In der Galaxie NGC 1433 im Sternbild Pendeluhr ist ein Stern explodiert und die Explosion wird seit Tagen heller. Erst kommende Woche steht das Maximum an.]]></description>
-    </item>
-    <item>
-      <title>Mercedes stoppt Investitionen in Deutschland und prüft Werksschließungen</title>
-      <link>https://www.heise.de/news/Mercedes-stoppt-Investitionen-in-Deutschland-und-prueft-Werksschliessungen-11523770.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523770</guid>
-      <pubDate>Fri, 13 Nov 2026 08:42:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Ohne Einigung mit Betriebsrat und IG Metall will Mercedes nicht mehr in deutsche Werke investieren. Ein Montage- und ein Powertrain-Werk stehen zur Disposition.]]></description>
-    </item>
-    <item>
-      <title>Gemini 4 Hydrogen: Googles effiziente Alternative zu Argon und Carbon</title>
-      <link>https://www.heise.de/news/Gemini-4-Hydrogen-Googles-effiziente-Alternative-zu-Argon-und-Carbon-11523818.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523818</guid>
-      <pubDate>Fri, 13 Nov 2026 08:40:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Gemini 4 Hydrogen treibt den KI-Modus der Google-Suche an. Unabhängige Benchmarks zeigen je nach Denkstufe große Unterschiede bei Bearbeitungszeit und Kosten.]]></description>
-    </item>
-    <item>
-      <title>Humble Bundle: Neue Website kommt ohne Zwei-Faktor-Authentifizierung</title>
-      <link>https://www.heise.de/news/Humble-Bundle-Neue-Website-kommt-ohne-Zwei-Faktor-Authentifizierung-11523804.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523804</guid>
-      <pubDate>Fri, 13 Nov 2026 08:31:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Nach einem Redesign lässt sich bei Humble Bundle keine Zwei-Faktor-Authentifizierung mehr einrichten. Warum, ist unklar. Nutzer sollten vorsichtig sein.]]></description>
-    </item>
-    <item>
-      <title>Windows-Update-Nebenwirkungen und Diensteänderungen</title>
-      <link>https://www.heise.de/news/Windows-Update-Nebenwirkungen-und-Diensteaenderungen-11523744.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523744</guid>
-      <pubDate>Fri, 13 Nov 2026 08:24:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Die Windows-Updates bereiten Probleme. Außerdem kündigt Microsoft Änderungen an ReFS auf Wechselmedien sowie RD Web Access an.]]></description>
-    </item>
-    <item>
-      <title>Flexible Gummirotoren könnten für preiswertere Gezeitenkraftwerke sorgen</title>
-      <link>https://www.heise.de/news/Flexible-Gummirotoren-koennten-fuer-preiswertere-Gezeitenkraftwerke-sorgen-11523720.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523720</guid>
-      <pubDate>Fri, 13 Nov 2026 08:22:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Gezeitenkraftwerke sind hohen Belastungen ausgesetzt und technisch aufwendig. Flexible Gummirotoren könnten den Aufwand verringern.]]></description>
-    </item>
-    <item>
-      <title>Xbox-Abwärtskompatibilität: 21 weitere Original-Xbox-Spiele laufen auf dem PC</title>
-      <link>https://www.heise.de/news/Xbox-Abwaertskompatibilitaet-21-weitere-Original-Xbox-Spiele-laufen-auf-dem-PC-11523764.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523764</guid>
-      <pubDate>Fri, 13 Nov 2026 08:06:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Microsoft bringt 21 weitere Spiele der ersten Xbox auf Windows-PCs, darunter „Knights of the Old Republic“. Vier Titel bekommen erstmals Achievements.]]></description>
-    </item>
-    <item>
-      <title>„FaceStealer“: Ausgeklügelte Angriffsmethode zielt laut FBI auf Open-Source</title>
-      <link>https://www.heise.de/news/FaceStealer-Nordkorea-zielt-laut-FBI-zunehmend-auf-Open-Source-Entwickler-11523668.html?wt_mc=rss.red.ho.ho.atom.beitrag.beitrag</link>
-      <guid isPermaLink="false">http://heise.de/-11523668</guid>
-      <pubDate>Fri, 13 Nov 2026 06:48:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.heise.de/rss/heise-atom.xml">Heise Online News</source>
-      <description><![CDATA[Das US-Justizministerium hat eine angeblich nordkoreanische Angriffsmasche vorgestellt und gestört, die sich zunehmend gegen Open-Source-Entwickler richtet.]]></description>
     </item>
   </channel>
 </rss>
