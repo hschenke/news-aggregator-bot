@@ -5,9 +5,27 @@
     <link>https://news-bot.streamlit.app/?category=Games&amp;feed=RPG-Watch</link>
     <description>RSS-Feed für die Quelle 'RPG-Watch' (Kategorie: Games).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/games-rpg-watch.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mystic Land: Search for Maphaldo - Gameplay</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60573</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60573</guid>
+      <pubDate>Fri, 13 Nov 2026 16:52:53 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[Dr. Incompetent checked out the demo of Mystic Land: Search for Maphaldo: Mystic Land: The Search for Maphaldo | Retro Dungeon Crawler Inspired by Wizardry 7!]]></description>
+    </item>
+    <item>
+      <title>Calame - Gameplay @ IGN</title>
+      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60572</link>
+      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60572</guid>
+      <pubDate>Fri, 13 Nov 2026 14:03:50 GMT</pubDate>
+      <category>Games</category>
+      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
+      <description><![CDATA[IGN shared some gameplay of the tactical RPG Calame: Calame: 22 Minutes of Tactical, Turn-Based RPG Gameplay]]></description>
+    </item>
     <item>
       <title>Vindictus: Defying Fate - Game Overview</title>
       <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60571</link>
@@ -70,24 +88,6 @@
       <category>Games</category>
       <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
       <description><![CDATA[Edenfall: Legacy of the First Wardens launches on December 8: Edenfall: Legacy of the First Wardens - Official Release Date Trailer]]></description>
-    </item>
-    <item>
-      <title>Queen's Domain - Patch 1.01.06</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60564</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60564</guid>
-      <pubDate>Thu, 12 Nov 2026 19:09:16 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Henriquejr spotted a new patch for Queen's Domain: Queen's Domain version 1.01.06 patch Fix for Flying Sword challenge getting stuck in incomplete state. Challenge data now works with Steam Cloud Save. Improved error recovery when challenge save data is missing or corrupted....]]></description>
-    </item>
-    <item>
-      <title>Dragonkin: The Banished - Harrower Trailer</title>
-      <link>https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60563</link>
-      <guid isPermaLink="false">https://rpgwatch.com/show/newsbit?rwsiteid=1&amp;newsbit=60563</guid>
-      <pubDate>Thu, 12 Nov 2026 15:01:46 GMT</pubDate>
-      <category>Games</category>
-      <source url="https://rpgwatch.com/files/rss1.xml">RPG-Watch</source>
-      <description><![CDATA[Dragonkin: The Banished got a new class called "The Harrower": Dragonkin The Banished - Official "The Harrower" Update Trailer]]></description>
     </item>
   </channel>
 </rss>

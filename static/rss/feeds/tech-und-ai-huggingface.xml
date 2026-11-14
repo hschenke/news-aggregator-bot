@@ -5,14 +5,32 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=Huggingface</link>
     <description>RSS-Feed für die Quelle 'Huggingface' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-huggingface.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B</title>
-      <link>https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite</link>
-      <guid isPermaLink="false">https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite</guid>
-      <pubDate>Thu, 12 Nov 2026 19:07:35 GMT</pubDate>
+      <title>Build a Robot Pick-and-Place Simulation with SimReady Assets</title>
+      <link>https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place</guid>
+      <pubDate>Fri, 13 Nov 2026 18:00:39 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>XYBench: Helping with the problem behind the question</title>
+      <link>https://huggingface.co/blog/allenai/xybench</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/allenai/xybench</guid>
+      <pubDate>Fri, 13 Nov 2026 17:02:35 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
+      <description><![CDATA[]]></description>
+    </item>
+    <item>
+      <title>llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem</title>
+      <link>https://huggingface.co/blog/ggml-org/llama-cpp-v1</link>
+      <guid isPermaLink="false">https://huggingface.co/blog/ggml-org/llama-cpp-v1</guid>
+      <pubDate>Fri, 13 Nov 2026 14:05:22 GMT</pubDate>
       <category>Tech &amp; AI</category>
       <source url="https://huggingface.co/blog/feed.xml">Huggingface</source>
       <description><![CDATA[]]></description>

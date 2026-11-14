@@ -5,9 +5,27 @@
     <link>https://news-bot.streamlit.app/?category=Tech+%26+AI&amp;feed=AI+News</link>
     <description>RSS-Feed für die Quelle 'AI News' (Kategorie: Tech &amp; AI).</description>
     <language>de</language>
-    <lastBuildDate>Fri, 13 Nov 2026 13:14:14 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 06:01:08 GMT</lastBuildDate>
     <generator>News Bot RSS Engine</generator>
     <atom:link href="https://cdn.jsdelivr.net/gh/hschenke/news-bot@main/static/rss/feeds/tech-und-ai-ai-news.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ChatGPT Wallet lässt KI-Agenten im Auftrag ihrer Nutzer bezahlen</title>
+      <link>https://www.all-ai.de/news/news26/chatgpt-agenten-wallet</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26/chatgpt-agenten-wallet</guid>
+      <pubDate>Fri, 13 Nov 2026 15:19:00 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Persönliche KI-Agenten in ChatGPT können mit einer hinterlegten Karte Bestellungen bezahlen. Nutzer prüfen den Kauf und geben ihn per Gesichtserkennung oder Fingerabdruck frei. Der KI-Agent bezahlt mit einer virtuellen Kartennummer. Zum Start steht die Wallet volljährigen Pro-Abonnenten in den USA mit geeigneter US-Karte zur Verfügung. OpenAI – Introducing ChatGPT Wallet (Text aus der Anlage, Link beim Abruf mit HTTP 404) OpenAI Help Center – Making purchases with ChatGPT Wallet OpenAI – ChatGPT Wallet terms OpenAI Help Center – ChatGPT release notes (Meet your dot) Mit ChatGPT Wallet kann ein persönlicher KI-Agent in ChatGPT Bestellungen für seinen Nutzer abschließen. Der Nutzer hinterlegt eine Kreditkarte und gibt jeden Kauf per Gesichtserkennung oder Fingerabdruck frei. OpenAI führt die Funktion zunächst für volljährige Pro-Abonnenten in den USA ein. Anzeige Der Nutzer prüft die Bestellung, der KI-Agent bezahlt Die Wallet funktioniert im Gespräch mit einem »Dot«, so nennt OpenAI seine persönlichen KI-Agenten. Wer etwa ein Hotel buchen will, kann seinen Dot nach einem passenden Zimmer suchen lassen und ihn anschließend mit der Buchung beauftragen. Vor der Freigabe sieht der Nu...]]></description>
+    </item>
+    <item>
+      <title>Jensen Huang: Darum könnte die ganze KI-Branche untergehen</title>
+      <link>https://www.all-ai.de/news/news26top/jensen-huang-ki-rechenzentren</link>
+      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/jensen-huang-ki-rechenzentren</guid>
+      <pubDate>Fri, 13 Nov 2026 14:27:26 GMT</pubDate>
+      <category>Tech &amp; AI</category>
+      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
+      <description><![CDATA[Nvidia prüft Finanzhilfen für KI-Rechenzentren strenger und hat einige geplante Deals pausiert. Interimschefin Colette Kress hat Nvidias Garantie für ein OpenAI-Projekt in Ohio schon als Finanzchefin heruntergehandelt. Ein separates Vorhaben, das mehr als 500 Milliarden $ von externen Geldgebern mobilisieren soll, stockt. Kleinere Cloud-Anbieter könnten künftig höhere Zinsen zahlen oder ihre Projekte verschieben. The Wall Street Journal – Before His Ouster, Jensen Huang Belittled the Executive Replacing Him Nvidia – NVIDIA Announces CEO Transition Nvidia bei der SEC – Quartalsbericht zu den Garantien und Finanzierungsplänen Bloomberg – Nvidia Faced Pressure to Boost Its AI Backstop Before Huang Exit Jensen Huang wollte mehr Nvidia-Chips verkaufen, indem der Konzern seinen Kunden bei der Finanzierung neuer Rechenzentren hilft. Finanzchefin Colette Kress stellte schon im Frühjahr infrage, welche Garantien Nvidia dafür übernehmen sollte. Nach Huangs Rücktritt führt sie Nvidia vorerst selbst und muss entscheiden, wie viel Risiko der Konzern bei künftigen Projekten trägt. Anzeige Huang wollte Chipverkäufe sichern, Kress rechnete nach Garantien von Nvidia sollten Cloud-Anbietern helfe...]]></description>
+    </item>
     <item>
       <title>Claude Meetings erstellt Dokumente und Whiteboards direkt in Videokonferenzen</title>
       <link>https://www.all-ai.de/news/news26/claude-meetings-video-konferenz</link>
@@ -16,51 +34,6 @@
       <category>Tech &amp; AI</category>
       <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
       <description><![CDATA[Anthropic führt Claude Meetings als Beta für Team und Enterprise ein. Claude kann in Google Meet Fragen beantworten und während des Gesprächs Dokumente und Whiteboards erstellen. Interne Teilnehmer finden Mitschrift, Aufgaben und Entwürfe auf einer Meeting-Seite in Claude. Die Erstellung von Dokumenten und Whiteboards im Meeting ist bis zum 10. Februar 2027 kostenlos. Anthropic: Introducing Claude Meetings Anthropic: Introducing Claude Meetings (verifizierte Sprachversion) Claude Help Center: Use Claude Meetings Anthropic rollt Claude Meetings als Beta für Team und Enterprise aus. Zum Start funktioniert die Beta ausschließlich mit Google Meet, weitere Videoplattformen sollen folgen. Claude erscheint als sichtbarer Teilnehmer und kann während des Gesprächs Dokumente und Whiteboards erstellen, an denen das Team direkt weiterarbeitet. Vom Gespräch zum ersten Entwurf Wenn ein Team über die Aufgaben für einen Projektstart spricht, kann Claude daraus auf Zuruf einen Entwurf für den Projektplan machen. Während das Gespräch weitergeht, können eingeladene Teilnehmer aus der Organisation den Plan auf der Meeting-Seite in Claude bearbeiten. Fragen nimmt Claude per Sprache oder im Meet-Chat...]]></description>
-    </item>
-    <item>
-      <title>n8n Nod: Der erste KI-Agent für den eigenen Rechner</title>
-      <link>https://www.all-ai.de/news/news26top/n8n-nod-ki-agent-deutschland</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/n8n-nod-ki-agent-deutschland</guid>
-      <pubDate>Thu, 12 Nov 2026 18:51:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Mit Nod startet n8n Labs eine experimentelle Vorschau für einen persönlichen KI-Agenten auf dem eigenen Rechner. Nod arbeitet in Apps und Webseiten und fragt bei Schritten außerhalb der erteilten Freigabe nach. In den simulierten Aufgaben von n8n erreichte Nod mit GPT-6.1 Sol eine Erfolgsquote von 98%. Die App ist kostenlos und Open Source. Je nach gewähltem KI-Anbieter fallen Nutzungskosten an. n8n-Blog · Ankündigung von Nod Nod · Funktionen, Plattformen und Kosten Nod · Benchmarks und Testmethoden GitHub · Quellcode und Apache-2.0-Lizenz Grok Bot und Metas Muse Bot bekommen Konkurrenz aus Berlin. n8n Labs hat Nod als experimentelle Vorschau veröffentlicht. Der persönliche KI-Agent öffnet Apps und Webseiten, um Rechnungen einzusammeln, Kundengespräche vorzubereiten oder ein Abo zu kündigen. Nod arbeitet im eigenen Browser Ein Selbstständiger kann Nod zum Beispiel bitten, die Rechnungen des letzten Monats aus mehreren Lieferantenportalen herunterzuladen. Der Agent öffnet die Seiten in seinem eigenen Browser und legt die Dateien auf dem Rechner ab. Für wiederkehrende Aufgaben lässt sich ein Zeitplan einrichten, etwa um eine Preisseite regelmäßig zu prüfen. Nod prüft geplante Akti...]]></description>
-    </item>
-    <item>
-      <title>Google veröffentlicht Gemini 4 Hydrogen</title>
-      <link>https://www.all-ai.de/news/news26top/google-gemini-4-hydrogen</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-gemini-4-hydrogen</guid>
-      <pubDate>Thu, 12 Nov 2026 18:28:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google bringt Gemini 4 Hydrogen weltweit in die Suche und die Gemini-App. In Googles Terminal-Bench-4.1-Vergleich steigt das Ergebnis von 18,2% bei Gemini 3.8 Flash auf 57% bei Hydrogen. Die Gemini API bietet einen kostenlosen Tarif. Im bezahlten Standardtarif kostet Hydrogen 1,50$ pro Million Eingabe-Token und 7,50$ pro Million Ausgabe-Token. Google DeepMind – Introducing Gemini 4 Hydrogen (bereitgestellte Fassung mit Benchmark-Grafiken) Google – Google Search gets a major upgrade with Gemini 4 Hydrogen (bereitgestellte Fassung) Google AI Studio – Gemini Developer API Pricing Artificial Analysis – Intelligence Index 5.0.1 und Methodik Artificial Analysis – AutomationBench-AA und Methodik Google DeepMind bringt Gemini 4 Hydrogen weltweit in die Gemini-App und in die Google-Suche. Das neue KI-Modell ist auf schnelle Programmieraufgaben und mehrstufige Arbeitsabläufe ausgelegt. Entwickler können es auch im kostenlosen Tarif der Gemini API nutzen. Anzeige Hydrogen erreicht 54 Punkte bei Artificial Analysis Im Intelligence Index 5.0.1 von Artificial Analysis erreicht Gemini 4 Hydrogen in der Standardeinstellung »High« 51 Punkte. Gemini 4 Argon kommt auf 50 Punkte, Gemini 3.8 Flash a...]]></description>
-    </item>
-    <item>
-      <title>Jensen Huang tritt als Nvidia-Chef zurück</title>
-      <link>https://www.all-ai.de/news/news26/nvidia-huang-ruecktrit</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/nvidia-huang-ruecktrit</guid>
-      <pubDate>Thu, 12 Nov 2026 14:43:19 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Jensen Huang tritt mit sofortiger Wirkung als Nvidia-Chef zurück und verlässt den Verwaltungsrat. Finanzchefin Colette Kress übernimmt vorläufig, während der Verwaltungsrat nach einem dauerhaften Nachfolger sucht. Nvidia veröffentlicht die nächsten Quartalszahlen wie geplant am 17. November. Nvidia | Mitteilung zum Führungswechsel GlobeNewswire via StreetInsider | Verbreitete Nvidia-Mitteilung zum Führungswechsel Nvidia | Verwaltungsrat kündigt unabhängige Untersuchung an Associated Press | Rücktritt und Übergabe an Colette Kress Jensen Huang tritt mit sofortiger Wirkung als CEO und Präsident von Nvidia zurück. Der Mitgründer verlässt nach 33 Jahren an der Spitze auch den Verwaltungsrat. Sein Rücktritt folgt wenige Tage auf die Ankündigung einer unabhängigen Untersuchung zu Berichten, wonach ein ausländischer Geheimdienst Huang ins Visier genommen haben soll. Anzeige Colette Kress übernimmt vorläufig Colette Kress leitet Nvidia übergangsweise und bleibt zugleich Finanzchefin. Diesen Posten hat sie seit 2013 inne. Der Verwaltungsrat sucht innerhalb und außerhalb des Unternehmens nach einem dauerhaften Nachfolger für Huang. Harvey C. Jones übernimmt als erster Vorsitzender die Lei...]]></description>
-    </item>
-    <item>
-      <title>Google bringt Gemini-Brillen mit jeder Menge KI ab 395 Dollar</title>
-      <link>https://www.all-ai.de/news/news26top/google-ki-brillen-start</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26top/google-ki-brillen-start</guid>
-      <pubDate>Thu, 12 Nov 2026 14:30:32 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Google Kurzfassung ▾ Quellen ▾ Die KI-Brillen von Google und Samsung sind ab 395$ vorbestellbar. Der reguläre Verkauf startet am 10. Dezember. Gemini gibt Antworten über Lautsprecher in den Brillenbügeln aus. Eine LED zeigt Aufnahmen für die Galerie an. Wird sie abgedeckt, soll die Brille die Aufnahme blockieren. Google · See our intelligent eyewear lineup and pre-order your pair Google · Designing for privacy on intelligent eyewear Warby Parker · Quartalsmitteilung mit dem Vorbestelltermin Google · Vorstellung der Audiobrillen mit Android XR Google und Samsung bringen ihre ersten KI-Brillen mit Gemini in den Handel. Die Modelle von Warby Parker und Gentle Monster lassen sich seit dem 12. November vorbestellen, der reguläre Verkauf startet am 10. Dezember. Eine LED an der Vorderseite soll Umstehende auf Fotos und Videos aufmerksam machen. Anzeige Zwei Kollektionen und kein Display Warby Parker bietet drei Gestelle ab 395$ an, jeweils als normale Brille oder als Sonnenbrille. Gentle Monster startet in den USA und Südkorea mit sechs Designs ab 449$. Für die meisten Gestelle von Gentle Monster gibt es Gläser mit Sehstärke, auch Warby Parker bietet Korrekturgläser an. Einen Startter...]]></description>
-    </item>
-    <item>
-      <title>Deutsche Privatanleger können jetzt Anthropic-Aktien zeichnen</title>
-      <link>https://www.all-ai.de/news/news26/anthropic-aktie-kauf-deutschland</link>
-      <guid isPermaLink="false">https://www.all-ai.de/news/news26/anthropic-aktie-kauf-deutschland</guid>
-      <pubDate>Thu, 12 Nov 2026 13:32:00 GMT</pubDate>
-      <category>Tech &amp; AI</category>
-      <source url="https://www.all-ai.de/component/jmap/sitemap/rss?format=rss">AI News</source>
-      <description><![CDATA[Privatanleger in Deutschland können über teilnehmende Broker Anthropic-Aktien zeichnen. Anthropic peilt 70$ bis 78$ je Aktie an. Der europäische Prospekt nennt 120$ als Obergrenze. Der endgültige Preis soll am 18. November feststehen. Der Nasdaq-Handel unter »ANT« soll am 19. November beginnen. Anthropic erzielte im dritten Quartal 17 Milliarden $ Umsatz und verbuchte 23,3 Milliarden $ Nettoverlust. Anthropic – Europäische IPO-Seite und FAQ (bereitgestellter Seitentext) Anthropic – Gründerbrief (Auszug im bereitgestellten Seitentext) SEC – Aktualisierter US-Börsenprospekt vom 10. November 2026 Anthropic – Teilnehmende Broker und Vertriebsstellen Scalable Capital – Start der Zeichnung für Privatanleger Anthropic öffnet seinen geplanten Börsengang für Privatanleger in Deutschland und weiteren europäischen Ländern. Scalable Capital nimmt bereits Zeichnungsaufträge an, auch Trade Republic, ING, Deutsche Bank und Revolut gehört zu den teilnehmenden Brokern. Der Handel an der US-Börse Nasdaq soll am 19. November 2026 unter dem Kürzel »ANT« beginnen. Anzeige Was eine Anthropic-Aktie kosten soll Anthropic rechnet mit 70$ bis 78$ pro Aktie. Den endgültigen Ausgabepreis will das Unternehm...]]></description>
     </item>
   </channel>
 </rss>
